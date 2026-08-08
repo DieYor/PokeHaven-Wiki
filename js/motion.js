@@ -49,7 +49,7 @@
     root.appendChild(trailLayer);
 
     // Soft ghost chain — reads as a motion trace behind the ball
-    const GHOST_N = 8;
+    const GHOST_N = 10;
     const ghosts = [];
     for (let i = 0; i < GHOST_N; i++) {
       const g = document.createElement("div");
@@ -147,10 +147,11 @@
       let ty = my + 15;
       for (let i = 0; i < ghosts.length; i++) {
         const g = ghosts[i];
-        const ease = 0.38 - i * 0.03;
+        // Slightly looser follow = longer, more readable ribbon
+        const ease = 0.32 - i * 0.022;
         g.x += (tx - g.x) * ease;
         g.y += (ty - g.y) * ease;
-        const scale = 1 - i * 0.08;
+        const scale = 1 - i * 0.06;
         g.el.style.transform = `translate3d(${g.x}px, ${g.y}px, 0) scale(${scale})`;
         tx = g.x;
         ty = g.y;
