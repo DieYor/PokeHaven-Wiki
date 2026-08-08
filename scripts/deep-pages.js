@@ -43,6 +43,7 @@ export function registerDeepPages({
   shiny,
   xpMult,
   advancements,
+  raids,
 }) {
   const adv = advancements || { count: 0, groups: {}, cobbleverse: {}, cobblemon: {} };
   const cv = adv.cobbleverse?.groups || adv.groups || {};
@@ -867,6 +868,116 @@ export function registerDeepPages({
     `,
   });
 
+  // ——— Raids (overrides short stub from build.js) ———
+  if (raids?.tiers?.length) {
+    const pct = (n) => `${Math.round(Number(n) * 100)}%`;
+    const weights = (raids.common.tierWeights || []).map((w, i) => `T${i + 1}: ${w}`).join(" · ");
+    const tierRows = raids.tiers
+      .map(
+        (t) => `<tr>
+      <td><strong>T${t.tier}</strong></td>
+      <td>${t.bossLevel ?? "—"}</td>
+      <td>${t.maxPlayers ?? "—"}</td>
+      <td>${t.ivs ?? "—"}</td>
+      <td>${t.currency ?? "—"}</td>
+      <td>${t.hpMultiplier ?? "—"}×</td>
+      <td>${pct(t.requiredDamage ?? 0)}</td>
+      <td>${pct(t.haRate ?? 0)}</td>
+      <td>${t.ai ?? "—"}</td>
+      <td>${t.maxClears ?? "—"}</td>
+    </tr>`
+      )
+      .join("");
+    const resetHours = Math.round((raids.common.resetTime || 0) / 3600);
+    writePage("Raids.html", {
+      title: "Raids",
+      breadcrumbs: [
+        { label: "Main Page", href: "../index.html" },
+        { label: "Raids", href: "Raids.html" },
+      ],
+      lede: "Raid dens are crystal fights in the overworld. Bring heals, type coverage, and friends for higher tiers — wipe early and you waste time and items.",
+      infobox: `<div class="infobox-title">Raid dens</div>
+    <table>
+      <tr><th>Where</th><td>Overworld crystals</td></tr>
+      <tr><th>Spawn chance</th><td>1 / ${raids.common.spawnRate}</td></tr>
+      <tr><th>Reset</th><td>~${resetHours}h game time (${raids.common.resetTime}s)</td></tr>
+      <tr><th>Cycle</th><td>${raids.common.cycleMode}</td></tr>
+      <tr><th>Rewards</th><td>${raids.common.rewardDistribution} (contribute)</td></tr>
+      <tr><th>Retry fails</th><td>${raids.common.retryFailed ? "Yes" : "No"}</td></tr>
+      <tr><th>Shard energy</th><td>${raids.common.requiredEnergy}</td></tr>
+      <tr><th>Boss index</th><td><a href="Raid_Bosses.html">${raids.bosses.length} bosses</a></td></tr>
+      <tr><th>Tier weights</th><td>${weights}</td></tr>
+    </table>`,
+      body: `
+    <h2>When to raid</h2>
+    <p>Start with <strong>T1–T3</strong> once you have a stable party, Revives, and spare balls. Treat dens as bonus money and rare loot — not a skip for gyms. Hold <strong>T5+</strong> until your <a href="Level_Cap.html">level cap</a> and coverage can tank a long fight.</p>
+    <div class="callout tip">
+      <div class="label">Check the boss first</div>
+      Open <a href="Raid_Bosses.html">Raid bosses</a>, search the species, and bring answers for its moves. Six of the same mon loses more dens than a mixed team.
+    </div>
+
+    <h2>How a den works</h2>
+    <ol class="steps">
+      <li>Explore the overworld until you find a <strong>raid den crystal</strong>.</li>
+      <li>Heal up, set a <a href="Travel.html">waystone</a> or Xaero pin nearby if you’ll return.</li>
+      <li>Start the raid — keep heals ready. Parties: use <a href="Voice_Chat.html">voice chat</a>.</li>
+      <li>Deal damage. Rewards use <strong>${raids.common.rewardDistribution}</strong> distribution — contribute or you may miss the cut.</li>
+      <li>After clears / the timer, the den resets and can cycle boss and tier.</li>
+    </ol>
+
+    <h2>Prep checklist</h2>
+    <ul>
+      <li>Full team healed + Revives / healing items in hotbar</li>
+      <li>Type coverage for the boss (and its STAB moves)</li>
+      <li>Level-appropriate mons — don’t bring a T2 team into T6</li>
+      <li>Friends for tiers with higher max players (see table)</li>
+      <li>Shard energy ready (${raids.common.requiredEnergy} required)</li>
+    </ul>
+
+    <h2>Rewards &amp; damage share</h2>
+    <p>Loot and payout scale with how much you help. Each tier has a <strong>minimum damage share</strong> (roughly 16–20%) — sit AFK and you can fail the reward check even if the group wins. Money in the table is the tier’s currency reward; higher tiers also hit harder (HP multiplier) and roll better IVs on the catch / rewards side.</p>
+    <ul>
+      <li><strong>Hidden Ability rate:</strong> 20% on every tier</li>
+      <li><strong>Max clears</strong> per den before it rotates: 3</li>
+      <li><strong>Failed raids:</strong> can be retried (${raids.common.retryFailed ? "yes" : "no"})</li>
+      <li><strong>T6–T7 AI:</strong> STRONG — expect smarter play than early dens</li>
+    </ul>
+
+    <h2>Party size</h2>
+    <p>T1 is solo. T2–T3 allow small groups. From <strong>T4 upward</strong> you can bring up to <strong>four</strong> players — use that for T5–T7. Call roles in voice: someone chips for the damage threshold, someone walls, someone covers types.</p>
+
+    <h2>Tier table</h2>
+    <p>Higher <em>tier weight</em> = more common when dens roll a tier. On PokeHaven, mid tiers (especially T4) show up more than T6/T7.</p>
+    <table class="wikitable">
+      <thead><tr>
+        <th>Tier</th><th>Boss lv</th><th>Max players</th><th>IVs</th><th>$</th><th>HP ×</th><th>Min damage</th><th>HA</th><th>AI</th><th>Max clears</th>
+      </tr></thead>
+      <tbody>${tierRows}</tbody>
+    </table>
+    <p class="muted">Tier weights: ${weights}</p>
+
+    <h2>Finding dens again</h2>
+    <ol class="steps">
+      <li>Pin the crystal on <strong>Xaero’s World Map</strong> the moment you find it.</li>
+      <li>Drop a named waystone nearby if the den is worth farming after reset.</li>
+      <li>After ~${resetHours} hours of game time, check again — boss/tier can change.</li>
+    </ol>
+
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>Starting T5+ under the level cap with no Revives</li>
+      <li>Ignoring the damage share and getting no reward</li>
+      <li>Bringing one type into a boss that walls it</li>
+      <li>Not pinning the den — then losing it in the meadow forever</li>
+      <li>Raiding instead of gyms when your progression is stuck on the <a href="Level_Cap.html">level cap</a></li>
+    </ul>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Raid_Bosses.html">Raid bosses</a> · <a href="Economy.html">Economy</a> · <a href="Voice_Chat.html">Voice chat</a> · <a href="Travel.html">Travel</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Healing_and_Storage.html">Healing &amp; storage</a></p>
+    ${navboxSystems()}
+    `,
+    });
+  }
+
   writePage("Travel.html", {
     title: "Travel",
     breadcrumbs: [
@@ -1047,7 +1158,7 @@ export function registerDeepPages({
     <a class="hub-card" href="pages/Economy.html"><h3>Economy</h3><p>Farm loop, shop &amp; bank tables.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks walkthrough + screenshot.</p></a>
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto gyms</h3><p>All leaders + league pages.</p></a>
-    <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Tiers, resets, rewards.</p></a>
+    <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens, tiers, damage share.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones and map tools.</p></a>
     <a class="hub-card" href="pages/Minecraft_Basics.html"><h3>Minecraft basics</h3><p>Tools, farms, inventory for newcomers.</p></a>
   </div>

@@ -174,7 +174,7 @@ export function registerDutchSite({
   <h2>Systemen</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Vangen &amp; vechten</h3><p>Combat-primer.</p></a>
-    <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens en tiers.</p></a>
+    <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens, tiers, damage-share.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture, eieren, Ditto-regels.</p></a>
@@ -450,24 +450,111 @@ export function registerDutchSite({
   `,
   });
 
-  track("Raids.html", {
-    title: "Raids",
-    breadcrumbs: crumbs({ label: "Raids", href: "Raids.html" }),
-    lede: "Raid-dens zijn crystal-fights in de overworld. Neem vrienden, heals en type-coverage mee.",
-    body: `
+  track("Raids.html", (() => {
+    const pct = (n) => `${Math.round(Number(n) * 100)}%`;
+    const weights = (raids.common.tierWeights || []).map((w, i) => `T${i + 1}: ${w}`).join(" · ");
+    const tierRows = raids.tiers
+      .map(
+        (t) => `<tr>
+      <td><strong>T${t.tier}</strong></td>
+      <td>${t.bossLevel ?? "—"}</td>
+      <td>${t.maxPlayers ?? "—"}</td>
+      <td>${t.ivs ?? "—"}</td>
+      <td>${t.currency ?? "—"}</td>
+      <td>${t.hpMultiplier ?? "—"}×</td>
+      <td>${pct(t.requiredDamage ?? 0)}</td>
+      <td>${pct(t.haRate ?? 0)}</td>
+      <td>${t.ai ?? "—"}</td>
+      <td>${t.maxClears ?? "—"}</td>
+    </tr>`
+      )
+      .join("");
+    const resetHours = Math.round((raids.common.resetTime || 0) / 3600);
+    return {
+      title: "Raids",
+      breadcrumbs: crumbs({ label: "Raids", href: "Raids.html" }),
+      lede: "Raid-dens zijn crystal-fights in de overworld. Neem heals, type-coverage en vrienden mee voor hogere tiers — vroeg wipe’en kost tijd en items.",
+      infobox: `<div class="infobox-title">Raid-dens</div>
+    <table>
+      <tr><th>Waar</th><td>Overworld-crystals</td></tr>
+      <tr><th>Spawn-kans</th><td>1 / ${raids.common.spawnRate}</td></tr>
+      <tr><th>Reset</th><td>~${resetHours}u game time (${raids.common.resetTime}s)</td></tr>
+      <tr><th>Cycle</th><td>${raids.common.cycleMode}</td></tr>
+      <tr><th>Beloningen</th><td>${raids.common.rewardDistribution} (meedoen)</td></tr>
+      <tr><th>Retry fails</th><td>${raids.common.retryFailed ? "Ja" : "Nee"}</td></tr>
+      <tr><th>Shard energy</th><td>${raids.common.requiredEnergy}</td></tr>
+      <tr><th>Boss-index</th><td><a href="Raid_Bosses.html">${raids.bosses.length} bosses</a></td></tr>
+      <tr><th>Tier-weights</th><td>${weights}</td></tr>
+    </table>`,
+      body: `
   <h2>Wanneer raiden</h2>
-  <p>Doe vroege dens als je een stabiel team en spare balls hebt. Sla hoge tiers over tot je level cap en coverage klaar zijn.</p>
+  <p>Begin met <strong>T1–T3</strong> als je een stabiel team, Revives en spare balls hebt. Dens zijn bonus-geld en zeldzame loot — geen skip voor gyms. Bewaar <strong>T5+</strong> tot je <a href="Level_Cap.html">level cap</a> en coverage een lange fight aankunnen.</p>
+  <div class="callout tip">
+    <div class="label">Check de boss eerst</div>
+    Open <a href="Raid_Bosses.html">Raid-bosses</a>, zoek de species, en neem answers mee voor z’n moves. Zes dezelfde mon verliest meer dens dan een gemengd team.
+  </div>
+
   <h2>Hoe een den werkt</h2>
   <ol class="steps">
-    <li>Vind een raid-den crystal in de overworld.</li>
-    <li>Start met heals klaar (voice chat helpt — <a href="Voice_Chat.html">Voice chat</a>).</li>
-    <li>Doe schade — beloningen hangen vaak af van bijdrage.</li>
-    <li>Dens resetten na een timer en kunnen boss/tier wisselen.</li>
+    <li>Verken de overworld tot je een <strong>raid-den crystal</strong> vindt.</li>
+    <li>Heal op, zet een <a href="Travel.html">waystone</a> of Xaero-pin in de buurt als je terugkomt.</li>
+    <li>Start de raid — heals klaar. Met party: gebruik <a href="Voice_Chat.html">voice chat</a>.</li>
+    <li>Doe schade. Beloningen gebruiken <strong>${raids.common.rewardDistribution}</strong> — draag bij of je mist de cut.</li>
+    <li>Na clears / de timer reset de den en kan boss én tier wisselen.</li>
   </ol>
-  <p>Boss-index: <a href="Raid_Bosses.html">Raid-bosses</a> (${raids.bosses.length}). Tier-tabel: <a href="../../pages/Raids.html">Raids (EN, met tabellen)</a>.</p>
+
+  <h2>Prep-checklist</h2>
+  <ul>
+    <li>Team vol geheald + Revives / heal-items in de hotbar</li>
+    <li>Type-coverage voor de boss (en z’n STAB-moves)</li>
+    <li>Level-passende mons — geen T2-team in T6</li>
+    <li>Vrienden voor tiers met hogere max players (zie tabel)</li>
+    <li>Shard energy klaar (${raids.common.requiredEnergy} vereist)</li>
+  </ul>
+
+  <h2>Beloningen &amp; damage-share</h2>
+  <p>Loot en payout schalen met hoeveel je helpt. Elke tier heeft een <strong>minimum damage-share</strong> (ongeveer 16–20%) — AFK zitten kan betekenen: geen reward, ook als de groep wint. Het $-bedrag in de tabel is de currency-reward; hogere tiers hebben meer HP (multiplier) en betere IVs.</p>
+  <ul>
+    <li><strong>Hidden Ability-kans:</strong> 20% op elke tier</li>
+    <li><strong>Max clears</strong> per den vóór rotate: 3</li>
+    <li><strong>Gefaalde raids:</strong> opnieuw proberen (${raids.common.retryFailed ? "ja" : "nee"})</li>
+    <li><strong>T6–T7 AI:</strong> STRONG — slimmer dan vroege dens</li>
+  </ul>
+
+  <h2>Party-grootte</h2>
+  <p>T1 is solo. T2–T3 kleine groups. Vanaf <strong>T4</strong> max <strong>vier</strong> spelers — gebruik dat voor T5–T7. Verdeel rollen in voice: iemand chipt voor de damage-drempel, iemand walls, iemand dekt types.</p>
+
+  <h2>Tier-tabel</h2>
+  <p>Hogere <em>tier weight</em> = vaker gerold. Op PokeHaven komen mid-tiers (zeker T4) vaker voor dan T6/T7.</p>
+  <table class="wikitable">
+    <thead><tr>
+      <th>Tier</th><th>Boss lv</th><th>Max players</th><th>IVs</th><th>$</th><th>HP ×</th><th>Min damage</th><th>HA</th><th>AI</th><th>Max clears</th>
+    </tr></thead>
+    <tbody>${tierRows}</tbody>
+  </table>
+  <p class="muted">Tier-weights: ${weights}</p>
+
+  <h2>Dens terugvinden</h2>
+  <ol class="steps">
+    <li>Pin de crystal op <strong>Xaero’s World Map</strong> zodra je ‘m ziet.</li>
+    <li>Zet een genaamde waystone neer als de den farm-waardig is na reset.</li>
+    <li>Na ~${resetHours} uur game time opnieuw checken — boss/tier kan wisselen.</li>
+  </ol>
+
+  <h2>Veelgemaakte fouten</h2>
+  <ul>
+    <li>T5+ starten onder de level cap zonder Revives</li>
+    <li>Damage-share negeren en geen reward krijgen</li>
+    <li>Eén type meenemen tegen een boss die dat walls</li>
+    <li>Den niet pinnen — en ‘m kwijtraken in de meadow</li>
+    <li>Raiden i.p.v. gyms terwijl je vastzit op de <a href="Level_Cap.html">level cap</a></li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Raid_Bosses.html">Raid-bosses</a> · <a href="Economy.html">Economie</a> · <a href="Voice_Chat.html">Voice chat</a> · <a href="Travel.html">Reizen</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Healing_and_Storage.html">Genezen &amp; opslag</a></p>
   ${navboxCore()}
   `,
-  });
+    };
+  })());
 
   track("Catching_and_Battling.html", {
     title: "Vangen &amp; vechten",
@@ -2044,9 +2131,9 @@ export function registerDutchSite({
   track("Raid_Bosses.html", {
     title: "Raid-bosses",
     breadcrumbs: crumbs({ label: "Raid-bosses", href: "Raid_Bosses.html" }),
-    lede: `${raids.bosses.length} raid-bosses om te doorzoeken.`,
+    lede: `Doorzoekbare index van ${raids.bosses.length} raid-bosses — species, tier en moves. Hoe dens werken: <a href="Raids.html">Raids</a>.`,
     body: `
-  <p>Volledige index: <a href="../../pages/Raid_Bosses.html">Raid bosses (EN)</a>. Uitleg: <a href="Raids.html">Raids</a>.</p>
+  <p>Volledige zoekbare tabel: <a href="../../pages/Raid_Bosses.html">Raid bosses (EN)</a>. Uitleg over dens, tiers en rewards: <a href="Raids.html">Raids</a>.</p>
   ${navboxCore()}
   `,
   });

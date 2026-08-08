@@ -310,7 +310,7 @@ const SEARCH_KEYWORDS = {
     "mega evolution z-move tera dynamax power spot late game checklist johto after blue keystone megastone gimmick",
   "Fishing.html":
     "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup",
-  "Raids.html": "raid den crystal boss tier",
+  "Raids.html": "raid den crystal boss tier damage share hidden ability waystone",
   "FAQ.html": "help problem question join discord",
   "Brock.html": "first gym rock boulder badge",
   "Misty.html": "second gym water cascade cerulean star seagrass",
@@ -1875,7 +1875,7 @@ writePage("Raid_Bosses.html", {
     { label: "Main Page", href: "../index.html" },
     { label: "Raid bosses", href: "Raid_Bosses.html" },
   ],
-  lede: `Boss entries from <code>cobblemonraiddens</code> datapack (${raids.bosses.length} files).`,
+  lede: `Searchable index of ${raids.bosses.length} raid bosses — species, tier, and moves. How dens work: <a href="Raids.html">Raids</a>.`,
   body: `
   <div class="filter-bar">
     <input id="raid-filter" type="search" placeholder="Filter bosses…" style="min-width:220px;flex:1" />
@@ -1981,6 +1981,7 @@ registerDeepPages({
   shiny,
   xpMult,
   advancements,
+  raids,
 });
 
 registerMinecraftGuides({
