@@ -1102,7 +1102,8 @@ html.custom-cursor * {
   left: 0;
   width: 56px;
   height: 56px;
-  margin: -18px 0 0 -16px;
+  /* Center on pokéball body (~14px, 15px from tip hotspot) */
+  margin: -13px 0 0 -14px;
   border-radius: 50%;
   background: radial-gradient(
     circle,
@@ -1122,11 +1123,11 @@ html.custom-cursor * {
   left: 0;
   width: 48px;
   height: 48px;
-  margin: -14px 0 0 -12px;
+  margin: -9px 0 0 -10px;
   will-change: transform;
   z-index: 1;
   opacity: 0.85;
-  transition: opacity 0.18s ease, margin 0.2s ease;
+  transition: opacity 0.18s ease;
 }
 .cursor-orbit svg {
   display: block;
@@ -1156,9 +1157,9 @@ html.custom-cursor * {
   position: fixed;
   top: 0;
   left: 0;
-  width: 30px;
-  height: 30px;
-  margin: -5px 0 0 -3px;
+  width: 32px;
+  height: 32px;
+  margin: -1px 0 0 -2px;
   border-radius: 50%;
   border: 1.5px solid rgba(94, 196, 200, 0.5);
   box-shadow:
@@ -1234,7 +1235,7 @@ html.custom-cursor * {
 .cursor-fx.is-hot .cursor-aura {
   width: 68px;
   height: 68px;
-  margin: -24px 0 0 -22px;
+  margin: -19px 0 0 -20px;
   animation-duration: 1.4s;
   background: radial-gradient(
     circle,
@@ -1250,9 +1251,9 @@ html.custom-cursor * {
   stroke: rgba(240, 180, 41, 0.7);
 }
 .cursor-fx.is-hot .cursor-ring {
-  width: 36px;
-  height: 36px;
-  margin: -8px 0 0 -6px;
+  width: 38px;
+  height: 38px;
+  margin: -4px 0 0 -5px;
   border-color: rgba(240, 180, 41, 0.75);
   box-shadow:
     0 0 0 1px rgba(94, 196, 200, 0.3),
@@ -1273,9 +1274,9 @@ html.custom-cursor * {
   transform: scale(0.86) rotate(6deg);
 }
 .cursor-fx.is-click .cursor-ring {
-  width: 24px;
-  height: 24px;
-  margin: -2px 0 0 0;
+  width: 26px;
+  height: 26px;
+  margin: 2px 0 0 1px;
   border-color: rgba(240, 180, 41, 0.9);
   box-shadow: 0 0 14px rgba(240, 180, 41, 0.45);
 }
@@ -1285,7 +1286,7 @@ html.custom-cursor * {
 .cursor-fx.is-click .cursor-aura {
   width: 40px;
   height: 40px;
-  margin: -10px 0 0 -8px;
+  margin: -5px 0 0 -6px;
 }
 
 .cursor-fx.is-text .cursor-ball { display: none; }
@@ -1296,7 +1297,7 @@ html.custom-cursor * {
   opacity: 0.35;
   width: 22px;
   height: 22px;
-  margin: -4px 0 0 -6px;
+  margin: 4px 0 0 3px;
 }
 .cursor-fx.is-text .cursor-tip {
   width: 12px;
@@ -1309,8 +1310,8 @@ html.custom-cursor * {
   to { transform: rotate(360deg); }
 }
 @keyframes cursorAuraPulse {
-  0%, 100% { opacity: 0.7; transform: translate3d(0, 0, 0) scale(1); }
-  50% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.08); }
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
 }
 
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {

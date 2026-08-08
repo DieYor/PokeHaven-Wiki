@@ -101,12 +101,8 @@
 
     let mx = window.innerWidth / 2;
     let my = window.innerHeight / 2;
-    let rx = mx;
-    let ry = my;
     let ax = mx;
     let ay = my;
-    let ox = mx;
-    let oy = my;
     let visible = false;
     let raf = 0;
     let looping = false;
@@ -131,17 +127,14 @@
     }
 
     function tick() {
-      // Layered lag: aura slowest, orbit mid, ring closest — reads as energy field
-      ax += (mx - ax) * 0.12;
-      ay += (my - ay) * 0.12;
-      ox += (mx - ox) * 0.16;
-      oy += (my - oy) * 0.16;
-      rx += (mx - rx) * 0.28;
-      ry += (my - ry) * 0.28;
+      // Orbit + ring lock to the pokéball; only the soft aura trails slightly
+      ax += (mx - ax) * 0.22;
+      ay += (my - ay) * 0.22;
 
-      tip.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
-      ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
-      orbit.style.transform = `translate3d(${ox}px, ${oy}px, 0)`;
+      const pos = `translate3d(${mx}px, ${my}px, 0)`;
+      tip.style.transform = pos;
+      ring.style.transform = pos;
+      orbit.style.transform = pos;
       aura.style.transform = `translate3d(${ax}px, ${ay}px, 0)`;
       raf = requestAnimationFrame(tick);
     }
@@ -167,8 +160,8 @@
         my = e.clientY;
         if (!visible) {
           visible = true;
-          rx = ax = ox = mx;
-          ry = ay = oy = my;
+          ax = mx;
+          ay = my;
           lastX = mx;
           lastY = my;
           root.classList.add("is-on");
