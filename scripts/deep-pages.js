@@ -436,27 +436,50 @@ export function registerDeepPages({
       { label: "Main Page", href: "../index.html" },
       { label: "Riding and flying", href: "Riding.html" },
     ],
-    lede: "Mount Pokémon to cross the map faster. Flying types can take you airborne; land mounts still save huge walk time.",
+    lede: "Mount a Pokémon to cross the map faster. Flyers open the sky; land mounts still beat walking every gym route.",
     body: `
     <h2>How to ride</h2>
     <ol class="steps">
       <li>Send out a rideable Pokémon with <kbd>R</kbd>.</li>
       <li>Hold <kbd>Shift</kbd> and right-click it → choose <strong>Ride</strong>.</li>
-      <li>Move with WASD + mouse. Dismount with <kbd>R</kbd> or sneak.</li>
+      <li>Move with WASD + mouse look. Dismount with <kbd>R</kbd> or sneak.</li>
     </ol>
+    <table class="wikitable">
+      <thead><tr><th>Action</th><th>Default</th></tr></thead>
+      <tbody>
+        <tr><td>Send out / recall</td><td><kbd>R</kbd></td></tr>
+        <tr><td>Open Pokémon interact menu</td><td><kbd>Shift</kbd> + right-click</td></tr>
+        <tr><td>Dismount</td><td><kbd>R</kbd> or sneak</td></tr>
+      </tbody>
+    </table>
     <div class="callout tip">
       <div class="label">Stamina</div>
-      This pack config uses infinite ride stamina — explore freely without dismounting every minute.
+      On PokeHaven EU, ride stamina is unlimited — you can stay mounted for long gym hikes.
     </div>
 
     <h2>Early mounts</h2>
     <ul>
-      <li>Bird lines such as Pidgeot / Fearow once evolved</li>
-      <li>Later: Charizard, Dragonite, and other flyers</li>
-      <li>Land mounts are fine for Brock/Misty routes if you lack flyers</li>
+      <li><strong>Early Kanto:</strong> any solid land mount beats walking — birds help once evolved (Pidgeot / Fearow lines).</li>
+      <li><strong>Mid game:</strong> a flyer (Charizard, larger birds, later Dragonite-type mounts) for long map hops.</li>
+      <li>You do <em>not</em> need a flyer before Brock or Misty — a land mount + waystones is enough.</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Travel.html">Travel</a> · <a href="First_Hours.html">First hours</a></p>
+    <h2>Habits that save time</h2>
+    <ul>
+      <li>Pair riding with a <a href="Travel.html">waystone network</a> — ride out, teleport home.</li>
+      <li>Land and heal before gym fights; don’t start battles while still figuring out controls.</li>
+      <li>Keep your mount claimed/safe near your base so death doesn’t strand you mid-continent.</li>
+      <li>Flying is for travel, not “I never need maps” — still craft gym maps (<a href="Gym_Maps.html">Gym maps</a>).</li>
+    </ul>
+
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>Sending out a non-rideable species and wondering why Ride is missing.</li>
+      <li>Recalling the mount into the PC with no waystone nearby.</li>
+      <li>Crashing into terrain / lava while flying at night — light the landing zone.</li>
+    </ul>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Travel.html">Travel</a> · <a href="First_Hours.html">First hours</a> · <a href="Gym_Maps.html">Gym maps</a></p>
     ${navboxSystems()}
     `,
   });
@@ -850,30 +873,65 @@ export function registerDeepPages({
       { label: "Main Page", href: "../index.html" },
       { label: "Travel", href: "Travel.html" },
     ],
-    lede: "Waystones are free fast-travel on this pack. Combine them with gym maps and Xaero pins so you never re-walk the same 2000 blocks.",
+    lede: "Waystones are free fast-travel on PokeHaven EU. Combine them with gym maps, Xaero pins, and a mount so you never re-walk the same 2000 blocks.",
     body: `
     ${figure(
       "../assets/waystone.png",
-      "<strong>Waystone.</strong> Right-click to activate. Shift + right-click to rename. Build a network: Spawn, Home, each gym town.",
+      "<strong>Waystone.</strong> Right-click to activate. Shift + right-click to rename. Build a network: Spawn, Home, each gym stop.",
       "Waystone teleport block"
     )}
-    <h2>Setup walkthrough</h2>
+    <h2>Day-one setup</h2>
     <ol class="steps">
-      <li>Activate the spawn waystone on day one.</li>
-      <li>Place / activate one at your claimed base.</li>
-      <li>After every gym, activate a stone nearby (or place one if you carried extras).</li>
-      <li>Rename clearly: <em>Home</em>, <em>Brock</em>, <em>Misty</em>, etc.</li>
+      <li>Activate the <strong>spawn</strong> waystone as soon as you load in.</li>
+      <li>Place and activate one at your <a href="Claims.html">claimed</a> base (next to bed + chests).</li>
+      <li>After every gym (or long hike), activate a stone nearby — or place one if you brought extras.</li>
+      <li>Rename clearly: <em>Home</em>, <em>Brock</em>, <em>Misty</em>, <em>Raid dens</em>, etc.</li>
     </ol>
+    <div class="callout tip">
+      <div class="label">Free network</div>
+      On this server, waystones have <strong>no teleport cost</strong> and no cooldown. Use them often.
+    </div>
+
     <h2>Waystones vs pins vs gym maps</h2>
     <table class="wikitable">
-      <thead><tr><th>System</th><th>Others see it?</th><th>Teleports?</th></tr></thead>
+      <thead><tr><th>System</th><th>What it does</th><th>Teleports?</th></tr></thead>
       <tbody>
-        <tr><td>Waystone</td><td>World block — others must activate too</td><td>Yes</td></tr>
-        <tr><td>Xaero pin</td><td>Usually only you</td><td>No</td></tr>
-        <tr><td>Gym map</td><td>Your item</td><td>No — navigation only</td></tr>
+        <tr><td>Waystone</td><td>World block — you (and others who activate it) can warp there</td><td>Yes</td></tr>
+        <tr><td>Xaero pin</td><td>Personal map marker</td><td>No</td></tr>
+        <tr><td>Gym map</td><td>Finished map item with coordinates for a leader</td><td>No — navigation only</td></tr>
       </tbody>
     </table>
-    <p>Also useful: Nature’s Compass, Explorer’s Compass, <a href="Riding.html">Riding</a>.</p>
+
+    <h2>Gym-route habit</h2>
+    <ol class="steps">
+      <li>Craft the leader’s map on the right cartography table — <a href="Gym_Maps.html">Gym maps</a>.</li>
+      <li>Pin the coordinates in Xaero if you like a trail on the minimap.</li>
+      <li>Ride or walk out (<a href="Riding.html">Riding</a>), fight, then waystone home to heal and restock.</li>
+      <li>Leave a named waystone near the gym if you’ll return for rematches, shops, or friends.</li>
+    </ol>
+
+    <h2>Other travel tools</h2>
+    <ul>
+      <li><strong>Nature’s Compass / Explorer’s Compass</strong> — find biomes or structures when maps aren’t enough.</li>
+      <li><strong>Xaero’s World Map</strong> — zoom out, pin dens, mark caves, share coords in chat.</li>
+      <li><strong>Bed + waystone at home</strong> — death should be a teleport + short walk, not a continent hike.</li>
+    </ul>
+
+    <h2>Etiquette</h2>
+    <ul>
+      <li>Don’t break or grief someone else’s waystone network.</li>
+      <li>Public / shared stones: activate them, don’t rename them into a joke if others rely on the label.</li>
+      <li>Ask before planting a stone deep inside another player’s claim.</li>
+    </ul>
+
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>Walking past a stone without activating it — it won’t appear in your list.</li>
+      <li>Only pinning Xaero and wondering why you can’t teleport.</li>
+      <li>Opening an Empty Map in the world before gym crafting — ruins that map for the cartography recipe.</li>
+    </ul>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Riding.html">Riding</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">First hours</a></p>
     ${navboxSystems()}
     `,
   });

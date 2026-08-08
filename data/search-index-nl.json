@@ -62,13 +62,13 @@
   {
     "title": "Reizen",
     "href": "pages/Travel.html",
-    "blurb": "Waystones, maps en hoe je niet verdwaalt tussen gyms.",
+    "blurb": "Waystones zijn gratis snelle travel op PokeHaven EU. Combineer ze met gym-maps, Xaero-pins en een mount zodat je nooit dezelfde 2000 blokken opnieuw loopt.",
     "keywords": "waystone teleport travel fast travel"
   },
   {
     "title": "Voice chat",
     "href": "pages/Voice_Chat.html",
-    "blurb": "Simple Voice Chat: afstanden, groepen en fatsoenlijke push-to-talk.",
+    "blurb": "Simple Voice Chat zit in het pack. Nabij praten werkt in-game — Discord is optioneel voor lobby, nieuws en aankondigingen.",
     "keywords": "mic voice chat simple voice talk"
   },
   {
@@ -168,9 +168,9 @@
     "keywords": "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup"
   },
   {
-    "title": "Rijden",
+    "title": "Rijden &amp; vliegen",
     "href": "pages/Riding.html",
-    "blurb": "Pokémon als mount gebruiken om sneller te reizen.",
+    "blurb": "Berijd een Pokémon om sneller over de map te gaan. Flyers openen de lucht; land-mounts winnen het nog steeds van lopen.",
     "keywords": ""
   },
   {

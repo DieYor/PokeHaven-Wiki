@@ -168,15 +168,9 @@
     "keywords": "claim ftb chunks protect grief chest land party"
   },
   {
-    "title": "Travel",
-    "href": "pages/Travel.html",
-    "blurb": "Waystones are free fast-travel on this pack. Combine them with gym maps and Xaero pins so you never re-walk the same 2000 blocks.",
-    "keywords": "waystone teleport travel fast travel"
-  },
-  {
     "title": "Voice chat",
     "href": "pages/Voice_Chat.html",
-    "blurb": "Simple Voice Chat is included. You do not need Discord for nearby talk.",
+    "blurb": "Simple Voice Chat is built into the pack. Nearby talk works in-game — Discord is optional for lobby chat and announcements.",
     "keywords": "mic voice chat simple voice talk"
   },
   {
@@ -236,7 +230,7 @@
   {
     "title": "Riding and flying",
     "href": "pages/Riding.html",
-    "blurb": "Mount Pokémon to cross the map faster. Flying types can take you airborne; land mounts still save huge walk time.",
+    "blurb": "Mount a Pokémon to cross the map faster. Flyers open the sky; land mounts still beat walking every gym route.",
     "keywords": ""
   },
   {
@@ -256,6 +250,12 @@
     "href": "pages/Common_Mistakes.html",
     "blurb": "Fix these once and you skip most early frustration on PokeHaven EU.",
     "keywords": ""
+  },
+  {
+    "title": "Travel",
+    "href": "pages/Travel.html",
+    "blurb": "Waystones are free fast-travel on PokeHaven EU. Combine them with gym maps, Xaero pins, and a mount so you never re-walk the same 2000 blocks.",
+    "keywords": "waystone teleport travel fast travel"
   },
   {
     "title": "Minecraft survival hub",

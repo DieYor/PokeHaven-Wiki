@@ -1655,31 +1655,7 @@ writePage("Claims.html", {
   `,
 });
 
-writePage("Travel.html", {
-  title: "Travel",
-  breadcrumbs: [
-    { label: "Main Page", href: "../index.html" },
-    { label: "Travel", href: "Travel.html" },
-  ],
-  lede: "Waystones are free fast-travel hubs on this pack config (no cost / cooldown).",
-  body: `
-  <figure class="figure">
-    <img src="../assets/waystone.png" alt="Waystone" />
-    <figcaption>Right-click to activate. Shift + right-click to rename. Build a network: Spawn, Home, Gyms, Towns.</figcaption>
-  </figure>
-  <h2>Waystones vs map pins</h2>
-  <table class="wikitable">
-    <thead><tr><th>System</th><th>Others see it?</th><th>Teleports?</th></tr></thead>
-    <tbody>
-      <tr><td>Waystone</td><td>Shared if public / server stones</td><td>Yes, once activated</td></tr>
-      <tr><td>Xaero map pin</td><td>Usually only you</td><td>No — marker only</td></tr>
-      <tr><td>Gym map</td><td>Item in your inventory</td><td>No — navigation aid</td></tr>
-    </tbody>
-  </table>
-  <p>Also useful: Nature’s Compass, Explorer’s Compass, Xaero’s World Map.</p>
-  ${navboxSystems()}
-  `,
-});
+// Travel.html is written in deep-pages.js (full guide).
 
 writePage("Voice_Chat.html", {
   title: "Voice chat",
@@ -1687,20 +1663,56 @@ writePage("Voice_Chat.html", {
     { label: "Main Page", href: "../index.html" },
     { label: "Voice chat", href: "Voice_Chat.html" },
   ],
-  lede: "Simple Voice Chat is included. You do not need Discord for nearby talk.",
+  lede: "Simple Voice Chat is built into the pack. Nearby talk works in-game — Discord is optional for lobby chat and announcements.",
   infobox: infoboxHtml("Voice", [
-    ["Hear distance", "~48 blocks (pack default)"],
+    ["Hear distance", "~48 blocks"],
     ["Whisper", "~24 blocks"],
     ["Groups", "Enabled"],
     ["Forced VC", "No"],
   ]),
   body: `
-  <h2>Tips</h2>
+  <h2>First join</h2>
+  <ol class="steps">
+    <li>Join PokeHaven EU and allow the mic / voice-chat prompt if Windows or the game asks.</li>
+    <li>Open <strong>Esc → Options → Controls → Simple Voice Chat</strong> and set <strong>Push to talk</strong> (nicest in groups).</li>
+    <li>Pick the correct input device if nobody can hear you.</li>
+    <li>Test with a friend nearby — you should hear each other within the hear distance.</li>
+  </ol>
+
+  <h2>How it works here</h2>
   <ul>
-    <li>Allow the voice chat permission / open the keybind menu on first join.</li>
-    <li>Use groups for raid parties or building crews.</li>
-    <li>Sound Physics can make caves / buildings sound more realistic.</li>
+    <li><strong>Proximity chat</strong> — people near you hear you; walk away and the volume fades.</li>
+    <li><strong>Whisper</strong> — shorter range for quieter talk (~24 blocks).</li>
+    <li><strong>Groups</strong> — useful for raid parties, gym runs, or building crews so you stay linked while exploring.</li>
+    <li>Voice is <strong>not forced</strong> — mute or stay in text if you prefer.</li>
   </ul>
+
+  <h2>Discord vs in-game voice</h2>
+  <table class="wikitable">
+    <thead><tr><th>Use</th><th>Best tool</th></tr></thead>
+    <tbody>
+      <tr><td>Talk while exploring / raiding next to someone</td><td>In-game Simple Voice Chat</td></tr>
+      <tr><td>Server news, IP, rules, LFG posts</td><td><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a></td></tr>
+      <tr><td>Long AFK voice while not near each other</td><td>Discord (or a VC group if you set one up)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li><strong>No one hears you:</strong> wrong mic device, muted key held wrong, or OS privacy blocked Minecraft.</li>
+    <li><strong>You hear nothing:</strong> output device, game volume, or you’re out of range / not in the same group.</li>
+    <li><strong>Echo / feedback:</strong> use headphones; push-to-talk beats open mic near others.</li>
+    <li>Caves and buildings can sound more “real” if Sound Physics is on — that’s normal, not a bug.</li>
+  </ul>
+
+  <h2>Etiquette</h2>
+  <ul>
+    <li>Push-to-talk when you’re near a crowd or raid.</li>
+    <li>Don’t blast music into open mic.</li>
+    <li>Respect mutes — if someone deafens or leaves voice, don’t nag in chat.</li>
+  </ul>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Raids.html">Raids</a> · <a href="Getting_Started.html">Getting started</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxSystems()}
   `,
 });

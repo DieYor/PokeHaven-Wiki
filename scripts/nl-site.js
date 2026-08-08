@@ -551,14 +551,65 @@ export function registerDutchSite({
   track("Travel.html", {
     title: "Reizen",
     breadcrumbs: crumbs({ label: "Reizen", href: "Travel.html" }),
-    lede: "Waystones, maps en hoe je niet verdwaalt tussen gyms.",
+    lede: "Waystones zijn gratis snelle travel op PokeHaven EU. Combineer ze met gym-maps, Xaero-pins en een mount zodat je nooit dezelfde 2000 blokken opnieuw loopt.",
     body: `
-  <h2>Waystones</h2>
-  <p>Activeer waystones die je vindt en gebruik ze als snelle terugweg naar huis of hubs.</p>
-  <h2>Gym-maps</h2>
-  <p>Cartography-items wijzen naar gyms — <a href="Gym_Maps.html">Gym-maps</a>. Lege maps die je per ongeluk “opent” in de wereld zijn waardeloos voor die craft; craft opnieuw.</p>
-  <h2>Rijden</h2>
-  <p>Sommige Pokémon kun je berijden — <a href="Riding.html">Rijden</a>.</p>
+  ${figure(
+    "../../assets/waystone.png",
+    "<strong>Waystone.</strong> Rechtsklik om te activeren. Shift + rechtsklik om te hernoemen. Bouw een netwerk: Spawn, Home, elke gym-stop.",
+    "Waystone teleport-blok"
+  )}
+  <h2>Setup op dag één</h2>
+  <ol class="steps">
+    <li>Activeer de <strong>spawn</strong>-waystone zodra je inlogt.</li>
+    <li>Plaats en activeer er één bij je <a href="Claims.html">geclaimde</a> basis (bij bed + chests).</li>
+    <li>Na elke gym (of lange hike): activeer een steen in de buurt — of plaats er zelf één.</li>
+    <li>Hernoem duidelijk: <em>Home</em>, <em>Brock</em>, <em>Misty</em>, <em>Raid dens</em>, enz.</li>
+  </ol>
+  <div class="callout tip">
+    <div class="label">Gratis netwerk</div>
+    Op deze server hebben waystones <strong>geen teleport-kosten</strong> en geen cooldown. Gebruik ze vaak.
+  </div>
+
+  <h2>Waystones vs pins vs gym-maps</h2>
+  <table class="wikitable">
+    <thead><tr><th>Systeem</th><th>Wat het doet</th><th>Teleporteert?</th></tr></thead>
+    <tbody>
+      <tr><td>Waystone</td><td>Wereldblok — jij (en anderen die ‘m activeren) kunnen erheen warpen</td><td>Ja</td></tr>
+      <tr><td>Xaero-pin</td><td>Persoonlijke map-marker</td><td>Nee</td></tr>
+      <tr><td>Gym-map</td><td>Afgewerkte map met coördinaten voor een leader</td><td>Nee — alleen navigatie</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Gym-route gewoonte</h2>
+  <ol class="steps">
+    <li>Craft de map van de leader op de juiste cartography-tafel — <a href="Gym_Maps.html">Gym-maps</a>.</li>
+    <li>Pin de coördinaten in Xaero als je een spoor op de minimap wilt.</li>
+    <li>Rijd of loop erheen (<a href="Riding.html">Rijden</a>), vecht, waystone terug naar huis om te healen.</li>
+    <li>Laat een genaamde waystone bij de gym achter als je terugkomt voor rematches of vrienden.</li>
+  </ol>
+
+  <h2>Andere tools</h2>
+  <ul>
+    <li><strong>Nature’s Compass / Explorer’s Compass</strong> — biomes of structures zoeken.</li>
+    <li><strong>Xaero’s World Map</strong> — uitzoomen, dens pinnen, caves markeren.</li>
+    <li><strong>Bed + waystone thuis</strong> — death moet een korte teleporteer + wandeling zijn, geen continent-hike.</li>
+  </ul>
+
+  <h2>Etiquette</h2>
+  <ul>
+    <li>Breek of grief geen andermans waystone-netwerk.</li>
+    <li>Publieke stenen: activeer ze, hernoem ze niet als anderen de naam nodig hebben.</li>
+    <li>Vraag voordat je een steen diep in iemands claim plant.</li>
+  </ul>
+
+  <h2>Veelgemaakte fouten</h2>
+  <ul>
+    <li>Langslopen zonder te activeren — dan staat ‘ie niet in je lijst.</li>
+    <li>Alleen Xaero pinnen en verwachten dat je kunt teleporteren.</li>
+    <li>Empty Map in de wereld openen vóór gym-crafting — die map is dan waardeloos voor de cartography-recept.</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Riding.html">Rijden</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">Eerste uren</a></p>
   ${navboxCore()}
   `,
   });
@@ -566,16 +617,57 @@ export function registerDutchSite({
   track("Voice_Chat.html", {
     title: "Voice chat",
     breadcrumbs: crumbs({ label: "Voice chat", href: "Voice_Chat.html" }),
-    lede: "Simple Voice Chat: afstanden, groepen en fatsoenlijke push-to-talk.",
+    lede: "Simple Voice Chat zit in het pack. Nabij praten werkt in-game — Discord is optioneel voor lobby, nieuws en aankondigingen.",
+    infobox: `<div class="infobox-title">Voice</div>
+  <table>
+    <tr><th>Hoorafstand</th><td>~48 blokken</td></tr>
+    <tr><th>Whisper</th><td>~24 blokken</td></tr>
+    <tr><th>Groepen</th><td>Aan</td></tr>
+    <tr><th>Forced VC</th><td>Nee</td></tr>
+  </table>`,
     body: `
-  <h2>Instellen</h2>
-  <p>Esc → Options → Controls → Simple Voice Chat. Push-to-talk is het fijnst in groepen.</p>
-  <h2>Gebruik</h2>
+  <h2>Eerste keer</h2>
+  <ol class="steps">
+    <li>Join PokeHaven EU en sta mic / voice-chat toe als Windows of het spel daarom vraagt.</li>
+    <li>Open <strong>Esc → Options → Controls → Simple Voice Chat</strong> en zet <strong>Push to talk</strong> (fijnst in groepen).</li>
+    <li>Kies het juiste input-device als niemand je hoort.</li>
+    <li>Test met iemand in de buurt — binnen de hoorafstand moet je elkaar horen.</li>
+  </ol>
+
+  <h2>Hoe het hier werkt</h2>
   <ul>
-    <li>Proximity chat nabij andere spelers.</li>
-    <li>Groepen/channels voor raids of gym-runs.</li>
-    <li>Respecteer mute/deaf settings van anderen.</li>
+    <li><strong>Proximity chat</strong> — mensen bij je horen je; loop weg en het volume zakt.</li>
+    <li><strong>Whisper</strong> — korter bereik (~24 blokken).</li>
+    <li><strong>Groepen</strong> — handig voor raids, gym-runs of bouwcrew terwijl je uit elkaar loopt.</li>
+    <li>Voice is <strong>niet verplicht</strong> — mute of blijf in text als je wilt.</li>
   </ul>
+
+  <h2>Discord vs in-game voice</h2>
+  <table class="wikitable">
+    <thead><tr><th>Situatie</th><th>Beste tool</th></tr></thead>
+    <tbody>
+      <tr><td>Praten tijdens exploreren / raiden naast iemand</td><td>In-game Simple Voice Chat</td></tr>
+      <tr><td>Server-nieuws, IP, rules, LFG</td><td><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a></td></tr>
+      <tr><td>Lange AFK-voice terwijl je niet bij elkaar bent</td><td>Discord (of een VC-groep)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Problemen oplossen</h2>
+  <ul>
+    <li><strong>Niemand hoort je:</strong> verkeerde mic, mute-toets, of Windows privacy blokkeert Minecraft.</li>
+    <li><strong>Jij hoort niets:</strong> output-device, game-volume, buiten bereik / niet in dezelfde groep.</li>
+    <li><strong>Echo:</strong> koptelefoon; push-to-talk i.p.v. open mic.</li>
+    <li>Caves/gebouwen kunnen “echter” klinken met Sound Physics — dat is normaal.</li>
+  </ul>
+
+  <h2>Etiquette</h2>
+  <ul>
+    <li>Push-to-talk bij een drukke raid of crowd.</li>
+    <li>Geen muziek blazen in open mic.</li>
+    <li>Respecteer mutes — als iemand deafent, niet zeuren in chat.</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Raids.html">Raids</a> · <a href="Getting_Started.html">Aan de slag</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxCore()}
   `,
   });
@@ -1505,11 +1597,52 @@ export function registerDutchSite({
   });
 
   track("Riding.html", {
-    title: "Rijden",
-    breadcrumbs: crumbs({ label: "Rijden", href: "Riding.html" }),
-    lede: "Pokémon als mount gebruiken om sneller te reizen.",
+    title: "Rijden &amp; vliegen",
+    breadcrumbs: crumbs({ label: "Rijden & vliegen", href: "Riding.html" }),
+    lede: "Berijd een Pokémon om sneller over de map te gaan. Flyers openen de lucht; land-mounts winnen het nog steeds van lopen.",
     body: `
-  <p>Sommige species zijn rideable. Check controls in Options. Combineer met <a href="Travel.html">Waystones</a> voor lange routes.</p>
+  <h2>Hoe rijden</h2>
+  <ol class="steps">
+    <li>Stuur een rideable Pokémon uit met <kbd>R</kbd>.</li>
+    <li>Houd <kbd>Shift</kbd> in en rechtsklik → kies <strong>Ride</strong>.</li>
+    <li>Beweeg met WASD + muis. Afstappen met <kbd>R</kbd> of sneak.</li>
+  </ol>
+  <table class="wikitable">
+    <thead><tr><th>Actie</th><th>Standaard</th></tr></thead>
+    <tbody>
+      <tr><td>Uitsturen / recall</td><td><kbd>R</kbd></td></tr>
+      <tr><td>Interact-menu</td><td><kbd>Shift</kbd> + rechtsklik</td></tr>
+      <tr><td>Afstappen</td><td><kbd>R</kbd> of sneak</td></tr>
+    </tbody>
+  </table>
+  <div class="callout tip">
+    <div class="label">Stamina</div>
+    Op PokeHaven EU is ride-stamina onbeperkt — je kunt lang gemount blijven op gym-hikes.
+  </div>
+
+  <h2>Vroege mounts</h2>
+  <ul>
+    <li><strong>Vroeg Kanto:</strong> elke stevige land-mount wint van lopen — vogels helpen na evolutie (Pidgeot / Fearow).</li>
+    <li><strong>Midgame:</strong> een flyer (Charizard, grotere vogels, later Dragonite-achtigen) voor lange hops.</li>
+    <li>Je hebt <em>geen</em> flyer nodig vóór Brock of Misty — land-mount + waystones is genoeg.</li>
+  </ul>
+
+  <h2>Gewoontes die tijd schelen</h2>
+  <ul>
+    <li>Combineer rijden met een <a href="Travel.html">waystone-netwerk</a> — eruit rijden, thuis warpen.</li>
+    <li>Land en heal vóór gym-fights; begin geen battle terwijl je nog controls zoekt.</li>
+    <li>Houd je mount veilig bij je basis zodat death je niet midden op de map strandt.</li>
+    <li>Vliegen is voor travel, niet “ik heb geen maps nodig” — craft nog steeds gym-maps (<a href="Gym_Maps.html">Gym-maps</a>).</li>
+  </ul>
+
+  <h2>Veelgemaakte fouten</h2>
+  <ul>
+    <li>Een niet-rideable species uitsturen en zoeken naar Ride.</li>
+    <li>Mount recallen naar de PC zonder waystone in de buurt.</li>
+    <li>‘s Nachts tegen terrain / lava vliegen — verlicht je landingszone.</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Travel.html">Reizen</a> · <a href="First_Hours.html">Eerste uren</a> · <a href="Gym_Maps.html">Gym-maps</a></p>
   ${navboxCore()}
   `,
   });
