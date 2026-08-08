@@ -198,25 +198,25 @@ export function registerDutchSite({
     title: "Aan de slag",
     searchIndexTitle: "Aan de slag",
     breadcrumbs: crumbs({ label: "Aan de slag", href: "Getting_Started.html" }),
-    lede: "Installeer CobbleVerse <strong>1.7.42</strong>, join <strong>PokeHaven EU</strong>, en ken de woorden die de rest van de wiki gebruikt.",
+    lede: "Installeer de <strong>PokeHaven EU Client 1.7.42</strong>, join de server, en ken de woorden die de rest van de wiki gebruikt.",
     body: `
   <h2>Wat je nodig hebt</h2>
   <ul>
     <li>Minecraft <strong>Java Edition</strong> (Microsoft-account)</li>
     <li><strong>CurseForge</strong>-app</li>
-    <li>Onze gedeelde pack-zip — <strong>exact 1.7.42</strong>, gelijk aan de server</li>
+    <li>Onze <strong>PokeHaven EU Client 1.7.42</strong>-zip uit Discord <code>#how-to-join</code> (CobbleVerse + PokeHaven-menu/splash)</li>
   </ul>
 
   ${figure(
     guideImg("multiplayer-join.png"),
-    "<strong>Klaar om te spelen.</strong> Na import: naar het menu, daarna <code>PokeHaven EU</code> toevoegen in Multiplayer. Het IP wisselt — kopieer het altijd uit Discord, nooit uit oude screenshots.",
-    "CobbleVerse-client klaar voor multiplayer"
+    "<strong>Klaar om te spelen.</strong> Na import: naar het menu (PokeHaven-branding), daarna <code>PokeHaven EU</code> toevoegen in Multiplayer. Het IP wisselt — kopieer het altijd uit Discord, nooit uit oude screenshots.",
+    "PokeHaven-client klaar voor multiplayer"
   )}
 
   <h2>Installatie</h2>
   <ol class="steps">
     <li>Installeer CurseForge en log in.</li>
-    <li>Custom Profile → <strong>Import</strong> de gedeelde pack-zip.</li>
+    <li>Custom Profile → <strong>Import</strong> <code>PokeHaven-EU-Client-1.7.42.zip</code>.</li>
     <li>Wacht tot elke mod klaar is — niet afbreken.</li>
     <li>Start één keer tot het hoofdmenu, sluit af, start opnieuw (resource packs settelen).</li>
     <li>Multiplayer → Add Server:<br/>
@@ -226,12 +226,12 @@ export function registerDutchSite({
 
   <div class="callout tip">
     <div class="label">Join-checklist</div>
-    Servernaam: <strong>PokeHaven EU</strong>. Pack: <strong>1.7.42</strong>. IP alleen via <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a> (kan roteren).
+    Servernaam: <strong>PokeHaven EU</strong>. Pack: <strong>PokeHaven EU Client 1.7.42</strong>. IP alleen via <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a> (kan roteren).
   </div>
 
   ${critical(
     "nl",
-    "<strong>Kun je niet joinen?</strong> Bijna altijd een pack-mismatch. Importeer opnieuw CobbleVerse <strong>1.7.42</strong>. IP alleen uit Discord — nooit uit oude screenshots."
+    "<strong>Kun je niet joinen?</strong> Bijna altijd een pack-mismatch. Importeer opnieuw <strong>PokeHaven EU Client 1.7.42</strong>. IP alleen uit Discord — nooit uit oude screenshots."
   )}
 
   ${figure(
@@ -879,7 +879,7 @@ export function registerDutchSite({
   <h2>Ik kan niet joinen</h2>
   ${critical(
     "nl",
-    "<strong>Verkeerde pack-versie is meestal het probleem.</strong> Importeer opnieuw CobbleVerse <strong>1.7.42</strong>. Zie <a href=\"Getting_Started.html\">Aan de slag</a>."
+    "<strong>Verkeerde pack-versie is meestal het probleem.</strong> Importeer opnieuw <strong>PokeHaven EU Client 1.7.42</strong>. Zie <a href=\"Getting_Started.html\">Aan de slag</a>."
   )}
 
   <h2>Textures zien er kapot uit</h2>

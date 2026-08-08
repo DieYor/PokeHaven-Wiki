@@ -435,21 +435,21 @@ writePage("Getting_Started.html", {
     { label: "Main Page", href: "../index.html" },
     { label: "Getting started", href: "Getting_Started.html" },
   ],
-  lede: "How to install CobbleVerse 1.7.42 and join <strong>PokeHaven EU</strong>.",
+  lede: "How to install the <strong>PokeHaven EU Client 1.7.42</strong> and join the server.",
   body: `
   <h2>Requirements</h2>
   <ul>
     <li>Minecraft <strong>Java Edition</strong> (Microsoft account)</li>
     <li><strong>CurseForge</strong> app</li>
-    <li>Our shared pack zip — <strong>same version as the server</strong> (1.7.42)</li>
+    <li>Our <strong>PokeHaven EU Client 1.7.42</strong> zip from Discord <code>#how-to-join</code> (CobbleVerse + PokeHaven menus/splash)</li>
   </ul>
 
   <h2>Install steps</h2>
   <ol class="steps">
     <li>Install CurseForge and sign in.</li>
-    <li>Create Custom Profile → <strong>Import</strong> our pack zip.</li>
+    <li>Create Custom Profile → <strong>Import</strong> <code>PokeHaven-EU-Client-1.7.42.zip</code>.</li>
     <li>Wait for every mod/resource to finish downloading.</li>
-    <li>Launch once to the main menu, quit, launch again (helps resource packs settle).</li>
+    <li>Launch once to the main menu (you should see <strong>PokeHaven EU</strong> branding), quit, launch again if packs look unfinished.</li>
     <li>Multiplayer → <strong>Add Server</strong>:<br/>
       Server Name: <code>PokeHaven EU</code><br/>
       Server Address: the IP from Discord <code>#how-to-join</code> / announcements.</li>
@@ -457,7 +457,7 @@ writePage("Getting_Started.html", {
 
   ${critical(
     "en",
-    "<strong>Can't join?</strong> Almost always a pack version mismatch. Re-import the shared CobbleVerse <strong>1.7.42</strong> zip. Copy the IP from Discord — never from old screenshots."
+    "<strong>Can't join?</strong> Almost always a pack version mismatch. Re-import <strong>PokeHaven EU Client 1.7.42</strong> from Discord. Copy the IP from Discord — never from old screenshots."
   )}
 
   <h2>Important words</h2>
@@ -2267,7 +2267,7 @@ writePage("FAQ.html", {
   body: `
   ${figure(
     guideImg("multiplayer-join.png"),
-    "<strong>Joining.</strong> Server list name is <code>PokeHaven EU</code>. Pack must be CobbleVerse <strong>1.7.42</strong>. Copy the IP from Discord — it can rotate.",
+    "<strong>Joining.</strong> Server list name is <code>PokeHaven EU</code>. Install <strong>PokeHaven EU Client 1.7.42</strong> (CobbleVerse + our UI). Copy the IP from Discord — it can rotate.",
     "Client ready to join multiplayer"
   )}
 
@@ -2283,7 +2283,7 @@ writePage("FAQ.html", {
   <h2>I can't join the server</h2>
   ${critical(
     "en",
-    "<strong>Wrong pack version is the usual cause.</strong> Re-import the shared CobbleVerse <strong>1.7.42</strong> zip from Discord/Drive. See <a href=\"Getting_Started.html\">Getting started</a>."
+    "<strong>Wrong pack version is the usual cause.</strong> Re-import <strong>PokeHaven EU Client 1.7.42</strong> from Discord/Drive. See <a href=\"Getting_Started.html\">Getting started</a>."
   )}
 
   <h2>Textures look broken</h2>
