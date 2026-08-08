@@ -1,0 +1,10 @@
+{
+  "name": "pokehaven-wiki",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "parse": "node scripts/parse-pack.js && node scripts/parse-recipes.js"
+  }
+}

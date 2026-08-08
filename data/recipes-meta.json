@@ -1,0 +1,27 @@
+{
+  "count": 559,
+  "namespaces": [
+    "carved_wood",
+    "cobblecuisine",
+    "handcrafted",
+    "legendarymonuments",
+    "lumymon",
+    "mega_showdown",
+    "minecraft",
+    "obc",
+    "tmcraft",
+    "toms_storage"
+  ],
+  "byNamespace": {
+    "carved_wood": 12,
+    "cobblecuisine": 6,
+    "handcrafted": 16,
+    "legendarymonuments": 2,
+    "lumymon": 25,
+    "mega_showdown": 5,
+    "minecraft": 3,
+    "obc": 6,
+    "tmcraft": 483,
+    "toms_storage": 1
+  }
+}

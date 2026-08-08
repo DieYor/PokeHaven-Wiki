@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spawn lookup — PokeHaven EU Wiki</title>
+  <meta name="description" content="Search CobbleVerse world spawn pool rows (3120). Biome tags are pack tags (e.g. #cobblemon:is_forest)." />
+  <link rel="alternate" hreflang="en" href="pages/Spawn_Lookup.html" />
+  <link rel="alternate" hreflang="nl" href="../nl/pages/Spawn_Lookup.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../css/wiki.css" />
+</head>
+<body class="is-article">
+  <div class="world-bg" aria-hidden="true">
+    <img src="../assets/wiki-wallpaper.png" alt="" />
+  </div>
+  <div class="world-vignette" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-logo" href="../index.html">PokeHaven <span>Wiki</span></a>
+      <nav class="site-nav"><a href="Getting_Started.html">Start</a>
+<a href="Minecraft_Hub.html">Minecraft</a>
+<a href="Recipe_Browser.html">Recipes</a>
+<a href="Gyms_Kanto.html">Kanto</a>
+<a href="Economy.html">Economy</a>
+<a href="Raids.html">Raids</a>
+<a href="Catching_and_Battling.html">Combat</a>
+<a href="Spawn_Lookup.html">Data</a></nav>
+      <div class="lang-switch" role="navigation" aria-label="Language">
+    <a class="lang-btn active" href="#" hreflang="en" title="English" aria-current="true"><img class="flag-img" src="../assets/flags/gb.svg" width="20" height="14" alt="" /><span class="lang-code">EN</span></a>
+    <a class="lang-btn " href="../nl/pages/Spawn_Lookup.html" hreflang="nl" title="Nederlands" ><img class="flag-img" src="../assets/flags/nl.svg" width="20" height="14" alt="" /><span class="lang-code">NL</span></a>
+  </div>
+      <div class="search-wrap">
+        <input id="wiki-search" type="search" placeholder="Search the wiki…" autocomplete="off" />
+        <div id="wiki-search-results" class="search-results"></div>
+      </div>
+    </div>
+  </header>
+  <main class="page">
+    <div class="breadcrumbs"><a href="../index.html">Main Page</a> <span aria-hidden="true">/</span> <span>Spawn lookup</span></div>
+    <div class="article-layout no-infobox">
+      <article class="article" data-page-title="Spawn lookup" >
+        <h1 class="article-title">Spawn lookup</h1>
+        <p class="article-lede">Search CobbleVerse world spawn pool rows (3120). Biome tags are pack tags (e.g. <code>#cobblemon:is_forest</code>).</p>
+        <div class="toc-box" id="toc"><h2>Contents</h2><ol></ol></div>
+        
+  <div class="filter-bar">
+    <input id="spawn-q" type="search" placeholder="Pokémon name…" style="min-width:180px;flex:1" />
+    <input id="spawn-biome" type="search" placeholder="Biome contains…" style="min-width:180px;flex:1" />
+    <select id="spawn-bucket">
+      <option value="">All buckets</option>
+      <option>common</option>
+      <option>uncommon</option>
+      <option>rare</option>
+      <option>ultra-rare</option>
+    </select>
+  </div>
+  <p class="muted">Showing up to 200 matches. Full dataset: <code>data/spawns.json</code>.</p>
+  <div id="spawn-results"></div>
+  <script type="module">
+  const res = await fetch('../data/spawns-lite.json');
+  const SPAWNS = await res.json();
+  function render() {
+    const q = document.getElementById('spawn-q').value.toLowerCase();
+    const biome = document.getElementById('spawn-biome').value.toLowerCase();
+    const bucket = document.getElementById('spawn-bucket').value;
+    const rows = SPAWNS.filter(s =>
+      (!q || String(s.p).toLowerCase().includes(q)) &&
+      (!biome || String(s.m).toLowerCase().includes(biome)) &&
+      (!bucket || s.b === bucket)
+    ).slice(0, 200).map(s =>
+      '<tr><td>'+s.p+'</td><td>'+s.b+'</td><td>'+s.l+'</td><td>'+(s.w??'—')+'</td><td>'+s.t+'</td><td style="font-size:0.85em">'+s.m+'</td></tr>'
+    ).join('');
+    document.getElementById('spawn-results').innerHTML =
+      '<table class="wikitable"><thead><tr><th>Pokémon</th><th>Bucket</th><th>Level</th><th>Weight</th><th>Context</th><th>Biomes</th></tr></thead><tbody>'+
+      (rows || '<tr><td colspan="6">No matches</td></tr>') + '</tbody></table>';
+  }
+  for (const id of ['spawn-q','spawn-biome','spawn-bucket']) {
+    document.getElementById(id).addEventListener('input', render);
+    document.getElementById(id).addEventListener('change', render);
+  }
+  render();
+  </script>
+  <div class="navbox">
+    <div class="navbox-title">PokeHaven systems</div>
+    <div class="navbox-row"><div class="navbox-label">Core</div><div class="navbox-links">
+      <a href="Economy.html">Economy</a>
+      <a href="Raids.html">Raids</a>
+      <a href="Catching_and_Battling.html">Catching &amp; battling</a>
+      <a href="Poke_Balls.html">Poké Balls</a>
+      <a href="Essential_Recipes.html">Essential recipes</a>
+      <a href="Healing_and_Storage.html">Healing</a>
+      <a href="Breeding.html">Breeding</a>
+      <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
+    </div></div>
+    <div class="navbox-row"><div class="navbox-label">World</div><div class="navbox-links">
+      <a href="Claims.html">Claims</a>
+      <a href="Travel.html">Travel</a>
+      <a href="Riding.html">Riding</a>
+      <a href="Voice_Chat.html">Voice chat</a>
+      <a href="Minecraft_Hub.html">Minecraft hub</a>
+    </div></div>
+    <div class="navbox-row"><div class="navbox-label">Help</div><div class="navbox-links">
+      <a href="Pack_Differences.html">Pack differences</a>
+      <a href="Roadmap.html">30-day roadmap</a>
+      <a href="Achievements.html">Achievements</a>
+      <a href="Postgame_and_Legendaries.html">Post-game</a>
+      <a href="Common_Mistakes.html">Common mistakes</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="Recipe_Browser.html">Recipe browser</a>
+      <a href="Trainer_Index.html">Trainer index</a>
+      <a href="Raid_Bosses.html">Raid bosses</a>
+      <a href="Spawn_Lookup.html">Spawn lookup</a>
+    </div></div>
+  </div>
+  
+      </article>
+      
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>PokeHaven EU Wiki · CobbleVerse 1.7.42 · Player guide for our community server.</p>
+      <p class="footer-links"><a href="https://discord.gg/7EHPZfGwU4" rel="noopener noreferrer" target="_blank">Discord</a> · Server IP only from Discord</p>
+      <p class="muted">Pack data parsed from the shared CurseForge export. World coordinates may vary by seed/world.</p>
+      <p class="muted footer-stamp">Updated for CobbleVerse 1.7.42 · PokeHaven EU</p>
+    </div>
+  </footer>
+  <script>window.WIKI_PREFIX="../";window.WIKI_PAGE_PREFIX="../";window.WIKI_SEARCH_INDEX="../data/search-index.json";window.WIKI_LANG="en";</script>
+  <script src="../js/toc.js"></script>
+  <script src="../js/search-data-en.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/lightbox.js"></script>
+  <script src="../js/motion.js"></script>
+</body>
+</html>

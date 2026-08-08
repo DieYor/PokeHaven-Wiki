@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recipe browser — PokeHaven EU Wiki</title>
+  <meta name="description" content="Search 559 recipes parsed from CobbleVerse datapacks (TMs, LumyMon, cuisine, …). Cobblemon core ball recipes are also covered in Essential recipes because those live in mod JARs, not this datapack dump." />
+  <link rel="alternate" hreflang="en" href="pages/Recipe_Browser.html" />
+  <link rel="alternate" hreflang="nl" href="../nl/pages/Recipe_Browser.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../css/wiki.css" />
+</head>
+<body class="is-article">
+  <div class="world-bg" aria-hidden="true">
+    <img src="../assets/wiki-wallpaper.png" alt="" />
+  </div>
+  <div class="world-vignette" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-logo" href="../index.html">PokeHaven <span>Wiki</span></a>
+      <nav class="site-nav"><a href="Getting_Started.html">Start</a>
+<a href="Minecraft_Hub.html">Minecraft</a>
+<a href="Recipe_Browser.html">Recipes</a>
+<a href="Gyms_Kanto.html">Kanto</a>
+<a href="Economy.html">Economy</a>
+<a href="Raids.html">Raids</a>
+<a href="Catching_and_Battling.html">Combat</a>
+<a href="Spawn_Lookup.html">Data</a></nav>
+      <div class="lang-switch" role="navigation" aria-label="Language">
+    <a class="lang-btn active" href="#" hreflang="en" title="English" aria-current="true"><img class="flag-img" src="../assets/flags/gb.svg" width="20" height="14" alt="" /><span class="lang-code">EN</span></a>
+    <a class="lang-btn " href="../nl/pages/Recipe_Browser.html" hreflang="nl" title="Nederlands" ><img class="flag-img" src="../assets/flags/nl.svg" width="20" height="14" alt="" /><span class="lang-code">NL</span></a>
+  </div>
+      <div class="search-wrap">
+        <input id="wiki-search" type="search" placeholder="Search the wiki…" autocomplete="off" />
+        <div id="wiki-search-results" class="search-results"></div>
+      </div>
+    </div>
+  </header>
+  <main class="page">
+    <div class="breadcrumbs"><a href="../index.html">Main Page</a> <span aria-hidden="true">/</span> <span>Recipe browser</span></div>
+    <div class="article-layout no-infobox">
+      <article class="article" data-page-title="Recipe browser" >
+        <h1 class="article-title">Recipe browser</h1>
+        <p class="article-lede">Search <strong>559</strong> recipes parsed from CobbleVerse datapacks (TMs, LumyMon, cuisine, …). Cobblemon core ball recipes are also covered in <a href="Essential_Recipes.html">Essential recipes</a> because those live in mod JARs, not this datapack dump.</p>
+        <div class="toc-box" id="toc"><h2>Contents</h2><ol></ol></div>
+        
+    <div class="callout tip">
+      <div class="label">How to use</div>
+      Filter by name or ingredient. Click a row to expand the crafting grid when the recipe is shaped.
+      In-game REI (<kbd>E</kbd>) remains the live authority if a pack update changes a craft.
+    </div>
+
+    <div class="filter-bar">
+      <input id="rec-q" type="search" placeholder="Result or ingredient…" style="min-width:200px;flex:1" />
+      <select id="rec-ns">
+        <option value="">All namespaces</option>
+        <option value="carved_wood">carved_wood (12)</option><option value="cobblecuisine">cobblecuisine (6)</option><option value="handcrafted">handcrafted (16)</option><option value="legendarymonuments">legendarymonuments (2)</option><option value="lumymon">lumymon (25)</option><option value="mega_showdown">mega_showdown (5)</option><option value="minecraft">minecraft (3)</option><option value="obc">obc (6)</option><option value="tmcraft">tmcraft (483)</option><option value="toms_storage">toms_storage (1)</option>
+      </select>
+    </div>
+    <p class="muted" id="rec-count"></p>
+    <div id="rec-results"></div>
+
+    <script type="module">
+    const res = await fetch('../data/recipes-lite.json');
+    const RECIPES = await res.json();
+
+    function gridHtml(r) {
+      if (!r.pat || !r.keys) return '<p class="muted">Shapeless / special — ingredients: '+(r.il||[]).join(', ')+'</p>';
+      const rows = r.pat.map(row => {
+        const cells = [...row.padEnd(3,' ')].slice(0,3).map(ch => {
+          if (ch === ' ') return '<div class="r-cell empty"></div>';
+          const k = r.keys[ch];
+          const label = k ? (k.label || k.id || ch) : ch;
+          return '<div class="r-cell" title="'+(k&&k.id?k.id:'')+'">'+label+'</div>';
+        }).join('');
+        return '<div class="r-row">'+cells+'</div>';
+      }).join('');
+      return '<div class="r-grid">'+rows+'</div><p class="muted">→ <strong>'+r.rl+'</strong>'+(r.n>1?' ×'+r.n:'')+'</p>';
+    }
+
+    function render() {
+      const q = document.getElementById('rec-q').value.toLowerCase().trim();
+      const ns = document.getElementById('rec-ns').value;
+      const hits = RECIPES.filter(r => {
+        if (ns && r.ns !== ns) return false;
+        if (!q) return true;
+        const blob = (r.rl+' '+r.res+' '+r.id+' '+(r.il||[]).join(' ')+(r.ing||[]).join(' ')).toLowerCase();
+        return blob.includes(q);
+      }).slice(0, 150);
+
+      document.getElementById('rec-count').textContent = 'Showing '+hits.length+' match(es) (max 150).';
+      document.getElementById('rec-results').innerHTML = hits.map((r,i) =>
+        '<details class="rec-card"><summary><strong>'+r.rl+'</strong> <span class="muted">'+r.ns+' · '+r.t+' · <code>'+r.id+'</code></span></summary>'+
+        '<div class="rec-body">'+gridHtml(r)+
+        '<p><strong>Ingredients:</strong> '+((r.il&&r.il.length)?r.il.join(', '):'—')+'</p></div></details>'
+      ).join('') || '<p>No matches.</p>';
+    }
+    document.getElementById('rec-q').addEventListener('input', render);
+    document.getElementById('rec-ns').addEventListener('change', render);
+    render();
+    </script>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Minecraft_Hub.html">Minecraft hub</a></p>
+    <div class="navbox">
+    <div class="navbox-title">PokeHaven systems</div>
+    <div class="navbox-row"><div class="navbox-label">Core</div><div class="navbox-links">
+      <a href="Economy.html">Economy</a>
+      <a href="Raids.html">Raids</a>
+      <a href="Catching_and_Battling.html">Catching &amp; battling</a>
+      <a href="Poke_Balls.html">Poké Balls</a>
+      <a href="Essential_Recipes.html">Essential recipes</a>
+      <a href="Healing_and_Storage.html">Healing</a>
+      <a href="Breeding.html">Breeding</a>
+      <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
+    </div></div>
+    <div class="navbox-row"><div class="navbox-label">World</div><div class="navbox-links">
+      <a href="Claims.html">Claims</a>
+      <a href="Travel.html">Travel</a>
+      <a href="Riding.html">Riding</a>
+      <a href="Voice_Chat.html">Voice chat</a>
+      <a href="Minecraft_Hub.html">Minecraft hub</a>
+    </div></div>
+    <div class="navbox-row"><div class="navbox-label">Help</div><div class="navbox-links">
+      <a href="Pack_Differences.html">Pack differences</a>
+      <a href="Roadmap.html">30-day roadmap</a>
+      <a href="Achievements.html">Achievements</a>
+      <a href="Postgame_and_Legendaries.html">Post-game</a>
+      <a href="Common_Mistakes.html">Common mistakes</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="Recipe_Browser.html">Recipe browser</a>
+      <a href="Trainer_Index.html">Trainer index</a>
+      <a href="Raid_Bosses.html">Raid bosses</a>
+      <a href="Spawn_Lookup.html">Spawn lookup</a>
+    </div></div>
+  </div>
+    
+      </article>
+      
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>PokeHaven EU Wiki · CobbleVerse 1.7.42 · Player guide for our community server.</p>
+      <p class="footer-links"><a href="https://discord.gg/7EHPZfGwU4" rel="noopener noreferrer" target="_blank">Discord</a> · Server IP only from Discord</p>
+      <p class="muted">Pack data parsed from the shared CurseForge export. World coordinates may vary by seed/world.</p>
+      <p class="muted footer-stamp">Updated for CobbleVerse 1.7.42 · PokeHaven EU</p>
+    </div>
+  </footer>
+  <script>window.WIKI_PREFIX="../";window.WIKI_PAGE_PREFIX="../";window.WIKI_SEARCH_INDEX="../data/search-index.json";window.WIKI_LANG="en";</script>
+  <script src="../js/toc.js"></script>
+  <script src="../js/search-data-en.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/lightbox.js"></script>
+  <script src="../js/motion.js"></script>
+</body>
+</html>

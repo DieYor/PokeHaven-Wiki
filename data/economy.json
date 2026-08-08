@@ -1,0 +1,554 @@
+{
+  "incomeMultiplier": 0.5,
+  "earnFromWild": true,
+  "earnFromNpc": true,
+  "shop": [
+    {
+      "section": "Cobble Ball",
+      "items": [
+        {
+          "item": "cobblemon:poke_ball",
+          "label": "Poke Ball",
+          "price": 400
+        },
+        {
+          "item": "cobblemon:citrine_ball",
+          "label": "Citrine Ball",
+          "price": 400
+        },
+        {
+          "item": "cobblemon:verdant_ball",
+          "label": "Verdant Ball",
+          "price": 400
+        },
+        {
+          "item": "cobblemon:azure_ball",
+          "label": "Azure Ball",
+          "price": 400
+        },
+        {
+          "item": "cobblemon:roseate_ball",
+          "label": "Roseate Ball",
+          "price": 400
+        },
+        {
+          "item": "cobblemon:slate_ball",
+          "label": "Slate Ball",
+          "price": 400
+        },
+        {
+          "item": "cobblemon:great_ball",
+          "label": "Great Ball",
+          "price": 750
+        },
+        {
+          "item": "cobblemon:ultra_ball",
+          "label": "Ultra Ball",
+          "price": 1000
+        },
+        {
+          "item": "cobblemon:luxury_ball",
+          "label": "Luxury Ball",
+          "price": 4000
+        }
+      ]
+    },
+    {
+      "section": "Potions",
+      "items": [
+        {
+          "item": "cobblemon:potion",
+          "label": "Potion",
+          "price": 600
+        },
+        {
+          "item": "cobblemon:super_potion",
+          "label": "Super Potion",
+          "price": 900
+        },
+        {
+          "item": "cobblemon:hyper_potion",
+          "label": "Hyper Potion",
+          "price": 1600
+        },
+        {
+          "item": "cobblemon:revive",
+          "label": "Revive",
+          "price": 3000
+        }
+      ]
+    },
+    {
+      "section": "Mob Drops",
+      "items": [
+        {
+          "item": "minecraft:egg",
+          "label": "Egg",
+          "price": 250
+        },
+        {
+          "item": "minecraft:feather",
+          "label": "Feather",
+          "price": 300
+        },
+        {
+          "item": "minecraft:rabbit_hide",
+          "label": "Rabbit Hide",
+          "price": 350
+        },
+        {
+          "item": "minecraft:ink_sac",
+          "label": "Ink Sac",
+          "price": 400
+        },
+        {
+          "item": "minecraft:bone",
+          "label": "Bone",
+          "price": 450
+        },
+        {
+          "item": "minecraft:glow_ink_sac",
+          "label": "Glow Ink Sac",
+          "price": 550
+        },
+        {
+          "item": "minecraft:gunpowder",
+          "label": "Gunpowder",
+          "price": 600
+        },
+        {
+          "item": "minecraft:leather",
+          "label": "Leather",
+          "price": 700
+        },
+        {
+          "item": "minecraft:slime_ball",
+          "label": "Slime Ball",
+          "price": 800
+        },
+        {
+          "item": "minecraft:ender_pearl",
+          "label": "Ender Pearl",
+          "price": 1600
+        }
+      ]
+    },
+    {
+      "section": "Cards",
+      "items": [
+        {
+          "item": "rctmod:trainer_card",
+          "label": "Trainer Card",
+          "price": 500
+        },
+        {
+          "item": "lumymon:store_card",
+          "label": "Store Card",
+          "price": 999
+        }
+      ]
+    }
+  ],
+  "bank": [
+    {
+      "item": "minecraft:apple",
+      "label": "Apple",
+      "price": 5
+    },
+    {
+      "item": "minecraft:baked_potato",
+      "label": "Baked Potato",
+      "price": 10
+    },
+    {
+      "item": "minecraft:beef",
+      "label": "Beef",
+      "price": 10
+    },
+    {
+      "item": "minecraft:beetroot",
+      "label": "Beetroot",
+      "price": 5
+    },
+    {
+      "item": "minecraft:beetroot_soup",
+      "label": "Beetroot Soup",
+      "price": 20
+    },
+    {
+      "item": "cobblemon:big_malasada",
+      "label": "Big Malasada",
+      "price": 35
+    },
+    {
+      "item": "minecraft:bread",
+      "label": "Bread",
+      "price": 5
+    },
+    {
+      "item": "minecraft:cake",
+      "label": "Cake",
+      "price": 40
+    },
+    {
+      "item": "cobblemon:calcium",
+      "label": "Calcium",
+      "price": 2500
+    },
+    {
+      "item": "cobblemon:candied_apple",
+      "label": "Candied Apple",
+      "price": 33
+    },
+    {
+      "item": "cobblemon:candied_berry",
+      "label": "Candied Berry",
+      "price": 30
+    },
+    {
+      "item": "cobblemon:carbos",
+      "label": "Carbos",
+      "price": 2500
+    },
+    {
+      "item": "minecraft:carrot",
+      "label": "Carrot",
+      "price": 5
+    },
+    {
+      "item": "cobblemon:casteliacone",
+      "label": "Casteliacone",
+      "price": 30
+    },
+    {
+      "item": "minecraft:chicken",
+      "label": "Chicken",
+      "price": 10
+    },
+    {
+      "item": "minecraft:chorus_fruit",
+      "label": "Chorus Fruit",
+      "price": 5
+    },
+    {
+      "item": "minecraft:cod",
+      "label": "Cod",
+      "price": 10
+    },
+    {
+      "item": "minecraft:cooked_beef",
+      "label": "Cooked Beef",
+      "price": 20
+    },
+    {
+      "item": "minecraft:cooked_chicken",
+      "label": "Cooked Chicken",
+      "price": 20
+    },
+    {
+      "item": "minecraft:cooked_cod",
+      "label": "Cooked Cod",
+      "price": 20
+    },
+    {
+      "item": "minecraft:cooked_mutton",
+      "label": "Cooked Mutton",
+      "price": 20
+    },
+    {
+      "item": "minecraft:cooked_porkchop",
+      "label": "Cooked Porkchop",
+      "price": 20
+    },
+    {
+      "item": "minecraft:cooked_rabbit",
+      "label": "Cooked Rabbit",
+      "price": 20
+    },
+    {
+      "item": "minecraft:cooked_salmon",
+      "label": "Cooked Salmon",
+      "price": 20
+    },
+    {
+      "item": "minecraft:cookie",
+      "label": "Cookie",
+      "price": 5
+    },
+    {
+      "item": "minecraft:dried_kelp",
+      "label": "Dried Kelp",
+      "price": 10
+    },
+    {
+      "item": "cobblemon:elixir",
+      "label": "Elixir",
+      "price": 750
+    },
+    {
+      "item": "minecraft:elytra",
+      "label": "Elytra",
+      "price": 25000
+    },
+    {
+      "item": "lumymon:ember_feather",
+      "label": "Ember Feather",
+      "price": 5000
+    },
+    {
+      "item": "minecraft:emerald",
+      "label": "Emerald",
+      "price": 400
+    },
+    {
+      "item": "minecraft:emerald_block",
+      "label": "Emerald Block",
+      "price": 3750
+    },
+    {
+      "item": "cobblemon:ether",
+      "label": "Ether",
+      "price": 300
+    },
+    {
+      "item": "cobblemon:full_restore",
+      "label": "Full Restore",
+      "price": 750
+    },
+    {
+      "item": "lumymon:glacier_feather",
+      "label": "Glacier Feather",
+      "price": 5000
+    },
+    {
+      "item": "minecraft:glow_berries",
+      "label": "Glow Berries",
+      "price": 20
+    },
+    {
+      "item": "minecraft:golden_carrot",
+      "label": "Golden Carrot",
+      "price": 20
+    },
+    {
+      "item": "cobblemon:hp_up",
+      "label": "Hp Up",
+      "price": 2500
+    },
+    {
+      "item": "cobblemon:hyper_potion",
+      "label": "Hyper Potion",
+      "price": 375
+    },
+    {
+      "item": "cobblemon:iron",
+      "label": "Iron",
+      "price": 2500
+    },
+    {
+      "item": "cobblemon:jubilife_muffin",
+      "label": "Jubilife Muffin",
+      "price": 40
+    },
+    {
+      "item": "cobblemon:lava_cookie",
+      "label": "Lava Cookie",
+      "price": 10
+    },
+    {
+      "item": "cobblemon:lumiose_galette",
+      "label": "Lumiose Galette",
+      "price": 30
+    },
+    {
+      "item": "cobblemon:max_elixir",
+      "label": "Max Elixir",
+      "price": 1125
+    },
+    {
+      "item": "cobblemon:max_ether",
+      "label": "Max Ether",
+      "price": 500
+    },
+    {
+      "item": "cobblemon:max_potion",
+      "label": "Max Potion",
+      "price": 625
+    },
+    {
+      "item": "cobblemon:max_revive",
+      "label": "Max Revive",
+      "price": 1000
+    },
+    {
+      "item": "minecraft:melon_slice",
+      "label": "Melon Slice",
+      "price": 5
+    },
+    {
+      "item": "minecraft:mushroom_stew",
+      "label": "Mushroom Stew",
+      "price": 25
+    },
+    {
+      "item": "minecraft:mutton",
+      "label": "Mutton",
+      "price": 10
+    },
+    {
+      "item": "cobblemon:old_gateau",
+      "label": "Old Gateau",
+      "price": 40
+    },
+    {
+      "item": "cobblemon:open_faced_sandwich",
+      "label": "Open Faced Sandwich",
+      "price": 70
+    },
+    {
+      "item": "cobblemon:pewter_crunchies",
+      "label": "Pewter Crunchies",
+      "price": 40
+    },
+    {
+      "item": "cobblemon:poke_cake",
+      "label": "Poke Cake",
+      "price": 120
+    },
+    {
+      "item": "cobblemon:ponigiri",
+      "label": "Ponigiri",
+      "price": 30
+    },
+    {
+      "item": "minecraft:porkchop",
+      "label": "Porkchop",
+      "price": 10
+    },
+    {
+      "item": "minecraft:potato",
+      "label": "Potato",
+      "price": 5
+    },
+    {
+      "item": "cobblemon:potato_mochi",
+      "label": "Potato Mochi",
+      "price": 25
+    },
+    {
+      "item": "cobblemon:potion",
+      "label": "Potion",
+      "price": 50
+    },
+    {
+      "item": "cobblemon:pp_max",
+      "label": "Pp Max",
+      "price": 3500
+    },
+    {
+      "item": "cobblemon:pp_up",
+      "label": "Pp Up",
+      "price": 2500
+    },
+    {
+      "item": "cobblemon:protein",
+      "label": "Protein",
+      "price": 2500
+    },
+    {
+      "item": "minecraft:pufferfish",
+      "label": "Pufferfish",
+      "price": 20
+    },
+    {
+      "item": "minecraft:pumpkin_pie",
+      "label": "Pumpkin Pie",
+      "price": 20
+    },
+    {
+      "item": "minecraft:rabbit",
+      "label": "Rabbit",
+      "price": 10
+    },
+    {
+      "item": "minecraft:rabbit_stew",
+      "label": "Rabbit Stew",
+      "price": 30
+    },
+    {
+      "item": "cobblemon:rage_candy_bar",
+      "label": "Rage Candy Bar",
+      "price": 40
+    },
+    {
+      "item": "cobblemon:relic_coin",
+      "label": "Relic Coin",
+      "price": 50
+    },
+    {
+      "item": "cobblemon:relic_coin_pouch",
+      "label": "Relic Coin Pouch",
+      "price": 475
+    },
+    {
+      "item": "cobblemon:relic_coin_sack",
+      "label": "Relic Coin Sack",
+      "price": 4500
+    },
+    {
+      "item": "cobblemon:revive",
+      "label": "Revive",
+      "price": 500
+    },
+    {
+      "item": "minecraft:salmon",
+      "label": "Salmon",
+      "price": 10
+    },
+    {
+      "item": "cobblemon:smoked_tail_curry",
+      "label": "Smoked Tail Curry",
+      "price": 70
+    },
+    {
+      "item": "lumymon:soul_feather",
+      "label": "Soul Feather",
+      "price": 30000
+    },
+    {
+      "item": "cobblemon:super_potion",
+      "label": "Super Potion",
+      "price": 175
+    },
+    {
+      "item": "minecraft:sweet_berries",
+      "label": "Sweet Berries",
+      "price": 5
+    },
+    {
+      "item": "cobblemon:tasty_tail",
+      "label": "Tasty Tail",
+      "price": 49
+    },
+    {
+      "item": "lumymon:thunder_feather",
+      "label": "Thunder Feather",
+      "price": 5000
+    },
+    {
+      "item": "minecraft:tropical_fish",
+      "label": "Tropical Fish",
+      "price": 10
+    },
+    {
+      "item": "cobblemon:vivichoke_dip",
+      "label": "Vivichoke Dip",
+      "price": 75
+    },
+    {
+      "item": "cobblemon:zinc",
+      "label": "Zinc",
+      "price": 2500
+    }
+  ]
+}
