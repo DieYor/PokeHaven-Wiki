@@ -222,21 +222,7 @@ export function registerExpansionPages({
     });
   }
 
-  regionPage(
-    "Johto",
-    "Gyms_Johto.html",
-    "johto",
-    "Johto opens after you finish the Kanto challenge. Use this overview to plan coverage and scout named trainers from pack data.",
-    {
-      unlock: "Complete Kanto gyms + Elite Four + Champion (Blue), then continue into Johto content.",
-      prep: [
-        "Stable waystone network from Kanto hubs",
-        "Money buffer for balls/heals (income is ×0.5)",
-        "Broader type coverage than early Kanto",
-        "Claimed home base you can teleport back to",
-      ],
-    }
-  );
+  // Gyms_Johto.html is written as a deep hub + leader pages in build.js (same depth as Kanto).
 
   regionPage(
     "Hoenn",

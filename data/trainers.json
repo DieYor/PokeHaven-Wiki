@@ -1276,6 +1276,1301 @@
       "tips": "Cover many types. Unique drop notes mention Ancient Origin Ball on some packs."
     }
   ],
+  "johtoLeaders": [
+    {
+      "id": "johto_valerio",
+      "name": "Valerio",
+      "team": [
+        {
+          "slot": 1,
+          "species": "hoothoot",
+          "level": 19,
+          "ability": "insomnia",
+          "nature": "naughty",
+          "gender": "MALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "airslash",
+            "psychic",
+            "pluck",
+            "steelwing"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "pidgeotto",
+          "level": 20,
+          "ability": "keeneye",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "aerialace",
+            "quickattack",
+            "pluck",
+            "uturn"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "corvisquire",
+          "level": 18,
+          "ability": "unnerve",
+          "nature": "careful",
+          "gender": "FEMALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "pluck",
+            "roost",
+            "rocksmash",
+            "honeclaws"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "gligar",
+          "level": 19,
+          "ability": "hypercutter",
+          "nature": "careful",
+          "gender": "MALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "tailwhip",
+            "bulldoze",
+            "dig",
+            "acrobatics"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x1"
+      ],
+      "rawName": {
+        "literal": "Valerio"
+      },
+      "region": "johto",
+      "file": "johto_valerio.json",
+      "slug": "Valerio",
+      "type": "Flying",
+      "badge": "Zephyr Badge",
+      "biome": "Windswept Hills",
+      "specialItem": "Raptor Bracer",
+      "order": 1,
+      "tips": "Electric, Rock, and Ice punish Flying. After Blue, grab the Johto Trainer Card before you hunt Valerio."
+    },
+    {
+      "id": "johto_raffaello",
+      "name": "Raffaello",
+      "team": [
+        {
+          "slot": 1,
+          "species": "butterfree",
+          "level": 29,
+          "ability": "compoundeyes",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "psybeam",
+            "stunspore",
+            "quickattack",
+            "bugbuzz"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "beedrill",
+          "level": 28,
+          "ability": "sniper",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "venoshock",
+            "gigadrain",
+            "furycutter",
+            "endure"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "heracross",
+          "level": 27,
+          "ability": "unnerve",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "stoneedge",
+            "focuspunch",
+            "hornattack",
+            "bulldoze"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "scyther",
+          "level": 30,
+          "ability": "swarm",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Choice Band",
+          "moves": [
+            "aerialace",
+            "xscissor",
+            "thief",
+            "brickbreak"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x1"
+      ],
+      "rawName": {
+        "literal": "Raffaello"
+      },
+      "region": "johto",
+      "file": "johto_raffaello.json",
+      "slug": "Raffaello",
+      "type": "Bug",
+      "badge": "Hive Badge",
+      "biome": "Sparse Jungle",
+      "specialItem": "Magnifying Glass",
+      "order": 2,
+      "tips": "Fire, Flying, and Rock hit Bug hard. Watch for Heracross / Scyther speed."
+    },
+    {
+      "id": "johto_chiara",
+      "name": "Chiara",
+      "team": [
+        {
+          "slot": 1,
+          "species": "miltank",
+          "level": 35,
+          "ability": "scrappy",
+          "nature": "brave",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "zenheadbutt",
+            "stomp",
+            "shadowball",
+            "milkdrink"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "clefairy",
+          "level": 34,
+          "ability": "cutecharm",
+          "nature": "brave",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "disarmingvoice",
+            "waterpulse",
+            "shadowball",
+            "icebeam"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "lopunny",
+          "level": 34,
+          "ability": "cutecharm",
+          "nature": "careful",
+          "gender": "FEMALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "doublekick",
+            "thunderbolt",
+            "shadowball",
+            "dig"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "lickitung",
+          "level": 33,
+          "ability": "owntempo",
+          "nature": "careful",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "lick",
+            "stomp",
+            "shadowball",
+            "earthquake"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x2"
+      ],
+      "rawName": {
+        "literal": "Chiara"
+      },
+      "region": "johto",
+      "file": "johto_chiara.json",
+      "slug": "Chiara",
+      "type": "Normal",
+      "badge": "Plain Badge",
+      "biome": "Cherry Grove",
+      "specialItem": "Sweet Milk",
+      "order": 3,
+      "tips": "Fighting answers Normal. Miltank / bulky Normals stall — bring status and Fighting coverage."
+    },
+    {
+      "id": "johto_angelo",
+      "name": "Angelo",
+      "team": [
+        {
+          "slot": 1,
+          "species": "dusknoir",
+          "level": 43,
+          "ability": "pressure",
+          "nature": "hardy",
+          "gender": "MALE",
+          "heldItem": "Spell Tag",
+          "moves": [
+            "brickbreak",
+            "shadowpunch",
+            "rocktomb",
+            "thunderpunch"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "sableye",
+          "level": 43,
+          "ability": "keeneye",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "disarmingvoice",
+            "waterpulse",
+            "shadowball",
+            "icebeam"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "gengar",
+          "level": 45,
+          "ability": "levitate",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "focusblast",
+            "toxic",
+            "shadowball",
+            "gigadrain"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "mismagius",
+          "level": 44,
+          "ability": "levitate",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Spell Tag",
+          "moves": [
+            "phantomforce",
+            "psychic",
+            "mysticalfire",
+            "dazzlinggleam"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "golurk",
+          "level": 44,
+          "ability": "ironfist",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Colbur Berry",
+          "moves": [
+            "focuspunch",
+            "shadowpunch",
+            "firepunch",
+            "highhorsepower"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x3"
+      ],
+      "rawName": {
+        "literal": "Angelo"
+      },
+      "region": "johto",
+      "file": "johto_angelo.json",
+      "slug": "Angelo",
+      "type": "Ghost",
+      "badge": "Fog Badge",
+      "biome": "Lush Cave",
+      "specialItem": "Spirit Scarf",
+      "order": 4,
+      "tips": "Dark and Ghost pressure Ghost. Light sources for the cave trip; don’t walk in half-healed."
+    },
+    {
+      "id": "johto_furio",
+      "name": "Furio",
+      "team": [
+        {
+          "slot": 1,
+          "species": "sawk",
+          "level": 48,
+          "ability": "sturdy",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Black Belt",
+          "moves": [
+            "brickbreak",
+            "closecombat",
+            "rockslide",
+            "thunderpunch"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "throh",
+          "level": 48,
+          "ability": "guts",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Iron Ball",
+          "moves": [
+            "vitalthrow",
+            "icepunch",
+            "fling",
+            "stompingtantrum"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "hariyama",
+          "level": 49,
+          "ability": "thickfat",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "forcepalm",
+            "rocktomb",
+            "earthquake",
+            "closecombat"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "primeape",
+          "level": 48,
+          "ability": "defiant",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Choice Band",
+          "moves": [
+            "seismictoss",
+            "thief",
+            "brickbreak",
+            "thunderbolt"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "poliwrath",
+          "level": 50,
+          "ability": "waterabsorb",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Assault Vest",
+          "moves": [
+            "drainpunch",
+            "surf",
+            "poisonjab",
+            "rocktomb"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x3"
+      ],
+      "rawName": {
+        "literal": "Furio"
+      },
+      "region": "johto",
+      "file": "johto_furio.json",
+      "slug": "Furio",
+      "type": "Fighting",
+      "badge": "Storm Badge",
+      "biome": "Desert",
+      "specialItem": "Heavy Dumbbell",
+      "order": 5,
+      "tips": "Flying, Psychic, and Fairy answer Fighting. Desert travel needs water / food / shade breaks."
+    },
+    {
+      "id": "johto_jasmine",
+      "name": "Jasmine",
+      "team": [
+        {
+          "slot": 1,
+          "species": "bronzong",
+          "level": 59,
+          "ability": "heatproof",
+          "nature": "bold",
+          "gender": "MALE",
+          "heldItem": "Rocky Helmet",
+          "moves": [
+            "rockslide",
+            "psychic",
+            "grassknot",
+            "ironhead"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "steelix",
+          "level": 60,
+          "ability": "sturdy",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "flashcannon",
+            "earthquake",
+            "darkpulse",
+            "icefang"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "metagross",
+          "level": 58,
+          "ability": "clearbody",
+          "nature": "calm",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "meteormash",
+            "zenheadbutt",
+            "rockslide",
+            "earthquake"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "skarmory",
+          "level": 58,
+          "ability": "sturdy",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Choice Band",
+          "moves": [
+            "rocktomb",
+            "steelwing",
+            "darkpulse",
+            "aerialace"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "magnezone",
+          "level": 59,
+          "ability": "levitate",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "thunderbolt",
+            "flashcannon",
+            "thunderwave",
+            "shockwave"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x3"
+      ],
+      "rawName": {
+        "literal": "Jasmine"
+      },
+      "region": "johto",
+      "file": "johto_jasmine.json",
+      "slug": "Jasmine",
+      "type": "Steel",
+      "badge": "Mineral Badge",
+      "biome": "Taiga",
+      "specialItem": "Secret Medicine",
+      "order": 6,
+      "tips": "Fire, Fighting, and Ground crack Steel. Magnezone / Metagross hit hard — don’t send pure Water blindly."
+    },
+    {
+      "id": "johto_alfredo",
+      "name": "Alfredo",
+      "team": [
+        {
+          "slot": 1,
+          "species": "mamoswine",
+          "level": 64,
+          "ability": "thickfat",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "earthquake",
+            "stoneedge",
+            "icefang",
+            "avalanche"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "vanilluxe",
+          "level": 64,
+          "ability": "snowwarning",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "avalanche",
+            "iciclecrash",
+            "weatherball",
+            "astonish"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "avalugg",
+          "level": 63,
+          "ability": "icebody",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "icefang",
+            "stompingtantrum",
+            "surf",
+            "hail"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "dewgong",
+          "level": 65,
+          "ability": "icebody",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "hail",
+            "waterpulse",
+            "blizzard",
+            "irontail"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "jynx",
+          "level": 64,
+          "ability": "levitate",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "shadowball",
+            "drainpunch",
+            "psychic",
+            "icebeam"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x4"
+      ],
+      "rawName": {
+        "literal": "Alfredo"
+      },
+      "region": "johto",
+      "file": "johto_alfredo.json",
+      "slug": "Alfredo",
+      "type": "Ice",
+      "badge": "Glacier Badge",
+      "biome": "Ice Spikes",
+      "specialItem": "Winter Staff",
+      "order": 7,
+      "tips": "Fire, Fighting, Rock, and Steel help into Ice. Bring cold-weather food and a retreat waystone."
+    },
+    {
+      "id": "johto_sandra",
+      "name": "Sandra",
+      "team": [
+        {
+          "slot": 1,
+          "species": "gyarados",
+          "level": 70,
+          "ability": "intimidate",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "earthquake",
+            "dragonpulse",
+            "darkpulse",
+            "icefang"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "kingdra",
+          "level": 70,
+          "ability": "swiftswim",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Dragon Fang",
+          "moves": [
+            "watergun",
+            "twister",
+            "flashcannon",
+            "dragonpulse"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "dragonite",
+          "level": 70,
+          "ability": "innerfocus",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Weakness Policy",
+          "moves": [
+            "outrage",
+            "dragonrush",
+            "dragontail",
+            "thunderpunch"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "altaria",
+          "level": 70,
+          "ability": "naturalcure",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "dazzlinggleam",
+            "dragonpulse",
+            "steelwing",
+            "flamethrower"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "garchomp",
+          "level": 70,
+          "ability": "roughskin",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "earthquake",
+            "irontail",
+            "dragonclaw",
+            "crunch"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "salamence",
+          "level": 70,
+          "ability": "moxie",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "flamethrower",
+            "steelwing",
+            "brickbreak",
+            "dragonpulse"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Sandra"
+      },
+      "region": "johto",
+      "file": "johto_sandra.json",
+      "slug": "Sandra",
+      "type": "Dragon",
+      "badge": "Rising Badge",
+      "biome": "Soul Sand Valley (Nether)",
+      "specialItem": "Pearl Choker",
+      "order": 8,
+      "tips": "Ice and Fairy punish Dragon. This gym tips toward the Nether — fire resist and a Nether waystone first."
+    },
+    {
+      "id": "johto_league_pino",
+      "name": "Pino",
+      "team": [
+        {
+          "slot": 1,
+          "species": "xatu",
+          "level": 75,
+          "ability": "synchronize",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "airslash",
+            "dazzlinggleam",
+            "shadowball",
+            "zenheadbutt"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "gardevoir",
+          "level": 75,
+          "ability": "trace",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Choice Specs",
+          "moves": [
+            "psychic",
+            "shadowball",
+            "moonblast",
+            "drainingkiss"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "grumpig",
+          "level": 75,
+          "ability": "thickfat",
+          "nature": "calm",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "focuspunch",
+            "psychic",
+            "shadowball",
+            "powergem"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "slowking",
+          "level": 75,
+          "ability": "regenerator",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Kings Rock",
+          "moves": [
+            "zenheadbutt",
+            "earthquake",
+            "scald",
+            "surf"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "exeggutor",
+          "level": 75,
+          "ability": "chlorophyll",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "gigadrain",
+            "psychic",
+            "dualchop",
+            "sludgebomb"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "indeedee",
+          "level": 75,
+          "ability": "synchronize",
+          "nature": "bold",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "dazzlinggleam",
+            "shadowball",
+            "psyshock",
+            "mysticalfire"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x4"
+      ],
+      "rawName": {
+        "literal": "Pino"
+      },
+      "region": "johto",
+      "file": "johto_league_pino.json",
+      "slug": "Pino",
+      "type": "Psychic",
+      "badge": "Elite Four",
+      "biome": "Elite Four Tower (The End)",
+      "specialItem": "Power Lens",
+      "order": 9,
+      "tips": "Dark, Bug, and Ghost pressure Psychic. Full heal before every Johto Elite room."
+    },
+    {
+      "id": "johto_league_koga",
+      "name": "Koga",
+      "team": [
+        {
+          "slot": 1,
+          "species": "naganadel",
+          "level": 80,
+          "ability": "plus",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "flamethrower",
+            "dragonpulse",
+            "sludgewave",
+            "darkpulse"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "beedrill",
+          "level": 80,
+          "ability": "adaptability",
+          "nature": "sassy",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "drillrun",
+            "xscissor",
+            "gigadrain",
+            "poisonjab"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "crobat",
+          "level": 80,
+          "ability": "infiltrator",
+          "nature": "mild",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "crosspoison",
+            "steelwing",
+            "shadowball",
+            "heatwave"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "skuntank",
+          "level": 80,
+          "ability": "stench",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Air Balloon",
+          "moves": [
+            "crunch",
+            "shadowclaw",
+            "poisonjab",
+            "playrough"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "venomoth",
+          "level": 80,
+          "ability": "tintedlens",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "sludgebomb",
+            "uturn",
+            "bugbuzz",
+            "gigadrain"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "toxicroak",
+          "level": 80,
+          "ability": "poisontouch",
+          "nature": "impish",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "throatchop",
+            "icepunch",
+            "earthquake",
+            "toxic"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Koga"
+      },
+      "region": "johto",
+      "file": "johto_league_koga.json",
+      "slug": "Johto_Koga",
+      "type": "Poison",
+      "badge": "Elite Four",
+      "biome": "Elite Four Tower (The End)",
+      "specialItem": "Loaded Dice",
+      "order": 10,
+      "tips": "Psychic and Ground help into Poison. Not the same fight as Kanto Koga — check this page’s team."
+    },
+    {
+      "id": "johto_league_bruno",
+      "name": "Bruno",
+      "team": [
+        {
+          "slot": 1,
+          "species": "pangoro",
+          "level": 85,
+          "ability": "thickfat",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "ironhead",
+            "zenheadbutt",
+            "rockslide",
+            "drainpunch"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "machamp",
+          "level": 85,
+          "ability": "guts",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "knockoff",
+            "thunderpunch",
+            "poisonjab",
+            "earthquake"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "hitmontop",
+          "level": 85,
+          "ability": "steadfast",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "icespinner",
+            "suckerpunch",
+            "gyroball",
+            "brickbreak"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "hitmonchan",
+          "level": 85,
+          "ability": "innerfocus",
+          "nature": "impish",
+          "gender": "MALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "lowkick",
+            "icepunch",
+            "trailblaze",
+            "knockoff"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "hitmonlee",
+          "level": 85,
+          "ability": "limber",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Wide Lens",
+          "moves": [
+            "throatchop",
+            "highjumpkick",
+            "blazekick",
+            "reversal"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "lucario",
+          "level": 85,
+          "ability": "innerfocus",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Scope Lens",
+          "moves": [
+            "waterpulse",
+            "flashcannon",
+            "shadowball",
+            "aurasphere"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x4"
+      ],
+      "rawName": {
+        "literal": "Bruno"
+      },
+      "region": "johto",
+      "file": "johto_league_bruno.json",
+      "slug": "Johto_Bruno",
+      "type": "Fighting",
+      "badge": "Elite Four",
+      "biome": "Elite Four Tower (The End)",
+      "specialItem": "Muscle Band",
+      "order": 11,
+      "tips": "Flying, Psychic, and Fairy answer Fighting. Lucario / Hitmon line hit different than Kanto Bruno."
+    },
+    {
+      "id": "johto_league_karen",
+      "name": "Karen",
+      "team": [
+        {
+          "slot": 1,
+          "species": "absol",
+          "level": 90,
+          "ability": "superluck",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "playrough",
+            "stoneedge",
+            "darkpulse",
+            "shadowball"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "houndoom",
+          "level": 90,
+          "ability": "flashfire",
+          "nature": "relaxed",
+          "gender": "MALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "flamethrower",
+            "thunderfang",
+            "darkpulse",
+            "shadowball"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "spiritomb",
+          "level": 90,
+          "ability": "infiltrator",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "shadowball",
+            "darkpulse",
+            "waterpulse",
+            "psychic"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "umbreon",
+          "level": 90,
+          "ability": "synchronize",
+          "nature": "impish",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "psychic",
+            "darkpulse",
+            "shadowball",
+            "dig"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "weavile",
+          "level": 90,
+          "ability": "pickpocket",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "surf",
+            "shadowclaw",
+            "icebeam",
+            "throatchop"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "honchkrow",
+          "level": 90,
+          "ability": "superluck",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "steelwing",
+            "aerialace",
+            "shadowball",
+            "darkpulse"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x4"
+      ],
+      "rawName": {
+        "literal": "Karen"
+      },
+      "region": "johto",
+      "file": "johto_league_karen.json",
+      "slug": "Karen",
+      "type": "Dark",
+      "badge": "Elite Four",
+      "biome": "Elite Four Tower (The End)",
+      "specialItem": "Razor Claw",
+      "order": 12,
+      "tips": "Fighting, Bug, and Fairy pressure Dark. Watch Weavile / Houndoom speed."
+    },
+    {
+      "id": "johto_champion_lance",
+      "name": "Lance",
+      "team": [
+        {
+          "slot": 1,
+          "species": "aerodactyl",
+          "level": 100,
+          "ability": "pressure",
+          "nature": "mild",
+          "gender": "MALE",
+          "heldItem": "Expert Belt",
+          "moves": [
+            "ironhead",
+            "dragonpulse",
+            "flamethrower",
+            "bulldoze"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "gyarados",
+          "level": 100,
+          "ability": "moxie",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "temperflare",
+            "earthquake",
+            "waterfall",
+            "thunder"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "baxcalibur",
+          "level": 100,
+          "ability": "thermalexchange",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Destiny Knot",
+          "moves": [
+            "zenheadbutt",
+            "earthquake",
+            "outrage",
+            "bodypress"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "salamence",
+          "level": 100,
+          "ability": "moxie",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "ironhead",
+            "thunderfang",
+            "dragonclaw",
+            "earthquake"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "dragonite",
+          "level": 100,
+          "ability": "multiscale",
+          "nature": "calm",
+          "gender": "MALE",
+          "heldItem": "Expert Belt",
+          "moves": [
+            "ironhead",
+            "flamethrower",
+            "icebeam",
+            "dragonclaw"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "lugia",
+          "level": 100,
+          "ability": "multiscale",
+          "nature": "sassy",
+          "gender": "GENDERLESS",
+          "heldItem": "Leftovers",
+          "moves": [
+            "dragonpulse",
+            "bulldoze",
+            "psychic",
+            "steelwing"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Lance"
+      },
+      "region": "johto",
+      "file": "johto_champion_lance.json",
+      "slug": "Johto_Lance",
+      "type": "Dragon",
+      "badge": "Champion",
+      "biome": "Top of Elite Four Tower",
+      "specialItem": "Master Cape",
+      "order": 13,
+      "tips": "Ice and Fairy matter; Lugia as ace changes the endgame. Pack multiple win conditions."
+    }
+  ],
   "all": [
     {
       "id": "sinnoh_league_aaron",

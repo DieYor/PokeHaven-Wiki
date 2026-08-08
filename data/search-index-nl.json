@@ -246,9 +246,87 @@
     "keywords": ""
   },
   {
-    "title": "Johto",
+    "title": "Johto-gyms",
     "href": "pages/Gyms_Johto.html",
-    "blurb": "Regio-overzicht en trainers voor Johto.",
+    "blurb": "Checklist voor de Johto-challenge na Champion Blue. Open een leader-pagina voor volledige teams uit pack-data.",
+    "keywords": "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive"
+  },
+  {
+    "title": "Valerio",
+    "href": "pages/Valerio.html",
+    "blurb": "Valerio — Flying-specialist. Johto gym 1 op PokeHaven EU.",
+    "keywords": "johto first gym flying zephyr raptor bracer"
+  },
+  {
+    "title": "Raffaello",
+    "href": "pages/Raffaello.html",
+    "blurb": "Raffaello — Bug-specialist. Johto gym 2 op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Chiara",
+    "href": "pages/Chiara.html",
+    "blurb": "Chiara — Normal-specialist. Johto gym 3 op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Angelo",
+    "href": "pages/Angelo.html",
+    "blurb": "Angelo — Ghost-specialist. Johto gym 4 op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Furio",
+    "href": "pages/Furio.html",
+    "blurb": "Furio — Fighting-specialist. Johto gym 5 op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Jasmine",
+    "href": "pages/Jasmine.html",
+    "blurb": "Jasmine — Steel-specialist. Johto gym 6 op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Alfredo",
+    "href": "pages/Alfredo.html",
+    "blurb": "Alfredo — Ice-specialist. Johto gym 7 op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Sandra",
+    "href": "pages/Sandra.html",
+    "blurb": "Sandra — Dragon-specialist. Johto gym 8 op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Pino",
+    "href": "pages/Pino.html",
+    "blurb": "Pino — Johto league-gevecht op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Koga (Johto)",
+    "href": "pages/Johto_Koga.html",
+    "blurb": "Koga (Johto) — Johto league-gevecht op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Bruno (Johto)",
+    "href": "pages/Johto_Bruno.html",
+    "blurb": "Bruno (Johto) — Johto league-gevecht op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Karen",
+    "href": "pages/Karen.html",
+    "blurb": "Karen — Johto league-gevecht op PokeHaven EU.",
+    "keywords": ""
+  },
+  {
+    "title": "Lance (Johto Champion)",
+    "href": "pages/Johto_Lance.html",
+    "blurb": "Lance (Johto Champion) — Johto league-gevecht op PokeHaven EU.",
     "keywords": ""
   },
   {

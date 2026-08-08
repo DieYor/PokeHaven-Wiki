@@ -159,18 +159,28 @@ function infoboxHtml(title, rows) {
 }
 
 function navboxGyms() {
-  const links = trainers.kantoLeaders
+  const kantoGyms = trainers.kantoLeaders
     .filter((g) => g.order <= 8)
     .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
     .join("");
-  const e4 = trainers.kantoLeaders
+  const kantoLeague = trainers.kantoLeaders
+    .filter((g) => g.order > 8)
+    .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
+    .join("");
+  const johtoGyms = (trainers.johtoLeaders || [])
+    .filter((g) => g.order <= 8)
+    .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
+    .join("");
+  const johtoLeague = (trainers.johtoLeaders || [])
     .filter((g) => g.order > 8)
     .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
     .join("");
   return `<div class="navbox">
     <div class="navbox-title">Gym challenge</div>
-    <div class="navbox-row"><div class="navbox-label">Kanto</div><div class="navbox-links">${links}</div></div>
-    <div class="navbox-row"><div class="navbox-label">League</div><div class="navbox-links">${e4}</div></div>
+    <div class="navbox-row"><div class="navbox-label">Kanto</div><div class="navbox-links">${kantoGyms}</div></div>
+    <div class="navbox-row"><div class="navbox-label">Kanto league</div><div class="navbox-links">${kantoLeague}</div></div>
+    <div class="navbox-row"><div class="navbox-label">Johto</div><div class="navbox-links">${johtoGyms}</div></div>
+    <div class="navbox-row"><div class="navbox-label">Johto league</div><div class="navbox-links">${johtoLeague}</div></div>
     <div class="navbox-row"><div class="navbox-label">Regions</div><div class="navbox-links">
       <a href="Gyms_Kanto.html">Kanto</a>
       <a href="Gyms_Johto.html">Johto</a>
@@ -309,6 +319,9 @@ const SEARCH_KEYWORDS = {
     "achievement advancement toast checklist kanto mew mewtwo articuno zapdos moltres L key cobblemon berry apricorn fossil vivillon shiny catch",
   "Postgame_and_Legendaries.html":
     "post-game postgame legendary mythical mew mewtwo articuno zapdos moltres origin fossil ancient dna cloning",
+  "Gyms_Johto.html":
+    "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive",
+  "Valerio.html": "johto first gym flying zephyr raptor bracer",
 };
 
 function writePage(file, opts = {}) {
@@ -521,36 +534,94 @@ function approxCapWhileNext(g) {
   return teamMaxLevel(g) + 5;
 }
 
-const kantoCapLadderRows = trainers.kantoLeaders
-  .map((g) => {
-    const maxLv = teamMaxLevel(g);
-    return `<tr>
+function capLadderRows(leaders) {
+  return (leaders || [])
+    .map((g) => {
+      const maxLv = teamMaxLevel(g);
+      return `<tr>
       <td><a href="${g.slug}.html">${esc(g.name)}</a></td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.type)}</td>
       <td>${maxLv}</td>
       <td>~${approxCapWhileNext(g)}</td>
     </tr>`;
-  })
-  .join("");
+    })
+    .join("");
+}
+
+const kantoCapLadderRows = capLadderRows(trainers.kantoLeaders);
+const johtoCapLadderRows = capLadderRows(trainers.johtoLeaders);
 
 function mapItemLabel(g) {
   if (g.slug === "Brock") return "Brock Map Key";
   return g.specialItem;
 }
 
+function cartographyTableFor(g) {
+  return g.region === "johto" ? "Johto Cartography Table" : "Kanto Cartography Table";
+}
+
+function seriesLeaders(g) {
+  if (g.region === "johto") return trainers.johtoLeaders || [];
+  return trainers.kantoLeaders || [];
+}
+
 function nextLeaderAfter(g) {
-  const sorted = [...trainers.kantoLeaders].sort((a, b) => a.order - b.order);
+  const sorted = [...seriesLeaders(g)].sort((a, b) => a.order - b.order);
   const idx = sorted.findIndex((x) => x.slug === g.slug);
   return idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
 }
 
 function gymGuideBody(g) {
   const mapItem = mapItemLabel(g);
+  const cartTable = cartographyTableFor(g);
   const next = nextLeaderAfter(g);
   const nextLink = next
     ? `<a href="${next.slug}.html">${esc(next.name)}</a>`
-    : "the next region";
+    : g.region === "johto"
+      ? `<a href="Gyms_Hoenn.html">Hoenn</a>`
+      : `<a href="Gyms_Johto.html">Johto</a>`;
+
+  if (g.slug === "Valerio") {
+    return `<h2>Walkthrough — Blue to Valerio</h2>
+    <h3>Unlock Johto first</h3>
+    <ol class="steps">
+      <li>Beat <a href="Blue.html">Champion Blue</a>.</li>
+      <li>Follow the champion book: Trainer Association → <strong>Johto Trainer Card</strong> (your level cap resets for Johto).</li>
+      <li>If Johto structures are missing, ask in Discord — staff may restart once. See <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>.</li>
+    </ol>
+    <h3>Prepare</h3>
+    <ul>
+      <li>Electric, Rock, and Ice coverage for Flying</li>
+      <li>~${approxCapWhileNext(g)} level band while Valerio is next — <a href="Level_Cap.html">Level cap</a></li>
+      <li>Heals, spare balls, claimed base / waystone</li>
+      <li>Location tip: <strong>${esc(g.biome)}</strong></li>
+    </ul>
+    <h3>Craft Valerio’s map</h3>
+    ${figure(
+      guideImg("cartography-maps.png"),
+      "<strong>Johto Cartography Table.</strong> Empty Map + Raptor Bracer → finished map with coordinates.",
+      "Cartography / map crafting"
+    )}
+    <ol class="steps">
+      <li>Search REI for <strong>Raptor Bracer</strong> / Valerio and craft it.</li>
+      <li>Craft a fresh <strong>Empty Map</strong>.</li>
+      <li>Combine Empty Map + Raptor Bracer on the <strong>Johto Cartography Table</strong> (not the Kanto table).</li>
+      <li>Hover the finished map for coordinates — <a href="Gym_Maps.html">Gym maps</a>.</li>
+    </ol>
+    ${critical(
+      "en",
+      "<strong>Wrong region table = wasted Empty Map.</strong> Johto keys go on the Johto Cartography Table. Never open the Empty Map in the world first."
+    )}
+    <h3>Fight tips</h3>
+    <p>${esc(g.tips)}</p>
+    <ol class="steps">
+      <li>Travel with heals; activate waystones on the route.</li>
+      <li>Clear gym trainers if you need XP or CobbleDollars.</li>
+      <li>Heal, then challenge <strong>Valerio</strong>.</li>
+      <li>Win → next: ${nextLink}.</li>
+    </ol>`;
+  }
 
   if (g.slug === "Brock") {
     return `<h2>Walkthrough — spawn to Brock</h2>
@@ -702,6 +773,85 @@ function gymGuideBody(g) {
       league: true,
       champion: true,
     },
+    // Johto (Valerio has a dedicated branch above)
+    Raffaello: {
+      title: "Walkthrough — Valerio to Raffaello",
+      coverage: "Fire, Flying, and Rock pressure Bug.",
+      travel: "Sparse Jungle tip — cut a path, keep a waystone, watch for higher wild levels.",
+      gotcha: "Heracross / Scyther can outspeed soft teams. Bring Rock or Fire that can take a hit.",
+    },
+    Chiara: {
+      title: "Walkthrough — Raffaello to Chiara",
+      coverage: "Fighting answers Normal; Ghost immunities help vs Normal moves.",
+      travel: "Cherry Grove tip — pretty biome, still claim a rest stop.",
+      gotcha: "Miltank-style stall. Pack status and a Fighting pivot; don’t stall yourself out of heals.",
+    },
+    Angelo: {
+      title: "Walkthrough — Chiara to Angelo",
+      coverage: "Dark and Ghost pressure Ghost. Watch immunities both ways.",
+      travel: "Lush Cave tip — torches, food, and an escape waystone.",
+      gotcha: "Cave travel + Ghost status. Enter the leader at full HP with Dark/Ghost answers ready.",
+    },
+    Furio: {
+      title: "Walkthrough — Angelo to Furio",
+      coverage: "Flying, Psychic, and Fairy answer Fighting.",
+      travel: "Desert tip — water, food, and shade. Don’t start the gym dehydrated.",
+      gotcha: "Fighting punishes Normal/Rock/Ice/Steel. Keep a Flying or Psychic revenge killer.",
+    },
+    Jasmine: {
+      title: "Walkthrough — Furio to Jasmine",
+      coverage: "Fire, Fighting, and Ground crack Steel.",
+      travel: "Taiga tip — longer hike; restock balls and Revives.",
+      gotcha: "Magnezone / Metagross punish pure Water. Bring Ground or Fire that isn’t weak to Steel moves.",
+    },
+    Alfredo: {
+      title: "Walkthrough — Jasmine to Alfredo",
+      coverage: "Fire, Fighting, Rock, and Steel help into Ice.",
+      travel: "Ice Spikes tip — cold weather gear / food and a retreat stone.",
+      gotcha: "Ice walls stall. Don’t walk in underleveled into the ~65 band.",
+    },
+    Sandra: {
+      title: "Walkthrough — Alfredo to Sandra",
+      coverage: "Ice and Fairy punish Dragon; Rock/Electric help into some fliers.",
+      travel: "Soul Sand Valley (Nether) tip — fire resist, Nether waystone, then the gym.",
+      gotcha: "Nether prep first, gym second. Half a party of Dragons will bounce off her Dragon core.",
+    },
+    Pino: {
+      title: "Walkthrough — Sandra to Johto Elite Four (Pino)",
+      coverage: "Dark, Bug, and Ghost pressure Psychic.",
+      travel: "Elite Four Tower (The End) — finish all eight Johto gyms; bring stacks of heals.",
+      gotcha: "Full heal between Elite rooms. Do not walk into Johto Koga half-dead.",
+      league: true,
+    },
+    Johto_Koga: {
+      title: "Walkthrough — Pino to Johto Koga",
+      coverage: "Psychic and Ground help into Poison. Fast removers beat stall.",
+      travel: "Same End tower — restock after Pino.",
+      gotcha: "Different team than Kanto Koga (Naganadel line, etc.). Check the team table below.",
+      league: true,
+    },
+    Johto_Bruno: {
+      title: "Walkthrough — Johto Koga to Johto Bruno",
+      coverage: "Flying, Psychic, and Fairy answer Fighting.",
+      travel: "Tower room three — full heal after Johto Koga.",
+      gotcha: "Not Kanto Bruno’s roster. Lucario / Hitmon pressure different pivots.",
+      league: true,
+    },
+    Karen: {
+      title: "Walkthrough — Johto Bruno to Karen",
+      coverage: "Fighting, Bug, and Fairy pressure Dark.",
+      travel: "Fourth Elite room — late Johto wall.",
+      gotcha: "Weavile / Houndoom speed. Don’t rely on a single Psychic into Dark.",
+      league: true,
+    },
+    Johto_Lance: {
+      title: "Walkthrough — Karen to Champion Lance (Johto)",
+      coverage: "Ice and Fairy matter most; have a plan for Lugia.",
+      travel: "Top of the Johto Elite Four Tower. Full restore + items.",
+      gotcha: "Lugia ace + Dragon core. Multiple win conditions beat one Ice type. After win: Hoenn unlock path on your Trainer Card.",
+      league: true,
+      champion: true,
+    },
   }[g.slug] || {
     title: `Walkthrough — ${esc(g.name)}`,
     coverage: esc(g.tips),
@@ -715,7 +865,9 @@ function gymGuideBody(g) {
       : "—";
   const lvMax = teamMaxLevel(g) > 0 ? teamMaxLevel(g) : "—";
   const afterWin = extras.champion
-    ? `Win → Kanto Champion. Next: Johto via Trainer Association (cap resets for <em>you</em>). Details: <a href="Progression.html">Progression</a> · <a href="Gyms_Johto.html">Johto</a>.`
+    ? g.region === "johto"
+      ? `Win → Johto Champion. Next region: <a href="Gyms_Hoenn.html">Hoenn</a> (follow Trainer Card / pack unlocks). Details: <a href="Progression.html">Progression</a>.`
+      : `Win → Kanto Champion. Next: Johto via Trainer Association (cap resets for <em>you</em>). Details: <a href="Progression.html">Progression</a> · <a href="Gyms_Johto.html">Johto</a>.`
     : `Win → level cap rises → next: ${nextLink}.`;
 
   return `<h2>${extras.title}</h2>
@@ -731,18 +883,18 @@ function gymGuideBody(g) {
     <h3>Craft the map</h3>
     ${figure(
       guideImg("cartography-maps.png"),
-      "<strong>Cartography table.</strong> Empty Map + special item → finished map with coordinates.",
+      `<strong>${esc(cartTable)}.</strong> Empty Map + special item → finished map with coordinates.`,
       "Cartography / map crafting"
     )}
     <ol class="steps">
       <li>Search <strong>${esc(g.name)}</strong> in REI and craft <strong>${esc(mapItem)}</strong>.</li>
       <li>Craft a fresh <strong>Empty Map</strong>.</li>
-      <li>Combine Empty Map + ${esc(mapItem)} in the <strong>Kanto Cartography Table</strong> (or trade a Map Guide villager).</li>
+      <li>Combine Empty Map + ${esc(mapItem)} in the <strong>${esc(cartTable)}</strong> (or trade a Map Guide villager).</li>
       <li>Hover the finished map for coordinates. Details: <a href="Gym_Maps.html">Gym maps</a>.</li>
     </ol>
     ${critical(
       "en",
-      "<strong>Do not open the Empty Map in the world first</strong> — that ruins it for gym crafting."
+      "<strong>Do not open the Empty Map in the world first</strong> — that ruins it for gym crafting. Use the correct region cartography table."
     )}
     <h3>Fight tips</h3>
     <p>${extras.gotcha}</p>
@@ -831,6 +983,13 @@ writePage("Level_Cap.html", {
     <tbody>${kantoCapLadderRows}</tbody>
   </table>
 
+  <h2>Johto ladder (approx)</h2>
+  <p>After the Johto Trainer Card, the same +5 rule applies to Johto leaders. Deep guides: <a href="Gyms_Johto.html">Johto gyms</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Next target</th><th>Badge / role</th><th>Type</th><th>Team max lv</th><th>Approx cap</th></tr></thead>
+    <tbody>${johtoCapLadderRows}</tbody>
+  </table>
+
   <h2>XP looks broken?</h2>
   <ol class="steps">
     <li>Open your <strong>Trainer Card</strong> and see which gym is next.</li>
@@ -839,7 +998,7 @@ writePage("Level_Cap.html", {
     <li>Beat the leader; the cap rises and XP sticks again.</li>
   </ol>
 
-  <p class="see-also"><strong>See also:</strong> <a href="Progression.html">Progression</a> · <a href="Gyms_Kanto.html">Kanto gyms</a> · <a href="FAQ.html">FAQ</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Progression.html">Progression</a> · <a href="Gyms_Kanto.html">Kanto gyms</a> · <a href="Gyms_Johto.html">Johto gyms</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxGyms()}
   `,
 });
@@ -1600,9 +1759,12 @@ writePage("Trainer_Index.html", {
       region: t.region,
       size: t.team.length,
       levels: t.team.map((m) => m.level).join(", "),
-      href: trainers.kantoLeaders.some((k) => k.id === t.id)
-        ? trainers.kantoLeaders.find((k) => k.id === t.id).slug + ".html"
-        : null,
+      href: (() => {
+        const hit = [...trainers.kantoLeaders, ...(trainers.johtoLeaders || [])].find(
+          (k) => k.id === t.id
+        );
+        return hit ? hit.slug + ".html" : null;
+      })(),
     }))
   )};
   function renderTrainers() {
@@ -1751,6 +1913,92 @@ registerExpansionPages({
   trainers,
 });
 
+// Johto gym hub + individual deep guides (same depth as Kanto)
+{
+  const johto = trainers.johtoLeaders || [];
+  const rows = johto
+    .map(
+      (g) => `<tr>
+      <td><a href="${g.slug}.html">${esc(g.name)}</a></td>
+      <td>${esc(g.type)}</td>
+      <td>${esc(g.badge)}</td>
+      <td>${esc(g.biome)}</td>
+      <td>${esc(mapItemLabel(g))}</td>
+      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+    </tr>`
+    )
+    .join("");
+  writePage("Gyms_Johto.html", {
+    title: "Johto gyms",
+    breadcrumbs: [
+      { label: "Main Page", href: "../index.html" },
+      { label: "Johto gyms", href: "Gyms_Johto.html" },
+    ],
+    lede: "Checklist for the Johto challenge on CobbleVerse / PokeHaven EU after <a href=\"Blue.html\">Champion Blue</a>. Open a leader page for full teams from pack data.",
+    body: `
+    <h2>Unlock</h2>
+    <ol class="steps">
+      <li>Beat <a href="Blue.html">Blue</a> and follow the champion book → Trainer Association → <strong>Johto Trainer Card</strong>.</li>
+      <li>Craft maps on the <strong>Johto Cartography Table</strong> — not the Kanto table. See <a href="Gym_Maps.html">Gym maps</a>.</li>
+      <li>Start with <a href="Valerio.html">Valerio</a> (Zephyr Badge). Late-game checklist: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>.</li>
+    </ol>
+    <h2>Gym leaders &amp; league</h2>
+    <table class="wikitable">
+      <thead><tr><th>Trainer</th><th>Type</th><th>Badge / role</th><th>Biome / place</th><th>Map item</th><th>Team lv</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="callout tip">
+      <div class="label">Name collisions</div>
+      Johto’s Elite Four includes trainers also named Koga / Bruno / Lance. Their pages are <a href="Johto_Koga.html">Johto Koga</a>, <a href="Johto_Bruno.html">Johto Bruno</a>, and <a href="Johto_Lance.html">Johto Lance</a> — separate from the Kanto pages.
+    </div>
+    <p>Track badges in Advancements too — <a href="Achievements.html">Achievements</a>. After Johto Champion: <a href="Gyms_Hoenn.html">Hoenn</a>.</p>
+    ${navboxGyms()}
+    `,
+  });
+
+  for (const g of johto) {
+    const maxLv = teamMaxLevel(g);
+    const minLv = Math.min(...g.team.map((m) => Number(m.level) || 99));
+    const displayName =
+      g.slug === "Johto_Koga"
+        ? "Koga (Johto)"
+        : g.slug === "Johto_Bruno"
+          ? "Bruno (Johto)"
+          : g.slug === "Johto_Lance"
+            ? "Lance (Johto Champion)"
+            : g.name;
+    writePage(`${g.slug}.html`, {
+      title: displayName,
+      searchIndexTitle: displayName,
+      breadcrumbs: [
+        { label: "Main Page", href: "../index.html" },
+        { label: "Johto gyms", href: "Gyms_Johto.html" },
+        { label: displayName, href: `${g.slug}.html` },
+      ],
+      lede: `${esc(displayName)} — ${esc(g.type)} specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.`,
+      infobox: infoboxHtml(displayName, [
+        ["Region", "Johto"],
+        ["Role", g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"],
+        ["Type focus", esc(g.type)],
+        ["Badge / title", esc(g.badge)],
+        ["Location tip", esc(g.biome)],
+        ["Map item", esc(mapItemLabel(g))],
+        ["Approx cap (while next)", `~${approxCapWhileNext(g)}`],
+        ["Team levels", `${minLv}–${maxLv}`],
+        ["Party size", String(g.team.length)],
+        ["Bag items", g.bag.length ? esc(g.bag.join(", ")) : "—"],
+      ]),
+      body: `
+    ${gymGuideBody(g)}
+
+    <h2>Team</h2>
+    ${teamTable(g.team)}
+    ${navboxGyms()}
+    `,
+    });
+  }
+}
+
 // Final Main Page IA (all-in-one)
 writePage("index.html", {
   title: "PokeHaven EU Wiki",
@@ -1794,8 +2042,9 @@ writePage("index.html", {
   <h2>Gyms &amp; progression</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>All 8 leaders + Elite Four.</p></a>
+    <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — deep guides.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Second gym deep guide.</p></a>
-    <a class="hub-card" href="pages/Lt._Surge.html"><h3>Lt. Surge</h3><p>Third gym — Ground coverage &amp; map.</p></a>
+    <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>First Johto gym — Flying.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym maps</h3><p>Cartography &amp; coordinates.</p></a>
     <a class="hub-card" href="pages/Blue.html"><h3>Champion Blue</h3><p>End of Kanto — then Johto.</p></a>
     <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Regions &amp; the gym loop.</p></a>

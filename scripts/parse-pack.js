@@ -281,6 +281,127 @@ const KANTO_META = {
   },
 };
 
+/** Johto gym / E4 / Champion — RCT johto_* ids. Slugs avoid colliding with Kanto Koga/Bruno/Lance pages. */
+const JOHTO_META = {
+  johto_valerio: {
+    slug: "Valerio",
+    type: "Flying",
+    badge: "Zephyr Badge",
+    biome: "Windswept Hills",
+    specialItem: "Raptor Bracer",
+    order: 1,
+    tips: "Electric, Rock, and Ice punish Flying. After Blue, grab the Johto Trainer Card before you hunt Valerio.",
+  },
+  johto_raffaello: {
+    slug: "Raffaello",
+    type: "Bug",
+    badge: "Hive Badge",
+    biome: "Sparse Jungle",
+    specialItem: "Magnifying Glass",
+    order: 2,
+    tips: "Fire, Flying, and Rock hit Bug hard. Watch for Heracross / Scyther speed.",
+  },
+  johto_chiara: {
+    slug: "Chiara",
+    type: "Normal",
+    badge: "Plain Badge",
+    biome: "Cherry Grove",
+    specialItem: "Sweet Milk",
+    order: 3,
+    tips: "Fighting answers Normal. Miltank / bulky Normals stall — bring status and Fighting coverage.",
+  },
+  johto_angelo: {
+    slug: "Angelo",
+    type: "Ghost",
+    badge: "Fog Badge",
+    biome: "Lush Cave",
+    specialItem: "Spirit Scarf",
+    order: 4,
+    tips: "Dark and Ghost pressure Ghost. Light sources for the cave trip; don’t walk in half-healed.",
+  },
+  johto_furio: {
+    slug: "Furio",
+    type: "Fighting",
+    badge: "Storm Badge",
+    biome: "Desert",
+    specialItem: "Heavy Dumbbell",
+    order: 5,
+    tips: "Flying, Psychic, and Fairy answer Fighting. Desert travel needs water / food / shade breaks.",
+  },
+  johto_jasmine: {
+    slug: "Jasmine",
+    type: "Steel",
+    badge: "Mineral Badge",
+    biome: "Taiga",
+    specialItem: "Secret Medicine",
+    order: 6,
+    tips: "Fire, Fighting, and Ground crack Steel. Magnezone / Metagross hit hard — don’t send pure Water blindly.",
+  },
+  johto_alfredo: {
+    slug: "Alfredo",
+    type: "Ice",
+    badge: "Glacier Badge",
+    biome: "Ice Spikes",
+    specialItem: "Winter Staff",
+    order: 7,
+    tips: "Fire, Fighting, Rock, and Steel help into Ice. Bring cold-weather food and a retreat waystone.",
+  },
+  johto_sandra: {
+    slug: "Sandra",
+    type: "Dragon",
+    badge: "Rising Badge",
+    biome: "Soul Sand Valley (Nether)",
+    specialItem: "Pearl Choker",
+    order: 8,
+    tips: "Ice and Fairy punish Dragon. This gym tips toward the Nether — fire resist and a Nether waystone first.",
+  },
+  johto_league_pino: {
+    slug: "Pino",
+    type: "Psychic",
+    badge: "Elite Four",
+    biome: "Elite Four Tower (The End)",
+    specialItem: "Power Lens",
+    order: 9,
+    tips: "Dark, Bug, and Ghost pressure Psychic. Full heal before every Johto Elite room.",
+  },
+  johto_league_koga: {
+    slug: "Johto_Koga",
+    type: "Poison",
+    badge: "Elite Four",
+    biome: "Elite Four Tower (The End)",
+    specialItem: "Loaded Dice",
+    order: 10,
+    tips: "Psychic and Ground help into Poison. Not the same fight as Kanto Koga — check this page’s team.",
+  },
+  johto_league_bruno: {
+    slug: "Johto_Bruno",
+    type: "Fighting",
+    badge: "Elite Four",
+    biome: "Elite Four Tower (The End)",
+    specialItem: "Muscle Band",
+    order: 11,
+    tips: "Flying, Psychic, and Fairy answer Fighting. Lucario / Hitmon line hit different than Kanto Bruno.",
+  },
+  johto_league_karen: {
+    slug: "Karen",
+    type: "Dark",
+    badge: "Elite Four",
+    biome: "Elite Four Tower (The End)",
+    specialItem: "Razor Claw",
+    order: 12,
+    tips: "Fighting, Bug, and Fairy pressure Dark. Watch Weavile / Houndoom speed.",
+  },
+  johto_champion_lance: {
+    slug: "Johto_Lance",
+    type: "Dragon",
+    badge: "Champion",
+    biome: "Top of Elite Four Tower",
+    specialItem: "Master Cape",
+    order: 13,
+    tips: "Ice and Fairy matter; Lugia as ace changes the endgame. Pack multiple win conditions.",
+  },
+};
+
 function parseTrainerFile(filePath, id) {
   const data = readJson(filePath);
   const name =
@@ -308,7 +429,7 @@ function parseTrainerFile(filePath, id) {
 function parseTrainers() {
   const dir = path.join(RCT, "data", "rctmod", "trainers");
   const all = [];
-  if (!fs.existsSync(dir)) return { kantoLeaders: [], all: [] };
+  if (!fs.existsSync(dir)) return { kantoLeaders: [], johtoLeaders: [], all: [] };
 
   for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
     const id = file.replace(/\.json$/, "");
@@ -329,17 +450,20 @@ function parseTrainers() {
     all.push({ ...parsed, region, file });
   }
 
-  const kantoLeaders = Object.entries(KANTO_META)
-    .map(([id, meta]) => {
-      const t = all.find((x) => x.id === id);
-      if (!t) return null;
-      return { ...t, ...meta };
-    })
-    .filter(Boolean)
-    .sort((a, b) => a.order - b.order);
+  function leadersFromMeta(meta) {
+    return Object.entries(meta)
+      .map(([id, m]) => {
+        const t = all.find((x) => x.id === id);
+        if (!t) return null;
+        return { ...t, ...m };
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.order - b.order);
+  }
 
   return {
-    kantoLeaders,
+    kantoLeaders: leadersFromMeta(KANTO_META),
+    johtoLeaders: leadersFromMeta(JOHTO_META),
     all: all.sort((a, b) => a.name.localeCompare(b.name)),
   };
 }

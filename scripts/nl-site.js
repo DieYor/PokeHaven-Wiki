@@ -149,7 +149,9 @@ export function registerDutchSite({
   <h2>Gyms &amp; progressie</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>Alle 8 leaders + Elite Four.</p></a>
+    <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — diepe gidsen.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Tweede gym, diepe gids.</p></a>
+    <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>Eerste Johto-gym — Flying.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym-maps</h3><p>Cartography &amp; coördinaten.</p></a>
     <a class="hub-card" href="pages/Progression.html"><h3>Progressie</h3><p>Regio’s &amp; gym-loop.</p></a>
     <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement-checklist.</p></a>
@@ -1615,9 +1617,263 @@ export function registerDutchSite({
   `,
   });
 
-  // Region overviews
+  // Johto deep hub + leader pages (parity with EN)
+  {
+    const johto = trainers.johtoLeaders || [];
+    const rows = johto
+      .map((g) => {
+        const label =
+          g.slug === "Johto_Koga"
+            ? "Koga (Johto)"
+            : g.slug === "Johto_Bruno"
+              ? "Bruno (Johto)"
+              : g.slug === "Johto_Lance"
+                ? "Lance (Johto Champion)"
+                : g.name;
+        return `<tr>
+      <td><a href="${g.slug}.html">${esc(label)}</a></td>
+      <td>${esc(g.type)}</td>
+      <td>${esc(g.badge)}</td>
+      <td>${esc(g.biome)}</td>
+      <td>${esc(g.specialItem)}</td>
+      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+    </tr>`;
+      })
+      .join("");
+
+    track("Gyms_Johto.html", {
+      title: "Johto-gyms",
+      breadcrumbs: crumbs({ label: "Johto-gyms", href: "Gyms_Johto.html" }),
+      lede: "Checklist voor de Johto-challenge na <a href=\"Blue.html\">Champion Blue</a>. Open een leader-pagina voor volledige teams uit pack-data.",
+      body: `
+  <h2>Unlock</h2>
+  <ol class="steps">
+    <li>Versla <a href="Blue.html">Blue</a> en volg het champion-boek → Trainer Association → <strong>Johto Trainer Card</strong>.</li>
+    <li>Craft maps op de <strong>Johto Cartography Table</strong> — niet de Kanto-tafel. Zie <a href="Gym_Maps.html">Gym-maps</a>.</li>
+    <li>Start met <a href="Valerio.html">Valerio</a>. Late-game checklist: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>.</li>
+  </ol>
+  <h2>Gym leaders &amp; league</h2>
+  <table class="wikitable">
+    <thead><tr><th>Trainer</th><th>Type</th><th>Badge / rol</th><th>Biome / plek</th><th>Map-item</th><th>Team lv</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>
+  <div class="callout tip">
+    <div class="label">Naambotsingen</div>
+    Johto Elite Four heeft ook Koga / Bruno / Lance. Pagina’s: <a href="Johto_Koga.html">Johto Koga</a>, <a href="Johto_Bruno.html">Johto Bruno</a>, <a href="Johto_Lance.html">Johto Lance</a> — los van Kanto.
+  </div>
+  <p>Achievements: <a href="Achievements.html">Achievements</a>. Na Johto Champion: <a href="Gyms_Hoenn.html">Hoenn</a>.</p>
+  ${navboxCore()}
+  `,
+    });
+
+    const nlJohtoExtras = {
+      Valerio: {
+        title: "Walkthrough — Blue naar Valerio",
+        coverage: "Electric, Rock en Ice straffen Flying.",
+        travel: "Eerst Johto Trainer Card. Locatie-tip: Windswept Hills.",
+        gotcha: "Verkeerde cartography-tafel = verspilde Empty Map. Gebruik de Johto-tafel.",
+        first: true,
+      },
+      Raffaello: {
+        title: "Walkthrough — Valerio naar Raffaello",
+        coverage: "Fire, Flying en Rock drukken Bug.",
+        travel: "Sparse Jungle — waystone onderweg.",
+        gotcha: "Heracross / Scyther outspeeden zachte teams.",
+      },
+      Chiara: {
+        title: "Walkthrough — Raffaello naar Chiara",
+        coverage: "Fighting tegen Normal.",
+        travel: "Cherry Grove — claim een rustplek.",
+        gotcha: "Miltank-achtige stall. Status + Fighting-pivot.",
+      },
+      Angelo: {
+        title: "Walkthrough — Chiara naar Angelo",
+        coverage: "Dark en Ghost drukken Ghost.",
+        travel: "Lush Cave — torches + escape-waystone.",
+        gotcha: "Cave + Ghost-status. Full HP bij de leader.",
+      },
+      Furio: {
+        title: "Walkthrough — Angelo naar Furio",
+        coverage: "Flying, Psychic en Fairy tegen Fighting.",
+        travel: "Desert — water/eten meenemen.",
+        gotcha: "Fighting straft Normal/Rock/Ice/Steel.",
+      },
+      Jasmine: {
+        title: "Walkthrough — Furio naar Jasmine",
+        coverage: "Fire, Fighting en Ground kraken Steel.",
+        travel: "Taiga — langere hike, Revives bijvullen.",
+        gotcha: "Magnezone / Metagross straffen pure Water.",
+      },
+      Alfredo: {
+        title: "Walkthrough — Jasmine naar Alfredo",
+        coverage: "Fire, Fighting, Rock en Steel tegen Ice.",
+        travel: "Ice Spikes — koude prep + retreat-stone.",
+        gotcha: "Niet underleveled de ~65-band in.",
+      },
+      Sandra: {
+        title: "Walkthrough — Alfredo naar Sandra",
+        coverage: "Ice en Fairy straffen Dragon.",
+        travel: "Soul Sand Valley (Nether) — fire resist + Nether-waystone eerst.",
+        gotcha: "Eerst Nether-prep, dan gym.",
+      },
+      Pino: {
+        title: "Walkthrough — Sandra naar Johto Elite Four (Pino)",
+        coverage: "Dark, Bug en Ghost drukken Psychic.",
+        travel: "Elite Four Tower (The End) — alle 8 Johto-gyms eerst.",
+        gotcha: "Full heal tussen Elite-rooms.",
+        league: true,
+      },
+      Johto_Koga: {
+        title: "Walkthrough — Pino naar Johto Koga",
+        coverage: "Psychic en Ground tegen Poison.",
+        travel: "Zelfde End-tower — restock na Pino.",
+        gotcha: "Ander team dan Kanto Koga — zie teamtabel.",
+        league: true,
+      },
+      Johto_Bruno: {
+        title: "Walkthrough — Johto Koga naar Johto Bruno",
+        coverage: "Flying, Psychic en Fairy tegen Fighting.",
+        travel: "Tower room 3 — full heal na Johto Koga.",
+        gotcha: "Niet Kanto Bruno’s roster.",
+        league: true,
+      },
+      Karen: {
+        title: "Walkthrough — Johto Bruno naar Karen",
+        coverage: "Fighting, Bug en Fairy drukken Dark.",
+        travel: "Vierde Elite-room — late Johto-wall.",
+        gotcha: "Weavile / Houndoom-speed. Niet één Psychic in Dark gooien.",
+        league: true,
+      },
+      Johto_Lance: {
+        title: "Walkthrough — Karen naar Champion Lance (Johto)",
+        coverage: "Ice en Fairy; plan voor Lugia.",
+        travel: "Top van de Johto Elite Four Tower.",
+        gotcha: "Lugia-ace + Dragon-core. Daarna: Hoenn via Trainer Card.",
+        league: true,
+        champion: true,
+      },
+    };
+
+    for (const g of johto) {
+      const file = `${g.slug}.html`;
+      const mapItem = g.specialItem;
+      const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
+      const minLv = Math.min(...(g.team || []).map((m) => Number(m.level) || 99), 99);
+      const sorted = [...johto].sort((a, b) => a.order - b.order);
+      const idx = sorted.findIndex((x) => x.slug === g.slug);
+      const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
+      const nextLink = next
+        ? `<a href="${next.slug}.html">${esc(
+            next.slug === "Johto_Koga"
+              ? "Koga (Johto)"
+              : next.slug === "Johto_Bruno"
+                ? "Bruno (Johto)"
+                : next.slug === "Johto_Lance"
+                  ? "Lance (Johto)"
+                  : next.name
+          )}</a>`
+        : `<a href="Gyms_Hoenn.html">Hoenn</a>`;
+      const displayName =
+        g.slug === "Johto_Koga"
+          ? "Koga (Johto)"
+          : g.slug === "Johto_Bruno"
+            ? "Bruno (Johto)"
+            : g.slug === "Johto_Lance"
+              ? "Lance (Johto Champion)"
+              : g.name;
+      const ex = nlJohtoExtras[g.slug] || {
+        title: `Walkthrough — ${esc(displayName)}`,
+        coverage: esc(g.tips),
+        travel: `Locatie-tip: ${esc(g.biome)}.`,
+        gotcha: "Heal vóór de leader. Respecteer de level cap.",
+      };
+      const afterWin = ex.champion
+        ? `Win → Johto Champion. Volgende regio: <a href="Gyms_Hoenn.html">Hoenn</a>. Zie <a href="Progression.html">Progressie</a>.`
+        : `Win → level cap stijgt → volgende: ${nextLink}.`;
+
+      const unlockBlock = ex.first
+        ? `<h3>Unlock Johto eerst</h3>
+  <ol class="steps">
+    <li>Versla <a href="Blue.html">Champion Blue</a>.</li>
+    <li>Champion-boek → Trainer Association → <strong>Johto Trainer Card</strong>.</li>
+    <li>Structures kwijt? Discord — staff kan 1× herstarten. Zie <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>.</li>
+  </ol>`
+        : "";
+
+      track(file, {
+        title: displayName,
+        searchIndexTitle: displayName,
+        breadcrumbs: crumbs(
+          { label: "Johto-gyms", href: "Gyms_Johto.html" },
+          { label: displayName, href: file }
+        ),
+        lede:
+          g.order <= 8
+            ? `${esc(displayName)} — ${esc(g.type)}-specialist. Johto gym ${g.order} op PokeHaven EU.`
+            : `${esc(displayName)} — Johto league-gevecht op PokeHaven EU.`,
+        infobox: `<div class="infobox-title">${esc(displayName)}</div>
+  <table>
+    <tr><th>Regio</th><td>Johto</td></tr>
+    <tr><th>Rol</th><td>${g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"}</td></tr>
+    <tr><th>Type</th><td>${esc(g.type)}</td></tr>
+    <tr><th>Badge</th><td>${esc(g.badge)}</td></tr>
+    <tr><th>Locatie-tip</th><td>${esc(g.biome)}</td></tr>
+    <tr><th>Map-item</th><td>${esc(mapItem)}</td></tr>
+    <tr><th>Approx cap</th><td>~${maxLv + 5}</td></tr>
+    <tr><th>Team levels</th><td>${minLv}–${maxLv}</td></tr>
+    <tr><th>Party</th><td>${(g.team || []).length}</td></tr>
+  </table>`,
+        body: `
+  <h2>${ex.title}</h2>
+  ${unlockBlock}
+  <h3>Voorbereiden</h3>
+  <p>${esc(g.tips)}</p>
+  <ul>
+    <li><strong>Coverage:</strong> ${ex.coverage}</li>
+    <li>Leader party (pack-data): ongeveer <strong>${minLv}–${maxLv}</strong></li>
+    <li>Approx cap: <strong>~${maxLv + 5}</strong> — <a href="Level_Cap.html">Level cap</a></li>
+    <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
+    <li>${ex.travel}</li>
+  </ul>
+  <h3>Craft de map</h3>
+  ${figure(
+    guideImg("cartography-maps.png"),
+    "<strong>Johto Cartography Table.</strong> Empty Map + special item → afgewerkte map met coördinaten.",
+    "Cartography / map-crafting"
+  )}
+  <ol class="steps">
+    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(mapItem)}</strong>.</li>
+    <li>Craft een verse <strong>Empty Map</strong>.</li>
+    <li>Combineer Empty Map + ${esc(mapItem)} in de <strong>Johto Cartography Table</strong>.</li>
+    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
+  </ol>
+  ${critical(
+    "nl",
+    "<strong>Open de Empty Map niet eerst in de wereld</strong> — en gebruik de Johto-tafel, niet de Kanto-tafel."
+  )}
+  <h3>Fight-tips</h3>
+  <p>${ex.gotcha}</p>
+  <ol class="steps">
+    <li>Reis met heals; activeer waystones onderweg.</li>
+    ${
+      ex.league
+        ? "<li>Elite Four / Champion: <strong>full heal tussen rooms</strong>.</li>"
+        : "<li>Clear gym-trainers als je XP of CobbleDollars nodig hebt.</li>"
+    }
+    <li>Heal, daarna <strong>${esc(displayName)}</strong> challengen.</li>
+    <li>${afterWin}</li>
+  </ol>
+  <h2>Team</h2>
+  ${teamTable(g.team)}
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Johto.html">Johto-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Level_Cap.html">Level cap</a></p>
+  ${navboxCore()}
+  `,
+      });
+    }
+  }
+
+  // Region overviews (thin stubs — Johto is deep above)
   for (const [file, title, blurb] of [
-    ["Gyms_Johto.html", "Johto", "Regio-overzicht en trainers voor Johto."],
     ["Gyms_Hoenn.html", "Hoenn", "Regio-overzicht en trainers voor Hoenn."],
     ["Gyms_Sinnoh.html", "Sinnoh", "Late-game regio-overzicht voor Sinnoh."],
   ]) {
@@ -1627,7 +1883,7 @@ export function registerDutchSite({
       lede: blurb,
       body: `
   <p>${esc(blurb)}</p>
-  <p>Engelse pagina met details: <a href="../../pages/${file}">${esc(title)} (EN)</a>. Startregio: <a href="Gyms_Kanto.html">Kanto</a>.</p>
+  <p>Engelse pagina met details: <a href="../../pages/${file}">${esc(title)} (EN)</a>. Startregio: <a href="Gyms_Kanto.html">Kanto</a> · daarna <a href="Gyms_Johto.html">Johto</a>.</p>
   `,
     });
   }
