@@ -1048,7 +1048,7 @@ table.wikitable tr {
   color: var(--brand);
 }
 
-/* Custom cursor — CobbleVerse pokéball + tiny aim nub + energy ring */
+/* Custom cursor — pokéball tip + aura / orbit / ring / spark trail */
 html.custom-cursor,
 html.custom-cursor * {
   cursor: none !important;
@@ -1064,21 +1064,109 @@ html.custom-cursor * {
 }
 .cursor-fx.is-on { opacity: 1; }
 
+.cursor-trail {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.cursor-spark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: rgba(94, 196, 200, 0.85);
+  box-shadow: 0 0 8px rgba(94, 196, 200, 0.55);
+  opacity: 0.9;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    opacity 0.38s ease,
+    transform 0.38s ease;
+  will-change: transform, opacity;
+}
+.cursor-spark.is-hot {
+  background: rgba(240, 180, 41, 0.9);
+  box-shadow: 0 0 10px rgba(240, 180, 41, 0.55);
+}
+.cursor-spark.is-fade {
+  opacity: 0;
+  transform: translate3d(0, 0, 0) scale(0.15);
+}
+
+.cursor-aura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  margin: -18px 0 0 -16px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(94, 196, 200, 0.22) 0%,
+    rgba(240, 180, 41, 0.08) 42%,
+    rgba(94, 196, 200, 0) 70%
+  );
+  will-change: transform;
+  z-index: 1;
+  animation: cursorAuraPulse 2.4s ease-in-out infinite;
+  transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease, opacity 0.2s ease;
+}
+
+.cursor-orbit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  margin: -14px 0 0 -12px;
+  will-change: transform;
+  z-index: 1;
+  opacity: 0.85;
+  transition: opacity 0.18s ease, margin 0.2s ease;
+}
+.cursor-orbit svg {
+  display: block;
+  width: 48px;
+  height: 48px;
+  animation: cursorOrbitSpin 3.8s linear infinite;
+  transform-origin: 50% 50%;
+  filter: drop-shadow(0 0 4px rgba(94, 196, 200, 0.35));
+}
+.orbit-ring {
+  fill: none;
+  stroke: rgba(94, 196, 200, 0.55);
+  stroke-width: 1.15;
+  stroke-dasharray: 6 7;
+  stroke-linecap: round;
+}
+.orbit-node {
+  fill: #f0b429;
+  filter: drop-shadow(0 0 3px rgba(240, 180, 41, 0.7));
+}
+.orbit-node.dim {
+  fill: #5ec4c8;
+  opacity: 0.85;
+}
+
 .cursor-ring {
   position: fixed;
   top: 0;
   left: 0;
-  width: 32px;
-  height: 32px;
-  /* Center roughly on the ball (hotspot is NW tip nub) */
-  margin: -6px 0 0 -4px;
+  width: 30px;
+  height: 30px;
+  margin: -5px 0 0 -3px;
   border-radius: 50%;
-  border: 1.5px solid rgba(94, 196, 200, 0.45);
+  border: 1.5px solid rgba(94, 196, 200, 0.5);
   box-shadow:
-    0 0 0 1px rgba(240, 180, 41, 0.12),
-    inset 0 0 10px rgba(94, 196, 200, 0.1);
+    0 0 0 1px rgba(240, 180, 41, 0.14),
+    0 0 12px rgba(94, 196, 200, 0.18),
+    inset 0 0 10px rgba(94, 196, 200, 0.12);
   will-change: transform;
-  z-index: 1;
+  z-index: 2;
   transition:
     border-color 0.18s ease,
     box-shadow 0.18s ease,
@@ -1092,18 +1180,18 @@ html.custom-cursor * {
   position: fixed;
   top: 0;
   left: 0;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   will-change: transform;
-  z-index: 2;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.55));
+  z-index: 3;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 6px rgba(94, 196, 200, 0.25));
   color: #e8f2ec;
 }
 
 .cursor-ball {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   transform-origin: 1px 1px;
   transition: transform 0.16s cubic-bezier(0.2, 0.9, 0.3, 1.2);
 }
@@ -1143,16 +1231,33 @@ html.custom-cursor * {
   stroke-linejoin: round;
 }
 
-/* Hover links/cards — gold button + teal ring (catch-ready) */
+.cursor-fx.is-hot .cursor-aura {
+  width: 68px;
+  height: 68px;
+  margin: -24px 0 0 -22px;
+  animation-duration: 1.4s;
+  background: radial-gradient(
+    circle,
+    rgba(240, 180, 41, 0.28) 0%,
+    rgba(94, 196, 200, 0.14) 45%,
+    rgba(240, 180, 41, 0) 72%
+  );
+}
+.cursor-fx.is-hot .cursor-orbit {
+  opacity: 1;
+}
+.cursor-fx.is-hot .orbit-ring {
+  stroke: rgba(240, 180, 41, 0.7);
+}
 .cursor-fx.is-hot .cursor-ring {
-  width: 38px;
-  height: 38px;
-  margin: -9px 0 0 -7px;
-  border-color: rgba(240, 180, 41, 0.7);
+  width: 36px;
+  height: 36px;
+  margin: -8px 0 0 -6px;
+  border-color: rgba(240, 180, 41, 0.75);
   box-shadow:
-    0 0 0 1px rgba(94, 196, 200, 0.25),
-    0 0 14px rgba(94, 196, 200, 0.28),
-    inset 0 0 12px rgba(240, 180, 41, 0.12);
+    0 0 0 1px rgba(94, 196, 200, 0.3),
+    0 0 16px rgba(94, 196, 200, 0.35),
+    inset 0 0 12px rgba(240, 180, 41, 0.14);
 }
 .cursor-fx.is-hot .ball-button-inner {
   fill: #f0b429;
@@ -1161,30 +1266,51 @@ html.custom-cursor * {
   fill: #5ec4c8;
 }
 .cursor-fx.is-hot .cursor-ball {
-  transform: scale(1.05) rotate(-6deg);
+  transform: scale(1.08) rotate(-8deg);
 }
 
-/* Click — throw squash */
 .cursor-fx.is-click .cursor-ball {
-  transform: scale(0.88) rotate(5deg);
+  transform: scale(0.86) rotate(6deg);
 }
 .cursor-fx.is-click .cursor-ring {
-  width: 26px;
-  height: 26px;
-  margin: -3px 0 0 -1px;
-  border-color: rgba(240, 180, 41, 0.85);
-  box-shadow: 0 0 10px rgba(240, 180, 41, 0.35);
+  width: 24px;
+  height: 24px;
+  margin: -2px 0 0 0;
+  border-color: rgba(240, 180, 41, 0.9);
+  box-shadow: 0 0 14px rgba(240, 180, 41, 0.45);
+}
+.cursor-fx.is-click .cursor-orbit {
+  opacity: 0.35;
+}
+.cursor-fx.is-click .cursor-aura {
+  width: 40px;
+  height: 40px;
+  margin: -10px 0 0 -8px;
 }
 
-/* Text fields — clean branded I-beam */
 .cursor-fx.is-text .cursor-ball { display: none; }
 .cursor-fx.is-text .cursor-ibeam { display: block; }
-.cursor-fx.is-text .cursor-ring { opacity: 0.35; width: 22px; height: 22px; margin: -4px 0 0 -6px; }
+.cursor-fx.is-text .cursor-orbit,
+.cursor-fx.is-text .cursor-aura { opacity: 0.2; }
+.cursor-fx.is-text .cursor-ring {
+  opacity: 0.35;
+  width: 22px;
+  height: 22px;
+  margin: -4px 0 0 -6px;
+}
 .cursor-fx.is-text .cursor-tip {
   width: 12px;
   height: 20px;
   color: #d7ebe4;
   filter: drop-shadow(0 0 0.5px #0d1814) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes cursorOrbitSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes cursorAuraPulse {
+  0%, 100% { opacity: 0.7; transform: translate3d(0, 0, 0) scale(1); }
+  50% { opacity: 1; transform: translate3d(0, 0, 0) scale(1.08); }
 }
 
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {

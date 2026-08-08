@@ -1,5 +1,5 @@
 /**
- * CobbleVerse-flavoured motion: trainer cursor (pokéball + tiny aim nub) + reveal-on-scroll.
+ * CobbleVerse-flavoured motion: pokéball cursor + aura / orbit / trail + reveal-on-scroll.
  * Respects prefers-reduced-motion and skips on coarse pointers.
  */
 (function () {
@@ -35,7 +35,6 @@
 
   function initCursorTracer() {
     if (reduce || coarse) return;
-    // Idempotent: bfcache / soft navigations must not stack multiple cursors
     if (document.querySelector(".cursor-fx")) return;
 
     document.documentElement.classList.add("custom-cursor");
@@ -45,32 +44,46 @@
     root.setAttribute("aria-hidden", "true");
     document.body.appendChild(root);
 
-    // Soft CobbleVerse energy ring — lags slightly behind the tip
+    const trailLayer = document.createElement("div");
+    trailLayer.className = "cursor-trail";
+    root.appendChild(trailLayer);
+
+    const aura = document.createElement("div");
+    aura.className = "cursor-aura";
+    root.appendChild(aura);
+
+    const orbit = document.createElement("div");
+    orbit.className = "cursor-orbit";
+    orbit.innerHTML = `<svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+      <circle cx="24" cy="24" r="18.5" class="orbit-ring"/>
+      <circle cx="24" cy="5.5" r="2.1" class="orbit-node"/>
+      <circle cx="40.2" cy="30.5" r="1.45" class="orbit-node dim"/>
+    </svg>`;
+    root.appendChild(orbit);
+
     const ring = document.createElement("div");
     ring.className = "cursor-ring";
     root.appendChild(ring);
 
     const tip = document.createElement("div");
     tip.className = "cursor-tip";
-    // Hot-spot = tiny tip nub at (1,1); pokéball is the main cursor body.
     tip.innerHTML = `
-      <svg class="cursor-ball" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+      <svg class="cursor-ball" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
         <defs>
           <linearGradient id="phCursorBallTop" x1="4" y1="3" x2="20" y2="12" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#ff5a5a"/>
+            <stop stop-color="#ff6b6b"/>
             <stop offset="0.55" stop-color="#e45757"/>
             <stop offset="1" stop-color="#c93b3b"/>
           </linearGradient>
           <linearGradient id="phCursorBallBot" x1="6" y1="12" x2="18" y2="22" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#f7fbf8"/>
+            <stop stop-color="#fbfdfe"/>
             <stop offset="1" stop-color="#d7e8df"/>
           </linearGradient>
           <radialGradient id="phCursorBallShine" cx="0.32" cy="0.28" r="0.55">
-            <stop stop-color="#fff" stop-opacity="0.5"/>
+            <stop stop-color="#fff" stop-opacity="0.55"/>
             <stop offset="1" stop-color="#fff" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <!-- tiny aim nub integrated on the NW rim -->
         <path class="tip-nub" d="M1.1 1.1 7.2 3.05 3.05 7.2Z"/>
         <path class="tip-nub-stroke" d="M1.1 1.1 7.2 3.05 3.05 7.2Z"/>
         <circle class="ball-outline" cx="13.2" cy="13.8" r="8.6"/>
@@ -90,21 +103,46 @@
     let my = window.innerHeight / 2;
     let rx = mx;
     let ry = my;
+    let ax = mx;
+    let ay = my;
+    let ox = mx;
+    let oy = my;
     let visible = false;
     let raf = 0;
     let looping = false;
+    let lastTrail = 0;
+    let lastX = mx;
+    let lastY = my;
 
     const interactiveSel =
       "a, button, .hub-card, .join-btn, .join-btn-discord, .lang-btn, .figure-zoom, summary, .chip, label[for], .site-nav a, .navbox-links a, .toc-box a, .search-results a";
     const textSel =
       'input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]), textarea, [contenteditable="true"]';
 
+    function spawnTrail(x, y, hot) {
+      const p = document.createElement("span");
+      p.className = "cursor-spark" + (hot ? " is-hot" : "");
+      const jitterX = (Math.random() - 0.5) * 10;
+      const jitterY = (Math.random() - 0.5) * 10;
+      p.style.transform = `translate3d(${x + jitterX}px, ${y + jitterY}px, 0)`;
+      trailLayer.appendChild(p);
+      requestAnimationFrame(() => p.classList.add("is-fade"));
+      window.setTimeout(() => p.remove(), 420);
+    }
+
     function tick() {
-      // Ring eases behind the tip — feels alive without hurting aim
-      rx += (mx - rx) * 0.22;
-      ry += (my - ry) * 0.22;
+      // Layered lag: aura slowest, orbit mid, ring closest — reads as energy field
+      ax += (mx - ax) * 0.12;
+      ay += (my - ay) * 0.12;
+      ox += (mx - ox) * 0.16;
+      oy += (my - oy) * 0.16;
+      rx += (mx - rx) * 0.28;
+      ry += (my - ry) * 0.28;
+
       tip.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
       ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
+      orbit.style.transform = `translate3d(${ox}px, ${oy}px, 0)`;
+      aura.style.transform = `translate3d(${ax}px, ${ay}px, 0)`;
       raf = requestAnimationFrame(tick);
     }
 
@@ -129,22 +167,42 @@
         my = e.clientY;
         if (!visible) {
           visible = true;
-          rx = mx;
-          ry = my;
+          rx = ax = ox = mx;
+          ry = ay = oy = my;
+          lastX = mx;
+          lastY = my;
           root.classList.add("is-on");
         }
         if (!looping) startLoop();
+
         const onText = !!e.target.closest(textSel);
         const onHot = !onText && !!e.target.closest(interactiveSel);
         root.classList.toggle("is-text", onText);
         root.classList.toggle("is-hot", onHot);
+
+        const now = performance.now();
+        const dx = mx - lastX;
+        const dy = my - lastY;
+        const dist = Math.hypot(dx, dy);
+        if (!onText && dist > 6 && now - lastTrail > 28) {
+          spawnTrail(mx - dx * 0.35, my - dy * 0.35, onHot);
+          if (dist > 18) spawnTrail(mx - dx * 0.7, my - dy * 0.7, onHot);
+          lastTrail = now;
+          lastX = mx;
+          lastY = my;
+        }
       },
       { passive: true }
     );
 
     window.addEventListener(
       "mousedown",
-      () => root.classList.add("is-click"),
+      () => {
+        root.classList.add("is-click");
+        for (let i = 0; i < 5; i++) {
+          window.setTimeout(() => spawnTrail(mx, my, true), i * 28);
+        }
+      },
       { passive: true }
     );
     window.addEventListener(
@@ -160,16 +218,15 @@
       if (visible) root.classList.add("is-on");
     });
 
-    // Browser Back often restores via bfcache: RAF was frozen and cursor:none stays on.
     window.addEventListener("pagehide", () => {
       stopLoop();
       visible = false;
       root.classList.remove("is-on", "is-hot", "is-text", "is-click");
+      trailLayer.innerHTML = "";
     });
     window.addEventListener("pageshow", (e) => {
       document.documentElement.classList.add("custom-cursor");
       startLoop();
-      // After bfcache restore, wait for the next real mouse move to re-show
       if (e.persisted) {
         visible = false;
         root.classList.remove("is-on", "is-hot", "is-text", "is-click");
