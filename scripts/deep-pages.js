@@ -538,10 +538,19 @@ export function registerDeepPages({
     ],
     lede: "A calm pace through Kanto on PokeHaven EU. Adjust if you play more or less — the order matters more than the calendar.",
     body: `
+    <h2>Day 1 checklist</h2>
+    <ol class="steps">
+      <li>Install CobbleVerse <strong>1.7.42</strong> and join <strong>PokeHaven EU</strong>.</li>
+      <li>Starter (<kbd>C</kbd>) → bed → <strong>FTB Chunks claim</strong> (bed, chests, farm, waystone).</li>
+      <li>Catch 2–3 nearby; craft the <strong>Brock map</strong> (Empty Map + Brock Map Key).</li>
+      <li>Beat Brock → craft <strong>Misty’s map</strong> (Cerulean Star + Shears for seagrass).</li>
+    </ol>
+    <p>Details: <a href="First_Hours.html">First hours</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a>.</p>
+
     <table class="wikitable">
       <thead><tr><th>Phase</th><th>Goals</th><th>Done when…</th></tr></thead>
       <tbody>
-        <tr><td><strong>Day 1–2</strong></td><td>Install, starter, bed, claim, Brock</td><td>Boulder Badge + Misty map started</td></tr>
+        <tr><td><strong>Day 1–2</strong></td><td>Install, claim, Brock, Misty map started</td><td>Boulder Badge + Cerulean Star craft done</td></tr>
         <tr><td><strong>Week 1</strong></td><td>Misty → Surge → Erika; iron gear; apricorn farm</td><td>4 badges, stable house</td></tr>
         <tr><td><strong>Week 2</strong></td><td>Finish Kanto gyms; money loop; waystone network</td><td>8 badges</td></tr>
         <tr><td><strong>Week 3–4</strong></td><td>Elite Four + Blue; prep Johto</td><td>Kanto clear, next region open</td></tr>
@@ -581,7 +590,7 @@ export function registerDeepPages({
         <tr class="critical-row"><td>Hand-breaking seagrass</td><td>0 Cerulean Star mats</td><td>Shears — <a href="Misty.html">Misty</a></td></tr>
         <tr class="critical-row"><td>Vanilla fishing rod only</td><td>Fish items, few/no Pokémon</td><td>Cobblemon rods — <a href="Fishing.html">Fishing</a></td></tr>
         <tr class="critical-row"><td>Unclaimed pasture / eggs</td><td>Shiny project stolen</td><td>Claim breed farm — <a href="Breeding.html">Breeding</a> · <a href="Shiny.html">Shiny</a></td></tr>
-        <tr><td>Never open the wiki</td><td>Repeat Discord tickets</td><td><a href="https://pokehaven.wiki">pokehaven.wiki</a> (EN/NL) · Discord <code>#pokehaven-wiki</code></td></tr>
+        <tr><td>Skip the wiki, spam Discord</td><td>Slow answers + repeat tickets</td><td>Read <a href="https://pokehaven.wiki">pokehaven.wiki</a> first → then <code>#help</code> (quick) or <code>#tickets</code> (private)</td></tr>
         <tr><td>Buying only luxury shop gear</td><td>Broke</td><td>Craft balls; sell emeralds</td></tr>
         <tr><td>Palace / shiny before gyms</td><td>Slow progress</td><td>Gyms first — <a href="Brock.html">Brock</a> · <a href="Gyms_Kanto.html">Kanto</a></td></tr>
         <tr class="critical-row"><td>Wrong Pokémon selected</td><td>Wrong mon sent out</td><td>Arrow keys then <kbd>R</kbd></td></tr>
@@ -611,6 +620,11 @@ export function registerDeepPages({
       <tr><th>Related</th><td><a href="Poke_Balls.html">Poké Balls</a></td></tr>
     </table>`,
     body: `
+    <div class="callout tip">
+      <div class="label">Before Brock</div>
+      Catch <strong>2–3 nearby Pokémon</strong> near spawn before the long hike. A tiny team + balls on the hotbar beats walking empty-handed — see <a href="First_Hours.html">First hours</a>.
+    </div>
+
     <h2>The catch loop</h2>
     ${figure(
       "../assets/guide-catching.png",
@@ -672,7 +686,7 @@ export function registerDeepPages({
     body: `
     ${critical(
       "en",
-      "<strong>Claim before you leave valuables.</strong> Unclaimed chests are public loot. Use <strong>FTB Chunks only</strong> — the pack also has Open Parties and Claims; mixing both on one base gets messy."
+      "<strong>On PokeHaven EU, only FTB Chunks counts.</strong> Unclaimed chests are public loot. The pack also has Open Parties and Claims — don’t use it for your base; mixing both gets messy."
     )}
 
     ${figure(
@@ -827,7 +841,7 @@ export function registerDeepPages({
     <ol class="steps">
       <li>Press <kbd>C</kbd> → pick a starter. Grass is the safest into Brock.</li>
       <li>Place a bed and sleep once (respawn point).</li>
-      <li><strong><a href="Claims.html">Claim now</a></strong> with <strong>FTB Chunks</strong> (Esc → Options → Controls → search FTB) — bed, chests, farm. Unclaimed = public loot.</li>
+      <li><strong><a href="Claims.html">Claim now</a></strong> with <strong>FTB Chunks</strong> (Esc → Options → Controls → search FTB) — bed, chests, farm, waystone. Unclaimed = public loot.</li>
       <li>Activate any spawn waystone (right-click). Skim the hotbar guidebook.</li>
       <li>Catch 2–3 nearby Pokémon; keep balls and heals on your hotbar.</li>
       <li>Craft the <strong>Brock map</strong>: place <strong>Kanto Cartography Table</strong> → put <strong>Empty Map + Brock Map Key</strong> in it (do <strong>not</strong> open the Empty Map in the world) → follow the map. Full fight guide: <a href="Brock.html">Brock</a>.</li>
@@ -1031,6 +1045,14 @@ export function registerDeepPages({
       <li>Leave a named waystone near the gym if you’ll return for rematches, shops, or friends.</li>
     </ol>
 
+    <h2>BlueMap (browser map)</h2>
+    <p>Open the live world overview in your browser:</p>
+    <p><a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank"><strong>http://88.211.214.163:8100</strong></a></p>
+    <ul>
+      <li>Great for orientation, bases, and sharing coords with friends.</li>
+      <li>Does <em>not</em> replace gym maps or waystones — still craft maps and activate stones in-game.</li>
+    </ul>
+
     <h2>Other travel tools</h2>
     <ul>
       <li><strong>Nature’s Compass / Explorer’s Compass</strong> — find biomes or structures when maps aren’t enough.</li>
@@ -1112,8 +1134,13 @@ export function registerDeepPages({
         <tr><td>PokeHaven EU</td><td>Our multiplayer server</td></tr>
         <tr><td>CobbleVerse</td><td>The modpack you install</td></tr>
         <tr><td>Level cap</td><td>Levels freeze until the next gym falls</td></tr>
-        <tr><td>Claim</td><td>Protect land with FTB Chunks</td></tr>
+        <tr><td>Claim</td><td>Protect land with FTB Chunks only</td></tr>
         <tr><td>Waystone</td><td>Teleport stone</td></tr>
+        <tr><td>Empty Map</td><td>Fresh map for gym crafting — never open it in the world first</td></tr>
+        <tr><td>Cartography table</td><td>Region table (Kanto / Johto / …) that finishes gym maps with coordinates</td></tr>
+        <tr><td>Cerulean Star</td><td>Misty’s map item (seagrass needs Shears)</td></tr>
+        <tr><td>PokéDollars</td><td>Server money (CobbleDollars mod) — shops &amp; bank</td></tr>
+        <tr><td>Ticket</td><td>Private Discord support channel via <code>#tickets</code></td></tr>
         <tr><td>Recipe list / REI</td><td>Search crafts with inventory open (<kbd>E</kbd>)</td></tr>
         <tr><td>Outfits</td><td>Craftable trainer clothes — see <a href="Outfits_and_Cosmetics.html">Outfits and cosmetics</a></td></tr>
       </tbody>
@@ -1121,6 +1148,10 @@ export function registerDeepPages({
 
     <h2>Need help?</h2>
     <p><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a> — pack zip, live IP, and support. Send a screenshot + what you already tried.</p>
+    <ul>
+      <li><code>#help</code> — quick public questions</li>
+      <li><code>#tickets</code> — private help, reports, appeals</li>
+    </ul>
 
     <h2>What to read next</h2>
     <ol>
@@ -1156,7 +1187,7 @@ export function registerDeepPages({
   <h2>Start here</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Getting started</h3><p>Install the pack and join the server.</p></a>
-    <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Full opening checklist with HUD screenshots.</p></a>
+    <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Claim, Brock, then the Misty loop.</p></a>
     <a class="hub-card" href="pages/Poke_Balls.html"><h3>Poké Balls</h3><p>Apricorns, crafting screenshots, farm setup.</p></a>
     <a class="hub-card" href="pages/Brock.html"><h3>Brock guide</h3><p>Map legend, prep, and full team.</p></a>
   </div>
@@ -1169,7 +1200,7 @@ export function registerDeepPages({
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks walkthrough + screenshot.</p></a>
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto gyms</h3><p>All leaders + league pages.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens, tiers, damage share.</p></a>
-    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones and map tools.</p></a>
+    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
     <a class="hub-card" href="pages/Minecraft_Basics.html"><h3>Minecraft basics</h3><p>Tools, farms, inventory for newcomers.</p></a>
   </div>
 

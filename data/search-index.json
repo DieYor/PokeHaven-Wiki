@@ -9,12 +9,12 @@
     "title": "Getting started",
     "href": "pages/Getting_Started.html",
     "blurb": "Install CobbleVerse 1.7.42, join PokeHaven EU, and know the words the rest of the wiki uses.",
-    "keywords": "join install curseforge discord ip pack 1.7.42"
+    "keywords": "join install curseforge discord ip pack 1.7.42 ticket empty map cerulean"
   },
   {
     "title": "First hours",
     "href": "pages/First_Hours.html",
-    "blurb": "A dense opening guide: from character load-in to a claimed base, a tiny team, and the road toward Brock.",
+    "blurb": "Opening guide: claim, first catches, Brock — then the next loop to Misty so you know what to do after badge one.",
     "keywords": ""
   },
   {
@@ -117,7 +117,7 @@
     "title": "Gym maps",
     "href": "pages/Gym_Maps.html",
     "blurb": "How to find gyms on PokeHaven EU — each region has its own cartography table. Craft a finished map for a marker and coordinates.",
-    "keywords": "map cartography empty map brock map key coordinates johto hoenn sinnoh valerio petra pedro"
+    "keywords": "map cartography empty map brock map key misty cerulean star coordinates johto hoenn sinnoh valerio petra pedro"
   },
   {
     "title": "Economy",
@@ -178,12 +178,6 @@
     "href": "pages/Voice_Chat.html",
     "blurb": "Simple Voice Chat is built into the pack. Nearby talk works in-game — Discord is optional for lobby chat and announcements.",
     "keywords": "mic voice chat simple voice talk"
-  },
-  {
-    "title": "FAQ",
-    "href": "pages/FAQ.html",
-    "blurb": "Expanded answers for the problems every new PokeHaven trainer hits.",
-    "keywords": "help problem question join discord"
   },
   {
     "title": "Trainer index",
@@ -261,7 +255,7 @@
     "title": "Travel",
     "href": "pages/Travel.html",
     "blurb": "Waystones are free fast-travel on PokeHaven EU. Combine them with gym maps, Xaero pins, and a mount so you never re-walk the same 2000 blocks.",
-    "keywords": "waystone teleport travel fast travel"
+    "keywords": "waystone teleport travel fast travel bluemap browser map"
   },
   {
     "title": "Minecraft survival hub",
@@ -338,14 +332,14 @@
   {
     "title": "Hoenn gyms",
     "href": "pages/Gyms_Hoenn.html",
-    "blurb": "Hoenn opens after the Johto Champion. Full walkthroughs like Kanto and Johto are still being written — start with the gym maps and the trainer list below.",
-    "keywords": "hoenn petra gym maps cartography coming soon"
+    "blurb": "Hoenn opens after the Johto Champion. Use the gym maps and trainer list below — deep leader pages grow over time (Kanto/Johto style).",
+    "keywords": "hoenn petra gym maps cartography overview"
   },
   {
     "title": "Sinnoh gyms",
     "href": "pages/Gyms_Sinnoh.html",
-    "blurb": "Sinnoh opens after Hoenn Champion Rocco. Full walkthroughs like Kanto and Johto are still being written — start with the gym maps and the trainer list below.",
-    "keywords": "sinnoh pedro rocco gardenia camilla gym maps cartography coming soon"
+    "blurb": "Sinnoh opens after Hoenn Champion Rocco. Use the gym maps and trainer list below — deep leader pages grow over time (Kanto/Johto style).",
+    "keywords": "sinnoh pedro rocco gardenia camilla gym maps cartography overview"
   },
   {
     "title": "Valerio",
@@ -424,5 +418,11 @@
     "href": "pages/Johto_Lance.html",
     "blurb": "Lance (Johto Champion) — Dragon specialist on PokeHaven EU.",
     "keywords": ""
+  },
+  {
+    "title": "FAQ",
+    "href": "pages/FAQ.html",
+    "blurb": "Expanded answers for the problems every new PokeHaven trainer hits.",
+    "keywords": "help problem question join discord tickets donate bluemap misty ftb chunks open parties"
   }
 ]

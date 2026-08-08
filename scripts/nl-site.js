@@ -140,7 +140,7 @@ export function registerDutchSite({
   <h2>Nieuwe spelers</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Aan de slag</h3><p>Installeer 1.7.42 en join.</p></a>
-    <a class="hub-card" href="pages/First_Hours.html"><h3>Eerste uren</h3><p>Checklist met HUD-screenshots.</p></a>
+    <a class="hub-card" href="pages/First_Hours.html"><h3>Eerste uren</h3><p>Claim, Brock, daarna Misty-loop.</p></a>
     <a class="hub-card" href="pages/Brock.html"><h3>Brock</h3><p>Eerste gym, diepe gids.</p></a>
     <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Waarom XP stopt — en de ladder.</p></a>
     <a class="hub-card" href="pages/Essential_Recipes.html"><h3>Essentiële recepten</h3><p>Balls, maps, tools, REI.</p></a>
@@ -176,7 +176,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Vangen &amp; vechten</h3><p>Combat-primer.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens, tiers, damage-share.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
-    <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones.</p></a>
+    <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones, maps en BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture, eieren, Ditto-regels.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
@@ -247,14 +247,23 @@ export function registerDutchSite({
       <tr><td>PokeHaven EU</td><td>Onze multiplayer-server</td></tr>
       <tr><td>CobbleVerse</td><td>De modpack die je installeert</td></tr>
       <tr><td>Level cap</td><td>Levels bevriezen tot de volgende gym valt</td></tr>
-      <tr><td>Claim</td><td>Land beschermen met FTB Chunks</td></tr>
+      <tr><td>Claim</td><td>Land beschermen met alleen FTB Chunks</td></tr>
       <tr><td>Waystone</td><td>Teleport-steen</td></tr>
+      <tr><td>Empty Map</td><td>Verse map voor gym-crafting — nooit eerst openen in de wereld</td></tr>
+      <tr><td>Cartography-tafel</td><td>Regio-tafel (Kanto / Johto / …) die gym-maps met coördinaten afwerkt</td></tr>
+      <tr><td>Cerulean Star</td><td>Misty’s map-item (seagrass met Shears)</td></tr>
+      <tr><td>PokéDollars</td><td>Servergeld (CobbleDollars-mod) — shops &amp; bank</td></tr>
+      <tr><td>Ticket</td><td>Privé Discord-support via <code>#tickets</code></td></tr>
       <tr><td>REI</td><td>Recepten zoeken met inventaris open (<kbd>E</kbd>)</td></tr>
     </tbody>
   </table>
 
   <h2>Hulp nodig?</h2>
   <p><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a> — pack-zip, live IP en support. Stuur screenshot + wat je al probeerde.</p>
+  <ul>
+    <li><code>#help</code> — snelle publieke vragen</li>
+    <li><code>#tickets</code> — privé hulp, reports, appeals</li>
+  </ul>
 
   <h2>Wat nu lezen</h2>
   <ol>
@@ -282,7 +291,7 @@ export function registerDutchSite({
   <ol class="steps">
     <li>Druk <kbd>C</kbd> → kies starter. Gras is het veiligst tegen Brock.</li>
     <li>Plaats een bed en slaap één keer (respawn).</li>
-    <li><strong><a href="Claims.html">Claim nu</a></strong> met <strong>FTB Chunks</strong> (Esc → Opties → Besturing → zoek FTB) — bed, chests, farm. Unclaimed = publieke loot.</li>
+    <li><strong><a href="Claims.html">Claim nu</a></strong> met <strong>FTB Chunks</strong> (Esc → Opties → Besturing → zoek FTB) — bed, chests, farm, waystone. Unclaimed = publieke loot.</li>
     <li>Activeer eventuele spawn-waystone (rechtermuisklik). Lees kort het guideboek in je hotbar.</li>
     <li>Vang 2–3 Pokémon in de buurt; houd balls en heals op je hotbar.</li>
     <li>Craft de <strong>Brock-map</strong>: plaats <strong>Kanto Cartography Table</strong> → doe <strong>Empty Map + Brock Map Key</strong> erin (open de Empty Map <strong>niet</strong> in de wereld) → volg de map. Fight-gids: <a href="Brock.html">Brock</a>.</li>
@@ -572,6 +581,11 @@ export function registerDutchSite({
     breadcrumbs: crumbs({ label: "Vangen &amp; vechten", href: "Catching_and_Battling.html" }),
     lede: "De kernlus op PokeHaven: verzwakken, vangen, genezen, doorpakken — met respect voor de level cap.",
     body: `
+  <div class="callout tip">
+    <div class="label">Voor Brock</div>
+    Vang <strong>2–3 Pokémon in de buurt</strong> bij spawn vóór de lange hike. Een klein team + balls op de hotbar wint van leeg lopen — zie <a href="First_Hours.html">Eerste uren</a>.
+  </div>
+
   <h2>Vangen</h2>
   <ol class="steps">
     <li>Craft genoeg <a href="Poke_Balls.html">Poké Balls</a>.</li>
@@ -604,7 +618,7 @@ export function registerDutchSite({
     body: `
   ${critical(
     "nl",
-    "<strong>Claim vóór je valuables achterlaat.</strong> Unclaimed chests zijn publieke loot. Gebruik <strong>alleen FTB Chunks</strong> — de pack heeft ook Open Parties and Claims; beide mengen op één basis wordt rommelig."
+    "<strong>Op PokeHaven EU telt alleen FTB Chunks.</strong> Unclaimed chests zijn publieke loot. De pack heeft ook Open Parties and Claims — niet gebruiken voor je base; mengen wordt rommelig."
   )}
 
   ${figure(
@@ -689,6 +703,14 @@ export function registerDutchSite({
     <li>Laat een genaamde waystone bij de gym achter als je terugkomt voor rematches of vrienden.</li>
   </ol>
 
+  <h2>BlueMap (browser-map)</h2>
+  <p>Live wereldoverzicht in je browser:</p>
+  <p><a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank"><strong>http://88.211.214.163:8100</strong></a></p>
+  <ul>
+    <li>Handig voor oriëntatie, bases en coördinaten delen.</li>
+    <li>Vervangt <em>geen</em> gym-maps of waystones — craft maps en activeer stenen nog steeds in-game.</li>
+  </ul>
+
   <h2>Andere tools</h2>
   <ul>
     <li><strong>Nature’s Compass / Explorer’s Compass</strong> — biomes of structures zoeken.</li>
@@ -735,8 +757,9 @@ export function registerDutchSite({
     <li><strong>Geen spam / ads</strong> — Geen spam, mass-pings, scam-links of reclame voor andere servers / Discords. Self-promo alleen met staff-goedkeuring.</li>
     <li><strong>Chat</strong> — <strong>English</strong> is de hoofdtaal in publieke channels (EU-server). Houd het SFW. Namen, nicknames en profielfoto’s netjes houden.</li>
     <li><strong>Voice chat</strong> — Push-to-talk heeft voorkeur. Geen earrape, soundboards blazen of zinloos schreeuwen. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
-    <li><strong>Hulp vragen</strong> — Gebruik Discord <code>#help</code> met wat misging, een screenshot, en wat je al probeerde.</li>
-    <li><strong>Staff-beslissingen</strong> — Staff mag warnen, muten, kicken of bannen. Bediscussieer moderatie niet publiek — contacteer staff privé als nodig.</li>
+    <li><strong>Hulp vragen</strong> — Snelle publieke vragen → Discord <code>#help</code>. Privé / reports / langere staff-hulp → <code>#tickets</code>. Altijd screenshot + wat je al probeerde.</li>
+    <li><strong>Donaties</strong> — Optioneel. Ze houden de server online. <strong>Geen perks, ranks of VIP-rewards</strong> — bedankt voor de support.</li>
+    <li><strong>Staff-beslissingen</strong> — Staff mag warnen, muten, kicken of bannen. Bediscussieer moderatie niet publiek — open een ticket als nodig.</li>
   </ol>
 
   <h2>Handige chat-commands</h2>
@@ -889,6 +912,18 @@ export function registerDutchSite({
   <h2>Waar is Brock?</h2>
   <p>Craft Brocks map met de starter Cartography Table + Brock Map Key + Empty Map. Walkthrough: <a href="Brock.html">Brock</a>.</p>
 
+  <h2>Waar is Misty?</h2>
+  <p>Na Brock: craft haar map met <strong>Cerulean Star</strong> (seagrass met <strong>Shears</strong>) + verse Empty Map op de Kanto Cartography Table. Gidsen: <a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym-maps</a>.</p>
+
+  <h2>Claim ik met Open Parties?</h2>
+  <p><strong>Nee.</strong> Op PokeHaven EU alleen <strong>FTB Chunks</strong>. Open Parties and Claims zit in het pack — niet gebruiken voor je base. Zie <a href="Claims.html">Claims</a>.</p>
+
+  <h2>Is er een browser-map?</h2>
+  <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Wereldoverzicht in de browser. In-game reizen blijft via waystones en gym-maps — zie <a href="Travel.html">Reizen</a>.</p>
+
+  <h2>Kan ik doneren?</h2>
+  <p>Ja, optioneel — donaties helpen de server online / te upgraden. <strong>Geen gameplay-perks, ranks of VIP-rewards.</strong> Links staan in Discord.</p>
+
   <h2>Hoe craft ik Poké Balls?</h2>
   <p><a href="Poke_Balls.html">Poké Balls</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Recipe_Browser.html">Receptenbrowser</a>.</p>
 
@@ -909,6 +944,11 @@ export function registerDutchSite({
 
   <h2>Waar vraag ik hulp?</h2>
   <p><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a> — stuur screenshot + wat je al probeerde. IP/pack in <code>#how-to-join</code>.</p>
+  <ul>
+    <li><code>#help</code> — snelle publieke vragen die anderen ook kunnen beantwoorden</li>
+    <li><code>#tickets</code> — privé hulp, reports, appeals, langere staff-issues</li>
+  </ul>
+  <p>Check eerst deze wiki (Eerste uren, Claims, Gym-maps, FAQ) — veel antwoorden staan hier al.</p>
 
   <h2>Kan ik de level cap uitzetten?</h2>
   ${critical(
@@ -1140,7 +1180,8 @@ export function registerDutchSite({
     <tr><th>Johto</th><td>Johto Cartography Table</td></tr>
     <tr><th>Hoenn</th><td>Hoenn Cartography Table</td></tr>
     <tr><th>Sinnoh</th><td>Sinnoh Cartography Table</td></tr>
-    <tr><th>Eerste leaders</th><td>Brock → Valerio → Petra → Pedro</td></tr>
+    <tr><th>Kanto-ladder</th><td>Brock → Misty → …</td></tr>
+    <tr><th>Regio-openers</th><td>Valerio · Petra · Pedro</td></tr>
   </table>`,
     body: `
   <h2>Brock (eerste gym — gratis kit)</h2>
@@ -1156,8 +1197,18 @@ export function registerDutchSite({
     "Cartography / map-crafting"
   )}
 
+  <h2>Misty (tweede gym)</h2>
+  <p>Na Brock craft je <strong>Misty’s map</strong> hetzelfde — je hebt alleen eerst het special item nodig:</p>
+  <ol class="steps">
+    <li>Craft een <strong>Cerulean Star</strong> (REI: Misty / Cerulean). <strong>Seagrass dropt alleen met Shears.</strong></li>
+    <li>Craft een verse <strong>Empty Map</strong> (niet eerst openen in de wereld).</li>
+    <li>Combineer Empty Map + Cerulean Star in de <strong>Kanto Cartography Table</strong>.</li>
+    <li>Hover voor coördinaten, daarna reizen. Fight-gids: <a href="Misty.html">Misty</a>.</li>
+  </ol>
+  <p>Volgende Kanto-gym na Misty: <a href="Lt._Surge.html">Lt. Surge</a>. Latere Kanto-leaders gebruiken Method 2 hieronder.</p>
+
   <h2>Latere regio’s (Johto / Hoenn / Sinnoh)</h2>
-  <p>Na elke league craft je de cartography-tafel van die regio (REI: <em>Johto</em> / <em>Hoenn</em> / <em>Sinnoh</em> + <em>cartography</em>). Eerste gym leaders:</p>
+  <p>Na elke league craft je de cartography-tafel van die regio (REI: <em>Johto</em> / <em>Hoenn</em> / <em>Sinnoh</em> + <em>cartography</em>). <strong>Regio-openers</strong> (eerste gym van die regio):</p>
   <table class="wikitable">
     <thead><tr><th>Regio</th><th>Wanneer</th><th>Eerste gym</th><th>Tafel</th></tr></thead>
     <tbody>
@@ -1187,7 +1238,7 @@ export function registerDutchSite({
     "REI voor gym-map ingrediënten"
   )}
   <ol class="steps">
-    <li>Zoek de leadernaam in REI (bijv. Valerio, Petra, Pedro, Misty…).</li>
+    <li>Zoek de leadernaam in REI (bijv. Misty → Cerulean Star, daarna Valerio, Petra, Pedro…).</li>
     <li>Craft dat special map-item.</li>
     <li>Craft een verse <strong>Empty Map</strong>.</li>
     <li>Combineer Empty Map + item in de <strong>regio</strong>-cartography-tafel (Kanto-tafel voor Kanto, Johto-tafel voor Johto, enz.).</li>
@@ -1203,7 +1254,7 @@ export function registerDutchSite({
     <div class="label">Map lijkt leeg?</div>
     Loop toch de aangegeven richting. Na een lange hike nog niks? Verplaats een paar duizend blocks en probeer opnieuw.
   </div>
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Villages_and_Trading.html">Dorpen</a> · <a href="Brock.html">Brock</a> · <a href="Progression.html">Progressie</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Villages_and_Trading.html">Dorpen</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Progression.html">Progressie</a></p>
   ${navboxCore()}
   `,
   });
@@ -1229,7 +1280,7 @@ export function registerDutchSite({
       <tr class="critical-row"><td>Seagrass met hand</td><td>0 drops</td><td>Shears — <a href="Misty.html">Misty</a></td></tr>
       <tr class="critical-row"><td>Alleen vanilla-hengel</td><td>Vis-items, weinig Pokémon</td><td>Cobblemon-hengels — <a href="Fishing.html">Vissen</a></td></tr>
       <tr class="critical-row"><td>Pasture/eieren niet geclaimd</td><td>Shiny-project gestolen</td><td>Claim breedfarm — <a href="Breeding.html">Broeden</a> · <a href="Shiny.html">Shiny</a></td></tr>
-      <tr><td>Wiki nooit openen</td><td>Zelfde Discord-tickets</td><td><a href="https://pokehaven.wiki">pokehaven.wiki</a> · <code>#pokehaven-wiki</code></td></tr>
+      <tr><td>Wiki skippen, Discord spammen</td><td>Trage antwoorden + herhaalde tickets</td><td>Eerst <a href="https://pokehaven.wiki">pokehaven.wiki</a> → daarna <code>#help</code> (snel) of <code>#tickets</code> (privé)</td></tr>
       <tr><td>Alleen luxe shop-gear</td><td>Broke</td><td>Balls craften; emeralds verkopen</td></tr>
       <tr><td>Palace / shiny vóór gyms</td><td>Trage progressie</td><td>Eerst gyms — <a href="Brock.html">Brock</a></td></tr>
       <tr class="critical-row"><td>Verkeerde Pokémon geselecteerd</td><td>Verkeerde mon uitgestuurd</td><td>Pijltjestoetsen, dan <kbd>R</kbd></td></tr>
@@ -1245,14 +1296,23 @@ export function registerDutchSite({
   track("Roadmap.html", {
     title: "30-dagen roadmap",
     breadcrumbs: crumbs({ label: "30-dagen roadmap", href: "Roadmap.html" }),
-    lede: "Een rustig Kanto-tempo voor als je niet wilt racen.",
+    lede: "Een rustig Kanto-tempo voor als je niet wilt racen. Volgorde telt meer dan de kalender.",
     body: `
+  <h2>Dag 1 checklist</h2>
+  <ol class="steps">
+    <li>Installeer CobbleVerse <strong>1.7.42</strong> en join <strong>PokeHaven EU</strong>.</li>
+    <li>Starter (<kbd>C</kbd>) → bed → <strong>FTB Chunks-claim</strong> (bed, chests, farm, waystone).</li>
+    <li>Vang 2–3 in de buurt; craft de <strong>Brock-map</strong> (Empty Map + Brock Map Key).</li>
+    <li>Versla Brock → craft <strong>Misty’s map</strong> (Cerulean Star + Shears voor seagrass).</li>
+  </ol>
+  <p>Details: <a href="First_Hours.html">Eerste uren</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a>.</p>
+
   <h2>Week 1</h2>
-  <p>Install, basis, balls, eerste vangsten, Brock-voorbereiding.</p>
+  <p>Misty → Surge → Erika; iron gear; apricorn-farm; stabiele basis.</p>
   <h2>Week 2–3</h2>
-  <p>Gyms 2–5, farms, waystones, eerste raids met vrienden.</p>
+  <p>Rest van Kanto-gyms, waystone-netwerk, geldloop, eerste raids met vrienden.</p>
   <h2>Week 4</h2>
-  <p>Rest van Kanto, league-prep, economie opschalen.</p>
+  <p>Elite Four + Blue; Johto-prep (Trainer Association → Johto-card).</p>
   <h2>Na Blue</h2>
   <p>Johto-card + optioneel post-game / Mega-prep — <a href="Mega_and_Late_Game.html">Late-game checklist</a> · <a href="Postgame_and_Legendaries.html">Post-game</a> · <a href="Achievements.html">Achievements</a>.</p>
   <p>Pas het tempo aan — PokeHaven is een community-server, geen speedrun.</p>
@@ -2400,7 +2460,7 @@ export function registerDutchSite({
     ${
       ex.league
         ? "<li>Elite Four / Champion: <strong>full heal tussen rooms</strong>.</li>"
-        : "<li>Clear gym-trainers als je XP of CobbleDollars nodig hebt.</li>"
+        : "<li>Clear gym-trainers als je XP of PokéDollars nodig hebt.</li>"
     }
     <li>Heal, daarna <strong>${esc(displayName)}</strong> challengen.</li>
     <li>${afterWin}</li>
@@ -2437,12 +2497,12 @@ export function registerDutchSite({
     track("Gyms_Hoenn.html", {
       title: "Hoenn-gyms",
       breadcrumbs: crumbs({ label: "Hoenn-gyms", href: "Gyms_Hoenn.html" }),
-      lede: "Hoenn opent na de Johto Champion. Volledige walkthroughs zoals Kanto en Johto worden nog geschreven — begin met de gym-maps en de trainerlijst hieronder.",
+      lede: "Hoenn opent na de Johto Champion. Gebruik de gym-maps en trainerlijst hieronder — diepe leader-pagina’s groeien mee (Kanto/Johto-stijl).",
       body: `
   <div class="callout tip">
-    <div class="label">Nog in de maak</div>
-    Volledige leader-pagina’s (teams, coverage, map-keys, walkthroughs) komen later.
-    Rond eerst <a href="Gyms_Johto.html">Johto</a> af — deze hub groeit daarna op dezelfde manier.
+    <div class="label">Start hier</div>
+    Maps + opener <strong>Petra</strong> eerst. Teams zoeken via de <a href="Trainer_Index.html">Trainer-index</a>.
+    Rond eerst <a href="Gyms_Johto.html">Johto</a> af — deze hub groeit daarna verder.
   </div>
 
   <h2>Unlock (als je hier bent)</h2>
@@ -2453,7 +2513,7 @@ export function registerDutchSite({
   </ol>
 
   <h2>Named Hoenn-trainers</h2>
-  <p class="muted">Kort overzicht voor nu — diepe gidsen volgen. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
+  <p class="muted">Overzicht + maps eerst. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
   <table class="wikitable">
     <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
     <tbody>${previewRows || "<tr><td colspan=4>Nog geen Hoenn-trainers opgelijst.</td></tr>"}</tbody>
@@ -2488,12 +2548,12 @@ export function registerDutchSite({
     track("Gyms_Sinnoh.html", {
       title: "Sinnoh-gyms",
       breadcrumbs: crumbs({ label: "Sinnoh-gyms", href: "Gyms_Sinnoh.html" }),
-      lede: "Sinnoh opent na Hoenn Champion Rocco. Volledige walkthroughs zoals Kanto en Johto worden nog geschreven — begin met de gym-maps en de trainerlijst hieronder.",
+      lede: "Sinnoh opent na Hoenn Champion Rocco. Gebruik de gym-maps en trainerlijst hieronder — diepe leader-pagina’s groeien mee (Kanto/Johto-stijl).",
       body: `
   <div class="callout tip">
-    <div class="label">Nog in de maak</div>
-    Volledige leader-pagina’s (teams, coverage, map-keys, walkthroughs) komen later.
-    Rond eerst <a href="Gyms_Hoenn.html">Hoenn</a> af — deze hub groeit daarna op dezelfde manier.
+    <div class="label">Start hier</div>
+    Maps + opener <strong>Pedro</strong> eerst. Teams zoeken via de <a href="Trainer_Index.html">Trainer-index</a>.
+    Rond eerst <a href="Gyms_Hoenn.html">Hoenn</a> af — deze hub groeit daarna verder.
   </div>
 
   <h2>Unlock (als je hier bent)</h2>
@@ -2504,7 +2564,7 @@ export function registerDutchSite({
   </ol>
 
   <h2>Named Sinnoh-trainers</h2>
-  <p class="muted">Kort overzicht voor nu — diepe gidsen volgen. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
+  <p class="muted">Overzicht + maps eerst. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
   <table class="wikitable">
     <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
     <tbody>${previewRows || "<tr><td colspan=4>Nog geen Sinnoh-trainers opgelijst.</td></tr>"}</tbody>
@@ -2576,7 +2636,7 @@ export function registerDutchSite({
   <h3>In de gym</h3>
   <ol class="steps">
     <li>Heal vóór de leader.</li>
-    <li>Optioneel: versla gym-trainers voor XP + CobbleDollars.</li>
+    <li>Optioneel: versla gym-trainers voor XP + PokéDollars.</li>
     <li>Win → badge → level cap stijgt.</li>
     <li>Craft daarna Misty’s map (<a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym-maps</a>).</li>
   </ol>
@@ -2635,11 +2695,15 @@ export function registerDutchSite({
     "<strong>Seagrass dropt alleen met Shears.</strong> Blote handen geven niks. Open de Empty Map ook nooit eerst in de wereld."
   )}
   <h3>Fight-tips</h3>
-  <p>${esc(misty.tips)}</p>
+  <ul>
+    <li><strong>Electric en Grass</strong> tegen Water — neem minstens één van beide mee als het kan.</li>
+    <li>Status en chip helpen; loop niet half-HP de gym in.</li>
+    <li>Level-band terwijl Misty volgt: ongeveer low–mid 30s — zie <a href="Level_Cap.html">Level cap</a>.</li>
+  </ul>
   <ol class="steps">
     <li>Reis met heals; activeer waystones onderweg.</li>
-    <li>Clear gym-trainers als je XP of geld nodig hebt.</li>
-    <li>Heal, daarna Misty challengen.</li>
+    <li>Clear gym-trainers als je XP of PokéDollars nodig hebt.</li>
+    <li>Full heal bij de gym-ingang, daarna Misty challengen.</li>
     <li>Win → volgende: <a href="Lt._Surge.html">Lt. Surge</a>.</li>
   </ol>
   <h2>Team</h2>
@@ -2802,7 +2866,7 @@ export function registerDutchSite({
     ${
       ex.league
         ? "<li>Elite Four / Champion: <strong>full heal tussen rooms</strong>.</li>"
-        : "<li>Clear gym-trainers als je XP of CobbleDollars nodig hebt.</li>"
+        : "<li>Clear gym-trainers als je XP of PokéDollars nodig hebt.</li>"
     }
     <li>Heal, daarna <strong>${esc(g.name)}</strong> challengen.</li>
     <li>${afterWin}</li>

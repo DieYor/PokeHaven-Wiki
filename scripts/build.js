@@ -297,9 +297,7 @@ const SEARCH_KEYWORDS = {
     "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing",
   "Level_Cap.html": "xp experience level cap stuck freeze trainer card overlevel",
   "Claims.html": "claim ftb chunks protect grief chest land party",
-  "Gym_Maps.html":
-    "map cartography empty map brock map key coordinates johto hoenn sinnoh valerio petra pedro",
-  "Getting_Started.html": "join install curseforge discord ip pack 1.7.42",
+  "Getting_Started.html": "join install curseforge discord ip pack 1.7.42 ticket empty map cerulean",
   "Economy.html": "money pokédollars pokedollars bank emerald shop wheat farm",
   "Voice_Chat.html": "mic voice chat simple voice talk",
   "Poke_Balls.html": "pokeball apricorn craft ball great ultra",
@@ -311,10 +309,13 @@ const SEARCH_KEYWORDS = {
   "Fishing.html":
     "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup",
   "Raids.html": "raid den crystal boss tier damage share hidden ability waystone",
-  "FAQ.html": "help problem question join discord",
+  "FAQ.html":
+    "help problem question join discord tickets donate bluemap misty ftb chunks open parties",
   "Brock.html": "first gym rock boulder badge",
   "Misty.html": "second gym water cascade cerulean star seagrass",
-  "Travel.html": "waystone teleport travel fast travel",
+  "Travel.html": "waystone teleport travel fast travel bluemap browser map",
+  "Gym_Maps.html":
+    "map cartography empty map brock map key misty cerulean star coordinates johto hoenn sinnoh valerio petra pedro",
   "Rules_and_Commands.html":
     "rules commands /pc claim grief cheat discord voice chat respect staff",
   "Farming_and_Food.html": "wheat farm food hunger emerald farmer",
@@ -325,9 +326,9 @@ const SEARCH_KEYWORDS = {
   "Gyms_Johto.html":
     "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive",
   "Gyms_Hoenn.html":
-    "hoenn petra gym maps cartography coming soon",
+    "hoenn petra gym maps cartography overview",
   "Gyms_Sinnoh.html":
-    "sinnoh pedro rocco gardenia camilla gym maps cartography coming soon",
+    "sinnoh pedro rocco gardenia camilla gym maps cartography overview",
   "Valerio.html": "johto first gym flying zephyr raptor bracer",
 };
 
@@ -388,7 +389,7 @@ writePage("index.html", {
   <h2>For new players</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Getting started</h3><p>Install the pack and join PokeHaven EU.</p></a>
-    <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Starter, bed, claim, first catches — in order.</p></a>
+    <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Claim, Brock, then the Misty loop.</p></a>
     <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Gyms, level cap, and unlocking regions.</p></a>
     <a class="hub-card" href="pages/Brock.html"><h3>Brock guide</h3><p>Your first gym: map legend, team tips, full roster.</p></a>
   </div>
@@ -404,7 +405,7 @@ writePage("index.html", {
   <h2>Systems</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>Protect your base with FTB Chunks.</p></a>
-    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones and map tools.</p></a>
+    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
     <a class="hub-card" href="pages/Voice_Chat.html"><h3>Voice chat</h3><p>Distances and groups.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Timers and shiny methods.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods, bait, and water catches.</p></a>
@@ -624,7 +625,7 @@ function gymGuideBody(g) {
     <p>${esc(g.tips)}</p>
     <ol class="steps">
       <li>Travel with heals; activate waystones on the route.</li>
-      <li>Clear gym trainers if you need XP or CobbleDollars.</li>
+      <li>Clear gym trainers if you need XP or PokéDollars.</li>
       <li>Heal, then challenge <strong>Valerio</strong>.</li>
       <li>Win → next: ${nextLink}.</li>
     </ol>`;
@@ -666,7 +667,7 @@ function gymGuideBody(g) {
     <h3>Inside the gym</h3>
     <ol class="steps">
       <li>Heal before the leader.</li>
-      <li>Optional: beat gym trainers for XP + CobbleDollars.</li>
+      <li>Optional: beat gym trainers for XP + PokéDollars.</li>
       <li>Win → badge → level cap rises.</li>
       <li>Craft Misty’s map next (<a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym maps</a>).</li>
     </ol>`;
@@ -697,11 +698,15 @@ function gymGuideBody(g) {
       "<strong>Seagrass only drops with Shears.</strong> Bare hands give nothing. Also: never open the Empty Map in the world before crafting."
     )}
     <h3>Fight tips</h3>
-    <p>${esc(g.tips)}</p>
+    <ul>
+      <li><strong>Electric and Grass</strong> answer Water — bring at least one of each if you can.</li>
+      <li>Status and chip damage help; don’t walk in at half HP.</li>
+      <li>Level band while Misty is next is roughly the low–mid 30s — see <a href="Level_Cap.html">Level cap</a>.</li>
+    </ul>
     <ol class="steps">
       <li>Travel with heals; activate waystones on the way.</li>
-      <li>Clear gym trainers if you need XP or money.</li>
-      <li>Heal, then challenge Misty.</li>
+      <li>Clear gym trainers if you need XP or PokéDollars.</li>
+      <li>Full heal at the gym entrance, then challenge Misty.</li>
       <li>Win → next up: ${nextLink}.</li>
     </ol>`;
   }
@@ -910,7 +915,7 @@ function gymGuideBody(g) {
       ${
         extras.league
           ? "<li>Elite Four / Champion: <strong>full heal between rooms</strong>.</li>"
-          : "<li>Clear gym trainers if you need XP or CobbleDollars.</li>"
+          : "<li>Clear gym trainers if you need XP or PokéDollars.</li>"
       }
       <li>Heal, then challenge <strong>${esc(g.name)}</strong>.</li>
       <li>${afterWin}</li>
@@ -1093,7 +1098,8 @@ writePage("Gym_Maps.html", {
     ["Johto table", "Johto Cartography Table"],
     ["Hoenn table", "Hoenn Cartography Table"],
     ["Sinnoh table", "Sinnoh Cartography Table"],
-    ["First leaders", "Brock → Valerio → Petra → Pedro"],
+    ["Kanto ladder", "Brock → Misty → …"],
+    ["Region openers", "Valerio · Petra · Pedro"],
   ]),
   body: `
   <h2>Brock (first gym — free kit)</h2>
@@ -1109,8 +1115,18 @@ writePage("Gym_Maps.html", {
     "Cartography / map crafting context"
   )}
 
+  <h2>Misty (second gym)</h2>
+  <p>After Brock, craft <strong>Misty’s map</strong> the same way — you just need the special item first:</p>
+  <ol class="steps">
+    <li>Craft a <strong>Cerulean Star</strong> (REI: Misty / Cerulean). <strong>Seagrass only drops with Shears.</strong></li>
+    <li>Craft a fresh <strong>Empty Map</strong> (do not open it in the world).</li>
+    <li>Combine Empty Map + Cerulean Star in the <strong>Kanto Cartography Table</strong>.</li>
+    <li>Hover for coordinates, then travel. Full fight guide: <a href="Misty.html">Misty</a>.</li>
+  </ol>
+  <p>Next Kanto gym after Misty: <a href="Lt._Surge.html">Lt. Surge</a>. Later Kanto leaders use the same Method 2 pattern below.</p>
+
   <h2>Later regions (Johto / Hoenn / Sinnoh)</h2>
-  <p>After each league, craft that region’s cartography table (REI: <em>Johto</em> / <em>Hoenn</em> / <em>Sinnoh</em> + <em>cartography</em>). First gym leaders:</p>
+  <p>After each league, craft that region’s cartography table (REI: <em>Johto</em> / <em>Hoenn</em> / <em>Sinnoh</em> + <em>cartography</em>). <strong>Region openers</strong> (first gym of that region):</p>
   <table class="wikitable">
     <thead><tr><th>Region</th><th>When</th><th>First gym</th><th>Table</th></tr></thead>
     <tbody>
@@ -1140,7 +1156,7 @@ writePage("Gym_Maps.html", {
     "REI used to look up gym map ingredients"
   )}
   <ol class="steps">
-    <li>Search the leader’s name in REI (e.g. Valerio, Petra, Pedro, Misty…).</li>
+    <li>Search the leader’s name in REI (e.g. Misty → Cerulean Star, then later Valerio, Petra, Pedro…).</li>
     <li>Craft that special map item.</li>
     <li>Craft a fresh <strong>Empty Map</strong>.</li>
     <li>Combine Empty Map + item in the <strong>region</strong> cartography table (Kanto table for Kanto leaders, Johto table for Johto, etc.).</li>
@@ -1156,7 +1172,7 @@ writePage("Gym_Maps.html", {
     <div class="label">Map looks empty?</div>
     Walk the indicated direction anyway. If nothing shows up after a long hike, move a few thousand blocks and try again.
   </div>
-  <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Villages_and_Trading.html">Villages &amp; trading</a> · <a href="Brock.html">Brock</a> · <a href="Progression.html">Progression</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Villages_and_Trading.html">Villages &amp; trading</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Progression.html">Progression</a></p>
   ${navboxGyms()}
   `,
 });
@@ -1184,9 +1200,9 @@ writePage("Gym_Maps.html", {
       { label: "Main Page", href: "../index.html" },
       { label: "Economy", href: "Economy.html" },
     ],
-    lede: "PokéDollars come from battling, selling, and bounties — not AFK jobs.",
+    lede: "PokéDollars come from battling, selling, and bounties — not AFK jobs. (The mod is CobbleDollars; players just say PokéDollars.)",
     infobox: infoboxHtml("Economy", [
-      ["Currency", "PokéDollars"],
+      ["Currency", "PokéDollars (CobbleDollars mod)"],
       ["Income multiplier", String(economy.incomeMultiplier)],
       ["Wild payouts", economy.earnFromWild ? "Yes" : "No"],
       ["NPC trainer payouts", economy.earnFromNpc ? "Yes" : "No"],
@@ -1683,8 +1699,9 @@ writePage("Rules_and_Commands.html", {
     <li><strong>No spam / ads</strong> — No spam, mass pings, scam links, or advertising other servers / Discords. Self-promo only if staff approves it.</li>
     <li><strong>Chat</strong> — <strong>English</strong> is the main language in public channels (EU server). Keep it SFW. Keep names, nicknames, and profile pictures appropriate.</li>
     <li><strong>Voice chat</strong> — Push-to-talk preferred. No earrape, blasting soundboards, or screaming for no reason. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
-    <li><strong>Asking for help</strong> — Use Discord <code>#help</code> with what went wrong, a screenshot, and what you already tried.</li>
-    <li><strong>Staff decisions</strong> — Staff may warn, mute, kick, or ban when needed. Don’t argue moderation in public — contact staff privately if needed.</li>
+    <li><strong>Asking for help</strong> — Quick public questions → Discord <code>#help</code>. Private / reports / longer staff help → <code>#tickets</code>. Always include a screenshot + what you already tried.</li>
+    <li><strong>Donations</strong> — Optional. They keep the server online. <strong>No perks, ranks, or VIP rewards</strong> — thank you for the support.</li>
+    <li><strong>Staff decisions</strong> — Staff may warn, mute, kick, or ban when needed. Don’t argue moderation in public — use a ticket if needed.</li>
   </ol>
 
   <h2>Useful chat commands</h2>
@@ -1783,34 +1800,6 @@ writePage("Voice_Chat.html", {
 
   <p class="see-also"><strong>See also:</strong> <a href="Raids.html">Raids</a> · <a href="Getting_Started.html">Getting started</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxSystems()}
-  `,
-});
-
-writePage("FAQ.html", {
-  title: "FAQ",
-  breadcrumbs: [
-    { label: "Main Page", href: "../index.html" },
-    { label: "FAQ", href: "FAQ.html" },
-  ],
-  lede: "Quick answers to problems every new PokeHaven trainer hits.",
-  body: `
-  <h2>Why did my Pokémon stop leveling?</h2>
-  <p><a href="Level_Cap.html">Level cap</a>. Beat the next gym.</p>
-
-  <h2>I can't join the server</h2>
-  <p>Wrong pack version. Re-import the shared 1.7.42 zip from Discord/Drive.</p>
-
-  <h2>Textures look broken</h2>
-  <p>Fully reload resource packs / restart the client. FancyMenu tip: hold <kbd>T</kbd> briefly if prompted for pack issues.</p>
-
-  <h2>My Empty Map became useless</h2>
-  <p>You probably right-clicked it in the world. Craft a new Empty Map and combine it in the cartography table — see <a href="Gym_Maps.html">Gym maps</a>.</p>
-
-  <h2>Someone opened my chests</h2>
-  <p>Claim with <a href="Claims.html">FTB Chunks</a> immediately.</p>
-
-  <h2>Where is Brock?</h2>
-  <p>Craft Brock’s map with the starter Cartography Table + Brock Map Key + Empty Map. See <a href="Brock.html">Brock</a>.</p>
   `,
 });
 
@@ -2068,7 +2057,7 @@ registerExpansionPages({
         { label: "Main Page", href: "../index.html" },
         { label: "Hoenn gyms", href: "Gyms_Hoenn.html" },
       ],
-      lede: "Hoenn opens after the Johto Champion. Full walkthroughs like Kanto and Johto are still being written — start with the gym maps and the trainer list below.",
+      lede: "Hoenn opens after the Johto Champion. Use the gym maps and trainer list below — deep leader pages grow over time (Kanto/Johto style).",
       body: `
     <div class="callout tip">
       <div class="label">Still being written</div>
@@ -2084,7 +2073,7 @@ registerExpansionPages({
     </ol>
 
     <h2>Named Hoenn trainers</h2>
-    <p class="muted">Quick overview for now — deep guides will follow. Full search: <a href="Trainer_Index.html">Trainer index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
+    <p class="muted">Overview + maps first; use the <a href="Trainer_Index.html">Trainer index</a> for teams. Achievements: <a href="Achievements.html">Achievements</a>.</p>
     <table class="wikitable">
       <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
       <tbody>${previewRows || "<tr><td colspan=4>No Hoenn trainers listed yet.</td></tr>"}</tbody>
@@ -2122,7 +2111,7 @@ registerExpansionPages({
         { label: "Main Page", href: "../index.html" },
         { label: "Sinnoh gyms", href: "Gyms_Sinnoh.html" },
       ],
-      lede: "Sinnoh opens after Hoenn Champion Rocco. Full walkthroughs like Kanto and Johto are still being written — start with the gym maps and the trainer list below.",
+      lede: "Sinnoh opens after Hoenn Champion Rocco. Use the gym maps and trainer list below — deep leader pages grow over time (Kanto/Johto style).",
       body: `
     <div class="callout tip">
       <div class="label">Still being written</div>
@@ -2138,7 +2127,7 @@ registerExpansionPages({
     </ol>
 
     <h2>Named Sinnoh trainers</h2>
-    <p class="muted">Quick overview for now — deep guides will follow. Full search: <a href="Trainer_Index.html">Trainer index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
+    <p class="muted">Overview + maps first; use the <a href="Trainer_Index.html">Trainer index</a> for teams. Achievements: <a href="Achievements.html">Achievements</a>.</p>
     <table class="wikitable">
       <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
       <tbody>${previewRows || "<tr><td colspan=4>No Sinnoh trainers listed yet.</td></tr>"}</tbody>
@@ -2226,7 +2215,7 @@ writePage("index.html", {
   <h2>New players</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Getting started</h3><p>Install 1.7.42 and join.</p></a>
-    <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Checklist with HUD screenshots.</p></a>
+    <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Claim, Brock, then the Misty loop.</p></a>
     <a class="hub-card" href="pages/Brock.html"><h3>Brock</h3><p>First gym deep guide.</p></a>
     <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Why XP freezes — and the ladder.</p></a>
     <a class="hub-card" href="pages/Essential_Recipes.html"><h3>Essential recipes</h3><p>Balls, maps, tools, REI.</p></a>
@@ -2237,8 +2226,8 @@ writePage("index.html", {
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>All 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — deep guides.</p></a>
-    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps and trainer list — deep guides coming.</p></a>
-    <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Maps and trainer list — deep guides coming.</p></a>
+    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps, opener Petra, trainer list.</p></a>
+    <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Maps, opener Pedro, trainer list.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Second gym deep guide.</p></a>
     <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>First Johto gym — Flying.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym maps</h3><p>Cartography &amp; coordinates.</p></a>
@@ -2262,7 +2251,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Catching &amp; battling</h3><p>Combat primer.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens and tiers.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
-    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones.</p></a>
+    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture, eggs, Ditto rules.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
@@ -2336,6 +2325,18 @@ writePage("FAQ.html", {
   <h2>Where is Brock?</h2>
   <p>Craft Brock’s map with the starter Cartography Table + Brock Map Key + Empty Map. Walkthrough: <a href="Brock.html">Brock</a>.</p>
 
+  <h2>Where is Misty?</h2>
+  <p>After Brock, craft her map: <strong>Cerulean Star</strong> (seagrass needs <strong>Shears</strong>) + fresh Empty Map on the Kanto Cartography Table. Guides: <a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym maps</a>.</p>
+
+  <h2>Do I claim with Open Parties?</h2>
+  <p><strong>No.</strong> On PokeHaven EU use <strong>FTB Chunks only</strong>. Open Parties and Claims is in the pack — don’t use it for your base. See <a href="Claims.html">Claims</a>.</p>
+
+  <h2>Is there a browser map?</h2>
+  <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Overview of the world in your browser. In-game travel still uses waystones and gym maps — see <a href="Travel.html">Travel</a>.</p>
+
+  <h2>Can I donate?</h2>
+  <p>Yes, optionally — donations help keep the server online / upgraded. <strong>There are no gameplay perks, ranks, or VIP rewards.</strong> Links live in Discord.</p>
+
   <h2>How do I craft Poké Balls?</h2>
   <p>Full screenshot guide: <a href="Poke_Balls.html">Poké Balls</a>. More crafts: <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Recipe_Browser.html">Recipe browser</a>.</p>
 
@@ -2356,6 +2357,11 @@ writePage("FAQ.html", {
 
   <h2>Where do I ask for help?</h2>
   <p><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a> — send a screenshot + what you already tried. IP and pack links live in <code>#how-to-join</code>.</p>
+  <ul>
+    <li><code>#help</code> — quick public questions other players can answer too</li>
+    <li><code>#tickets</code> — private help, reports, appeals, longer staff issues</li>
+  </ul>
+  <p>Check this wiki first (First hours, Claims, Gym maps, FAQ) — many answers are already here.</p>
 
   <h2>Can I turn off the level cap?</h2>
   ${critical(

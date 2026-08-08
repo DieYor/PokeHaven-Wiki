@@ -9,12 +9,12 @@
     "title": "Aan de slag",
     "href": "pages/Getting_Started.html",
     "blurb": "Installeer CobbleVerse 1.7.42, join PokeHaven EU, en ken de woorden die de rest van de wiki gebruikt.",
-    "keywords": "join install curseforge discord ip pack 1.7.42"
+    "keywords": "join install curseforge discord ip pack 1.7.42 ticket empty map cerulean"
   },
   {
     "title": "Eerste uren",
     "href": "pages/First_Hours.html",
-    "blurb": "Dichte openingsgids: van inloggen tot geclaimde basis, klein team, en de weg naar Brock.",
+    "blurb": "Openingsgids: claim, eerste vangsten, Brock — en daarna de volgende loop naar Misty, zodat je weet wat je na badge één doet.",
     "keywords": ""
   },
   {
@@ -63,7 +63,7 @@
     "title": "Reizen",
     "href": "pages/Travel.html",
     "blurb": "Waystones zijn gratis snelle travel op PokeHaven EU. Combineer ze met gym-maps, Xaero-pins en een mount zodat je nooit dezelfde 2000 blokken opnieuw loopt.",
-    "keywords": "waystone teleport travel fast travel"
+    "keywords": "waystone teleport travel fast travel bluemap browser map"
   },
   {
     "title": "Regels &amp; commands",
@@ -81,7 +81,7 @@
     "title": "FAQ",
     "href": "pages/FAQ.html",
     "blurb": "Uitgebreide antwoorden op de problemen die elke nieuwe PokeHaven-trainer raakt.",
-    "keywords": "help problem question join discord"
+    "keywords": "help problem question join discord tickets donate bluemap misty ftb chunks open parties"
   },
   {
     "title": "Minecraft-hub",
@@ -111,7 +111,7 @@
     "title": "Gym-maps",
     "href": "pages/Gym_Maps.html",
     "blurb": "Gyms vinden op PokeHaven EU — elke regio heeft een eigen cartography-tafel. Craft een afgewerkte map voor marker én coördinaten.",
-    "keywords": "map cartography empty map brock map key coordinates johto hoenn sinnoh valerio petra pedro"
+    "keywords": "map cartography empty map brock map key misty cerulean star coordinates johto hoenn sinnoh valerio petra pedro"
   },
   {
     "title": "Veelgemaakte fouten",
@@ -122,7 +122,7 @@
   {
     "title": "30-dagen roadmap",
     "href": "pages/Roadmap.html",
-    "blurb": "Een rustig Kanto-tempo voor als je niet wilt racen.",
+    "blurb": "Een rustig Kanto-tempo voor als je niet wilt racen. Volgorde telt meer dan de kalender.",
     "keywords": ""
   },
   {
@@ -338,14 +338,14 @@
   {
     "title": "Hoenn-gyms",
     "href": "pages/Gyms_Hoenn.html",
-    "blurb": "Hoenn opent na de Johto Champion. Volledige walkthroughs zoals Kanto en Johto worden nog geschreven — begin met de gym-maps en de trainerlijst hieronder.",
-    "keywords": "hoenn petra gym maps cartography coming soon"
+    "blurb": "Hoenn opent na de Johto Champion. Gebruik de gym-maps en trainerlijst hieronder — diepe leader-pagina’s groeien mee (Kanto/Johto-stijl).",
+    "keywords": "hoenn petra gym maps cartography overview"
   },
   {
     "title": "Sinnoh-gyms",
     "href": "pages/Gyms_Sinnoh.html",
-    "blurb": "Sinnoh opent na Hoenn Champion Rocco. Volledige walkthroughs zoals Kanto en Johto worden nog geschreven — begin met de gym-maps en de trainerlijst hieronder.",
-    "keywords": "sinnoh pedro rocco gardenia camilla gym maps cartography coming soon"
+    "blurb": "Sinnoh opent na Hoenn Champion Rocco. Gebruik de gym-maps en trainerlijst hieronder — diepe leader-pagina’s groeien mee (Kanto/Johto-stijl).",
+    "keywords": "sinnoh pedro rocco gardenia camilla gym maps cartography overview"
   },
   {
     "title": "Brock",
