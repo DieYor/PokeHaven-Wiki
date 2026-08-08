@@ -722,7 +722,7 @@ function gymGuideBody(g) {
     Erika: {
       title: "Walkthrough — Surge to Erika",
       coverage: "Fire, Flying, Ice, and Poison pressure Grass.",
-      travel: "Flower Forest tip — pretty biome, still claim a rest stop.",
+      travel: "Flower Forest tip — claim a rest stop near the gym.",
       gotcha: "Status (sleep/powder) can stall. Bring cleansers and don’t underlevel into her ceiling.",
     },
     Koga: {
@@ -795,7 +795,7 @@ function gymGuideBody(g) {
     Chiara: {
       title: "Walkthrough — Raffaello to Chiara",
       coverage: "Fighting answers Normal; Ghost immunities help vs Normal moves.",
-      travel: "Cherry Grove tip — pretty biome, still claim a rest stop.",
+      travel: "Cherry Grove tip — claim a rest stop near the gym.",
       gotcha: "Miltank-style stall. Pack status and a Fighting pivot; don’t stall yourself out of heals.",
     },
     Angelo: {
@@ -1123,7 +1123,7 @@ writePage("Gym_Maps.html", {
     <li>Combine Empty Map + Cerulean Star in the <strong>Kanto Cartography Table</strong>.</li>
     <li>Hover for coordinates, then travel. Full fight guide: <a href="Misty.html">Misty</a>.</li>
   </ol>
-  <p>Next Kanto gym after Misty: <a href="Lt._Surge.html">Lt. Surge</a>. Later Kanto leaders use the same Method 2 pattern below.</p>
+  <p>Next after Misty: <a href="Lt._Surge.html">Lt. Surge</a>.</p>
 
   <h2>Later regions (Johto / Hoenn / Sinnoh)</h2>
   <p>After each league, craft that region’s cartography table (REI: <em>Johto</em> / <em>Hoenn</em> / <em>Sinnoh</em> + <em>cartography</em>). <strong>Region openers</strong> (first gym of that region):</p>
@@ -2057,23 +2057,17 @@ registerExpansionPages({
         { label: "Main Page", href: "../index.html" },
         { label: "Hoenn gyms", href: "Gyms_Hoenn.html" },
       ],
-      lede: "Hoenn opens after the Johto Champion. Use the gym maps and trainer list below — deep leader pages grow over time (Kanto/Johto style).",
+      lede: "Hoenn opens after the Johto Champion. Gym maps, opener <strong>Petra</strong>, and the trainer list below.",
       body: `
-    <div class="callout tip">
-      <div class="label">Still being written</div>
-      Full leader pages (teams, coverage, map keys, walkthroughs) are not ready yet.
-      Finish <a href="Gyms_Johto.html">Johto</a> first, then check back — this hub will grow the same way.
-    </div>
-
-    <h2>Unlock (when you get here)</h2>
+    <h2>Unlock</h2>
     <ol class="steps">
       <li>Beat Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
-      <li>Follow your Trainer Card unlocks into Hoenn (same pattern as Kanto → Johto).</li>
-      <li>Use the <strong>Hoenn Cartography Table</strong> for gym maps — <a href="Gym_Maps.html">Gym maps</a>. First leader tip on that page: <strong>Petra</strong>.</li>
+      <li>Follow your Trainer Card unlocks into Hoenn.</li>
+      <li>Use the <strong>Hoenn Cartography Table</strong> — <a href="Gym_Maps.html">Gym maps</a>. First leader: <strong>Petra</strong>.</li>
     </ol>
 
     <h2>Named Hoenn trainers</h2>
-    <p class="muted">Overview + maps first; use the <a href="Trainer_Index.html">Trainer index</a> for teams. Achievements: <a href="Achievements.html">Achievements</a>.</p>
+    <p class="muted">Teams: <a href="Trainer_Index.html">Trainer index</a> · <a href="Achievements.html">Achievements</a>.</p>
     <table class="wikitable">
       <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
       <tbody>${previewRows || "<tr><td colspan=4>No Hoenn trainers listed yet.</td></tr>"}</tbody>
@@ -2111,23 +2105,17 @@ registerExpansionPages({
         { label: "Main Page", href: "../index.html" },
         { label: "Sinnoh gyms", href: "Gyms_Sinnoh.html" },
       ],
-      lede: "Sinnoh opens after Hoenn Champion Rocco. Use the gym maps and trainer list below — deep leader pages grow over time (Kanto/Johto style).",
+      lede: "Sinnoh opens after Hoenn Champion Rocco. Gym maps, opener <strong>Pedro</strong>, and the trainer list below.",
       body: `
-    <div class="callout tip">
-      <div class="label">Still being written</div>
-      Full leader pages (teams, coverage, map keys, walkthroughs) are not ready yet.
-      Finish <a href="Gyms_Hoenn.html">Hoenn</a> first, then check back — this hub will grow the same way.
-    </div>
-
-    <h2>Unlock (when you get here)</h2>
+    <h2>Unlock</h2>
     <ol class="steps">
       <li>Beat Hoenn Champion <strong>Rocco</strong> (after the Hoenn league).</li>
-      <li>Follow your Trainer Card unlocks into Sinnoh (same pattern as Johto → Hoenn).</li>
-      <li>Use the <strong>Sinnoh Cartography Table</strong> for gym maps — <a href="Gym_Maps.html">Gym maps</a>. First leader tip on that page: <strong>Pedro</strong>.</li>
+      <li>Follow your Trainer Card unlocks into Sinnoh.</li>
+      <li>Use the <strong>Sinnoh Cartography Table</strong> — <a href="Gym_Maps.html">Gym maps</a>. First leader: <strong>Pedro</strong>.</li>
     </ol>
 
     <h2>Named Sinnoh trainers</h2>
-    <p class="muted">Overview + maps first; use the <a href="Trainer_Index.html">Trainer index</a> for teams. Achievements: <a href="Achievements.html">Achievements</a>.</p>
+    <p class="muted">Teams: <a href="Trainer_Index.html">Trainer index</a> · <a href="Achievements.html">Achievements</a>.</p>
     <table class="wikitable">
       <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
       <tbody>${previewRows || "<tr><td colspan=4>No Sinnoh trainers listed yet.</td></tr>"}</tbody>
@@ -2332,7 +2320,7 @@ writePage("FAQ.html", {
   <p><strong>No.</strong> On PokeHaven EU use <strong>FTB Chunks only</strong>. Open Parties and Claims is in the pack — don’t use it for your base. See <a href="Claims.html">Claims</a>.</p>
 
   <h2>Is there a browser map?</h2>
-  <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Overview of the world in your browser. In-game travel still uses waystones and gym maps — see <a href="Travel.html">Travel</a>.</p>
+  <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. More travel tools: <a href="Travel.html">Travel</a>.</p>
 
   <h2>Can I donate?</h2>
   <p>Yes, optionally — donations help keep the server online / upgraded. <strong>There are no gameplay perks, ranks, or VIP rewards.</strong> Links live in Discord.</p>
@@ -2361,7 +2349,6 @@ writePage("FAQ.html", {
     <li><code>#help</code> — quick public questions other players can answer too</li>
     <li><code>#tickets</code> — private help, reports, appeals, longer staff issues</li>
   </ul>
-  <p>Check this wiki first (First hours, Claims, Gym maps, FAQ) — many answers are already here.</p>
 
   <h2>Can I turn off the level cap?</h2>
   ${critical(

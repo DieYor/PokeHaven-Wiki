@@ -706,22 +706,19 @@ export function registerDutchSite({
   <h2>BlueMap (browser-map)</h2>
   <p>Live wereldoverzicht in je browser:</p>
   <p><a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank"><strong>http://88.211.214.163:8100</strong></a></p>
-  <ul>
-    <li>Handig voor oriëntatie, bases en coördinaten delen.</li>
-    <li>Vervangt <em>geen</em> gym-maps of waystones — craft maps en activeer stenen nog steeds in-game.</li>
-  </ul>
+  <p>Handig voor oriëntatie, bases en coördinaten delen.</p>
 
   <h2>Andere tools</h2>
   <ul>
     <li><strong>Nature’s Compass / Explorer’s Compass</strong> — biomes of structures zoeken.</li>
     <li><strong>Xaero’s World Map</strong> — uitzoomen, dens pinnen, caves markeren.</li>
-    <li><strong>Bed + waystone thuis</strong> — death moet een korte teleporteer + wandeling zijn, geen continent-hike.</li>
+    <li><strong>Bed + waystone thuis</strong> — snelle respawn en terugkeer.</li>
   </ul>
 
   <h2>Etiquette</h2>
   <ul>
     <li>Breek of grief geen andermans waystone-netwerk.</li>
-    <li>Publieke stenen: activeer ze, hernoem ze niet als anderen de naam nodig hebben.</li>
+    <li>Publieke stenen: activeer ze; hernoem geen stenen waar anderen op vertrouwen.</li>
     <li>Vraag voordat je een steen diep in iemands claim plant.</li>
   </ul>
 
@@ -919,7 +916,7 @@ export function registerDutchSite({
   <p><strong>Nee.</strong> Op PokeHaven EU alleen <strong>FTB Chunks</strong>. Open Parties and Claims zit in het pack — niet gebruiken voor je base. Zie <a href="Claims.html">Claims</a>.</p>
 
   <h2>Is er een browser-map?</h2>
-  <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Wereldoverzicht in de browser. In-game reizen blijft via waystones en gym-maps — zie <a href="Travel.html">Reizen</a>.</p>
+  <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Meer travel-tools: <a href="Travel.html">Reizen</a>.</p>
 
   <h2>Kan ik doneren?</h2>
   <p>Ja, optioneel — donaties helpen de server online / te upgraden. <strong>Geen gameplay-perks, ranks of VIP-rewards.</strong> Links staan in Discord.</p>
@@ -948,7 +945,6 @@ export function registerDutchSite({
     <li><code>#help</code> — snelle publieke vragen die anderen ook kunnen beantwoorden</li>
     <li><code>#tickets</code> — privé hulp, reports, appeals, langere staff-issues</li>
   </ul>
-  <p>Check eerst deze wiki (Eerste uren, Claims, Gym-maps, FAQ) — veel antwoorden staan hier al.</p>
 
   <h2>Kan ik de level cap uitzetten?</h2>
   ${critical(
@@ -1205,7 +1201,7 @@ export function registerDutchSite({
     <li>Combineer Empty Map + Cerulean Star in de <strong>Kanto Cartography Table</strong>.</li>
     <li>Hover voor coördinaten, daarna reizen. Fight-gids: <a href="Misty.html">Misty</a>.</li>
   </ol>
-  <p>Volgende Kanto-gym na Misty: <a href="Lt._Surge.html">Lt. Surge</a>. Latere Kanto-leaders gebruiken Method 2 hieronder.</p>
+  <p>Volgende na Misty: <a href="Lt._Surge.html">Lt. Surge</a>.</p>
 
   <h2>Latere regio’s (Johto / Hoenn / Sinnoh)</h2>
   <p>Na elke league craft je de cartography-tafel van die regio (REI: <em>Johto</em> / <em>Hoenn</em> / <em>Sinnoh</em> + <em>cartography</em>). <strong>Regio-openers</strong> (eerste gym van die regio):</p>
@@ -1280,7 +1276,7 @@ export function registerDutchSite({
       <tr class="critical-row"><td>Seagrass met hand</td><td>0 drops</td><td>Shears — <a href="Misty.html">Misty</a></td></tr>
       <tr class="critical-row"><td>Alleen vanilla-hengel</td><td>Vis-items, weinig Pokémon</td><td>Cobblemon-hengels — <a href="Fishing.html">Vissen</a></td></tr>
       <tr class="critical-row"><td>Pasture/eieren niet geclaimd</td><td>Shiny-project gestolen</td><td>Claim breedfarm — <a href="Breeding.html">Broeden</a> · <a href="Shiny.html">Shiny</a></td></tr>
-      <tr><td>Wiki skippen, Discord spammen</td><td>Trage antwoorden + herhaalde tickets</td><td>Eerst <a href="https://pokehaven.wiki">pokehaven.wiki</a> → daarna <code>#help</code> (snel) of <code>#tickets</code> (privé)</td></tr>
+      <tr><td>Staff-hulp nodig</td><td>—</td><td><a href="https://pokehaven.wiki">pokehaven.wiki</a> · Discord <code>#help</code> of <code>#tickets</code></td></tr>
       <tr><td>Alleen luxe shop-gear</td><td>Broke</td><td>Balls craften; emeralds verkopen</td></tr>
       <tr><td>Palace / shiny vóór gyms</td><td>Trage progressie</td><td>Eerst gyms — <a href="Brock.html">Brock</a></td></tr>
       <tr class="critical-row"><td>Verkeerde Pokémon geselecteerd</td><td>Verkeerde mon uitgestuurd</td><td>Pijltjestoetsen, dan <kbd>R</kbd></td></tr>
@@ -1854,9 +1850,8 @@ export function registerDutchSite({
   <h2>Gewoontes die tijd schelen</h2>
   <ul>
     <li>Combineer rijden met een <a href="Travel.html">waystone-netwerk</a> — eruit rijden, thuis warpen.</li>
-    <li>Land en heal vóór gym-fights; begin geen battle terwijl je nog controls zoekt.</li>
-    <li>Houd je mount veilig bij je basis zodat death je niet midden op de map strandt.</li>
-    <li>Vliegen is voor travel, niet “ik heb geen maps nodig” — craft nog steeds gym-maps (<a href="Gym_Maps.html">Gym-maps</a>).</li>
+    <li>Land en heal vóór gym-fights.</li>
+    <li>Houd je mount veilig bij je basis zodat death je niet ver van huis strandt.</li>
   </ul>
 
   <h2>Veelgemaakte fouten</h2>
@@ -2497,23 +2492,17 @@ export function registerDutchSite({
     track("Gyms_Hoenn.html", {
       title: "Hoenn-gyms",
       breadcrumbs: crumbs({ label: "Hoenn-gyms", href: "Gyms_Hoenn.html" }),
-      lede: "Hoenn opent na de Johto Champion. Gebruik de gym-maps en trainerlijst hieronder — diepe leader-pagina’s groeien mee (Kanto/Johto-stijl).",
+      lede: "Hoenn opent na de Johto Champion. Gym-maps, opener <strong>Petra</strong>, en de trainerlijst hieronder.",
       body: `
-  <div class="callout tip">
-    <div class="label">Start hier</div>
-    Maps + opener <strong>Petra</strong> eerst. Teams zoeken via de <a href="Trainer_Index.html">Trainer-index</a>.
-    Rond eerst <a href="Gyms_Johto.html">Johto</a> af — deze hub groeit daarna verder.
-  </div>
-
-  <h2>Unlock (als je hier bent)</h2>
+  <h2>Unlock</h2>
   <ol class="steps">
     <li>Versla Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
     <li>Volg je Trainer Card-unlocks naar Hoenn.</li>
-    <li>Gebruik de <strong>Hoenn Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader-tip daar: <strong>Petra</strong>.</li>
+    <li>Gebruik de <strong>Hoenn Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader: <strong>Petra</strong>.</li>
   </ol>
 
   <h2>Named Hoenn-trainers</h2>
-  <p class="muted">Overzicht + maps eerst. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
+  <p class="muted">Teams: <a href="Trainer_Index.html">Trainer-index</a> · <a href="Achievements.html">Achievements</a>.</p>
   <table class="wikitable">
     <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
     <tbody>${previewRows || "<tr><td colspan=4>Nog geen Hoenn-trainers opgelijst.</td></tr>"}</tbody>
@@ -2548,23 +2537,17 @@ export function registerDutchSite({
     track("Gyms_Sinnoh.html", {
       title: "Sinnoh-gyms",
       breadcrumbs: crumbs({ label: "Sinnoh-gyms", href: "Gyms_Sinnoh.html" }),
-      lede: "Sinnoh opent na Hoenn Champion Rocco. Gebruik de gym-maps en trainerlijst hieronder — diepe leader-pagina’s groeien mee (Kanto/Johto-stijl).",
+      lede: "Sinnoh opent na Hoenn Champion Rocco. Gym-maps, opener <strong>Pedro</strong>, en de trainerlijst hieronder.",
       body: `
-  <div class="callout tip">
-    <div class="label">Start hier</div>
-    Maps + opener <strong>Pedro</strong> eerst. Teams zoeken via de <a href="Trainer_Index.html">Trainer-index</a>.
-    Rond eerst <a href="Gyms_Hoenn.html">Hoenn</a> af — deze hub groeit daarna verder.
-  </div>
-
-  <h2>Unlock (als je hier bent)</h2>
+  <h2>Unlock</h2>
   <ol class="steps">
     <li>Versla Hoenn Champion <strong>Rocco</strong> (na de Hoenn-league).</li>
     <li>Volg je Trainer Card-unlocks naar Sinnoh.</li>
-    <li>Gebruik de <strong>Sinnoh Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader-tip daar: <strong>Pedro</strong>.</li>
+    <li>Gebruik de <strong>Sinnoh Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader: <strong>Pedro</strong>.</li>
   </ol>
 
   <h2>Named Sinnoh-trainers</h2>
-  <p class="muted">Overzicht + maps eerst. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
+  <p class="muted">Teams: <a href="Trainer_Index.html">Trainer-index</a> · <a href="Achievements.html">Achievements</a>.</p>
   <table class="wikitable">
     <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
     <tbody>${previewRows || "<tr><td colspan=4>Nog geen Sinnoh-trainers opgelijst.</td></tr>"}</tbody>
