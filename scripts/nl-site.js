@@ -1546,11 +1546,103 @@ export function registerDutchSite({
     }
   }
 
+  const nlGymExtras = {
+    "Lt._Surge": {
+      title: "Walkthrough — Misty naar Lt. Surge",
+      coverage: "Ground is het antwoord op Electric. Tanky Waters kunnen helpen als ze de eerste hit overleven.",
+      travel: "Savanna Plateau-tip uit pack-data — neem eten mee voor een langere hike.",
+      gotcha: "Paralysis + speed snowballen. Status-cures en een Ground-pivot meenemen.",
+    },
+    Erika: {
+      title: "Walkthrough — Surge naar Erika",
+      coverage: "Fire, Flying, Ice en Poison drukken Grass.",
+      travel: "Flower Forest-tip — mooi biome, claim toch een rustplek.",
+      gotcha: "Sleep/powder kan stallen. Cleansers meenemen.",
+    },
+    Koga: {
+      title: "Walkthrough — Erika naar Koga",
+      coverage: "Psychic en Ground helpen tegen Poison.",
+      travel: "Swamp-tip — boots, eten, waystone onderweg.",
+      gotcha: "Poison-chip. Antidotes/Pecha meenemen.",
+    },
+    Sabrina: {
+      title: "Walkthrough — Koga naar Sabrina",
+      coverage: "Dark, Bug en Ghost drukken Psychic.",
+      travel: "Dark Forest-tip — licht + geclaimde retreat.",
+      gotcha: "Confusion/setup. Revenge killer klaarzetten.",
+    },
+    Blaine: {
+      title: "Walkthrough — Sabrina naar Blaine",
+      coverage: "Water en Ground zijn betrouwbaar tegen Fire.",
+      travel: "Crimson Forest / Nether-adjacent — fire resist helpt de trip.",
+      gotcha: "Warme biomes zijn dodelijk zonder prep. Eerst waystone + eten.",
+    },
+    Giovanni: {
+      title: "Walkthrough — Blaine naar Giovanni",
+      coverage: "Water, Grass en Ice raken Ground hard.",
+      travel: "Deep Dark-tip — goed geared gaan.",
+      gotcha: "Deep Dark is gevaarlijk. Scout voorzichtig, fight op full HP.",
+    },
+    Lorelei: {
+      title: "Walkthrough — Giovanni naar Elite Four (Lorelei)",
+      coverage: "Fire, Fighting, Rock en Steel helpen tegen Ice.",
+      travel: "Elite Four Tower (The End) — eerst alle Kanto-gyms; stacks heals.",
+      gotcha: "Full heal tussen Elite-rooms.",
+      league: true,
+    },
+    Bruno: {
+      title: "Walkthrough — Lorelei naar Bruno",
+      coverage: "Flying, Psychic en Fairy tegen Fighting.",
+      travel: "Zelfde tower — restock vóór zijn room.",
+      gotcha: "Fighting straft Normal/Rock/Ice/Steel. Flying/Psychic-pivot houden.",
+      league: true,
+    },
+    Agatha: {
+      title: "Walkthrough — Bruno naar Agatha",
+      coverage: "Dark en Ghost drukken Ghost.",
+      travel: "Tower room 3 — full heal na Bruno.",
+      gotcha: "Status + Ghost-tricks. Niet op één Dark-type gokken.",
+      league: true,
+    },
+    Lance: {
+      title: "Walkthrough — Agatha naar Lance",
+      coverage: "Ice en Dragon het belangrijkst; Fairy helpt ook.",
+      travel: "Vierde Elite-room — late-Kanto wall.",
+      gotcha: "Dragon-spam straft dunne teams. Ice-coverage + meerdere wincons.",
+      league: true,
+    },
+    Blue: {
+      title: "Walkthrough — Lance naar Champion Blue",
+      coverage: "Mixed champion — antwoorden voor meerdere types, geen single gimmick.",
+      travel: "Top van de Elite Four Tower. Full restore + items.",
+      gotcha: "Na Blue op PokeHaven: Johto unlock + Trainer Association card-swap. Ontbreken structures? Discord — staff kan 1× herstarten. Zie je champion-boek.",
+      league: true,
+      champion: true,
+    },
+  };
+
   for (const g of trainers.kantoLeaders) {
     if (g.slug === "Brock" || g.slug === "Misty") continue;
     const file = `${g.slug}.html`;
-    const mapItem = g.slug === "Brock" ? "Brock Map Key" : g.specialItem;
+    const mapItem = g.specialItem;
     const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
+    const minLv = Math.min(...(g.team || []).map((m) => Number(m.level) || 99), 99);
+    const sorted = [...trainers.kantoLeaders].sort((a, b) => a.order - b.order);
+    const idx = sorted.findIndex((x) => x.slug === g.slug);
+    const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
+    const nextLink = next
+      ? `<a href="${next.slug}.html">${esc(next.name)}</a>`
+      : "de volgende regio";
+    const ex = nlGymExtras[g.slug] || {
+      title: `Walkthrough — ${esc(g.name)}`,
+      coverage: esc(g.tips),
+      travel: `Locatie-tip: ${esc(g.biome)}.`,
+      gotcha: "Heal vóór de leader. Respecteer de level cap.",
+    };
+    const afterWin = ex.champion
+      ? `Win → Kanto Champion. Volgende: Johto via Trainer Association (cap reset voor <em>jou</em>). Zie <a href="Progression.html">Progressie</a> · <a href="Gyms_Johto.html">Johto</a>.`
+      : `Win → level cap stijgt → volgende: ${nextLink}.`;
+
     track(file, {
       title: g.name,
       breadcrumbs: crumbs(
@@ -1559,18 +1651,63 @@ export function registerDutchSite({
       ),
       lede:
         g.order <= 8
-          ? `Kanto gym ${g.order} — ${esc(g.name)} (${esc(g.type)}).`
-          : `League-gevecht — ${esc(g.name)}.`,
+          ? `${esc(g.name)} — ${esc(g.type)}-specialist. Kanto gym ${g.order} op PokeHaven EU.`
+          : `${esc(g.name)} — league-gevecht op PokeHaven EU.`,
+      infobox: `<div class="infobox-title">${esc(g.name)}</div>
+  <table>
+    <tr><th>Rol</th><td>${g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"}</td></tr>
+    <tr><th>Type</th><td>${esc(g.type)}</td></tr>
+    <tr><th>Badge</th><td>${esc(g.badge)}</td></tr>
+    <tr><th>Locatie-tip</th><td>${esc(g.biome)}</td></tr>
+    <tr><th>Map-item</th><td>${esc(mapItem)}</td></tr>
+    <tr><th>Approx cap</th><td>~${maxLv + 5}</td></tr>
+    <tr><th>Team levels</th><td>${minLv}–${maxLv}</td></tr>
+    <tr><th>Party</th><td>${(g.team || []).length}</td></tr>
+  </table>`,
       body: `
-  <h2>Voorbereiden</h2>
+  <h2>${ex.title}</h2>
+  <h3>Voorbereiden</h3>
   <p>${esc(g.tips)}</p>
   <ul>
-    <li>Map-item: <strong>${esc(mapItem)}</strong> + Empty Map op de Kanto Cartography Table</li>
-    <li>Approx cap terwijl dit gevecht volgt: ~${maxLv + 5}</li>
+    <li><strong>Coverage:</strong> ${ex.coverage}</li>
+    <li>Leader party (pack-data): ongeveer <strong>${minLv}–${maxLv}</strong></li>
+    <li>Approx cap terwijl dit gevecht volgt: <strong>~${maxLv + 5}</strong> — <a href="Level_Cap.html">Level cap</a></li>
+    <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
+    <li>${ex.travel}</li>
   </ul>
-  <h2>Volledige team-tabel</h2>
-  <p>Moves, held items en exacte levels: <a href="../../pages/${file}">${esc(g.name)} (EN)</a></p>
-  <p><a href="Gyms_Kanto.html">← Kanto-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Level_Cap.html">Level cap</a></p>
+  <h3>Craft de map</h3>
+  ${figure(
+    guideImg("cartography-maps.png"),
+    "<strong>Cartography-tafel.</strong> Empty Map + special item → afgewerkte map met coördinaten.",
+    "Cartography / map-crafting"
+  )}
+  <ol class="steps">
+    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(mapItem)}</strong>.</li>
+    <li>Craft een verse <strong>Empty Map</strong>.</li>
+    <li>Combineer Empty Map + ${esc(mapItem)} in de <strong>Kanto Cartography Table</strong> (of Map Guide-villager).</li>
+    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
+  </ol>
+  ${critical(
+    "nl",
+    "<strong>Open de Empty Map niet eerst in de wereld</strong> — dan is hij onbruikbaar voor gym-crafts."
+  )}
+  <h3>Fight-tips</h3>
+  <p>${ex.gotcha}</p>
+  <ol class="steps">
+    <li>Reis met heals; activeer waystones onderweg.</li>
+    ${
+      ex.league
+        ? "<li>Elite Four / Champion: <strong>full heal tussen rooms</strong>.</li>"
+        : "<li>Clear gym-trainers als je XP of CobbleDollars nodig hebt.</li>"
+    }
+    <li>Heal, daarna <strong>${esc(g.name)}</strong> challengen.</li>
+    <li>${afterWin}</li>
+  </ol>
+  <h2>Team</h2>
+  ${teamTable(g.team)}
+  <p class="muted">Moves/items in detail ook op de <a href="../../pages/${file}">EN-pagina</a>.</p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Kanto.html">Kanto-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Level_Cap.html">Level cap</a></p>
+  ${navboxCore()}
   `,
     });
   }

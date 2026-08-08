@@ -622,16 +622,114 @@ function gymGuideBody(g) {
     </ol>`;
   }
 
-  return `<h2>Prepare</h2>
+  // Deep template for remaining Kanto gyms + Elite Four + Blue
+  const extras = {
+    "Lt._Surge": {
+      title: "Walkthrough — Misty to Lt. Surge",
+      coverage: "Ground answers Electric best. Bulky Waters can help if they survive the first hit.",
+      travel: "Savanna Plateau tip from pack data — bring food for a longer hike.",
+      gotcha: "Paralysis and speed snowball. Pack status cures and a Ground pivot.",
+    },
+    Erika: {
+      title: "Walkthrough — Surge to Erika",
+      coverage: "Fire, Flying, Ice, and Poison pressure Grass.",
+      travel: "Flower Forest tip — pretty biome, still claim a rest stop.",
+      gotcha: "Status (sleep/powder) can stall. Bring cleansers and don’t underlevel into her ceiling.",
+    },
+    Koga: {
+      title: "Walkthrough — Erika to Koga",
+      coverage: "Psychic and Ground help into Poison. Fast removers beat stall.",
+      travel: "Swamp tip — boots, food, and a waystone on the path.",
+      gotcha: "Poison / bad poison chip. Stock Antidotes / Pecha and don’t AFK mid-fight.",
+    },
+    Sabrina: {
+      title: "Walkthrough — Koga to Sabrina",
+      coverage: "Dark, Bug, and Ghost pressure Psychic.",
+      travel: "Dark Forest tip — light sources and a claimed retreat.",
+      gotcha: "Confusion and setup can run away. Keep a revenge killer ready.",
+    },
+    Blaine: {
+      title: "Walkthrough — Sabrina to Blaine",
+      coverage: "Water and Ground are reliable into Fire.",
+      travel: "Crimson Forest / Nether-adjacent tip — fire resist gear helps the trip.",
+      gotcha: "Hot biomes kill unprepared travellers. Waystones + food before the gym fight.",
+    },
+    Giovanni: {
+      title: "Walkthrough — Blaine to Giovanni",
+      coverage: "Water, Grass, and Ice hit Ground hard.",
+      travel: "Deep Dark tip — go geared; this is not a casual spawn stroll.",
+      gotcha: "Deep Dark is lethal. Scout carefully, then fight Giovanni at full health.",
+    },
+    Lorelei: {
+      title: "Walkthrough — Giovanni to Elite Four (Lorelei)",
+      coverage: "Fire, Fighting, Rock, and Steel help into Ice.",
+      travel: "Elite Four Tower (The End) — finish Kanto gyms first; bring stacks of heals.",
+      gotcha: "Full heal between Elite rooms. Do not walk into Bruno with a half-dead party.",
+      league: true,
+    },
+    Bruno: {
+      title: "Walkthrough — Lorelei to Bruno",
+      coverage: "Flying, Psychic, and Fairy answer Fighting.",
+      travel: "Same Elite Four Tower — restock before you enter his room.",
+      gotcha: "Fighting hits Normal/Rock/Ice/Steel hard. Keep a Flying/Psychic pivot.",
+      league: true,
+    },
+    Agatha: {
+      title: "Walkthrough — Bruno to Agatha",
+      coverage: "Dark and Ghost pressure Ghost. Watch immunities.",
+      travel: "Tower room three — heal fully after Bruno.",
+      gotcha: "Status and Ghost tricks. Don’t sweep with a single Dark type if she has answers.",
+      league: true,
+    },
+    Lance: {
+      title: "Walkthrough — Agatha to Lance",
+      coverage: "Ice and Dragon matter most; Fairy also helps into Dragon.",
+      travel: "Fourth Elite room — this is a late-Kanto wall.",
+      gotcha: "Dragon spam punishes thin teams. Bring Ice coverage and multiple win conditions.",
+      league: true,
+    },
+    Blue: {
+      title: "Walkthrough — Lance to Champion Blue",
+      coverage: "Mixed champion — pack answers for several types, not one gimmick.",
+      travel: "Top of the Elite Four Tower. Full restore team + items.",
+      gotcha: "After Blue on PokeHaven: Johto unlock + Trainer Association card swap. Soft Discord note if structures are missing (staff may restart once). See your champion book.",
+      league: true,
+      champion: true,
+    },
+  }[g.slug] || {
+    title: `Walkthrough — ${esc(g.name)}`,
+    coverage: esc(g.tips),
+    travel: `Location tip: ${esc(g.biome)}.`,
+    gotcha: "Heal before the leader. Respect the level cap.",
+  };
+
+  const lvMin =
+    teamMaxLevel(g) > 0
+      ? Math.min(...g.team.map((m) => Number(m.level) || 99))
+      : "—";
+  const lvMax = teamMaxLevel(g) > 0 ? teamMaxLevel(g) : "—";
+  const afterWin = extras.champion
+    ? `Win → Kanto Champion. Next: Johto via Trainer Association (cap resets for <em>you</em>). Details: <a href="Progression.html">Progression</a> · <a href="Gyms_Johto.html">Johto</a>.`
+    : `Win → level cap rises → next: ${nextLink}.`;
+
+  return `<h2>${extras.title}</h2>
+    <h3>Prepare</h3>
     <p>${esc(g.tips)}</p>
     <ul>
-      <li>Team levels: about ${teamMaxLevel(g) > 0 ? `${Math.min(...g.team.map((m) => Number(m.level) || 99))}–${teamMaxLevel(g)}` : "—"} (leader party from pack data)</li>
-      <li>Bring heals, status cures if needed, and spare Poké Balls</li>
-      <li>Approx cap while this fight is next: ~${approxCapWhileNext(g)} — <a href="Level_Cap.html">Level cap</a></li>
+      <li><strong>Coverage:</strong> ${extras.coverage}</li>
+      <li>Leader party levels (pack data): about <strong>${lvMin}–${lvMax}</strong></li>
+      <li>Approx cap while this fight is next: <strong>~${approxCapWhileNext(g)}</strong> — <a href="Level_Cap.html">Level cap</a></li>
+      <li>Heals, status cures, spare balls, claimed base / waystone to retreat to</li>
+      <li>${extras.travel}</li>
     </ul>
-    <h2>Get the map</h2>
+    <h3>Craft the map</h3>
+    ${figure(
+      guideImg("cartography-maps.png"),
+      "<strong>Cartography table.</strong> Empty Map + special item → finished map with coordinates.",
+      "Cartography / map crafting"
+    )}
     <ol class="steps">
-      <li>Craft / trade <strong>${esc(mapItem)}</strong> (search the leader’s name in REI).</li>
+      <li>Search <strong>${esc(g.name)}</strong> in REI and craft <strong>${esc(mapItem)}</strong>.</li>
       <li>Craft a fresh <strong>Empty Map</strong>.</li>
       <li>Combine Empty Map + ${esc(mapItem)} in the <strong>Kanto Cartography Table</strong> (or trade a Map Guide villager).</li>
       <li>Hover the finished map for coordinates. Details: <a href="Gym_Maps.html">Gym maps</a>.</li>
@@ -640,12 +738,17 @@ function gymGuideBody(g) {
       "en",
       "<strong>Do not open the Empty Map in the world first</strong> — that ruins it for gym crafting."
     )}
-    <h2>Fight</h2>
+    <h3>Fight tips</h3>
+    <p>${extras.gotcha}</p>
     <ol class="steps">
-      <li>Travel with heals and a covered team.</li>
-      <li>Clear gym trainers if you need XP or money.</li>
-      <li>Heal, then challenge the leader.</li>
-      <li>Win → level cap rises → next: ${nextLink}.</li>
+      <li>Travel with heals; activate waystones on the route.</li>
+      ${
+        extras.league
+          ? "<li>Elite Four / Champion: <strong>full heal between rooms</strong>.</li>"
+          : "<li>Clear gym trainers if you need XP or CobbleDollars.</li>"
+      }
+      <li>Heal, then challenge <strong>${esc(g.name)}</strong>.</li>
+      <li>${afterWin}</li>
     </ol>`;
 }
 
@@ -1468,7 +1571,9 @@ writePage("index.html", {
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>All 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Second gym deep guide.</p></a>
+    <a class="hub-card" href="pages/Lt._Surge.html"><h3>Lt. Surge</h3><p>Third gym — Ground coverage &amp; map.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym maps</h3><p>Cartography &amp; coordinates.</p></a>
+    <a class="hub-card" href="pages/Blue.html"><h3>Champion Blue</h3><p>End of Kanto — then Johto.</p></a>
     <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Regions &amp; the gym loop.</p></a>
     <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement checklist.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
