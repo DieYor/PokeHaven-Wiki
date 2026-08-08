@@ -32,85 +32,85 @@
   {
     "title": "Kanto gyms",
     "href": "pages/Gyms_Kanto.html",
-    "blurb": "Checklist for the Kanto challenge on CobbleVerse / PokeHaven EU. Open a leader page for full teams from pack data.",
+    "blurb": "Checklist for the Kanto challenge on CobbleVerse / PokeHaven EU. Open a leader page for full teams and prep tips.",
     "keywords": ""
   },
   {
     "title": "Brock",
     "href": "pages/Brock.html",
-    "blurb": "Brock — Rock specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Brock — Rock specialist on PokeHaven EU.",
     "keywords": "first gym rock boulder badge"
   },
   {
     "title": "Misty",
     "href": "pages/Misty.html",
-    "blurb": "Misty — Water specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Misty — Water specialist on PokeHaven EU.",
     "keywords": "second gym water cascade cerulean star seagrass"
   },
   {
     "title": "Lt. Surge",
     "href": "pages/Lt._Surge.html",
-    "blurb": "Lt. Surge — Electric specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Lt. Surge — Electric specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Erika",
     "href": "pages/Erika.html",
-    "blurb": "Erika — Grass specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Erika — Grass specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Koga",
     "href": "pages/Koga.html",
-    "blurb": "Koga — Poison specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Koga — Poison specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Sabrina",
     "href": "pages/Sabrina.html",
-    "blurb": "Sabrina — Psychic specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Sabrina — Psychic specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Blaine",
     "href": "pages/Blaine.html",
-    "blurb": "Blaine — Fire specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Blaine — Fire specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Giovanni",
     "href": "pages/Giovanni.html",
-    "blurb": "Giovanni — Ground specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Giovanni — Ground specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Lorelei",
     "href": "pages/Lorelei.html",
-    "blurb": "Lorelei — Ice specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Lorelei — Ice specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Bruno",
     "href": "pages/Bruno.html",
-    "blurb": "Bruno — Fighting specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Bruno — Fighting specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Agatha",
     "href": "pages/Agatha.html",
-    "blurb": "Agatha — Ghost specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Agatha — Ghost specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Lance",
     "href": "pages/Lance.html",
-    "blurb": "Lance — Dragon specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Lance — Dragon specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Blue",
     "href": "pages/Blue.html",
-    "blurb": "Blue — Mixed specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Blue — Mixed specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
@@ -188,7 +188,7 @@
   {
     "title": "Trainer index",
     "href": "pages/Trainer_Index.html",
-    "blurb": "Searchable list of 155 named trainers from the RCT datapack.",
+    "blurb": "Searchable list of 155 named trainers on PokeHaven EU.",
     "keywords": ""
   },
   {
@@ -308,13 +308,13 @@
   {
     "title": "Pack differences",
     "href": "pages/Pack_Differences.html",
-    "blurb": "Why random Minecraft / Cobblemon / Lumyverse pages feel “wrong” on PokeHaven EU — these are the CobbleVerse 1.7.42 realities we parsed from the pack.",
+    "blurb": "Why random Minecraft, Cobblemon, or Lumyverse pages feel wrong on PokeHaven EU — here’s what CobbleVerse 1.7.42 actually does here.",
     "keywords": ""
   },
   {
     "title": "Recipe browser",
     "href": "pages/Recipe_Browser.html",
-    "blurb": "Search 559 recipes parsed from CobbleVerse datapacks (TMs, LumyMon, cuisine, …). Cobblemon core ball recipes are also covered in Essential recipes because those",
+    "blurb": "Search 559 CobbleVerse recipes (TMs, LumyMon, cuisine, and more). Core Poké Ball crafts are also on Essential recipes — use REI in-game for the live craft grid.",
     "keywords": ""
   },
   {
@@ -332,91 +332,91 @@
   {
     "title": "Johto gyms",
     "href": "pages/Gyms_Johto.html",
-    "blurb": "Checklist for the Johto challenge on CobbleVerse / PokeHaven EU after Champion Blue. Open a leader page for full teams from pack data.",
+    "blurb": "Checklist for the Johto challenge on CobbleVerse / PokeHaven EU after Champion Blue. Open a leader page for full teams and prep tips.",
     "keywords": "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive"
   },
   {
     "title": "Hoenn gyms",
     "href": "pages/Gyms_Hoenn.html",
-    "blurb": "Hoenn opens after the Johto Champion. Deep walkthroughs like Kanto / Johto are under construction — use pack data and gym maps for now.",
-    "keywords": "hoenn petra under construction coming soon gym maps cartography"
+    "blurb": "Hoenn opens after the Johto Champion. Full walkthroughs like Kanto and Johto are still being written — start with the gym maps and the trainer list below.",
+    "keywords": "hoenn petra gym maps cartography coming soon"
   },
   {
     "title": "Valerio",
     "href": "pages/Valerio.html",
-    "blurb": "Valerio — Flying specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Valerio — Flying specialist on PokeHaven EU.",
     "keywords": "johto first gym flying zephyr raptor bracer"
   },
   {
     "title": "Raffaello",
     "href": "pages/Raffaello.html",
-    "blurb": "Raffaello — Bug specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Raffaello — Bug specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Chiara",
     "href": "pages/Chiara.html",
-    "blurb": "Chiara — Normal specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Chiara — Normal specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Angelo",
     "href": "pages/Angelo.html",
-    "blurb": "Angelo — Ghost specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Angelo — Ghost specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Furio",
     "href": "pages/Furio.html",
-    "blurb": "Furio — Fighting specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Furio — Fighting specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Jasmine",
     "href": "pages/Jasmine.html",
-    "blurb": "Jasmine — Steel specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Jasmine — Steel specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Alfredo",
     "href": "pages/Alfredo.html",
-    "blurb": "Alfredo — Ice specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Alfredo — Ice specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Sandra",
     "href": "pages/Sandra.html",
-    "blurb": "Sandra — Dragon specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Sandra — Dragon specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Pino",
     "href": "pages/Pino.html",
-    "blurb": "Pino — Psychic specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Pino — Psychic specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Koga (Johto)",
     "href": "pages/Johto_Koga.html",
-    "blurb": "Koga (Johto) — Poison specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Koga (Johto) — Poison specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Bruno (Johto)",
     "href": "pages/Johto_Bruno.html",
-    "blurb": "Bruno (Johto) — Fighting specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Bruno (Johto) — Fighting specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Karen",
     "href": "pages/Karen.html",
-    "blurb": "Karen — Dark specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Karen — Dark specialist on PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Lance (Johto Champion)",
     "href": "pages/Johto_Lance.html",
-    "blurb": "Lance (Johto Champion) — Dragon specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.",
+    "blurb": "Lance (Johto Champion) — Dragon specialist on PokeHaven EU.",
     "keywords": ""
   }
 ]

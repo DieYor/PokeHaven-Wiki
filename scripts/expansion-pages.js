@@ -19,7 +19,7 @@ export function registerExpansionPages({
       { label: "Main Page", href: "../index.html" },
       { label: "Recipe browser", href: "Recipe_Browser.html" },
     ],
-    lede: `Search <strong>${recipesMeta.count || 0}</strong> recipes parsed from CobbleVerse datapacks (TMs, LumyMon, cuisine, …). Cobblemon core ball recipes are also covered in <a href="Essential_Recipes.html">Essential recipes</a> because those live in mod JARs, not this datapack dump.`,
+    lede: `Search <strong>${recipesMeta.count || 0}</strong> CobbleVerse recipes (TMs, LumyMon, cuisine, and more). Core Poké Ball crafts are also on <a href="Essential_Recipes.html">Essential recipes</a> — use REI in-game for the live craft grid.`,
     body: `
     <div class="callout tip">
       <div class="label">How to use</div>
@@ -171,11 +171,11 @@ export function registerExpansionPages({
       <li>PC access — <code>/pc</code> (<a href="Healing_and_Storage.html">Healing &amp; storage</a>).</li>
     </ul>
 
-    <h2>Datapack recipe database</h2>
-    <p>${recipesMeta.count} pack recipes (mostly TMs via <code>tmcraft</code>, plus LumyMon / furniture / cuisine) live in the <a href="Recipe_Browser.html">Recipe browser</a>.</p>
+    <h2>Full recipe list</h2>
+    <p>${recipesMeta.count} recipes (mostly TMs, plus LumyMon / furniture / cuisine) live in the <a href="Recipe_Browser.html">Recipe browser</a>.</p>
     <div class="callout tip">
-      <div class="label">Missing Cobblemon JAR crafts?</div>
-      Balls and many Cobblemon machines are inside mod JARs. Re-install the CurseForge instance locally if you want those auto-parsed later; until then this essentials page + REI cover beginners.
+      <div class="label">Balls &amp; machines</div>
+      Poké Balls and many Cobblemon machines are easiest to check in REI in-game. This page covers the beginner crafts; the browser covers the long list.
     </div>
 
     ${navboxMinecraft()}
@@ -209,11 +209,11 @@ export function registerExpansionPages({
       <h2>What to prepare</h2>
       <ul>${tips.prep.map((x) => `<li>${x}</li>`).join("")}</ul>
 
-      <h2>Named trainers in pack data (${list.length})</h2>
-      <p class="muted">Sample of trainers tagged <code>${prefix}</code> in the RCT datapack. Full search: <a href="Trainer_Index.html">Trainer index</a>.</p>
+      <h2>Named trainers (${list.length})</h2>
+      <p class="muted">Sample of ${name} trainers. Full search: <a href="Trainer_Index.html">Trainer index</a>.</p>
       <table class="wikitable">
         <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
-        <tbody>${named || "<tr><td colspan=4>No trainers parsed for this region prefix.</td></tr>"}</tbody>
+        <tbody>${named || "<tr><td colspan=4>No trainers listed for this region yet.</td></tr>"}</tbody>
       </table>
 
       <p class="see-also"><strong>See also:</strong> <a href="Progression.html">Progression</a> · <a href="Gyms_Kanto.html">Kanto gyms</a> · <a href="Trainer_Index.html">Trainer index</a></p>

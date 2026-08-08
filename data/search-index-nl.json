@@ -152,7 +152,7 @@
   {
     "title": "Shiny hunting",
     "href": "pages/Shiny.html",
-    "blurb": "Shiny-odds op PokeHaven EU / CobbleVerse — wild vs breeding-methodes uit pack-config.",
+    "blurb": "Shiny-odds op PokeHaven EU / CobbleVerse — wild versus breeding-methodes.",
     "keywords": "shiny hunting masuda crystal charm rate 2048 breed wild cobblecuisine"
   },
   {
@@ -224,31 +224,31 @@
   {
     "title": "Receptenbrowser",
     "href": "pages/Recipe_Browser.html",
-    "blurb": "Zoekbaar overzicht van 559 datapack-recepten.",
+    "blurb": "Zoekbaar overzicht van 559 CobbleVerse-recepten.",
     "keywords": ""
   },
   {
     "title": "Trainer-index",
     "href": "pages/Trainer_Index.html",
-    "blurb": "155 named trainers uit pack-data.",
+    "blurb": "155 named trainers op PokeHaven EU.",
     "keywords": ""
   },
   {
     "title": "Raid-bosses",
     "href": "pages/Raid_Bosses.html",
-    "blurb": "246 boss-bestanden uit het pack.",
+    "blurb": "246 raid-bosses om te doorzoeken.",
     "keywords": ""
   },
   {
     "title": "Spawn-lookup",
     "href": "pages/Spawn_Lookup.html",
-    "blurb": "3120 spawn-rijen uit pack-data.",
+    "blurb": "3120 spawn-rijen om te doorzoeken.",
     "keywords": ""
   },
   {
     "title": "Johto-gyms",
     "href": "pages/Gyms_Johto.html",
-    "blurb": "Checklist voor de Johto-challenge na Champion Blue. Open een leader-pagina voor volledige teams uit pack-data.",
+    "blurb": "Checklist voor de Johto-challenge na Champion Blue. Open een leader-pagina voor volledige teams en prep-tips.",
     "keywords": "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive"
   },
   {
@@ -332,8 +332,8 @@
   {
     "title": "Hoenn-gyms",
     "href": "pages/Gyms_Hoenn.html",
-    "blurb": "Hoenn opent na de Johto Champion. Diepe walkthroughs zoals Kanto / Johto zijn under construction — gebruik voorlopig pack-data en gym-maps.",
-    "keywords": "hoenn petra under construction coming soon gym maps cartography"
+    "blurb": "Hoenn opent na de Johto Champion. Volledige walkthroughs zoals Kanto en Johto worden nog geschreven — begin met de gym-maps en de trainerlijst hieronder.",
+    "keywords": "hoenn petra gym maps cartography coming soon"
   },
   {
     "title": "Sinnoh",
@@ -344,7 +344,7 @@
   {
     "title": "Brock",
     "href": "pages/Brock.html",
-    "blurb": "Brock — Rock-specialist. Teamdata uit het CobbleVerse RCT-datapack op PokeHaven EU.",
+    "blurb": "Brock — Rock-specialist op PokeHaven EU.",
     "keywords": "first gym rock boulder badge"
   },
   {

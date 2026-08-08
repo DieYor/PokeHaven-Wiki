@@ -181,7 +181,7 @@ export function registerDeepPages({
     <h2>Legendary birds</h2>
     <p>Articuno, Zapdos, and Moltres each have catch advancements (plus optional shinies). The pack does not give fixed overworld coordinates on this wiki.</p>
     <ol class="steps">
-      <li>Search each name in <a href="Spawn_Lookup.html">Spawn lookup</a> for biomes / buckets from pack data.</li>
+      <li>Search each name in <a href="Spawn_Lookup.html">Spawn lookup</a> for biomes and spawn buckets.</li>
       <li>Travel prepared: balls, heals, status tools, and a claimed base with a waystone.</li>
       <li>Catch the legendary — the advancement toasts when criteria complete.</li>
     </ol>
@@ -979,7 +979,7 @@ export function registerDeepPages({
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Getting started</h3><p>Install the pack and join the server.</p></a>
     <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Full opening checklist with HUD screenshots.</p></a>
     <a class="hub-card" href="pages/Poke_Balls.html"><h3>Poké Balls</h3><p>Apricorns, crafting screenshots, farm setup.</p></a>
-    <a class="hub-card" href="pages/Brock.html"><h3>Brock guide</h3><p>Map legend, prep, full team from pack data.</p></a>
+    <a class="hub-card" href="pages/Brock.html"><h3>Brock guide</h3><p>Map legend, prep, and full team.</p></a>
   </div>
 
   <h2>Deep guides</h2>
@@ -1004,7 +1004,7 @@ export function registerDeepPages({
 
   <h2>Databases</h2>
   <div class="hub-grid">
-    <a class="hub-card" href="pages/Trainer_Index.html"><h3>Trainer index</h3><p>Named trainers from RCT data.</p></a>
+    <a class="hub-card" href="pages/Trainer_Index.html"><h3>Trainer index</h3><p>Named trainers on this server.</p></a>
     <a class="hub-card" href="pages/Raid_Bosses.html"><h3>Raid bosses</h3><p>Boss file index.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture timing notes.</p></a>
     <a class="hub-card" href="pages/Voice_Chat.html"><h3>Voice chat</h3><p>Distances and groups.</p></a>

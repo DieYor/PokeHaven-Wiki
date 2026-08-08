@@ -328,7 +328,7 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
       { label: "Main Page", href: "../index.html" },
       { label: "Pack differences", href: "Pack_Differences.html" },
     ],
-    lede: "Why random Minecraft / Cobblemon / Lumyverse pages feel “wrong” on PokeHaven EU — these are the CobbleVerse 1.7.42 realities we parsed from the pack.",
+    lede: "Why random Minecraft, Cobblemon, or Lumyverse pages feel wrong on PokeHaven EU — here’s what CobbleVerse 1.7.42 actually does here.",
     infobox: `<div class="infobox-title">Quick facts</div>
     <table>
       <tr><th>Pack</th><td>CobbleVerse 1.7.42</td></tr>

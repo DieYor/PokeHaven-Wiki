@@ -322,7 +322,7 @@ const SEARCH_KEYWORDS = {
   "Gyms_Johto.html":
     "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive",
   "Gyms_Hoenn.html":
-    "hoenn petra under construction coming soon gym maps cartography",
+    "hoenn petra gym maps cartography coming soon",
   "Valerio.html": "johto first gym flying zephyr raptor bracer",
 };
 
@@ -365,7 +365,7 @@ writePage("index.html", {
   title: "PokeHaven EU Wiki",
   searchIndexTitle: "Main Page",
   breadcrumbs: [{ label: "Main Page", href: "index.html" }],
-  lede: "The player wiki for <strong>PokeHaven EU</strong> — our CobbleVerse 1.7.42 adventure server. Guides, systems, and pack data in one place.",
+  lede: "The player wiki for <strong>PokeHaven EU</strong> — our CobbleVerse 1.7.42 adventure server. Guides, systems, and lookup tools in one place.",
   body: `
   <section class="hero" style="min-height:auto;border:1px solid var(--line);border-radius:12px;margin-bottom:1.5rem;">
     <img class="hero-img" src="assets/wiki-wallpaper.png" alt="" />
@@ -407,8 +407,8 @@ writePage("index.html", {
 
   <h2>Databases</h2>
   <div class="hub-grid">
-    <a class="hub-card" href="pages/Trainer_Index.html"><h3>Trainer index</h3><p>${trainers.all.length} named trainers from the pack.</p></a>
-    <a class="hub-card" href="pages/Raid_Bosses.html"><h3>Raid bosses</h3><p>${raids.bosses.length} boss entries from datapacks.</p></a>
+    <a class="hub-card" href="pages/Trainer_Index.html"><h3>Trainer index</h3><p>${trainers.all.length} named trainers on this server.</p></a>
+    <a class="hub-card" href="pages/Raid_Bosses.html"><h3>Raid bosses</h3><p>${raids.bosses.length} raid boss entries to browse.</p></a>
     <a class="hub-card" href="pages/Spawn_Lookup.html"><h3>Spawn lookup</h3><p>Search ${spawns.length} spawn rows by Pokémon or biome.</p></a>
     <a class="hub-card" href="pages/FAQ.html"><h3>FAQ</h3><p>Level cap, join issues, common mistakes.</p></a>
   </div>
@@ -706,7 +706,7 @@ function gymGuideBody(g) {
     "Lt._Surge": {
       title: "Walkthrough — Misty to Lt. Surge",
       coverage: "Ground answers Electric best. Bulky Waters can help if they survive the first hit.",
-      travel: "Savanna Plateau tip from pack data — bring food for a longer hike.",
+      travel: "Savanna Plateau tip — bring food for a longer hike.",
       gotcha: "Paralysis and speed snowball. Pack status cures and a Ground pivot.",
     },
     Erika: {
@@ -877,7 +877,7 @@ function gymGuideBody(g) {
     <p>${esc(g.tips)}</p>
     <ul>
       <li><strong>Coverage:</strong> ${extras.coverage}</li>
-      <li>Leader party levels (pack data): about <strong>${lvMin}–${lvMax}</strong></li>
+      <li>Leader party levels: about <strong>${lvMin}–${lvMax}</strong></li>
       <li>Approx cap while this fight is next: <strong>~${approxCapWhileNext(g)}</strong> — <a href="Level_Cap.html">Level cap</a></li>
       <li>Heals, status cures, spare balls, claimed base / waystone to retreat to</li>
       <li>${extras.travel}</li>
@@ -979,7 +979,7 @@ writePage("Level_Cap.html", {
   )}
 
   <h2>Kanto ladder (approx)</h2>
-  <p>While a leader is your next target, your cap is roughly that leader’s strongest Pokémon level <strong>+ 5</strong>. Numbers below are from pack team data — use them as a guide, then confirm with your Trainer Card.</p>
+  <p>While a leader is your next target, your cap is roughly that leader’s strongest Pokémon level <strong>+ 5</strong>. Numbers below are a guide — confirm with your Trainer Card in-game.</p>
   <table class="wikitable">
     <thead><tr><th>Next target</th><th>Badge / role</th><th>Type</th><th>Team max lv</th><th>Approx cap</th></tr></thead>
     <tbody>${kantoCapLadderRows}</tbody>
@@ -1025,7 +1025,7 @@ writePage("Level_Cap.html", {
       { label: "Main Page", href: "../index.html" },
       { label: "Kanto gyms", href: "Gyms_Kanto.html" },
     ],
-    lede: "Checklist for the Kanto challenge on CobbleVerse / PokeHaven EU. Open a leader page for full teams from pack data.",
+    lede: "Checklist for the Kanto challenge on CobbleVerse / PokeHaven EU. Open a leader page for full teams and prep tips.",
     body: `
     <h2>Gym leaders &amp; league</h2>
     <table class="wikitable">
@@ -1054,7 +1054,7 @@ for (const g of trainers.kantoLeaders) {
       { label: "Kanto gyms", href: "Gyms_Kanto.html" },
       { label: g.name, href: `${g.slug}.html` },
     ],
-    lede: `${esc(g.name)} — ${esc(g.type)} specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.`,
+    lede: `${esc(g.name)} — ${esc(g.type)} specialist on PokeHaven EU.`,
     infobox: infoboxHtml(g.name, [
       ["Role", g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"],
       ["Type focus", esc(g.type)],
@@ -1352,7 +1352,7 @@ writePage("Breeding.html", {
     <li><strong>Hidden Abilities</strong> can pass when the pack allows it (enabled in CobBreeding).</li>
     <li><strong>Ditto + Ditto</strong> does <em>not</em> roll random legendary / paradox / ultra beast eggs here (blocked in config).</li>
     <li>Hoppers can pull from pasture blocks (automation is allowed by pack settings).</li>
-    <li>Some form features (region forms, Magikarp patterns, etc.) are marked inheritable in pack data — still verify in-game.</li>
+    <li>Some form features (region forms, Magikarp patterns, etc.) can inherit — still verify in-game.</li>
   </ul>
 
   <h2>What to breed for</h2>
@@ -1397,7 +1397,7 @@ writePage("Shiny.html", {
   <p>Shiny notice particles show within about <strong>${rates.cobblemon?.shinyNoticeParticlesDistance ?? 48} blocks</strong>.</p>
 
   <h2>Breeding shiny methods (CobBreeding)</h2>
-  <p>Egg shiny rolls can use method multipliers from the pack’s CobBreeding config. Treat these as <strong>multipliers on the shiny check</strong> when that method applies — still rare, not “guaranteed soon”.</p>
+  <p>Egg shiny rolls can use method multipliers from CobBreeding. Treat these as <strong>multipliers on the shiny check</strong> when that method applies — still rare, not “guaranteed soon”.</p>
   <table class="wikitable">
     <thead><tr><th>Method</th><th>Multiplier</th><th>Rough guide (if applied alone to 1/${shiny})</th></tr></thead>
     <tbody>
@@ -1738,7 +1738,7 @@ writePage("Trainer_Index.html", {
     { label: "Main Page", href: "../index.html" },
     { label: "Trainer index", href: "Trainer_Index.html" },
   ],
-  lede: `Searchable list of <strong>${trainers.all.length}</strong> named trainers from the RCT datapack.`,
+  lede: `Searchable list of <strong>${trainers.all.length}</strong> named trainers on PokeHaven EU.`,
   body: `
   <div class="filter-bar">
     <input id="trainer-filter" type="search" placeholder="Filter by name or id…" style="min-width:220px;flex:1" />
@@ -1936,7 +1936,7 @@ registerExpansionPages({
       { label: "Main Page", href: "../index.html" },
       { label: "Johto gyms", href: "Gyms_Johto.html" },
     ],
-    lede: "Checklist for the Johto challenge on CobbleVerse / PokeHaven EU after <a href=\"Blue.html\">Champion Blue</a>. Open a leader page for full teams from pack data.",
+    lede: "Checklist for the Johto challenge on CobbleVerse / PokeHaven EU after <a href=\"Blue.html\">Champion Blue</a>. Open a leader page for full teams and prep tips.",
     body: `
     <h2>Unlock</h2>
     <ol class="steps">
@@ -1984,26 +1984,26 @@ registerExpansionPages({
         { label: "Main Page", href: "../index.html" },
         { label: "Hoenn gyms", href: "Gyms_Hoenn.html" },
       ],
-      lede: "Hoenn opens after the Johto Champion. Deep walkthroughs like Kanto / Johto are <strong>under construction</strong> — use pack data and gym maps for now.",
+      lede: "Hoenn opens after the Johto Champion. Full walkthroughs like Kanto and Johto are still being written — start with the gym maps and the trainer list below.",
       body: `
     <div class="callout tip">
-      <div class="label">Under construction</div>
-      Full leader pages (teams, coverage, map keys, walkthroughs) are not written yet.
+      <div class="label">Still being written</div>
+      Full leader pages (teams, coverage, map keys, walkthroughs) are not ready yet.
       Finish <a href="Gyms_Johto.html">Johto</a> first, then check back — this hub will grow the same way.
     </div>
 
     <h2>Unlock (when you get here)</h2>
     <ol class="steps">
       <li>Beat Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
-      <li>Follow your Trainer Card / pack unlocks into Hoenn (same pattern as Kanto → Johto).</li>
+      <li>Follow your Trainer Card unlocks into Hoenn (same pattern as Kanto → Johto).</li>
       <li>Use the <strong>Hoenn Cartography Table</strong> for gym maps — <a href="Gym_Maps.html">Gym maps</a>. First leader tip on that page: <strong>Petra</strong>.</li>
     </ol>
 
-    <h2>Named Hoenn trainers in pack data</h2>
-    <p class="muted">Scout table only — not deep guides yet. Full search: <a href="Trainer_Index.html">Trainer index</a>. Toast list: <a href="Achievements.html">Achievements</a>.</p>
+    <h2>Named Hoenn trainers</h2>
+    <p class="muted">Quick overview for now — deep guides will follow. Full search: <a href="Trainer_Index.html">Trainer index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
     <table class="wikitable">
       <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
-      <tbody>${previewRows || "<tr><td colspan=4>No Hoenn trainers parsed.</td></tr>"}</tbody>
+      <tbody>${previewRows || "<tr><td colspan=4>No Hoenn trainers listed yet.</td></tr>"}</tbody>
     </table>
 
     <p class="see-also"><strong>See also:</strong> <a href="Gyms_Johto.html">Johto gyms</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Progression.html">Progression</a> · <a href="Gyms_Sinnoh.html">Sinnoh</a></p>
@@ -2031,7 +2031,7 @@ registerExpansionPages({
         { label: "Johto gyms", href: "Gyms_Johto.html" },
         { label: displayName, href: `${g.slug}.html` },
       ],
-      lede: `${esc(displayName)} — ${esc(g.type)} specialist. Team data from the CobbleVerse RCT datapack used on PokeHaven EU.`,
+      lede: `${esc(displayName)} — ${esc(g.type)} specialist on PokeHaven EU.`,
       infobox: infoboxHtml(displayName, [
         ["Region", "Johto"],
         ["Role", g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"],
@@ -2099,7 +2099,7 @@ writePage("index.html", {
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>All 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — deep guides.</p></a>
-    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Under construction — scout hub.</p></a>
+    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps and trainer list — deep guides coming.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Second gym deep guide.</p></a>
     <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>First Johto gym — Flying.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym maps</h3><p>Cartography &amp; coordinates.</p></a>

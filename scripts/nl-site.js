@@ -150,7 +150,7 @@ export function registerDutchSite({
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>Alle 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — diepe gidsen.</p></a>
-    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Under construction — scout-hub.</p></a>
+    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps en trainerlijst — diepe gidsen volgen.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Tweede gym, diepe gids.</p></a>
     <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>Eerste Johto-gym — Flying.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym-maps</h3><p>Cartography &amp; coördinaten.</p></a>
@@ -435,7 +435,7 @@ export function registerDutchSite({
     { large: true, diagram: true }
   )}
   <h2>Shop &amp; bank</h2>
-  <p>Prijslijsten staan in de Engelse economie-pagina met tabellen uit pack-data. Gebruik de vlag om te wisselen, of open <a href="../../pages/Economy.html">Economie (EN, met tabellen)</a> naast deze uitleg.</p>
+  <p>Prijslijsten staan in de Engelse economie-pagina. Gebruik de vlag om te wisselen, of open <a href="../../pages/Economy.html">Economie (EN, met tabellen)</a> naast deze uitleg.</p>
   <h2>Tips</h2>
   <ul>
     <li>Investeer vroeg in food/crop-farms — zie <a href="Farming_and_Food.html">Farms &amp; eten</a>.</li>
@@ -771,8 +771,8 @@ export function registerDutchSite({
     <li>Combineer op de Kanto Cartography Table.</li>
   </ol>
 
-  <h2>Datapack-database</h2>
-  <p>${recipesMeta.count} pack-recepten staan in de <a href="Recipe_Browser.html">Receptenbrowser</a> (EN-tool met dezelfde data).</p>
+  <h2>Volledige receptenlijst</h2>
+  <p>${recipesMeta.count} recepten staan in de <a href="Recipe_Browser.html">Receptenbrowser</a> (EN-tool met dezelfde lijst).</p>
   ${navboxCore()}
   `,
   });
@@ -1136,7 +1136,7 @@ export function registerDutchSite({
   <h2>Legendary birds</h2>
   <p>Articuno, Zapdos en Moltres hebben elk catch-advancements (plus optionele shinies). Deze wiki geeft geen vaste overworld-coördinaten.</p>
   <ol class="steps">
-    <li>Zoek elke naam in <a href="Spawn_Lookup.html">Spawn-lookup</a> voor biomes / buckets uit pack-data.</li>
+    <li>Zoek elke naam in <a href="Spawn_Lookup.html">Spawn-lookup</a> voor biomes en spawn-buckets.</li>
     <li>Reis voorbereid: balls, heals, status-tools, geclaimde basis met waystone.</li>
     <li>Vang de legendary — de advancement toast verschijnt als criteria kloppen.</li>
   </ol>
@@ -1276,7 +1276,7 @@ export function registerDutchSite({
   track("Shiny.html", {
     title: "Shiny hunting",
     breadcrumbs: crumbs({ label: "Shiny hunting", href: "Shiny.html" }),
-    lede: "Shiny-odds op PokeHaven EU / CobbleVerse — wild vs breeding-methodes uit pack-config.",
+    lede: "Shiny-odds op PokeHaven EU / CobbleVerse — wild versus breeding-methodes.",
     infobox: `<div class="infobox-title">Shiny-odds</div>
   <table>
     <tr><th>Base wild</th><td>1 / 2048</td></tr>
@@ -1576,7 +1576,7 @@ export function registerDutchSite({
   track("Recipe_Browser.html", {
     title: "Receptenbrowser",
     breadcrumbs: crumbs({ label: "Receptenbrowser", href: "Recipe_Browser.html" }),
-    lede: `Zoekbaar overzicht van ${recipesMeta.count} datapack-recepten.`,
+    lede: `Zoekbaar overzicht van ${recipesMeta.count} CobbleVerse-recepten.`,
     body: `
   <div class="callout tip">
     <div class="label">Interactieve browser</div>
@@ -1591,7 +1591,7 @@ export function registerDutchSite({
   track("Trainer_Index.html", {
     title: "Trainer-index",
     breadcrumbs: crumbs({ label: "Trainer-index", href: "Trainer_Index.html" }),
-    lede: `${trainers.all.length} named trainers uit pack-data.`,
+    lede: `${trainers.all.length} named trainers op PokeHaven EU.`,
     body: `
   <p>Volledige doorzoekbare index: <a href="../../pages/Trainer_Index.html">Trainer index (EN)</a>.</p>
   ${navboxCore()}
@@ -1601,7 +1601,7 @@ export function registerDutchSite({
   track("Raid_Bosses.html", {
     title: "Raid-bosses",
     breadcrumbs: crumbs({ label: "Raid-bosses", href: "Raid_Bosses.html" }),
-    lede: `${raids.bosses.length} boss-bestanden uit het pack.`,
+    lede: `${raids.bosses.length} raid-bosses om te doorzoeken.`,
     body: `
   <p>Volledige index: <a href="../../pages/Raid_Bosses.html">Raid bosses (EN)</a>. Uitleg: <a href="Raids.html">Raids</a>.</p>
   ${navboxCore()}
@@ -1611,7 +1611,7 @@ export function registerDutchSite({
   track("Spawn_Lookup.html", {
     title: "Spawn-lookup",
     breadcrumbs: crumbs({ label: "Spawn-lookup", href: "Spawn_Lookup.html" }),
-    lede: `${spawns.length} spawn-rijen uit pack-data.`,
+    lede: `${spawns.length} spawn-rijen om te doorzoeken.`,
     body: `
   <p>Interactieve lookup: <a href="../../pages/Spawn_Lookup.html">Spawn lookup (EN)</a>.</p>
   ${navboxCore()}
@@ -1645,7 +1645,7 @@ export function registerDutchSite({
     track("Gyms_Johto.html", {
       title: "Johto-gyms",
       breadcrumbs: crumbs({ label: "Johto-gyms", href: "Gyms_Johto.html" }),
-      lede: "Checklist voor de Johto-challenge na <a href=\"Blue.html\">Champion Blue</a>. Open een leader-pagina voor volledige teams uit pack-data.",
+      lede: "Checklist voor de Johto-challenge na <a href=\"Blue.html\">Champion Blue</a>. Open een leader-pagina voor volledige teams en prep-tips.",
       body: `
   <h2>Unlock</h2>
   <ol class="steps">
@@ -1831,7 +1831,7 @@ export function registerDutchSite({
   <p>${esc(g.tips)}</p>
   <ul>
     <li><strong>Coverage:</strong> ${ex.coverage}</li>
-    <li>Leader party (pack-data): ongeveer <strong>${minLv}–${maxLv}</strong></li>
+    <li>Teamlevels: ongeveer <strong>${minLv}–${maxLv}</strong></li>
     <li>Approx cap: <strong>~${maxLv + 5}</strong> — <a href="Level_Cap.html">Level cap</a></li>
     <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
     <li>${ex.travel}</li>
@@ -1896,10 +1896,10 @@ export function registerDutchSite({
     track("Gyms_Hoenn.html", {
       title: "Hoenn-gyms",
       breadcrumbs: crumbs({ label: "Hoenn-gyms", href: "Gyms_Hoenn.html" }),
-      lede: "Hoenn opent na de Johto Champion. Diepe walkthroughs zoals Kanto / Johto zijn <strong>under construction</strong> — gebruik voorlopig pack-data en gym-maps.",
+      lede: "Hoenn opent na de Johto Champion. Volledige walkthroughs zoals Kanto en Johto worden nog geschreven — begin met de gym-maps en de trainerlijst hieronder.",
       body: `
   <div class="callout tip">
-    <div class="label">Under construction</div>
+    <div class="label">Nog in de maak</div>
     Volledige leader-pagina’s (teams, coverage, map-keys, walkthroughs) komen later.
     Rond eerst <a href="Gyms_Johto.html">Johto</a> af — deze hub groeit daarna op dezelfde manier.
   </div>
@@ -1907,15 +1907,15 @@ export function registerDutchSite({
   <h2>Unlock (als je hier bent)</h2>
   <ol class="steps">
     <li>Versla Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
-    <li>Volg Trainer Card / pack-unlocks naar Hoenn.</li>
+    <li>Volg je Trainer Card-unlocks naar Hoenn.</li>
     <li>Gebruik de <strong>Hoenn Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader-tip daar: <strong>Petra</strong>.</li>
   </ol>
 
-  <h2>Named Hoenn-trainers in pack-data</h2>
-  <p class="muted">Alleen scout-tabel. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · toasts: <a href="Achievements.html">Achievements</a>.</p>
+  <h2>Named Hoenn-trainers</h2>
+  <p class="muted">Kort overzicht voor nu — diepe gidsen volgen. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
   <table class="wikitable">
     <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
-    <tbody>${previewRows || "<tr><td colspan=4>Geen Hoenn-trainers geparsed.</td></tr>"}</tbody>
+    <tbody>${previewRows || "<tr><td colspan=4>Nog geen Hoenn-trainers opgelijst.</td></tr>"}</tbody>
   </table>
 
   <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Johto.html">Johto-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Progression.html">Progressie</a> · <a href="Gyms_Sinnoh.html">Sinnoh</a></p>
@@ -1951,7 +1951,7 @@ export function registerDutchSite({
           { label: "Kanto-gyms", href: "Gyms_Kanto.html" },
           { label: "Brock", href: "Brock.html" }
         ),
-        lede: `${esc(brock.name)} — ${esc(brock.type)}-specialist. Teamdata uit het CobbleVerse RCT-datapack op PokeHaven EU.`,
+        lede: `${esc(brock.name)} — ${esc(brock.type)}-specialist op PokeHaven EU.`,
         infobox: `<div class="infobox-title">${esc(brock.name)}</div>
         <table>
           <tr><th>Rol</th><td>Gym Leader</td></tr>
@@ -2077,7 +2077,7 @@ export function registerDutchSite({
     "Lt._Surge": {
       title: "Walkthrough — Misty naar Lt. Surge",
       coverage: "Ground is het antwoord op Electric. Tanky Waters kunnen helpen als ze de eerste hit overleven.",
-      travel: "Savanna Plateau-tip uit pack-data — neem eten mee voor een langere hike.",
+      travel: "Savanna Plateau-tip — neem eten mee voor een langere hike.",
       gotcha: "Paralysis + speed snowballen. Status-cures en een Ground-pivot meenemen.",
     },
     Erika: {
@@ -2197,7 +2197,7 @@ export function registerDutchSite({
   <p>${esc(g.tips)}</p>
   <ul>
     <li><strong>Coverage:</strong> ${ex.coverage}</li>
-    <li>Leader party (pack-data): ongeveer <strong>${minLv}–${maxLv}</strong></li>
+    <li>Teamlevels: ongeveer <strong>${minLv}–${maxLv}</strong></li>
     <li>Approx cap terwijl dit gevecht volgt: <strong>~${maxLv + 5}</strong> — <a href="Level_Cap.html">Level cap</a></li>
     <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
     <li>${ex.travel}</li>
