@@ -815,7 +815,7 @@ export function registerDeepPages({
       { label: "Main Page", href: "../index.html" },
       { label: "First hours", href: "First_Hours.html" },
     ],
-    lede: "A dense opening guide: from character load-in to a claimed base, a tiny team, and the road toward Brock.",
+    lede: "Opening guide: claim, first catches, Brock — then the next loop to Misty so you know what to do after badge one.",
     body: `
     ${figure(
       guideImg("hud.png"),
@@ -864,7 +864,7 @@ export function registerDeepPages({
       <li><strong>Not yet:</strong> mega base, Nether loot runs, legendary hunting, luxury shopping sprees.</li>
     </ul>
 
-    <h2>After Brock — next loop</h2>
+    <h2>What's next after Brock</h2>
     <ol class="steps">
       <li>Win Brock → badge → your <a href="Level_Cap.html">level cap</a> rises (check Trainer Card).</li>
       <li>Heal / restock at base. Keep your claim updated.</li>

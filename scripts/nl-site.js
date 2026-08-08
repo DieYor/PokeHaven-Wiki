@@ -270,7 +270,7 @@ export function registerDutchSite({
   track("First_Hours.html", {
     title: "Eerste uren",
     breadcrumbs: crumbs({ label: "Eerste uren", href: "First_Hours.html" }),
-    lede: "Dichte openingsgids: van inloggen tot geclaimde basis, klein team, en de weg naar Brock.",
+    lede: "Openingsgids: claim, eerste vangsten, Brock — en daarna de volgende loop naar Misty, zodat je weet wat je na badge één doet.",
     body: `
   ${figure(
     guideImg("hud.png"),
@@ -319,7 +319,7 @@ export function registerDutchSite({
     <li><strong>Nog niet:</strong> mega-base, Nether-loot runs, legendary hunts, luxury shopping.</li>
   </ul>
 
-  <h2>Na Brock — volgende loop</h2>
+  <h2>Wat nu na Brock?</h2>
   <ol class="steps">
     <li>Win Brock → badge → je <a href="Level_Cap.html">level cap</a> gaat omhoog (check Trainer Card).</li>
     <li>Healen / restocken in je base. Claim bijhouden.</li>
