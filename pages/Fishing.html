@@ -49,16 +49,27 @@
         <div class="toc-box" id="toc"><h2>Contents</h2><ol></ol></div>
         
   <h2>Why fish?</h2>
-  <p>Hundreds of species only (or mainly) appear through <strong>fishing</strong> spawns — Magikarp lines, Tentacool, many Water types, and rarer ocean/river finds. It is a real progression tool, not just AFK fluff.</p>
+  <p>This pack has <strong>599 fishing spawn rows</strong>. Many Water types (and some ultra-rares) show up on the rod that you rarely meet on land. Use it for Misty coverage, ocean hunts, and shiny side projects — not only AFK fluff.</p>
 
   <h2>How to start</h2>
+  <figure class="figure">
+  <a class="figure-zoom" href="../assets/guides/rei-crafting.png" data-lightbox title="Click to enlarge">
+    <img src="../assets/guides/rei-crafting.png" alt="REI recipe browser used to craft a Cobblemon fishing rod" loading="lazy" />
+  </a>
+  <figcaption><strong>Craft the rod in REI.</strong> Open inventory (<kbd>E</kbd>), search <em>Poke Rod</em> or <em>rod</em>, and craft a Cobblemon rod — not only the vanilla Minecraft fishing rod.</figcaption>
+</figure>
   <ol class="steps">
-    <li>Open inventory search (<kbd>E</kbd> / REI) and search <strong>rod</strong> or <strong>Poke Rod</strong>.</li>
-    <li>Craft a <strong>Cobblemon</strong> fishing rod (e.g. Poke Rod, Lure Rod, Great Rod…). A plain Minecraft fishing rod is mainly for vanilla loot.</li>
-    <li>Stand next to water that matches the biome you want (river / ocean / swamp tags matter).</li>
-    <li>Cast, wait for the bite, reel in — a wild Pokémon battle / encounter can start instead of an item.</li>
-    <li>Catch with balls as usual. Keep your claim nearby if you AFK near a personal dock.</li>
+    <li>Search REI for <strong>Poke Rod</strong> / <strong>rod</strong> and craft a Cobblemon rod (Poke → Great → Ultra → Master, or themed rods like Lure / Net / Dive).</li>
+    <li>Stand next to water that matches the biome you want (river / lake vs ocean / coast).</li>
+    <li>Cast, wait for the bite bobber, reel in — a wild Pokémon encounter can start instead of a fish item.</li>
+    <li>Catch with balls as usual. Keep a claimed dock if you AFK.</li>
   </ol>
+  <figure class="figure">
+  <a class="figure-zoom" href="../assets/guides/catching.png" data-lightbox title="Click to enlarge">
+    <img src="../assets/guides/catching.png" alt="Catching a wild Pokémon after a fishing encounter" loading="lazy" />
+  </a>
+  <figcaption><strong>After the bite.</strong> A fishing encounter is still a normal catch fight — weaken, then throw. Keep balls on the hotbar.</figcaption>
+</figure>
 
   <div class="callout critical" role="note">
   <div class="label">Important</div>
@@ -67,29 +78,62 @@
 
   <h2>Rods, lure level &amp; bait</h2>
   <ul>
-    <li><strong>Rod tiers</strong> (Poke → Great → Ultra → Master, plus themed rods like Net / Dive / Lure) raise what the pack treats as <em>lure level</em>. Higher lure unlocks fishing rows that require <code>minLureLevel</code> 1–3+.</li>
-    <li>Themed rods (Net Rod, Dive Rod, Friend Rod, …) often mirror ball themes — craft what REI shows; loot chests can also drop damaged rods.</li>
-    <li><strong>Bait</strong> exists in the pack — attach / use bait when the item tooltip allows it to bias bites. Check REI for “bait”.</li>
+    <li><strong>Rod tiers</strong> raise <em>lure level</em>. Higher lure unlocks rows that require <code>minLureLevel</code> 1–3+.</li>
+    <li>Themed rods (Net, Dive, Friend, Lure, …) craft via REI; chests can drop damaged rods.</li>
+    <li><strong>Bait</strong> — attach / use when the tooltip allows. REI search: <em>bait</em>.</li>
     <li>You do <strong>not</strong> need a Pokémon in your party to fish on PokeHaven EU.</li>
   </ul>
 
   <h2>Where to cast</h2>
   <ul>
-    <li>Freshwater tags (rivers, lakes) vs ocean / beach tags change the pool — move biomes if you only see the same commons.</li>
-    <li>Some species also list <em>submerged</em> / <em>surface</em> spawns (swim/boat encounters). Fishing is the rod-only context.</li>
-    <li>Night, weather, and luck can still matter like other Cobblemon spawns — do not expect one dock forever.</li>
+    <li><strong>Freshwater</strong> (~73 tagged rows) — rivers / lakes: Psyduck, Goldeen, Squirtle (ultra-rare), …</li>
+    <li><strong>Ocean / coast</strong> (~260 tagged rows) — Tentacool, Horsea, Staryu, Chinchou, Lapras, Relicanth, …</li>
+    <li>Some species also have <em>submerged</em> / <em>surface</em> rows (swim/boat). Context <code>fishing</code> is rod-only.</li>
+    <li>Move biomes if you only see the same commons — the pool is tag-driven.</li>
   </ul>
 
-  <h2>Look up fishable Pokémon</h2>
-  <p>Open <a href="Spawn_Lookup.html?ctx=fishing">Spawn lookup (fishing filter)</a>, optionally filter biome text (e.g. <code>ocean</code> or <code>freshwater</code>).</p>
-  <p>Examples you will see in pack data: Magikarp, Tentacool, Psyduck, Squirtle-line (rare), and many regional Water types — always verify with the lookup for your target.</p>
+  <h2>Pack examples (fishing context)</h2>
+  <p>Sample rows from CobbleVerse spawn data on this wiki. Weights are relative within the pool — not a guarantee “next cast”.</p>
+  <table class="wikitable">
+    <thead><tr><th>Pokémon</th><th>Bucket</th><th>Levels</th><th>Typical biomes (tags)</th><th>Lookup</th></tr></thead>
+    <tbody>
+      <tr><td>Magikarp</td><td>common</td><td>1–20</td><td><code>is_overworld</code> (+ Aether)</td><td><a href="Spawn_Lookup.html?ctx=fishing&amp;q=magikarp">open</a></td></tr>
+      <tr><td>Psyduck</td><td>common</td><td>7–32</td><td><code>is_freshwater</code>, forest, grassland, …</td><td><a href="Spawn_Lookup.html?ctx=fishing&amp;q=psyduck">open</a></td></tr>
+      <tr><td>Goldeen</td><td>common</td><td>7–32</td><td>many freshwater / temperate tags</td><td><a href="Spawn_Lookup.html?ctx=fishing&amp;q=goldeen">open</a></td></tr>
+      <tr><td>Tentacool</td><td>common</td><td>9–29</td><td><code>is_ocean</code> / overworld</td><td><a href="Spawn_Lookup.html?ctx=fishing&amp;q=tentacool">open</a></td></tr>
+      <tr><td>Staryu</td><td>common–uncommon</td><td>9–34</td><td>coast, ocean, tropical island</td><td><a href="Spawn_Lookup.html?ctx=fishing&amp;q=staryu">open</a></td></tr>
+      <tr><td>Squirtle</td><td>ultra-rare</td><td>5–31</td><td>freshwater + hills / jungle / temperate / tropical</td><td><a href="Spawn_Lookup.html?ctx=fishing&amp;q=squirtle">open</a></td></tr>
+      <tr><td>Lapras</td><td>common–ultra-rare</td><td>29–54</td><td>frozen ocean / ocean (higher levels)</td><td><a href="Spawn_Lookup.html?ctx=fishing&amp;q=lapras">open</a></td></tr>
+      <tr><td>Relicanth</td><td>common–rare</td><td>24–49</td><td>deep ocean / ocean</td><td><a href="Spawn_Lookup.html?ctx=fishing&amp;q=relicanth">open</a></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Spawn lookup — worked examples</h2>
+  <ol class="steps">
+    <li>Open <a href="Spawn_Lookup.html?ctx=fishing">Spawn lookup with Context = fishing</a>.</li>
+    <li>Type a species in <strong>Pokémon name</strong> (example: <a href="Spawn_Lookup.html?ctx=fishing&amp;q=tentacool">tentacool</a>).</li>
+    <li>Or filter biomes: <a href="Spawn_Lookup.html?ctx=fishing&amp;biome=freshwater">fishing + freshwater</a> · <a href="Spawn_Lookup.html?ctx=fishing&amp;biome=ocean">fishing + ocean</a>.</li>
+    <li>Combine both when hunting a rare: <a href="Spawn_Lookup.html?ctx=fishing&amp;q=squirtle&amp;biome=freshwater">squirtle + freshwater</a>.</li>
+    <li>Read <strong>Bucket</strong> + <strong>Level</strong> — ultra-rare + high level means bring Ultra Balls and respect the <a href="Level_Cap.html">level cap</a>.</li>
+  </ol>
+
+  <h2>Quick fixes</h2>
+  <table class="wikitable">
+    <thead><tr><th>Symptom</th><th>Try</th></tr></thead>
+    <tbody>
+      <tr><td>Only vanilla fish / junk</td><td>Switch to a Cobblemon rod (REI: Poke Rod)</td></tr>
+      <tr><td>Same commons forever</td><td>Change biome (river ↔ ocean); check lookup tags</td></tr>
+      <tr><td>Want Misty Water types</td><td>Freshwater dock + Psyduck / Goldeen loop — <a href="Misty.html">Misty</a></td></tr>
+      <tr><td>AFK dock griefed</td><td><a href="Claims.html">FTB Chunks</a> around the pier</td></tr>
+    </tbody>
+  </table>
 
   <div class="callout tip">
     <div class="label">Gym tip</div>
     Fishing is great for Water coverage before Misty / later oceans, but the level cap still applies — do not overlevel while grinding bites.
   </div>
 
-  <p class="see-also"><strong>See also:</strong> <a href="Spawn_Lookup.html">Spawn lookup</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Claims.html">Claims</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Spawn_Lookup.html?ctx=fishing">Spawn lookup (fishing)</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Shiny.html">Shiny hunting</a> · <a href="Claims.html">Claims</a></p>
   <div class="navbox">
     <div class="navbox-title">PokeHaven systems</div>
     <div class="navbox-row"><div class="navbox-label">Core</div><div class="navbox-links">

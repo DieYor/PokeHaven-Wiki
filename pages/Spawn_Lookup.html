@@ -75,6 +75,8 @@
   const params = new URLSearchParams(location.search);
   if (params.get('ctx')) document.getElementById('spawn-ctx').value = params.get('ctx');
   if (params.get('q')) document.getElementById('spawn-q').value = params.get('q');
+  if (params.get('biome')) document.getElementById('spawn-biome').value = params.get('biome');
+  if (params.get('bucket')) document.getElementById('spawn-bucket').value = params.get('bucket');
   function render() {
     const q = document.getElementById('spawn-q').value.toLowerCase();
     const biome = document.getElementById('spawn-biome').value.toLowerCase();
