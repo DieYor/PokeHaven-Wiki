@@ -1081,27 +1081,27 @@ export function registerDeepPages({
       { label: "Main Page", href: "../index.html" },
       { label: "Getting started", href: "Getting_Started.html" },
     ],
-    lede: "Install CobbleVerse <strong>1.7.42</strong>, join <strong>PokeHaven EU</strong>, and know the words the rest of the wiki uses.",
+    lede: "Install the <strong>PokeHaven EU Client 1.7.42</strong>, join the server, and know the words the rest of the wiki uses.",
     body: `
     <h2>Requirements</h2>
     <ul>
       <li>Minecraft <strong>Java Edition</strong> (Microsoft account)</li>
       <li><strong>CurseForge</strong> app</li>
-      <li>Our shared pack zip — <strong>exactly 1.7.42</strong>, same as the server</li>
+      <li>Our <strong>PokeHaven EU Client 1.7.42</strong> zip from Discord <code>#how-to-join</code> (CobbleVerse + PokeHaven menus/splash)</li>
     </ul>
 
     ${figure(
       guideImg("multiplayer-join.png"),
-      "<strong>Ready to play.</strong> After import, launch to the menu, then add <code>PokeHaven EU</code> in Multiplayer. The IP rotates — always copy it from Discord, never from old screenshots.",
-      "CobbleVerse client ready for multiplayer"
+      "<strong>Ready to play.</strong> After import, launch to the PokeHaven-branded menu, then add <code>PokeHaven EU</code> in Multiplayer. The IP rotates — always copy it from Discord, never from old screenshots.",
+      "PokeHaven client ready for multiplayer"
     )}
 
     <h2>Install walkthrough</h2>
     <ol class="steps">
       <li>Install CurseForge and sign in.</li>
-      <li>Create Custom Profile → <strong>Import</strong> the shared pack zip.</li>
+      <li>Create Custom Profile → <strong>Import</strong> <code>PokeHaven-EU-Client-1.7.42.zip</code>.</li>
       <li>Wait until every mod finishes — do not cancel mid-download.</li>
-      <li>Launch once to the main menu, quit, launch again (helps resource packs settle).</li>
+      <li>Launch once to the main menu (PokeHaven branding), quit, launch again if packs look unfinished.</li>
       <li>Multiplayer → Add Server:<br/>
         Name: <code>PokeHaven EU</code><br/>
         Address: IP from <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a> <code>#how-to-join</code>.</li>
@@ -1109,12 +1109,12 @@ export function registerDeepPages({
 
     <div class="callout tip">
       <div class="label">Join checklist</div>
-      Server name: <strong>PokeHaven EU</strong>. Pack: <strong>1.7.42</strong>. IP only from <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a> (it can rotate).
+      Server name: <strong>PokeHaven EU</strong>. Pack: <strong>PokeHaven EU Client 1.7.42</strong>. IP only from <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a> (it can rotate).
     </div>
 
     ${critical(
       "en",
-      "<strong>Can't join?</strong> Almost always a pack mismatch. Re-import CobbleVerse <strong>1.7.42</strong>. Copy the IP from Discord — never from old screenshots. See <a href=\"Common_Mistakes.html\">Common mistakes</a>."
+      "<strong>Can't join?</strong> Almost always a pack mismatch. Re-import <strong>PokeHaven EU Client 1.7.42</strong>. Copy the IP from Discord — never from old screenshots. See <a href=\"Common_Mistakes.html\">Common mistakes</a>."
     )}
 
     ${figure(

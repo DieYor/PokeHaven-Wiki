@@ -863,7 +863,7 @@ export function registerDutchSite({
     body: `
   ${figure(
     guideImg("multiplayer-join.png"),
-    "<strong>Joinen.</strong> Serverlijstnaam: <code>PokeHaven EU</code>. Pack: CobbleVerse <strong>1.7.42</strong>. IP uit Discord — kan roteren.",
+    "<strong>Joinen.</strong> Serverlijstnaam: <code>PokeHaven EU</code>. Pack: <strong>PokeHaven EU Client 1.7.42</strong>. IP uit Discord — kan roteren.",
     "Client klaar om te joinen"
   )}
 
