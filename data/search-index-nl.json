@@ -186,39 +186,39 @@
     "keywords": "wheat farm food hunger emerald farmer"
   },
   {
+    "title": "Gevecht &amp; dood",
+    "href": "pages/Combat_and_Death.html",
+    "blurb": "Pokémon-battles zijn de hoofdloop — maar Minecraft-schade doodt je nog steeds in caves, de Nether en Deep Dark. Bescherm de trainer net zo hard als je party.",
+    "keywords": ""
+  },
+  {
+    "title": "Nether-gids",
+    "href": "pages/Nether_Guide.html",
+    "blurb": "Ga bewust de Nether in — voor resources en CobbleVerse-routes (Blaine / Crimson Forest). Elke trip is een geplande expeditie.",
+    "keywords": ""
+  },
+  {
+    "title": "Dorpen &amp; trading",
+    "href": "pages/Villages_and_Trading.html",
+    "blurb": "Dorpen zijn Map Guides, Farmers en early loot — centraal voor gym-navigatie en je emerald → PokéDollar-loop.",
+    "keywords": ""
+  },
+  {
+    "title": "Bouwen &amp; opslag",
+    "href": "pages/Building_and_Storage.html",
+    "blurb": "Een kleine, geclaimde, georganiseerde basis wint het van een paleis zonder badges. Eerst progressie — mooi mag later.",
+    "keywords": ""
+  },
+  {
+    "title": "Dimensies &amp; wereld",
+    "href": "pages/Dimensions_and_World.html",
+    "blurb": "Hoe de CobbleVerse-wereld op PokeHaven ligt — Terralith-overworld, Nether-routes, en een End dat niet om de dragon draait.",
+    "keywords": ""
+  },
+  {
     "title": "Tools & mining",
     "href": "pages/Tools_and_Mining.html",
     "blurb": "Koper en ijzer vroeg, light je caves, sterf niet dom in lava.",
-    "keywords": ""
-  },
-  {
-    "title": "Gevecht & dood",
-    "href": "pages/Combat_and_Death.html",
-    "blurb": "Armor, schild, totems waar mogelijk — haal je spullen terug.",
-    "keywords": ""
-  },
-  {
-    "title": "Nether",
-    "href": "pages/Nether_Guide.html",
-    "blurb": "Portal veilig bouwen; Blaine-routes kunnen nether-travel gebruiken.",
-    "keywords": ""
-  },
-  {
-    "title": "Dorpen & trading",
-    "href": "pages/Villages_and_Trading.html",
-    "blurb": "Farmers, Map Guides, loot-chests — fair game op PokeHaven.",
-    "keywords": ""
-  },
-  {
-    "title": "Bouwen & opslag",
-    "href": "pages/Building_and_Storage.html",
-    "blurb": "Sorteren, claimen, uitbreiden zonder chaos.",
-    "keywords": ""
-  },
-  {
-    "title": "Dimensies & wereld",
-    "href": "pages/Dimensions_and_World.html",
-    "blurb": "Overworld, Nether en pack-structuren in één plaatje.",
     "keywords": ""
   },
   {

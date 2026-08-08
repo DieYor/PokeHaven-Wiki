@@ -1747,14 +1747,257 @@ export function registerDutchSite({
   `,
   });
 
-  // Minecraft short NL pages
+  // Full NL survival guides (parity with EN minecraft-guides.js)
+  track("Combat_and_Death.html", {
+    title: "Gevecht &amp; dood",
+    breadcrumbs: crumbs(
+      { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
+      { label: "Gevecht & dood", href: "Combat_and_Death.html" }
+    ),
+    lede: "Pokémon-battles zijn de hoofdloop — maar Minecraft-schade doodt je nog steeds in caves, de Nether en Deep Dark. Bescherm de trainer net zo hard als je party.",
+    body: `
+  <h2>Twee soorten gevaar</h2>
+  <table class="wikitable">
+    <thead><tr><th>Dreiging</th><th>Wat te doen</th></tr></thead>
+    <tbody>
+      <tr><td>Wild / trainer-Pokémon</td><td>Coverage, heals, level cap — <a href="Catching_and_Battling.html">Vangen &amp; vechten</a></td></tr>
+      <tr><td>Minecraft-mobs / omgeving</td><td>Armor, schild, licht, water bucket, niet recht omlaag graven</td></tr>
+    </tbody>
+  </table>
+  <h2>Bescherm de trainer</h2>
+  <ul>
+    <li>Minimaal iron vóór lange cave- of Nether-runs.</li>
+    <li>Schild blokkeert creepers, skeletons en piglin brutes.</li>
+    <li>Water bucket meenemen (MLG, lava, vuur).</li>
+    <li>Eten helpt regen nog steeds met No Hunger — hotbar-stack houden.</li>
+    <li>Totem of Undying is een luxe panic-button voor Elite Four / Deep Dark.</li>
+  </ul>
+  <h2>Voor een riskante trip</h2>
+  <ol class="steps">
+    <li>Pin coords in Xaero (of F3-screenshot).</li>
+    <li>Check bed + <a href="Travel.html">waystone</a> in je <a href="Claims.html">claim</a>.</li>
+    <li>Hotbar: balls, potions/Revives, pickaxe, blocks, map, schild.</li>
+    <li>Heal de party in een Center — niet half-fainted vertrekken.</li>
+  </ol>
+  <h2>Death-checklist</h2>
+  <ol class="steps">
+    <li>Respawn bij bed → waystone richting je death-pin.</li>
+    <li>Eerst gear, dan Pokémon-items — niet AFK op het lijk.</li>
+    <li>Road-kit opnieuw opbouwen vóór de volgende gym-poging.</li>
+    <li>Lava/void = gear-reset; rage-quit geen ungeclaimde chests thuis.</li>
+  </ol>
+  <div class="callout warn">
+    <div class="label">Deep Dark / Giovanni</div>
+    Wool, sneak-gewoontes en een escape-plan. World-damage eindigt runs net zo vaak als KOs — <a href="Giovanni.html">Giovanni</a>.
+  </div>
+  <h2>Wild aggro</h2>
+  <p>Fight or Flight kan wilds op <em>jou</em> laten aanvallen. Afstand houden, eerst uitsturen, Centers tussen dens/gyms.</p>
+  <h2>Veelgemaakte fouten</h2>
+  <ul>
+    <li>Party full heals, trainer naakt in een creeper-cave.</li>
+    <li>Geen waystone → 2000-blokken corpse-run.</li>
+    <li>Doodgaan met ungeclaimde valuables thuis.</li>
+  </ul>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Healing_and_Storage.html">Genezen</a> · <a href="Nether_Guide.html">Nether</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Nether_Guide.html", {
+    title: "Nether-gids",
+    breadcrumbs: crumbs(
+      { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
+      { label: "Nether-gids", href: "Nether_Guide.html" }
+    ),
+    lede: "Ga bewust de Nether in — voor resources en CobbleVerse-routes (Blaine / Crimson Forest). Elke trip is een geplande expeditie.",
+    body: `
+  <h2>Wanneer gaan</h2>
+  <ul>
+    <li>Minimaal iron armor; Fire Resistance als je kunt brew’en.</li>
+    <li>Eerst bed + waystone veilig in de Overworld.</li>
+    <li>Meenemen: pickaxe, blocks, eten, balls, spare flint &amp; steel, schild.</li>
+    <li>Niet in je eerste uur — eerst basis + Brock-pad.</li>
+  </ul>
+  <h2>Portal-basics</h2>
+  <ol class="steps">
+    <li>4×5 obsidian-frame (hoeken optioneel).</li>
+    <li>Aansteken met flint &amp; steel.</li>
+    <li>Overworld-portalcoords meteen in Xaero pinnen.</li>
+    <li>Waystone bij de Overworld-kant zodra de link stabiel is.</li>
+    <li>Optioneel: klein geclaimd kamertje om de portal.</li>
+  </ol>
+  <h2>Eerste minuten binnen</h2>
+  <ol class="steps">
+    <li>Ledge/dak zodat ghasts de portal niet snipen.</li>
+    <li>Cobble/dirt-brug — nooit recht omlaag graven.</li>
+    <li>Nether-kant van je portal pinnen.</li>
+    <li>Pak wat je kwam halen, en ga weer. Sightseeing later.</li>
+  </ol>
+  <h2>Waarom CobbleVerse-spelers dit doen</h2>
+  <ul>
+    <li><strong>Blaine</strong> wijst naar Crimson Forest-achtige biomes — <a href="Blaine.html">Blaine</a>.</li>
+    <li>Blaze rods / powder voor brewing.</li>
+    <li>Ancient Debris later voor netherite (na stabiele Kanto midgame).</li>
+    <li>Quartz, glowstone, crimson/warped wood voor builds.</li>
+  </ul>
+  ${critical(
+    "nl",
+    "<strong>Graaf niet recht omlaag vanaf een random portal-exit.</strong> Scout met blocks; pearl nooit blind over lava-oceans."
+  )}
+  <h2>Veelgemaakte fouten</h2>
+  <ul>
+    <li>Geen spare flint &amp; steel als de portal stuk gaat.</li>
+    <li>Geen goud bij bastions / piglins.</li>
+    <li>Nether als shortcut zonder Overworld-waystone naar huis.</li>
+  </ul>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Travel.html">Reizen</a> · <a href="Combat_and_Death.html">Gevecht &amp; dood</a> · <a href="Blaine.html">Blaine</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Villages_and_Trading.html", {
+    title: "Dorpen &amp; trading",
+    breadcrumbs: crumbs(
+      { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
+      { label: "Dorpen & trading", href: "Villages_and_Trading.html" }
+    ),
+    lede: "Dorpen zijn Map Guides, Farmers en early loot — centraal voor gym-navigatie en je emerald → PokéDollar-loop.",
+    body: `
+  <h2>Priority villagers</h2>
+  <table class="wikitable">
+    <thead><tr><th>Rol</th><th>Waarom</th></tr></thead>
+    <tbody>
+      <tr><td>Farmer</td><td>Wheat/crops → emeralds → Bank (<a href="Economy.html">Economie</a>)</td></tr>
+      <tr><td>Map Guide</td><td>Gym-maps na de juiste cartography-tafel</td></tr>
+      <tr><td>Librarian</td><td>Enchanted books als je geart</td></tr>
+      <tr><td>Tool / weaponsmith</td><td>Gear-trades met emerald-surplus</td></tr>
+    </tbody>
+  </table>
+  <h2>Map Guide setup</h2>
+  <ol class="steps">
+    <li>Craft de regio-cartography-tafel (start: <strong>Kanto Cartography Table</strong> — REI).</li>
+    <li>Plaats naast een unemployed villager → Map Guide-job.</li>
+    <li>Trade maps <em>of</em> craft Empty Map + special item. Stappen: <a href="Gym_Maps.html">Gym-maps</a>.</li>
+    <li>Latere regio’s: Johto/Hoenn/Sinnoh-tafels — niet de Kanto-tafel daarvoor.</li>
+  </ol>
+  <h2>Houd een trade-village levend</h2>
+  <ul>
+    <li>Light + claim de plots die jij bouwt.</li>
+    <li>Fence job sites die je nodig hebt tegen zombies.</li>
+    <li>Pin het dorp in Xaero — je komt elke paar gyms terug.</li>
+  </ul>
+  <h2>Loot-etiquette op PokeHaven</h2>
+  <ul>
+    <li>Village- en Pokémon Center-chests mag je looten.</li>
+    <li>Player-claims niet — <a href="Rules_and_Commands.html">Regels</a> · <a href="Claims.html">Claims</a>.</li>
+    <li>Breek geen job-site blocks van een dorp dat iemand duidelijk gebruikt zonder te vragen.</li>
+  </ul>
+  <h2>Speler-trades</h2>
+  <p>Geen forced auction house. Trade te goeder trouw, bij voorkeur in claims/public hubs, en drop geen valuables vóór je de deal vertrouwt. Scam = staff + screenshots.</p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Farming_and_Food.html">Farms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Economy.html">Economie</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Building_and_Storage.html", {
+    title: "Bouwen &amp; opslag",
+    breadcrumbs: crumbs(
+      { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
+      { label: "Bouwen & opslag", href: "Building_and_Storage.html" }
+    ),
+    lede: "Een kleine, geclaimde, georganiseerde basis wint het van een paleis zonder badges. Eerst progressie — mooi mag later.",
+    body: `
+  <h2>Minimum viable base</h2>
+  <ul>
+    <li>Bed (respawn) + torches</li>
+    <li>Geclaimde chests / backpack-dump</li>
+    <li>Crafting table + furnace (anvil later)</li>
+    <li>Waystone in de claim</li>
+    <li>Apricorn-hoek + klein wheat-veld</li>
+    <li>Ruimte om pastures/sorting later uit te breiden</li>
+  </ul>
+  ${figure(
+    guideImg("claims-ftb.png"),
+    "<strong>Claim de basis.</strong> Opslag betekent niks zonder claim — <a href=\"Claims.html\">Claims</a>.",
+    "FTB Chunks-claimkaart"
+  )}
+  <h2>Layout op dag één</h2>
+  <ol class="steps">
+    <li>Kies een plek bij spawn of een leuk dorp — niet 10k blokken weg in uur één.</li>
+    <li>Bed → claim chunk(s) → starter kit in gelabelde chests.</li>
+    <li>Waystone naast het bed activeren/plaatsen.</li>
+    <li>Apricorns + wheat planten vóór de eerste lange Brock-hike.</li>
+  </ol>
+  <h2>Opslag-tips</h2>
+  <ul>
+    <li>Label vroeg: Balls / Heals / Ores / Maps / Food / Misc.</li>
+    <li>Road-kit in de backpack: balls, eten, pickaxe, map, potions.</li>
+    <li>PC-boxes voor coverage — <code>/pc</code> — <a href="Healing_and_Storage.html">Genezen &amp; opslag</a>.</li>
+    <li>Sophisticated Storage / Tom’s Storage later — ná Brock/Misty, niet in plaats van badges.</li>
+  </ul>
+  <h2>Uitbreiden zonder chaos</h2>
+  <ul>
+    <li>Claim uitbreiden vóór de bouw groeit.</li>
+    <li>Farms en pastures in dezelfde claim als het bed.</li>
+    <li>Eén dump-chest is oké voor 20 minuten — niet voor een week.</li>
+  </ul>
+  <h2>Veelgemaakte fouten</h2>
+  <ul>
+    <li>Paleis eerst, claim nooit.</li>
+    <li>Waystone buiten de claim.</li>
+    <li>Alles in één mega-chest voor altijd.</li>
+  </ul>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Claims.html">Claims</a> · <a href="Travel.html">Reizen</a> · <a href="First_Hours.html">Eerste uren</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Dimensions_and_World.html", {
+    title: "Dimensies &amp; wereld",
+    breadcrumbs: crumbs(
+      { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
+      { label: "Dimensies & wereld", href: "Dimensions_and_World.html" }
+    ),
+    lede: "Hoe de CobbleVerse-wereld op PokeHaven ligt — Terralith-overworld, Nether-routes, en een End dat niet om de dragon draait.",
+    body: `
+  <h2>Dimensies</h2>
+  <table class="wikitable">
+    <thead><tr><th>Dimensie</th><th>Rol op PokeHaven EU</th></tr></thead>
+    <tbody>
+      <tr><td>Overworld</td><td>Gyms, dorpen, raid-dens, claims, hoofdavontuur (Terralith)</td></tr>
+      <tr><td>Nether</td><td>Resources + sommige gym-biomes — <a href="Nether_Guide.html">Nether-gids</a></td></tr>
+      <tr><td>The End</td><td>Elite Four / late structures — <strong>Ender Dragon uit</strong></td></tr>
+    </tbody>
+  </table>
+  <h2>Terralith-overworld</h2>
+  <p>Worldgen is uitgebreid. Biomes lijken niet op vanilla YouTube-guides. Gebruik:</p>
+  <ul>
+    <li><a href="Gym_Maps.html">Gym-maps</a> voor leaders</li>
+    <li>Nature’s / Explorer’s Compass voor biomes/structures</li>
+    <li>Xaero-pins voor dens, portals en dorpen</li>
+  </ul>
+  <p>Vertrouw <strong>geen</strong> random “seed 123”-coords van een andere wereld.</p>
+  <h2>Wat progressie wél / niet is</h2>
+  <ul>
+    <li><strong>Wél:</strong> gyms → level cap → regio’s — <a href="Progression.html">Progressie</a></li>
+    <li><strong>Niet:</strong> Ender Dragon rushen voor “endgame gear”</li>
+    <li><strong>Niet:</strong> hunger-farms als must (No Hunger) — farm wél voor emeralds</li>
+  </ul>
+  <h2>Praktische gewoontes</h2>
+  <ul>
+    <li>Eerste basis in de Overworld bij nuttige biomes / een dorp.</li>
+    <li>Nether pas openen als je geared bent.</li>
+    <li>End-content als het pack/league-pad je daarheen stuurt.</li>
+    <li>Raid-dens zijn Overworld-crystals — <a href="Raids.html">Raids</a>.</li>
+  </ul>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Pack_Differences.html">Pack-verschillen</a> · <a href="Nether_Guide.html">Nether</a> · <a href="Travel.html">Reizen</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  // Remaining short NL stubs
   const mcPages = [
     ["Tools_and_Mining.html", "Tools & mining", "Koper en ijzer vroeg, light je caves, sterf niet dom in lava."],
-    ["Combat_and_Death.html", "Gevecht & dood", "Armor, schild, totems waar mogelijk — haal je spullen terug."],
-    ["Nether_Guide.html", "Nether", "Portal veilig bouwen; Blaine-routes kunnen nether-travel gebruiken."],
-    ["Villages_and_Trading.html", "Dorpen & trading", "Farmers, Map Guides, loot-chests — fair game op PokeHaven."],
-    ["Building_and_Storage.html", "Bouwen & opslag", "Sorteren, claimen, uitbreiden zonder chaos."],
-    ["Dimensions_and_World.html", "Dimensies & wereld", "Overworld, Nether en pack-structuren in één plaatje."],
     ["Minecraft_Basics.html", "Minecraft-basics", "Korte primer als je nieuw bent in Java survival."],
   ];
   for (const [file, title, lede] of mcPages) {

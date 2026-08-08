@@ -1,4 +1,4 @@
-import { figure } from "./deep-pages.js";
+import { figure, guideImg } from "./deep-pages.js";
 import { critical } from "./i18n.js";
 
 export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSystems }) {
@@ -148,32 +148,58 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
       { label: "Minecraft hub", href: "Minecraft_Hub.html" },
       { label: "Combat and death", href: "Combat_and_Death.html" },
     ],
-    lede: "Pokémon battles are the main combat loop — but Minecraft damage still kills you in caves, the Nether, and Deep Dark (Giovanni).",
+    lede: "Pokémon battles are the main fight loop — but Minecraft damage still kills you in caves, the Nether, and Deep Dark. Protect the trainer as hard as the party.",
     body: `
-    <h2>Protect the trainer, not only the party</h2>
+    <h2>Two kinds of combat</h2>
+    <table class="wikitable">
+      <thead><tr><th>Threat</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><td>Wild / trainer Pokémon</td><td>Type coverage, heals, level cap — <a href="Catching_and_Battling.html">Catching &amp; battling</a></td></tr>
+        <tr><td>Minecraft mobs / environment</td><td>Armor, shield, light, water bucket, don’t dig straight down</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Protect the trainer</h2>
     <ul>
-      <li>Wear armor before long cave / Nether runs.</li>
-      <li>Shield blocks creepers and piglin brutes.</li>
-      <li>Carry a water bucket (mlg / lava clearing).</li>
-      <li>Totem of Undying is a luxury panic button for Elite Four prep.</li>
+      <li>Wear at least iron before long cave or Nether runs.</li>
+      <li>Shield blocks creepers, skeletons, and piglin brutes.</li>
+      <li>Carry a water bucket (MLG falls, lava clearing, quick fire-outs).</li>
+      <li>Food still helps regen even with No Hunger — keep a stack on the hotbar.</li>
+      <li>Totem of Undying is a luxury panic button for Elite Four / Deep Dark prep.</li>
     </ul>
+
+    <h2>Before a risky trip</h2>
+    <ol class="steps">
+      <li>Pin coords on Xaero (or screenshot F3).</li>
+      <li>Confirm bed + <a href="Travel.html">waystone</a> at your <a href="Claims.html">claimed</a> base.</li>
+      <li>Hotbar: balls, potions/Revives, pickaxe, blocks, map, shield.</li>
+      <li>Heal the party at a Center — don’t leave half-fainted.</li>
+    </ol>
 
     <h2>Death checklist</h2>
     <ol class="steps">
-      <li>Note coordinates from F3 / minimap before risky fights.</li>
-      <li>Have a bed + waystone at home so respawn is sane.</li>
-      <li>Claim valuables — death is worse if someone loots your base too.</li>
-      <li>Rebuild hotbar: balls, heals, food, pickaxe, map.</li>
+      <li>Respawn at bed → waystone toward your death pin if you can.</li>
+      <li>Grab gear first, then Pokémon items — don’t AFK on the corpse.</li>
+      <li>Rebuild the road kit before the next gym attempt.</li>
+      <li>If you died in lava / void, treat it as a gear reset and re-craft — don’t rage-quit unclaimed chests at home.</li>
     </ol>
 
     <div class="callout warn">
       <div class="label">Deep Dark / Giovanni</div>
-      Bring wool, sneak habits, and an escape plan. Minecraft world damage ends runs as often as Pokémon KOs.
+      Bring wool, sneak habits, and an escape plan. World damage ends runs as often as Pokémon KOs — <a href="Giovanni.html">Giovanni</a>.
     </div>
 
     <h2>Wild Pokémon aggro</h2>
-    <p>Fight or Flight can make wilds attack you. Heal at Centers; do not enter gym leaders half-dead. See <a href="Catching_and_Battling.html">Catching &amp; battling</a>.</p>
+    <p>Fight or Flight can make wilds attack <em>you</em>. Keep distance, send out first, and heal at Centers between dens and gyms.</p>
 
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>Full party heals but naked trainer in a creeper cave.</li>
+      <li>No waystone → 2000-block corpse run.</li>
+      <li>Dying with unclaimed valuables at home.</li>
+    </ul>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Healing_and_Storage.html">Healing</a> · <a href="Nether_Guide.html">Nether</a></p>
     ${navboxMinecraft()}
     `,
   });
@@ -185,28 +211,39 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
       { label: "Minecraft hub", href: "Minecraft_Hub.html" },
       { label: "Nether guide", href: "Nether_Guide.html" },
     ],
-    lede: "You will enter the Nether for resources and for CobbleVerse routes (e.g. Blaine / Crimson Forest vibes). Treat it as a planned expedition.",
+    lede: "Enter the Nether on purpose — for resources and for CobbleVerse routes (Blaine / Crimson Forest vibes). Treat every trip as a planned expedition.",
     body: `
     <h2>When to go</h2>
     <ul>
-      <li>Iron armor + fire resistance potions ideally</li>
-      <li>Waystone / bed secured in the Overworld</li>
-      <li>Pickaxe, blocks, food, balls, flint &amp; steel backup</li>
+      <li>Iron armor minimum; Fire Resistance potions if you can brew.</li>
+      <li>Bed + waystone secured in the Overworld first.</li>
+      <li>Pack: pickaxe, building blocks, food, balls, flint &amp; steel backup, shield.</li>
+      <li>Don’t make the Nether your first-hour project — finish a base and Brock path first.</li>
     </ul>
 
     <h2>Portal basics</h2>
     <ol class="steps">
       <li>Build a 4×5 obsidian frame (corners optional).</li>
       <li>Light with flint &amp; steel.</li>
-      <li>Mark the Overworld portal coords on Xaero.</li>
-      <li>Place a waystone near the Overworld portal once stable.</li>
+      <li>Mark Overworld portal coords on Xaero immediately.</li>
+      <li>Once the link is stable, place a waystone near the Overworld side.</li>
+      <li>Optional: secure a small claimed room around the portal so it doesn’t get griefed.</li>
+    </ol>
+
+    <h2>First minutes inside</h2>
+    <ol class="steps">
+      <li>Build a one-block ledge / roof so ghasts can’t snipe the portal.</li>
+      <li>Place a cobble / dirt bridge — never dig straight down.</li>
+      <li>Pin the Nether spawn of your portal on the map.</li>
+      <li>Grab what you came for, then leave. Sightseeing later.</li>
     </ol>
 
     <h2>Why CobbleVerse players care</h2>
     <ul>
-      <li><strong>Blaine</strong> tips point at Crimson Forest-style biomes — see <a href="Blaine.html">Blaine</a>.</li>
+      <li><strong>Blaine</strong> tips point at Crimson Forest-style biomes — <a href="Blaine.html">Blaine</a>.</li>
       <li>Blaze rods / powder for brewing and progress.</li>
-      <li>Ancient Debris later for netherite gear.</li>
+      <li>Ancient Debris later for netherite gear (after you’re stable in Kanto mid-game).</li>
+      <li>Quartz, glowstone, and crimson/warped wood for builds and crafts.</li>
     </ul>
 
     ${critical(
@@ -214,6 +251,14 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
       "<strong>Do not dig straight down from a random portal exit.</strong> Scout with blocks; never pearl blindly over lava oceans."
     )}
 
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>No flint &amp; steel backup when the portal breaks.</li>
+      <li>Gold armor forgotten in bastions / near piglins.</li>
+      <li>Using the Nether as a shortcut with no Overworld waystone home.</li>
+    </ul>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Travel.html">Travel</a> · <a href="Combat_and_Death.html">Combat &amp; death</a> · <a href="Blaine.html">Blaine</a></p>
     ${navboxMinecraft()}
     `,
   });
@@ -225,28 +270,46 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
       { label: "Minecraft hub", href: "Minecraft_Hub.html" },
       { label: "Villages and trading", href: "Villages_and_Trading.html" },
     ],
-    lede: "Villages are your Map Guides, Farmers, and early loot — central to CobbleVerse gym navigation.",
+    lede: "Villages are Map Guides, Farmers, and early loot — central to gym navigation and your emerald → PokéDollar loop.",
     body: `
     <h2>Priority villagers</h2>
     <table class="wikitable">
-      <thead><tr><th>Role</th><th>Why</th></tr></thead>
+      <thead><tr><th>Role</th><th>Why you care</th></tr></thead>
       <tbody>
-        <tr><td>Farmer</td><td>Emeralds from wheat/crops → Bank money</td></tr>
-        <tr><td>Map Guide (job site)</td><td>Gym maps after you place Kanto Cartography Table</td></tr>
-        <tr><td>Tool / weaponsmith</td><td>Gear trades when you have emeralds</td></tr>
+        <tr><td>Farmer</td><td>Wheat / crops → emeralds → Bank money (<a href="Economy.html">Economy</a>)</td></tr>
+        <tr><td>Map Guide</td><td>Gym maps after you place the right cartography table</td></tr>
+        <tr><td>Librarian</td><td>Enchanted books when you’re gearing up</td></tr>
+        <tr><td>Tool / weaponsmith</td><td>Gear trades once you have emerald surplus</td></tr>
       </tbody>
     </table>
 
     <h2>Map Guide setup</h2>
     <ol class="steps">
-      <li>Craft <strong>Kanto Cartography Table</strong> (search REI).</li>
-      <li>Place it next to an unemployed villager.</li>
-      <li>Trade gym maps — or craft via Empty Map + special item. Full steps: <a href="Gym_Maps.html">Gym maps</a>.</li>
+      <li>Craft the region cartography table (start with <strong>Kanto Cartography Table</strong> — REI).</li>
+      <li>Place it next to an unemployed villager so they take the Map Guide job.</li>
+      <li>Trade maps <em>or</em> craft Empty Map + special item yourself. Full steps: <a href="Gym_Maps.html">Gym maps</a>.</li>
+      <li>Later regions need Johto / Hoenn / Sinnoh tables — don’t use the Kanto table for those maps.</li>
     </ol>
 
-    <h2>Looting etiquette on PokeHaven</h2>
-    <p>Village and Pokémon Center chests are fair to loot. Claim your own base separately so you are not “that guy” who also griefs claimed land.</p>
+    <h2>Keep a trading village alive</h2>
+    <ul>
+      <li>Light the village and claim the plots you build on.</li>
+      <li>Fence or wall job sites you care about so zombies don’t wipe your Farmers.</li>
+      <li>Bring a bed for yourself nearby — don’t sleep in a way that scrambles villager beds if you can avoid it.</li>
+      <li>Pin the village on Xaero; you’ll return every few gyms for emeralds and maps.</li>
+    </ul>
 
+    <h2>Looting etiquette on PokeHaven</h2>
+    <ul>
+      <li>Village chests and Pokémon Center chests are fair to loot.</li>
+      <li>Player claims are not — see <a href="Rules_and_Commands.html">Rules</a> and <a href="Claims.html">Claims</a>.</li>
+      <li>Don’t break job site blocks in a village another player is clearly using without asking.</li>
+    </ul>
+
+    <h2>Player trading</h2>
+    <p>There is no forced auction house. Trade with players in good faith, prefer meeting in claimed / public hubs, and never drop valuables before you trust the deal. Scam = report to staff with screenshots.</p>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Farming_and_Food.html">Farming</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Economy.html">Economy</a></p>
     ${navboxMinecraft()}
     `,
   });
@@ -258,32 +321,56 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
       { label: "Minecraft hub", href: "Minecraft_Hub.html" },
       { label: "Building and storage", href: "Building_and_Storage.html" },
     ],
-    lede: "A small, claimed, organised base beats a palace with no gym badges.",
+    lede: "A small, claimed, organised base beats a palace with zero gym badges. Build for progress first — pretty later.",
     body: `
     <h2>Minimum viable base</h2>
     <ul>
-      <li>Bed + respawn</li>
+      <li>Bed (set respawn) + torches</li>
       <li>Claimed chests / backpack dump</li>
-      <li>Crafting table + furnace + anvil later</li>
-      <li>Waystone</li>
-      <li>Apricorn + wheat plots</li>
-      <li>Torch lighting</li>
+      <li>Crafting table + furnace (anvil later)</li>
+      <li>Waystone inside the claim</li>
+      <li>Apricorn corner + tiny wheat patch</li>
+      <li>Room to expand pastures / sorting later</li>
     </ul>
 
     ${figure(
-      "../assets/guide-claims.png",
-      "<strong>Claim the base.</strong> Storage means nothing if it is not claimed.",
-      "Claimed base"
+      guideImg("claims-ftb.png"),
+      "<strong>Claim the base.</strong> Storage means nothing if it isn’t claimed — <a href=\"Claims.html\">Claims</a>.",
+      "FTB Chunks claim map over a base"
     )}
+
+    <h2>Day-one layout</h2>
+    <ol class="steps">
+      <li>Pick a spot near spawn or a village you like — not 10k blocks away on hour one.</li>
+      <li>Place bed → claim the chunk(s) → dump starter kit into labelled chests.</li>
+      <li>Activate / place a waystone next to the bed.</li>
+      <li>Plant apricorns + wheat before the first long Brock hike.</li>
+    </ol>
 
     <h2>Storage tips</h2>
     <ul>
-      <li>Label chests: Balls / Heals / Ores / Maps / Food.</li>
-      <li>Use the pack backpack for road kits.</li>
-      <li>Sophisticated Storage / Tom's Storage exist in the pack for later sorting — learn them after Brock/Misty.</li>
-      <li>PC boxes for Pokémon coverage teams (<a href="Healing_and_Storage.html">Healing &amp; storage</a>).</li>
+      <li>Label chests early: Balls / Heals / Ores / Maps / Food / Misc.</li>
+      <li>Road kit stays in the backpack: balls, food, pickaxe, map, potions.</li>
+      <li>PC boxes for coverage teams — <code>/pc</code> — <a href="Healing_and_Storage.html">Healing &amp; storage</a>.</li>
+      <li>Sophisticated Storage / Tom’s Storage are in the pack for later sorting — learn them after Brock / Misty, not instead of badges.</li>
     </ul>
 
+    <h2>Expand without chaos</h2>
+    <ul>
+      <li>Expand the <strong>claim</strong> before the build footprint grows.</li>
+      <li>Keep farms and pastures inside the same claim as the bed.</li>
+      <li>One “dump chest” is fine for 20 minutes — not for a week.</li>
+      <li>Pretty roofs can wait until Valerio; a lit, claimed box cannot.</li>
+    </ul>
+
+    <h2>Common mistakes</h2>
+    <ul>
+      <li>Palace first, claim never.</li>
+      <li>Waystone outside the claim.</li>
+      <li>Every item in one mega-chest forever.</li>
+    </ul>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Claims.html">Claims</a> · <a href="Travel.html">Travel</a> · <a href="First_Hours.html">First hours</a></p>
     ${navboxMinecraft()}
     `,
   });
@@ -295,29 +382,43 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
       { label: "Minecraft hub", href: "Minecraft_Hub.html" },
       { label: "Dimensions and world", href: "Dimensions_and_World.html" },
     ],
-    lede: "How the CobbleVerse world is laid out for PokeHaven players — including Terralith and disabled vanilla bosses.",
+    lede: "How the CobbleVerse world is laid out for PokeHaven players — Terralith overworld, Nether routes, and an End that is not about the dragon.",
     body: `
     <h2>Dimensions</h2>
     <table class="wikitable">
-      <thead><tr><th>Dimension</th><th>Role on this pack</th></tr></thead>
+      <thead><tr><th>Dimension</th><th>Role on PokeHaven EU</th></tr></thead>
       <tbody>
-        <tr><td>Overworld</td><td>Gyms, villages, raids dens, main adventure (Terralith biomes)</td></tr>
-        <tr><td>Nether</td><td>Resources + some gym biome targets</td></tr>
-        <tr><td>The End</td><td>Elite Four tower content — <strong>Ender Dragon disabled</strong> by datapack</td></tr>
+        <tr><td>Overworld</td><td>Gyms, villages, raid dens, claims, main adventure (Terralith biomes)</td></tr>
+        <tr><td>Nether</td><td>Resources + some gym biome targets — <a href="Nether_Guide.html">Nether guide</a></td></tr>
+        <tr><td>The End</td><td>Elite Four / late structures — <strong>Ender Dragon disabled</strong></td></tr>
       </tbody>
     </table>
 
-    <h2>Terralith</h2>
-    <p>Worldgen is expanded. Biomes look different from vanilla tutorials — use gym maps + Nature’s/Explorer’s compasses, not YouTube “seed 123” coords.</p>
-
-    <h2>Disabled / altered vanilla goals</h2>
+    <h2>Terralith overworld</h2>
+    <p>Worldgen is expanded. Biomes and skylines look different from vanilla YouTube guides. Use:</p>
     <ul>
-      <li><strong>No Ender Dragon</strong> datapack — you are not here to cheese dragon gear as the main goal.</li>
-      <li><strong>No Hunger</strong> datapack — see Farming page.</li>
-      <li>Progression spine = <a href="Progression.html">gyms / level cap</a>, not the dragon.</li>
+      <li><a href="Gym_Maps.html">Gym maps</a> for leaders</li>
+      <li>Nature’s Compass / Explorer’s Compass for biomes / structures</li>
+      <li>Xaero pins for dens, portals, and villages you care about</li>
+    </ul>
+    <p>Do <strong>not</strong> trust random “seed 123” coordinates from another world.</p>
+
+    <h2>What progression is (and isn’t)</h2>
+    <ul>
+      <li><strong>Is:</strong> gyms → level cap → regions — <a href="Progression.html">Progression</a></li>
+      <li><strong>Isn’t:</strong> rush the Ender Dragon for “endgame gear”</li>
+      <li><strong>Isn’t:</strong> treat hunger farms as mandatory survival (No Hunger datapack) — still farm for emeralds</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Pack_Differences.html">Pack differences</a> · <a href="Nether_Guide.html">Nether</a></p>
+    <h2>Practical habits</h2>
+    <ul>
+      <li>Build your first base in the Overworld near useful biomes / a village.</li>
+      <li>Open Nether only when geared — see the Nether guide.</li>
+      <li>Enter End content when the pack / league path sends you there, not as a day-one flex.</li>
+      <li>Raid dens are Overworld crystals — <a href="Raids.html">Raids</a>.</li>
+    </ul>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Pack_Differences.html">Pack differences</a> · <a href="Nether_Guide.html">Nether</a> · <a href="Travel.html">Travel</a></p>
     ${navboxMinecraft()}
     `,
   });
