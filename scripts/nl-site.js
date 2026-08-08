@@ -640,8 +640,11 @@ export function registerDutchSite({
   <h2>Voice-chat toets?</h2>
   <p>Esc → Options → Controls → Simple Voice Chat. Zie <a href="Voice_Chat.html">Voice chat</a>.</p>
 
+  <h2>Waar is de spelerswiki?</h2>
+  <p><strong><a href="https://pokehaven.wiki">pokehaven.wiki</a></strong> — Engels + Nederlands (vlaggen). Ook gepind in Discord <code>#pokehaven-wiki</code>. Start met Aan de slag, Claims, Gym-maps, Brock.</p>
+
   <h2>Waar vraag ik hulp?</h2>
-  <p><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a> — stuur screenshot + wat je al probeerde. IP en pack-links staan daar ook.</p>
+  <p><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a> — stuur screenshot + wat je al probeerde. IP/pack in <code>#how-to-join</code>.</p>
 
   <h2>Kan ik de level cap uitzetten?</h2>
   ${critical(
@@ -649,14 +652,23 @@ export function registerDutchSite({
     "<strong>Nee — niet op PokeHaven EU.</strong> Versla de volgende gym. Zie <a href=\"Level_Cap.html\">Level cap</a>."
   )}
 
+  <h2>Waarom bijten er geen Pokémon aan mijn hengel?</h2>
+  <p>Gebruik een <strong>Cobblemon</strong>-hengel (Poke Rod / Lure Rod / …), niet alleen vanilla. Gids: <a href="Fishing.html">Vissen</a>.</p>
+
+  <h2>Hoe werken shiny-odds?</h2>
+  <p>Wild base <strong>1 / 2048</strong>. Broeden: Masuda / crystal. Zie <a href="Shiny.html">Shiny hunting</a> · <a href="Breeding.html">Broeden</a>.</p>
+
+  <h2>Ik versloeg Blue — moet de server herstarten?</h2>
+  <p><strong>Nee.</strong> Volg het champion-boek: Trainer Association → Johto-card. Ontbreken structures? Discord — staff kan 1× herstarten. Zie <a href="Progression.html">Progressie</a> · <a href="Blue.html">Blue</a>.</p>
+
   <h2>Hoe werken outfits / costumes?</h2>
-  <p>Craft trainerkleding met Cloth (wol + string), trek aan in armor-slots. Pokémon-looks via cosmetic slot / special items (Pika Case, Furfrou + dye + Shears, Lucario Costume Box). Gids: <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>.</p>
+  <p>Craft trainerkleding met Cloth (wol + string), trek aan in armor-slots. Pokémon-looks via cosmetic slot / special items. Gids: <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>.</p>
   ${critical(
     "nl",
     "<strong>Cosplay Pikachu evolueert niet naar Raichu.</strong> Gebruik een gewone Pallet-Pikachu als je Raichu wilt."
   )}
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="Misty.html">Misty</a> · <a href="Roadmap.html">30-dagen roadmap</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="https://pokehaven.wiki">Wiki</a> · <a href="Roadmap.html">30-dagen roadmap</a></p>
   `,
   });
 
@@ -944,16 +956,24 @@ export function registerDutchSite({
   <table class="wikitable">
     <thead><tr><th>Fout</th><th>Gevolg</th><th>Fix</th></tr></thead>
     <tbody>
-      <tr class="critical-row"><td>Verkeerde pack-versie</td><td>Niet joinen</td><td>1.7.42 opnieuw uit <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a></td></tr>
+      <tr class="critical-row"><td>Verkeerde pack-versie</td><td>Niet joinen</td><td>1.7.42 opnieuw uit Discord <code>#how-to-join</code></td></tr>
+      <tr class="critical-row"><td>Oud IP uit screenshot</td><td>Geen connectie</td><td>Live IP alleen uit <code>#how-to-join</code></td></tr>
       <tr class="critical-row"><td>Level cap negeren</td><td>“XP kapot”</td><td><a href="Level_Cap.html">Volgende gym</a></td></tr>
-      <tr class="critical-row"><td>Geen claim</td><td>Chests leeg</td><td><a href="Claims.html">FTB Chunks</a></td></tr>
-      <tr class="critical-row"><td>Empty Map openklikken</td><td>Geen gym-map</td><td>Nieuwe Empty Map + <a href="Gym_Maps.html">tafel</a></td></tr>
+      <tr class="critical-row"><td>Geen claim / verkeerde mod</td><td>Chests leeg</td><td>Alleen <a href="Claims.html">FTB Chunks</a> (niet Open Parties)</td></tr>
+      <tr class="critical-row"><td>Empty Map openklikken</td><td>Geen gym-map</td><td>Nieuwe Empty Map + <a href="Gym_Maps.html">regio-tafel</a></td></tr>
+      <tr class="critical-row"><td>Verkeerde regio-cartography</td><td>Map faalt / verkeerde regio</td><td>Kanto-tafel voor Kanto; later Johto/Hoenn/Sinnoh — <a href="Gym_Maps.html">Gym-maps</a></td></tr>
       <tr class="critical-row"><td>Seagrass met hand</td><td>0 drops</td><td>Shears — <a href="Misty.html">Misty</a></td></tr>
-      <tr class="critical-row"><td>Oud IP uit screenshot</td><td>Geen connectie</td><td>IP uit Discord <code>#how-to-join</code></td></tr>
+      <tr class="critical-row"><td>Alleen vanilla-hengel</td><td>Vis-items, weinig Pokémon</td><td>Cobblemon-hengels — <a href="Fishing.html">Vissen</a></td></tr>
+      <tr class="critical-row"><td>Pasture/eieren niet geclaimd</td><td>Shiny-project gestolen</td><td>Claim breedfarm — <a href="Breeding.html">Broeden</a> · <a href="Shiny.html">Shiny</a></td></tr>
+      <tr><td>Wiki nooit openen</td><td>Zelfde Discord-tickets</td><td><a href="https://pokehaven.wiki">pokehaven.wiki</a> · <code>#pokehaven-wiki</code></td></tr>
+      <tr><td>Alleen luxe shop-gear</td><td>Broke</td><td>Balls craften; emeralds verkopen</td></tr>
+      <tr><td>Palace / shiny vóór gyms</td><td>Trage progressie</td><td>Eerst gyms — <a href="Brock.html">Brock</a></td></tr>
+      <tr class="critical-row"><td>Verkeerde Pokémon geselecteerd</td><td>Verkeerde mon uitgestuurd</td><td>Pijltjestoetsen, dan <kbd>R</kbd></td></tr>
       <tr class="critical-row"><td>Cosplay Pikachu voor Raichu</td><td>Evolueert nooit</td><td>Gewone Pallet-Pikachu — <a href="Outfits_and_Cosmetics.html">Outfits</a></td></tr>
+      <tr><td>“Wereld sluiten” na Blue</td><td>Verwarring op multiplayer</td><td>Champion-boek → Johto-card; Discord bij ontbrekende structures</td></tr>
     </tbody>
   </table>
-  <p><a href="FAQ.html">FAQ</a> · <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a></p>
+  <p><a href="FAQ.html">FAQ</a> · <a href="https://pokehaven.wiki">Wiki</a> · <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">Discord</a></p>
   ${navboxCore()}
   `,
   });

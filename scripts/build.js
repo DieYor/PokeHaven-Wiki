@@ -1767,14 +1767,26 @@ writePage("FAQ.html", {
   <h2>Voice chat key?</h2>
   <p>Esc → Options → Controls → Simple Voice Chat. Push-to-talk is nicest in groups. See <a href="Voice_Chat.html">Voice chat</a>.</p>
 
+  <h2>Where is the player wiki?</h2>
+  <p><strong><a href="https://pokehaven.wiki">pokehaven.wiki</a></strong> — English + Nederlands (flags on the site). Also pinned in Discord <code>#pokehaven-wiki</code>. Start with Getting started, Claims, Gym maps, Brock.</p>
+
   <h2>Where do I ask for help?</h2>
-  <p><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a> — send a screenshot + what you already tried. IP and pack links live there too.</p>
+  <p><a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a> — send a screenshot + what you already tried. IP and pack links live in <code>#how-to-join</code>.</p>
 
   <h2>Can I turn off the level cap?</h2>
   ${critical(
     "en",
     "<strong>No — not on PokeHaven EU.</strong> Beat the next gym. See <a href=\"Level_Cap.html\">Level cap</a>."
   )}
+
+  <h2>Why aren’t Pokémon biting my fishing rod?</h2>
+  <p>Use a <strong>Cobblemon</strong> rod (Poke Rod / Lure Rod / …), not only a vanilla Minecraft rod. Guide: <a href="Fishing.html">Fishing</a>.</p>
+
+  <h2>How do shiny odds work?</h2>
+  <p>Wild base rate is <strong>1 / 2048</strong>. Breeding can use Masuda / crystal methods. Full page: <a href="Shiny.html">Shiny hunting</a> · <a href="Breeding.html">Breeding</a>.</p>
+
+  <h2>I beat Blue — do I restart the server?</h2>
+  <p><strong>No.</strong> On PokeHaven, follow the champion book: Trainer Association → Johto Trainer Card (your cap resets; others unaffected). If Johto structures are missing, ask in Discord — staff may need <em>one</em> restart. See <a href="Progression.html">Progression</a> · <a href="Blue.html">Blue</a>.</p>
 
   <h2>How do outfits / costumes work?</h2>
   <p>Craft trainer clothes with Cloth (wool + string), equip in armor slots. Pokémon looks use cosmetic slots / special items (Pika Case, Furfrou + dye + Shears, Lucario Costume Box). Full guide: <a href="Outfits_and_Cosmetics.html">Outfits and cosmetics</a>.</p>
@@ -1783,7 +1795,7 @@ writePage("FAQ.html", {
     "<strong>Cosplay Pikachu cannot evolve into Raichu.</strong> Use a normal Pallet Pikachu if you want Raichu."
   )}
 
-  <p class="see-also"><strong>See also:</strong> <a href="Common_Mistakes.html">Common mistakes</a> · <a href="Misty.html">Misty</a> · <a href="Roadmap.html">30-day roadmap</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Common_Mistakes.html">Common mistakes</a> · <a href="https://pokehaven.wiki">Wiki home</a> · <a href="Roadmap.html">30-day roadmap</a></p>
   `,
 });
 
