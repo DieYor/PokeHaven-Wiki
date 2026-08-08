@@ -222,6 +222,7 @@ function navboxSystems() {
       <a href="Minecraft_Hub.html">Minecraft hub</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Help</div><div class="navbox-links">
+      <a href="Rules_and_Commands.html">Rules &amp; commands</a>
       <a href="Pack_Differences.html">Pack differences</a>
       <a href="Roadmap.html">30-day roadmap</a>
       <a href="Achievements.html">Achievements</a>
@@ -314,6 +315,8 @@ const SEARCH_KEYWORDS = {
   "Brock.html": "first gym rock boulder badge",
   "Misty.html": "second gym water cascade cerulean star seagrass",
   "Travel.html": "waystone teleport travel fast travel",
+  "Rules_and_Commands.html":
+    "rules commands /pc claim grief cheat discord voice chat respect staff",
   "Farming_and_Food.html": "wheat farm food hunger emerald farmer",
   "Achievements.html":
     "achievement advancement toast checklist kanto mew mewtwo articuno zapdos moltres L key cobblemon berry apricorn fossil vivillon shiny catch",
@@ -413,13 +416,13 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Raid_Bosses.html"><h3>Raid bosses</h3><p>${raids.bosses.length} raid boss entries to browse.</p></a>
     <a class="hub-card" href="pages/Spawn_Lookup.html"><h3>Spawn lookup</h3><p>Search ${spawns.length} spawn rows by Pokémon or biome.</p></a>
     <a class="hub-card" href="pages/FAQ.html"><h3>FAQ</h3><p>Level cap, join issues, common mistakes.</p></a>
+    <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Rules &amp; commands</h3><p>Server rules, /pc, keybinds.</p></a>
   </div>
 
   <div class="callout tip">
     <div class="label">Server vs pack</div>
     <strong>PokeHaven EU</strong> is our multiplayer server.
     <strong>CobbleVerse 1.7.42</strong> is the modpack you install.
-    Numbers on this wiki come from that pack export.
   </div>
   `,
 });
@@ -1657,6 +1660,72 @@ writePage("Claims.html", {
 
 // Travel.html is written in deep-pages.js (full guide).
 
+writePage("Rules_and_Commands.html", {
+  title: "Rules & commands",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Rules & commands", href: "Rules_and_Commands.html" },
+  ],
+  lede: "Play fair, be cool, and keep PokeHaven fun. Same rules as Discord <code>#rules</code> — plus the chat commands and keys you’ll use every day.",
+  body: `
+  <div class="callout tip">
+    <div class="label">Agreement</div>
+    By joining the Minecraft server or staying in the
+    <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a>,
+    you agree to these rules.
+  </div>
+
+  <h2>Server rules</h2>
+  <ol class="steps">
+    <li><strong>Respect</strong> — Be kind. No harassment, hate speech, discrimination, or toxic drama. Disagreeing is fine; being a jerk is not.</li>
+    <li><strong>No cheating</strong> — No x-ray, dupes, hacked clients, macros for unfair gain, or exploits. Found a bug? Report it in Discord <code>#bug-reports</code> — don’t abuse it.</li>
+    <li><strong>Claims &amp; builds</strong> — No griefing, stealing, or wrecking other players’ bases. Claim with <strong>FTB Chunks</strong> — unclaimed land is not protected. Details: <a href="Claims.html">Claims</a>.</li>
+    <li><strong>No spam / ads</strong> — No spam, mass pings, scam links, or advertising other servers / Discords. Self-promo only if staff approves it.</li>
+    <li><strong>Chat</strong> — <strong>English</strong> is the main language in public channels (EU server). Keep it SFW. Keep names, nicknames, and profile pictures appropriate.</li>
+    <li><strong>Voice chat</strong> — Push-to-talk preferred. No earrape, blasting soundboards, or screaming for no reason. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
+    <li><strong>Asking for help</strong> — Use Discord <code>#help</code> with what went wrong, a screenshot, and what you already tried.</li>
+    <li><strong>Staff decisions</strong> — Staff may warn, mute, kick, or ban when needed. Don’t argue moderation in public — contact staff privately if needed.</li>
+  </ol>
+
+  <h2>Useful chat commands</h2>
+  <p>Type <code>/</code> in chat to see what your client offers. These are the ones most trainers need on PokeHaven EU:</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/pc</code></td><td>Open Pokémon PC storage anywhere — <a href="Healing_and_Storage.html">Healing &amp; storage</a></td></tr>
+    </tbody>
+  </table>
+  <div class="callout tip">
+    <div class="label">Money &amp; shops</div>
+    PokéDollars use in-world shops and the Bank — there isn’t a separate “must-learn” money command for day-to-day play.
+    See <a href="Economy.html">Economy</a>.
+  </div>
+
+  <h2>Keys you’ll use constantly</h2>
+  <table class="wikitable">
+    <thead><tr><th>Action</th><th>Default</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Party / starter</td><td><kbd>C</kbd></td><td>Pick starter and manage team</td></tr>
+      <tr><td>Send out / recall</td><td><kbd>R</kbd></td><td>Battles and mounts</td></tr>
+      <tr><td>Recipe viewer (REI)</td><td><kbd>E</kbd></td><td>Live crafts — <a href="Essential_Recipes.html">Essential recipes</a></td></tr>
+      <tr><td>Ride</td><td><kbd>Shift</kbd> + right-click</td><td><a href="Riding.html">Riding</a></td></tr>
+      <tr><td>Claim map (FTB Chunks)</td><td>Bind in Controls → search <em>FTB</em> / <em>Chunks</em></td><td><a href="Claims.html">Claims</a></td></tr>
+      <tr><td>Voice chat</td><td>Controls → Simple Voice Chat</td><td>Prefer push-to-talk — <a href="Voice_Chat.html">Voice chat</a></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Where to find things</h2>
+  <ul>
+    <li><strong>Wiki:</strong> <a href="https://pokehaven.wiki">pokehaven.wiki</a> (EN) · <a href="https://pokehaven.wiki/nl/">NL</a></li>
+    <li><strong>Discord:</strong> IP, pack zip, help — <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">join here</a></li>
+    <li><strong>First hours:</strong> <a href="Getting_Started.html">Getting started</a> · <a href="First_Hours.html">First hours</a> · <a href="FAQ.html">FAQ</a></li>
+  </ul>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Common_Mistakes.html">Common mistakes</a> · <a href="Claims.html">Claims</a> · <a href="Voice_Chat.html">Voice chat</a></p>
+  ${navboxSystems()}
+  `,
+});
+
 writePage("Voice_Chat.html", {
   title: "Voice chat",
   breadcrumbs: [
@@ -2198,6 +2267,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainer clothes &amp; Pokémon looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Common mistakes</h3><p>Fix these once.</p></a>
+    <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Rules &amp; commands</h3><p>Server rules, /pc, keybinds.</p></a>
   </div>
 
   <h2>Databases</h2>

@@ -75,6 +75,7 @@ function navboxCore() {
       <a href="Minecraft_Hub.html">Minecraft-hub</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Hulp</div><div class="navbox-links">
+      <a href="Rules_and_Commands.html">Regels &amp; commands</a>
       <a href="Pack_Differences.html">Pack-verschillen</a>
       <a href="Roadmap.html">30-dagen roadmap</a>
       <a href="Achievements.html">Achievements</a>
@@ -144,6 +145,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Waarom XP stopt — en de ladder.</p></a>
     <a class="hub-card" href="pages/Essential_Recipes.html"><h3>Essentiële recepten</h3><p>Balls, maps, tools, REI.</p></a>
     <a class="hub-card" href="pages/FAQ.html"><h3>FAQ</h3><p>Join-problemen &amp; fixes.</p></a>
+    <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Regels &amp; commands</h3><p>Serverregels, /pc, toetsen.</p></a>
   </div>
 
   <h2>Gyms &amp; progressie</h2>
@@ -180,6 +182,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainerkleding &amp; Pokémon-looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Veelgemaakte fouten</h3><p>Één keer maken.</p></a>
+    <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Regels &amp; commands</h3><p>Serverregels, /pc, toetsen.</p></a>
   </div>
 
   <h2>Databases</h2>
@@ -610,6 +613,69 @@ export function registerDutchSite({
   </ul>
 
   <p class="see-also"><strong>Zie ook:</strong> <a href="Riding.html">Rijden</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">Eerste uren</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Rules_and_Commands.html", {
+    title: "Regels &amp; commands",
+    breadcrumbs: crumbs({ label: "Regels & commands", href: "Rules_and_Commands.html" }),
+    lede: "Speel fair, wees cool, houd PokeHaven leuk. Dezelfde regels als Discord <code>#rules</code> — plus de chat-commands en toetsen die je elke dag gebruikt.",
+    body: `
+  <div class="callout tip">
+    <div class="label">Akkoord</div>
+    Door te joinen op de Minecraft-server of in de
+    <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">PokeHaven EU Discord</a>
+    te blijven, ga je akkoord met deze regels.
+  </div>
+
+  <h2>Serverregels</h2>
+  <ol class="steps">
+    <li><strong>Respect</strong> — Wees aardig. Geen harassment, hate speech, discriminatie of toxische drama. Oneens zijn mag; een eikel zijn niet.</li>
+    <li><strong>Geen cheaten</strong> — Geen x-ray, dupes, hacked clients, macros voor oneerlijk voordeel, of exploits. Bug gevonden? Meld in Discord <code>#bug-reports</code> — misbruik ‘m niet.</li>
+    <li><strong>Claims &amp; builds</strong> — Geen griefing, stelen of andermans bases slopen. Claim met <strong>FTB Chunks</strong> — ungeclaimd land is niet beschermd. Details: <a href="Claims.html">Claims</a>.</li>
+    <li><strong>Geen spam / ads</strong> — Geen spam, mass-pings, scam-links of reclame voor andere servers / Discords. Self-promo alleen met staff-goedkeuring.</li>
+    <li><strong>Chat</strong> — <strong>English</strong> is de hoofdtaal in publieke channels (EU-server). Houd het SFW. Namen, nicknames en profielfoto’s netjes houden.</li>
+    <li><strong>Voice chat</strong> — Push-to-talk heeft voorkeur. Geen earrape, soundboards blazen of zinloos schreeuwen. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
+    <li><strong>Hulp vragen</strong> — Gebruik Discord <code>#help</code> met wat misging, een screenshot, en wat je al probeerde.</li>
+    <li><strong>Staff-beslissingen</strong> — Staff mag warnen, muten, kicken of bannen. Bediscussieer moderatie niet publiek — contacteer staff privé als nodig.</li>
+  </ol>
+
+  <h2>Handige chat-commands</h2>
+  <p>Typ <code>/</code> in chat om te zien wat je client aanbiedt. Dit zijn de commands die de meeste trainers op PokeHaven EU nodig hebben:</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/pc</code></td><td>Open Pokémon PC-opslag overal — <a href="Healing_and_Storage.html">Genezen &amp; opslag</a></td></tr>
+    </tbody>
+  </table>
+  <div class="callout tip">
+    <div class="label">Geld &amp; shops</div>
+    PokéDollars lopen via in-world shops en de Bank — er is geen aparte “must-learn” money-command voor dagelijks spelen.
+    Zie <a href="Economy.html">Economie</a>.
+  </div>
+
+  <h2>Toetsen die je constant gebruikt</h2>
+  <table class="wikitable">
+    <thead><tr><th>Actie</th><th>Standaard</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Party / starter</td><td><kbd>C</kbd></td><td>Starter kiezen en team beheren</td></tr>
+      <tr><td>Uitsturen / recall</td><td><kbd>R</kbd></td><td>Battles en mounts</td></tr>
+      <tr><td>Recipe viewer (REI)</td><td><kbd>E</kbd></td><td>Live crafts — <a href="Essential_Recipes.html">Essentiële recepten</a></td></tr>
+      <tr><td>Rijden</td><td><kbd>Shift</kbd> + rechtsklik</td><td><a href="Riding.html">Rijden</a></td></tr>
+      <tr><td>Claim-map (FTB Chunks)</td><td>Bind in Controls → zoek <em>FTB</em> / <em>Chunks</em></td><td><a href="Claims.html">Claims</a></td></tr>
+      <tr><td>Voice chat</td><td>Controls → Simple Voice Chat</td><td>Push-to-talk heeft voorkeur — <a href="Voice_Chat.html">Voice chat</a></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Waar vind je wat</h2>
+  <ul>
+    <li><strong>Wiki:</strong> <a href="https://pokehaven.wiki/nl/">pokehaven.wiki/nl</a> · <a href="https://pokehaven.wiki">EN</a></li>
+    <li><strong>Discord:</strong> IP, pack-zip, help — <a href="${DISCORD_INVITE}" rel="noopener noreferrer" target="_blank">join hier</a></li>
+    <li><strong>Eerste uren:</strong> <a href="Getting_Started.html">Aan de slag</a> · <a href="First_Hours.html">Eerste uren</a> · <a href="FAQ.html">FAQ</a></li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="Claims.html">Claims</a> · <a href="Voice_Chat.html">Voice chat</a></p>
   ${navboxCore()}
   `,
   });
