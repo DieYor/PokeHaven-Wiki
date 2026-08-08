@@ -199,6 +199,7 @@ function navboxSystems() {
       <a href="Essential_Recipes.html">Essential recipes</a>
       <a href="Healing_and_Storage.html">Healing</a>
       <a href="Breeding.html">Breeding</a>
+      <a href="Fishing.html">Fishing</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">World</div><div class="navbox-links">
@@ -290,6 +291,8 @@ const SEARCH_KEYWORDS = {
   "Voice_Chat.html": "mic voice chat simple voice talk",
   "Poke_Balls.html": "pokeball apricorn craft ball great ultra",
   "Breeding.html": "egg pasture breed shiny masuda",
+  "Fishing.html":
+    "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup",
   "Raids.html": "raid den crystal boss tier",
   "FAQ.html": "help problem question join discord",
   "Brock.html": "first gym rock boulder badge",
@@ -378,6 +381,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones and map tools.</p></a>
     <a class="hub-card" href="pages/Voice_Chat.html"><h3>Voice chat</h3><p>Distances and groups.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Timers and shiny methods.</p></a>
+    <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods, bait, and water catches.</p></a>
   </div>
 
   <h2>Databases</h2>
@@ -1079,6 +1083,66 @@ writePage("Breeding.html", {
   `,
 });
 
+writePage("Fishing.html", {
+  title: "Fishing",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Fishing", href: "Fishing.html" },
+  ],
+  lede: "On CobbleVerse / PokeHaven EU you can fish up <strong>Pokémon</strong> — not only vanilla fish. Use Cobblemon rods in the right water biome.",
+  infobox: infoboxHtml("Fishing", [
+    ["Goal", "Catch water Pokémon via rod"],
+    ["Tools", "Cobblemon rods (REI: “rod”)"],
+    ["Data", `${spawns.filter((s) => s.position === "fishing").length} fishing spawn rows`],
+    ["Party required?", "No (PokeHaven config)"],
+  ]),
+  body: `
+  <h2>Why fish?</h2>
+  <p>Hundreds of species only (or mainly) appear through <strong>fishing</strong> spawns — Magikarp lines, Tentacool, many Water types, and rarer ocean/river finds. It is a real progression tool, not just AFK fluff.</p>
+
+  <h2>How to start</h2>
+  <ol class="steps">
+    <li>Open inventory search (<kbd>E</kbd> / REI) and search <strong>rod</strong> or <strong>Poke Rod</strong>.</li>
+    <li>Craft a <strong>Cobblemon</strong> fishing rod (e.g. Poke Rod, Lure Rod, Great Rod…). A plain Minecraft fishing rod is mainly for vanilla loot.</li>
+    <li>Stand next to water that matches the biome you want (river / ocean / swamp tags matter).</li>
+    <li>Cast, wait for the bite, reel in — a wild Pokémon battle / encounter can start instead of an item.</li>
+    <li>Catch with balls as usual. Keep your claim nearby if you AFK near a personal dock.</li>
+  </ol>
+
+  ${critical(
+    "en",
+    "<strong>Use Cobblemon rods for Pokémon.</strong> If you only get sticks and pufferfish, you are probably on a vanilla rod or the wrong water/biome."
+  )}
+
+  <h2>Rods, lure level &amp; bait</h2>
+  <ul>
+    <li><strong>Rod tiers</strong> (Poke → Great → Ultra → Master, plus themed rods like Net / Dive / Lure) raise what the pack treats as <em>lure level</em>. Higher lure unlocks fishing rows that require <code>minLureLevel</code> 1–3+.</li>
+    <li>Themed rods (Net Rod, Dive Rod, Friend Rod, …) often mirror ball themes — craft what REI shows; loot chests can also drop damaged rods.</li>
+    <li><strong>Bait</strong> exists in the pack — attach / use bait when the item tooltip allows it to bias bites. Check REI for “bait”.</li>
+    <li>You do <strong>not</strong> need a Pokémon in your party to fish on PokeHaven EU.</li>
+  </ul>
+
+  <h2>Where to cast</h2>
+  <ul>
+    <li>Freshwater tags (rivers, lakes) vs ocean / beach tags change the pool — move biomes if you only see the same commons.</li>
+    <li>Some species also list <em>submerged</em> / <em>surface</em> spawns (swim/boat encounters). Fishing is the rod-only context.</li>
+    <li>Night, weather, and luck can still matter like other Cobblemon spawns — do not expect one dock forever.</li>
+  </ul>
+
+  <h2>Look up fishable Pokémon</h2>
+  <p>Open <a href="Spawn_Lookup.html?ctx=fishing">Spawn lookup (fishing filter)</a>, optionally filter biome text (e.g. <code>ocean</code> or <code>freshwater</code>).</p>
+  <p>Examples you will see in pack data: Magikarp, Tentacool, Psyduck, Squirtle-line (rare), and many regional Water types — always verify with the lookup for your target.</p>
+
+  <div class="callout tip">
+    <div class="label">Gym tip</div>
+    Fishing is great for Water coverage before Misty / later oceans, but the level cap still applies — do not overlevel while grinding bites.
+  </div>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Spawn_Lookup.html">Spawn lookup</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Claims.html">Claims</a></p>
+  ${navboxSystems()}
+  `,
+});
+
 writePage("Claims.html", {
   title: "Claims",
   breadcrumbs: [
@@ -1279,7 +1343,7 @@ writePage("Spawn_Lookup.html", {
     { label: "Main Page", href: "../index.html" },
     { label: "Spawn lookup", href: "Spawn_Lookup.html" },
   ],
-  lede: `Search CobbleVerse world spawn pool rows (${spawns.length}). Biome tags are pack tags (e.g. <code>#cobblemon:is_forest</code>).`,
+  lede: `Search CobbleVerse world spawn pool rows (${spawns.length}). Biome tags are pack tags (e.g. <code>#cobblemon:is_forest</code>). Use Context = <code>fishing</code> for rod encounters — see <a href="Fishing.html">Fishing</a>.`,
   body: `
   <div class="filter-bar">
     <input id="spawn-q" type="search" placeholder="Pokémon name…" style="min-width:180px;flex:1" />
@@ -1291,20 +1355,33 @@ writePage("Spawn_Lookup.html", {
       <option>rare</option>
       <option>ultra-rare</option>
     </select>
+    <select id="spawn-ctx">
+      <option value="">All contexts</option>
+      <option value="fishing">fishing</option>
+      <option value="grounded">grounded</option>
+      <option value="submerged">submerged</option>
+      <option value="surface">surface</option>
+      <option value="seafloor">seafloor</option>
+    </select>
   </div>
   <p class="muted">Showing up to 200 matches. Full dataset: <code>data/spawns.json</code>.</p>
   <div id="spawn-results"></div>
   <script type="module">
   const res = await fetch('../data/spawns-lite.json');
   const SPAWNS = await res.json();
+  const params = new URLSearchParams(location.search);
+  if (params.get('ctx')) document.getElementById('spawn-ctx').value = params.get('ctx');
+  if (params.get('q')) document.getElementById('spawn-q').value = params.get('q');
   function render() {
     const q = document.getElementById('spawn-q').value.toLowerCase();
     const biome = document.getElementById('spawn-biome').value.toLowerCase();
     const bucket = document.getElementById('spawn-bucket').value;
+    const ctx = document.getElementById('spawn-ctx').value;
     const rows = SPAWNS.filter(s =>
       (!q || String(s.p).toLowerCase().includes(q)) &&
       (!biome || String(s.m).toLowerCase().includes(biome)) &&
-      (!bucket || s.b === bucket)
+      (!bucket || s.b === bucket) &&
+      (!ctx || s.t === ctx)
     ).slice(0, 200).map(s =>
       '<tr><td>'+s.p+'</td><td>'+s.b+'</td><td>'+s.l+'</td><td>'+(s.w??'—')+'</td><td>'+s.t+'</td><td style="font-size:0.85em">'+s.m+'</td></tr>'
     ).join('');
@@ -1312,7 +1389,7 @@ writePage("Spawn_Lookup.html", {
       '<table class="wikitable"><thead><tr><th>Pokémon</th><th>Bucket</th><th>Level</th><th>Weight</th><th>Context</th><th>Biomes</th></tr></thead><tbody>'+
       (rows || '<tr><td colspan="6">No matches</td></tr>') + '</tbody></table>';
   }
-  for (const id of ['spawn-q','spawn-biome','spawn-bucket']) {
+  for (const id of ['spawn-q','spawn-biome','spawn-bucket','spawn-ctx']) {
     document.getElementById(id).addEventListener('input', render);
     document.getElementById(id).addEventListener('change', render);
   }
@@ -1412,6 +1489,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture setup.</p></a>
+    <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainer clothes &amp; Pokémon looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Common mistakes</h3><p>Fix these once.</p></a>
   </div>

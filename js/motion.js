@@ -35,6 +35,8 @@
 
   function initCursorTracer() {
     if (reduce || coarse) return;
+    // Idempotent: bfcache / soft navigations must not stack multiple cursors
+    if (document.querySelector(".cursor-fx")) return;
 
     document.documentElement.classList.add("custom-cursor");
 
@@ -90,6 +92,7 @@
     let ry = my;
     let visible = false;
     let raf = 0;
+    let looping = false;
 
     const interactiveSel =
       "a, button, .hub-card, .join-btn, .join-btn-discord, .lang-btn, .figure-zoom, summary, .chip, label[for], .site-nav a, .navbox-links a, .toc-box a, .search-results a";
@@ -104,7 +107,20 @@
       ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
       raf = requestAnimationFrame(tick);
     }
-    raf = requestAnimationFrame(tick);
+
+    function startLoop() {
+      if (looping) return;
+      looping = true;
+      raf = requestAnimationFrame(tick);
+    }
+
+    function stopLoop() {
+      looping = false;
+      cancelAnimationFrame(raf);
+      raf = 0;
+    }
+
+    startLoop();
 
     window.addEventListener(
       "mousemove",
@@ -117,6 +133,7 @@
           ry = my;
           root.classList.add("is-on");
         }
+        if (!looping) startLoop();
         const onText = !!e.target.closest(textSel);
         const onHot = !onText && !!e.target.closest(interactiveSel);
         root.classList.toggle("is-text", onText);
@@ -143,7 +160,28 @@
       if (visible) root.classList.add("is-on");
     });
 
-    window.addEventListener("pagehide", () => cancelAnimationFrame(raf), { once: true });
+    // Browser Back often restores via bfcache: RAF was frozen and cursor:none stays on.
+    window.addEventListener("pagehide", () => {
+      stopLoop();
+      visible = false;
+      root.classList.remove("is-on", "is-hot", "is-text", "is-click");
+    });
+    window.addEventListener("pageshow", (e) => {
+      document.documentElement.classList.add("custom-cursor");
+      startLoop();
+      // After bfcache restore, wait for the next real mouse move to re-show
+      if (e.persisted) {
+        visible = false;
+        root.classList.remove("is-on", "is-hot", "is-text", "is-click");
+      }
+    });
+    window.addEventListener(
+      "focus",
+      () => {
+        if (!looping) startLoop();
+      },
+      { passive: true }
+    );
   }
 
   function initPressFeedback() {

@@ -144,6 +144,12 @@
     "keywords": "egg pasture breed shiny masuda"
   },
   {
+    "title": "Fishing",
+    "href": "pages/Fishing.html",
+    "blurb": "On CobbleVerse / PokeHaven EU you can fish up Pokémon — not only vanilla fish. Use Cobblemon rods in the right water biome.",
+    "keywords": "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup"
+  },
+  {
     "title": "Claims",
     "href": "pages/Claims.html",
     "blurb": "If it is not claimed, it is not safe. Protect beds, chests, farms, and waystones with FTB Chunks on PokeHaven EU — do this in your first minutes.",
@@ -182,7 +188,7 @@
   {
     "title": "Spawn lookup",
     "href": "pages/Spawn_Lookup.html",
-    "blurb": "Search CobbleVerse world spawn pool rows (3120). Biome tags are pack tags (e.g. #cobblemon:is_forest).",
+    "blurb": "Search CobbleVerse world spawn pool rows (3120). Biome tags are pack tags (e.g. #cobblemon:is_forest). Use Context = fishing for rod encounters — see Fishing.",
     "keywords": ""
   },
   {

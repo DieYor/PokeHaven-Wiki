@@ -62,6 +62,7 @@ function navboxCore() {
       <a href="Essential_Recipes.html">Essentiële recepten</a>
       <a href="Healing_and_Storage.html">Genezen</a>
       <a href="Breeding.html">Broeden</a>
+      <a href="Fishing.html">Vissen</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Wereld</div><div class="navbox-links">
@@ -168,6 +169,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture-setup.</p></a>
+    <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainerkleding &amp; Pokémon-looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Veelgemaakte fouten</h3><p>Één keer maken.</p></a>
   </div>
@@ -1218,6 +1220,62 @@ export function registerDutchSite({
     <li>Sommige legendary/paradox Ditto-chains kunnen geblokkeerd zijn.</li>
   </ul>
   <p class="see-also"><strong>Zie ook:</strong> <a href="Catching_and_Battling.html">Vangen &amp; vechten</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Fishing.html", {
+    title: "Vissen",
+    breadcrumbs: crumbs({ label: "Vissen", href: "Fishing.html" }),
+    lede: "Op CobbleVerse / PokeHaven EU kun je <strong>Pokémon</strong> vissen — niet alleen vanilla vis. Gebruik Cobblemon-hengels in het juiste waterbiome.",
+    infobox: `<div class="infobox-title">Vissen</div>
+  <table>
+    <tr><th>Doel</th><td>Water-Pokémon via hengel</td></tr>
+    <tr><th>Tools</th><td>Cobblemon-rods (REI: “rod”)</td></tr>
+    <tr><th>Data</th><td>${spawns.filter((s) => s.position === "fishing").length} fishing-spawnrijen</td></tr>
+    <tr><th>Party nodig?</th><td>Nee (PokeHaven-config)</td></tr>
+  </table>`,
+    body: `
+  <h2>Waarom vissen?</h2>
+  <p>Honderden species komen (vooral) via <strong>fishing</strong>-spawns — Magikarp-lijn, Tentacool, veel Water-types, en zeldzamere ocean/river-vondsten. Echt bruikbaar voor progressie.</p>
+
+  <h2>Aan de slag</h2>
+  <ol class="steps">
+    <li>Open inventory-search (<kbd>E</kbd> / REI) en zoek <strong>rod</strong> of <strong>Poke Rod</strong>.</li>
+    <li>Craft een <strong>Cobblemon</strong>-hengel (Poke Rod, Lure Rod, Great Rod…). Een gewone Minecraft fishing rod is vooral voor vanilla loot.</li>
+    <li>Ga bij water staan dat bij je biome past (rivier / oceaan / swamp-tags).</li>
+    <li>Cast, wacht op de beet, haal in — er kan een wild Pokémon-encounter starten i.p.v. een item.</li>
+    <li>Vang met balls zoals altijd. Claim je steiger als je daar AFK’t.</li>
+  </ol>
+
+  ${critical(
+    "nl",
+    "<strong>Gebruik Cobblemon-hengels voor Pokémon.</strong> Alleen sticks en pufferfish? Waarschijnlijk vanilla rod of verkeerd water/biome."
+  )}
+
+  <h2>Rods, lure level &amp; bait</h2>
+  <ul>
+    <li><strong>Rod-tiers</strong> (Poke → Great → Ultra → Master, plus themed rods) verhogen de <em>lure level</em>. Hogere lure ontgrendelt fishing-rijen met <code>minLureLevel</code> 1–3+.</li>
+    <li>Themed rods (Net, Dive, Friend, …) craft je via REI; chests kunnen beschadigde rods droppen.</li>
+    <li><strong>Bait</strong> bestaat in de pack — gebruik het als de tooltip het toelaat. Zoek in REI op “bait”.</li>
+    <li>Je hebt op PokeHaven EU <strong>geen</strong> Pokémon in je party nodig om te vissen.</li>
+  </ul>
+
+  <h2>Waar casten?</h2>
+  <ul>
+    <li>Freshwater (rivieren/meren) vs ocean/beach verandert de pool.</li>
+    <li>Sommige species hebben ook <em>submerged</em> / <em>surface</em> (zwemmen/boot). Fishing = alleen hengel.</li>
+  </ul>
+
+  <h2>Opzoeken</h2>
+  <p>Open <a href="Spawn_Lookup.html">Spawn-lookup</a> (EN-tool) en zet Context op <code>fishing</code>, of ga naar de <a href="../../pages/Spawn_Lookup.html?ctx=fishing">EN spawn lookup met fishing-filter</a>.</p>
+
+  <div class="callout tip">
+    <div class="label">Gym-tip</div>
+    Handig voor Water-coverage vóór Misty / latere oceanen — level cap blijft gelden.
+  </div>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Claims.html">Claims</a> · <a href="../../pages/Fishing.html">Volledige EN-gids</a></p>
   ${navboxCore()}
   `,
   });

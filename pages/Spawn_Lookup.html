@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Spawn lookup — PokeHaven EU Wiki</title>
-  <meta name="description" content="Search CobbleVerse world spawn pool rows (3120). Biome tags are pack tags (e.g. #cobblemon:is_forest)." />
+  <meta name="description" content="Search CobbleVerse world spawn pool rows (3120). Biome tags are pack tags (e.g. #cobblemon:is_forest). Use Context = fishing for rod encounters — see Fishing." />
   <link rel="alternate" hreflang="en" href="pages/Spawn_Lookup.html" />
   <link rel="alternate" hreflang="nl" href="../nl/pages/Spawn_Lookup.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,7 +45,7 @@
     <div class="article-layout no-infobox">
       <article class="article" data-page-title="Spawn lookup" >
         <h1 class="article-title">Spawn lookup</h1>
-        <p class="article-lede">Search CobbleVerse world spawn pool rows (3120). Biome tags are pack tags (e.g. <code>#cobblemon:is_forest</code>).</p>
+        <p class="article-lede">Search CobbleVerse world spawn pool rows (3120). Biome tags are pack tags (e.g. <code>#cobblemon:is_forest</code>). Use Context = <code>fishing</code> for rod encounters — see <a href="Fishing.html">Fishing</a>.</p>
         <div class="toc-box" id="toc"><h2>Contents</h2><ol></ol></div>
         
   <div class="filter-bar">
@@ -58,20 +58,33 @@
       <option>rare</option>
       <option>ultra-rare</option>
     </select>
+    <select id="spawn-ctx">
+      <option value="">All contexts</option>
+      <option value="fishing">fishing</option>
+      <option value="grounded">grounded</option>
+      <option value="submerged">submerged</option>
+      <option value="surface">surface</option>
+      <option value="seafloor">seafloor</option>
+    </select>
   </div>
   <p class="muted">Showing up to 200 matches. Full dataset: <code>data/spawns.json</code>.</p>
   <div id="spawn-results"></div>
   <script type="module">
   const res = await fetch('../data/spawns-lite.json');
   const SPAWNS = await res.json();
+  const params = new URLSearchParams(location.search);
+  if (params.get('ctx')) document.getElementById('spawn-ctx').value = params.get('ctx');
+  if (params.get('q')) document.getElementById('spawn-q').value = params.get('q');
   function render() {
     const q = document.getElementById('spawn-q').value.toLowerCase();
     const biome = document.getElementById('spawn-biome').value.toLowerCase();
     const bucket = document.getElementById('spawn-bucket').value;
+    const ctx = document.getElementById('spawn-ctx').value;
     const rows = SPAWNS.filter(s =>
       (!q || String(s.p).toLowerCase().includes(q)) &&
       (!biome || String(s.m).toLowerCase().includes(biome)) &&
-      (!bucket || s.b === bucket)
+      (!bucket || s.b === bucket) &&
+      (!ctx || s.t === ctx)
     ).slice(0, 200).map(s =>
       '<tr><td>'+s.p+'</td><td>'+s.b+'</td><td>'+s.l+'</td><td>'+(s.w??'—')+'</td><td>'+s.t+'</td><td style="font-size:0.85em">'+s.m+'</td></tr>'
     ).join('');
@@ -79,7 +92,7 @@
       '<table class="wikitable"><thead><tr><th>Pokémon</th><th>Bucket</th><th>Level</th><th>Weight</th><th>Context</th><th>Biomes</th></tr></thead><tbody>'+
       (rows || '<tr><td colspan="6">No matches</td></tr>') + '</tbody></table>';
   }
-  for (const id of ['spawn-q','spawn-biome','spawn-bucket']) {
+  for (const id of ['spawn-q','spawn-biome','spawn-bucket','spawn-ctx']) {
     document.getElementById(id).addEventListener('input', render);
     document.getElementById(id).addEventListener('change', render);
   }
@@ -95,6 +108,7 @@
       <a href="Essential_Recipes.html">Essential recipes</a>
       <a href="Healing_and_Storage.html">Healing</a>
       <a href="Breeding.html">Breeding</a>
+      <a href="Fishing.html">Fishing</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">World</div><div class="navbox-links">
