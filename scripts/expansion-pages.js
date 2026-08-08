@@ -224,20 +224,7 @@ export function registerExpansionPages({
 
   // Gyms_Johto.html is written as a deep hub + leader pages in build.js (same depth as Kanto).
 
-  regionPage(
-    "Hoenn",
-    "Gyms_Hoenn.html",
-    "hoenn",
-    "Hoenn is the mid/late adventure step after Johto. Pack data includes Hoenn leaders and Team Aqua/Magma adjacent trainers.",
-    {
-      unlock: "After Johto Champion progression (follow in-game series unlocks / Trainer Card).",
-      prep: [
-        "Water/Surf-capable mounts help a lot",
-        "Stock Ultra Balls and status heals",
-        "Nether comfort if you still farm there for gear",
-      ],
-    }
-  );
+  // Gyms_Hoenn.html is written in build.js (under-construction hub for now).
 
   regionPage(
     "Sinnoh",

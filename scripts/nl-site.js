@@ -150,6 +150,7 @@ export function registerDutchSite({
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>Alle 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — diepe gidsen.</p></a>
+    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Under construction — scout-hub.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Tweede gym, diepe gids.</p></a>
     <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>Eerste Johto-gym — Flying.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym-maps</h3><p>Cartography &amp; coördinaten.</p></a>
@@ -1872,9 +1873,59 @@ export function registerDutchSite({
     }
   }
 
-  // Region overviews (thin stubs — Johto is deep above)
+  // Hoenn under-construction hub
+  {
+    const hoennNamed = trainers.all
+      .filter((t) => t.region === "hoenn" && !String(t.id).includes("groups"))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const previewRows = hoennNamed
+      .map((t) => {
+        const levels = (t.team || []).map((m) => m.level).filter((x) => x != null);
+        const lv =
+          levels.length > 0
+            ? `${levels[0]}–${levels[levels.length - 1]}`
+            : "—";
+        return `<tr>
+      <td>${esc(t.name)}</td>
+      <td><code>${esc(t.id)}</code></td>
+      <td>${(t.team || []).length}</td>
+      <td>${esc(lv)}</td>
+    </tr>`;
+      })
+      .join("");
+    track("Gyms_Hoenn.html", {
+      title: "Hoenn-gyms",
+      breadcrumbs: crumbs({ label: "Hoenn-gyms", href: "Gyms_Hoenn.html" }),
+      lede: "Hoenn opent na de Johto Champion. Diepe walkthroughs zoals Kanto / Johto zijn <strong>under construction</strong> — gebruik voorlopig pack-data en gym-maps.",
+      body: `
+  <div class="callout tip">
+    <div class="label">Under construction</div>
+    Volledige leader-pagina’s (teams, coverage, map-keys, walkthroughs) komen later.
+    Rond eerst <a href="Gyms_Johto.html">Johto</a> af — deze hub groeit daarna op dezelfde manier.
+  </div>
+
+  <h2>Unlock (als je hier bent)</h2>
+  <ol class="steps">
+    <li>Versla Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
+    <li>Volg Trainer Card / pack-unlocks naar Hoenn.</li>
+    <li>Gebruik de <strong>Hoenn Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader-tip daar: <strong>Petra</strong>.</li>
+  </ol>
+
+  <h2>Named Hoenn-trainers in pack-data</h2>
+  <p class="muted">Alleen scout-tabel. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · toasts: <a href="Achievements.html">Achievements</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
+    <tbody>${previewRows || "<tr><td colspan=4>Geen Hoenn-trainers geparsed.</td></tr>"}</tbody>
+  </table>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Johto.html">Johto-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Progression.html">Progressie</a> · <a href="Gyms_Sinnoh.html">Sinnoh</a></p>
+  ${navboxCore()}
+  `,
+    });
+  }
+
+  // Region overviews (thin stubs)
   for (const [file, title, blurb] of [
-    ["Gyms_Hoenn.html", "Hoenn", "Regio-overzicht en trainers voor Hoenn."],
     ["Gyms_Sinnoh.html", "Sinnoh", "Late-game regio-overzicht voor Sinnoh."],
   ]) {
     track(file, {
@@ -1883,7 +1934,7 @@ export function registerDutchSite({
       lede: blurb,
       body: `
   <p>${esc(blurb)}</p>
-  <p>Engelse pagina met details: <a href="../../pages/${file}">${esc(title)} (EN)</a>. Startregio: <a href="Gyms_Kanto.html">Kanto</a> · daarna <a href="Gyms_Johto.html">Johto</a>.</p>
+  <p>Engelse pagina met details: <a href="../../pages/${file}">${esc(title)} (EN)</a>. Startregio: <a href="Gyms_Kanto.html">Kanto</a> · daarna <a href="Gyms_Johto.html">Johto</a> · <a href="Gyms_Hoenn.html">Hoenn</a>.</p>
   `,
     });
   }

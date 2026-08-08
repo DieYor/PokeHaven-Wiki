@@ -324,12 +324,6 @@
     "keywords": ""
   },
   {
-    "title": "Hoenn overview",
-    "href": "pages/Gyms_Hoenn.html",
-    "blurb": "Hoenn is the mid/late adventure step after Johto. Pack data includes Hoenn leaders and Team Aqua/Magma adjacent trainers.",
-    "keywords": ""
-  },
-  {
     "title": "Sinnoh overview",
     "href": "pages/Gyms_Sinnoh.html",
     "blurb": "Sinnoh is late-game CobbleVerse content — tougher teams and longer routes.",
@@ -340,6 +334,12 @@
     "href": "pages/Gyms_Johto.html",
     "blurb": "Checklist for the Johto challenge on CobbleVerse / PokeHaven EU after Champion Blue. Open a leader page for full teams from pack data.",
     "keywords": "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive"
+  },
+  {
+    "title": "Hoenn gyms",
+    "href": "pages/Gyms_Hoenn.html",
+    "blurb": "Hoenn opens after the Johto Champion. Deep walkthroughs like Kanto / Johto are under construction — use pack data and gym maps for now.",
+    "keywords": "hoenn petra under construction coming soon gym maps cartography"
   },
   {
     "title": "Valerio",

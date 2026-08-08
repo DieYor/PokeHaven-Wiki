@@ -321,6 +321,8 @@ const SEARCH_KEYWORDS = {
     "post-game postgame legendary mythical mew mewtwo articuno zapdos moltres origin fossil ancient dna cloning",
   "Gyms_Johto.html":
     "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive",
+  "Gyms_Hoenn.html":
+    "hoenn petra under construction coming soon gym maps cartography",
   "Valerio.html": "johto first gym flying zephyr raptor bracer",
 };
 
@@ -1956,6 +1958,60 @@ registerExpansionPages({
     `,
   });
 
+  // Hoenn hub — placeholder until deep guides match Johto/Kanto
+  {
+    const hoennNamed = trainers.all
+      .filter((t) => t.region === "hoenn" && !String(t.id).includes("groups"))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const previewRows = hoennNamed
+      .map((t) => {
+        const levels = (t.team || []).map((m) => m.level).filter((x) => x != null);
+        const lv =
+          levels.length > 0
+            ? `${levels[0]}–${levels[levels.length - 1]}`
+            : "—";
+        return `<tr>
+      <td>${esc(t.name)}</td>
+      <td><code>${esc(t.id)}</code></td>
+      <td>${(t.team || []).length}</td>
+      <td>${esc(lv)}</td>
+    </tr>`;
+      })
+      .join("");
+    writePage("Gyms_Hoenn.html", {
+      title: "Hoenn gyms",
+      breadcrumbs: [
+        { label: "Main Page", href: "../index.html" },
+        { label: "Hoenn gyms", href: "Gyms_Hoenn.html" },
+      ],
+      lede: "Hoenn opens after the Johto Champion. Deep walkthroughs like Kanto / Johto are <strong>under construction</strong> — use pack data and gym maps for now.",
+      body: `
+    <div class="callout tip">
+      <div class="label">Under construction</div>
+      Full leader pages (teams, coverage, map keys, walkthroughs) are not written yet.
+      Finish <a href="Gyms_Johto.html">Johto</a> first, then check back — this hub will grow the same way.
+    </div>
+
+    <h2>Unlock (when you get here)</h2>
+    <ol class="steps">
+      <li>Beat Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
+      <li>Follow your Trainer Card / pack unlocks into Hoenn (same pattern as Kanto → Johto).</li>
+      <li>Use the <strong>Hoenn Cartography Table</strong> for gym maps — <a href="Gym_Maps.html">Gym maps</a>. First leader tip on that page: <strong>Petra</strong>.</li>
+    </ol>
+
+    <h2>Named Hoenn trainers in pack data</h2>
+    <p class="muted">Scout table only — not deep guides yet. Full search: <a href="Trainer_Index.html">Trainer index</a>. Toast list: <a href="Achievements.html">Achievements</a>.</p>
+    <table class="wikitable">
+      <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
+      <tbody>${previewRows || "<tr><td colspan=4>No Hoenn trainers parsed.</td></tr>"}</tbody>
+    </table>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Gyms_Johto.html">Johto gyms</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Progression.html">Progression</a> · <a href="Gyms_Sinnoh.html">Sinnoh</a></p>
+    ${navboxGyms()}
+    `,
+    });
+  }
+
   for (const g of johto) {
     const maxLv = teamMaxLevel(g);
     const minLv = Math.min(...g.team.map((m) => Number(m.level) || 99));
@@ -2043,6 +2099,7 @@ writePage("index.html", {
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>All 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — deep guides.</p></a>
+    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Under construction — scout hub.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Second gym deep guide.</p></a>
     <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>First Johto gym — Flying.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym maps</h3><p>Cartography &amp; coordinates.</p></a>
