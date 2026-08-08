@@ -194,10 +194,11 @@ export function registerDeepPages({
         <tr><td>Gym teams &amp; maps</td><td><a href="Gyms_Kanto.html">Kanto gyms</a> · <a href="Gym_Maps.html">Gym maps</a></td></tr>
         <tr><td>Where a species spawns</td><td><a href="Spawn_Lookup.html">Spawn lookup</a></td></tr>
         <tr><td>Calm pacing</td><td><a href="Roadmap.html">30-day roadmap</a></td></tr>
+        <tr><td>Mega / Tera / Dynamax + Johto prep</td><td><a href="Mega_and_Late_Game.html">Mega &amp; late-game</a></td></tr>
       </tbody>
     </table>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Achievements.html">Achievements</a> · <a href="Progression.html">Progression</a> · <a href="Blue.html">Blue</a> · <a href="Giovanni.html">Giovanni</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Achievements.html">Achievements</a> · <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progression</a> · <a href="Blue.html">Blue</a> · <a href="Giovanni.html">Giovanni</a></p>
     ${navboxGyms()}
     ${navboxSystems()}
     `,
@@ -520,7 +521,7 @@ export function registerDeepPages({
         <tr><td><strong>Week 1</strong></td><td>Misty → Surge → Erika; iron gear; apricorn farm</td><td>4 badges, stable house</td></tr>
         <tr><td><strong>Week 2</strong></td><td>Finish Kanto gyms; money loop; waystone network</td><td>8 badges</td></tr>
         <tr><td><strong>Week 3–4</strong></td><td>Elite Four + Blue; prep Johto</td><td>Kanto clear, next region open</td></tr>
-        <tr><td><strong>After Blue</strong></td><td>Optional post-game: fossils, birds, Mewtwo</td><td><a href="Postgame_and_Legendaries.html">Post-game guide</a> + <a href="Achievements.html">Achievements</a></td></tr>
+        <tr><td><strong>After Blue</strong></td><td>Johto card + optional post-game / Mega prep</td><td><a href="Mega_and_Late_Game.html">Late-game checklist</a> · <a href="Postgame_and_Legendaries.html">Post-game</a> · <a href="Achievements.html">Achievements</a></td></tr>
       </tbody>
     </table>
     <div class="callout tip">
@@ -617,8 +618,8 @@ export function registerDeepPages({
     </ul>
 
     <h2>Mega / Z / Tera / Dynamax</h2>
-    <p>Mega Showdown is enabled: Mega Evolution, Z-Moves, Terastallization, and Dynamax are part of the pack.
-    Dynamax usually needs a power spot. Learn one gimmick at a time — gym badges matter more than shiny Dynamax flexes in week one.</p>
+    <p>Mega Showdown is enabled. Dynamax needs a power spot (not anywhere). Full settings + after-Blue checklist:
+    <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>. Learn one gimmick at a time — badges first.</p>
 
     <h2>Between fights</h2>
     <ul>

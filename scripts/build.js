@@ -200,6 +200,7 @@ function navboxSystems() {
       <a href="Healing_and_Storage.html">Healing</a>
       <a href="Breeding.html">Breeding</a>
       <a href="Shiny.html">Shiny hunting</a>
+      <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Fishing</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
@@ -294,6 +295,8 @@ const SEARCH_KEYWORDS = {
   "Breeding.html": "egg pasture breed shiny masuda ditto cobbreeding hatch",
   "Shiny.html":
     "shiny hunting masuda crystal charm rate 2048 breed wild cobblecuisine",
+  "Mega_and_Late_Game.html":
+    "mega evolution z-move tera dynamax power spot late game checklist johto after blue keystone megastone gimmick",
   "Fishing.html":
     "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup",
   "Raids.html": "raid den crystal boss tier",
@@ -1144,8 +1147,7 @@ writePage("Catching_and_Battling.html", {
   <p>Wild Pokémon can aggro. Higher-level wilds may attack unprovoked; failed catches can provoke. Aggressive wilds may not be catchable while hostile — back off, heal, re-engage carefully.</p>
 
   <h2>Mega / Z / Tera / Dynamax</h2>
-  <p>Mega Showdown is enabled on this pack: Mega Evolution, Z-Moves, Terastallization, and Dynamax are available.
-  Dynamax generally needs a power spot unless configs say otherwise. Multiple Megas can be allowed by pack settings.</p>
+  <p>Mega Showdown is enabled. Full pack settings + a late-Kanto / Johto checklist: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>.</p>
 
   <h2>Healing &amp; PC</h2>
   <ul>
@@ -1269,6 +1271,97 @@ writePage("Shiny.html", {
   </div>
 
   <p class="see-also"><strong>See also:</strong> <a href="Breeding.html">Breeding</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Fishing.html">Fishing</a> · <a href="Claims.html">Claims</a></p>
+  ${navboxSystems()}
+  `,
+});
+
+writePage("Mega_and_Late_Game.html", {
+  title: "Mega &amp; late-game",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Mega &amp; late-game", href: "Mega_and_Late_Game.html" },
+  ],
+  lede: "What Mega Showdown allows on PokeHaven EU, and a practical checklist after Kanto — before you dive into Johto, raids, or legendaries.",
+  infobox: infoboxHtml("Mega Showdown (pack)", [
+    ["Mega Evolution", "On"],
+    ["Z-Moves", "On"],
+    ["Terastallization", "On"],
+    ["Dynamax", "On (power spots)"],
+    ["Multiple Megas", "Allowed"],
+    ["Dynamax anywhere?", "No"],
+    ["Power spot range", "32 blocks"],
+    ["Tera shards to Tera", "50"],
+  ]),
+  body: `
+  <h2>Priority on PokeHaven</h2>
+  <ol class="steps">
+    <li><strong>Badges &amp; level cap</strong> — gyms unlock levels; gimmicks do not. See <a href="Level_Cap.html">Level cap</a>.</li>
+    <li><strong>Claim + heals + balls</strong> — base safety and supplies beat a flashy Mega with an empty hotbar. <a href="Claims.html">Claims</a> · <a href="Poke_Balls.html">Poké Balls</a>.</li>
+    <li><strong>Learn one gimmick</strong> — Mega <em>or</em> Tera <em>or</em> Dynamax for hard fights; don’t stall Kanto collecting every stone.</li>
+    <li><strong>After Blue</strong> — Johto Trainer Card (champion book), then optional post-game. <a href="Blue.html">Blue</a> · <a href="Progression.html">Progression</a>.</li>
+  </ol>
+  ${critical(
+    "en",
+    "<strong>Week-one rule:</strong> badges matter more than Mega / Dynamax flexes. Finish the next gym before you AFK for stones."
+  )}
+
+  <h2>Mega Evolution</h2>
+  <ul>
+    <li>Enabled. <strong>Multiple Megas</strong> are allowed in this pack’s Mega Showdown config.</li>
+    <li>Outside-battle Mega is enabled (<code>outSideMega</code>) — useful for travel / showcases; battle use still needs the right held stone + Key Stone flow the mod expects.</li>
+    <li>Search REI (<kbd>E</kbd>) for <em>mega</em>, <em>ite</em>, or the species name + stone. Raid dens can feature Mega bosses — <a href="Raid_Bosses.html">Raid bosses</a>.</li>
+    <li>Exact Key Stone / bracelet recipes change with mod updates — trust in-game recipes over wiki screenshots.</li>
+  </ul>
+
+  <h2>Z-Moves</h2>
+  <ul>
+    <li>Enabled. You need the matching Z-Crystal / Z-Ring style items from Mega Showdown (REI: <em>z</em> / crystal names).</li>
+    <li>One strong Z-Move can swing a gym or raid turn — still bring type coverage for the rest of the fight.</li>
+  </ul>
+
+  <h2>Terastallization</h2>
+  <ul>
+    <li>Enabled. Pack requires <strong>50 Tera Shards</strong> of the matching type to Terastallize (config <code>teraShardRequired</code>).</li>
+    <li>Shard drop rates in config: common Tera shards <strong>10</strong>, Stellar shards <strong>1</strong> (relative drop weighting — farm via the mod’s shard sources / REI).</li>
+    <li>Cobblemon also sets a wild <strong>tera type rate</strong> of <strong>20</strong> on this pack — Tera’d wilds can appear; don’t confuse that with your own Tera Orb progress.</li>
+  </ul>
+
+  <h2>Dynamax</h2>
+  <ul>
+    <li>Enabled, but <strong>not anywhere</strong> — you need a <strong>power spot</strong> within about <strong>32 blocks</strong>.</li>
+    <li>Cobblemon max Dynamax level on this pack: <strong>10</strong>.</li>
+    <li>Scale factor is large in config — watch space and friendly fire in crowded dens.</li>
+    <li>Related craft in datapack recipes: <strong>Star Core</strong> (uses a Wishing Star + gems) — check REI for the grid.</li>
+  </ul>
+
+  <h2>Late-game checklist (after late Kanto / Blue)</h2>
+  <table class="wikitable">
+    <thead><tr><th>Done?</th><th>Task</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>☐</td><td>Beat <a href="Blue.html">Champion Blue</a></td><td>Kanto clear; Johto path opens on PokeHaven</td></tr>
+      <tr><td>☐</td><td>Follow champion book → Trainer Association → <strong>Johto Trainer Card</strong></td><td>Your level cap resets for Johto; others unaffected</td></tr>
+      <tr><td>☐</td><td>Craft <strong>Johto</strong> maps on the <strong>Johto Cartography Table</strong></td><td>Wrong region table = wasted Empty Maps — <a href="Gym_Maps.html">Gym maps</a></td></tr>
+      <tr><td>☐</td><td>Heal party + restock balls / Revives</td><td>Johto leaders hit harder than early Kanto</td></tr>
+      <tr><td>☐</td><td>Re-check <a href="Claims.html">FTB claim</a> (base, pasture, waystone)</td><td>Late-game loot is worth stealing</td></tr>
+      <tr><td>☐</td><td>Pick <em>one</em> gimmick to learn (Mega / Tera / Dynamax)</td><td>Avoid inventory clutter and decision paralysis</td></tr>
+      <tr><td>☐</td><td>Optional: <a href="Postgame_and_Legendaries.html">Mew / birds / Mewtwo</a></td><td>Parallel track — not required for Johto gyms</td></tr>
+      <tr><td>☐</td><td>Optional: higher-tier <a href="Raids.html">raids</a> with friends</td><td>Mega raid bosses + shard/loot loops</td></tr>
+      <tr><td>☐</td><td>Optional: <a href="Shiny.html">shiny</a> / <a href="Breeding.html">breeding</a> projects</td><td>Fun side content; claim the pasture</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="label">If Johto structures are missing</div>
+    Ask in Discord — staff may need <em>one</em> server restart. Do <strong>not</strong> “close the world” like single-player CobbleVerse text sometimes implies. See <a href="FAQ.html">FAQ</a>.
+  </div>
+
+  <h2>What this page is not</h2>
+  <ul>
+    <li>A full list of every Mega stone location (use REI + raids + exploration).</li>
+    <li>A replacement for gym walkthroughs — start <a href="Gyms_Johto.html">Johto</a> when the checklist above is green.</li>
+  </ul>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Postgame_and_Legendaries.html">Post-game</a> · <a href="Progression.html">Progression</a> · <a href="Gyms_Johto.html">Johto</a> · <a href="Raids.html">Raids</a></p>
   ${navboxSystems()}
   `,
 });
@@ -1664,6 +1757,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Regions &amp; the gym loop.</p></a>
     <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement checklist.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
+    <a class="hub-card" href="pages/Mega_and_Late_Game.html"><h3>Mega &amp; late-game</h3><p>Gimmicks + after-Blue checklist.</p></a>
   </div>
 
   <h2>Minecraft &amp; recipes</h2>
@@ -1786,7 +1880,7 @@ writePage("FAQ.html", {
   <p>Wild base rate is <strong>1 / 2048</strong>. Breeding can use Masuda / crystal methods. Full page: <a href="Shiny.html">Shiny hunting</a> · <a href="Breeding.html">Breeding</a>.</p>
 
   <h2>I beat Blue — do I restart the server?</h2>
-  <p><strong>No.</strong> On PokeHaven, follow the champion book: Trainer Association → Johto Trainer Card (your cap resets; others unaffected). If Johto structures are missing, ask in Discord — staff may need <em>one</em> restart. See <a href="Progression.html">Progression</a> · <a href="Blue.html">Blue</a>.</p>
+  <p><strong>No.</strong> On PokeHaven, follow the champion book: Trainer Association → Johto Trainer Card (your cap resets; others unaffected). If Johto structures are missing, ask in Discord — staff may need <em>one</em> restart. Checklist: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progression</a> · <a href="Blue.html">Blue</a>.</p>
 
   <h2>How do outfits / costumes work?</h2>
   <p>Craft trainer clothes with Cloth (wool + string), equip in armor slots. Pokémon looks use cosmetic slots / special items (Pika Case, Furfrou + dye + Shears, Lucario Costume Box). Full guide: <a href="Outfits_and_Cosmetics.html">Outfits and cosmetics</a>.</p>

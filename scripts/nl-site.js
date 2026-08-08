@@ -63,6 +63,7 @@ function navboxCore() {
       <a href="Healing_and_Storage.html">Genezen</a>
       <a href="Breeding.html">Broeden</a>
       <a href="Shiny.html">Shiny hunting</a>
+      <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Vissen</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
@@ -153,6 +154,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Progression.html"><h3>Progressie</h3><p>Regio’s &amp; gym-loop.</p></a>
     <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement-checklist.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
+    <a class="hub-card" href="pages/Mega_and_Late_Game.html"><h3>Mega &amp; late-game</h3><p>Gimmicks + checklist na Blue.</p></a>
   </div>
 
   <h2>Minecraft &amp; recepten</h2>
@@ -475,6 +477,8 @@ export function registerDutchSite({
   <p>Wilde Pokémon kunnen aanvallen. Hogere levels aggro’en sneller; failed catches kunnen provoceren. Heal en herpositioneer als ze vijandig blijven.</p>
   <h2>Vechten</h2>
   <p>Type-advantage wint gyms. Gebruik <a href="Brock.html">Brock</a> / <a href="Misty.html">Misty</a> / <a href="Gyms_Kanto.html">Kanto</a> voor teams. Respecteer de <a href="Level_Cap.html">level cap</a>.</p>
+  <h2>Mega / Z / Tera / Dynamax</h2>
+  <p>Mega Showdown staat aan. Pack-settings + checklist na Kanto: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>.</p>
   <h2>Na het gevecht</h2>
   <p><a href="Healing_and_Storage.html">Genezen &amp; opslag</a> · <a href="Breeding.html">Broeden</a></p>
   ${navboxCore()}
@@ -659,7 +663,7 @@ export function registerDutchSite({
   <p>Wild base <strong>1 / 2048</strong>. Broeden: Masuda / crystal. Zie <a href="Shiny.html">Shiny hunting</a> · <a href="Breeding.html">Broeden</a>.</p>
 
   <h2>Ik versloeg Blue — moet de server herstarten?</h2>
-  <p><strong>Nee.</strong> Volg het champion-boek: Trainer Association → Johto-card. Ontbreken structures? Discord — staff kan 1× herstarten. Zie <a href="Progression.html">Progressie</a> · <a href="Blue.html">Blue</a>.</p>
+  <p><strong>Nee.</strong> Volg het champion-boek: Trainer Association → Johto-card. Ontbreken structures? Discord — staff kan 1× herstarten. Checklist: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progressie</a> · <a href="Blue.html">Blue</a>.</p>
 
   <h2>Hoe werken outfits / costumes?</h2>
   <p>Craft trainerkleding met Cloth (wol + string), trek aan in armor-slots. Pokémon-looks via cosmetic slot / special items. Gids: <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>.</p>
@@ -990,7 +994,7 @@ export function registerDutchSite({
   <h2>Week 4</h2>
   <p>Rest van Kanto, league-prep, economie opschalen.</p>
   <h2>Na Blue</h2>
-  <p>Optioneel post-game: fossils, birds, Mewtwo — <a href="Postgame_and_Legendaries.html">Post-game-gids</a> · <a href="Achievements.html">Achievements</a>.</p>
+  <p>Johto-card + optioneel post-game / Mega-prep — <a href="Mega_and_Late_Game.html">Late-game checklist</a> · <a href="Postgame_and_Legendaries.html">Post-game</a> · <a href="Achievements.html">Achievements</a>.</p>
   <p>Pas het tempo aan — PokeHaven is een community-server, geen speedrun.</p>
   ${navboxCore()}
   `,
@@ -1142,10 +1146,11 @@ export function registerDutchSite({
       <tr><td>Gym-teams &amp; maps</td><td><a href="Gyms_Kanto.html">Kanto-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a></td></tr>
       <tr><td>Waar een species spawnt</td><td><a href="Spawn_Lookup.html">Spawn-lookup</a></td></tr>
       <tr><td>Rustig tempo</td><td><a href="Roadmap.html">30-dagen roadmap</a></td></tr>
+      <tr><td>Mega / Tera / Dynamax + Johto-prep</td><td><a href="Mega_and_Late_Game.html">Mega &amp; late-game</a></td></tr>
     </tbody>
   </table>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Achievements.html">Achievements</a> · <a href="Progression.html">Progressie</a> · <a href="Blue.html">Blue</a> · <a href="Giovanni.html">Giovanni</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Achievements.html">Achievements</a> · <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progressie</a> · <a href="Blue.html">Blue</a> · <a href="Giovanni.html">Giovanni</a></p>
   ${navboxCore()}
   `,
     });
@@ -1311,6 +1316,88 @@ export function registerDutchSite({
   </ul>
 
   <p class="see-also"><strong>Zie ook:</strong> <a href="Breeding.html">Broeden</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Claims.html">Claims</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Mega_and_Late_Game.html", {
+    title: "Mega &amp; late-game",
+    breadcrumbs: crumbs({ label: "Mega &amp; late-game", href: "Mega_and_Late_Game.html" }),
+    lede: "Wat Mega Showdown toelaat op PokeHaven EU, plus een praktische checklist na Kanto — vóór Johto, raids of legendaries.",
+    infobox: `<div class="infobox-title">Mega Showdown (pack)</div>
+  <table>
+    <tr><th>Mega Evolution</th><td>Aan</td></tr>
+    <tr><th>Z-Moves</th><td>Aan</td></tr>
+    <tr><th>Terastallization</th><td>Aan</td></tr>
+    <tr><th>Dynamax</th><td>Aan (power spots)</td></tr>
+    <tr><th>Multiple Megas</th><td>Toegestaan</td></tr>
+    <tr><th>Dynamax overal?</th><td>Nee</td></tr>
+    <tr><th>Power spot range</th><td>32 blocks</td></tr>
+    <tr><th>Tera shards voor Tera</th><td>50</td></tr>
+  </table>`,
+    body: `
+  <h2>Prioriteit op PokeHaven</h2>
+  <ol class="steps">
+    <li><strong>Badges &amp; level cap</strong> — gyms unlocken levels; gimmicks niet. Zie <a href="Level_Cap.html">Level cap</a>.</li>
+    <li><strong>Claim + heals + balls</strong> — basisveiligheid eerst. <a href="Claims.html">Claims</a> · <a href="Poke_Balls.html">Poké Balls</a>.</li>
+    <li><strong>Leer één gimmick</strong> — Mega <em>of</em> Tera <em>of</em> Dynamax voor zware fights; blijf niet steken in Kanto voor elke stone.</li>
+    <li><strong>Na Blue</strong> — Johto Trainer Card (champion-boek), daarna optioneel post-game. <a href="Blue.html">Blue</a> · <a href="Progression.html">Progressie</a>.</li>
+  </ol>
+  ${critical(
+    "nl",
+    "<strong>Week-één-regel:</strong> badges gaan vóór Mega / Dynamax-flex. Versla eerst de volgende gym."
+  )}
+
+  <h2>Mega Evolution</h2>
+  <ul>
+    <li>Aan. <strong>Multiple Megas</strong> toegestaan in de Mega Showdown-config van dit pack.</li>
+    <li>Outside-battle Mega staat aan — handig voor reizen/showcase; in battle nog steeds de juiste held stone + Key Stone-flow van de mod.</li>
+    <li>Zoek in REI (<kbd>E</kbd>) naar <em>mega</em>, <em>ite</em>, of species + stone. Raid dens kunnen Mega-bosses hebben — <a href="Raid_Bosses.html">Raid-bosses</a>.</li>
+    <li>Exacte Key Stone / bracelet-recepten wijzigen mee met updates — vertrouw in-game recepten.</li>
+  </ul>
+
+  <h2>Z-Moves</h2>
+  <ul>
+    <li>Aan. Je hebt matching Z-Crystal / Z-Ring-achtige items nodig (REI: <em>z</em> / crystal-namen).</li>
+    <li>Eén sterke Z-Move kan een gym/raid-turn kantelen — breng alsnog type-coverage mee.</li>
+  </ul>
+
+  <h2>Terastallization</h2>
+  <ul>
+    <li>Aan. Pack vraagt <strong>50 Tera Shards</strong> van het juiste type (<code>teraShardRequired</code>).</li>
+    <li>Drop-weights in config: gewone Tera shards <strong>10</strong>, Stellar <strong>1</strong> — farm via mod-bronnen / REI.</li>
+    <li>Cobblemon wild <strong>tera type rate</strong> op dit pack: <strong>20</strong> — Tera’d wilds kunnen spawnen; dat is niet hetzelfde als jouw Tera Orb-progress.</li>
+  </ul>
+
+  <h2>Dynamax</h2>
+  <ul>
+    <li>Aan, maar <strong>niet overal</strong> — je hebt een <strong>power spot</strong> nodig binnen ca. <strong>32 blocks</strong>.</li>
+    <li>Cobblemon max Dynamax level: <strong>10</strong>.</li>
+    <li>Gerelateerd craft: <strong>Star Core</strong> (Wishing Star + gems) — check REI.</li>
+  </ul>
+
+  <h2>Late-game checklist (na late Kanto / Blue)</h2>
+  <table class="wikitable">
+    <thead><tr><th>Klaar?</th><th>Taak</th><th>Waarom</th></tr></thead>
+    <tbody>
+      <tr><td>☐</td><td><a href="Blue.html">Champion Blue</a> verslaan</td><td>Kanto clear; Johto-pad opent</td></tr>
+      <tr><td>☐</td><td>Champion-boek → Trainer Association → <strong>Johto Trainer Card</strong></td><td>Jouw level cap reset voor Johto</td></tr>
+      <tr><td>☐</td><td><strong>Johto</strong>-maps op de <strong>Johto Cartography Table</strong></td><td>Verkeerde regio-tafel = verspilde Empty Maps — <a href="Gym_Maps.html">Gym-maps</a></td></tr>
+      <tr><td>☐</td><td>Party healen + balls / Revives bijvullen</td><td>Johto-leaders raken harder</td></tr>
+      <tr><td>☐</td><td><a href="Claims.html">FTB-claim</a> checken</td><td>Late-game loot is de moeite waard om te stelen</td></tr>
+      <tr><td>☐</td><td>Eén gimmick kiezen (Mega / Tera / Dynamax)</td><td>Minder inventory-chaos</td></tr>
+      <tr><td>☐</td><td>Optioneel: <a href="Postgame_and_Legendaries.html">Mew / birds / Mewtwo</a></td><td>Parallel — niet verplicht voor Johto-gyms</td></tr>
+      <tr><td>☐</td><td>Optioneel: hogere <a href="Raids.html">raids</a></td><td>Mega-bosses + shard/loot</td></tr>
+      <tr><td>☐</td><td>Optioneel: <a href="Shiny.html">shiny</a> / <a href="Breeding.html">broeden</a></td><td>Side content; claim de pasture</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="label">Johto-structures kwijt?</div>
+    Vraag in Discord — staff kan <em>1×</em> herstarten. “Wereld sluiten” zoals singleplayer-tekst soms zegt geldt niet zo op multiplayer. Zie <a href="FAQ.html">FAQ</a>.
+  </div>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Postgame_and_Legendaries.html">Post-game</a> · <a href="Progression.html">Progressie</a> · <a href="Gyms_Johto.html">Johto</a></p>
   ${navboxCore()}
   `,
   });
