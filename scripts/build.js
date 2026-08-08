@@ -199,6 +199,7 @@ function navboxSystems() {
       <a href="Essential_Recipes.html">Essential recipes</a>
       <a href="Healing_and_Storage.html">Healing</a>
       <a href="Breeding.html">Breeding</a>
+      <a href="Shiny.html">Shiny hunting</a>
       <a href="Fishing.html">Fishing</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
@@ -290,7 +291,9 @@ const SEARCH_KEYWORDS = {
   "Economy.html": "money pokédollars pokedollars bank emerald shop wheat farm",
   "Voice_Chat.html": "mic voice chat simple voice talk",
   "Poke_Balls.html": "pokeball apricorn craft ball great ultra",
-  "Breeding.html": "egg pasture breed shiny masuda",
+  "Breeding.html": "egg pasture breed shiny masuda ditto cobbreeding hatch",
+  "Shiny.html":
+    "shiny hunting masuda crystal charm rate 2048 breed wild cobblecuisine",
   "Fishing.html":
     "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup",
   "Raids.html": "raid den crystal boss tier",
@@ -1134,6 +1137,7 @@ writePage("Catching_and_Battling.html", {
     <li>Craft balls from apricorns + metal cores (check REI for exact recipes).</li>
     <li>Weaken wild Pokémon before throwing.</li>
     <li>Catch-rate UI mods in the pack show helpful odds.</li>
+    <li>Wild shiny rate is <strong>1 / ${shiny}</strong> — methods and breeding: <a href="Shiny.html">Shiny hunting</a>.</li>
   </ul>
 
   <h2>Fight or Flight</h2>
@@ -1159,29 +1163,112 @@ writePage("Breeding.html", {
     { label: "Main Page", href: "../index.html" },
     { label: "Breeding", href: "Breeding.html" },
   ],
-  lede: "Breed in a claimed pasture near your base. Eggs take several minutes — plan farms, not frantic AFK at spawn.",
+  lede: "Breed with CobBreeding pastures on PokeHaven EU. Eggs take minutes — claim your farm, then AFK with a plan.",
+  infobox: infoboxHtml("Breeding", [
+    [
+      "Egg wait",
+      `${Math.round((rates.breeding?.minBreedingTimeInTicks ?? 8400) / 20 / 60)}–${Math.round((rates.breeding?.maxBreedingTimeInTicks ?? 18000) / 20 / 60)} min`,
+    ],
+    ["Hidden Abilities", rates.breeding?.hiddenAbilitiesEnabled ? "Enabled" : "Off"],
+    ["Ditto × Ditto legendaries", rates.breeding?.dittoAndDittoAllowLegendary ? "Allowed" : "Blocked"],
+    ["Pasture slots", String(rates.breeding?.pastureInventorySize ?? 3)],
+    ["Shiny methods", "See Shiny hunting"],
+  ]),
   body: `
   <h2>Setup</h2>
   <ol class="steps">
     <li>Claim the land with <a href="Claims.html">FTB Chunks</a> so nobody loots parents or eggs.</li>
-    <li>Build a small pasture / pen near your bed and waystone.</li>
-    <li>Put a compatible pair (or Ditto + parent) in range of the pasture block.</li>
-    <li>Wait for eggs — pack timing is often roughly <strong>7–15 minutes</strong> per window, not instant.</li>
+    <li>Place a <strong>pasture</strong> block (CobBreeding / pack pasture — search REI for “pasture”).</li>
+    <li>Build a small pen near your bed and waystone.</li>
+    <li>Put a compatible pair (same egg group, or <strong>Ditto + parent</strong>) in range of the pasture.</li>
+    <li>Wait for eggs — pack config is about <strong>${Math.round((rates.breeding?.minBreedingTimeInTicks ?? 8400) / 20 / 60)}–${Math.round((rates.breeding?.maxBreedingTimeInTicks ?? 18000) / 20 / 60)} minutes</strong> per breeding window (not instant).</li>
   </ol>
 
-  <h2>What to expect</h2>
+  <h2>Rules that matter on PokeHaven</h2>
   <ul>
-    <li>Shiny odds can improve with Masuda-style pairs and charm / crystal methods the pack enables — still rare.</li>
-    <li>Hidden Abilities can pass when the pack allows it.</li>
-    <li>Some legendary / paradox / ultra beast Ditto chains may be blocked.</li>
+    <li><strong>Hidden Abilities</strong> can pass when the pack allows it (enabled in CobBreeding).</li>
+    <li><strong>Ditto + Ditto</strong> does <em>not</em> roll random legendary / paradox / ultra beast eggs here (blocked in config).</li>
+    <li>Hoppers can pull from pasture blocks (automation is allowed by pack settings).</li>
+    <li>Some form features (region forms, Magikarp patterns, etc.) are marked inheritable in pack data — still verify in-game.</li>
   </ul>
+
+  <h2>What to breed for</h2>
+  <ul>
+    <li><strong>Early game:</strong> catch coverage first. Don’t stall Kanto badges for a shiny project.</li>
+    <li><strong>Mid game:</strong> breed for better natures / usable IVs once you have a Ditto and a balls farm.</li>
+    <li><strong>Shiny projects:</strong> use Masuda-style + crystal methods — full odds page: <a href="Shiny.html">Shiny hunting</a>.</li>
+  </ul>
+
+  ${critical(
+    "en",
+    "<strong>Claim the pasture.</strong> Unclaimed eggs and parents are free loot for anyone."
+  )}
 
   <div class="callout tip">
     <div class="label">Practical tip</div>
-    Breed after you have a stable gym team and balls farm. Early game: catch coverage first; breed for IV / shiny projects later.
+    Hatch near a Poké Center / PC. Keep the level cap in mind — bred Pokémon still respect PokeHaven’s cap when you train them.
   </div>
 
-  <p class="see-also"><strong>See also:</strong> <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Economy.html">Economy</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Shiny.html">Shiny hunting</a> · <a href="Claims.html">Claims</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Level_Cap.html">Level cap</a></p>
+  ${navboxSystems()}
+  `,
+});
+
+writePage("Shiny.html", {
+  title: "Shiny hunting",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Shiny hunting", href: "Shiny.html" },
+  ],
+  lede: "How shiny odds work on PokeHaven EU / CobbleVerse — wild catches vs breeding methods from pack config.",
+  infobox: infoboxHtml("Shiny odds", [
+    ["Base wild rate", `1 / ${shiny}`],
+    ["Masuda method", `×${rates.breeding?.shinyMethod?.masuda ?? 2} (breeding)`],
+    ["Crystal method", `×${rates.breeding?.shinyMethod?.crystal ?? 2} (breeding)`],
+    ["Always method", `×${rates.breeding?.shinyMethod?.always ?? 8} (breeding)`],
+    ["Notice particles", `${rates.cobblemon?.shinyNoticeParticlesDistance ?? 48} blocks`],
+  ]),
+  body: `
+  <h2>Base rate</h2>
+  <p>Wild shiny rate from Cobblemon config on this pack: <strong>1 / ${shiny}</strong>. That is the default you should assume when you see a sparkle in the wild or while fishing.</p>
+  <p>Shiny notice particles show within about <strong>${rates.cobblemon?.shinyNoticeParticlesDistance ?? 48} blocks</strong>.</p>
+
+  <h2>Breeding shiny methods (CobBreeding)</h2>
+  <p>Egg shiny rolls can use method multipliers from the pack’s CobBreeding config. Treat these as <strong>multipliers on the shiny check</strong> when that method applies — still rare, not “guaranteed soon”.</p>
+  <table class="wikitable">
+    <thead><tr><th>Method</th><th>Multiplier</th><th>Rough guide (if applied alone to 1/${shiny})</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Masuda</strong> (different-language / Masuda-style parents)</td><td>×${rates.breeding?.shinyMethod?.masuda ?? 2}</td><td>~1 / ${Math.round(shiny / (rates.breeding?.shinyMethod?.masuda ?? 2))}</td></tr>
+      <tr><td><strong>Crystal</strong></td><td>×${rates.breeding?.shinyMethod?.crystal ?? 2}</td><td>~1 / ${Math.round(shiny / (rates.breeding?.shinyMethod?.crystal ?? 2))}</td></tr>
+      <tr><td><strong>Always</strong> (strongest configured method)</td><td>×${rates.breeding?.shinyMethod?.always ?? 8}</td><td>~1 / ${Math.round(shiny / (rates.breeding?.shinyMethod?.always ?? 8))}</td></tr>
+    </tbody>
+  </table>
+  ${critical(
+    "en",
+    "<strong>Do not assume every multiplier stacks forever.</strong> Use REI / item tooltips / CobBreeding docs in-game for how Masuda vs crystal vs “always” combine on your pair. The table above is the pack’s configured multipliers."
+  )}
+
+  <h2>Practical hunting loops</h2>
+  <ol class="steps">
+    <li><strong>Wild / fishing:</strong> good biomes + balls farm. Expect long hunts at 1/${shiny}. See <a href="Fishing.html">Fishing</a> and <a href="Spawn_Lookup.html">Spawn lookup</a>.</li>
+    <li><strong>Breeding:</strong> claimed pasture, Ditto + target (or compatible pair), apply Masuda-style parents when you can. Egg timing ~${Math.round((rates.breeding?.minBreedingTimeInTicks ?? 8400) / 20 / 60)}–${Math.round((rates.breeding?.maxBreedingTimeInTicks ?? 18000) / 20 / 60)} min — <a href="Breeding.html">Breeding</a>.</li>
+    <li><strong>Food / cuisine buffs:</strong> CobbleCuisine can offer temporary shiny-related boosts — check food tooltips; don’t build your whole plan on a short buff.</li>
+    <li><strong>Gym progress first:</strong> a shiny does not raise the level cap. Keep badges moving.</li>
+  </ol>
+
+  <h2>What won’t help (myths)</h2>
+  <ul>
+    <li>Standing in a “lucky” chunk without the right spawn / method.</li>
+    <li>Expecting Ditto × Ditto to farm legendaries here — blocked in breeding config.</li>
+    <li>Ignoring claims — someone else can steal your shiny egg project.</li>
+  </ul>
+
+  <div class="callout tip">
+    <div class="label">PokeHaven note</div>
+    Shiny hunting is optional content. For server progress, badges and a claimed base matter more than sparkles.
+  </div>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Breeding.html">Breeding</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Fishing.html">Fishing</a> · <a href="Claims.html">Claims</a></p>
   ${navboxSystems()}
   `,
 });
@@ -1593,7 +1680,8 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens and tiers.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones.</p></a>
-    <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture setup.</p></a>
+    <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture, eggs, Ditto rules.</p></a>
+    <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainer clothes &amp; Pokémon looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Common mistakes</h3><p>Fix these once.</p></a>

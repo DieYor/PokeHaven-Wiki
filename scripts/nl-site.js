@@ -62,6 +62,7 @@ function navboxCore() {
       <a href="Essential_Recipes.html">Essentiële recepten</a>
       <a href="Healing_and_Storage.html">Genezen</a>
       <a href="Breeding.html">Broeden</a>
+      <a href="Shiny.html">Shiny hunting</a>
       <a href="Fishing.html">Vissen</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
@@ -168,7 +169,8 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens en tiers.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones.</p></a>
-    <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture-setup.</p></a>
+    <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture, eieren, Ditto-regels.</p></a>
+    <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainerkleding &amp; Pokémon-looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Veelgemaakte fouten</h3><p>Één keer maken.</p></a>
@@ -1205,21 +1207,90 @@ export function registerDutchSite({
   track("Breeding.html", {
     title: "Broeden",
     breadcrumbs: crumbs({ label: "Broeden", href: "Breeding.html" }),
-    lede: "Broed in een geclaimde pasture bij je base. Eieren kosten enkele minuten — plan farms, geen frantic AFK bij spawn.",
+    lede: "Broed met CobBreeding-pastures op PokeHaven EU. Eieren kosten minuten — claim je farm, plan je AFK.",
+    infobox: `<div class="infobox-title">Broeden</div>
+  <table>
+    <tr><th>Egg-wait</th><td>~7–15 min</td></tr>
+    <tr><th>Hidden Abilities</th><td>Aan</td></tr>
+    <tr><th>Ditto×Ditto legendaries</th><td>Geblokkeerd</td></tr>
+    <tr><th>Shiny-methodes</th><td><a href="Shiny.html">Shiny hunting</a></td></tr>
+  </table>`,
     body: `
   <h2>Setup</h2>
   <ol class="steps">
     <li>Claim met <a href="Claims.html">FTB Chunks</a>.</li>
-    <li>Bouw een kleine pasture bij bed/waystone.</li>
-    <li>Zet een compatible paar (of Ditto + parent) in range.</li>
-    <li>Wacht op eieren — vaak ongeveer <strong>7–15 minuten</strong> per window.</li>
+    <li>Plaats een <strong>pasture</strong>-blok (REI: “pasture”).</li>
+    <li>Bouw een pen bij bed/waystone.</li>
+    <li>Zet een compatible paar (of <strong>Ditto + parent</strong>) in range.</li>
+    <li>Wacht op eieren — pack-config ongeveer <strong>7–15 minuten</strong> per window.</li>
   </ol>
-  <h2>Verwacht</h2>
+  <h2>Regels op PokeHaven</h2>
   <ul>
-    <li>Shiny-odds kunnen verbeteren met Masuda-achtige paren / charm-methodes — nog steeds zeldzaam.</li>
-    <li>Sommige legendary/paradox Ditto-chains kunnen geblokkeerd zijn.</li>
+    <li><strong>Hidden Abilities</strong> kunnen doorgeven (aan in CobBreeding).</li>
+    <li><strong>Ditto + Ditto</strong> farmt hier <em>geen</em> random legendaries / paradox / ultra beasts.</li>
+    <li>Hoppers mogen uit pastures pullen (automatisering ok volgens pack).</li>
   </ul>
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Catching_and_Battling.html">Vangen &amp; vechten</a></p>
+  <h2>Waarvoor broeden?</h2>
+  <ul>
+    <li><strong>Early:</strong> eerst coverage vangen, geen shiny-project vóór badges.</li>
+    <li><strong>Mid:</strong> natures / bruikbare IVs met Ditto + balls-farm.</li>
+    <li><strong>Shiny:</strong> Masuda-style + crystal — zie <a href="Shiny.html">Shiny hunting</a>.</li>
+  </ul>
+  ${critical(
+    "nl",
+    "<strong>Claim de pasture.</strong> Unclaimed eieren/parents = free loot."
+  )}
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Shiny.html">Shiny hunting</a> · <a href="Claims.html">Claims</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Shiny.html", {
+    title: "Shiny hunting",
+    breadcrumbs: crumbs({ label: "Shiny hunting", href: "Shiny.html" }),
+    lede: "Shiny-odds op PokeHaven EU / CobbleVerse — wild vs breeding-methodes uit pack-config.",
+    infobox: `<div class="infobox-title">Shiny-odds</div>
+  <table>
+    <tr><th>Base wild</th><td>1 / 2048</td></tr>
+    <tr><th>Masuda</th><td>×2 (breeding)</td></tr>
+    <tr><th>Crystal</th><td>×2 (breeding)</td></tr>
+    <tr><th>Always</th><td>×8 (breeding)</td></tr>
+  </table>`,
+    body: `
+  <h2>Base rate</h2>
+  <p>Wild shiny-rate uit Cobblemon-config: <strong>1 / 2048</strong>. Dat is je default in het wild of tijdens vissen.</p>
+
+  <h2>Breeding shiny-methodes (CobBreeding)</h2>
+  <p>Egg-rolls kunnen method-multipliers gebruiken. Nog steeds zeldzaam — geen “zo klaar”.</p>
+  <table class="wikitable">
+    <thead><tr><th>Methode</th><th>Multiplier</th><th>Rough (alleen die multiplier op 1/2048)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Masuda</strong></td><td>×2</td><td>~1 / 1024</td></tr>
+      <tr><td><strong>Crystal</strong></td><td>×2</td><td>~1 / 1024</td></tr>
+      <tr><td><strong>Always</strong></td><td>×8</td><td>~1 / 256</td></tr>
+    </tbody>
+  </table>
+  ${critical(
+    "nl",
+    "<strong>Ga er niet van uit dat alles eindeloos stackt.</strong> Check REI / tooltips / CobBreeding in-game hoe Masuda vs crystal vs “always” op jouw paar werkt."
+  )}
+
+  <h2>Praktische loops</h2>
+  <ol class="steps">
+    <li><strong>Wild / vissen:</strong> goede biomes + balls-farm. Lange hunts bij 1/2048 — <a href="Fishing.html">Vissen</a> · <a href="Spawn_Lookup.html">Spawn-lookup</a>.</li>
+    <li><strong>Broeden:</strong> geclaimde pasture, Ditto + target, Masuda-style als het kan — ~7–15 min eggs — <a href="Breeding.html">Broeden</a>.</li>
+    <li><strong>Food-buffs:</strong> CobbleCuisine kan tijdelijke shiny-boosts geven — check tooltips.</li>
+    <li><strong>Gyms eerst:</strong> een shiny verhoogt de level cap niet.</li>
+  </ol>
+
+  <h2>Mythes</h2>
+  <ul>
+    <li>“Lucky chunk” zonder juiste spawn/methode.</li>
+    <li>Ditto×Ditto legendary-farm — hier geblokkeerd.</li>
+    <li>Unclaimed pasture — iemand steelt je project.</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Breeding.html">Broeden</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Claims.html">Claims</a></p>
   ${navboxCore()}
   `,
   });

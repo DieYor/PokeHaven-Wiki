@@ -140,8 +140,14 @@
   {
     "title": "Breeding",
     "href": "pages/Breeding.html",
-    "blurb": "Breed in a claimed pasture near your base. Eggs take several minutes — plan farms, not frantic AFK at spawn.",
-    "keywords": "egg pasture breed shiny masuda"
+    "blurb": "Breed with CobBreeding pastures on PokeHaven EU. Eggs take minutes — claim your farm, then AFK with a plan.",
+    "keywords": "egg pasture breed shiny masuda ditto cobbreeding hatch"
+  },
+  {
+    "title": "Shiny hunting",
+    "href": "pages/Shiny.html",
+    "blurb": "How shiny odds work on PokeHaven EU / CobbleVerse — wild catches vs breeding methods from pack config.",
+    "keywords": "shiny hunting masuda crystal charm rate 2048 breed wild cobblecuisine"
   },
   {
     "title": "Fishing",

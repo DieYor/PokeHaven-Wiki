@@ -146,8 +146,14 @@
   {
     "title": "Broeden",
     "href": "pages/Breeding.html",
-    "blurb": "Broed in een geclaimde pasture bij je base. Eieren kosten enkele minuten — plan farms, geen frantic AFK bij spawn.",
-    "keywords": "egg pasture breed shiny masuda"
+    "blurb": "Broed met CobBreeding-pastures op PokeHaven EU. Eieren kosten minuten — claim je farm, plan je AFK.",
+    "keywords": "egg pasture breed shiny masuda ditto cobbreeding hatch"
+  },
+  {
+    "title": "Shiny hunting",
+    "href": "pages/Shiny.html",
+    "blurb": "Shiny-odds op PokeHaven EU / CobbleVerse — wild vs breeding-methodes uit pack-config.",
+    "keywords": "shiny hunting masuda crystal charm rate 2048 breed wild cobblecuisine"
   },
   {
     "title": "Vissen",

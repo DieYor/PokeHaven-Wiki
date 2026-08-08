@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Raids — PokeHaven EU Wiki</title>
-  <meta name="description" content="Raid dens are crystal fights in the overworld. Bring friends, heals, and type coverage — higher tiers hit harder and pay better." />
-  <link rel="alternate" hreflang="en" href="pages/Raids.html" />
-  <link rel="alternate" hreflang="nl" href="../nl/pages/Raids.html" />
+  <title>Shiny hunting — PokeHaven EU Wiki</title>
+  <meta name="description" content="How shiny odds work on PokeHaven EU / CobbleVerse — wild catches vs breeding methods from pack config." />
+  <link rel="alternate" hreflang="en" href="pages/Shiny.html" />
+  <link rel="alternate" hreflang="nl" href="../nl/pages/Shiny.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -32,7 +32,7 @@
 <a href="Spawn_Lookup.html">Data</a></nav>
       <div class="lang-switch" role="navigation" aria-label="Language">
     <a class="lang-btn active" href="#" hreflang="en" title="English" aria-current="true"><img class="flag-img" src="../assets/flags/gb.svg" width="20" height="14" alt="" /><span class="lang-code">EN</span></a>
-    <a class="lang-btn " href="../nl/pages/Raids.html" hreflang="nl" title="Nederlands" ><img class="flag-img" src="../assets/flags/nl.svg" width="20" height="14" alt="" /><span class="lang-code">NL</span></a>
+    <a class="lang-btn " href="../nl/pages/Shiny.html" hreflang="nl" title="Nederlands" ><img class="flag-img" src="../assets/flags/nl.svg" width="20" height="14" alt="" /><span class="lang-code">NL</span></a>
   </div>
       <div class="search-wrap">
         <input id="wiki-search" type="search" placeholder="Search the wiki…" autocomplete="off" />
@@ -41,93 +41,54 @@
     </div>
   </header>
   <main class="page">
-    <div class="breadcrumbs"><a href="../index.html">Main Page</a> <span aria-hidden="true">/</span> <span>Raids</span></div>
+    <div class="breadcrumbs"><a href="../index.html">Main Page</a> <span aria-hidden="true">/</span> <span>Shiny hunting</span></div>
     <div class="article-layout ">
-      <article class="article" data-page-title="Raids" >
-        <h1 class="article-title">Raids</h1>
-        <p class="article-lede">Raid dens are crystal fights in the overworld. Bring friends, heals, and type coverage — higher tiers hit harder and pay better.</p>
+      <article class="article" data-page-title="Shiny hunting" >
+        <h1 class="article-title">Shiny hunting</h1>
+        <p class="article-lede">How shiny odds work on PokeHaven EU / CobbleVerse — wild catches vs breeding methods from pack config.</p>
         <div class="toc-box" id="toc"><h2>Contents</h2><ol></ol></div>
         
-    <h2>When to raid</h2>
-    <p>Do early dens when you have a stable party and spare balls. Skip high tiers until your level cap and coverage are ready — wipe = wasted time and items.</p>
+  <h2>Base rate</h2>
+  <p>Wild shiny rate from Cobblemon config on this pack: <strong>1 / 2048</strong>. That is the default you should assume when you see a sparkle in the wild or while fishing.</p>
+  <p>Shiny notice particles show within about <strong>48 blocks</strong>.</p>
 
-    <h2>How a den works</h2>
-    <ol class="steps">
-      <li>Find a raid den crystal in the overworld.</li>
-      <li>Start the raid with heals ready (voice chat helps for parties — <a href="Voice_Chat.html">Voice chat</a>).</li>
-      <li>Deal damage — rewards use <strong>DAMAGE</strong> distribution, so contribute.</li>
-      <li>Dens reset after the timer and can cycle boss/tier.</li>
-    </ol>
+  <h2>Breeding shiny methods (CobBreeding)</h2>
+  <p>Egg shiny rolls can use method multipliers from the pack’s CobBreeding config. Treat these as <strong>multipliers on the shiny check</strong> when that method applies — still rare, not “guaranteed soon”.</p>
+  <table class="wikitable">
+    <thead><tr><th>Method</th><th>Multiplier</th><th>Rough guide (if applied alone to 1/2048)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Masuda</strong> (different-language / Masuda-style parents)</td><td>×2</td><td>~1 / 1024</td></tr>
+      <tr><td><strong>Crystal</strong></td><td>×2</td><td>~1 / 1024</td></tr>
+      <tr><td><strong>Always</strong> (strongest configured method)</td><td>×8</td><td>~1 / 256</td></tr>
+    </tbody>
+  </table>
+  <div class="callout critical" role="note">
+  <div class="label">Important</div>
+  <p class="critical-text"><strong>Do not assume every multiplier stacks forever.</strong> Use REI / item tooltips / CobBreeding docs in-game for how Masuda vs crystal vs “always” combine on your pair. The table above is the pack’s configured multipliers.</p>
+</div>
 
-    <div class="callout tip">
-      <div class="label">Party tip</div>
-      Bring type answers for the boss, not six of the same mon. Check <a href="Raid_Bosses.html">Raid bosses</a> before you commit.
-    </div>
+  <h2>Practical hunting loops</h2>
+  <ol class="steps">
+    <li><strong>Wild / fishing:</strong> good biomes + balls farm. Expect long hunts at 1/2048. See <a href="Fishing.html">Fishing</a> and <a href="Spawn_Lookup.html">Spawn lookup</a>.</li>
+    <li><strong>Breeding:</strong> claimed pasture, Ditto + target (or compatible pair), apply Masuda-style parents when you can. Egg timing ~7–15 min — <a href="Breeding.html">Breeding</a>.</li>
+    <li><strong>Food / cuisine buffs:</strong> CobbleCuisine can offer temporary shiny-related boosts — check food tooltips; don’t build your whole plan on a short buff.</li>
+    <li><strong>Gym progress first:</strong> a shiny does not raise the level cap. Keep badges moving.</li>
+  </ol>
 
-    <h2>Tier table</h2>
-    <table class="wikitable">
-      <thead><tr><th>Tier</th><th>Boss lv</th><th>Max players</th><th>IVs</th><th>$ reward</th><th>HP ×</th><th>Max clears</th></tr></thead>
-      <tbody><tr>
-      <td>T1</td>
-      <td>12</td>
-      <td>1</td>
-      <td>0</td>
-      <td>500</td>
-      <td>5</td>
-      <td>3</td>
-    </tr><tr>
-      <td>T2</td>
-      <td>20</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1500</td>
-      <td>7</td>
-      <td>3</td>
-    </tr><tr>
-      <td>T3</td>
-      <td>35</td>
-      <td>3</td>
-      <td>2</td>
-      <td>3000</td>
-      <td>10</td>
-      <td>3</td>
-    </tr><tr>
-      <td>T4</td>
-      <td>45</td>
-      <td>4</td>
-      <td>3</td>
-      <td>5000</td>
-      <td>15</td>
-      <td>3</td>
-    </tr><tr>
-      <td>T5</td>
-      <td>75</td>
-      <td>4</td>
-      <td>4</td>
-      <td>10000</td>
-      <td>20</td>
-      <td>3</td>
-    </tr><tr>
-      <td>T6</td>
-      <td>90</td>
-      <td>4</td>
-      <td>5</td>
-      <td>25000</td>
-      <td>25</td>
-      <td>3</td>
-    </tr><tr>
-      <td>T7</td>
-      <td>100</td>
-      <td>4</td>
-      <td>6</td>
-      <td>50000</td>
-      <td>30</td>
-      <td>3</td>
-    </tr></tbody>
-    </table>
+  <h2>What won’t help (myths)</h2>
+  <ul>
+    <li>Standing in a “lucky” chunk without the right spawn / method.</li>
+    <li>Expecting Ditto × Ditto to farm legendaries here — blocked in breeding config.</li>
+    <li>Ignoring claims — someone else can steal your shiny egg project.</li>
+  </ul>
 
-    <p>Full boss list: <a href="Raid_Bosses.html">Raid bosses</a>.</p>
-    <div class="navbox">
+  <div class="callout tip">
+    <div class="label">PokeHaven note</div>
+    Shiny hunting is optional content. For server progress, badges and a claimed base matter more than sparkles.
+  </div>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Breeding.html">Breeding</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Fishing.html">Fishing</a> · <a href="Claims.html">Claims</a></p>
+  <div class="navbox">
     <div class="navbox-title">PokeHaven systems</div>
     <div class="navbox-row"><div class="navbox-label">Core</div><div class="navbox-links">
       <a href="Economy.html">Economy</a>
@@ -161,9 +122,9 @@
       <a href="Spawn_Lookup.html">Spawn lookup</a>
     </div></div>
   </div>
-    
+  
       </article>
-      <aside class="infobox"><div class="infobox-title">Raid dens</div><table><tr><th>Spawn chance</th><td>1 / 480 (overworld)</td></tr><tr><th>Reset time</th><td>7200s (GAME_TIME)</td></tr><tr><th>Cycle mode</th><td>ALL</td></tr><tr><th>Rewards</th><td>DAMAGE</td></tr><tr><th>Retry fails</th><td>Yes</td></tr><tr><th>Shard energy</th><td>100</td></tr><tr><th>Tier weights</th><td>T1: 10 · T2: 16 · T3: 20 · T4: 24 · T5: 22 · T6: 6 · T7: 2</td></tr></table></aside>
+      <aside class="infobox"><div class="infobox-title">Shiny odds</div><table><tr><th>Base wild rate</th><td>1 / 2048</td></tr><tr><th>Masuda method</th><td>×2 (breeding)</td></tr><tr><th>Crystal method</th><td>×2 (breeding)</td></tr><tr><th>Always method</th><td>×8 (breeding)</td></tr><tr><th>Notice particles</th><td>48 blocks</td></tr></table></aside>
     </div>
   </main>
   <footer class="site-footer">
