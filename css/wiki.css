@@ -1070,30 +1070,63 @@ html.custom-cursor * {
   z-index: 0;
 }
 
+.cursor-ghost {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(94, 196, 200, 0.55) 0%,
+    rgba(94, 196, 200, 0.18) 45%,
+    rgba(94, 196, 200, 0) 72%
+  );
+  opacity: calc(0.42 - var(--i) * 0.045);
+  will-change: transform;
+  z-index: 0;
+  filter: blur(0.4px);
+}
+.cursor-fx.is-hot .cursor-ghost {
+  background: radial-gradient(
+    circle,
+    rgba(240, 180, 41, 0.58) 0%,
+    rgba(94, 196, 200, 0.22) 48%,
+    rgba(240, 180, 41, 0) 72%
+  );
+}
+.cursor-fx.is-text .cursor-ghost,
+.cursor-fx:not(.is-on) .cursor-ghost {
+  opacity: 0;
+}
+
 .cursor-spark {
   position: fixed;
   top: 0;
   left: 0;
-  width: 5px;
-  height: 5px;
-  margin: -2px 0 0 -2px;
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
   border-radius: 50%;
-  background: rgba(94, 196, 200, 0.85);
-  box-shadow: 0 0 8px rgba(94, 196, 200, 0.55);
-  opacity: 0.9;
+  background: rgba(94, 196, 200, 0.9);
+  box-shadow: 0 0 10px rgba(94, 196, 200, 0.65);
+  opacity: 0.95;
   transform: translate3d(0, 0, 0) scale(1);
   transition:
-    opacity 0.38s ease,
-    transform 0.38s ease;
+    opacity 0.42s ease,
+    transform 0.42s ease;
   will-change: transform, opacity;
+  z-index: 0;
 }
 .cursor-spark.is-hot {
-  background: rgba(240, 180, 41, 0.9);
-  box-shadow: 0 0 10px rgba(240, 180, 41, 0.55);
+  background: rgba(240, 180, 41, 0.95);
+  box-shadow: 0 0 12px rgba(240, 180, 41, 0.65);
 }
 .cursor-spark.is-fade {
   opacity: 0;
-  transform: translate3d(0, 0, 0) scale(0.15);
+  transform: translate3d(0, 0, 0) scale(0.12);
 }
 
 .cursor-aura {

@@ -48,6 +48,17 @@
     trailLayer.className = "cursor-trail";
     root.appendChild(trailLayer);
 
+    // Soft ghost chain — reads as a motion trace behind the ball
+    const GHOST_N = 8;
+    const ghosts = [];
+    for (let i = 0; i < GHOST_N; i++) {
+      const g = document.createElement("div");
+      g.className = "cursor-ghost";
+      g.style.setProperty("--i", String(i));
+      trailLayer.appendChild(g);
+      ghosts.push({ el: g, x: 0, y: 0 });
+    }
+
     const aura = document.createElement("div");
     aura.className = "cursor-aura";
     root.appendChild(aura);
@@ -118,18 +129,32 @@
     function spawnTrail(x, y, hot) {
       const p = document.createElement("span");
       p.className = "cursor-spark" + (hot ? " is-hot" : "");
-      const jitterX = (Math.random() - 0.5) * 10;
-      const jitterY = (Math.random() - 0.5) * 10;
+      const jitterX = (Math.random() - 0.5) * 8;
+      const jitterY = (Math.random() - 0.5) * 8;
       p.style.transform = `translate3d(${x + jitterX}px, ${y + jitterY}px, 0)`;
       trailLayer.appendChild(p);
       requestAnimationFrame(() => p.classList.add("is-fade"));
-      window.setTimeout(() => p.remove(), 420);
+      window.setTimeout(() => p.remove(), 480);
     }
 
     function tick() {
-      // Orbit + ring lock to the pokéball; only the soft aura trails slightly
+      // Orbit + ring lock to the pokéball; aura + ghost chain trail behind
       ax += (mx - ax) * 0.22;
       ay += (my - ay) * 0.22;
+
+      // Ball body center (tip hotspot is NW nub)
+      let tx = mx + 14;
+      let ty = my + 15;
+      for (let i = 0; i < ghosts.length; i++) {
+        const g = ghosts[i];
+        const ease = 0.38 - i * 0.03;
+        g.x += (tx - g.x) * ease;
+        g.y += (ty - g.y) * ease;
+        const scale = 1 - i * 0.08;
+        g.el.style.transform = `translate3d(${g.x}px, ${g.y}px, 0) scale(${scale})`;
+        tx = g.x;
+        ty = g.y;
+      }
 
       const pos = `translate3d(${mx}px, ${my}px, 0)`;
       tip.style.transform = pos;
@@ -162,6 +187,10 @@
           visible = true;
           ax = mx;
           ay = my;
+          for (const g of ghosts) {
+            g.x = mx + 14;
+            g.y = my + 15;
+          }
           lastX = mx;
           lastY = my;
           root.classList.add("is-on");
@@ -177,9 +206,10 @@
         const dx = mx - lastX;
         const dy = my - lastY;
         const dist = Math.hypot(dx, dy);
-        if (!onText && dist > 6 && now - lastTrail > 28) {
-          spawnTrail(mx - dx * 0.35, my - dy * 0.35, onHot);
-          if (dist > 18) spawnTrail(mx - dx * 0.7, my - dy * 0.7, onHot);
+        if (!onText && dist > 5 && now - lastTrail > 22) {
+          // Sparks sit along the path for extra shimmer when you move fast
+          spawnTrail(mx + 14 - dx * 0.4, my + 15 - dy * 0.4, onHot);
+          if (dist > 16) spawnTrail(mx + 14 - dx * 0.75, my + 15 - dy * 0.75, onHot);
           lastTrail = now;
           lastX = mx;
           lastY = my;
