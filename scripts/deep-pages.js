@@ -823,16 +823,16 @@ export function registerDeepPages({
       "Example HUD"
     )}
 
-    <h2>Minute-by-minute checklist</h2>
+    <h2>First-hour checklist</h2>
     <ol class="steps">
       <li>Press <kbd>C</kbd> → pick a starter. Grass is the safest into Brock.</li>
-      <li>Open <kbd>E</kbd> and verify starter kit: guide book, Brock map kit (cartography table + key + Empty Map), balls, berries, Trainer Card, backpack.</li>
       <li>Place a bed and sleep once (respawn point).</li>
-      <li>Activate any spawn waystone (right-click).</li>
-      <li>Skim the guide book, then go catch 2–3 nearby Pokémon.</li>
-      <li><a href="Claims.html">Claim</a> your bed/chests before you explore far.</li>
-      <li>Start an apricorn corner + tiny wheat patch (<a href="Poke_Balls.html">Poké Balls</a>, <a href="Economy.html">Economy</a>).</li>
-      <li>When you have a 4–6 team and heals, open the <a href="Brock.html">Brock</a> guide.</li>
+      <li><strong><a href="Claims.html">Claim now</a></strong> with <strong>FTB Chunks</strong> (Esc → Options → Controls → search FTB) — bed, chests, farm. Unclaimed = public loot.</li>
+      <li>Activate any spawn waystone (right-click). Skim the hotbar guidebook.</li>
+      <li>Catch 2–3 nearby Pokémon; keep balls and heals on your hotbar.</li>
+      <li>Craft the <strong>Brock map</strong>: place <strong>Kanto Cartography Table</strong> → put <strong>Empty Map + Brock Map Key</strong> in it (do <strong>not</strong> open the Empty Map in the world) → follow the map. Full fight guide: <a href="Brock.html">Brock</a>.</li>
+      <li>Remember the <a href="Level_Cap.html">level cap</a> stays on until you beat the next gym — intentional on PokeHaven EU.</li>
+      <li>Stuck? Screenshot + Discord <code>#help</code>, or keep reading this wiki.</li>
     </ol>
 
     <h2>Controls you will use constantly</h2>
@@ -864,7 +864,17 @@ export function registerDeepPages({
       <li><strong>Not yet:</strong> mega base, Nether loot runs, legendary hunting, luxury shopping sprees.</li>
     </ul>
 
-    <p class="see-also"><strong>Next:</strong> <a href="Brock.html">Brock</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Roadmap.html">30-day roadmap</a></p>
+    <h2>After Brock — next loop</h2>
+    <ol class="steps">
+      <li>Win Brock → badge → your <a href="Level_Cap.html">level cap</a> rises (check Trainer Card).</li>
+      <li>Heal / restock at base. Keep your claim updated.</li>
+      <li>Craft <strong>Misty’s map</strong>: REI → <strong>Cerulean Star</strong> (seagrass needs <strong>Shears</strong>) + fresh <strong>Empty Map</strong> in the <strong>Kanto Cartography Table</strong>. Do <strong>not</strong> open the Empty Map in the world first.</li>
+      <li>Bring Electric/Grass coverage for Water. Cap while Misty is next is roughly the low–mid 30s — see <a href="Level_Cap.html">Level cap</a>.</li>
+      <li>Follow the map, activate waystones on the road, beat Misty → then <a href="Lt._Surge.html">Lt. Surge</a>.</li>
+    </ol>
+    <p>Full fights: <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · map system: <a href="Gym_Maps.html">Gym maps</a>.</p>
+
+    <p class="see-also"><strong>Next:</strong> <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Roadmap.html">30-day roadmap</a></p>
     `,
   });
 

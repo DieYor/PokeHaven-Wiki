@@ -278,16 +278,16 @@ export function registerDutchSite({
     "Voorbeeld-HUD"
   )}
 
-  <h2>Minuut-voor-minuut checklist</h2>
+  <h2>Eerste-uur checklist</h2>
   <ol class="steps">
     <li>Druk <kbd>C</kbd> → kies starter. Gras is het veiligst tegen Brock.</li>
-    <li>Open <kbd>E</kbd> en check starterkit: guide book, Brock-mapkit (cartography table + key + Empty Map), balls, berries, Trainer Card.</li>
     <li>Plaats een bed en slaap één keer (respawn).</li>
-    <li>Activeer eventuele spawn-waystone (rechtermuisklik).</li>
-    <li>Lees kort het guide book, vang daarna 2–3 Pokémon in de buurt.</li>
-    <li><a href="Claims.html">Claim</a> bed/chests vóór je ver weg gaat.</li>
-    <li>Start een apricorn-hoekje + klein wheat-veld (<a href="Poke_Balls.html">Poké Balls</a>, <a href="Economy.html">Economie</a>).</li>
-    <li>Met team 4–6 en heals: open de <a href="Brock.html">Brock</a>-gids.</li>
+    <li><strong><a href="Claims.html">Claim nu</a></strong> met <strong>FTB Chunks</strong> (Esc → Opties → Besturing → zoek FTB) — bed, chests, farm. Unclaimed = publieke loot.</li>
+    <li>Activeer eventuele spawn-waystone (rechtermuisklik). Lees kort het guideboek in je hotbar.</li>
+    <li>Vang 2–3 Pokémon in de buurt; houd balls en heals op je hotbar.</li>
+    <li>Craft de <strong>Brock-map</strong>: plaats <strong>Kanto Cartography Table</strong> → doe <strong>Empty Map + Brock Map Key</strong> erin (open de Empty Map <strong>niet</strong> in de wereld) → volg de map. Fight-gids: <a href="Brock.html">Brock</a>.</li>
+    <li>De <a href="Level_Cap.html">level cap</a> blijft aan tot de volgende gym — bewust op PokeHaven EU.</li>
+    <li>Vast? Screenshot + Discord <code>#help</code>, of blijf lezen op deze wiki.</li>
   </ol>
 
   <h2>Controls die je constant gebruikt</h2>
@@ -318,7 +318,18 @@ export function registerDutchSite({
     <li><strong>Ja:</strong> starter + 2–3 catches, eten, bed, claim, stenen tools, map op hotbar, paar crafted balls.</li>
     <li><strong>Nog niet:</strong> mega-base, Nether-loot runs, legendary hunts, luxury shopping.</li>
   </ul>
-  <p class="see-also"><strong>Volgende:</strong> <a href="Brock.html">Brock</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Roadmap.html">30-dagen roadmap</a></p>
+
+  <h2>Na Brock — volgende loop</h2>
+  <ol class="steps">
+    <li>Win Brock → badge → je <a href="Level_Cap.html">level cap</a> gaat omhoog (check Trainer Card).</li>
+    <li>Healen / restocken in je base. Claim bijhouden.</li>
+    <li>Craft <strong>Misty’s map</strong>: REI → <strong>Cerulean Star</strong> (seagrass met <strong>Shears</strong>) + verse <strong>Empty Map</strong> in de <strong>Kanto Cartography Table</strong>. Open de Empty Map <strong>niet</strong> eerst in de wereld.</li>
+    <li>Neem Electric/Grass mee vs Water. Cap terwijl Misty next is: ongeveer low–mid 30s — zie <a href="Level_Cap.html">Level cap</a>.</li>
+    <li>Volg de map, activeer waystones onderweg, versla Misty → daarna <a href="Lt._Surge.html">Lt. Surge</a>.</li>
+  </ol>
+  <p>Volledige fights: <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · maps: <a href="Gym_Maps.html">Gym-maps</a>.</p>
+
+  <p class="see-also"><strong>Volgende:</strong> <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Roadmap.html">30-dagen roadmap</a></p>
   ${navboxCore()}
   `,
   });
