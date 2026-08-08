@@ -1601,6 +1601,14 @@ export function registerDutchSite({
   <h2>Base rate</h2>
   <p>Wild shiny-rate uit Cobblemon-config: <strong>1 / 2048</strong>. Dat is je default in het wild of tijdens vissen.</p>
 
+  <h2>Shiny Hour (donatie-event)</h2>
+  <p>Soms funded de community een <strong>Shiny Hour</strong>: <strong>60 minuten</strong> lang zijn wild shiny-odds <strong>2×</strong> voor <strong>iedereen</strong> online (1/2048 → 1/1024). Server-wide event — geen persoonlijke donor-boost.</p>
+  <ul>
+    <li>Fund via PayPal (notitie <code>Shiny Hour</code> + Discord-naam) — zie Discord announcements / donations.</li>
+    <li>Alleen <strong>nieuwe</strong> wild-/vis-spawns gebruiken de boost.</li>
+    <li>Broed-methodes (Masuda / crystal) blijven bovenop de wild-base werken.</li>
+  </ul>
+
   <h2>Breeding shiny-methodes (CobBreeding)</h2>
   <p>Egg-rolls kunnen method-multipliers gebruiken. Nog steeds zeldzaam — geen “zo klaar”.</p>
   <table class="wikitable">

@@ -1417,6 +1417,14 @@ writePage("Shiny.html", {
   <p>Wild shiny rate from Cobblemon config on this pack: <strong>1 / ${shiny}</strong>. That is the default you should assume when you see a sparkle in the wild or while fishing.</p>
   <p>Shiny notice particles show within about <strong>${rates.cobblemon?.shinyNoticeParticlesDistance ?? 48} blocks</strong>.</p>
 
+  <h2>Shiny Hour (donation event)</h2>
+  <p>Sometimes the community funds a <strong>Shiny Hour</strong>: for <strong>60 minutes</strong>, wild shiny odds are <strong>2×</strong> for <strong>everyone</strong> online (1/${shiny} → 1/${Math.round(shiny / 2)}). It is a server-wide event — not a personal donor boost.</p>
+  <ul>
+    <li>Fund via PayPal (note <code>Shiny Hour</code> + Discord name) — see Discord announcements / donations.</li>
+    <li>Only <strong>new</strong> wild / fishing spawns use the boosted rate.</li>
+    <li>Breeding Masuda / crystal methods still apply on top of the wild base.</li>
+  </ul>
+
   <h2>Breeding shiny methods (CobBreeding)</h2>
   <p>Egg shiny rolls can use method multipliers from CobBreeding. Treat these as <strong>multipliers on the shiny check</strong> when that method applies — still rare, not “guaranteed soon”.</p>
   <table class="wikitable">
