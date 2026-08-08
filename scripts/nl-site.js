@@ -151,6 +151,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>Alle 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — diepe gidsen.</p></a>
     <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps en trainerlijst — diepe gidsen volgen.</p></a>
+    <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Maps en trainerlijst — diepe gidsen volgen.</p></a>
     <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Tweede gym, diepe gids.</p></a>
     <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>Eerste Johto-gym — Flying.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym-maps</h3><p>Cartography &amp; coördinaten.</p></a>
@@ -1924,17 +1925,53 @@ export function registerDutchSite({
     });
   }
 
-  // Region overviews (thin stubs)
-  for (const [file, title, blurb] of [
-    ["Gyms_Sinnoh.html", "Sinnoh", "Late-game regio-overzicht voor Sinnoh."],
-  ]) {
-    track(file, {
-      title,
-      breadcrumbs: crumbs({ label: title, href: file }),
-      lede: blurb,
+  // Sinnoh hub — zelfde opzet als Hoenn
+  {
+    const sinnohNamed = trainers.all
+      .filter((t) => t.region === "sinnoh" && !String(t.id).includes("groups"))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const previewRows = sinnohNamed
+      .map((t) => {
+        const levels = (t.team || []).map((m) => m.level).filter((x) => x != null);
+        const lv =
+          levels.length > 0
+            ? `${levels[0]}–${levels[levels.length - 1]}`
+            : "—";
+        return `<tr>
+      <td>${esc(t.name)}</td>
+      <td><code>${esc(t.id)}</code></td>
+      <td>${(t.team || []).length}</td>
+      <td>${esc(lv)}</td>
+    </tr>`;
+      })
+      .join("");
+    track("Gyms_Sinnoh.html", {
+      title: "Sinnoh-gyms",
+      breadcrumbs: crumbs({ label: "Sinnoh-gyms", href: "Gyms_Sinnoh.html" }),
+      lede: "Sinnoh opent na Hoenn Champion Rocco. Volledige walkthroughs zoals Kanto en Johto worden nog geschreven — begin met de gym-maps en de trainerlijst hieronder.",
       body: `
-  <p>${esc(blurb)}</p>
-  <p>Engelse pagina met details: <a href="../../pages/${file}">${esc(title)} (EN)</a>. Startregio: <a href="Gyms_Kanto.html">Kanto</a> · daarna <a href="Gyms_Johto.html">Johto</a> · <a href="Gyms_Hoenn.html">Hoenn</a>.</p>
+  <div class="callout tip">
+    <div class="label">Nog in de maak</div>
+    Volledige leader-pagina’s (teams, coverage, map-keys, walkthroughs) komen later.
+    Rond eerst <a href="Gyms_Hoenn.html">Hoenn</a> af — deze hub groeit daarna op dezelfde manier.
+  </div>
+
+  <h2>Unlock (als je hier bent)</h2>
+  <ol class="steps">
+    <li>Versla Hoenn Champion <strong>Rocco</strong> (na de Hoenn-league).</li>
+    <li>Volg je Trainer Card-unlocks naar Sinnoh.</li>
+    <li>Gebruik de <strong>Sinnoh Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader-tip daar: <strong>Pedro</strong>.</li>
+  </ol>
+
+  <h2>Named Sinnoh-trainers</h2>
+  <p class="muted">Kort overzicht voor nu — diepe gidsen volgen. Zoeken: <a href="Trainer_Index.html">Trainer-index</a> · achievements: <a href="Achievements.html">Achievements</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
+    <tbody>${previewRows || "<tr><td colspan=4>Nog geen Sinnoh-trainers opgelijst.</td></tr>"}</tbody>
+  </table>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Hoenn.html">Hoenn-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Progression.html">Progressie</a> · <a href="Achievements.html">Achievements</a></p>
+  ${navboxCore()}
   `,
     });
   }

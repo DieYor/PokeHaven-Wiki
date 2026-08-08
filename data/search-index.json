@@ -324,12 +324,6 @@
     "keywords": ""
   },
   {
-    "title": "Sinnoh overview",
-    "href": "pages/Gyms_Sinnoh.html",
-    "blurb": "Sinnoh is late-game CobbleVerse content — tougher teams and longer routes.",
-    "keywords": ""
-  },
-  {
     "title": "Johto gyms",
     "href": "pages/Gyms_Johto.html",
     "blurb": "Checklist for the Johto challenge on CobbleVerse / PokeHaven EU after Champion Blue. Open a leader page for full teams and prep tips.",
@@ -340,6 +334,12 @@
     "href": "pages/Gyms_Hoenn.html",
     "blurb": "Hoenn opens after the Johto Champion. Full walkthroughs like Kanto and Johto are still being written — start with the gym maps and the trainer list below.",
     "keywords": "hoenn petra gym maps cartography coming soon"
+  },
+  {
+    "title": "Sinnoh gyms",
+    "href": "pages/Gyms_Sinnoh.html",
+    "blurb": "Sinnoh opens after Hoenn Champion Rocco. Full walkthroughs like Kanto and Johto are still being written — start with the gym maps and the trainer list below.",
+    "keywords": "sinnoh pedro rocco gardenia camilla gym maps cartography coming soon"
   },
   {
     "title": "Valerio",

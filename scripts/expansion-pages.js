@@ -223,21 +223,5 @@ export function registerExpansionPages({
   }
 
   // Gyms_Johto.html is written as a deep hub + leader pages in build.js (same depth as Kanto).
-
-  // Gyms_Hoenn.html is written in build.js (under-construction hub for now).
-
-  regionPage(
-    "Sinnoh",
-    "Gyms_Sinnoh.html",
-    "sinnoh",
-    "Sinnoh is late-game CobbleVerse content — tougher teams and longer routes.",
-    {
-      unlock: "After Hoenn Champion progression.",
-      prep: [
-        "Near-complete coverage team in the PC",
-        "Raid experience for cash/items",
-        "Do not under-level into league content",
-      ],
-    }
-  );
+  // Gyms_Hoenn.html + Gyms_Sinnoh.html are written in build.js (still-being-written hubs).
 }
