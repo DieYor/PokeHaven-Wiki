@@ -162,10 +162,22 @@
     "keywords": "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup"
   },
   {
+    "title": "Cobbleworkers",
+    "href": "pages/Cobbleworkers.html",
+    "blurb": "Put Pokémon in a Pasture and they work nearby — harvest crops, fill cauldrons, fuel furnaces, and more. This is automation, not a salary job.",
+    "keywords": "cobbleworkers pasture worker pokemon job crop berry apricorn farm automate harvest furnace cauldron"
+  },
+  {
     "title": "Claims",
     "href": "pages/Claims.html",
     "blurb": "If it is not claimed, it is not safe. Protect beds, chests, farms, and waystones with FTB Chunks on PokeHaven EU — do this in your first minutes.",
     "keywords": "claim ftb chunks protect grief chest land party"
+  },
+  {
+    "title": "Quests",
+    "href": "pages/Quests.html",
+    "blurb": "PokeHaven EU ships a full FTB Quests book — guided First Steps, every gym through Sinnoh, plus crafting, breeding, raids, Pokédex, and legend goals. Open it wit",
+    "keywords": "ftb quests quest book o first steps settling gym league breeding raid pokedex legend trail"
   },
   {
     "title": "Rules & commands",
@@ -200,7 +212,7 @@
   {
     "title": "Achievements",
     "href": "pages/Achievements.html",
-    "blurb": "In-game you have two main Pokémon advancement tabs: CobbleVerse (69 gym / league / legendary goals) and Cobblemon (5 catching, farming, fossils…). Vanilla Minec",
+    "blurb": "In-game you have two main Pokémon advancement tabs: CobbleVerse (69 gym / league / legendary goals) and Cobblemon (65 catching, farming, fossils…). Vanilla Mine",
     "keywords": "achievement advancement toast checklist kanto mew mewtwo articuno zapdos moltres L key cobblemon berry apricorn fossil vivillon shiny catch"
   },
   {
@@ -226,12 +238,6 @@
     "href": "pages/Outfits_and_Cosmetics.html",
     "blurb": "Look the part on PokeHaven EU: craftable trainer outfits for you, plus Pokémon cosmetics (costumes, scarves, Furfrou cuts).",
     "keywords": "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing"
-  },
-  {
-    "title": "Trainer tags",
-    "href": "pages/Trainer_Tags.html",
-    "blurb": "Pick a cosmetic chat tag on PokeHaven EU with /prefix. Looks only — no gameplay advantages.",
-    "keywords": "prefix /prefix trainer tag chat tag supporter patron benefactor donor donation cosmetic no tag luckperms"
   },
   {
     "title": "Riding and flying",

@@ -426,76 +426,7 @@ export function registerDeepPages({
       </tbody>
     </table>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Trainer_Tags.html">Trainer tags</a> · <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Getting_Started.html">Getting started</a></p>
-    ${navboxSystems()}
-    `,
-  });
-
-  writePage("Trainer_Tags.html", {
-    title: "Trainer tags",
-    breadcrumbs: [
-      { label: "Main Page", href: "../index.html" },
-      { label: "Trainer tags", href: "Trainer_Tags.html" },
-    ],
-    lede: "Pick a <strong>cosmetic chat tag</strong> on PokeHaven EU with <code>/prefix</code>. Looks only — no gameplay advantages.",
-    infobox: `<div class="infobox-title">Trainer tags</div>
-    <table>
-      <tr><th>Command</th><td><code>/prefix</code></td></tr>
-      <tr><th>Type</th><td>Cosmetic chat prefix</td></tr>
-      <tr><th>Client</th><td>PokeHaven EU Client (mod included)</td></tr>
-      <tr><th>Gameplay perks</th><td>None</td></tr>
-    </table>`,
-    body: `
-    <div class="callout tip">
-      <div class="label">Cosmetic only</div>
-      Trainer tags change how your name looks in chat. They do <strong>not</strong> affect shiny odds, catch rates, XP, claims, or gym progression.
-    </div>
-
-    <h2>How to use</h2>
-    <ol class="steps">
-      <li>Join with the <strong>PokeHaven EU Client</strong> (the Prefix mod is already in the zip).</li>
-      <li>Type <code>/prefix</code> in chat.</li>
-      <li>A Pokédex-style menu opens with the tags you own.</li>
-      <li>Click a tag to equip it — or choose <strong>No Tag</strong> to hide every trainer tag.</li>
-    </ol>
-    <div class="callout tip">
-      <div class="label">Empty menu?</div>
-      If you only see <strong>No Tag</strong>, you have not unlocked a donor tag yet. Donate via Discord (staff logs lifetime totals) — then rejoin or ask staff if the group did not sync.
-    </div>
-
-    <h2>Donor tags</h2>
-    <p>Lifetime donation totals unlock Discord roles and matching in-game tags. Thresholds:</p>
-    <table class="wikitable">
-      <thead><tr><th>Lifetime</th><th>Tag</th><th>Looks like</th></tr></thead>
-      <tbody>
-        <tr><td>€10+</td><td>Supporter</td><td>aqua <code>[Supporter]</code></td></tr>
-        <tr><td>€50+</td><td>Patron</td><td>gold <code>[Patron]</code></td></tr>
-        <tr><td>€100+</td><td>Benefactor</td><td>light purple <code>[Benefactor]</code></td></tr>
-        <tr><td>—</td><td>No Tag</td><td>Hides all trainer tags</td></tr>
-      </tbody>
-    </table>
-    <p>Higher tiers keep access to lower tags — pick whichever you want in <code>/prefix</code>.</p>
-    <p>Donation links and instructions live in Discord. Optional support only; the server stays free to play.</p>
-
-    <h2>Requirements</h2>
-    <ul>
-      <li><strong>Server:</strong> LuckPerms + PokeHaven Prefix mod</li>
-      <li><strong>Client:</strong> same Prefix mod (bundled in the PokeHaven EU Client zip)</li>
-      <li>Staff tags (Admin / Mod) only appear if you have those groups — most players never see them</li>
-    </ul>
-
-    <h2>Quick FAQ</h2>
-    <table class="wikitable">
-      <thead><tr><th>Question</th><th>Answer</th></tr></thead>
-      <tbody>
-        <tr><td>Does a tag help in battles?</td><td>No — cosmetic only.</td></tr>
-        <tr><td>Can I hide my tag?</td><td>Yes — open <code>/prefix</code> → <strong>No Tag</strong>.</td></tr>
-        <tr><td>I donated but see no tag</td><td>Ask staff in a Discord ticket (include Discord name + in-game name). Then use <code>/prefix</code>.</td></tr>
-        <tr><td>Old client / missing menu</td><td>Re-import the latest <strong>PokeHaven EU Client</strong> zip from Discord / Drive.</td></tr>
-      </tbody>
-    </table>
-
-    <p class="see-also"><strong>See also:</strong> <a href="Rules_and_Commands.html">Rules &amp; commands</a> · <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a> · <a href="FAQ.html">FAQ</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Pack_Differences.html">Pack differences</a> · <a href="Getting_Started.html">Getting started</a></p>
     ${navboxSystems()}
     `,
   });
@@ -652,7 +583,7 @@ export function registerDeepPages({
         <tr class="critical-row"><td>Wrong pack version</td><td>Cannot join</td><td>Re-import shared 1.7.42 zip from Discord <code>#how-to-join</code></td></tr>
         <tr class="critical-row"><td>Old IP from a screenshot</td><td>Cannot connect</td><td>Copy live IP from Discord <code>#how-to-join</code> only</td></tr>
         <tr class="critical-row"><td>Ignoring level cap</td><td>“XP broken”</td><td><a href="Level_Cap.html">Beat next gym</a> — cap stays on</td></tr>
-        <tr class="critical-row"><td>No claim / wrong claim mod</td><td>Items stolen</td><td><a href="Claims.html">FTB Chunks</a> only (not Open Parties)</td></tr>
+        <tr class="critical-row"><td>No claim</td><td>Items stolen</td><td><a href="Claims.html">FTB Chunks</a> only</td></tr>
         <tr class="critical-row"><td>Right-click Empty Map</td><td>Cannot craft gym map</td><td>Fresh Empty Map + <a href="Gym_Maps.html">region cartography table</a></td></tr>
         <tr class="critical-row"><td>Wrong region cartography table</td><td>Map won’t craft / wrong region</td><td>Kanto table for Kanto; Johto/Hoenn/Sinnoh tables later — <a href="Gym_Maps.html">Gym maps</a></td></tr>
         <tr class="critical-row"><td>Hand-breaking seagrass</td><td>0 Cerulean Star mats</td><td>Shears — <a href="Misty.html">Misty</a></td></tr>
@@ -747,14 +678,15 @@ export function registerDeepPages({
     infobox: `<div class="infobox-title">Claims</div>
     <table>
       <tr><th>System</th><td>FTB Chunks only</td></tr>
-      <tr><th>Open map</th><td>Esc → Options → Controls → search <em>FTB</em> / <em>Chunks</em></td></tr>
+      <tr><th>Claim Manager</th><td><kbd>U</kbd></td></tr>
+      <tr><th>Chunk map</th><td><kbd>M</kbd></td></tr>
       <tr><th>Must cover</th><td>Bed, chests, farm, waystone</td></tr>
-      <tr><th>Avoid</th><td>Open Parties and Claims on the same base</td></tr>
+      <tr><th>Avoid</th><td>Other claim mods (OPAC removed)</td></tr>
     </table>`,
     body: `
     ${critical(
       "en",
-      "<strong>On PokeHaven EU, only FTB Chunks counts.</strong> Unclaimed chests are public loot. The pack also has Open Parties and Claims — don’t use it for your base; mixing both gets messy."
+      "<strong>On PokeHaven EU, only FTB Chunks counts.</strong> Unclaimed chests are public loot. Open Parties and Claims (OPAC) has been removed from the pack."
     )}
 
     ${figure(
@@ -765,7 +697,7 @@ export function registerDeepPages({
 
     <h2>60-second walkthrough</h2>
     <ol class="steps">
-      <li>Esc → Options → Controls → search <em>FTB</em> or <em>Chunks</em> → bind / open the claim map.</li>
+      <li>Press <kbd>U</kbd> for the Claim Manager, or <kbd>M</kbd> for the FTB Chunks map.</li>
       <li>Claim the chunks under your bed, chests, farm, and waystone.</li>
       <li>Claim a 1-chunk buffer around the build.</li>
       <li>Playing with friends? Create an <strong>FTB Team</strong> and share the claim.</li>
@@ -790,7 +722,7 @@ export function registerDeepPages({
     <ul>
       <li>Building first, claiming later — loot walks away.</li>
       <li>Claiming the house but not the farm or waystone.</li>
-      <li>Using Open Parties and Claims instead of (or on top of) FTB Chunks.</li>
+      <li>Installing another claim mod next to FTB Chunks (OPAC was removed — do not add it back).</li>
       <li>Forgetting to expand the claim when the base grows.</li>
     </ul>
 
@@ -909,7 +841,7 @@ export function registerDeepPages({
     <ol class="steps">
       <li>Press <kbd>C</kbd> → pick a starter. Grass is the safest into Brock.</li>
       <li>Place a bed and sleep once (respawn point).</li>
-      <li><strong><a href="Claims.html">Claim now</a></strong> with <strong>FTB Chunks</strong> (Esc → Options → Controls → search FTB) — bed, chests, farm, waystone. Unclaimed = public loot.</li>
+      <li><strong><a href="Claims.html">Claim now</a></strong> with <strong>FTB Chunks</strong> — press <kbd>U</kbd> (Claim Manager) or <kbd>M</kbd> (map) — bed, chests, farm, waystone. Unclaimed = public loot.</li>
       <li>Activate any spawn waystone (right-click). Skim the hotbar guidebook.</li>
       <li>Catch 2–3 nearby Pokémon; keep balls and heals on your hotbar.</li>
       <li>Craft the <strong>Brock map</strong>: place <strong>Kanto Cartography Table</strong> → put <strong>Empty Map + Brock Map Key</strong> in it (do <strong>not</strong> open the Empty Map in the world) → follow the map. Full fight guide: <a href="Brock.html">Brock</a>.</li>
@@ -923,7 +855,14 @@ export function registerDeepPages({
       <tbody>
         <tr><td>Party / starter</td><td><kbd>C</kbd></td><td>Pick starter and manage team</td></tr>
         <tr><td>Select send-out</td><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Stops “wrong Pokémon” mistakes</td></tr>
-        <tr><td>Send / recall</td><td><kbd>R</kbd></td><td>Starts battles</td></tr>
+        <tr><td>Throw / recall</td><td><kbd>R</kbd></td><td>Send out the selected Pokémon</td></tr>
+        <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight — start a fight</td></tr>
+        <tr><td>Quest book</td><td><kbd>O</kbd></td><td>FTB Quests — First Steps</td></tr>
+        <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claims — <a href="Claims.html">Claims</a></td></tr>
+        <tr><td>Chunk map</td><td><kbd>M</kbd></td><td>FTB Chunks map</td></tr>
+        <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
+        <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>K</kbd>, group <kbd>B</kbd></td></tr>
+        <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Get off your mount</td></tr>
         <tr><td>Ride</td><td><kbd>Shift</kbd> + right-click</td><td>See <a href="Riding.html">Riding</a></td></tr>
         <tr><td>PC</td><td><code>/pc</code></td><td><a href="Healing_and_Storage.html">Storage</a></td></tr>
       </tbody>

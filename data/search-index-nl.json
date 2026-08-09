@@ -60,6 +60,12 @@
     "keywords": "claim ftb chunks protect grief chest land party"
   },
   {
+    "title": "Quests",
+    "href": "pages/Quests.html",
+    "blurb": "PokeHaven EU heeft een volledig FTB Quests-boek — First Steps, alle gyms tot Sinnoh, plus craft, broeden, raids, Pokédex en legend-doelen. Open met O.",
+    "keywords": "ftb quests quest book o first steps settling gym league breeding raid pokedex legend trail"
+  },
+  {
     "title": "Reizen",
     "href": "pages/Travel.html",
     "blurb": "Waystones zijn gratis snelle travel op PokeHaven EU. Combineer ze met gym-maps, Xaero-pins en een mount zodat je nooit dezelfde 2000 blokken opnieuw loopt.",
@@ -128,7 +134,7 @@
   {
     "title": "Achievements",
     "href": "pages/Achievements.html",
-    "blurb": "In-game heb je twee grote Pokémon-advancement tabs: CobbleVerse (69 gym / league / legendary-doelen) en Cobblemon (5 vangen, farming, fossils…). Vanilla Minecra",
+    "blurb": "In-game heb je twee grote Pokémon-advancement tabs: CobbleVerse (69 gym / league / legendary-doelen) en Cobblemon (65 vangen, farming, fossils…). Vanilla Minecr",
     "keywords": "achievement advancement toast checklist kanto mew mewtwo articuno zapdos moltres L key cobblemon berry apricorn fossil vivillon shiny catch"
   },
   {
@@ -148,12 +154,6 @@
     "href": "pages/Outfits_and_Cosmetics.html",
     "blurb": "Zie eruit als trainer op PokeHaven EU: craftbare outfits voor jou, plus Pokémon-cosmetics (costumes, sjaals, Furfrou-cuts).",
     "keywords": "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing"
-  },
-  {
-    "title": "Trainer-tags",
-    "href": "pages/Trainer_Tags.html",
-    "blurb": "Kies een cosmetische chat-tag op PokeHaven EU met /prefix. Alleen looks — geen gameplay-voordelen.",
-    "keywords": "prefix /prefix trainer tag chat tag supporter patron benefactor donor donation cosmetic no tag luckperms"
   },
   {
     "title": "Broeden",
@@ -178,6 +178,12 @@
     "href": "pages/Fishing.html",
     "blurb": "Op CobbleVerse / PokeHaven EU kun je Pokémon vissen — niet alleen vanilla vis. Gebruik Cobblemon-hengels in het juiste waterbiome.",
     "keywords": "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup"
+  },
+  {
+    "title": "Cobbleworkers",
+    "href": "pages/Cobbleworkers.html",
+    "blurb": "Zet Pokémon in een Pasture en ze werken in de buurt — crops oogsten, cauldrons vullen, ovens voeden, enz. Dit is automatisering, geen salaris-job.",
+    "keywords": "cobbleworkers pasture worker pokemon job crop berry apricorn farm automate harvest furnace cauldron"
   },
   {
     "title": "Rijden &amp; vliegen",

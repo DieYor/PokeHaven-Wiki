@@ -60,13 +60,14 @@ function navboxCore() {
       <a href="Catching_and_Battling.html">Vangen &amp; vechten</a>
       <a href="Poke_Balls.html">Poké Balls</a>
       <a href="Essential_Recipes.html">Essentiële recepten</a>
+      <a href="Quests.html">Quests</a>
       <a href="Healing_and_Storage.html">Genezen</a>
       <a href="Breeding.html">Broeden</a>
       <a href="Shiny.html">Shiny hunting</a>
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Vissen</a>
+      <a href="Cobbleworkers.html">Cobbleworkers</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
-      <a href="Trainer_Tags.html">Trainer-tags</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Wereld</div><div class="navbox-links">
       <a href="Claims.html">Claims</a>
@@ -142,6 +143,7 @@ export function registerDutchSite({
   <div class="hub-grid">
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Aan de slag</h3><p>Installeer 1.7.42 en join.</p></a>
     <a class="hub-card" href="pages/First_Hours.html"><h3>Eerste uren</h3><p>Claim, Brock, daarna Misty-loop.</p></a>
+    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>Druk O — First Steps tot Sinnoh.</p></a>
     <a class="hub-card" href="pages/Brock.html"><h3>Brock</h3><p>Eerste gym, diepe gids.</p></a>
     <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Waarom XP stopt — en de ladder.</p></a>
     <a class="hub-card" href="pages/Essential_Recipes.html"><h3>Essentiële recepten</h3><p>Balls, maps, tools, REI.</p></a>
@@ -177,12 +179,13 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Vangen &amp; vechten</h3><p>Combat-primer.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens, tiers, damage-share.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
+    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>FTB Quests-boek &amp; chapters.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones, maps en BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture, eieren, Ditto-regels.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
+    <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture-jobs — crops, berries, ovens en meer.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainerkleding &amp; Pokémon-looks.</p></a>
-    <a class="hub-card" href="pages/Trainer_Tags.html"><h3>Trainer-tags</h3><p>Chat-tags via /prefix.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Veelgemaakte fouten</h3><p>Één keer maken.</p></a>
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Regels &amp; commands</h3><p>Serverregels, /pc, toetsen.</p></a>
   </div>
@@ -293,7 +296,7 @@ export function registerDutchSite({
   <ol class="steps">
     <li>Druk <kbd>C</kbd> → kies starter. Gras is het veiligst tegen Brock.</li>
     <li>Plaats een bed en slaap één keer (respawn).</li>
-    <li><strong><a href="Claims.html">Claim nu</a></strong> met <strong>FTB Chunks</strong> (Esc → Opties → Besturing → zoek FTB) — bed, chests, farm, waystone. Unclaimed = publieke loot.</li>
+    <li><strong><a href="Claims.html">Claim nu</a></strong> met <strong>FTB Chunks</strong> — druk <kbd>U</kbd> (Claim Manager) of <kbd>M</kbd> (kaart) — bed, chests, farm, waystone. Unclaimed = publieke loot.</li>
     <li>Activeer eventuele spawn-waystone (rechtermuisklik). Lees kort het guideboek in je hotbar.</li>
     <li>Vang 2–3 Pokémon in de buurt; houd balls en heals op je hotbar.</li>
     <li>Craft de <strong>Brock-map</strong>: plaats <strong>Kanto Cartography Table</strong> → doe <strong>Empty Map + Brock Map Key</strong> erin (open de Empty Map <strong>niet</strong> in de wereld) → volg de map. Fight-gids: <a href="Brock.html">Brock</a>.</li>
@@ -307,7 +310,14 @@ export function registerDutchSite({
     <tbody>
       <tr><td>Party / starter</td><td><kbd>C</kbd></td><td>Starter kiezen en team beheren</td></tr>
       <tr><td>Selecteer send-out</td><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Voorkomt verkeerde Pokémon</td></tr>
-      <tr><td>Send / recall</td><td><kbd>R</kbd></td><td>Start gevechten</td></tr>
+      <tr><td>Gooi / recall</td><td><kbd>R</kbd></td><td>Geselecteerde Pokémon uitsturen</td></tr>
+      <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight — gevecht starten</td></tr>
+      <tr><td>Questboek</td><td><kbd>O</kbd></td><td>FTB Quests — First Steps</td></tr>
+      <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claimen — <a href="Claims.html">Claims</a></td></tr>
+      <tr><td>Chunk-map</td><td><kbd>M</kbd></td><td>FTB Chunks-kaart</td></tr>
+      <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>K</kbd>, groep <kbd>B</kbd></td></tr>
+      <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Van mount afstappen</td></tr>
       <tr><td>Ride</td><td><kbd>Shift</kbd> + rechtermuisklik</td><td>Zie <a href="Riding.html">Rijden</a></td></tr>
       <tr><td>PC</td><td><code>/pc</code></td><td><a href="Healing_and_Storage.html">Opslag</a></td></tr>
     </tbody>
@@ -613,14 +623,15 @@ export function registerDutchSite({
     infobox: `<div class="infobox-title">Claims</div>
   <table>
     <tr><th>Systeem</th><td>Alleen FTB Chunks</td></tr>
-    <tr><th>Kaart openen</th><td>Esc → Options → Controls → zoek <em>FTB</em> / <em>Chunks</em></td></tr>
+    <tr><th>Claim Manager</th><td><kbd>U</kbd></td></tr>
+    <tr><th>Chunk-map</th><td><kbd>M</kbd></td></tr>
     <tr><th>Moet erin</th><td>Bed, chests, farm, waystone</td></tr>
-    <tr><th>Vermijd</th><td>Open Parties and Claims op dezelfde basis</td></tr>
+    <tr><th>Vermijd</th><td>Andere claim-mods (OPAC is verwijderd)</td></tr>
   </table>`,
     body: `
   ${critical(
     "nl",
-    "<strong>Op PokeHaven EU telt alleen FTB Chunks.</strong> Unclaimed chests zijn publieke loot. De pack heeft ook Open Parties and Claims — niet gebruiken voor je base; mengen wordt rommelig."
+    "<strong>Op PokeHaven EU telt alleen FTB Chunks.</strong> Unclaimed chests zijn publieke loot. Open Parties and Claims (OPAC) is uit de pack gehaald."
   )}
 
   ${figure(
@@ -631,7 +642,7 @@ export function registerDutchSite({
 
   <h2>Walkthrough in 60 seconden</h2>
   <ol class="steps">
-    <li>Esc → Options → Controls → zoek <em>FTB</em> of <em>Chunks</em> → bind/open de claimkaart.</li>
+    <li>Druk <kbd>U</kbd> voor de Claim Manager, of <kbd>M</kbd> voor de FTB Chunks-kaart.</li>
     <li>Claim chunks onder bed, chests, farm en waystone.</li>
     <li>Claim een buffer van 1 chunk rond je build.</li>
     <li>Met vrienden? Maak een <strong>FTB Team</strong> en deel de claim.</li>
@@ -656,11 +667,71 @@ export function registerDutchSite({
   <ul>
     <li>Eerst bouwen, later claimen — loot is weg.</li>
     <li>Huis geclaimd, farm of waystone niet.</li>
-    <li>Open Parties and Claims i.p.v. (of bovenop) FTB Chunks.</li>
+    <li>Een andere claim-mod naast FTB Chunks (OPAC is verwijderd — niet opnieuw installeren).</li>
     <li>Claim niet mee laten groeien met de basis.</li>
   </ul>
 
   <p class="see-also"><strong>Zie ook:</strong> <a href="First_Hours.html">Eerste uren</a> · <a href="Travel.html">Reizen</a> · <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="FAQ.html">FAQ</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Quests.html", {
+    title: "Quests",
+    breadcrumbs: crumbs({ label: "Quests", href: "Quests.html" }),
+    lede: "PokeHaven EU heeft een volledig <strong>FTB Quests</strong>-boek — First Steps, alle gyms tot Sinnoh, plus craft, broeden, raids, Pokédex en legend-doelen. Open met <kbd>O</kbd>.",
+    infobox: `<div class="infobox-title">Questboek</div>
+  <table>
+    <tr><th>Openen</th><td><kbd>O</kbd> (FTB Quests)</td></tr>
+    <tr><th>Chapters</th><td>15</td></tr>
+    <tr><th>Talen</th><td>Engels + Nederlands in-game</td></tr>
+    <tr><th>Progressie</th><td>Server-tracked — veilig reconnecten</td></tr>
+    <tr><th>Gerelateerd</th><td><a href="Achievements.html">Achievements</a> · <a href="Progression.html">Progressie</a></td></tr>
+  </table>`,
+    body: `
+  ${critical(
+    "nl",
+    "<strong>First Steps-IDs wijzigen nooit.</strong> Had je starter → catch → claim → Brock al af? Die progressie blijft. Nieuwe chapters komen ernaast — ze wissen de boom niet."
+  )}
+
+  <h2>Zo gebruik je het boek</h2>
+  <ol class="steps">
+    <li>Druk <kbd>O</kbd> voor het questboek (herbinden: Esc → Options → Controls → FTB Quests).</li>
+    <li>Begin bij <strong>First Steps</strong> — de meeste taken vullen zichzelf; de claim-quest heeft een groen vinkje nadat je geclaimd hebt.</li>
+    <li>Na Brock ontgrendelt <strong>Kanto Gyms</strong> met Misty. Gym-maps blijven je navigatie.</li>
+    <li>Side-chapters (Settling In, Trainer Craft, …) blijven open zodat je basis-bouw met de league kunt mixen.</li>
+  </ol>
+
+  <h2>Chapter-overzicht</h2>
+  <table class="wikitable">
+    <thead><tr><th>Groep</th><th>Chapters</th><th>Inhoud</th></tr></thead>
+    <tbody>
+      <tr><td>PokeHaven</td><td>First Steps · Settling In</td><td>Starter, eerste catch, claim, Brock-map, Brock — daarna bed, waystone, opslag</td></tr>
+      <tr><td>Kanto League</td><td>Kanto Gyms · Indigo Plateau</td><td>Misty → Giovanni, daarna Elite Four + Blue</td></tr>
+      <tr><td>Johto League</td><td>Johto Gyms · Johto League</td><td>Valerio tot Lance</td></tr>
+      <tr><td>Hoenn League</td><td>Hoenn Gyms · Hoenn League</td><td>Volledige Hoenn gym- + champion-pad</td></tr>
+      <tr><td>Sinnoh League</td><td>Sinnoh Gyms · Sinnoh League</td><td>Begint met Pedro (pack-volgorde), daarna Elite Four</td></tr>
+      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding Lab · Raid Circuit · Pokédex Drive</td><td>Crafts, eieren, dens, dex-mijlpalen</td></tr>
+      <tr><td>Endgame</td><td>Legend Trail</td><td>Legend-doelen na Kanto-champion</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Hoe quests naast de rest staan</h2>
+  <ul>
+    <li><strong>Gym-maps &amp; level cap</strong> bepalen waar je mag vechten — quests volgen hetzelfde pad, ze vervangen geen maps. Zie <a href="Gym_Maps.html">Gym-maps</a> · <a href="Level_Cap.html">Level cap</a>.</li>
+    <li><strong>Achievements</strong> (<kbd>L</kbd>) zijn een aparte toast-checklist. Gebruik beide als je wilt. <a href="Achievements.html">Achievements</a>.</li>
+    <li><strong>Rewards</strong> zijn handige items (balls, heals, materialen) — geen pay-to-win ranks.</li>
+  </ul>
+
+  <h2>Veelgestelde vragen</h2>
+  <ul>
+    <li><strong>Boek opent niet?</strong> Check Controls op “Quests” / FTB Quests — standaard <kbd>O</kbd>.</li>
+    <li><strong>Claim-quest blijft hangen?</strong> Claim met <kbd>U</kbd>, klik daarna het groene vinkje. Gids: <a href="Claims.html">Claims</a>.</li>
+    <li><strong>Misty nog dicht?</strong> Maak eerst Defeat Brock in First Steps af.</li>
+    <li><strong>Progressie kwijt na update?</strong> First Steps-IDs staan expres vast. Ziet iets anders er raar uit? Discord <code>#tickets</code> met screenshot van het boek.</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="First_Hours.html">Eerste uren</a> · <a href="Progression.html">Progressie</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Achievements.html">Achievements</a></p>
   ${navboxCore()}
   `,
   });
@@ -757,7 +828,7 @@ export function registerDutchSite({
     <li><strong>Chat</strong> — <strong>English</strong> is de hoofdtaal in publieke channels (EU-server). Houd het SFW. Namen, nicknames en profielfoto’s netjes houden.</li>
     <li><strong>Voice chat</strong> — Push-to-talk heeft voorkeur. Geen earrape, soundboards blazen of zinloos schreeuwen. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
     <li><strong>Hulp vragen</strong> — Snelle publieke vragen → Discord <code>#help</code>. Privé / reports / langere staff-hulp → <code>#tickets</code>. Altijd screenshot + wat je al probeerde.</li>
-    <li><strong>Donaties</strong> — Optioneel. Ze houden de server online. <strong>Alleen cosmetisch</strong> (Discord-rollen + optionele chat-tags via <code>/prefix</code>) — geen shiny-, catch-, XP- of claim-voordelen. Details: <a href="Trainer_Tags.html">Trainer-tags</a>.</li>
+    <li><strong>Donaties</strong> — Optioneel. Ze houden de server online. <strong>Geen perks, ranks of VIP-rewards</strong> — bedankt voor de support.</li>
     <li><strong>Staff-beslissingen</strong> — Staff mag warnen, muten, kicken of bannen. Bediscussieer moderatie niet publiek — open een ticket als nodig.</li>
   </ol>
 
@@ -767,7 +838,6 @@ export function registerDutchSite({
     <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
     <tbody>
       <tr><td><code>/pc</code></td><td>Open Pokémon PC-opslag overal — <a href="Healing_and_Storage.html">Genezen &amp; opslag</a></td></tr>
-      <tr><td><code>/prefix</code></td><td>Kies je zichtbare trainer chat-tag — <a href="Trainer_Tags.html">Trainer-tags</a></td></tr>
     </tbody>
   </table>
   <div class="callout tip">
@@ -777,15 +847,22 @@ export function registerDutchSite({
   </div>
 
   <h2>Toetsen die je constant gebruikt</h2>
+  <p>PokeHaven EU Client-defaults (geen conflicten). Aanpassen: Esc → Options → Controls.</p>
   <table class="wikitable">
     <thead><tr><th>Actie</th><th>Standaard</th><th>Notes</th></tr></thead>
     <tbody>
       <tr><td>Party / starter</td><td><kbd>C</kbd></td><td>Starter kiezen en team beheren</td></tr>
-      <tr><td>Uitsturen / recall</td><td><kbd>R</kbd></td><td>Battles en mounts</td></tr>
+      <tr><td>Selecteer party-slot</td><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Welke Pokémon je gooit</td></tr>
+      <tr><td>Gooi / recall</td><td><kbd>R</kbd></td><td>Geselecteerde Pokémon uitsturen</td></tr>
+      <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight</td></tr>
+      <tr><td>Questboek</td><td><kbd>O</kbd></td><td>FTB Quests</td></tr>
+      <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td><a href="Claims.html">Claims</a></td></tr>
+      <tr><td>Chunk-map</td><td><kbd>M</kbd></td><td>FTB Chunks-kaart</td></tr>
+      <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>K</kbd> · groep <kbd>B</kbd> — <a href="Voice_Chat.html">Voice chat</a></td></tr>
+      <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Van mount afstappen</td></tr>
       <tr><td>Recipe viewer (REI)</td><td><kbd>E</kbd></td><td>Live crafts — <a href="Essential_Recipes.html">Essentiële recepten</a></td></tr>
       <tr><td>Rijden</td><td><kbd>Shift</kbd> + rechtsklik</td><td><a href="Riding.html">Rijden</a></td></tr>
-      <tr><td>Claim-map (FTB Chunks)</td><td>Bind in Controls → zoek <em>FTB</em> / <em>Chunks</em></td><td><a href="Claims.html">Claims</a></td></tr>
-      <tr><td>Voice chat</td><td>Controls → Simple Voice Chat</td><td>Push-to-talk heeft voorkeur — <a href="Voice_Chat.html">Voice chat</a></td></tr>
     </tbody>
   </table>
 
@@ -817,6 +894,7 @@ export function registerDutchSite({
   <ol class="steps">
     <li>Join PokeHaven EU en sta mic / voice-chat toe als Windows of het spel daarom vraagt.</li>
     <li>Open <strong>Esc → Options → Controls → Simple Voice Chat</strong> en zet <strong>Push to talk</strong> (fijnst in groepen).</li>
+    <li>Defaults op PokeHaven EU: voice-menu <kbd>V</kbd>, mute <kbd>K</kbd>, groep <kbd>B</kbd>.</li>
     <li>Kies het juiste input-device als niemand je hoort.</li>
     <li>Test met iemand in de buurt — binnen de hoorafstand moet je elkaar horen.</li>
   </ol>
@@ -916,13 +994,13 @@ export function registerDutchSite({
   <p>Na Brock: craft haar map met <strong>Cerulean Star</strong> (seagrass met <strong>Shears</strong>) + verse Empty Map op de Kanto Cartography Table. Gidsen: <a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym-maps</a>.</p>
 
   <h2>Claim ik met Open Parties?</h2>
-  <p><strong>Nee.</strong> Op PokeHaven EU alleen <strong>FTB Chunks</strong>. Open Parties and Claims zit in het pack — niet gebruiken voor je base. Zie <a href="Claims.html">Claims</a>.</p>
+  <p><strong>Nee.</strong> Op PokeHaven EU alleen <strong>FTB Chunks</strong>. Open Parties and Claims (OPAC) is <strong>verwijderd</strong> uit de pack. Zie <a href="Claims.html">Claims</a>.</p>
 
   <h2>Is er een browser-map?</h2>
   <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Meer travel-tools: <a href="Travel.html">Reizen</a>.</p>
 
   <h2>Kan ik doneren?</h2>
-  <p>Ja, optioneel — donaties helpen de server online / te upgraden. Rewards zijn <strong>alleen cosmetisch</strong> (Discord-rollen + chat-tags via <code>/prefix</code>). Geen shiny-, catch-, XP- of claim-voordelen. Zie <a href="Trainer_Tags.html">Trainer-tags</a>. Links staan in Discord.</p>
+  <p>Ja, optioneel — donaties helpen de server online / te upgraden. <strong>Geen gameplay-perks, ranks of VIP-rewards.</strong> Links staan in Discord.</p>
 
   <h2>Hoe craft ik Poké Balls?</h2>
   <p><a href="Poke_Balls.html">Poké Balls</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Recipe_Browser.html">Receptenbrowser</a>.</p>
@@ -931,13 +1009,13 @@ export function registerDutchSite({
   <p><a href="Minecraft_Hub.html">Minecraft survival-hub</a> en <a href="Pack_Differences.html">wat dit pack verandert</a>.</p>
 
   <h2>Is er een quest-pijl?</h2>
-  <p>Nee. Gebruik <a href="Gym_Maps.html">gym-maps</a>, de <a href="Level_Cap.html">level cap</a>, en de Advancements-checklist (<a href="Achievements.html">Achievements</a> — vaak <kbd>L</kbd>). Na de league: <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a>.</p>
+  <p>Geen zwevende pijl in de wereld. Open het <strong>questboek</strong> met <kbd>O</kbd> (<a href="Quests.html">Quests</a>) voor First Steps → Sinnoh en side-doelen. Gebruik verder <a href="Gym_Maps.html">gym-maps</a>, de <a href="Level_Cap.html">level cap</a>, en Achievements (<a href="Achievements.html">Achievements</a> — vaak <kbd>L</kbd>). Na de league: <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a>.</p>
 
   <h2>Mag ik dorpen looten?</h2>
   <p>Ja. Center/huis-chests zijn fair game. Op PokeHaven EU kunnen geleegde loot-chests later refreshen.</p>
 
   <h2>Voice-chat toets?</h2>
-  <p>Esc → Options → Controls → Simple Voice Chat. Zie <a href="Voice_Chat.html">Voice chat</a>.</p>
+  <p><kbd>V</kbd> opent voice chat, <kbd>K</kbd> mute, <kbd>B</kbd> groep. Zie <a href="Voice_Chat.html">Voice chat</a>.</p>
 
   <h2>Waar is de spelerswiki?</h2>
   <p><strong><a href="https://pokehaven.wiki">pokehaven.wiki</a></strong> — Engels + Nederlands (vlaggen). Ook gepind in Discord <code>#pokehaven-wiki</code>. Start met Aan de slag, Claims, Gym-maps, Brock.</p>
@@ -1273,7 +1351,7 @@ export function registerDutchSite({
       <tr class="critical-row"><td>Verkeerde pack-versie</td><td>Niet joinen</td><td>1.7.42 opnieuw uit Discord <code>#how-to-join</code></td></tr>
       <tr class="critical-row"><td>Oud IP uit screenshot</td><td>Geen connectie</td><td>Live IP alleen uit <code>#how-to-join</code></td></tr>
       <tr class="critical-row"><td>Level cap negeren</td><td>“XP kapot”</td><td><a href="Level_Cap.html">Volgende gym</a></td></tr>
-      <tr class="critical-row"><td>Geen claim / verkeerde mod</td><td>Chests leeg</td><td>Alleen <a href="Claims.html">FTB Chunks</a> (niet Open Parties)</td></tr>
+      <tr class="critical-row"><td>Geen claim</td><td>Chests leeg</td><td>Alleen <a href="Claims.html">FTB Chunks</a></td></tr>
       <tr class="critical-row"><td>Empty Map openklikken</td><td>Geen gym-map</td><td>Nieuwe Empty Map + <a href="Gym_Maps.html">regio-tafel</a></td></tr>
       <tr class="critical-row"><td>Verkeerde regio-cartography</td><td>Map faalt / verkeerde regio</td><td>Kanto-tafel voor Kanto; later Johto/Hoenn/Sinnoh — <a href="Gym_Maps.html">Gym-maps</a></td></tr>
       <tr class="critical-row"><td>Seagrass met hand</td><td>0 drops</td><td>Shears — <a href="Misty.html">Misty</a></td></tr>
@@ -1543,73 +1621,7 @@ export function registerDutchSite({
     </tbody>
   </table>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Trainer_Tags.html">Trainer-tags</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="../../pages/Outfits_and_Cosmetics.html">Volledige EN-gids</a></p>
-  ${navboxCore()}
-  `,
-  });
-
-  track("Trainer_Tags.html", {
-    title: "Trainer-tags",
-    breadcrumbs: crumbs({ label: "Trainer-tags", href: "Trainer_Tags.html" }),
-    lede: "Kies een <strong>cosmetische chat-tag</strong> op PokeHaven EU met <code>/prefix</code>. Alleen looks — geen gameplay-voordelen.",
-    infobox: `<div class="infobox-title">Trainer-tags</div>
-  <table>
-    <tr><th>Command</th><td><code>/prefix</code></td></tr>
-    <tr><th>Type</th><td>Cosmetische chat-prefix</td></tr>
-    <tr><th>Client</th><td>PokeHaven EU Client (mod zit erin)</td></tr>
-    <tr><th>Gameplay-perks</th><td>Geen</td></tr>
-  </table>`,
-    body: `
-  <div class="callout tip">
-    <div class="label">Alleen cosmetisch</div>
-    Trainer-tags veranderen hoe je naam in chat eruitziet. Ze beïnvloeden <strong>niet</strong> shiny-odds, catch rates, XP, claims of gym-progressie.
-  </div>
-
-  <h2>Hoe gebruik je het</h2>
-  <ol class="steps">
-    <li>Join met de <strong>PokeHaven EU Client</strong> (de Prefix-mod zit al in de zip).</li>
-    <li>Typ <code>/prefix</code> in chat.</li>
-    <li>Er opent een Pokédex-achtig menu met de tags die je hebt.</li>
-    <li>Klik een tag om hem aan te zetten — of kies <strong>No Tag</strong> om alle trainer-tags te verbergen.</li>
-  </ol>
-  <div class="callout tip">
-    <div class="label">Leeg menu?</div>
-    Zie je alleen <strong>No Tag</strong>, dan heb je nog geen donor-tag. Doneer via Discord (staff logt lifetime-totalen) — join opnieuw of vraag staff als de group niet syncte.
-  </div>
-
-  <h2>Donor-tags</h2>
-  <p>Lifetime donatie-totalen unlocken Discord-rollen en bijpassende in-game tags:</p>
-  <table class="wikitable">
-    <thead><tr><th>Lifetime</th><th>Tag</th><th>Ziet eruit als</th></tr></thead>
-    <tbody>
-      <tr><td>€10+</td><td>Supporter</td><td>aqua <code>[Supporter]</code></td></tr>
-      <tr><td>€50+</td><td>Patron</td><td>gold <code>[Patron]</code></td></tr>
-      <tr><td>€100+</td><td>Benefactor</td><td>light purple <code>[Benefactor]</code></td></tr>
-      <tr><td>—</td><td>No Tag</td><td>Verbergt alle trainer-tags</td></tr>
-    </tbody>
-  </table>
-  <p>Hogere tiers houden toegang tot lagere tags — kies wat je wilt in <code>/prefix</code>.</p>
-  <p>Donatie-links staan in Discord. Optionele support; de server blijft gratis speelbaar.</p>
-
-  <h2>Vereisten</h2>
-  <ul>
-    <li><strong>Server:</strong> LuckPerms + PokeHaven Prefix-mod</li>
-    <li><strong>Client:</strong> dezelfde Prefix-mod (in de PokeHaven EU Client-zip)</li>
-    <li>Staff-tags (Admin / Mod) zie je alleen als je die groups hebt — de meeste spelers zien ze nooit</li>
-  </ul>
-
-  <h2>Korte FAQ</h2>
-  <table class="wikitable">
-    <thead><tr><th>Vraag</th><th>Antwoord</th></tr></thead>
-    <tbody>
-      <tr><td>Helpt een tag in battles?</td><td>Nee — alleen cosmetisch.</td></tr>
-      <tr><td>Kan ik mijn tag verbergen?</td><td>Ja — <code>/prefix</code> → <strong>No Tag</strong>.</td></tr>
-      <tr><td>Gedoneerd maar geen tag</td><td>Open een Discord-ticket (Discord-naam + in-game naam). Daarna <code>/prefix</code>.</td></tr>
-      <tr><td>Oude client / geen menu</td><td>Importeer opnieuw de nieuwste <strong>PokeHaven EU Client</strong>-zip uit Discord / Drive.</td></tr>
-    </tbody>
-  </table>
-
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Rules_and_Commands.html">Regels &amp; commands</a> · <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a> · <a href="FAQ.html">FAQ</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Pack_Differences.html">Pack-verschillen</a> · <a href="../../pages/Outfits_and_Cosmetics.html">Volledige EN-gids</a></p>
   ${navboxCore()}
   `,
   });
@@ -1889,6 +1901,115 @@ export function registerDutchSite({
   </div>
 
   <p class="see-also"><strong>Zie ook:</strong> <a href="../../pages/Spawn_Lookup.html?ctx=fishing">Spawn lookup (fishing)</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Shiny.html">Shiny hunting</a> · <a href="Claims.html">Claims</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Cobbleworkers.html", {
+    title: "Cobbleworkers",
+    breadcrumbs: crumbs({ label: "Cobbleworkers", href: "Cobbleworkers.html" }),
+    lede: "Zet Pokémon in een <strong>Pasture</strong> en ze werken in de buurt — crops oogsten, cauldrons vullen, ovens voeden, enz. Dit is automatisering, <em>geen</em> salaris-job.",
+    infobox: `<div class="infobox-title">Cobbleworkers</div>
+  <table>
+    <tr><th>Mod</th><td>Cobbleworkers (in de pack)</td></tr>
+    <tr><th>Blok</th><td>Pasture</td></tr>
+    <tr><th>Werkgebied (PokeHaven)</th><td>Straal 8 · hoogte ±5</td></tr>
+    <tr><th>PokéDollars?</th><td>Nee</td></tr>
+    <tr><th>Officiële docs</th><td><a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">docs.accieo.com</a></td></tr>
+  </table>`,
+    body: `
+  <h2>Wat is het?</h2>
+  <p><strong>Cobbleworkers</strong> maakt van het Cobblemon-<strong>Pasture</strong>-blok een utility-blok. Geschikte Pokémon in die pasture claimen automatisch jobs in bereik (crops, berries, apricorns, ovens, cauldrons, …) en deponeren loot in nabije inventories als dat kan.</p>
+  ${critical(
+    "nl",
+    "<strong>Geen Jobs Reborn.</strong> Workers verdienen geen PokéDollars. Voor geld zie <a href=\"Economy.html\">Economie</a>. Workers geven resources en automatisering."
+  )}
+
+  <h2>Snel starten</h2>
+  <ol class="steps">
+    <li>Craft / plaats een <strong>Pasture</strong> (REI: <em>pasture</em>) in je <a href="Claims.html">FTB-claim</a>.</li>
+    <li>Zet Pokémon op de pasture (zelfde blok als bij broeden).</li>
+    <li>Bouw de farm binnen <strong>8 blokken</strong> horizontaal en <strong>~5 blokken</strong> omhoog/omlaag van de pasture (PokeHaven-defaults).</li>
+    <li>Zet een chest / inventory dicht bij de pasture — workers deponeren naar de dichtstbijzijnde geldige inventory.</li>
+    <li>Match <strong>type / species / move / ability</strong> met de job (tabel hieronder). Verkeerd type = ze doen niets.</li>
+  </ol>
+  <div class="callout tip">
+    <div class="label">Pathing-tip</div>
+    Pokémon gebruiken volledig Minecraft-pathfinding. Houd vloeren vrij, vermijd rare fences/gaten — anders geven ze het na ~30s op (navigation timeout).
+  </div>
+
+  <h2>PokeHaven-gebiedsinstellingen</h2>
+  <p>Uit de pack-config (<code>cobbleworkers.json</code>):</p>
+  <table class="wikitable">
+    <thead><tr><th>Setting</th><th>Waarde</th><th>Betekenis</th></tr></thead>
+    <tbody>
+      <tr><td><code>areaScanRadius</code></td><td>8</td><td>Horizontale werkstraal vanaf de pasture</td></tr>
+      <tr><td><code>areaScanHeight</code></td><td>5</td><td>Blokken omhoog/omlaag gescand</td></tr>
+      <tr><td><code>areaScanCooldown</code></td><td>45s</td><td>Pauze tussen volledige scans</td></tr>
+      <tr><td><code>navigationTimeout</code></td><td>30s</td><td>Opgeven bij bereiken target</td></tr>
+      <tr><td><code>depositTimeout</code></td><td>65s</td><td>Opgeven bij deponeren → items droppen</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Jobs (wie doet wat)</h2>
+  <p>De meeste jobs vragen een <strong>type</strong>. Sommige vragen een species, move of ability. Details: <a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">Accieo docs</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Job</th><th>Eis</th><th>Doet</th></tr></thead>
+    <tbody>
+      <tr><td>Crop harvester</td><td>Type <strong>Grass</strong></td><td>Oogst rijpe crops</td></tr>
+      <tr><td>Crop irrigator</td><td>Type <strong>Water</strong></td><td>Bevochtigt farmland</td></tr>
+      <tr><td>Berry harvester</td><td>Type <strong>Grass</strong></td><td>Oogst rijpe berries</td></tr>
+      <tr><td>Mint harvester</td><td>Type <strong>Fairy</strong></td><td>Oogst rijpe mints</td></tr>
+      <tr><td>Apricorn harvester</td><td>Type <strong>Bug</strong></td><td>Oogst rijpe apricorns</td></tr>
+      <tr><td>Nether wart harvester</td><td>Type <strong>Ghost</strong></td><td>Oogst rijpe nether wart</td></tr>
+      <tr><td>Amethyst harvester</td><td>Type <strong>Rock</strong></td><td>Oogst rijpe amethyst clusters</td></tr>
+      <tr><td>Tumblestone harvester</td><td>Type <strong>Steel</strong></td><td>Oogst rijpe tumblestone</td></tr>
+      <tr><td>Honey collector</td><td><strong>Combee</strong> / <strong>Vespiquen</strong></td><td>Haalt honeycombs uit beehives</td></tr>
+      <tr><td>Water generator</td><td>Type <strong>Water</strong></td><td>Vult lege cauldrons met water</td></tr>
+      <tr><td>Lava generator</td><td>Type <strong>Fire</strong></td><td>Vult lege cauldrons met lava</td></tr>
+      <tr><td>Snow generator</td><td>Type <strong>Ice</strong></td><td>Vult lege cauldrons met sneeuw</td></tr>
+      <tr><td>Fuel generator</td><td>Type <strong>Fire</strong></td><td>Geeft burn ticks aan furnaces</td></tr>
+      <tr><td>Brewing stand fuel</td><td>Type <strong>Dragon</strong></td><td>Voegt blaze powder toe aan brewing stands</td></tr>
+      <tr><td>Fishing (worker)</td><td>Type <strong>Water</strong></td><td>Genereert fishing-loot bij de pasture</td></tr>
+      <tr><td>Fire extinguisher</td><td>Type <strong>Water</strong></td><td>Dooft vuurblokken</td></tr>
+      <tr><td>Fletcher</td><td>Type <strong>Poison</strong></td><td>Coat arrows met poison</td></tr>
+      <tr><td>Ground item gatherer</td><td>Type <strong>Psychic</strong></td><td>Raapt grond-items op naar chests</td></tr>
+      <tr><td>Archeologist</td><td>Type <strong>Ground</strong></td><td>Archeology-loot bij dirt/gravel/mud</td></tr>
+      <tr><td>Healer</td><td>Happiny / Chansey / Blissey, of Wish / Soft-Boiled / Moonlight / Recover / Roost / Heal Bell / …</td><td>Healt gewonde spelers in de buurt</td></tr>
+      <tr><td>Rain dancer</td><td><strong>Slowpoke</strong></td><td>Zet weer op regen</td></tr>
+      <tr><td>Dive looter</td><td>Kent move <strong>Dive</strong> (+ zwemmen)</td><td>Treasure-loot in water</td></tr>
+      <tr><td>Pickup looter</td><td>Ability <strong>Pickup</strong></td><td>Generieke Cobblemon-loot</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Goede early setups</h2>
+  <ul>
+    <li><strong>Food-loop:</strong> Grass crop harvester + Water irrigator + chest → wheat/wortels — zie <a href="Farming_and_Food.html">Farms &amp; eten</a>.</li>
+    <li><strong>Ball-materials:</strong> Bug apricorn harvester bij apricorn-bomen → <a href="Poke_Balls.html">Poké Balls</a>.</li>
+    <li><strong>Berry-farm:</strong> Grass berry harvesters voor held items / healing berries.</li>
+    <li><strong>Smelten:</strong> Fire fuel generators naast furnace-rijen (ovens met items krijgen voorrang).</li>
+  </ul>
+
+  <h2>Broeden vs workers</h2>
+  <p>Hetzelfde <strong>Pasture</strong>-blok dient voor <a href="Breeding.html">broeden</a> én Cobbleworkers. Een druk shiny-project + dichte crop-farm op één pasture vecht om aandacht. Split pastures als beide belangrijk zijn: één voor eieren, één voor jobs.</p>
+  ${critical(
+    "nl",
+    "<strong>Claim altijd de pasture-chunks.</strong> Ongeclaimde eieren / worker-loot zijn makkelijke grief-targets — zie <a href=\"Claims.html\">Claims</a> en <a href=\"Common_Mistakes.html\">Veelgemaakte fouten</a>."
+  )}
+
+  <h2>Problemen oplossen</h2>
+  <table class="wikitable">
+    <thead><tr><th>Symptoom</th><th>Probeer</th></tr></thead>
+    <tbody>
+      <tr><td>Pokémon staan alleen maar stil</td><td>Verkeerd type; niets rijp/eligible in straal 8; niet toegewezen aan pasture</td></tr>
+      <tr><td>Ze lopen en geven op</td><td>Pathing vrijmaken; fences/gaten; targets dichter bij de pasture</td></tr>
+      <tr><td>Items op de grond</td><td>Chest vol / verkeerde inventory — meer opslag dichterbij (deposit timeout ~65s)</td></tr>
+      <tr><td>Alleen dichtbij wordt gedaan</td><td>Normaal — dichtere blokken eerst; dun de farm uit of zet een tweede pasture</td></tr>
+      <tr><td>Verwacht PokéDollars</td><td>Workers betalen niet — battles / bank / bounties (<a href="Economy.html">Economie</a>)</td></tr>
+    </tbody>
+  </table>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Farming_and_Food.html">Farms &amp; eten</a> · <a href="Breeding.html">Broeden</a> · <a href="Poke_Balls.html">Poké Balls</a> · <a href="Claims.html">Claims</a> · <a href="Economy.html">Economie</a> · <a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">Officiële Cobbleworkers-docs</a></p>
   ${navboxCore()}
   `,
   });

@@ -207,13 +207,14 @@ function navboxSystems() {
       <a href="Catching_and_Battling.html">Catching &amp; battling</a>
       <a href="Poke_Balls.html">Poké Balls</a>
       <a href="Essential_Recipes.html">Essential recipes</a>
+      <a href="Quests.html">Quests</a>
       <a href="Healing_and_Storage.html">Healing</a>
       <a href="Breeding.html">Breeding</a>
       <a href="Shiny.html">Shiny hunting</a>
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Fishing</a>
+      <a href="Cobbleworkers.html">Cobbleworkers</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
-      <a href="Trainer_Tags.html">Trainer tags</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">World</div><div class="navbox-links">
       <a href="Claims.html">Claims</a>
@@ -296,10 +297,10 @@ const searchIndexNl = [];
 const SEARCH_KEYWORDS = {
   "Outfits_and_Cosmetics.html":
     "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing",
-  "Trainer_Tags.html":
-    "prefix /prefix trainer tag chat tag supporter patron benefactor donor donation cosmetic no tag luckperms",
   "Level_Cap.html": "xp experience level cap stuck freeze trainer card overlevel",
   "Claims.html": "claim ftb chunks protect grief chest land party",
+  "Quests.html":
+    "ftb quests quest book o first steps settling gym league breeding raid pokedex legend trail",
   "Getting_Started.html": "join install curseforge discord ip pack 1.7.42 ticket empty map cerulean",
   "Economy.html": "money pokédollars pokedollars bank emerald shop wheat farm",
   "Voice_Chat.html": "mic voice chat simple voice talk",
@@ -311,6 +312,8 @@ const SEARCH_KEYWORDS = {
     "mega evolution z-move tera dynamax power spot late game checklist johto after blue keystone megastone gimmick",
   "Fishing.html":
     "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup",
+  "Cobbleworkers.html":
+    "cobbleworkers pasture worker pokemon job crop berry apricorn farm automate harvest furnace cauldron",
   "Raids.html": "raid den crystal boss tier damage share hidden ability waystone",
   "FAQ.html":
     "help problem question join discord tickets donate bluemap misty ftb chunks open parties",
@@ -393,6 +396,7 @@ writePage("index.html", {
   <div class="hub-grid">
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Getting started</h3><p>Install the pack and join PokeHaven EU.</p></a>
     <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Claim, Brock, then the Misty loop.</p></a>
+    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>FTB Quests book — First Steps through Sinnoh.</p></a>
     <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Gyms, level cap, and unlocking regions.</p></a>
     <a class="hub-card" href="pages/Brock.html"><h3>Brock guide</h3><p>Your first gym: map legend, team tips, full roster.</p></a>
   </div>
@@ -408,10 +412,12 @@ writePage("index.html", {
   <h2>Systems</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>Protect your base with FTB Chunks.</p></a>
+    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>Quest book (O) and chapter overview.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
     <a class="hub-card" href="pages/Voice_Chat.html"><h3>Voice chat</h3><p>Distances and groups.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Timers and shiny methods.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods, bait, and water catches.</p></a>
+    <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture jobs — crops, berries, furnaces, and more.</p></a>
   </div>
 
   <h2>Databases</h2>
@@ -1661,6 +1667,117 @@ writePage("Fishing.html", {
   `,
 });
 
+writePage("Cobbleworkers.html", {
+  title: "Cobbleworkers",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Cobbleworkers", href: "Cobbleworkers.html" },
+  ],
+  lede: "Put Pokémon in a <strong>Pasture</strong> and they work nearby — harvest crops, fill cauldrons, fuel furnaces, and more. This is automation, <em>not</em> a salary job.",
+  infobox: infoboxHtml("Cobbleworkers", [
+    ["Mod", "Cobbleworkers (in the pack)"],
+    ["Block", "Pasture"],
+    ["Work area (PokeHaven)", "Radius 8 · height ±5"],
+    ["Pays PokéDollars?", "No"],
+    ["Official docs", '<a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">docs.accieo.com</a>'],
+  ]),
+  body: `
+  <h2>What it is</h2>
+  <p><strong>Cobbleworkers</strong> turns the Cobblemon <strong>Pasture</strong> into a utility block. Eligible Pokémon assigned to that pasture automatically claim jobs in range (crops, berries, apricorns, furnaces, cauldrons, …) and deposit loot into nearby inventories when they can.</p>
+  ${critical(
+    "en",
+    "<strong>Not Jobs Reborn.</strong> Workers do not earn PokéDollars. For money see <a href=\"Economy.html\">Economy</a>. Workers give resources and automation."
+  )}
+
+  <h2>Quick start</h2>
+  <ol class="steps">
+    <li>Craft / place a <strong>Pasture</strong> (REI: <em>pasture</em>) inside your <a href="Claims.html">FTB claim</a>.</li>
+    <li>Assign Pokémon to the pasture (same block used for breeding).</li>
+    <li>Build the matching farm within <strong>8 blocks</strong> horizontally and <strong>~5 blocks</strong> up/down of the pasture (PokeHaven defaults).</li>
+    <li>Leave a chest / inventory near the pasture — workers deposit to the closest valid inventory.</li>
+    <li>Match <strong>type / species / move / ability</strong> to the job (table below). Wrong type = they idle.</li>
+  </ol>
+  <div class="callout tip">
+    <div class="label">Pathing tip</div>
+    Pokémon use normal Minecraft pathfinding. Keep floors clear, avoid 1-block gaps and awkward fences, or they abandon targets after ~30s (navigation timeout).
+  </div>
+
+  <h2>PokeHaven area settings</h2>
+  <p>From the pack config (<code>cobbleworkers.json</code>):</p>
+  <table class="wikitable">
+    <thead><tr><th>Setting</th><th>Value</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><code>areaScanRadius</code></td><td>8</td><td>Horizontal work radius from the pasture</td></tr>
+      <tr><td><code>areaScanHeight</code></td><td>5</td><td>Blocks up/down scanned</td></tr>
+      <tr><td><code>areaScanCooldown</code></td><td>45s</td><td>Pause between full area scans</td></tr>
+      <tr><td><code>navigationTimeout</code></td><td>30s</td><td>Give up reaching a target</td></tr>
+      <tr><td><code>depositTimeout</code></td><td>65s</td><td>Give up depositing → drop items</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Jobs (who does what)</h2>
+  <p>Most jobs need a <strong>type</strong>. Some need a specific species, move, or ability. Full details: <a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">Accieo docs</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Job</th><th>Requirement</th><th>Does</th></tr></thead>
+    <tbody>
+      <tr><td>Crop harvester</td><td>Type <strong>Grass</strong></td><td>Harvests mature crops</td></tr>
+      <tr><td>Crop irrigator</td><td>Type <strong>Water</strong></td><td>Waters farmland</td></tr>
+      <tr><td>Berry harvester</td><td>Type <strong>Grass</strong></td><td>Harvests mature berries</td></tr>
+      <tr><td>Mint harvester</td><td>Type <strong>Fairy</strong></td><td>Harvests mature mints</td></tr>
+      <tr><td>Apricorn harvester</td><td>Type <strong>Bug</strong></td><td>Harvests mature apricorns</td></tr>
+      <tr><td>Nether wart harvester</td><td>Type <strong>Ghost</strong></td><td>Harvests mature nether wart</td></tr>
+      <tr><td>Amethyst harvester</td><td>Type <strong>Rock</strong></td><td>Harvests mature amethyst clusters</td></tr>
+      <tr><td>Tumblestone harvester</td><td>Type <strong>Steel</strong></td><td>Harvests mature tumblestone</td></tr>
+      <tr><td>Honey collector</td><td><strong>Combee</strong> / <strong>Vespiquen</strong></td><td>Collects honeycombs from beehives</td></tr>
+      <tr><td>Water generator</td><td>Type <strong>Water</strong></td><td>Fills empty cauldrons with water</td></tr>
+      <tr><td>Lava generator</td><td>Type <strong>Fire</strong></td><td>Fills empty cauldrons with lava</td></tr>
+      <tr><td>Snow generator</td><td>Type <strong>Ice</strong></td><td>Fills empty cauldrons with snow</td></tr>
+      <tr><td>Fuel generator</td><td>Type <strong>Fire</strong></td><td>Adds burn ticks to furnaces</td></tr>
+      <tr><td>Brewing stand fuel</td><td>Type <strong>Dragon</strong></td><td>Adds blaze powder to brewing stands</td></tr>
+      <tr><td>Fishing (worker)</td><td>Type <strong>Water</strong></td><td>Generates fishing loot near the pasture</td></tr>
+      <tr><td>Fire extinguisher</td><td>Type <strong>Water</strong></td><td>Puts out fire blocks</td></tr>
+      <tr><td>Fletcher</td><td>Type <strong>Poison</strong></td><td>Coats arrows with poison</td></tr>
+      <tr><td>Ground item gatherer</td><td>Type <strong>Psychic</strong></td><td>Picks up ground items into chests</td></tr>
+      <tr><td>Archeologist</td><td>Type <strong>Ground</strong></td><td>Generates archaeology loot near dirt/gravel/mud</td></tr>
+      <tr><td>Healer</td><td>Happiny / Chansey / Blissey, or Wish / Soft-Boiled / Moonlight / Recover / Roost / Heal Bell / …</td><td>Heals hurt players nearby</td></tr>
+      <tr><td>Rain dancer</td><td><strong>Slowpoke</strong></td><td>Sets weather to rain</td></tr>
+      <tr><td>Dive looter</td><td>Knows move <strong>Dive</strong> (+ swimming)</td><td>Generates treasure loot in water</td></tr>
+      <tr><td>Pickup looter</td><td>Ability <strong>Pickup</strong></td><td>Generates generic Cobblemon loot</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Good early setups</h2>
+  <ul>
+    <li><strong>Food loop:</strong> Grass crop harvester + Water irrigator + chest → wheat/carrots for you and villagers — pairs with <a href="Farming_and_Food.html">Farming &amp; food</a>.</li>
+    <li><strong>Ball materials:</strong> Bug apricorn harvester next to apricorn trees → <a href="Poke_Balls.html">Poké Balls</a>.</li>
+    <li><strong>Berry farm:</strong> Grass berry harvesters for held items / healing berries.</li>
+    <li><strong>Smelting:</strong> Fire fuel generators next to furnace rows (furnaces with items get priority).</li>
+  </ul>
+
+  <h2>Breeding vs workers</h2>
+  <p>The same <strong>Pasture</strong> block is used for <a href="Breeding.html">breeding</a> and Cobbleworkers. A busy shiny project and a dense crop farm on one pasture can fight for attention. Split pastures when both matter: one for eggs, one for jobs.</p>
+  ${critical(
+    "en",
+    "<strong>Always claim the pasture chunks.</strong> Unclaimed eggs / worker loot are easy grief targets — see <a href=\"Claims.html\">Claims</a> and <a href=\"Common_Mistakes.html\">Common mistakes</a>."
+  )}
+
+  <h2>Troubleshooting</h2>
+  <table class="wikitable">
+    <thead><tr><th>Symptom</th><th>Try</th></tr></thead>
+    <tbody>
+      <tr><td>Pokémon just stand around</td><td>Wrong type for the job; nothing mature/eligible in the 8-block radius; pasture assignment missing</td></tr>
+      <tr><td>They walk then give up</td><td>Clear pathing; lower fences; bring targets closer to the pasture</td></tr>
+      <tr><td>Items on the ground</td><td>Chest full / wrong inventory — add storage closer to the pasture (deposit timeout ~65s)</td></tr>
+      <tr><td>Only close crops get done</td><td>Normal — closer blocks are prioritized; thin the farm or add a second pasture</td></tr>
+      <tr><td>Expecting PokéDollars</td><td>Workers do not pay — use battles / bank / bounties (<a href="Economy.html">Economy</a>)</td></tr>
+    </tbody>
+  </table>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Farming_and_Food.html">Farming &amp; food</a> · <a href="Breeding.html">Breeding</a> · <a href="Poke_Balls.html">Poké Balls</a> · <a href="Claims.html">Claims</a> · <a href="Economy.html">Economy</a> · <a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">Official Cobbleworkers docs</a></p>
+  ${navboxSystems()}
+  `,
+});
+
 writePage("Claims.html", {
   title: "Claims",
   breadcrumbs: [
@@ -1671,7 +1788,7 @@ writePage("Claims.html", {
   body: `
   <h2>How to claim</h2>
   <ol class="steps">
-    <li>Open the FTB Chunks map (keybind under Esc → Options → Controls — search “FTB” / “Chunks”).</li>
+    <li>Press <kbd>U</kbd> for the Claim Manager, or <kbd>M</kbd> for the FTB Chunks map.</li>
     <li>Claim chunks around your bed, chests, farm, and waystone.</li>
     <li>Claim a buffer — not only the exact footprint of your house.</li>
     <li>Playing together? Create an FTB Team so you share access.</li>
@@ -1681,6 +1798,69 @@ writePage("Claims.html", {
     "<strong>Stick to FTB Chunks only.</strong> The pack also ships another claims mod — do not mix both on the same base."
   )}
   <p>Pack configs allow large claim budgets (hundreds of chunks). Still claim only what you use.</p>
+  ${navboxSystems()}
+  `,
+});
+
+writePage("Quests.html", {
+  title: "Quests",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Quests", href: "Quests.html" },
+  ],
+  lede: "PokeHaven EU ships a full <strong>FTB Quests</strong> book — guided First Steps, every gym through Sinnoh, plus crafting, breeding, raids, Pokédex, and legend goals. Open it with <kbd>O</kbd>.",
+  infobox: `<div class="infobox-title">Quest book</div>
+  <table>
+    <tr><th>Open</th><td><kbd>O</kbd> (FTB Quests)</td></tr>
+    <tr><th>Chapters</th><td>15</td></tr>
+    <tr><th>Languages</th><td>English + Nederlands in-game</td></tr>
+    <tr><th>Progress</th><td>Server-tracked — safe to reconnect</td></tr>
+    <tr><th>Related</th><td><a href="Achievements.html">Advancements</a> · <a href="Progression.html">Progression</a></td></tr>
+  </table>`,
+  body: `
+  ${critical(
+    "en",
+    "<strong>First Steps IDs never change.</strong> If you already finished starter → catch → claim → Brock, that progress stays. New chapters unlock beside it — they do not wipe the tree."
+  )}
+
+  <h2>How to use the book</h2>
+  <ol class="steps">
+    <li>Press <kbd>O</kbd> to open the quest book (rebind under Esc → Options → Controls → FTB Quests).</li>
+    <li>Start in <strong>First Steps</strong> — most tasks auto-complete; the claim quest needs the green check after you claimed.</li>
+    <li>After Brock, <strong>Kanto Gyms</strong> unlocks with Misty. Follow gym maps as usual.</li>
+    <li>Side chapters (Settling In, Trainer Craft, …) stay available so you can mix base-building with the league path.</li>
+  </ol>
+
+  <h2>Chapter map</h2>
+  <table class="wikitable">
+    <thead><tr><th>Group</th><th>Chapters</th><th>What they cover</th></tr></thead>
+    <tbody>
+      <tr><td>PokeHaven</td><td>First Steps · Settling In</td><td>Starter, first catch, claim, Brock map, Brock — then bed, waystone, storage basics</td></tr>
+      <tr><td>Kanto League</td><td>Kanto Gyms · Indigo Plateau</td><td>Misty → Giovanni, then Elite Four + Blue</td></tr>
+      <tr><td>Johto League</td><td>Johto Gyms · Johto League</td><td>Valerio through Lance</td></tr>
+      <tr><td>Hoenn League</td><td>Hoenn Gyms · Hoenn League</td><td>Full Hoenn gym + champion path</td></tr>
+      <tr><td>Sinnoh League</td><td>Sinnoh Gyms · Sinnoh League</td><td>Starts with Pedro (pack order), then Elite Four</td></tr>
+      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding Lab · Raid Circuit · Pokédex Drive</td><td>Crafts, eggs, dens, dex milestones</td></tr>
+      <tr><td>Endgame</td><td>Legend Trail</td><td>Post–Kanto champion legendary goals</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How quests relate to the rest of the game</h2>
+  <ul>
+    <li><strong>Gym maps &amp; level cap</strong> still decide where you can fight — quests track the same path, they do not replace maps. See <a href="Gym_Maps.html">Gym maps</a> · <a href="Level_Cap.html">Level cap</a>.</li>
+    <li><strong>Advancements</strong> (<kbd>L</kbd>) are a separate toast checklist. Use both if you like; neither is required to play. <a href="Achievements.html">Achievements</a>.</li>
+    <li><strong>Rewards</strong> are helpful items (balls, heals, materials) — not pay-to-win ranks.</li>
+  </ul>
+
+  <h2>Common questions</h2>
+  <ul>
+    <li><strong>Book won’t open?</strong> Check Controls for “Quests” / FTB Quests — default is <kbd>O</kbd>.</li>
+    <li><strong>Claim quest stuck?</strong> Claim with <kbd>U</kbd>, then click the green check on the quest. Guide: <a href="Claims.html">Claims</a>.</li>
+    <li><strong>Misty locked?</strong> Finish Defeat Brock in First Steps first.</li>
+    <li><strong>Lost progress after update?</strong> First Steps IDs are frozen on purpose. If something else looks wrong, Discord <code>#tickets</code> with a screenshot of the book.</li>
+  </ul>
+
+  <p class="see-also"><strong>See also:</strong> <a href="First_Hours.html">First hours</a> · <a href="Progression.html">Progression</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Achievements.html">Achievements</a></p>
   ${navboxSystems()}
   `,
 });
@@ -1711,7 +1891,7 @@ writePage("Rules_and_Commands.html", {
     <li><strong>Chat</strong> — <strong>English</strong> is the main language in public channels (EU server). Keep it SFW. Keep names, nicknames, and profile pictures appropriate.</li>
     <li><strong>Voice chat</strong> — Push-to-talk preferred. No earrape, blasting soundboards, or screaming for no reason. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
     <li><strong>Asking for help</strong> — Quick public questions → Discord <code>#help</code>. Private / reports / longer staff help → <code>#tickets</code>. Always include a screenshot + what you already tried.</li>
-    <li><strong>Donations</strong> — Optional. They keep the server online. <strong>Cosmetic only</strong> (Discord roles + optional chat tags via <code>/prefix</code>) — no shiny, catch, XP, or claim advantages. Details: <a href="Trainer_Tags.html">Trainer tags</a>.</li>
+    <li><strong>Donations</strong> — Optional. They keep the server online. <strong>No perks, ranks, or VIP rewards</strong> — thank you for the support.</li>
     <li><strong>Staff decisions</strong> — Staff may warn, mute, kick, or ban when needed. Don’t argue moderation in public — use a ticket if needed.</li>
   </ol>
 
@@ -1721,7 +1901,6 @@ writePage("Rules_and_Commands.html", {
     <thead><tr><th>Command</th><th>What it does</th></tr></thead>
     <tbody>
       <tr><td><code>/pc</code></td><td>Open Pokémon PC storage anywhere — <a href="Healing_and_Storage.html">Healing &amp; storage</a></td></tr>
-      <tr><td><code>/prefix</code></td><td>Pick your visible trainer chat tag — <a href="Trainer_Tags.html">Trainer tags</a></td></tr>
     </tbody>
   </table>
   <div class="callout tip">
@@ -1731,15 +1910,22 @@ writePage("Rules_and_Commands.html", {
   </div>
 
   <h2>Keys you’ll use constantly</h2>
+  <p>PokeHaven EU Client defaults (conflict-free). Rebind under Esc → Options → Controls.</p>
   <table class="wikitable">
     <thead><tr><th>Action</th><th>Default</th><th>Notes</th></tr></thead>
     <tbody>
       <tr><td>Party / starter</td><td><kbd>C</kbd></td><td>Pick starter and manage team</td></tr>
-      <tr><td>Send out / recall</td><td><kbd>R</kbd></td><td>Battles and mounts</td></tr>
+      <tr><td>Select party slot</td><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Which Pokémon you throw</td></tr>
+      <tr><td>Throw / recall</td><td><kbd>R</kbd></td><td>Send out the selected Pokémon</td></tr>
+      <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight</td></tr>
+      <tr><td>Quest book</td><td><kbd>O</kbd></td><td>FTB Quests</td></tr>
+      <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td><a href="Claims.html">Claims</a></td></tr>
+      <tr><td>Chunk map</td><td><kbd>M</kbd></td><td>FTB Chunks map</td></tr>
+      <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>K</kbd> · group <kbd>B</kbd> — <a href="Voice_Chat.html">Voice chat</a></td></tr>
+      <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Get off your mount</td></tr>
       <tr><td>Recipe viewer (REI)</td><td><kbd>E</kbd></td><td>Live crafts — <a href="Essential_Recipes.html">Essential recipes</a></td></tr>
       <tr><td>Ride</td><td><kbd>Shift</kbd> + right-click</td><td><a href="Riding.html">Riding</a></td></tr>
-      <tr><td>Claim map (FTB Chunks)</td><td>Bind in Controls → search <em>FTB</em> / <em>Chunks</em></td><td><a href="Claims.html">Claims</a></td></tr>
-      <tr><td>Voice chat</td><td>Controls → Simple Voice Chat</td><td>Prefer push-to-talk — <a href="Voice_Chat.html">Voice chat</a></td></tr>
     </tbody>
   </table>
 
@@ -1773,6 +1959,7 @@ writePage("Voice_Chat.html", {
   <ol class="steps">
     <li>Join PokeHaven EU and allow the mic / voice-chat prompt if Windows or the game asks.</li>
     <li>Open <strong>Esc → Options → Controls → Simple Voice Chat</strong> and set <strong>Push to talk</strong> (nicest in groups).</li>
+    <li>PokeHaven EU defaults: voice menu <kbd>V</kbd>, mute <kbd>K</kbd>, group <kbd>B</kbd>.</li>
     <li>Pick the correct input device if nobody can hear you.</li>
     <li>Test with a friend nearby — you should hear each other within the hear distance.</li>
   </ol>
@@ -2219,6 +2406,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Brock.html"><h3>Brock</h3><p>First gym deep guide.</p></a>
     <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Why XP freezes — and the ladder.</p></a>
     <a class="hub-card" href="pages/Essential_Recipes.html"><h3>Essential recipes</h3><p>Balls, maps, tools, REI.</p></a>
+    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>Press O — First Steps to Sinnoh.</p></a>
     <a class="hub-card" href="pages/FAQ.html"><h3>FAQ</h3><p>Join issues &amp; common fixes.</p></a>
   </div>
 
@@ -2251,12 +2439,13 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Catching &amp; battling</h3><p>Combat primer.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens and tiers.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
+    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>FTB Quests book &amp; chapters.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture, eggs, Ditto rules.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
+    <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture jobs — crops, berries, furnaces.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainer clothes &amp; Pokémon looks.</p></a>
-    <a class="hub-card" href="pages/Trainer_Tags.html"><h3>Trainer tags</h3><p>Chat tags via /prefix.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Common mistakes</h3><p>Fix these once.</p></a>
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Rules &amp; commands</h3><p>Server rules, /pc, keybinds.</p></a>
   </div>
@@ -2330,13 +2519,13 @@ writePage("FAQ.html", {
   <p>After Brock, craft her map: <strong>Cerulean Star</strong> (seagrass needs <strong>Shears</strong>) + fresh Empty Map on the Kanto Cartography Table. Guides: <a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym maps</a>.</p>
 
   <h2>Do I claim with Open Parties?</h2>
-  <p><strong>No.</strong> On PokeHaven EU use <strong>FTB Chunks only</strong>. Open Parties and Claims is in the pack — don’t use it for your base. See <a href="Claims.html">Claims</a>.</p>
+  <p><strong>No.</strong> On PokeHaven EU use <strong>FTB Chunks only</strong>. Open Parties and Claims (OPAC) has been <strong>removed</strong> from the pack so there is only one claims system. See <a href="Claims.html">Claims</a>.</p>
 
   <h2>Is there a browser map?</h2>
   <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. More travel tools: <a href="Travel.html">Travel</a>.</p>
 
   <h2>Can I donate?</h2>
-  <p>Yes, optionally — donations help keep the server online / upgraded. Rewards are <strong>cosmetic only</strong> (Discord roles + chat tags via <code>/prefix</code>). No shiny, catch, XP, or claim advantages. See <a href="Trainer_Tags.html">Trainer tags</a>. Links live in Discord.</p>
+  <p>Yes, optionally — donations help keep the server online / upgraded. <strong>There are no gameplay perks, ranks, or VIP rewards.</strong> Links live in Discord.</p>
 
   <h2>How do I craft Poké Balls?</h2>
   <p>Full screenshot guide: <a href="Poke_Balls.html">Poké Balls</a>. More crafts: <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Recipe_Browser.html">Recipe browser</a>.</p>
@@ -2345,13 +2534,13 @@ writePage("FAQ.html", {
   <p><a href="Minecraft_Hub.html">Minecraft survival hub</a> — mining, farming, Nether, villages, death, and <a href="Pack_Differences.html">what this pack changes</a>.</p>
 
   <h2>Is there a quest arrow?</h2>
-  <p>No single quest arrow. Use <a href="Gym_Maps.html">gym maps</a>, the <a href="Level_Cap.html">level cap</a>, and the Advancements checklist (<a href="Achievements.html">Achievements</a> — often <kbd>L</kbd>). Post-league goals: <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a>.</p>
+  <p>No floating arrow on the world. Open the <strong>quest book</strong> with <kbd>O</kbd> (<a href="Quests.html">Quests</a>) for First Steps → Sinnoh and side goals. Still use <a href="Gym_Maps.html">gym maps</a>, the <a href="Level_Cap.html">level cap</a>, and Advancements (<a href="Achievements.html">Achievements</a> — often <kbd>L</kbd>). Post-league: <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a>.</p>
 
   <h2>Can I loot villages?</h2>
   <p>Yes. Center/house chests are fair game. On PokeHaven EU, emptied loot may refresh later.</p>
 
   <h2>Voice chat key?</h2>
-  <p>Esc → Options → Controls → Simple Voice Chat. Push-to-talk is nicest in groups. See <a href="Voice_Chat.html">Voice chat</a>.</p>
+  <p><kbd>V</kbd> opens voice chat, <kbd>K</kbd> mutes, <kbd>B</kbd> opens groups. See <a href="Voice_Chat.html">Voice chat</a>.</p>
 
   <h2>Where is the player wiki?</h2>
   <p><strong><a href="https://pokehaven.wiki">pokehaven.wiki</a></strong> — English + Nederlands (flags on the site). Also pinned in Discord <code>#pokehaven-wiki</code>. Start with Getting started, Claims, Gym maps, Brock.</p>
