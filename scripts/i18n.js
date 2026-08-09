@@ -1,6 +1,7 @@
 /** UI strings + helpers for EN/NL wiki */
 
 export const DISCORD_INVITE = "https://discord.gg/7EHPZfGwU4";
+export const BLUEMAP_URL = "http://88.211.214.163:8100";
 
 export const UI = {
   en: {
@@ -18,11 +19,11 @@ export const UI = {
       ["Start", "Getting_Started.html"],
       ["Quests", "Quests.html"],
       ["Gyms", "Gyms_Kanto.html"],
+      ["BlueMap", BLUEMAP_URL],
       ["Recipes", "Recipe_Browser.html"],
       ["Economy", "Economy.html"],
       ["Raids", "Raids.html"],
       ["Claims", "Claims.html"],
-      ["Data", "Spawn_Lookup.html"],
     ],
   },
   nl: {
@@ -40,11 +41,11 @@ export const UI = {
       ["Start", "Getting_Started.html"],
       ["Quests", "Quests.html"],
       ["Gyms", "Gyms_Kanto.html"],
+      ["BlueMap", BLUEMAP_URL],
       ["Recepten", "Recipe_Browser.html"],
       ["Economie", "Economy.html"],
       ["Raids", "Raids.html"],
       ["Claims", "Claims.html"],
-      ["Data", "Spawn_Lookup.html"],
     ],
   },
 };

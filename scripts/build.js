@@ -63,9 +63,13 @@ function layout({
     : "";
 
   const navHtml = ui.nav
-    .map(([label, pageFile]) => {
+    .map(([label, target]) => {
+      const external = /^https?:\/\//i.test(target);
+      if (external) {
+        return `<a href="${esc(target)}" rel="noopener noreferrer" target="_blank">${esc(label)}</a>`;
+      }
       const href =
-        file === "index.html" ? `${pagePrefix}pages/${pageFile}` : pageFile;
+        file === "index.html" ? `${pagePrefix}pages/${target}` : target;
       return `<a href="${href}">${esc(label)}</a>`;
     })
     .join("\n");
