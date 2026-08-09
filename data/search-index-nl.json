@@ -62,8 +62,20 @@
   {
     "title": "Quests",
     "href": "pages/Quests.html",
-    "blurb": "PokeHaven EU heeft een volledig FTB Quests-boek — First Steps, alle gyms tot Sinnoh, plus craft, broeden, raids, Pokédex en legend-doelen. Open met O.",
-    "keywords": "ftb quests quest book o first steps settling gym league breeding raid pokedex legend trail"
+    "blurb": "PokeHaven EU heeft een volledig FTB Quests-boek — First Steps, badge-trackers, Server Life, region exploration en een Prestige Ladder met Gotta Catch Em All (10",
+    "keywords": "ftb quests quest book o first steps settling gym league badge prestige gotta catch exploration server life"
+  },
+  {
+    "title": "Region exploration",
+    "href": "pages/Region_Exploration.html",
+    "blurb": "Elke league heeft een Exploration-chapter. Pins gebruiken vaste namen zodat BlueMap, waystones en het questboek overeenkomen.",
+    "keywords": "exploration atlas waystone pin bluemap kanto johto hoenn sinnoh landmark gym map"
+  },
+  {
+    "title": "Prestige-seizoen",
+    "href": "pages/Prestige_Season.html",
+    "blurb": "Na de Sinnoh Champion is de Prestige Ladder de lange chase — inclusief Gotta Catch Em All (1025 registered). Seizoenen zijn community-races, geen wipe van je le",
+    "keywords": "prestige ladder season leaderboard gotta catch em all dex 1025 reset shiny raid"
   },
   {
     "title": "Reizen",
