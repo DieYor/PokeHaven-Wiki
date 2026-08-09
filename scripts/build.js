@@ -188,6 +188,7 @@ function navboxGyms() {
       <a href="Gyms_Sinnoh.html">Sinnoh</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Guides</div><div class="navbox-links">
+      <a href="Quests.html">Quests</a>
       <a href="Progression.html">Progression</a>
       <a href="Level_Cap.html">Level cap</a>
       <a href="Gym_Maps.html">Gym maps</a>
@@ -2399,34 +2400,45 @@ writePage("index.html", {
     </div>
   </section>
 
-  <h2>New players</h2>
+  <nav class="hub-jump chips" aria-label="Browse sections">
+    <a class="chip" href="#start"><strong>Start</strong></a>
+    <a class="chip" href="#path"><strong>Your path</strong></a>
+    <a class="chip" href="#gyms"><strong>Gyms</strong></a>
+    <a class="chip" href="#craft"><strong>Recipes</strong></a>
+    <a class="chip" href="#systems"><strong>Systems</strong></a>
+    <a class="chip" href="#data"><strong>Data</strong></a>
+  </nav>
+
+  <h2 id="start">New players</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Getting started</h3><p>Install 1.7.42 and join.</p></a>
     <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Claim, Brock, then the Misty loop.</p></a>
     <a class="hub-card" href="pages/Brock.html"><h3>Brock</h3><p>First gym deep guide.</p></a>
-    <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Why XP freezes — and the ladder.</p></a>
     <a class="hub-card" href="pages/Essential_Recipes.html"><h3>Essential recipes</h3><p>Balls, maps, tools, REI.</p></a>
-    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>Press O — First Steps to Sinnoh.</p></a>
     <a class="hub-card" href="pages/FAQ.html"><h3>FAQ</h3><p>Join issues &amp; common fixes.</p></a>
   </div>
 
-  <h2>Gyms &amp; progression</h2>
+  <h2 id="path">Your path</h2>
+  <div class="hub-grid">
+    <a class="hub-card hub-card-spotlight" href="pages/Quests.html"><h3>Quests</h3><p>Press O — First Steps through Sinnoh.</p></a>
+    <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Why XP freezes — and the ladder.</p></a>
+    <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Regions &amp; the gym loop.</p></a>
+    <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym maps</h3><p>Cartography &amp; coordinates.</p></a>
+    <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement checklist.</p></a>
+  </div>
+
+  <h2 id="gyms">Gyms &amp; regions</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>All 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — deep guides.</p></a>
     <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps, opener Petra, trainer list.</p></a>
     <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Maps, opener Pedro, trainer list.</p></a>
-    <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Second gym deep guide.</p></a>
-    <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>First Johto gym — Flying.</p></a>
-    <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym maps</h3><p>Cartography &amp; coordinates.</p></a>
     <a class="hub-card" href="pages/Blue.html"><h3>Champion Blue</h3><p>End of Kanto — then Johto.</p></a>
-    <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Regions &amp; the gym loop.</p></a>
-    <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement checklist.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
     <a class="hub-card" href="pages/Mega_and_Late_Game.html"><h3>Mega &amp; late-game</h3><p>Gimmicks + after-Blue checklist.</p></a>
   </div>
 
-  <h2>Minecraft &amp; recipes</h2>
+  <h2 id="craft">Minecraft &amp; recipes</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Minecraft_Hub.html"><h3>Minecraft hub</h3><p>Survival guides in one place.</p></a>
     <a class="hub-card" href="pages/Poke_Balls.html"><h3>Poké Balls</h3><p>Apricorns + crafting screenshots.</p></a>
@@ -2434,12 +2446,11 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Economy.html"><h3>Economy</h3><p>Shop &amp; bank prices.</p></a>
   </div>
 
-  <h2>Systems</h2>
+  <h2 id="systems">Systems</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Catching &amp; battling</h3><p>Combat primer.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens and tiers.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
-    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>FTB Quests book &amp; chapters.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture, eggs, Ditto rules.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
@@ -2450,7 +2461,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Rules &amp; commands</h3><p>Server rules, /pc, keybinds.</p></a>
   </div>
 
-  <h2>Databases</h2>
+  <h2 id="data">Databases</h2>
   <div class="hub-grid hub-grid-compact">
     <a class="hub-card" href="pages/Trainer_Index.html"><h3>Trainer index</h3><p>${trainers.all.length} trainers.</p></a>
     <a class="hub-card" href="pages/Raid_Bosses.html"><h3>Raid bosses</h3><p>${raids.bosses.length} bosses.</p></a>

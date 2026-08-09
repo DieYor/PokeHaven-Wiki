@@ -139,34 +139,45 @@ export function registerDutchSite({
     </div>
   </section>
 
-  <h2>Nieuwe spelers</h2>
+  <nav class="hub-jump chips" aria-label="Blader door secties">
+    <a class="chip" href="#start"><strong>Start</strong></a>
+    <a class="chip" href="#path"><strong>Jouw pad</strong></a>
+    <a class="chip" href="#gyms"><strong>Gyms</strong></a>
+    <a class="chip" href="#craft"><strong>Recepten</strong></a>
+    <a class="chip" href="#systems"><strong>Systemen</strong></a>
+    <a class="chip" href="#data"><strong>Data</strong></a>
+  </nav>
+
+  <h2 id="start">Nieuwe spelers</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Getting_Started.html"><h3>Aan de slag</h3><p>Installeer 1.7.42 en join.</p></a>
     <a class="hub-card" href="pages/First_Hours.html"><h3>Eerste uren</h3><p>Claim, Brock, daarna Misty-loop.</p></a>
-    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>Druk O — First Steps tot Sinnoh.</p></a>
     <a class="hub-card" href="pages/Brock.html"><h3>Brock</h3><p>Eerste gym, diepe gids.</p></a>
-    <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Waarom XP stopt — en de ladder.</p></a>
     <a class="hub-card" href="pages/Essential_Recipes.html"><h3>Essentiële recepten</h3><p>Balls, maps, tools, REI.</p></a>
     <a class="hub-card" href="pages/FAQ.html"><h3>FAQ</h3><p>Join-problemen &amp; fixes.</p></a>
-    <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Regels &amp; commands</h3><p>Serverregels, /pc, toetsen.</p></a>
   </div>
 
-  <h2>Gyms &amp; progressie</h2>
+  <h2 id="path">Jouw pad</h2>
+  <div class="hub-grid">
+    <a class="hub-card hub-card-spotlight" href="pages/Quests.html"><h3>Quests</h3><p>Druk O — First Steps tot Sinnoh.</p></a>
+    <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Waarom XP stopt — en de ladder.</p></a>
+    <a class="hub-card" href="pages/Progression.html"><h3>Progressie</h3><p>Regio’s &amp; gym-loop.</p></a>
+    <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym-maps</h3><p>Cartography &amp; coördinaten.</p></a>
+    <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement-checklist.</p></a>
+  </div>
+
+  <h2 id="gyms">Gyms &amp; regio’s</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>Alle 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — diepe gidsen.</p></a>
     <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps en trainerlijst — diepe gidsen volgen.</p></a>
     <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Maps en trainerlijst — diepe gidsen volgen.</p></a>
-    <a class="hub-card" href="pages/Misty.html"><h3>Misty</h3><p>Tweede gym, diepe gids.</p></a>
-    <a class="hub-card" href="pages/Valerio.html"><h3>Valerio</h3><p>Eerste Johto-gym — Flying.</p></a>
-    <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym-maps</h3><p>Cartography &amp; coördinaten.</p></a>
-    <a class="hub-card" href="pages/Progression.html"><h3>Progressie</h3><p>Regio’s &amp; gym-loop.</p></a>
-    <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement-checklist.</p></a>
+    <a class="hub-card" href="pages/Blue.html"><h3>Champion Blue</h3><p>Einde van Kanto — daarna Johto.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
     <a class="hub-card" href="pages/Mega_and_Late_Game.html"><h3>Mega &amp; late-game</h3><p>Gimmicks + checklist na Blue.</p></a>
   </div>
 
-  <h2>Minecraft &amp; recepten</h2>
+  <h2 id="craft">Minecraft &amp; recepten</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Minecraft_Hub.html"><h3>Minecraft-hub</h3><p>Survival-gidsen op één plek.</p></a>
     <a class="hub-card" href="pages/Poke_Balls.html"><h3>Poké Balls</h3><p>Apricorns + screenshots.</p></a>
@@ -174,12 +185,11 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Economy.html"><h3>Economie</h3><p>Shop- &amp; bankprijzen.</p></a>
   </div>
 
-  <h2>Systemen</h2>
+  <h2 id="systems">Systemen</h2>
   <div class="hub-grid">
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Vangen &amp; vechten</h3><p>Combat-primer.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens, tiers, damage-share.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
-    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>FTB Quests-boek &amp; chapters.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones, maps en BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture, eieren, Ditto-regels.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
@@ -190,7 +200,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Regels &amp; commands</h3><p>Serverregels, /pc, toetsen.</p></a>
   </div>
 
-  <h2>Databases</h2>
+  <h2 id="data">Databases</h2>
   <div class="hub-grid hub-grid-compact">
     <a class="hub-card" href="pages/Trainer_Index.html"><h3>Trainer-index</h3><p>${trainers.all.length} trainers.</p></a>
     <a class="hub-card" href="pages/Raid_Bosses.html"><h3>Raid-bosses</h3><p>${raids.bosses.length} bosses.</p></a>
