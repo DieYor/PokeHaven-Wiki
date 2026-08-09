@@ -426,7 +426,76 @@ export function registerDeepPages({
       </tbody>
     </table>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Pack_Differences.html">Pack differences</a> · <a href="Getting_Started.html">Getting started</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Trainer_Tags.html">Trainer tags</a> · <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Getting_Started.html">Getting started</a></p>
+    ${navboxSystems()}
+    `,
+  });
+
+  writePage("Trainer_Tags.html", {
+    title: "Trainer tags",
+    breadcrumbs: [
+      { label: "Main Page", href: "../index.html" },
+      { label: "Trainer tags", href: "Trainer_Tags.html" },
+    ],
+    lede: "Pick a <strong>cosmetic chat tag</strong> on PokeHaven EU with <code>/prefix</code>. Looks only — no gameplay advantages.",
+    infobox: `<div class="infobox-title">Trainer tags</div>
+    <table>
+      <tr><th>Command</th><td><code>/prefix</code></td></tr>
+      <tr><th>Type</th><td>Cosmetic chat prefix</td></tr>
+      <tr><th>Client</th><td>PokeHaven EU Client (mod included)</td></tr>
+      <tr><th>Gameplay perks</th><td>None</td></tr>
+    </table>`,
+    body: `
+    <div class="callout tip">
+      <div class="label">Cosmetic only</div>
+      Trainer tags change how your name looks in chat. They do <strong>not</strong> affect shiny odds, catch rates, XP, claims, or gym progression.
+    </div>
+
+    <h2>How to use</h2>
+    <ol class="steps">
+      <li>Join with the <strong>PokeHaven EU Client</strong> (the Prefix mod is already in the zip).</li>
+      <li>Type <code>/prefix</code> in chat.</li>
+      <li>A Pokédex-style menu opens with the tags you own.</li>
+      <li>Click a tag to equip it — or choose <strong>No Tag</strong> to hide every trainer tag.</li>
+    </ol>
+    <div class="callout tip">
+      <div class="label">Empty menu?</div>
+      If you only see <strong>No Tag</strong>, you have not unlocked a donor tag yet. Donate via Discord (staff logs lifetime totals) — then rejoin or ask staff if the group did not sync.
+    </div>
+
+    <h2>Donor tags</h2>
+    <p>Lifetime donation totals unlock Discord roles and matching in-game tags. Thresholds:</p>
+    <table class="wikitable">
+      <thead><tr><th>Lifetime</th><th>Tag</th><th>Looks like</th></tr></thead>
+      <tbody>
+        <tr><td>€10+</td><td>Supporter</td><td>aqua <code>[Supporter]</code></td></tr>
+        <tr><td>€50+</td><td>Patron</td><td>gold <code>[Patron]</code></td></tr>
+        <tr><td>€100+</td><td>Benefactor</td><td>light purple <code>[Benefactor]</code></td></tr>
+        <tr><td>—</td><td>No Tag</td><td>Hides all trainer tags</td></tr>
+      </tbody>
+    </table>
+    <p>Higher tiers keep access to lower tags — pick whichever you want in <code>/prefix</code>.</p>
+    <p>Donation links and instructions live in Discord. Optional support only; the server stays free to play.</p>
+
+    <h2>Requirements</h2>
+    <ul>
+      <li><strong>Server:</strong> LuckPerms + PokeHaven Prefix mod</li>
+      <li><strong>Client:</strong> same Prefix mod (bundled in the PokeHaven EU Client zip)</li>
+      <li>Staff tags (Admin / Mod) only appear if you have those groups — most players never see them</li>
+    </ul>
+
+    <h2>Quick FAQ</h2>
+    <table class="wikitable">
+      <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+      <tbody>
+        <tr><td>Does a tag help in battles?</td><td>No — cosmetic only.</td></tr>
+        <tr><td>Can I hide my tag?</td><td>Yes — open <code>/prefix</code> → <strong>No Tag</strong>.</td></tr>
+        <tr><td>I donated but see no tag</td><td>Ask staff in a Discord ticket (include Discord name + in-game name). Then use <code>/prefix</code>.</td></tr>
+        <tr><td>Old client / missing menu</td><td>Re-import the latest <strong>PokeHaven EU Client</strong> zip from Discord / Drive.</td></tr>
+      </tbody>
+    </table>
+
+    <p class="see-also"><strong>See also:</strong> <a href="Rules_and_Commands.html">Rules &amp; commands</a> · <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a> · <a href="FAQ.html">FAQ</a></p>
     ${navboxSystems()}
     `,
   });

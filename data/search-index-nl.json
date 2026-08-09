@@ -128,7 +128,7 @@
   {
     "title": "Achievements",
     "href": "pages/Achievements.html",
-    "blurb": "In-game heb je twee grote Pokémon-advancement tabs: CobbleVerse (69 gym / league / legendary-doelen) en Cobblemon (65 vangen, farming, fossils…). Vanilla Minecr",
+    "blurb": "In-game heb je twee grote Pokémon-advancement tabs: CobbleVerse (69 gym / league / legendary-doelen) en Cobblemon (5 vangen, farming, fossils…). Vanilla Minecra",
     "keywords": "achievement advancement toast checklist kanto mew mewtwo articuno zapdos moltres L key cobblemon berry apricorn fossil vivillon shiny catch"
   },
   {
@@ -148,6 +148,12 @@
     "href": "pages/Outfits_and_Cosmetics.html",
     "blurb": "Zie eruit als trainer op PokeHaven EU: craftbare outfits voor jou, plus Pokémon-cosmetics (costumes, sjaals, Furfrou-cuts).",
     "keywords": "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing"
+  },
+  {
+    "title": "Trainer-tags",
+    "href": "pages/Trainer_Tags.html",
+    "blurb": "Kies een cosmetische chat-tag op PokeHaven EU met /prefix. Alleen looks — geen gameplay-voordelen.",
+    "keywords": "prefix /prefix trainer tag chat tag supporter patron benefactor donor donation cosmetic no tag luckperms"
   },
   {
     "title": "Broeden",

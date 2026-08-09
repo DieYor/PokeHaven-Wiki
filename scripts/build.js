@@ -213,6 +213,7 @@ function navboxSystems() {
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Fishing</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
+      <a href="Trainer_Tags.html">Trainer tags</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">World</div><div class="navbox-links">
       <a href="Claims.html">Claims</a>
@@ -295,6 +296,8 @@ const searchIndexNl = [];
 const SEARCH_KEYWORDS = {
   "Outfits_and_Cosmetics.html":
     "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing",
+  "Trainer_Tags.html":
+    "prefix /prefix trainer tag chat tag supporter patron benefactor donor donation cosmetic no tag luckperms",
   "Level_Cap.html": "xp experience level cap stuck freeze trainer card overlevel",
   "Claims.html": "claim ftb chunks protect grief chest land party",
   "Getting_Started.html": "join install curseforge discord ip pack 1.7.42 ticket empty map cerulean",
@@ -1708,7 +1711,7 @@ writePage("Rules_and_Commands.html", {
     <li><strong>Chat</strong> — <strong>English</strong> is the main language in public channels (EU server). Keep it SFW. Keep names, nicknames, and profile pictures appropriate.</li>
     <li><strong>Voice chat</strong> — Push-to-talk preferred. No earrape, blasting soundboards, or screaming for no reason. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
     <li><strong>Asking for help</strong> — Quick public questions → Discord <code>#help</code>. Private / reports / longer staff help → <code>#tickets</code>. Always include a screenshot + what you already tried.</li>
-    <li><strong>Donations</strong> — Optional. They keep the server online. <strong>No perks, ranks, or VIP rewards</strong> — thank you for the support.</li>
+    <li><strong>Donations</strong> — Optional. They keep the server online. <strong>Cosmetic only</strong> (Discord roles + optional chat tags via <code>/prefix</code>) — no shiny, catch, XP, or claim advantages. Details: <a href="Trainer_Tags.html">Trainer tags</a>.</li>
     <li><strong>Staff decisions</strong> — Staff may warn, mute, kick, or ban when needed. Don’t argue moderation in public — use a ticket if needed.</li>
   </ol>
 
@@ -1718,6 +1721,7 @@ writePage("Rules_and_Commands.html", {
     <thead><tr><th>Command</th><th>What it does</th></tr></thead>
     <tbody>
       <tr><td><code>/pc</code></td><td>Open Pokémon PC storage anywhere — <a href="Healing_and_Storage.html">Healing &amp; storage</a></td></tr>
+      <tr><td><code>/prefix</code></td><td>Pick your visible trainer chat tag — <a href="Trainer_Tags.html">Trainer tags</a></td></tr>
     </tbody>
   </table>
   <div class="callout tip">
@@ -2252,6 +2256,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainer clothes &amp; Pokémon looks.</p></a>
+    <a class="hub-card" href="pages/Trainer_Tags.html"><h3>Trainer tags</h3><p>Chat tags via /prefix.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Common mistakes</h3><p>Fix these once.</p></a>
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Rules &amp; commands</h3><p>Server rules, /pc, keybinds.</p></a>
   </div>
@@ -2331,7 +2336,7 @@ writePage("FAQ.html", {
   <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. More travel tools: <a href="Travel.html">Travel</a>.</p>
 
   <h2>Can I donate?</h2>
-  <p>Yes, optionally — donations help keep the server online / upgraded. <strong>There are no gameplay perks, ranks, or VIP rewards.</strong> Links live in Discord.</p>
+  <p>Yes, optionally — donations help keep the server online / upgraded. Rewards are <strong>cosmetic only</strong> (Discord roles + chat tags via <code>/prefix</code>). No shiny, catch, XP, or claim advantages. See <a href="Trainer_Tags.html">Trainer tags</a>. Links live in Discord.</p>
 
   <h2>How do I craft Poké Balls?</h2>
   <p>Full screenshot guide: <a href="Poke_Balls.html">Poké Balls</a>. More crafts: <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Recipe_Browser.html">Recipe browser</a>.</p>

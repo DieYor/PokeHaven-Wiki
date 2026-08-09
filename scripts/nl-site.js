@@ -66,6 +66,7 @@ function navboxCore() {
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Vissen</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
+      <a href="Trainer_Tags.html">Trainer-tags</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Wereld</div><div class="navbox-links">
       <a href="Claims.html">Claims</a>
@@ -181,6 +182,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainerkleding &amp; Pokémon-looks.</p></a>
+    <a class="hub-card" href="pages/Trainer_Tags.html"><h3>Trainer-tags</h3><p>Chat-tags via /prefix.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Veelgemaakte fouten</h3><p>Één keer maken.</p></a>
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Regels &amp; commands</h3><p>Serverregels, /pc, toetsen.</p></a>
   </div>
@@ -755,7 +757,7 @@ export function registerDutchSite({
     <li><strong>Chat</strong> — <strong>English</strong> is de hoofdtaal in publieke channels (EU-server). Houd het SFW. Namen, nicknames en profielfoto’s netjes houden.</li>
     <li><strong>Voice chat</strong> — Push-to-talk heeft voorkeur. Geen earrape, soundboards blazen of zinloos schreeuwen. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
     <li><strong>Hulp vragen</strong> — Snelle publieke vragen → Discord <code>#help</code>. Privé / reports / langere staff-hulp → <code>#tickets</code>. Altijd screenshot + wat je al probeerde.</li>
-    <li><strong>Donaties</strong> — Optioneel. Ze houden de server online. <strong>Geen perks, ranks of VIP-rewards</strong> — bedankt voor de support.</li>
+    <li><strong>Donaties</strong> — Optioneel. Ze houden de server online. <strong>Alleen cosmetisch</strong> (Discord-rollen + optionele chat-tags via <code>/prefix</code>) — geen shiny-, catch-, XP- of claim-voordelen. Details: <a href="Trainer_Tags.html">Trainer-tags</a>.</li>
     <li><strong>Staff-beslissingen</strong> — Staff mag warnen, muten, kicken of bannen. Bediscussieer moderatie niet publiek — open een ticket als nodig.</li>
   </ol>
 
@@ -765,6 +767,7 @@ export function registerDutchSite({
     <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
     <tbody>
       <tr><td><code>/pc</code></td><td>Open Pokémon PC-opslag overal — <a href="Healing_and_Storage.html">Genezen &amp; opslag</a></td></tr>
+      <tr><td><code>/prefix</code></td><td>Kies je zichtbare trainer chat-tag — <a href="Trainer_Tags.html">Trainer-tags</a></td></tr>
     </tbody>
   </table>
   <div class="callout tip">
@@ -919,7 +922,7 @@ export function registerDutchSite({
   <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Meer travel-tools: <a href="Travel.html">Reizen</a>.</p>
 
   <h2>Kan ik doneren?</h2>
-  <p>Ja, optioneel — donaties helpen de server online / te upgraden. <strong>Geen gameplay-perks, ranks of VIP-rewards.</strong> Links staan in Discord.</p>
+  <p>Ja, optioneel — donaties helpen de server online / te upgraden. Rewards zijn <strong>alleen cosmetisch</strong> (Discord-rollen + chat-tags via <code>/prefix</code>). Geen shiny-, catch-, XP- of claim-voordelen. Zie <a href="Trainer_Tags.html">Trainer-tags</a>. Links staan in Discord.</p>
 
   <h2>Hoe craft ik Poké Balls?</h2>
   <p><a href="Poke_Balls.html">Poké Balls</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Recipe_Browser.html">Receptenbrowser</a>.</p>
@@ -1540,7 +1543,73 @@ export function registerDutchSite({
     </tbody>
   </table>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Pack_Differences.html">Pack-verschillen</a> · <a href="../../pages/Outfits_and_Cosmetics.html">Volledige EN-gids</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Trainer_Tags.html">Trainer-tags</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="../../pages/Outfits_and_Cosmetics.html">Volledige EN-gids</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Trainer_Tags.html", {
+    title: "Trainer-tags",
+    breadcrumbs: crumbs({ label: "Trainer-tags", href: "Trainer_Tags.html" }),
+    lede: "Kies een <strong>cosmetische chat-tag</strong> op PokeHaven EU met <code>/prefix</code>. Alleen looks — geen gameplay-voordelen.",
+    infobox: `<div class="infobox-title">Trainer-tags</div>
+  <table>
+    <tr><th>Command</th><td><code>/prefix</code></td></tr>
+    <tr><th>Type</th><td>Cosmetische chat-prefix</td></tr>
+    <tr><th>Client</th><td>PokeHaven EU Client (mod zit erin)</td></tr>
+    <tr><th>Gameplay-perks</th><td>Geen</td></tr>
+  </table>`,
+    body: `
+  <div class="callout tip">
+    <div class="label">Alleen cosmetisch</div>
+    Trainer-tags veranderen hoe je naam in chat eruitziet. Ze beïnvloeden <strong>niet</strong> shiny-odds, catch rates, XP, claims of gym-progressie.
+  </div>
+
+  <h2>Hoe gebruik je het</h2>
+  <ol class="steps">
+    <li>Join met de <strong>PokeHaven EU Client</strong> (de Prefix-mod zit al in de zip).</li>
+    <li>Typ <code>/prefix</code> in chat.</li>
+    <li>Er opent een Pokédex-achtig menu met de tags die je hebt.</li>
+    <li>Klik een tag om hem aan te zetten — of kies <strong>No Tag</strong> om alle trainer-tags te verbergen.</li>
+  </ol>
+  <div class="callout tip">
+    <div class="label">Leeg menu?</div>
+    Zie je alleen <strong>No Tag</strong>, dan heb je nog geen donor-tag. Doneer via Discord (staff logt lifetime-totalen) — join opnieuw of vraag staff als de group niet syncte.
+  </div>
+
+  <h2>Donor-tags</h2>
+  <p>Lifetime donatie-totalen unlocken Discord-rollen en bijpassende in-game tags:</p>
+  <table class="wikitable">
+    <thead><tr><th>Lifetime</th><th>Tag</th><th>Ziet eruit als</th></tr></thead>
+    <tbody>
+      <tr><td>€10+</td><td>Supporter</td><td>aqua <code>[Supporter]</code></td></tr>
+      <tr><td>€50+</td><td>Patron</td><td>gold <code>[Patron]</code></td></tr>
+      <tr><td>€100+</td><td>Benefactor</td><td>light purple <code>[Benefactor]</code></td></tr>
+      <tr><td>—</td><td>No Tag</td><td>Verbergt alle trainer-tags</td></tr>
+    </tbody>
+  </table>
+  <p>Hogere tiers houden toegang tot lagere tags — kies wat je wilt in <code>/prefix</code>.</p>
+  <p>Donatie-links staan in Discord. Optionele support; de server blijft gratis speelbaar.</p>
+
+  <h2>Vereisten</h2>
+  <ul>
+    <li><strong>Server:</strong> LuckPerms + PokeHaven Prefix-mod</li>
+    <li><strong>Client:</strong> dezelfde Prefix-mod (in de PokeHaven EU Client-zip)</li>
+    <li>Staff-tags (Admin / Mod) zie je alleen als je die groups hebt — de meeste spelers zien ze nooit</li>
+  </ul>
+
+  <h2>Korte FAQ</h2>
+  <table class="wikitable">
+    <thead><tr><th>Vraag</th><th>Antwoord</th></tr></thead>
+    <tbody>
+      <tr><td>Helpt een tag in battles?</td><td>Nee — alleen cosmetisch.</td></tr>
+      <tr><td>Kan ik mijn tag verbergen?</td><td>Ja — <code>/prefix</code> → <strong>No Tag</strong>.</td></tr>
+      <tr><td>Gedoneerd maar geen tag</td><td>Open een Discord-ticket (Discord-naam + in-game naam). Daarna <code>/prefix</code>.</td></tr>
+      <tr><td>Oude client / geen menu</td><td>Importeer opnieuw de nieuwste <strong>PokeHaven EU Client</strong>-zip uit Discord / Drive.</td></tr>
+    </tbody>
+  </table>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Rules_and_Commands.html">Regels &amp; commands</a> · <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxCore()}
   `,
   });

@@ -200,7 +200,7 @@
   {
     "title": "Achievements",
     "href": "pages/Achievements.html",
-    "blurb": "In-game you have two main Pokémon advancement tabs: CobbleVerse (69 gym / league / legendary goals) and Cobblemon (65 catching, farming, fossils…). Vanilla Mine",
+    "blurb": "In-game you have two main Pokémon advancement tabs: CobbleVerse (69 gym / league / legendary goals) and Cobblemon (5 catching, farming, fossils…). Vanilla Minec",
     "keywords": "achievement advancement toast checklist kanto mew mewtwo articuno zapdos moltres L key cobblemon berry apricorn fossil vivillon shiny catch"
   },
   {
@@ -226,6 +226,12 @@
     "href": "pages/Outfits_and_Cosmetics.html",
     "blurb": "Look the part on PokeHaven EU: craftable trainer outfits for you, plus Pokémon cosmetics (costumes, scarves, Furfrou cuts).",
     "keywords": "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing"
+  },
+  {
+    "title": "Trainer tags",
+    "href": "pages/Trainer_Tags.html",
+    "blurb": "Pick a cosmetic chat tag on PokeHaven EU with /prefix. Looks only — no gameplay advantages.",
+    "keywords": "prefix /prefix trainer tag chat tag supporter patron benefactor donor donation cosmetic no tag luckperms"
   },
   {
     "title": "Riding and flying",
