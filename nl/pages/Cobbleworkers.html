@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cobbleworkers — PokeHaven EU Wiki</title>
+  <meta name="description" content="Zet Pokémon in een Pasture en ze werken in de buurt — crops oogsten, cauldrons vullen, ovens voeden, enz. Dit is automatisering, geen salaris-job." />
+  <link rel="alternate" hreflang="en" href="../../pages/Cobbleworkers.html" />
+  <link rel="alternate" hreflang="nl" href="Cobbleworkers.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="stylesheet" href="../../css/wiki.css" />
+</head>
+<body class="is-article">
+  <div class="world-bg" aria-hidden="true">
+    <img src="../../assets/wiki-wallpaper.png" alt="" />
+  </div>
+  <div class="world-vignette" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-logo" href="../index.html">PokeHaven <span>Wiki</span></a>
+      <nav class="site-nav"><a href="Getting_Started.html">Start</a>
+<a href="Minecraft_Hub.html">Minecraft</a>
+<a href="Recipe_Browser.html">Recepten</a>
+<a href="Gyms_Kanto.html">Kanto</a>
+<a href="Economy.html">Economie</a>
+<a href="Raids.html">Raids</a>
+<a href="Catching_and_Battling.html">Gevecht</a>
+<a href="Spawn_Lookup.html">Data</a></nav>
+      <div class="lang-switch" role="navigation" aria-label="Language">
+    <a class="lang-btn " href="../../pages/Cobbleworkers.html" hreflang="en" title="English" ><img class="flag-img" src="../../assets/flags/gb.svg" width="20" height="14" alt="" /><span class="lang-code">EN</span></a>
+    <a class="lang-btn active" href="#" hreflang="nl" title="Nederlands" aria-current="true"><img class="flag-img" src="../../assets/flags/nl.svg" width="20" height="14" alt="" /><span class="lang-code">NL</span></a>
+  </div>
+      <div class="search-wrap">
+        <input id="wiki-search" type="search" placeholder="Zoek in de wiki…" autocomplete="off" />
+        <div id="wiki-search-results" class="search-results"></div>
+      </div>
+    </div>
+  </header>
+  <main class="page">
+    <div class="breadcrumbs"><a href="../index.html">Hoofdpagina</a> <span aria-hidden="true">/</span> <span>Cobbleworkers</span></div>
+    <div class="article-layout ">
+      <article class="article" data-page-title="Cobbleworkers" >
+        <h1 class="article-title">Cobbleworkers</h1>
+        <p class="article-lede">Zet Pokémon in een <strong>Pasture</strong> en ze werken in de buurt — crops oogsten, cauldrons vullen, ovens voeden, enz. Dit is automatisering, <em>geen</em> salaris-job.</p>
+        <div class="toc-box" id="toc"><h2>Inhoud</h2><ol></ol></div>
+        
+  <h2>Wat is het?</h2>
+  <p><strong>Cobbleworkers</strong> maakt van het Cobblemon-<strong>Pasture</strong>-blok een utility-blok. Geschikte Pokémon in die pasture claimen automatisch jobs in bereik (crops, berries, apricorns, ovens, cauldrons, …) en deponeren loot in nabije inventories als dat kan.</p>
+  <div class="callout critical" role="note">
+  <div class="label">Belangrijk</div>
+  <p class="critical-text"><strong>Geen Jobs Reborn.</strong> Workers verdienen geen PokéDollars. Voor geld zie <a href="Economy.html">Economie</a>. Workers geven resources en automatisering.</p>
+</div>
+
+  <h2>Snel starten</h2>
+  <ol class="steps">
+    <li>Craft / plaats een <strong>Pasture</strong> (REI: <em>pasture</em>) in je <a href="Claims.html">FTB-claim</a>.</li>
+    <li>Zet Pokémon op de pasture (zelfde blok als bij broeden).</li>
+    <li>Bouw de farm binnen <strong>8 blokken</strong> horizontaal en <strong>~5 blokken</strong> omhoog/omlaag van de pasture (PokeHaven-defaults).</li>
+    <li>Zet een chest / inventory dicht bij de pasture — workers deponeren naar de dichtstbijzijnde geldige inventory.</li>
+    <li>Match <strong>type / species / move / ability</strong> met de job (tabel hieronder). Verkeerd type = ze doen niets.</li>
+  </ol>
+  <div class="callout tip">
+    <div class="label">Pathing-tip</div>
+    Pokémon gebruiken volledig Minecraft-pathfinding. Houd vloeren vrij, vermijd rare fences/gaten — anders geven ze het na ~30s op (navigation timeout).
+  </div>
+
+  <h2>PokeHaven-gebiedsinstellingen</h2>
+  <p>Uit de pack-config (<code>cobbleworkers.json</code>):</p>
+  <table class="wikitable">
+    <thead><tr><th>Setting</th><th>Waarde</th><th>Betekenis</th></tr></thead>
+    <tbody>
+      <tr><td><code>areaScanRadius</code></td><td>8</td><td>Horizontale werkstraal vanaf de pasture</td></tr>
+      <tr><td><code>areaScanHeight</code></td><td>5</td><td>Blokken omhoog/omlaag gescand</td></tr>
+      <tr><td><code>areaScanCooldown</code></td><td>45s</td><td>Pauze tussen volledige scans</td></tr>
+      <tr><td><code>navigationTimeout</code></td><td>30s</td><td>Opgeven bij bereiken target</td></tr>
+      <tr><td><code>depositTimeout</code></td><td>65s</td><td>Opgeven bij deponeren → items droppen</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Jobs (wie doet wat)</h2>
+  <p>De meeste jobs vragen een <strong>type</strong>. Sommige vragen een species, move of ability. Details: <a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">Accieo docs</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Job</th><th>Eis</th><th>Doet</th></tr></thead>
+    <tbody>
+      <tr><td>Crop harvester</td><td>Type <strong>Grass</strong></td><td>Oogst rijpe crops</td></tr>
+      <tr><td>Crop irrigator</td><td>Type <strong>Water</strong></td><td>Bevochtigt farmland</td></tr>
+      <tr><td>Berry harvester</td><td>Type <strong>Grass</strong></td><td>Oogst rijpe berries</td></tr>
+      <tr><td>Mint harvester</td><td>Type <strong>Fairy</strong></td><td>Oogst rijpe mints</td></tr>
+      <tr><td>Apricorn harvester</td><td>Type <strong>Bug</strong></td><td>Oogst rijpe apricorns</td></tr>
+      <tr><td>Nether wart harvester</td><td>Type <strong>Ghost</strong></td><td>Oogst rijpe nether wart</td></tr>
+      <tr><td>Amethyst harvester</td><td>Type <strong>Rock</strong></td><td>Oogst rijpe amethyst clusters</td></tr>
+      <tr><td>Tumblestone harvester</td><td>Type <strong>Steel</strong></td><td>Oogst rijpe tumblestone</td></tr>
+      <tr><td>Honey collector</td><td><strong>Combee</strong> / <strong>Vespiquen</strong></td><td>Haalt honeycombs uit beehives</td></tr>
+      <tr><td>Water generator</td><td>Type <strong>Water</strong></td><td>Vult lege cauldrons met water</td></tr>
+      <tr><td>Lava generator</td><td>Type <strong>Fire</strong></td><td>Vult lege cauldrons met lava</td></tr>
+      <tr><td>Snow generator</td><td>Type <strong>Ice</strong></td><td>Vult lege cauldrons met sneeuw</td></tr>
+      <tr><td>Fuel generator</td><td>Type <strong>Fire</strong></td><td>Geeft burn ticks aan furnaces</td></tr>
+      <tr><td>Brewing stand fuel</td><td>Type <strong>Dragon</strong></td><td>Voegt blaze powder toe aan brewing stands</td></tr>
+      <tr><td>Fishing (worker)</td><td>Type <strong>Water</strong></td><td>Genereert fishing-loot bij de pasture</td></tr>
+      <tr><td>Fire extinguisher</td><td>Type <strong>Water</strong></td><td>Dooft vuurblokken</td></tr>
+      <tr><td>Fletcher</td><td>Type <strong>Poison</strong></td><td>Coat arrows met poison</td></tr>
+      <tr><td>Ground item gatherer</td><td>Type <strong>Psychic</strong></td><td>Raapt grond-items op naar chests</td></tr>
+      <tr><td>Archeologist</td><td>Type <strong>Ground</strong></td><td>Archeology-loot bij dirt/gravel/mud</td></tr>
+      <tr><td>Healer</td><td>Happiny / Chansey / Blissey, of Wish / Soft-Boiled / Moonlight / Recover / Roost / Heal Bell / …</td><td>Healt gewonde spelers in de buurt</td></tr>
+      <tr><td>Rain dancer</td><td><strong>Slowpoke</strong></td><td>Zet weer op regen</td></tr>
+      <tr><td>Dive looter</td><td>Kent move <strong>Dive</strong> (+ zwemmen)</td><td>Treasure-loot in water</td></tr>
+      <tr><td>Pickup looter</td><td>Ability <strong>Pickup</strong></td><td>Generieke Cobblemon-loot</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Goede early setups</h2>
+  <ul>
+    <li><strong>Food-loop:</strong> Grass crop harvester + Water irrigator + chest → wheat/wortels — zie <a href="Farming_and_Food.html">Farms &amp; eten</a>.</li>
+    <li><strong>Ball-materials:</strong> Bug apricorn harvester bij apricorn-bomen → <a href="Poke_Balls.html">Poké Balls</a>.</li>
+    <li><strong>Berry-farm:</strong> Grass berry harvesters voor held items / healing berries.</li>
+    <li><strong>Smelten:</strong> Fire fuel generators naast furnace-rijen (ovens met items krijgen voorrang).</li>
+  </ul>
+
+  <h2>Broeden vs workers</h2>
+  <p>Hetzelfde <strong>Pasture</strong>-blok dient voor <a href="Breeding.html">broeden</a> én Cobbleworkers. Een druk shiny-project + dichte crop-farm op één pasture vecht om aandacht. Split pastures als beide belangrijk zijn: één voor eieren, één voor jobs.</p>
+  <div class="callout critical" role="note">
+  <div class="label">Belangrijk</div>
+  <p class="critical-text"><strong>Claim altijd de pasture-chunks.</strong> Ongeclaimde eieren / worker-loot zijn makkelijke grief-targets — zie <a href="Claims.html">Claims</a> en <a href="Common_Mistakes.html">Veelgemaakte fouten</a>.</p>
+</div>
+
+  <h2>Problemen oplossen</h2>
+  <table class="wikitable">
+    <thead><tr><th>Symptoom</th><th>Probeer</th></tr></thead>
+    <tbody>
+      <tr><td>Pokémon staan alleen maar stil</td><td>Verkeerd type; niets rijp/eligible in straal 8; niet toegewezen aan pasture</td></tr>
+      <tr><td>Ze lopen en geven op</td><td>Pathing vrijmaken; fences/gaten; targets dichter bij de pasture</td></tr>
+      <tr><td>Items op de grond</td><td>Chest vol / verkeerde inventory — meer opslag dichterbij (deposit timeout ~65s)</td></tr>
+      <tr><td>Alleen dichtbij wordt gedaan</td><td>Normaal — dichtere blokken eerst; dun de farm uit of zet een tweede pasture</td></tr>
+      <tr><td>Verwacht PokéDollars</td><td>Workers betalen niet — battles / bank / bounties (<a href="Economy.html">Economie</a>)</td></tr>
+    </tbody>
+  </table>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Farming_and_Food.html">Farms &amp; eten</a> · <a href="Breeding.html">Broeden</a> · <a href="Poke_Balls.html">Poké Balls</a> · <a href="Claims.html">Claims</a> · <a href="Economy.html">Economie</a> · <a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">Officiële Cobbleworkers-docs</a></p>
+  <div class="navbox">
+    <div class="navbox-title">PokeHaven systemen</div>
+    <div class="navbox-row"><div class="navbox-label">Kern</div><div class="navbox-links">
+      <a href="Economy.html">Economie</a>
+      <a href="Raids.html">Raids</a>
+      <a href="Catching_and_Battling.html">Vangen &amp; vechten</a>
+      <a href="Poke_Balls.html">Poké Balls</a>
+      <a href="Essential_Recipes.html">Essentiële recepten</a>
+      <a href="Healing_and_Storage.html">Genezen</a>
+      <a href="Breeding.html">Broeden</a>
+      <a href="Shiny.html">Shiny hunting</a>
+      <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
+      <a href="Fishing.html">Vissen</a>
+      <a href="Cobbleworkers.html">Cobbleworkers</a>
+      <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
+    </div></div>
+    <div class="navbox-row"><div class="navbox-label">Wereld</div><div class="navbox-links">
+      <a href="Claims.html">Claims</a>
+      <a href="Travel.html">Reizen</a>
+      <a href="Riding.html">Rijden</a>
+      <a href="Voice_Chat.html">Voice chat</a>
+      <a href="Minecraft_Hub.html">Minecraft-hub</a>
+    </div></div>
+    <div class="navbox-row"><div class="navbox-label">Hulp</div><div class="navbox-links">
+      <a href="Rules_and_Commands.html">Regels &amp; commands</a>
+      <a href="Pack_Differences.html">Pack-verschillen</a>
+      <a href="Roadmap.html">30-dagen roadmap</a>
+      <a href="Achievements.html">Achievements</a>
+      <a href="Postgame_and_Legendaries.html">Post-game</a>
+      <a href="Common_Mistakes.html">Veelgemaakte fouten</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="Recipe_Browser.html">Receptenbrowser</a>
+      <a href="Trainer_Index.html">Trainer-index</a>
+      <a href="Raid_Bosses.html">Raid-bosses</a>
+      <a href="Spawn_Lookup.html">Spawn-lookup</a>
+    </div></div>
+  </div>
+  
+      </article>
+      <aside class="infobox"><div class="infobox-title">Cobbleworkers</div>
+  <table>
+    <tr><th>Mod</th><td>Cobbleworkers (in de pack)</td></tr>
+    <tr><th>Blok</th><td>Pasture</td></tr>
+    <tr><th>Werkgebied (PokeHaven)</th><td>Straal 8 · hoogte ±5</td></tr>
+    <tr><th>PokéDollars?</th><td>Nee</td></tr>
+    <tr><th>Officiële docs</th><td><a href="https://docs.accieo.com/cobbleworkers/" rel="noopener noreferrer" target="_blank">docs.accieo.com</a></td></tr>
+  </table></aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p>PokeHaven EU Wiki · CobbleVerse 1.7.42 · Spelersgids voor onze community-server.</p>
+      <p class="footer-links"><a href="https://discord.gg/7EHPZfGwU4" rel="noopener noreferrer" target="_blank">Discord</a> · Server-IP alleen via Discord</p>
+      <p class="muted">Geschreven voor CobbleVerse 1.7.42 op PokeHaven EU. Kaartcoördinaten kunnen per wereld verschillen.</p>
+      <p class="muted footer-stamp">Bijgewerkt voor CobbleVerse 1.7.42 · PokeHaven EU</p>
+    </div>
+  </footer>
+  <script>window.WIKI_PREFIX="../../";window.WIKI_PAGE_PREFIX="../";window.WIKI_SEARCH_INDEX="../../data/search-index-nl.json";window.WIKI_LANG="nl";</script>
+  <script src="../../js/toc.js"></script>
+  <script src="../../js/search-data-nl.js"></script>
+  <script src="../../js/search.js"></script>
+  <script src="../../js/lightbox.js"></script>
+  <script src="../../js/motion.js"></script>
+</body>
+</html>
