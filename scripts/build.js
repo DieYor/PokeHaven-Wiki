@@ -1837,16 +1837,16 @@ writePage("Quests.html", {
   </ol>
 
   <h2>Chapter map</h2>
+  <p>About <strong>25 chapters / 160+ quests</strong>. Side Paths never block gym progress.</p>
   <table class="wikitable">
     <thead><tr><th>Group</th><th>Chapters</th><th>What they cover</th></tr></thead>
     <tbody>
-      <tr><td>PokeHaven</td><td>First Steps · Settling In</td><td>Starter, first catch, claim, Brock map, Brock — then bed, waystone, storage basics</td></tr>
-      <tr><td>Kanto League</td><td>Kanto Gyms · Indigo Plateau</td><td>Misty → Giovanni, then Elite Four + Blue</td></tr>
-      <tr><td>Johto League</td><td>Johto Gyms · Johto League</td><td>Valerio through Lance</td></tr>
-      <tr><td>Hoenn League</td><td>Hoenn Gyms · Hoenn League</td><td>Full Hoenn gym + champion path</td></tr>
-      <tr><td>Sinnoh League</td><td>Sinnoh Gyms · Sinnoh League</td><td>Starts with Pedro (pack order), then Elite Four</td></tr>
-      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding Lab · Raid Circuit · Pokédex Drive</td><td>Crafts, eggs, dens, dex milestones</td></tr>
-      <tr><td>Endgame</td><td>Legend Trail</td><td>Post–Kanto champion legendary goals</td></tr>
+      <tr><td>PokeHaven</td><td>First Steps · Settling In</td><td>Starter, catch, claim, Brock — then waystone / heal basics</td></tr>
+      <tr><td>Side Paths</td><td>Economy · Travel · Village · Fishing · Community</td><td>Money loop, waystones/BlueMap, villages, rods, wiki/Discord/keys</td></tr>
+      <tr><td>Kanto League</td><td>Kanto Gyms · Indigo Plateau · Kanto Region Kit</td><td>Misty → Blue + coverage kit</td></tr>
+      <tr><td>Johto / Hoenn / Sinnoh</td><td>Gyms · League · Region Kit each</td><td>Full regional ladders + prep kits</td></tr>
+      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding · Raids · Pokedex</td><td>Deep ladders (dex to 300, raids to 25, eggs to 25)</td></tr>
+      <tr><td>Endgame</td><td>Legend Trail · Postgame Ascent</td><td>Birds / Mewtwo / Mew, shinies, mega checklist, all-leagues capstone</td></tr>
     </tbody>
   </table>
 
