@@ -93,13 +93,26 @@ function layout({
   const searchIndexFile =
     lang === "nl" ? "data/search-index-nl.json" : "data/search-index.json";
 
+  const pageTitle =
+    title === "PokeHaven EU Wiki" ? "PokeHaven EU Wiki" : `${title} — PokeHaven EU Wiki`;
+  // Strip tags AND decode entities before esc() re-encodes — lede/title source strings
+  // sometimes embed already-escaped HTML (e.g. "Rules &amp; commands" inside an <a> tag),
+  // so without decoding first, esc() would double-encode into "&amp;amp;".
+  const description = (lede || title)
+    .replace(/<[^>]+>/g, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+
   return `<!DOCTYPE html>
 <html lang="${ui.htmlLang}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${title === "PokeHaven EU Wiki" ? "PokeHaven EU Wiki" : `${esc(title)} — PokeHaven EU Wiki`}</title>
-  <meta name="description" content="${esc((lede || title).replace(/<[^>]+>/g, ""))}" />
+  <title>${esc(pageTitle)}</title>
+  <meta name="description" content="${esc(description)}" />
   <link rel="alternate" hreflang="en" href="${lang === "en" ? (file === "index.html" ? "index.html" : `pages/${file}`) : switchToEn}" />
   <link rel="alternate" hreflang="nl" href="${lang === "nl" ? (file === "index.html" ? "index.html" : file) : switchToNl}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1480,10 +1493,10 @@ writePage("Shiny.html", {
 });
 
 writePage("Mega_and_Late_Game.html", {
-  title: "Mega &amp; late-game",
+  title: "Mega & late-game",
   breadcrumbs: [
     { label: "Main Page", href: "../index.html" },
-    { label: "Mega &amp; late-game", href: "Mega_and_Late_Game.html" },
+    { label: "Mega & late-game", href: "Mega_and_Late_Game.html" },
   ],
   lede: "What Mega Showdown allows on PokeHaven EU, and a practical checklist after Kanto — before you dive into Johto, raids, or legendaries.",
   infobox: infoboxHtml("Mega Showdown (pack)", [

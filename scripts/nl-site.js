@@ -599,8 +599,8 @@ export function registerDutchSite({
   })());
 
   track("Catching_and_Battling.html", {
-    title: "Vangen &amp; vechten",
-    breadcrumbs: crumbs({ label: "Vangen &amp; vechten", href: "Catching_and_Battling.html" }),
+    title: "Vangen & vechten",
+    breadcrumbs: crumbs({ label: "Vangen & vechten", href: "Catching_and_Battling.html" }),
     lede: "De kernlus op PokeHaven: verzwakken, vangen, genezen, doorpakken — met respect voor de level cap.",
     body: `
   <div class="callout tip">
@@ -818,7 +818,7 @@ export function registerDutchSite({
   });
 
   track("Rules_and_Commands.html", {
-    title: "Regels &amp; commands",
+    title: "Regels & commands",
     breadcrumbs: crumbs({ label: "Regels & commands", href: "Rules_and_Commands.html" }),
     lede: "Speel fair, wees cool, houd PokeHaven leuk. Dezelfde regels als Discord <code>#rules</code> — plus de chat-commands en toetsen die je elke dag gebruikt.",
     body: `
@@ -1564,8 +1564,8 @@ export function registerDutchSite({
   }
 
   track("Healing_and_Storage.html", {
-    title: "Genezen &amp; opslag",
-    breadcrumbs: crumbs({ label: "Genezen &amp; opslag", href: "Healing_and_Storage.html" }),
+    title: "Genezen & opslag",
+    breadcrumbs: crumbs({ label: "Genezen & opslag", href: "Healing_and_Storage.html" }),
     lede: "Pokémon Centers, Revives, PC en hoe je niet met een dood team vastzit.",
     body: `
   <h2>Genezen</h2>
@@ -1577,8 +1577,8 @@ export function registerDutchSite({
   });
 
   track("Outfits_and_Cosmetics.html", {
-    title: "Outfits &amp; cosmetics",
-    breadcrumbs: crumbs({ label: "Outfits &amp; cosmetics", href: "Outfits_and_Cosmetics.html" }),
+    title: "Outfits & cosmetics",
+    breadcrumbs: crumbs({ label: "Outfits & cosmetics", href: "Outfits_and_Cosmetics.html" }),
     lede: "Zie eruit als trainer op PokeHaven EU: craftbare <strong>outfits</strong> voor jou, plus <strong>Pokémon-cosmetics</strong> (costumes, sjaals, Furfrou-cuts).",
     body: `
   <div class="callout tip">
@@ -1736,8 +1736,8 @@ export function registerDutchSite({
   });
 
   track("Mega_and_Late_Game.html", {
-    title: "Mega &amp; late-game",
-    breadcrumbs: crumbs({ label: "Mega &amp; late-game", href: "Mega_and_Late_Game.html" }),
+    title: "Mega & late-game",
+    breadcrumbs: crumbs({ label: "Mega & late-game", href: "Mega_and_Late_Game.html" }),
     lede: "Wat Mega Showdown toelaat op PokeHaven EU, plus een praktische checklist na Kanto — vóór Johto, raids of legendaries.",
     infobox: `<div class="infobox-title">Mega Showdown (pack)</div>
   <table>
@@ -2025,7 +2025,7 @@ export function registerDutchSite({
   });
 
   track("Riding.html", {
-    title: "Rijden &amp; vliegen",
+    title: "Rijden & vliegen",
     breadcrumbs: crumbs({ label: "Rijden & vliegen", href: "Riding.html" }),
     lede: "Berijd een Pokémon om sneller over de map te gaan. Flyers openen de lucht; land-mounts winnen het nog steeds van lopen.",
     body: `
@@ -2075,7 +2075,7 @@ export function registerDutchSite({
   });
 
   track("Farming_and_Food.html", {
-    title: "Farms &amp; eten",
+    title: "Farms & eten",
     breadcrumbs: crumbs(
       { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
       { label: "Farms & eten", href: "Farming_and_Food.html" }
@@ -2110,7 +2110,7 @@ export function registerDutchSite({
 
   // Full NL survival guides (parity with EN minecraft-guides.js)
   track("Combat_and_Death.html", {
-    title: "Gevecht &amp; dood",
+    title: "Gevecht & dood",
     breadcrumbs: crumbs(
       { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
       { label: "Gevecht & dood", href: "Combat_and_Death.html" }
@@ -2217,7 +2217,7 @@ export function registerDutchSite({
   });
 
   track("Villages_and_Trading.html", {
-    title: "Dorpen &amp; trading",
+    title: "Dorpen & trading",
     breadcrumbs: crumbs(
       { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
       { label: "Dorpen & trading", href: "Villages_and_Trading.html" }
@@ -2261,7 +2261,7 @@ export function registerDutchSite({
   });
 
   track("Building_and_Storage.html", {
-    title: "Bouwen &amp; opslag",
+    title: "Bouwen & opslag",
     breadcrumbs: crumbs(
       { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
       { label: "Bouwen & opslag", href: "Building_and_Storage.html" }
@@ -2314,7 +2314,7 @@ export function registerDutchSite({
   });
 
   track("Dimensions_and_World.html", {
-    title: "Dimensies &amp; wereld",
+    title: "Dimensies & wereld",
     breadcrumbs: crumbs(
       { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
       { label: "Dimensies & wereld", href: "Dimensions_and_World.html" }
