@@ -83,6 +83,7 @@ function navboxCore() {
       <a href="Achievements.html">Achievements</a>
       <a href="Postgame_and_Legendaries.html">Post-game</a>
       <a href="Common_Mistakes.html">Veelgemaakte fouten</a>
+      <a href="Donations.html">Donaties</a>
       <a href="FAQ.html">FAQ</a>
       <a href="Recipe_Browser.html">Receptenbrowser</a>
       <a href="Trainer_Index.html">Trainer-index</a>
@@ -198,6 +199,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainerkleding &amp; Pokémon-looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Veelgemaakte fouten</h3><p>Één keer maken.</p></a>
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Regels &amp; commands</h3><p>Serverregels, /pc, toetsen.</p></a>
+    <a class="hub-card" href="pages/Donations.html"><h3>Donaties</h3><p>Cosmetische tiers, geen pay-to-win.</p></a>
   </div>
 
   <h2 id="data">Databases</h2>
@@ -891,7 +893,72 @@ export function registerDutchSite({
     <li><strong>Eerste uren:</strong> <a href="Getting_Started.html">Aan de slag</a> · <a href="First_Hours.html">Eerste uren</a> · <a href="FAQ.html">FAQ</a></li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="Claims.html">Claims</a> · <a href="Voice_Chat.html">Voice chat</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="Claims.html">Claims</a> · <a href="Voice_Chat.html">Voice chat</a> · <a href="Donations.html">Donaties</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Donations.html", {
+    title: "Donaties",
+    breadcrumbs: crumbs({ label: "Donaties", href: "Donations.html" }),
+    lede: "Optionele, puur cosmetische support voor PokeHaven EU — via PayPal. Nooit pay-to-win. Hier lees je precies wat doneren doet en hoe je je status checkt.",
+    infobox: `<div class="infobox-title">Donaties (cosmetisch)</div>
+  <table>
+    <tr><th>Betaling</th><td>PayPal</td></tr>
+    <tr><th>Tracking</th><td>Lifetime-totaal (reset nooit)</td></tr>
+    <tr><th>Tiers</th><td>3 — Supporter, Patron, Benefactor</td></tr>
+    <tr><th>Geeft</th><td>Discord-rol + optionele in-game chatprefix</td></tr>
+    <tr><th>Gameplay-effect</th><td>Geen — puur cosmetisch</td></tr>
+    <tr><th>Status checken</th><td><code>/donate check</code></td></tr>
+  </table>`,
+    body: `
+  <div class="callout tip">
+    <div class="label">Puur cosmetisch</div>
+    Doneren op PokeHaven EU koopt nooit macht. Elke tier is <strong>volledig cosmetisch</strong> — een Discord-rol en een optionele in-game chatprefix. Geen extra vangsten, geen betere odds, geen grotere claims, geen shortcuts rond de <a href="Level_Cap.html">level cap</a>.
+  </div>
+
+  <h2>Waarom doneren?</h2>
+  <p>Donaties zijn volledig optioneel en houden de server online en up-to-date. Sommige donaties financieren ook community-events — zo kan <strong>€10</strong> een server-brede <strong>Shiny Hour</strong> financieren (wilde shiny-odds verdubbeld van 1/2048 naar 1/1024 voor 60 minuten, voor alle online spelers, niet alleen de donateur).</p>
+
+  <h2>Hoe het werkt</h2>
+  <ol class="steps">
+    <li><strong>Link eerst je account</strong> zodat de bot je Minecraft-naam kent voor de in-game prefix: <code>/link minecraft:JouwExacteNaam</code> in Discord.</li>
+    <li><strong>Doneer via PayPal.</strong> De actuele donatielink staat gepind in Discord <code>#donations</code> — niet hier gepubliceerd, zodat hij nooit verouderd raakt.</li>
+    <li><strong>Zet je Discord-naam in de PayPal-notitie</strong> (voeg <code>Shiny Hour</code> toe als je dat financiert).</li>
+    <li><strong>Staff logt de betaling</strong> met <code>/donate add</code>. De bot werkt je lifetime-totaal bij, geeft je Discord-rol, en synct (waar geconfigureerd) je in-game chatprefix.</li>
+  </ol>
+
+  <h2>Lifetime-tiers</h2>
+  <p>Tiers zijn gebaseerd op je <strong>lifetime-totaal</strong>, niet op één betaling — donaties stapelen richting de volgende tier en verlopen nooit.</p>
+  <table class="wikitable">
+    <thead><tr><th>Lifetime-totaal</th><th>Discord-rol</th><th>In-game chatprefix</th></tr></thead>
+    <tbody>
+      <tr><td>€10+</td><td>Supporter</td><td><span style="color:#2dd4bf"><strong>[Supporter]</strong></span> (aqua)</td></tr>
+      <tr><td>€50+</td><td>Patron</td><td><span style="color:#d4a017"><strong>[Patron]</strong></span> (goud)</td></tr>
+      <tr><td>€100+</td><td>Benefactor</td><td><span style="color:#c084fc"><strong>[Benefactor]</strong></span> (lichtpaars)</td></tr>
+    </tbody>
+  </table>
+  <p>Chatprefixes zijn opt-in — kies je zichtbare tag in-game met de <strong>PokeHaven Prefix</strong>-mod (<code>/prefix</code>) zodra je Discord-rol is toegekend.</p>
+
+  <h2>Je status checken</h2>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate check</code></td><td>Toont je eigen lifetime-donatietotaal, huidige tier en gelinkte Minecraft-naam</td></tr>
+      <tr><td><code>/donate tiers</code></td><td>Lijst van de cosmetische donatietiers hierboven</td></tr>
+      <tr><td><code>/link minecraft:JouwNaam</code></td><td>Linkt je Discord-account aan je Minecraft-username (doe dit eerst)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Veelgestelde vragen</h2>
+  <ul>
+    <li><strong>Geeft doneren een gameplay-voordeel?</strong> Nee — zie de callout hierboven. Alleen rol + chatprefix.</li>
+    <li><strong>Kunnen tiers dalen?</strong> Nee, je lifetime-totaal gaat alleen omhoog naarmate je meer doneert.</li>
+    <li><strong>Waar is de echte donatielink?</strong> Discord <code>#donations</code> — daar gehouden zodat hij niet verouderd raakt op de wiki.</li>
+    <li><strong>Ik heb gedoneerd maar heb nog geen rol?</strong> Check of je je Discord-naam in de PayPal-notitie hebt gezet, en vraag in Discord <code>#tickets</code> als staff het nog niet gelogd heeft.</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Rules_and_Commands.html">Regels &amp; commands</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxCore()}
   `,
   });
@@ -1018,7 +1085,7 @@ export function registerDutchSite({
   <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Op dit moment toont het alleen <strong>online spelersmarkers</strong> — geen Pokémon- of mob-locaties. Meer travel-tools: <a href="Travel.html">Reizen</a>.</p>
 
   <h2>Kan ik doneren?</h2>
-  <p>Ja, optioneel — donaties helpen de server online / te upgraden. Ze zijn <strong>puur cosmetisch</strong>: tiers geven een Discord-rol (Supporter / Patron / Benefactor) en optioneel een in-game chatprefix — <strong>nooit een gameplay-voordeel</strong>. Volledig overzicht: <a href="Donations.html">Donaties</a>. Links staan in Discord.</p>
+  <p>Ja, optioneel — donaties helpen de server online / te upgraden. Ze zijn <strong>puur cosmetisch</strong>: tiers geven een Discord-rol (Supporter / Patron / Benefactor) en optioneel een in-game chatprefix — <strong>nooit een gameplay-voordeel</strong>. Volledig overzicht: <a href="Donations.html">Donaties</a>. Links staan in Discord <code>#donations</code>.</p>
 
   <h2>Hoe craft ik Poké Balls?</h2>
   <p><a href="Poke_Balls.html">Poké Balls</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Recipe_Browser.html">Receptenbrowser</a>.</p>
@@ -1067,7 +1134,7 @@ export function registerDutchSite({
     "<strong>Cosplay Pikachu evolueert niet naar Raichu.</strong> Gebruik een gewone Pallet-Pikachu als je Raichu wilt."
   )}
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="https://pokehaven.wiki">Wiki</a> · <a href="Roadmap.html">30-dagen roadmap</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="Donations.html">Donaties</a> · <a href="https://pokehaven.wiki">Wiki</a> · <a href="Roadmap.html">30-dagen roadmap</a></p>
   `,
   });
 

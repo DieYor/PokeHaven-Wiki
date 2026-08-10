@@ -248,6 +248,7 @@ function navboxSystems() {
       <a href="Achievements.html">Achievements</a>
       <a href="Postgame_and_Legendaries.html">Post-game</a>
       <a href="Common_Mistakes.html">Common mistakes</a>
+      <a href="Donations.html">Donations</a>
       <a href="FAQ.html">FAQ</a>
       <a href="Recipe_Browser.html">Recipe browser</a>
       <a href="Trainer_Index.html">Trainer index</a>
@@ -354,6 +355,8 @@ const SEARCH_KEYWORDS = {
   "Gyms_Sinnoh.html":
     "sinnoh pedro rocco gardenia camilla gym maps cartography overview",
   "Valerio.html": "johto first gym flying zephyr raptor bracer",
+  "Donations.html":
+    "donate donation paypal tier supporter patron benefactor cosmetic prefix role shiny hour no pay to win",
 };
 
 function writePage(file, opts = {}) {
@@ -1958,7 +1961,74 @@ writePage("Rules_and_Commands.html", {
     <li><strong>First hours:</strong> <a href="Getting_Started.html">Getting started</a> · <a href="First_Hours.html">First hours</a> · <a href="FAQ.html">FAQ</a></li>
   </ul>
 
-  <p class="see-also"><strong>See also:</strong> <a href="Common_Mistakes.html">Common mistakes</a> · <a href="Claims.html">Claims</a> · <a href="Voice_Chat.html">Voice chat</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Common_Mistakes.html">Common mistakes</a> · <a href="Claims.html">Claims</a> · <a href="Voice_Chat.html">Voice chat</a> · <a href="Donations.html">Donations</a></p>
+  ${navboxSystems()}
+  `,
+});
+
+writePage("Donations.html", {
+  title: "Donations",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Donations", href: "Donations.html" },
+  ],
+  lede: "Optional, cosmetic-only support for PokeHaven EU — via PayPal. No pay-to-win, ever. Here is exactly what donating does and how to check your status.",
+  infobox: infoboxHtml("Donations (cosmetic)", [
+    ["Payment", "PayPal"],
+    ["Tracking", "Lifetime total (never resets)"],
+    ["Tiers", "3 — Supporter, Patron, Benefactor"],
+    ["Grants", "Discord role + optional in-game chat prefix"],
+    ["Gameplay effect", "None — cosmetic only"],
+    ["Check status", "<code>/donate check</code>"],
+  ]),
+  body: `
+  <div class="callout tip">
+    <div class="label">Cosmetic only</div>
+    Donating on PokeHaven EU never buys power. Every tier is <strong>purely cosmetic</strong> — a Discord role and an optional in-game chat prefix. No extra catches, no better odds, no claim size boosts, no shortcuts around the <a href="Level_Cap.html">level cap</a>.
+  </div>
+
+  <h2>Why donate?</h2>
+  <p>Donations are completely optional and help keep the server online and upgraded. Some donations also fund community events — for example, <strong>€10</strong> can fund a server-wide <strong>Shiny Hour</strong> (wild shiny odds doubled from 1/2048 to 1/1024 for 60 minutes, benefiting every player online, not just the donor).</p>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><strong>Link your account first</strong> so the bot knows your Minecraft name for the in-game prefix: run <code>/link minecraft:YourExactName</code> in Discord.</li>
+    <li><strong>Donate with PayPal.</strong> The current donate link is posted (and pinned) in Discord <code>#donations</code> — it is not published here so it never goes stale.</li>
+    <li><strong>Put your Discord name in the PayPal note</strong> (add <code>Shiny Hour</code> too if that's what you're funding).</li>
+    <li><strong>Staff logs the payment</strong> with <code>/donate add</code>. The bot updates your lifetime total, assigns your Discord role, and (where configured) syncs your in-game chat prefix.</li>
+  </ol>
+
+  <h2>Lifetime tiers</h2>
+  <p>Tiers are based on your <strong>lifetime total</strong>, not a single payment — donations stack toward the next tier and never expire.</p>
+  <table class="wikitable">
+    <thead><tr><th>Lifetime total</th><th>Discord role</th><th>In-game chat prefix</th></tr></thead>
+    <tbody>
+      <tr><td>€10+</td><td>Supporter</td><td><span style="color:#2dd4bf"><strong>[Supporter]</strong></span> (aqua)</td></tr>
+      <tr><td>€50+</td><td>Patron</td><td><span style="color:#d4a017"><strong>[Patron]</strong></span> (gold)</td></tr>
+      <tr><td>€100+</td><td>Benefactor</td><td><span style="color:#c084fc"><strong>[Benefactor]</strong></span> (light purple)</td></tr>
+    </tbody>
+  </table>
+  <p>Chat prefixes are opt-in — pick your visible tag in-game with the <strong>PokeHaven Prefix</strong> mod (<code>/prefix</code>) once your Discord role is assigned.</p>
+
+  <h2>Checking your status</h2>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate check</code></td><td>Shows your own lifetime donation total, current tier, and linked Minecraft name</td></tr>
+      <tr><td><code>/donate tiers</code></td><td>Lists the cosmetic donation tiers shown above</td></tr>
+      <tr><td><code>/link minecraft:YourName</code></td><td>Links your Discord account to your Minecraft username (do this first)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Common questions</h2>
+  <ul>
+    <li><strong>Does donating give any gameplay advantage?</strong> No — see the callout above. It's role + chat prefix only.</li>
+    <li><strong>Do tiers ever downgrade?</strong> No, your lifetime total only goes up as you donate more.</li>
+    <li><strong>Where's the actual donate link?</strong> Discord <code>#donations</code> — kept there so it can't go stale on the wiki.</li>
+    <li><strong>I donated but don't have my role yet?</strong> Make sure you put your Discord name in the PayPal note and ask in Discord <code>#tickets</code> if staff hasn't logged it yet.</li>
+  </ul>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Rules_and_Commands.html">Rules &amp; commands</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxSystems()}
   `,
 });
@@ -2480,6 +2550,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainer clothes &amp; Pokémon looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Common mistakes</h3><p>Fix these once.</p></a>
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Rules &amp; commands</h3><p>Server rules, /pc, keybinds.</p></a>
+    <a class="hub-card" href="pages/Donations.html"><h3>Donations</h3><p>Cosmetic tiers, no pay-to-win.</p></a>
   </div>
 
   <h2 id="data">Databases</h2>
@@ -2557,7 +2628,7 @@ writePage("FAQ.html", {
   <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. It currently shows <strong>online player markers only</strong> — it does not show Pokémon or mob locations. More travel tools: <a href="Travel.html">Travel</a>.</p>
 
   <h2>Can I donate?</h2>
-  <p>Yes, optionally — donations help keep the server online / upgraded. They're <strong>cosmetic only</strong>: tiers grant a Discord role (Supporter / Patron / Benefactor) and an optional in-game chat prefix — <strong>never a gameplay advantage</strong>. Full breakdown: <a href="Donations.html">Donations</a>. Links live in Discord.</p>
+  <p>Yes, optionally — donations help keep the server online / upgraded. They're <strong>cosmetic only</strong>: tiers grant a Discord role (Supporter / Patron / Benefactor) and an optional in-game chat prefix — <strong>never a gameplay advantage</strong>. Full breakdown: <a href="Donations.html">Donations</a>. Links live in Discord <code>#donations</code>.</p>
 
   <h2>How do I craft Poké Balls?</h2>
   <p>Full screenshot guide: <a href="Poke_Balls.html">Poké Balls</a>. More crafts: <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Recipe_Browser.html">Recipe browser</a>.</p>
@@ -2606,7 +2677,7 @@ writePage("FAQ.html", {
     "<strong>Cosplay Pikachu cannot evolve into Raichu.</strong> Use a normal Pallet Pikachu if you want Raichu."
   )}
 
-  <p class="see-also"><strong>See also:</strong> <a href="Common_Mistakes.html">Common mistakes</a> · <a href="https://pokehaven.wiki">Wiki home</a> · <a href="Roadmap.html">30-day roadmap</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Common_Mistakes.html">Common mistakes</a> · <a href="Donations.html">Donations</a> · <a href="https://pokehaven.wiki">Wiki home</a> · <a href="Roadmap.html">30-day roadmap</a></p>
   `,
 });
 

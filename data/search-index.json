@@ -150,7 +150,7 @@
     "keywords": "shiny hunting masuda crystal charm rate 2048 breed wild cobblecuisine"
   },
   {
-    "title": "Mega &amp; late-game",
+    "title": "Mega & late-game",
     "href": "pages/Mega_and_Late_Game.html",
     "blurb": "What Mega Showdown allows on PokeHaven EU, and a practical checklist after Kanto — before you dive into Johto, raids, or legendaries.",
     "keywords": "mega evolution z-move tera dynamax power spot late game checklist johto after blue keystone megastone gimmick"
@@ -176,26 +176,20 @@
   {
     "title": "Quests",
     "href": "pages/Quests.html",
-    "blurb": "PokeHaven EU ships a full FTB Quests book — First Steps, badge trackers, Server Life, region exploration, and a Prestige Ladder ending in Gotta Catch Em All (10",
-    "keywords": "ftb quests quest book o first steps settling gym league badge prestige gotta catch exploration server life"
-  },
-  {
-    "title": "Region exploration",
-    "href": "pages/Region_Exploration.html",
-    "blurb": "Each league has an Exploration chapter. Pins use a fixed naming scheme so BlueMap, waystones, and the quest book all match.",
-    "keywords": "exploration atlas waystone pin bluemap kanto johto hoenn sinnoh landmark gym map"
-  },
-  {
-    "title": "Prestige season",
-    "href": "pages/Prestige_Season.html",
-    "blurb": "After Sinnoh Champion, the Prestige Ladder is the long-term chase — including Gotta Catch Em All (1025 registered). Seasons are community races, not a wipe of y",
-    "keywords": "prestige ladder season leaderboard gotta catch em all dex 1025 reset shiny raid"
+    "blurb": "PokeHaven EU ships a full FTB Quests book — guided First Steps, every gym through Sinnoh, plus crafting, breeding, raids, Pokédex, and legend goals. Open it wit",
+    "keywords": "ftb quests quest book o first steps settling gym league breeding raid pokedex legend trail"
   },
   {
     "title": "Rules & commands",
     "href": "pages/Rules_and_Commands.html",
     "blurb": "Play fair, be cool, and keep PokeHaven fun. Same rules as Discord #rules — plus the chat commands and keys you’ll use every day.",
     "keywords": "rules commands /pc claim grief cheat discord voice chat respect staff"
+  },
+  {
+    "title": "Donations",
+    "href": "pages/Donations.html",
+    "blurb": "Optional, cosmetic-only support for PokeHaven EU — via PayPal. No pay-to-win, ever. Here is exactly what donating does and how to check your status.",
+    "keywords": "donate donation paypal tier supporter patron benefactor cosmetic prefix role shiny hour no pay to win"
   },
   {
     "title": "Voice chat",
