@@ -1,0 +1,9 @@
+Document how to form an FTB Teams party to share claims (EN+NL)
+
+The Claims page only had a single vague bullet ("Create an FTB Team and
+share the claim") with no actual instructions. Added a full "Team up: share
+a claim with friends" section covering the personal-team default, the
+/ftbteams party create/invite/join/leave/transfer_ownership commands, the
+My Team GUI shortcut, and the default allies-only build permission on
+shared claims. Added matching search keywords (team, guild, group,
+ftbteams, share) so this is discoverable from the search bar too.

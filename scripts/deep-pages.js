@@ -684,6 +684,7 @@ export function registerDeepPages({
       <tr><th>Claim Manager</th><td><kbd>U</kbd></td></tr>
       <tr><th>Chunk map</th><td><kbd>M</kbd></td></tr>
       <tr><th>Must cover</th><td>Bed, chests, farm, waystone</td></tr>
+      <tr><th>Share with friends</th><td><code>/ftbteams party create</code></td></tr>
       <tr><th>Avoid</th><td>Other claim mods (OPAC removed)</td></tr>
     </table>`,
     body: `
@@ -721,12 +722,24 @@ export function registerDeepPages({
       <li>Pasture / breeders later — expand the claim when you build them</li>
     </ul>
 
+    <h2>Team up: share a claim with friends</h2>
+    <p>Every player starts on their own private "player team", so claims are personal by default. To build and claim together, form a <strong>party</strong> with FTB Teams:</p>
+    <ol class="steps">
+      <li>Open your inventory and click the <strong>My Team</strong> icon (top-left corner) — or use chat commands below.</li>
+      <li><code>/ftbteams party create &lt;name&gt;</code> — creates the party; you become the owner.</li>
+      <li><code>/ftbteams party invite &lt;player&gt;</code> — sends an invite. The invited player accepts via the chat prompt, or with <code>/ftbteams party join &lt;owner&gt;</code>.</li>
+      <li>Everyone in the party now shares the same claim pool — any member can claim new chunks, and they belong to the <strong>party</strong>, not just to whoever painted them.</li>
+    </ol>
+    <p>By default, only party members (plus any allies you add) can build and interact inside the claim (the <strong>"allies"</strong> permission). From the FTB Chunks map screen the owner/officers can open a claim to <strong>public</strong>, or lock it down to <strong>private</strong> (owner only) instead.</p>
+    <p>Leave a party with <code>/ftbteams party leave</code>. Hand off ownership first with <code>/ftbteams party transfer_ownership &lt;player&gt;</code> if you want a specific member to take over — otherwise the game auto-promotes another member.</p>
+
     <h2>Common mistakes</h2>
     <ul>
       <li>Building first, claiming later — loot walks away.</li>
       <li>Claiming the house but not the farm or waystone.</li>
       <li>Installing another claim mod next to FTB Chunks (OPAC was removed — do not add it back).</li>
       <li>Forgetting to expand the claim when the base grows.</li>
+      <li>Building together without ever forming a party — claims stay locked to whoever placed them first.</li>
     </ul>
 
     <p class="see-also"><strong>See also:</strong> <a href="First_Hours.html">First hours</a> · <a href="Travel.html">Travel</a> · <a href="Common_Mistakes.html">Common mistakes</a> · <a href="FAQ.html">FAQ</a></p>

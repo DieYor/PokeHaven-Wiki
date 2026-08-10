@@ -773,6 +773,7 @@ export function registerDutchSite({
     <tr><th>Claim Manager</th><td><kbd>U</kbd></td></tr>
     <tr><th>Chunk-map</th><td><kbd>M</kbd></td></tr>
     <tr><th>Moet erin</th><td>Bed, chests, farm, waystone</td></tr>
+    <tr><th>Delen met vrienden</th><td><code>/ftbteams party create</code></td></tr>
     <tr><th>Vermijd</th><td>Andere claim-mods (OPAC is verwijderd)</td></tr>
   </table>`,
     body: `
@@ -810,12 +811,24 @@ export function registerDutchSite({
     <li>Later: pasture / breeders — vergroot de claim als je uitbreidt</li>
   </ul>
 
+  <h2>Samen spelen: claim delen met vrienden</h2>
+  <p>Elke speler begint op een eigen, privé "player team" — claims zijn dus standaard persoonlijk. Wil je samen bouwen en claimen, vorm dan een <strong>party</strong> met FTB Teams:</p>
+  <ol class="steps">
+    <li>Open je inventory en klik het <strong>My Team</strong>-icoon (linksboven) — of gebruik onderstaande chatcommando's.</li>
+    <li><code>/ftbteams party create &lt;naam&gt;</code> — maakt de party aan; jij wordt eigenaar.</li>
+    <li><code>/ftbteams party invite &lt;speler&gt;</code> — stuurt een uitnodiging. De uitgenodigde speler accepteert via de chat-prompt, of met <code>/ftbteams party join &lt;eigenaar&gt;</code>.</li>
+    <li>Iedereen in de party deelt nu dezelfde claim-pool — elk lid kan nieuwe chunks claimen, en die horen bij de <strong>party</strong>, niet alleen bij wie ze geverfd heeft.</li>
+  </ol>
+  <p>Standaard mogen alleen partyleden (plus toegevoegde allies) bouwen en interacten binnen de claim (de <strong>"allies"</strong>-permissie). Vanaf het FTB Chunks-kaartscherm kan de eigenaar/officer een claim openzetten naar <strong>publiek</strong>, of juist afsluiten tot <strong>privé</strong> (alleen eigenaar).</p>
+  <p>Party verlaten doe je met <code>/ftbteams party leave</code>. Draag eerst het eigenaarschap over met <code>/ftbteams party transfer_ownership &lt;speler&gt;</code> als een specifiek lid het moet overnemen — anders promoot het spel automatisch een ander lid.</p>
+
   <h2>Veelgemaakte fouten</h2>
   <ul>
     <li>Eerst bouwen, later claimen — loot is weg.</li>
     <li>Huis geclaimd, farm of waystone niet.</li>
     <li>Een andere claim-mod naast FTB Chunks (OPAC is verwijderd — niet opnieuw installeren).</li>
     <li>Claim niet mee laten groeien met de basis.</li>
+    <li>Samen bouwen zonder ooit een party te vormen — claims blijven vastzitten aan wie ze het eerst plaatste.</li>
   </ul>
 
   <p class="see-also"><strong>Zie ook:</strong> <a href="First_Hours.html">Eerste uren</a> · <a href="Travel.html">Reizen</a> · <a href="Common_Mistakes.html">Veelgemaakte fouten</a> · <a href="FAQ.html">FAQ</a></p>

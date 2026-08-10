@@ -368,7 +368,7 @@ const SEARCH_KEYWORDS = {
   "Outfits_and_Cosmetics.html":
     "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing",
   "Level_Cap.html": "xp experience level cap stuck freeze trainer card overlevel",
-  "Claims.html": "claim ftb chunks protect grief chest land party",
+  "Claims.html": "claim ftb chunks protect grief chest land party team guild group ftbteams share",
   "Quests.html":
     "ftb quests quest book o first steps settling gym league breeding raid pokedex legend trail",
   "Getting_Started.html": "join install curseforge discord ip pack 1.7.42 ticket empty map cerulean",
