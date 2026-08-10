@@ -27,6 +27,17 @@ const advancements = JSON.parse(fs.readFileSync(path.join(DATA, "advancements.js
 fs.mkdirSync(PAGES, { recursive: true });
 fs.mkdirSync(path.join(ROOT, "nl", "pages"), { recursive: true });
 
+const SITE_URL = "https://pokehaven.wiki";
+
+/** Absolute canonical URL for a page, used for canonical link, hreflang, and OG/Twitter tags. */
+function canonicalUrl(lang, file) {
+  const isIndex = file === "index.html";
+  if (lang === "nl") {
+    return isIndex ? `${SITE_URL}/nl/index.html` : `${SITE_URL}/nl/pages/${file}`;
+  }
+  return isIndex ? `${SITE_URL}/index.html` : `${SITE_URL}/pages/${file}`;
+}
+
 function esc(s) {
   return String(s ?? "")
     .replace(/&/g, "&amp;")
@@ -106,6 +117,11 @@ function layout({
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'");
 
+  const canonicalEn = canonicalUrl("en", file);
+  const canonicalNl = canonicalUrl("nl", file);
+  const canonicalSelf = lang === "nl" ? canonicalNl : canonicalEn;
+  const ogImage = `${SITE_URL}/assets/wiki-wallpaper.png`;
+
   return `<!DOCTYPE html>
 <html lang="${ui.htmlLang}">
 <head>
@@ -113,8 +129,20 @@ function layout({
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${esc(pageTitle)}</title>
   <meta name="description" content="${esc(description)}" />
-  <link rel="alternate" hreflang="en" href="${lang === "en" ? (file === "index.html" ? "index.html" : `pages/${file}`) : switchToEn}" />
-  <link rel="alternate" hreflang="nl" href="${lang === "nl" ? (file === "index.html" ? "index.html" : file) : switchToNl}" />
+  <link rel="canonical" href="${canonicalSelf}" />
+  <link rel="alternate" hreflang="en" href="${canonicalEn}" />
+  <link rel="alternate" hreflang="nl" href="${canonicalNl}" />
+  <link rel="alternate" hreflang="x-default" href="${canonicalEn}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="${esc(pageTitle)}" />
+  <meta property="og:description" content="${esc(description)}" />
+  <meta property="og:url" content="${canonicalSelf}" />
+  <meta property="og:image" content="${ogImage}" />
+  <meta property="og:locale" content="${lang === "nl" ? "nl_NL" : "en_US"}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${esc(pageTitle)}" />
+  <meta name="twitter:description" content="${esc(description)}" />
+  <meta name="twitter:image" content="${ogImage}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -2752,6 +2780,22 @@ registerDutchSite({
 
 fs.writeFileSync(path.join(DATA, "search-index.json"), JSON.stringify(searchIndex, null, 2));
 fs.writeFileSync(path.join(DATA, "search-index-nl.json"), JSON.stringify(searchIndexNl, null, 2));
+
+// ---------- sitemap.xml (auto-generated from every EN + NL page written above) ----------
+function sitemapUrl(lang, href) {
+  const file = href === "index.html" ? "index.html" : href.split("/").pop();
+  return canonicalUrl(lang, file);
+}
+const sitemapUrls = [
+  ...searchIndex.map((e) => sitemapUrl("en", e.href)),
+  ...searchIndexNl.map((e) => sitemapUrl("nl", e.href)),
+];
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}
+</urlset>
+`;
+fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemapXml);
 
 // Embeddable indexes — work with file:// (fetch of JSON often fails locally)
 fs.mkdirSync(path.join(ROOT, "js"), { recursive: true });
