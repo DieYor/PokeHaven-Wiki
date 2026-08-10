@@ -2806,94 +2806,468 @@ export function registerDutchSite({
     }
   }
 
-  // Hoenn under-construction hub
+  // Hoenn deep hub + leader pages (parity with EN)
   {
-    const hoennNamed = trainers.all
-      .filter((t) => t.region === "hoenn" && !String(t.id).includes("groups"))
-      .sort((a, b) => a.name.localeCompare(b.name));
-    const previewRows = hoennNamed
-      .map((t) => {
-        const levels = (t.team || []).map((m) => m.level).filter((x) => x != null);
-        const lv =
-          levels.length > 0
-            ? `${levels[0]}–${levels[levels.length - 1]}`
-            : "—";
-        return `<tr>
-      <td>${esc(t.name)}</td>
-      <td><code>${esc(t.id)}</code></td>
-      <td>${(t.team || []).length}</td>
-      <td>${esc(lv)}</td>
-    </tr>`;
-      })
+    const hoenn = trainers.hoennLeaders || [];
+    const rows = hoenn
+      .map(
+        (g) => `<tr>
+      <td><a href="${g.slug}.html">${esc(g.name)}</a></td>
+      <td>${esc(g.type)}</td>
+      <td>${esc(g.badge)}</td>
+      <td>${esc(g.biome)}</td>
+      <td>${esc(g.specialItem)}</td>
+      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+    </tr>`
+      )
       .join("");
+
     track("Gyms_Hoenn.html", {
       title: "Hoenn-gyms",
       breadcrumbs: crumbs({ label: "Hoenn-gyms", href: "Gyms_Hoenn.html" }),
-      lede: "Hoenn opent na de Johto Champion. Gym-maps, opener <strong>Petra</strong>, en de trainerlijst hieronder.",
+      lede: "Checklist voor de Hoenn-challenge na de Johto Champion. Open een leader-pagina voor volledige teams en prep-tips.",
       body: `
   <h2>Unlock</h2>
   <ol class="steps">
     <li>Versla Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
-    <li>Volg je Trainer Card-unlocks naar Hoenn.</li>
-    <li>Gebruik de <strong>Hoenn Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader: <strong>Petra</strong>.</li>
+    <li>Champion-boek → Trainer Association → <strong>Hoenn Trainer Card</strong>.</li>
+    <li>Craft maps op de <strong>Hoenn Cartography Table</strong> — niet de Kanto/Johto-tafels. Zie <a href="Gym_Maps.html">Gym-maps</a>.</li>
+    <li>Start met <a href="Petra.html">Petra</a> (Stone Badge).</li>
   </ol>
-
-  <h2>Named Hoenn-trainers</h2>
-  <p class="muted">Teams: <a href="Trainer_Index.html">Trainer-index</a> · <a href="Achievements.html">Achievements</a>.</p>
+  <h2>Gym leaders &amp; league</h2>
   <table class="wikitable">
-    <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
-    <tbody>${previewRows || "<tr><td colspan=4>Nog geen Hoenn-trainers opgelijst.</td></tr>"}</tbody>
+    <thead><tr><th>Trainer</th><th>Type</th><th>Badge / rol</th><th>Biome / plek</th><th>Map-item</th><th>Team lv</th></tr></thead>
+    <tbody>${rows}</tbody>
   </table>
-
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Johto.html">Johto-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Progression.html">Progressie</a> · <a href="Gyms_Sinnoh.html">Sinnoh</a></p>
+  <div class="callout tip">
+    <div class="label">Elite Four-locatie</div>
+    Anders dan Kanto/Johto vecht je de Hoenn Elite Four en Champion Rocco op een echte Steppe-biome, niet in The End.
+  </div>
+  <p>Achievements: <a href="Achievements.html">Achievements</a>. Na Hoenn Champion: <a href="Gyms_Sinnoh.html">Sinnoh</a>.</p>
   ${navboxCore()}
   `,
     });
+
+    const nlHoennExtras = {
+      Petra: {
+        title: "Walkthrough — Hoenn unlocken tot Petra",
+        coverage: "Water, Grass, Fighting en Ground zijn sterk tegen Rock.",
+        travel: "Rocky Mountains-tip — blocks/scaffolding meenemen voor de klim, waystone bij de basis.",
+        gotcha: "Onix en Nosepass tanken physical hits. Let op Thunder Punch / Flamethrower op haar Geodude.",
+        first: true,
+      },
+      Rudi: {
+        title: "Walkthrough — Petra naar Rudi",
+        coverage: "Flying, Psychic en Fairy tegen Fighting.",
+        travel: "Yosemite Cliffs-tip — verticale map; blocks of een Flying-mount voor de richels.",
+        gotcha: "Fighting raakt Normal/Rock/Ice/Steel/Dark hard. Niet met een mono-Rock team van Petra binnenlopen.",
+      },
+      Walter: {
+        title: "Walkthrough — Rudi naar Walter",
+        coverage: "Ground blokkeert Electric volledig; Grass resist ook.",
+        travel: "Arid Highlands-tip — droog biome, extra water en eten meenemen.",
+        gotcha: "Paralysis-chip loopt op. Een Ground-sweeper maakt dit makkelijk.",
+      },
+      Fiammetta: {
+        title: "Walkthrough — Walter naar Fiammetta",
+        coverage: "Water, Ground en Rock zijn betrouwbaar tegen Fire.",
+        travel: "Forested Highlands-tip — let op vuur als je iets brandbaars bouwt in de buurt.",
+        gotcha: "Kom niet met een mono-Grass team van eerdere gyms; voeg Water of Rock toe.",
+      },
+      Norman: {
+        title: "Walkthrough — Fiammetta naar Norman",
+        coverage: "Fighting is het duidelijkste antwoord op Normal; Ghost-immuniteit helpt ook.",
+        travel: "Brushland-tip — vlak open terrein, makkelijk reizen maar blootgesteld aan wilde spawns.",
+        gotcha: "Bulky Normal-types kunnen stallen. Status of een Fighting-pivot meenemen.",
+      },
+      Alice: {
+        title: "Walkthrough — Norman naar Alice",
+        coverage: "Electric, Rock en Ice straffen Flying hard.",
+        travel: "Moonlight Grove-tip — donker biome; licht en eten meenemen.",
+        gotcha: "Altaria en Skarmory tanken hits. Electric- en Rock-coverage maakt dit snel klaar.",
+      },
+      Tell: {
+        title: "Walkthrough — Alice naar Tell",
+        coverage: "Dark, Bug en Ghost drukken Psychic.",
+        travel: "Amethyst Rainforest-tip — dicht biome, shears/een bijl meenemen en claim een rustplek.",
+        gotcha: "Solrock, Lunatone en Gardevoir slaan hard toe special. Dark-types negeren zijn Psychic-STAB volledig.",
+      },
+      Adriano: {
+        title: "Walkthrough — Tell naar Adriano",
+        coverage: "Electric en Grass beantwoorden Water. Adriano sluit de Hoenn-gymlijn af.",
+        travel: "Cold Ocean-tip — een boot of Water-mount meenemen, plus koud-weer-eten.",
+        gotcha: "Laatste Hoenn-gym vóór de Elite Four — full heal en restock voor de league.",
+      },
+      Fosco: {
+        title: "Walkthrough — Adriano naar Hoenn Elite Four (Fosco)",
+        coverage: "Fighting, Bug en Fairy drukken Dark.",
+        travel: "Steppe-biome — de Hoenn-league zit op open vlaktes, niet in The End zoals Kanto/Johto.",
+        gotcha: "Full heal vóór elke Hoenn Elite Four-room. Fosco opent de gauntlet.",
+        league: true,
+      },
+      Ester: {
+        title: "Walkthrough — Fosco naar Ester",
+        coverage: "Dark en Ghost drukken Ghost terug; let op immuniteit aan beide kanten.",
+        travel: "Zelfde Steppe-league-grond — restock tussen rooms.",
+        gotcha: "Status en Ghost-tricks kunnen stallen. Houd een schoon antwoord klaar.",
+        league: true,
+      },
+      Frida: {
+        title: "Walkthrough — Ester naar Frida",
+        coverage: "Fire, Fighting, Rock en Steel helpen tegen Ice.",
+        travel: "Derde Hoenn Elite-room — full heal na Ester.",
+        gotcha: "Ice kan een traag team stallen. Niet underleveled binnenlopen.",
+        league: true,
+      },
+      Drake: {
+        title: "Walkthrough — Frida naar Drake",
+        coverage: "Ice en Fairy straffen Dragon het hardst.",
+        travel: "Vierde Elite-room — laatste wall vóór Champion Rocco.",
+        gotcha: "Dragon-spam straft dunne teams. Ice-coverage en meerdere wincons meenemen.",
+        league: true,
+      },
+      Rocco: {
+        title: "Walkthrough — Drake naar Champion Rocco",
+        coverage: "Mixed champion-team (weather-setters + box legendaries) — antwoorden voor meerdere types, geen single gimmick.",
+        travel: "Top van de Hoenn-league-grond. Full restore team + items.",
+        gotcha: "Weather-setters en box legendaries domineren zijn team. Na Rocco: Sinnoh-unlock op je Trainer Card.",
+        league: true,
+        champion: true,
+      },
+    };
+
+    for (const g of hoenn) {
+      const file = `${g.slug}.html`;
+      const mapItem = g.specialItem;
+      const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
+      const minLv = Math.min(...(g.team || []).map((m) => Number(m.level) || 99), 99);
+      const sorted = [...hoenn].sort((a, b) => a.order - b.order);
+      const idx = sorted.findIndex((x) => x.slug === g.slug);
+      const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
+      const nextLink = next
+        ? `<a href="${next.slug}.html">${esc(next.name)}</a>`
+        : `<a href="Gyms_Sinnoh.html">Sinnoh</a>`;
+      const ex = nlHoennExtras[g.slug] || {
+        title: `Walkthrough — ${esc(g.name)}`,
+        coverage: esc(g.tips),
+        travel: `Locatie-tip: ${esc(g.biome)}.`,
+        gotcha: "Heal vóór de leader. Respecteer de level cap.",
+      };
+      const afterWin = ex.champion
+        ? `Win → Hoenn Champion. Volgende regio: <a href="Gyms_Sinnoh.html">Sinnoh</a>. Zie <a href="Progression.html">Progressie</a>.`
+        : `Win → level cap stijgt → volgende: ${nextLink}.`;
+
+      const unlockBlock = ex.first
+        ? `<h3>Unlock Hoenn eerst</h3>
+  <ol class="steps">
+    <li>Versla Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
+    <li>Champion-boek → Trainer Association → <strong>Hoenn Trainer Card</strong>.</li>
+    <li>Craft de <strong>Hoenn Cartography Table</strong> — zie <a href="Gym_Maps.html">Gym-maps</a>.</li>
+  </ol>`
+        : "";
+
+      track(file, {
+        title: g.name,
+        searchIndexTitle: g.name,
+        breadcrumbs: crumbs(
+          { label: "Hoenn-gyms", href: "Gyms_Hoenn.html" },
+          { label: g.name, href: file }
+        ),
+        lede:
+          g.order <= 8
+            ? `${esc(g.name)} — ${esc(g.type)}-specialist. Hoenn gym ${g.order} op PokeHaven EU.`
+            : `${esc(g.name)} — Hoenn league-gevecht op PokeHaven EU.`,
+        infobox: `<div class="infobox-title">${esc(g.name)}</div>
+  <table>
+    <tr><th>Regio</th><td>Hoenn</td></tr>
+    <tr><th>Rol</th><td>${g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"}</td></tr>
+    <tr><th>Type</th><td>${esc(g.type)}</td></tr>
+    <tr><th>Badge</th><td>${esc(g.badge)}</td></tr>
+    <tr><th>Locatie-tip</th><td>${esc(g.biome)}</td></tr>
+    <tr><th>Map-item</th><td>${esc(mapItem)}</td></tr>
+    <tr><th>Approx cap</th><td>~${maxLv + 5}</td></tr>
+    <tr><th>Team levels</th><td>${minLv}–${maxLv}</td></tr>
+    <tr><th>Party</th><td>${(g.team || []).length}</td></tr>
+  </table>`,
+        body: `
+  <h2>${ex.title}</h2>
+  ${unlockBlock}
+  <h3>Voorbereiden</h3>
+  <p>${esc(g.tips)}</p>
+  <ul>
+    <li><strong>Coverage:</strong> ${ex.coverage}</li>
+    <li>Teamlevels: ongeveer <strong>${minLv}–${maxLv}</strong></li>
+    <li>Approx cap: <strong>~${maxLv + 5}</strong> — <a href="Level_Cap.html">Level cap</a></li>
+    <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
+    <li>${ex.travel}</li>
+  </ul>
+  <h3>Craft de map</h3>
+  ${figure(
+    guideImg("cartography-maps.png"),
+    "<strong>Hoenn Cartography Table.</strong> Empty Map + special item → afgewerkte map met coördinaten.",
+    "Cartography / map-crafting"
+  )}
+  <ol class="steps">
+    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(mapItem)}</strong>.</li>
+    <li>Craft een verse <strong>Empty Map</strong>.</li>
+    <li>Combineer Empty Map + ${esc(mapItem)} in de <strong>Hoenn Cartography Table</strong>.</li>
+    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
+  </ol>
+  ${critical(
+    "nl",
+    "<strong>Open de Empty Map niet eerst in de wereld</strong> — en gebruik de Hoenn-tafel, niet een andere regio-tafel."
+  )}
+  <h3>Fight-tips</h3>
+  <p>${ex.gotcha}</p>
+  <ol class="steps">
+    <li>Reis met heals; activeer waystones onderweg.</li>
+    ${
+      ex.league
+        ? "<li>Elite Four / Champion: <strong>full heal tussen rooms</strong>.</li>"
+        : "<li>Clear gym-trainers als je XP of PokéDollars nodig hebt.</li>"
+    }
+    <li>Heal, daarna <strong>${esc(g.name)}</strong> challengen.</li>
+    <li>${afterWin}</li>
+  </ol>
+  <h2>Team</h2>
+  ${teamTable(g.team)}
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Hoenn.html">Hoenn-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Level_Cap.html">Level cap</a></p>
+  ${navboxCore()}
+  `,
+      });
+    }
   }
 
-  // Sinnoh hub — zelfde opzet als Hoenn
+  // Sinnoh deep hub + leader pages (parity with EN)
   {
-    const sinnohNamed = trainers.all
-      .filter((t) => t.region === "sinnoh" && !String(t.id).includes("groups"))
-      .sort((a, b) => a.name.localeCompare(b.name));
-    const previewRows = sinnohNamed
-      .map((t) => {
-        const levels = (t.team || []).map((m) => m.level).filter((x) => x != null);
-        const lv =
-          levels.length > 0
-            ? `${levels[0]}–${levels[levels.length - 1]}`
-            : "—";
-        return `<tr>
-      <td>${esc(t.name)}</td>
-      <td><code>${esc(t.id)}</code></td>
-      <td>${(t.team || []).length}</td>
-      <td>${esc(lv)}</td>
-    </tr>`;
-      })
+    const sinnoh = trainers.sinnohLeaders || [];
+    const rows = sinnoh
+      .map(
+        (g) => `<tr>
+      <td><a href="${g.slug}.html">${esc(g.name)}</a></td>
+      <td>${esc(g.type)}</td>
+      <td>${esc(g.badge)}</td>
+      <td>${esc(g.biome)}</td>
+      <td>${esc(g.specialItem)}</td>
+      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+    </tr>`
+      )
       .join("");
+
     track("Gyms_Sinnoh.html", {
       title: "Sinnoh-gyms",
       breadcrumbs: crumbs({ label: "Sinnoh-gyms", href: "Gyms_Sinnoh.html" }),
-      lede: "Sinnoh opent na Hoenn Champion Rocco. Gym-maps, opener <strong>Pedro</strong>, en de trainerlijst hieronder.",
+      lede: "Checklist voor de Sinnoh-challenge na Hoenn Champion Rocco. Open een leader-pagina voor volledige teams en prep-tips.",
       body: `
   <h2>Unlock</h2>
   <ol class="steps">
-    <li>Versla Hoenn Champion <strong>Rocco</strong> (na de Hoenn-league).</li>
-    <li>Volg je Trainer Card-unlocks naar Sinnoh.</li>
-    <li>Gebruik de <strong>Sinnoh Cartography Table</strong> — <a href="Gym_Maps.html">Gym-maps</a>. Eerste leader: <strong>Pedro</strong>.</li>
+    <li>Versla Hoenn Champion <a href="Rocco.html">Rocco</a>.</li>
+    <li>Champion-boek → Trainer Association → <strong>Sinnoh Trainer Card</strong>.</li>
+    <li>Craft maps op de <strong>Sinnoh Cartography Table</strong> — niet de andere regio-tafels. Zie <a href="Gym_Maps.html">Gym-maps</a>.</li>
+    <li>Start met <a href="Pedro.html">Pedro</a> (Coal Badge).</li>
   </ol>
-
-  <h2>Named Sinnoh-trainers</h2>
-  <p class="muted">Teams: <a href="Trainer_Index.html">Trainer-index</a> · <a href="Achievements.html">Achievements</a>.</p>
+  <h2>Gym leaders &amp; league</h2>
   <table class="wikitable">
-    <thead><tr><th>Naam</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
-    <tbody>${previewRows || "<tr><td colspan=4>Nog geen Sinnoh-trainers opgelijst.</td></tr>"}</tbody>
+    <thead><tr><th>Trainer</th><th>Type</th><th>Badge / rol</th><th>Biome / plek</th><th>Map-item</th><th>Team lv</th></tr></thead>
+    <tbody>${rows}</tbody>
   </table>
-
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Hoenn.html">Hoenn-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Progression.html">Progressie</a> · <a href="Achievements.html">Achievements</a></p>
+  <div class="callout tip">
+    <div class="label">Elite Four-locatie</div>
+    De Sinnoh Elite Four en Champion Camilla vecht je op een echte Desert Oasis, niet in The End.
+  </div>
+  <p>Achievements: <a href="Achievements.html">Achievements</a>. Sinnoh is de laatste regio in de huidige gymlijn — zie <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a> voor wat volgt.</p>
   ${navboxCore()}
   `,
     });
+
+    const nlSinnohExtras = {
+      Pedro: {
+        title: "Walkthrough — Sinnoh unlocken tot Pedro",
+        coverage: "Water, Grass, Fighting en Ground beantwoorden Rock.",
+        travel: "Volcanic Peaks-tip — fire-resist gear helpt bij de vents.",
+        gotcha: "Standaard Rock-lead. Niet alleen met Fire/Flying/Bug binnenlopen.",
+        first: true,
+      },
+      Gardenia: {
+        title: "Walkthrough — Pedro naar Gardenia",
+        coverage: "Fire, Flying, Ice, Bug en Poison drukken Grass.",
+        travel: "Blooming Valley-tip — claim een rustplek bij de gym.",
+        gotcha: "Sleep Powder / Stun Spore kan stallen. Cleansers meenemen.",
+      },
+      Marzia: {
+        title: "Walkthrough — Gardenia naar Marzia",
+        coverage: "Flying, Psychic en Fairy tegen Fighting.",
+        travel: "Lush Desert-tip — een vreemd gemengd biome, water en schaduw meenemen.",
+        gotcha: "Fighting straft Normal/Rock/Ice/Steel/Dark. Flying- of Psychic-pivot houden.",
+      },
+      Omar: {
+        title: "Walkthrough — Marzia naar Omar",
+        coverage: "Electric en Grass beantwoorden Water.",
+        travel: "Beach-tip — makkelijk reizen, maar let op wilde Water-spawns.",
+        gotcha: "Rain-setters boosten zijn team. Electric-sweepers maken dit snel af.",
+      },
+      Fannie: {
+        title: "Walkthrough — Omar naar Fannie",
+        coverage: "Dark en Ghost drukken Ghost; let op immuniteit.",
+        travel: "Lavender Valley-tip — somber biome, licht en een compleet team meenemen.",
+        gotcha: "Status en Ghost-tricks (Destiny Bond, Will-O-Wisp) kunnen een fight laat omdraaien.",
+      },
+      Ferruccio: {
+        title: "Walkthrough — Fannie naar Ferruccio",
+        coverage: "Fire, Fighting en Ground kraken Steel.",
+        travel: "Volcanic Crater-tip — fire-resist gear voordat je dichtbij komt.",
+        gotcha: "Skarmory / Steelix / Aggron blokkeren physical hits. Special of Fighting-coverage meenemen.",
+      },
+      Bianca: {
+        title: "Walkthrough — Ferruccio naar Bianca",
+        coverage: "Fire, Fighting, Rock en Steel helpen tegen Ice.",
+        travel: "Glacial Chasm-tip — koud-weer-eten en -gear, lange hike.",
+        gotcha: "Weavile / Mamoswine slaan hard toe physical; niet underleveled binnenlopen.",
+      },
+      Corrado: {
+        title: "Walkthrough — Bianca naar Corrado",
+        coverage: "Ground blokkeert Electric volledig.",
+        travel: "Shrubland-tip — laatste Sinnoh-gym vóór de Elite Four, volledig restocken.",
+        gotcha: "Paralysis-chip loopt op. Een Ground-sweeper maakt dit triviaal.",
+      },
+      Aaron: {
+        title: "Walkthrough — Corrado naar Sinnoh Elite Four (Aaron)",
+        coverage: "Fire, Flying en Rock drukken Bug.",
+        travel: "Desert Oasis — de Sinnoh-league-grond, niet The End zoals Kanto/Johto.",
+        gotcha: "Full heal vóór elke Sinnoh Elite Four-room. Aaron opent de gauntlet.",
+        league: true,
+      },
+      Terrie: {
+        title: "Walkthrough — Aaron naar Terrie",
+        coverage: "Water, Grass en Ice beantwoorden Ground.",
+        travel: "Zelfde Desert Oasis-league-grond — restock na Aaron.",
+        gotcha: "Ground negeert Electric volledig. Een Water- of Grass-antwoord meenemen.",
+        league: true,
+      },
+      Vulcano: {
+        title: "Walkthrough — Terrie naar Vulcano",
+        coverage: "Water, Ground en Rock zijn betrouwbaar tegen Fire.",
+        travel: "Derde Sinnoh Elite-room — full heal na Terrie.",
+        gotcha: "Niet met een Grass-zwaar team binnenlopen; Water- of Rock-pivot toevoegen.",
+        league: true,
+      },
+      Luciano: {
+        title: "Walkthrough — Vulcano naar Luciano",
+        coverage: "Dark, Bug en Ghost drukken Psychic.",
+        travel: "Vierde Elite-room — laatste wall vóór Champion Camilla.",
+        gotcha: "Dark-types negeren zijn Psychic-STAB volledig. Houd er één in het team.",
+        league: true,
+      },
+      Camilla: {
+        title: "Walkthrough — Luciano naar Champion Camilla",
+        coverage: "Mixed champion-team — antwoorden voor meerdere types, geen single gimmick.",
+        travel: "Top van de Sinnoh-league-grond. Full restore team + items.",
+        gotcha: "De laatste champion van de huidige gymlijn — check na Camilla Post-game en legendaries voor wat volgt.",
+        league: true,
+        champion: true,
+      },
+    };
+
+    for (const g of sinnoh) {
+      const file = `${g.slug}.html`;
+      const mapItem = g.specialItem;
+      const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
+      const minLv = Math.min(...(g.team || []).map((m) => Number(m.level) || 99), 99);
+      const sorted = [...sinnoh].sort((a, b) => a.order - b.order);
+      const idx = sorted.findIndex((x) => x.slug === g.slug);
+      const next = idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
+      const nextLink = next
+        ? `<a href="${next.slug}.html">${esc(next.name)}</a>`
+        : `<a href="Postgame_and_Legendaries.html">Post-game</a>`;
+      const ex = nlSinnohExtras[g.slug] || {
+        title: `Walkthrough — ${esc(g.name)}`,
+        coverage: esc(g.tips),
+        travel: `Locatie-tip: ${esc(g.biome)}.`,
+        gotcha: "Heal vóór de leader. Respecteer de level cap.",
+      };
+      const afterWin = ex.champion
+        ? `Win → Sinnoh Champion — je hebt alle regio’s geklaard! Check <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a> voor wat volgt.`
+        : `Win → level cap stijgt → volgende: ${nextLink}.`;
+
+      const unlockBlock = ex.first
+        ? `<h3>Unlock Sinnoh eerst</h3>
+  <ol class="steps">
+    <li>Versla Hoenn Champion <a href="Rocco.html">Rocco</a>.</li>
+    <li>Champion-boek → Trainer Association → <strong>Sinnoh Trainer Card</strong>.</li>
+    <li>Craft de <strong>Sinnoh Cartography Table</strong> — zie <a href="Gym_Maps.html">Gym-maps</a>.</li>
+  </ol>`
+        : "";
+
+      track(file, {
+        title: g.name,
+        searchIndexTitle: g.name,
+        breadcrumbs: crumbs(
+          { label: "Sinnoh-gyms", href: "Gyms_Sinnoh.html" },
+          { label: g.name, href: file }
+        ),
+        lede:
+          g.order <= 8
+            ? `${esc(g.name)} — ${esc(g.type)}-specialist. Sinnoh gym ${g.order} op PokeHaven EU.`
+            : `${esc(g.name)} — Sinnoh league-gevecht op PokeHaven EU.`,
+        infobox: `<div class="infobox-title">${esc(g.name)}</div>
+  <table>
+    <tr><th>Regio</th><td>Sinnoh</td></tr>
+    <tr><th>Rol</th><td>${g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"}</td></tr>
+    <tr><th>Type</th><td>${esc(g.type)}</td></tr>
+    <tr><th>Badge</th><td>${esc(g.badge)}</td></tr>
+    <tr><th>Locatie-tip</th><td>${esc(g.biome)}</td></tr>
+    <tr><th>Map-item</th><td>${esc(mapItem)}</td></tr>
+    <tr><th>Approx cap</th><td>~${maxLv + 5}</td></tr>
+    <tr><th>Team levels</th><td>${minLv}–${maxLv}</td></tr>
+    <tr><th>Party</th><td>${(g.team || []).length}</td></tr>
+  </table>`,
+        body: `
+  <h2>${ex.title}</h2>
+  ${unlockBlock}
+  <h3>Voorbereiden</h3>
+  <p>${esc(g.tips)}</p>
+  <ul>
+    <li><strong>Coverage:</strong> ${ex.coverage}</li>
+    <li>Teamlevels: ongeveer <strong>${minLv}–${maxLv}</strong></li>
+    <li>Approx cap: <strong>~${maxLv + 5}</strong> — <a href="Level_Cap.html">Level cap</a></li>
+    <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
+    <li>${ex.travel}</li>
+  </ul>
+  <h3>Craft de map</h3>
+  ${figure(
+    guideImg("cartography-maps.png"),
+    "<strong>Sinnoh Cartography Table.</strong> Empty Map + special item → afgewerkte map met coördinaten.",
+    "Cartography / map-crafting"
+  )}
+  <ol class="steps">
+    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(mapItem)}</strong>.</li>
+    <li>Craft een verse <strong>Empty Map</strong>.</li>
+    <li>Combineer Empty Map + ${esc(mapItem)} in de <strong>Sinnoh Cartography Table</strong>.</li>
+    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
+  </ol>
+  ${critical(
+    "nl",
+    "<strong>Open de Empty Map niet eerst in de wereld</strong> — en gebruik de Sinnoh-tafel, niet een andere regio-tafel."
+  )}
+  <h3>Fight-tips</h3>
+  <p>${ex.gotcha}</p>
+  <ol class="steps">
+    <li>Reis met heals; activeer waystones onderweg.</li>
+    ${
+      ex.league
+        ? "<li>Elite Four / Champion: <strong>full heal tussen rooms</strong>.</li>"
+        : "<li>Clear gym-trainers als je XP of PokéDollars nodig hebt.</li>"
+    }
+    <li>Heal, daarna <strong>${esc(g.name)}</strong> challengen.</li>
+    <li>${afterWin}</li>
+  </ol>
+  <h2>Team</h2>
+  ${teamTable(g.team)}
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Sinnoh.html">Sinnoh-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Level_Cap.html">Level cap</a></p>
+  ${navboxCore()}
+  `,
+      });
+    }
   }
 
   // Brock + Misty — full NL guides; other leaders: tip shell + EN team link
