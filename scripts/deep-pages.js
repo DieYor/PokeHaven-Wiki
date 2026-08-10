@@ -857,7 +857,7 @@ export function registerDeepPages({
         <tr><td>Select send-out</td><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Stops “wrong Pokémon” mistakes</td></tr>
         <tr><td>Throw / recall</td><td><kbd>R</kbd></td><td>Send out the selected Pokémon</td></tr>
         <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight — start a fight</td></tr>
-        <tr><td>Quest book</td><td><kbd>O</kbd></td><td>FTB Quests — First Steps</td></tr>
+        <tr><td>Quest book</td><td><kbd>O</kbd></td><td>FTB Quests — First Steps. Pin a quest and it shows in a small tracker near the bottom-right HUD (by the minimap/coordinates) — no floating in-world arrow.</td></tr>
         <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claims — <a href="Claims.html">Claims</a></td></tr>
         <tr><td>Chunk map</td><td><kbd>M</kbd></td><td>FTB Chunks map</td></tr>
         <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
@@ -1056,6 +1056,10 @@ export function registerDeepPages({
     <p>Live world overview in your browser:</p>
     <p><a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank"><strong>http://88.211.214.163:8100</strong></a></p>
     <p>Handy for orientation, bases, and sharing coordinates.</p>
+    <div class="callout tip">
+      <div class="label">What BlueMap shows</div>
+      Currently BlueMap only plots <strong>online player markers</strong> — it does not show Pokémon spawns, dens, or other mobs. Use <a href="Spawn_Lookup.html">Spawn lookup</a> for species/biome data instead.
+    </div>
 
     <h2>Other travel tools</h2>
     <ul>

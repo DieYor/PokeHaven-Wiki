@@ -322,7 +322,7 @@ export function registerDutchSite({
       <tr><td>Selecteer send-out</td><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Voorkomt verkeerde Pokémon</td></tr>
       <tr><td>Gooi / recall</td><td><kbd>R</kbd></td><td>Geselecteerde Pokémon uitsturen</td></tr>
       <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight — gevecht starten</td></tr>
-      <tr><td>Questboek</td><td><kbd>O</kbd></td><td>FTB Quests — First Steps</td></tr>
+      <tr><td>Questboek</td><td><kbd>O</kbd></td><td>FTB Quests — First Steps. Pin een quest en die verschijnt in een klein trackertje rechtsonder in de HUD (bij de minimap/coördinaten) — geen zwevende pijl in de wereld.</td></tr>
       <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claimen — <a href="Claims.html">Claims</a></td></tr>
       <tr><td>Chunk-map</td><td><kbd>M</kbd></td><td>FTB Chunks-kaart</td></tr>
       <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
@@ -711,6 +711,10 @@ export function registerDutchSite({
     <li>Na Brock ontgrendelt <strong>Kanto Gyms</strong> met Misty. Gym-maps blijven je navigatie.</li>
     <li>Side-chapters (Settling In, Trainer Craft, …) blijven open zodat je basis-bouw met de league kunt mixen.</li>
   </ol>
+  <div class="callout tip">
+    <div class="label">Gepinde quests</div>
+    Klik op het pin-icoontje bij een quest in het boek om ‘m te tracken — die verschijnt dan in een klein trackertje <strong>rechtsonder in je HUD</strong>, naast de minimap/coördinaten. Er is geen zwevende 3D-pijl in de wereld; de gepinde tracker is het dichtste alternatief.
+  </div>
 
   <h2>Chapter-overzicht</h2>
   <p>Ongeveer <strong>25 chapters / 160+ quests</strong>. Side Paths blokkeren nooit de gym-progressie.</p>
@@ -790,6 +794,10 @@ export function registerDutchSite({
   <p>Live wereldoverzicht in je browser:</p>
   <p><a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank"><strong>http://88.211.214.163:8100</strong></a></p>
   <p>Handig voor oriëntatie, bases en coördinaten delen.</p>
+  <div class="callout tip">
+    <div class="label">Wat BlueMap toont</div>
+    BlueMap toont op dit moment alleen <strong>online spelersmarkers</strong> — geen Pokémon-spawns, dens of andere mobs. Gebruik <a href="Spawn_Lookup.html">Spawn lookup</a> voor species-/biome-data.
+  </div>
 
   <h2>Andere tools</h2>
   <ul>
@@ -1007,7 +1015,7 @@ export function registerDutchSite({
   <p><strong>Nee.</strong> Op PokeHaven EU alleen <strong>FTB Chunks</strong>. Open Parties and Claims (OPAC) is <strong>verwijderd</strong> uit de pack. Zie <a href="Claims.html">Claims</a>.</p>
 
   <h2>Is er een browser-map?</h2>
-  <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Meer travel-tools: <a href="Travel.html">Reizen</a>.</p>
+  <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Op dit moment toont het alleen <strong>online spelersmarkers</strong> — geen Pokémon- of mob-locaties. Meer travel-tools: <a href="Travel.html">Reizen</a>.</p>
 
   <h2>Kan ik doneren?</h2>
   <p>Ja, optioneel — donaties helpen de server online / te upgraden. Ze zijn <strong>puur cosmetisch</strong>: tiers geven een Discord-rol (Supporter / Patron / Benefactor) en optioneel een in-game chatprefix — <strong>nooit een gameplay-voordeel</strong>. Volledig overzicht: <a href="Donations.html">Donaties</a>. Links staan in Discord.</p>
@@ -1019,7 +1027,7 @@ export function registerDutchSite({
   <p><a href="Minecraft_Hub.html">Minecraft survival-hub</a> en <a href="Pack_Differences.html">wat dit pack verandert</a>.</p>
 
   <h2>Is er een quest-pijl?</h2>
-  <p>Geen zwevende pijl in de wereld. Open het <strong>questboek</strong> met <kbd>O</kbd> (<a href="Quests.html">Quests</a>) voor First Steps → Sinnoh en side-doelen. Gebruik verder <a href="Gym_Maps.html">gym-maps</a>, de <a href="Level_Cap.html">level cap</a>, en Achievements (<a href="Achievements.html">Achievements</a> — vaak <kbd>L</kbd>). Na de league: <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a>.</p>
+  <p>Geen zwevende pijl in de wereld. Open het <strong>questboek</strong> met <kbd>O</kbd> (<a href="Quests.html">Quests</a>) voor First Steps → Sinnoh en side-doelen. Als je een quest <strong>pint</strong> vanuit het boek, verschijnt die in een klein trackertje <strong>rechtsonder in je HUD</strong> (naast de minimap/coördinaten) — dat trackertje is het dichtste alternatief voor een quest-pijl, er is nog steeds geen zwevende 3D-pijl in de wereld. Gebruik verder <a href="Gym_Maps.html">gym-maps</a>, de <a href="Level_Cap.html">level cap</a>, en Achievements (<a href="Achievements.html">Achievements</a> — vaak <kbd>L</kbd>). Na de league: <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a>.</p>
 
   <h2>Mag ik dorpen looten?</h2>
   <p>Ja. Center/huis-chests zijn fair game. Op PokeHaven EU kunnen geleegde loot-chests later refreshen.</p>

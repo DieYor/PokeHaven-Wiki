@@ -1848,6 +1848,10 @@ writePage("Quests.html", {
     <li>After Brock, <strong>Kanto Gyms</strong> unlocks with Misty. Follow gym maps as usual.</li>
     <li>Side chapters (Settling In, Trainer Craft, …) stay available so you can mix base-building with the league path.</li>
   </ol>
+  <div class="callout tip">
+    <div class="label">Pinned quests</div>
+    Click the pin icon on a quest in the book to track it — it appears in a small tracker near the <strong>bottom-right of your HUD</strong>, next to the minimap/coordinates. There is no floating 3D arrow in the world; the pinned tracker is the closest thing to it.
+  </div>
 
   <h2>Chapter map</h2>
   <p>About <strong>25 chapters / 160+ quests</strong>. Side Paths never block gym progress.</p>
@@ -2550,7 +2554,7 @@ writePage("FAQ.html", {
   <p><strong>No.</strong> On PokeHaven EU use <strong>FTB Chunks only</strong>. Open Parties and Claims (OPAC) has been <strong>removed</strong> from the pack so there is only one claims system. See <a href="Claims.html">Claims</a>.</p>
 
   <h2>Is there a browser map?</h2>
-  <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. More travel tools: <a href="Travel.html">Travel</a>.</p>
+  <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. It currently shows <strong>online player markers only</strong> — it does not show Pokémon or mob locations. More travel tools: <a href="Travel.html">Travel</a>.</p>
 
   <h2>Can I donate?</h2>
   <p>Yes, optionally — donations help keep the server online / upgraded. They're <strong>cosmetic only</strong>: tiers grant a Discord role (Supporter / Patron / Benefactor) and an optional in-game chat prefix — <strong>never a gameplay advantage</strong>. Full breakdown: <a href="Donations.html">Donations</a>. Links live in Discord.</p>
@@ -2562,7 +2566,7 @@ writePage("FAQ.html", {
   <p><a href="Minecraft_Hub.html">Minecraft survival hub</a> — mining, farming, Nether, villages, death, and <a href="Pack_Differences.html">what this pack changes</a>.</p>
 
   <h2>Is there a quest arrow?</h2>
-  <p>No floating arrow on the world. Open the <strong>quest book</strong> with <kbd>O</kbd> (<a href="Quests.html">Quests</a>) for First Steps → Sinnoh and side goals. Still use <a href="Gym_Maps.html">gym maps</a>, the <a href="Level_Cap.html">level cap</a>, and Advancements (<a href="Achievements.html">Achievements</a> — often <kbd>L</kbd>). Post-league: <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a>.</p>
+  <p>No floating arrow on the world. Open the <strong>quest book</strong> with <kbd>O</kbd> (<a href="Quests.html">Quests</a>) for First Steps → Sinnoh and side goals. If you <strong>pin</strong> a quest from inside the book, it shows up in a small tracker near the <strong>bottom-right of your HUD</strong> (next to the minimap/coordinates) — that tracker is the closest thing to a quest arrow, there is still no floating 3D arrow in the world. Still use <a href="Gym_Maps.html">gym maps</a>, the <a href="Level_Cap.html">level cap</a>, and Advancements (<a href="Achievements.html">Achievements</a> — often <kbd>L</kbd>). Post-league: <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a>.</p>
 
   <h2>Can I loot villages?</h2>
   <p>Yes. Center/house chests are fair game. On PokeHaven EU, emptied loot may refresh later.</p>
