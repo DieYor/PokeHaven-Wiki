@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Travel — PokeHaven EU Wiki</title>
-  <meta name="description" content="Waystones are free fast-travel on PokeHaven EU. Combine them with gym maps, Xaero pins, and a mount so you never re-walk the same 2000 blocks." />
-  <link rel="alternate" hreflang="en" href="pages/Travel.html" />
-  <link rel="alternate" hreflang="nl" href="../nl/pages/Travel.html" />
+  <title>Discord commands — PokeHaven EU Wiki</title>
+  <meta name="description" content="Every player-facing slash command the PokeHaven EU Discord bot offers — account linking and donation status. (Looking for in-game commands like /pc? See Rules &amp; commands.)" />
+  <link rel="alternate" hreflang="en" href="pages/Discord_Commands.html" />
+  <link rel="alternate" hreflang="nl" href="../nl/pages/Discord_Commands.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -32,7 +32,7 @@
 <a href="Claims.html">Claims</a></nav>
       <div class="lang-switch" role="navigation" aria-label="Language">
     <a class="lang-btn active" href="#" hreflang="en" title="English" aria-current="true"><img class="flag-img" src="../assets/flags/gb.svg" width="20" height="14" alt="" /><span class="lang-code">EN</span></a>
-    <a class="lang-btn " href="../nl/pages/Travel.html" hreflang="nl" title="Nederlands" ><img class="flag-img" src="../assets/flags/nl.svg" width="20" height="14" alt="" /><span class="lang-code">NL</span></a>
+    <a class="lang-btn " href="../nl/pages/Discord_Commands.html" hreflang="nl" title="Nederlands" ><img class="flag-img" src="../assets/flags/nl.svg" width="20" height="14" alt="" /><span class="lang-code">NL</span></a>
   </div>
       <div class="search-wrap">
         <input id="wiki-search" type="search" placeholder="Search the wiki…" autocomplete="off" />
@@ -41,81 +41,50 @@
     </div>
   </header>
   <main class="page">
-    <div class="breadcrumbs"><a href="../index.html">Main Page</a> <span aria-hidden="true">/</span> <span>Travel</span></div>
-    <div class="article-layout no-infobox">
-      <article class="article" data-page-title="Travel" >
-        <h1 class="article-title">Travel</h1>
-        <p class="article-lede">Waystones are free fast-travel on PokeHaven EU. Combine them with gym maps, Xaero pins, and a mount so you never re-walk the same 2000 blocks.</p>
+    <div class="breadcrumbs"><a href="../index.html">Main Page</a> <span aria-hidden="true">/</span> <span>Discord commands</span></div>
+    <div class="article-layout ">
+      <article class="article" data-page-title="Discord commands" >
+        <h1 class="article-title">Discord commands</h1>
+        <p class="article-lede">Every player-facing slash command the PokeHaven EU Discord bot offers — account linking and donation status. (Looking for in-game commands like <code>/pc</code>? See <a href="Rules_and_Commands.html">Rules &amp; commands</a>.)</p>
         <div class="toc-box" id="toc"><h2>Contents</h2><ol></ol></div>
         
-    <figure class="figure">
-  <a class="figure-zoom" href="../assets/waystone.png" data-lightbox title="Click to enlarge">
-    <img src="../assets/waystone.png" alt="Waystone teleport block" loading="lazy" />
-  </a>
-  <figcaption><strong>Waystone.</strong> Right-click to activate. Shift + right-click to rename. Build a network: Spawn, Home, each gym stop.</figcaption>
-</figure>
-    <h2>Day-one setup</h2>
-    <ol class="steps">
-      <li>Activate the <strong>spawn</strong> waystone as soon as you load in.</li>
-      <li>Place and activate one at your <a href="Claims.html">claimed</a> base (next to bed + chests).</li>
-      <li>After every gym (or long hike), activate a stone nearby — or place one if you brought extras.</li>
-      <li>Rename clearly: <em>Home</em>, <em>Brock</em>, <em>Misty</em>, <em>Raid dens</em>, etc.</li>
-    </ol>
-    <div class="callout tip">
-      <div class="label">Free network</div>
-      On this server, waystones have <strong>no teleport cost</strong> and no cooldown. Use them often.
-    </div>
+  <div class="callout tip">
+    <div class="label">Discord, not in-game</div>
+    These are <strong>slash commands typed in Discord</strong> (start with <kbd>/</kbd> in any channel the bot can see) — not Minecraft chat commands. For in-game commands like <code>/pc</code>, see <a href="Rules_and_Commands.html">Rules &amp; commands</a>.
+  </div>
 
-    <h2>Waystones vs pins vs gym maps</h2>
-    <table class="wikitable">
-      <thead><tr><th>System</th><th>What it does</th><th>Teleports?</th></tr></thead>
-      <tbody>
-        <tr><td>Waystone</td><td>World block — you (and others who activate it) can warp there</td><td>Yes</td></tr>
-        <tr><td>Xaero pin</td><td>Personal map marker</td><td>No</td></tr>
-        <tr><td>Gym map</td><td>Finished map item with coordinates for a leader</td><td>No — navigation only</td></tr>
-      </tbody>
-    </table>
+  <h2>Account linking</h2>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/link minecraft:YourExactName</code></td><td>Links your Discord account to your Minecraft username (case-sensitive, 3–16 characters). Do this first — it's how the bot knows who to credit for donations and chat prefixes.</td></tr>
+    </tbody>
+  </table>
 
-    <h2>Gym-route habit</h2>
-    <ol class="steps">
-      <li>Craft the leader’s map on the right cartography table — <a href="Gym_Maps.html">Gym maps</a>.</li>
-      <li>Pin the coordinates in Xaero if you like a trail on the minimap.</li>
-      <li>Ride or walk out (<a href="Riding.html">Riding</a>), fight, then waystone home to heal and restock.</li>
-      <li>Leave a named waystone near the gym if you’ll return for rematches, shops, or friends.</li>
-    </ol>
+  <h2>Donations</h2>
+  <p>Full context on tiers and how donating works: <a href="Donations.html">Donations</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate check</code></td><td>Shows your own lifetime donation total, current cosmetic tier, and linked Minecraft name.</td></tr>
+      <tr><td><code>/donate tiers</code></td><td>Lists the cosmetic donation tiers (Supporter / Patron / Benefactor) and what each grants.</td></tr>
+    </tbody>
+  </table>
 
-    <h2>BlueMap (browser map)</h2>
-    <p>Live world overview in your browser:</p>
-    <p><a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank"><strong>http://88.211.214.163:8100</strong></a></p>
-    <p>Handy for orientation, bases, and sharing coordinates.</p>
-    <div class="callout tip">
-      <div class="label">What BlueMap shows</div>
-      Currently BlueMap only plots <strong>online player markers</strong> — it does not show Pokémon spawns, dens, or other mobs. Use <a href="Spawn_Lookup.html">Spawn lookup</a> for species/biome data instead.
-    </div>
+  <h2>Staff-only commands</h2>
+  <p>These require staff permissions — listed here for transparency, not something regular players can run.</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate add</code></td><td>Logs a new donation against a user's lifetime total (amount + optional Minecraft IGN / note).</td></tr>
+      <tr><td><code>/donate set</code></td><td>Corrects a user's lifetime total directly.</td></tr>
+      <tr><td><code>/donate link</code></td><td>Links a Discord user to a Minecraft IGN on their behalf.</td></tr>
+      <tr><td><code>/donate list</code></td><td>Shows the top lifetime donors.</td></tr>
+    </tbody>
+  </table>
 
-    <h2>Other travel tools</h2>
-    <ul>
-      <li><strong>Nature’s Compass / Explorer’s Compass</strong> — find biomes or structures when maps aren’t enough.</li>
-      <li><strong>Xaero’s World Map</strong> — zoom out, pin dens, mark caves, share coords in chat.</li>
-      <li><strong>Bed + waystone at home</strong> — quick respawn and return.</li>
-    </ul>
-
-    <h2>Etiquette</h2>
-    <ul>
-      <li>Don’t break or grief someone else’s waystone network.</li>
-      <li>Public / shared stones: activate them; don’t rename stones others rely on.</li>
-      <li>Ask before planting a stone deep inside another player’s claim.</li>
-    </ul>
-
-    <h2>Common mistakes</h2>
-    <ul>
-      <li>Walking past a stone without activating it — it won’t appear in your list.</li>
-      <li>Only pinning Xaero and wondering why you can’t teleport.</li>
-      <li>Opening an Empty Map in the world before gym crafting — ruins that map for the cartography recipe.</li>
-    </ul>
-
-    <p class="see-also"><strong>See also:</strong> <a href="Riding.html">Riding</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">First hours</a></p>
-    <div class="navbox">
+  <p class="see-also"><strong>See also:</strong> <a href="Donations.html">Donations</a> · <a href="Rules_and_Commands.html">Rules &amp; commands</a> · <a href="FAQ.html">FAQ</a></p>
+  <div class="navbox">
     <div class="navbox-title">PokeHaven systems</div>
     <div class="navbox-row"><div class="navbox-label">Core</div><div class="navbox-links">
       <a href="Economy.html">Economy</a>
@@ -155,9 +124,9 @@
       <a href="Spawn_Lookup.html">Spawn lookup</a>
     </div></div>
   </div>
-    
+  
       </article>
-      
+      <aside class="infobox"><div class="infobox-title">Discord bot commands</div><table><tr><th>Where</th><td>Any channel in the PokeHaven EU Discord</td></tr><tr><th>Account link</th><td><code>/link</code></td></tr><tr><th>Donation status</th><td><code>/donate check</code>, <code>/donate tiers</code></td></tr><tr><th>Staff only</th><td><code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code></td></tr></table></aside>
     </div>
   </main>
   <footer class="site-footer">

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Minecraft-basics — PokeHaven EU Wiki</title>
-  <meta name="description" content="Korte primer als je nieuw bent in Java survival." />
-  <link rel="alternate" hreflang="en" href="../../pages/Minecraft_Basics.html" />
-  <link rel="alternate" hreflang="nl" href="Minecraft_Basics.html" />
+  <title>Discord-commands — PokeHaven EU Wiki</title>
+  <meta name="description" content="Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken en donatiestatus. (Op zoek naar in-game commands zoals /pc? Zie Regels &amp; commands.)" />
+  <link rel="alternate" hreflang="en" href="../../pages/Discord_Commands.html" />
+  <link rel="alternate" hreflang="nl" href="Discord_Commands.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -31,7 +31,7 @@
 <a href="Raids.html">Raids</a>
 <a href="Claims.html">Claims</a></nav>
       <div class="lang-switch" role="navigation" aria-label="Language">
-    <a class="lang-btn " href="../../pages/Minecraft_Basics.html" hreflang="en" title="English" ><img class="flag-img" src="../../assets/flags/gb.svg" width="20" height="14" alt="" /><span class="lang-code">EN</span></a>
+    <a class="lang-btn " href="../../pages/Discord_Commands.html" hreflang="en" title="English" ><img class="flag-img" src="../../assets/flags/gb.svg" width="20" height="14" alt="" /><span class="lang-code">EN</span></a>
     <a class="lang-btn active" href="#" hreflang="nl" title="Nederlands" aria-current="true"><img class="flag-img" src="../../assets/flags/nl.svg" width="20" height="14" alt="" /><span class="lang-code">NL</span></a>
   </div>
       <div class="search-wrap">
@@ -41,15 +41,49 @@
     </div>
   </header>
   <main class="page">
-    <div class="breadcrumbs"><a href="../index.html">Hoofdpagina</a> <span aria-hidden="true">/</span> <a href="Minecraft_Hub.html">Minecraft-hub</a> <span aria-hidden="true">/</span> <span>Minecraft-basics</span></div>
-    <div class="article-layout no-infobox">
-      <article class="article" data-page-title="Minecraft-basics" >
-        <h1 class="article-title">Minecraft-basics</h1>
-        <p class="article-lede">Korte primer als je nieuw bent in Java survival.</p>
+    <div class="breadcrumbs"><a href="../index.html">Hoofdpagina</a> <span aria-hidden="true">/</span> <span>Discord-commands</span></div>
+    <div class="article-layout ">
+      <article class="article" data-page-title="Discord-commands" >
+        <h1 class="article-title">Discord-commands</h1>
+        <p class="article-lede">Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken en donatiestatus. (Op zoek naar in-game commands zoals <code>/pc</code>? Zie <a href="Rules_and_Commands.html">Regels &amp; commands</a>.)</p>
         <div class="toc-box" id="toc"><h2>Inhoud</h2><ol></ol></div>
         
-  <p>Korte primer als je nieuw bent in Java survival.</p>
-  <p>Uitgebreide Engelse gids: <a href="../../pages/Minecraft_Basics.html">Minecraft-basics (EN)</a>. Terug naar de <a href="Minecraft_Hub.html">Minecraft-hub</a>.</p>
+  <div class="callout tip">
+    <div class="label">Discord, niet in-game</div>
+    Dit zijn <strong>slash-commands die je in Discord typt</strong> (begin met <kbd>/</kbd> in elk kanaal dat de bot ziet) — geen Minecraft-chatcommando's. Voor in-game commands zoals <code>/pc</code>, zie <a href="Rules_and_Commands.html">Regels &amp; commands</a>.
+  </div>
+
+  <h2>Account linken</h2>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/link minecraft:JouwExacteNaam</code></td><td>Linkt je Discord-account aan je Minecraft-username (hoofdlettergevoelig, 3–16 tekens). Doe dit eerst — zo weet de bot wie te crediteren voor donaties en chatprefixes.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Donaties</h2>
+  <p>Volledige uitleg over tiers en hoe doneren werkt: <a href="Donations.html">Donaties</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate check</code></td><td>Toont je eigen lifetime-donatietotaal, huidige cosmetische tier en gelinkte Minecraft-naam.</td></tr>
+      <tr><td><code>/donate tiers</code></td><td>Lijst van de cosmetische donatietiers (Supporter / Patron / Benefactor) en wat elk geeft.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Alleen voor staff</h2>
+  <p>Deze vereisen staff-rechten — hier vermeld voor transparantie, geen commands die gewone spelers kunnen draaien.</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate add</code></td><td>Logt een nieuwe donatie op het lifetime-totaal van een gebruiker (bedrag + optionele Minecraft-IGN / notitie).</td></tr>
+      <tr><td><code>/donate set</code></td><td>Corrigeert het lifetime-totaal van een gebruiker direct.</td></tr>
+      <tr><td><code>/donate link</code></td><td>Linkt een Discord-gebruiker aan een Minecraft-IGN namens hen.</td></tr>
+      <tr><td><code>/donate list</code></td><td>Toont de top lifetime-donateurs.</td></tr>
+    </tbody>
+  </table>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Donations.html">Donaties</a> · <a href="Rules_and_Commands.html">Regels &amp; commands</a> · <a href="FAQ.html">FAQ</a></p>
   <div class="navbox">
     <div class="navbox-title">PokeHaven systemen</div>
     <div class="navbox-row"><div class="navbox-label">Kern</div><div class="navbox-links">
@@ -92,7 +126,13 @@
   </div>
   
       </article>
-      
+      <aside class="infobox"><div class="infobox-title">Discord-bot commands</div>
+  <table>
+    <tr><th>Waar</th><td>Elk kanaal in de PokeHaven EU Discord</td></tr>
+    <tr><th>Account linken</th><td><code>/link</code></td></tr>
+    <tr><th>Donatiestatus</th><td><code>/donate check</code>, <code>/donate tiers</code></td></tr>
+    <tr><th>Alleen staff</th><td><code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code></td></tr>
+  </table></aside>
     </div>
   </main>
   <footer class="site-footer">

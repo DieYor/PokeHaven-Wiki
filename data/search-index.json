@@ -192,6 +192,12 @@
     "keywords": "donate donation paypal tier supporter patron benefactor cosmetic prefix role shiny hour no pay to win"
   },
   {
+    "title": "Discord commands",
+    "href": "pages/Discord_Commands.html",
+    "blurb": "Every player-facing slash command the PokeHaven EU Discord bot offers — account linking and donation status. (Looking for in-game commands like /pc? See Rules &",
+    "keywords": "discord slash command link donate check tiers add set list bot"
+  },
+  {
     "title": "Voice chat",
     "href": "pages/Voice_Chat.html",
     "blurb": "Simple Voice Chat is built into the pack. Nearby talk works in-game — Discord is optional for lobby chat and announcements.",

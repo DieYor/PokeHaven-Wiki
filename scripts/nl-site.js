@@ -84,6 +84,7 @@ function navboxCore() {
       <a href="Postgame_and_Legendaries.html">Post-game</a>
       <a href="Common_Mistakes.html">Veelgemaakte fouten</a>
       <a href="Donations.html">Donaties</a>
+      <a href="Discord_Commands.html">Discord-commands</a>
       <a href="FAQ.html">FAQ</a>
       <a href="Recipe_Browser.html">Receptenbrowser</a>
       <a href="Trainer_Index.html">Trainer-index</a>
@@ -958,7 +959,59 @@ export function registerDutchSite({
     <li><strong>Ik heb gedoneerd maar heb nog geen rol?</strong> Check of je je Discord-naam in de PayPal-notitie hebt gezet, en vraag in Discord <code>#tickets</code> als staff het nog niet gelogd heeft.</li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Rules_and_Commands.html">Regels &amp; commands</a> · <a href="FAQ.html">FAQ</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Rules_and_Commands.html">Regels &amp; commands</a> · <a href="Discord_Commands.html">Discord-commands</a> · <a href="FAQ.html">FAQ</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Discord_Commands.html", {
+    title: "Discord-commands",
+    breadcrumbs: crumbs({ label: "Discord-commands", href: "Discord_Commands.html" }),
+    lede: "Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken en donatiestatus. (Op zoek naar in-game commands zoals <code>/pc</code>? Zie <a href=\"Rules_and_Commands.html\">Regels &amp; commands</a>.)",
+    infobox: `<div class="infobox-title">Discord-bot commands</div>
+  <table>
+    <tr><th>Waar</th><td>Elk kanaal in de PokeHaven EU Discord</td></tr>
+    <tr><th>Account linken</th><td><code>/link</code></td></tr>
+    <tr><th>Donatiestatus</th><td><code>/donate check</code>, <code>/donate tiers</code></td></tr>
+    <tr><th>Alleen staff</th><td><code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code></td></tr>
+  </table>`,
+    body: `
+  <div class="callout tip">
+    <div class="label">Discord, niet in-game</div>
+    Dit zijn <strong>slash-commands die je in Discord typt</strong> (begin met <kbd>/</kbd> in elk kanaal dat de bot ziet) — geen Minecraft-chatcommando's. Voor in-game commands zoals <code>/pc</code>, zie <a href="Rules_and_Commands.html">Regels &amp; commands</a>.
+  </div>
+
+  <h2>Account linken</h2>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/link minecraft:JouwExacteNaam</code></td><td>Linkt je Discord-account aan je Minecraft-username (hoofdlettergevoelig, 3–16 tekens). Doe dit eerst — zo weet de bot wie te crediteren voor donaties en chatprefixes.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Donaties</h2>
+  <p>Volledige uitleg over tiers en hoe doneren werkt: <a href="Donations.html">Donaties</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate check</code></td><td>Toont je eigen lifetime-donatietotaal, huidige cosmetische tier en gelinkte Minecraft-naam.</td></tr>
+      <tr><td><code>/donate tiers</code></td><td>Lijst van de cosmetische donatietiers (Supporter / Patron / Benefactor) en wat elk geeft.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Alleen voor staff</h2>
+  <p>Deze vereisen staff-rechten — hier vermeld voor transparantie, geen commands die gewone spelers kunnen draaien.</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate add</code></td><td>Logt een nieuwe donatie op het lifetime-totaal van een gebruiker (bedrag + optionele Minecraft-IGN / notitie).</td></tr>
+      <tr><td><code>/donate set</code></td><td>Corrigeert het lifetime-totaal van een gebruiker direct.</td></tr>
+      <tr><td><code>/donate link</code></td><td>Linkt een Discord-gebruiker aan een Minecraft-IGN namens hen.</td></tr>
+      <tr><td><code>/donate list</code></td><td>Toont de top lifetime-donateurs.</td></tr>
+    </tbody>
+  </table>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Donations.html">Donaties</a> · <a href="Rules_and_Commands.html">Regels &amp; commands</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxCore()}
   `,
   });
@@ -1111,6 +1164,7 @@ export function registerDutchSite({
     <li><code>#help</code> — snelle publieke vragen die anderen ook kunnen beantwoorden</li>
     <li><code>#tickets</code> — privé hulp, reports, appeals, langere staff-issues</li>
   </ul>
+  <p>Liever commands? De bot reageert ook op slash-commands zoals <code>/link</code> en <code>/donate check</code> — volledige lijst: <a href="Discord_Commands.html">Discord-commands</a>.</p>
 
   <h2>Kan ik de level cap uitzetten?</h2>
   ${critical(

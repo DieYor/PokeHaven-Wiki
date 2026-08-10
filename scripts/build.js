@@ -249,6 +249,7 @@ function navboxSystems() {
       <a href="Postgame_and_Legendaries.html">Post-game</a>
       <a href="Common_Mistakes.html">Common mistakes</a>
       <a href="Donations.html">Donations</a>
+      <a href="Discord_Commands.html">Discord commands</a>
       <a href="FAQ.html">FAQ</a>
       <a href="Recipe_Browser.html">Recipe browser</a>
       <a href="Trainer_Index.html">Trainer index</a>
@@ -357,6 +358,8 @@ const SEARCH_KEYWORDS = {
   "Valerio.html": "johto first gym flying zephyr raptor bracer",
   "Donations.html":
     "donate donation paypal tier supporter patron benefactor cosmetic prefix role shiny hour no pay to win",
+  "Discord_Commands.html":
+    "discord slash command link donate check tiers add set list bot",
 };
 
 function writePage(file, opts = {}) {
@@ -2028,7 +2031,61 @@ writePage("Donations.html", {
     <li><strong>I donated but don't have my role yet?</strong> Make sure you put your Discord name in the PayPal note and ask in Discord <code>#tickets</code> if staff hasn't logged it yet.</li>
   </ul>
 
-  <p class="see-also"><strong>See also:</strong> <a href="Rules_and_Commands.html">Rules &amp; commands</a> · <a href="FAQ.html">FAQ</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Rules_and_Commands.html">Rules &amp; commands</a> · <a href="Discord_Commands.html">Discord commands</a> · <a href="FAQ.html">FAQ</a></p>
+  ${navboxSystems()}
+  `,
+});
+
+writePage("Discord_Commands.html", {
+  title: "Discord commands",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Discord commands", href: "Discord_Commands.html" },
+  ],
+  lede: "Every player-facing slash command the PokeHaven EU Discord bot offers — account linking and donation status. (Looking for in-game commands like <code>/pc</code>? See <a href=\"Rules_and_Commands.html\">Rules &amp; commands</a>.)",
+  infobox: infoboxHtml("Discord bot commands", [
+    ["Where", "Any channel in the PokeHaven EU Discord"],
+    ["Account link", "<code>/link</code>"],
+    ["Donation status", "<code>/donate check</code>, <code>/donate tiers</code>"],
+    ["Staff only", "<code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code>"],
+  ]),
+  body: `
+  <div class="callout tip">
+    <div class="label">Discord, not in-game</div>
+    These are <strong>slash commands typed in Discord</strong> (start with <kbd>/</kbd> in any channel the bot can see) — not Minecraft chat commands. For in-game commands like <code>/pc</code>, see <a href="Rules_and_Commands.html">Rules &amp; commands</a>.
+  </div>
+
+  <h2>Account linking</h2>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/link minecraft:YourExactName</code></td><td>Links your Discord account to your Minecraft username (case-sensitive, 3–16 characters). Do this first — it's how the bot knows who to credit for donations and chat prefixes.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Donations</h2>
+  <p>Full context on tiers and how donating works: <a href="Donations.html">Donations</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate check</code></td><td>Shows your own lifetime donation total, current cosmetic tier, and linked Minecraft name.</td></tr>
+      <tr><td><code>/donate tiers</code></td><td>Lists the cosmetic donation tiers (Supporter / Patron / Benefactor) and what each grants.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Staff-only commands</h2>
+  <p>These require staff permissions — listed here for transparency, not something regular players can run.</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/donate add</code></td><td>Logs a new donation against a user's lifetime total (amount + optional Minecraft IGN / note).</td></tr>
+      <tr><td><code>/donate set</code></td><td>Corrects a user's lifetime total directly.</td></tr>
+      <tr><td><code>/donate link</code></td><td>Links a Discord user to a Minecraft IGN on their behalf.</td></tr>
+      <tr><td><code>/donate list</code></td><td>Shows the top lifetime donors.</td></tr>
+    </tbody>
+  </table>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Donations.html">Donations</a> · <a href="Rules_and_Commands.html">Rules &amp; commands</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxSystems()}
   `,
 });
@@ -2654,6 +2711,7 @@ writePage("FAQ.html", {
     <li><code>#help</code> — quick public questions other players can answer too</li>
     <li><code>#tickets</code> — private help, reports, appeals, longer staff issues</li>
   </ul>
+  <p>Prefer commands? The bot also answers to slash commands like <code>/link</code> and <code>/donate check</code> — full list: <a href="Discord_Commands.html">Discord commands</a>.</p>
 
   <h2>Can I turn off the level cap?</h2>
   ${critical(
