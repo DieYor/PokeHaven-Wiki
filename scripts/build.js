@@ -1896,7 +1896,7 @@ writePage("Rules_and_Commands.html", {
     <li><strong>Chat</strong> — <strong>English</strong> is the main language in public channels (EU server). Keep it SFW. Keep names, nicknames, and profile pictures appropriate.</li>
     <li><strong>Voice chat</strong> — Push-to-talk preferred. No earrape, blasting soundboards, or screaming for no reason. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
     <li><strong>Asking for help</strong> — Quick public questions → Discord <code>#help</code>. Private / reports / longer staff help → <code>#tickets</code>. Always include a screenshot + what you already tried.</li>
-    <li><strong>Donations</strong> — Optional. They keep the server online. <strong>No perks, ranks, or VIP rewards</strong> — thank you for the support.</li>
+    <li><strong>Donations</strong> — Optional. They keep the server online. <strong>Cosmetic only, no pay-to-win</strong> — donors get a Discord role and an optional in-game chat prefix, never a gameplay advantage. Details: <a href="Donations.html">Donations</a>.</li>
     <li><strong>Staff decisions</strong> — Staff may warn, mute, kick, or ban when needed. Don’t argue moderation in public — use a ticket if needed.</li>
   </ol>
 
@@ -2540,7 +2540,7 @@ writePage("FAQ.html", {
   <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. More travel tools: <a href="Travel.html">Travel</a>.</p>
 
   <h2>Can I donate?</h2>
-  <p>Yes, optionally — donations help keep the server online / upgraded. <strong>There are no gameplay perks, ranks, or VIP rewards.</strong> Links live in Discord.</p>
+  <p>Yes, optionally — donations help keep the server online / upgraded. They're <strong>cosmetic only</strong>: tiers grant a Discord role (Supporter / Patron / Benefactor) and an optional in-game chat prefix — <strong>never a gameplay advantage</strong>. Full breakdown: <a href="Donations.html">Donations</a>. Links live in Discord.</p>
 
   <h2>How do I craft Poké Balls?</h2>
   <p>Full screenshot guide: <a href="Poke_Balls.html">Poké Balls</a>. More crafts: <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Recipe_Browser.html">Recipe browser</a>.</p>

@@ -838,7 +838,7 @@ export function registerDutchSite({
     <li><strong>Chat</strong> — <strong>English</strong> is de hoofdtaal in publieke channels (EU-server). Houd het SFW. Namen, nicknames en profielfoto’s netjes houden.</li>
     <li><strong>Voice chat</strong> — Push-to-talk heeft voorkeur. Geen earrape, soundboards blazen of zinloos schreeuwen. Setup: <a href="Voice_Chat.html">Voice chat</a>.</li>
     <li><strong>Hulp vragen</strong> — Snelle publieke vragen → Discord <code>#help</code>. Privé / reports / langere staff-hulp → <code>#tickets</code>. Altijd screenshot + wat je al probeerde.</li>
-    <li><strong>Donaties</strong> — Optioneel. Ze houden de server online. <strong>Geen perks, ranks of VIP-rewards</strong> — bedankt voor de support.</li>
+    <li><strong>Donaties</strong> — Optioneel. Ze houden de server online. <strong>Puur cosmetisch, geen pay-to-win</strong> — donateurs krijgen een Discord-rol en optioneel een in-game chatprefix, nooit een gameplay-voordeel. Details: <a href="Donations.html">Donaties</a>.</li>
     <li><strong>Staff-beslissingen</strong> — Staff mag warnen, muten, kicken of bannen. Bediscussieer moderatie niet publiek — open een ticket als nodig.</li>
   </ol>
 
@@ -1010,7 +1010,7 @@ export function registerDutchSite({
   <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Meer travel-tools: <a href="Travel.html">Reizen</a>.</p>
 
   <h2>Kan ik doneren?</h2>
-  <p>Ja, optioneel — donaties helpen de server online / te upgraden. <strong>Geen gameplay-perks, ranks of VIP-rewards.</strong> Links staan in Discord.</p>
+  <p>Ja, optioneel — donaties helpen de server online / te upgraden. Ze zijn <strong>puur cosmetisch</strong>: tiers geven een Discord-rol (Supporter / Patron / Benefactor) en optioneel een in-game chatprefix — <strong>nooit een gameplay-voordeel</strong>. Volledig overzicht: <a href="Donations.html">Donaties</a>. Links staan in Discord.</p>
 
   <h2>Hoe craft ik Poké Balls?</h2>
   <p><a href="Poke_Balls.html">Poké Balls</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Recipe_Browser.html">Receptenbrowser</a>.</p>
