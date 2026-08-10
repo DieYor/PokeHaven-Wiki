@@ -6,3 +6,6 @@ Thumbs.db
 # Local reference material (e.g. extracted mod data) used while writing pages —
 # not part of the deployed site, never commit.
 _external/
+
+.gitmsg.txt
+.git-commit-msg.txt
