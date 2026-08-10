@@ -356,14 +356,14 @@
   {
     "title": "Hoenn gyms",
     "href": "pages/Gyms_Hoenn.html",
-    "blurb": "Hoenn opens after the Johto Champion. Gym maps, opener Petra, and the trainer list below.",
-    "keywords": "hoenn petra gym maps cartography overview"
+    "blurb": "Checklist for the Hoenn challenge on CobbleVerse / PokeHaven EU after the Johto Champion. Open a leader page for full teams and prep tips.",
+    "keywords": "hoenn petra rudi walter fiammetta norman alice tell adriano fosco ester frida drake rocco gym maps cartography overview stone knuckle dynamo heat balance feather mind rain badge"
   },
   {
     "title": "Sinnoh gyms",
     "href": "pages/Gyms_Sinnoh.html",
-    "blurb": "Sinnoh opens after Hoenn Champion Rocco. Gym maps, opener Pedro, and the trainer list below.",
-    "keywords": "sinnoh pedro rocco gardenia camilla gym maps cartography overview"
+    "blurb": "Checklist for the Sinnoh challenge on CobbleVerse / PokeHaven EU after Hoenn Champion Rocco. Open a leader page for full teams and prep tips.",
+    "keywords": "sinnoh pedro gardenia marzia omar fannie ferruccio bianca corrado aaron terrie vulcano luciano camilla rocco gym maps cartography overview coal forest cobble fen relic mine icicle beacon badge"
   },
   {
     "title": "Valerio",
@@ -442,6 +442,162 @@
     "href": "pages/Johto_Lance.html",
     "blurb": "Lance (Johto Champion) — Dragon specialist on PokeHaven EU.",
     "keywords": ""
+  },
+  {
+    "title": "Petra",
+    "href": "pages/Petra.html",
+    "blurb": "Petra — Rock specialist on PokeHaven EU.",
+    "keywords": "hoenn first gym rock stone badge rocky mountains rock tome"
+  },
+  {
+    "title": "Rudi",
+    "href": "pages/Rudi.html",
+    "blurb": "Rudi — Fighting specialist on PokeHaven EU.",
+    "keywords": "hoenn gym fighting knuckle badge yosemite cliffs fighting glove"
+  },
+  {
+    "title": "Walter",
+    "href": "pages/Walter.html",
+    "blurb": "Walter — Electric specialist on PokeHaven EU.",
+    "keywords": "hoenn gym electric dynamo badge arid highlands electric connector"
+  },
+  {
+    "title": "Fiammetta",
+    "href": "pages/Fiammetta.html",
+    "blurb": "Fiammetta — Fire specialist on PokeHaven EU.",
+    "keywords": "hoenn gym fire heat badge forested highlands fire lighter"
+  },
+  {
+    "title": "Norman",
+    "href": "pages/Norman.html",
+    "blurb": "Norman — Normal specialist on PokeHaven EU.",
+    "keywords": "hoenn gym normal balance badge brushland normal tablet"
+  },
+  {
+    "title": "Alice",
+    "href": "pages/Alice.html",
+    "blurb": "Alice — Flying specialist on PokeHaven EU.",
+    "keywords": "hoenn gym flying feather badge moonlight grove flying feather item"
+  },
+  {
+    "title": "Tell",
+    "href": "pages/Tell.html",
+    "blurb": "Tell — Psychic specialist on PokeHaven EU.",
+    "keywords": "hoenn gym psychic mind badge amethyst rainforest psychic medallion"
+  },
+  {
+    "title": "Adriano",
+    "href": "pages/Adriano.html",
+    "blurb": "Adriano — Water specialist on PokeHaven EU.",
+    "keywords": "hoenn gym water rain badge cold ocean water rod"
+  },
+  {
+    "title": "Fosco",
+    "href": "pages/Fosco.html",
+    "blurb": "Fosco — Dark specialist on PokeHaven EU.",
+    "keywords": "hoenn elite four dark fosco dark bass steppe"
+  },
+  {
+    "title": "Ester",
+    "href": "pages/Ester.html",
+    "blurb": "Ester — Ghost specialist on PokeHaven EU.",
+    "keywords": "hoenn elite four ghost ester ghost bloom steppe"
+  },
+  {
+    "title": "Frida",
+    "href": "pages/Frida.html",
+    "blurb": "Frida — Ice specialist on PokeHaven EU.",
+    "keywords": "hoenn elite four ice frida ice necklace steppe"
+  },
+  {
+    "title": "Drake",
+    "href": "pages/Drake.html",
+    "blurb": "Drake — Dragon specialist on PokeHaven EU.",
+    "keywords": "hoenn elite four dragon drake dragon cap steppe"
+  },
+  {
+    "title": "Rocco",
+    "href": "pages/Rocco.html",
+    "blurb": "Rocco — Mixed specialist on PokeHaven EU.",
+    "keywords": "hoenn champion rocco mixed steel hat steppe kyogre groudon"
+  },
+  {
+    "title": "Pedro",
+    "href": "pages/Pedro.html",
+    "blurb": "Pedro — Rock specialist on PokeHaven EU.",
+    "keywords": "sinnoh first gym rock coal badge volcanic peaks rock casque"
+  },
+  {
+    "title": "Gardenia",
+    "href": "pages/Gardenia.html",
+    "blurb": "Gardenia — Grass specialist on PokeHaven EU.",
+    "keywords": "sinnoh gym grass forest badge blooming valley grass aroma"
+  },
+  {
+    "title": "Marzia",
+    "href": "pages/Marzia.html",
+    "blurb": "Marzia — Fighting specialist on PokeHaven EU.",
+    "keywords": "sinnoh gym fighting cobble badge lush desert fighting bandage"
+  },
+  {
+    "title": "Omar",
+    "href": "pages/Omar.html",
+    "blurb": "Omar — Water specialist on PokeHaven EU.",
+    "keywords": "sinnoh gym water fen badge beach water mask"
+  },
+  {
+    "title": "Fannie",
+    "href": "pages/Fannie.html",
+    "blurb": "Fannie — Ghost specialist on PokeHaven EU.",
+    "keywords": "sinnoh gym ghost relic badge lavender valley ghost pendant"
+  },
+  {
+    "title": "Ferruccio",
+    "href": "pages/Ferruccio.html",
+    "blurb": "Ferruccio — Steel specialist on PokeHaven EU.",
+    "keywords": "sinnoh gym steel mine badge volcanic crater steel spade"
+  },
+  {
+    "title": "Bianca",
+    "href": "pages/Bianca.html",
+    "blurb": "Bianca — Ice specialist on PokeHaven EU.",
+    "keywords": "sinnoh gym ice icicle badge glacial chasm ice ribbon"
+  },
+  {
+    "title": "Corrado",
+    "href": "pages/Corrado.html",
+    "blurb": "Corrado — Electric specialist on PokeHaven EU.",
+    "keywords": "sinnoh gym electric beacon badge shrubland electric fuse"
+  },
+  {
+    "title": "Aaron",
+    "href": "pages/Aaron.html",
+    "blurb": "Aaron — Bug specialist on PokeHaven EU.",
+    "keywords": "sinnoh elite four bug aaron bug net desert oasis"
+  },
+  {
+    "title": "Terrie",
+    "href": "pages/Terrie.html",
+    "blurb": "Terrie — Ground specialist on PokeHaven EU.",
+    "keywords": "sinnoh elite four ground terrie ground shawl desert oasis"
+  },
+  {
+    "title": "Vulcano",
+    "href": "pages/Vulcano.html",
+    "blurb": "Vulcano — Fire specialist on PokeHaven EU.",
+    "keywords": "sinnoh elite four fire vulcano fire flint desert oasis"
+  },
+  {
+    "title": "Luciano",
+    "href": "pages/Luciano.html",
+    "blurb": "Luciano — Psychic specialist on PokeHaven EU.",
+    "keywords": "sinnoh elite four psychic luciano psychic volume desert oasis"
+  },
+  {
+    "title": "Camilla",
+    "href": "pages/Camilla.html",
+    "blurb": "Camilla — Mixed specialist on PokeHaven EU.",
+    "keywords": "sinnoh champion camilla mixed draconic fin desert oasis"
   },
   {
     "title": "FAQ",

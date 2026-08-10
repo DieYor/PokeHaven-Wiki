@@ -220,12 +220,32 @@ function navboxGyms() {
     .filter((g) => g.order > 8)
     .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
     .join("");
+  const hoennGyms = (trainers.hoennLeaders || [])
+    .filter((g) => g.order <= 8)
+    .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
+    .join("");
+  const hoennLeague = (trainers.hoennLeaders || [])
+    .filter((g) => g.order > 8)
+    .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
+    .join("");
+  const sinnohGyms = (trainers.sinnohLeaders || [])
+    .filter((g) => g.order <= 8)
+    .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
+    .join("");
+  const sinnohLeague = (trainers.sinnohLeaders || [])
+    .filter((g) => g.order > 8)
+    .map((g) => `<a href="${g.slug}.html">${esc(g.name)}</a>`)
+    .join("");
   return `<div class="navbox">
     <div class="navbox-title">Gym challenge</div>
     <div class="navbox-row"><div class="navbox-label">Kanto</div><div class="navbox-links">${kantoGyms}</div></div>
     <div class="navbox-row"><div class="navbox-label">Kanto league</div><div class="navbox-links">${kantoLeague}</div></div>
     <div class="navbox-row"><div class="navbox-label">Johto</div><div class="navbox-links">${johtoGyms}</div></div>
     <div class="navbox-row"><div class="navbox-label">Johto league</div><div class="navbox-links">${johtoLeague}</div></div>
+    <div class="navbox-row"><div class="navbox-label">Hoenn</div><div class="navbox-links">${hoennGyms}</div></div>
+    <div class="navbox-row"><div class="navbox-label">Hoenn league</div><div class="navbox-links">${hoennLeague}</div></div>
+    <div class="navbox-row"><div class="navbox-label">Sinnoh</div><div class="navbox-links">${sinnohGyms}</div></div>
+    <div class="navbox-row"><div class="navbox-label">Sinnoh league</div><div class="navbox-links">${sinnohLeague}</div></div>
     <div class="navbox-row"><div class="navbox-label">Regions</div><div class="navbox-links">
       <a href="Gyms_Kanto.html">Kanto</a>
       <a href="Gyms_Johto.html">Johto</a>
@@ -380,10 +400,36 @@ const SEARCH_KEYWORDS = {
   "Gyms_Johto.html":
     "johto valerio raffaello chiara angelo furio jasmine alfredo sandra pino karen lance zephyr hive",
   "Gyms_Hoenn.html":
-    "hoenn petra gym maps cartography overview",
+    "hoenn petra rudi walter fiammetta norman alice tell adriano fosco ester frida drake rocco gym maps cartography overview stone knuckle dynamo heat balance feather mind rain badge",
   "Gyms_Sinnoh.html":
-    "sinnoh pedro rocco gardenia camilla gym maps cartography overview",
+    "sinnoh pedro gardenia marzia omar fannie ferruccio bianca corrado aaron terrie vulcano luciano camilla rocco gym maps cartography overview coal forest cobble fen relic mine icicle beacon badge",
   "Valerio.html": "johto first gym flying zephyr raptor bracer",
+  "Petra.html": "hoenn first gym rock stone badge rocky mountains rock tome",
+  "Rudi.html": "hoenn gym fighting knuckle badge yosemite cliffs fighting glove",
+  "Walter.html": "hoenn gym electric dynamo badge arid highlands electric connector",
+  "Fiammetta.html": "hoenn gym fire heat badge forested highlands fire lighter",
+  "Norman.html": "hoenn gym normal balance badge brushland normal tablet",
+  "Alice.html": "hoenn gym flying feather badge moonlight grove flying feather item",
+  "Tell.html": "hoenn gym psychic mind badge amethyst rainforest psychic medallion",
+  "Adriano.html": "hoenn gym water rain badge cold ocean water rod",
+  "Fosco.html": "hoenn elite four dark fosco dark bass steppe",
+  "Ester.html": "hoenn elite four ghost ester ghost bloom steppe",
+  "Frida.html": "hoenn elite four ice frida ice necklace steppe",
+  "Drake.html": "hoenn elite four dragon drake dragon cap steppe",
+  "Rocco.html": "hoenn champion rocco mixed steel hat steppe kyogre groudon",
+  "Pedro.html": "sinnoh first gym rock coal badge volcanic peaks rock casque",
+  "Gardenia.html": "sinnoh gym grass forest badge blooming valley grass aroma",
+  "Marzia.html": "sinnoh gym fighting cobble badge lush desert fighting bandage",
+  "Omar.html": "sinnoh gym water fen badge beach water mask",
+  "Fannie.html": "sinnoh gym ghost relic badge lavender valley ghost pendant",
+  "Ferruccio.html": "sinnoh gym steel mine badge volcanic crater steel spade",
+  "Bianca.html": "sinnoh gym ice icicle badge glacial chasm ice ribbon",
+  "Corrado.html": "sinnoh gym electric beacon badge shrubland electric fuse",
+  "Aaron.html": "sinnoh elite four bug aaron bug net desert oasis",
+  "Terrie.html": "sinnoh elite four ground terrie ground shawl desert oasis",
+  "Vulcano.html": "sinnoh elite four fire vulcano fire flint desert oasis",
+  "Luciano.html": "sinnoh elite four psychic luciano psychic volume desert oasis",
+  "Camilla.html": "sinnoh champion camilla mixed draconic fin desert oasis",
   "Donations.html":
     "donate donation paypal tier supporter patron benefactor cosmetic prefix role shiny hour no pay to win",
   "Discord_Commands.html":
@@ -627,11 +673,16 @@ function mapItemLabel(g) {
 }
 
 function cartographyTableFor(g) {
-  return g.region === "johto" ? "Johto Cartography Table" : "Kanto Cartography Table";
+  if (g.region === "johto") return "Johto Cartography Table";
+  if (g.region === "hoenn") return "Hoenn Cartography Table";
+  if (g.region === "sinnoh") return "Sinnoh Cartography Table";
+  return "Kanto Cartography Table";
 }
 
 function seriesLeaders(g) {
   if (g.region === "johto") return trainers.johtoLeaders || [];
+  if (g.region === "hoenn") return trainers.hoennLeaders || [];
+  if (g.region === "sinnoh") return trainers.sinnohLeaders || [];
   return trainers.kantoLeaders || [];
 }
 
@@ -647,9 +698,13 @@ function gymGuideBody(g) {
   const next = nextLeaderAfter(g);
   const nextLink = next
     ? `<a href="${next.slug}.html">${esc(next.name)}</a>`
-    : g.region === "johto"
-      ? `<a href="Gyms_Hoenn.html">Hoenn</a>`
-      : `<a href="Gyms_Johto.html">Johto</a>`;
+    : g.region === "kanto"
+      ? `<a href="Gyms_Johto.html">Johto</a>`
+      : g.region === "johto"
+        ? `<a href="Gyms_Hoenn.html">Hoenn</a>`
+        : g.region === "hoenn"
+          ? `<a href="Gyms_Sinnoh.html">Sinnoh</a>`
+          : `<a href="Postgame_and_Legendaries.html">Post-game</a>`;
 
   if (g.slug === "Valerio") {
     return `<h2>Walkthrough — Blue to Valerio</h2>
@@ -925,6 +980,188 @@ function gymGuideBody(g) {
       league: true,
       champion: true,
     },
+    // Hoenn
+    Petra: {
+      title: "Walkthrough — Unlock Hoenn to Petra",
+      coverage: "Water, Grass, Fighting, and Ground answer Rock hard.",
+      travel: "Rocky Mountains tip — bring blocks/scaffolding for the climb and a waystone at the base.",
+      gotcha: "Onix and Nosepass can wall physical attackers. Watch Thunder Punch / Flamethrower coverage on her Geodude.",
+      unlockHtml: `<h3>Unlock Hoenn first</h3>
+    <ol class="steps">
+      <li>Beat Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
+      <li>Follow the champion book: Trainer Association → <strong>Hoenn Trainer Card</strong> (your level cap resets for Hoenn).</li>
+      <li>Craft the <strong>Hoenn Cartography Table</strong> — see <a href="Gym_Maps.html">Gym maps</a>.</li>
+    </ol>`,
+    },
+    Rudi: {
+      title: "Walkthrough — Petra to Rudi",
+      coverage: "Flying, Psychic, and Fairy answer Fighting.",
+      travel: "Yosemite Cliffs tip — this is a vertical map; bring blocks or a Flying mount for the ledges.",
+      gotcha: "Fighting hits Normal/Rock/Ice/Steel/Dark hard. Don’t walk in with a mono-Rock team from Petra’s fight.",
+    },
+    Walter: {
+      title: "Walkthrough — Rudi to Walter",
+      coverage: "Ground shuts Electric down completely; Grass also resists.",
+      travel: "Arid Highlands tip — dry biome, bring extra water and food.",
+      gotcha: "Paralysis chip adds up fast. A Ground-type sweeper makes this an easy fight.",
+    },
+    Fiammetta: {
+      title: "Walkthrough — Walter to Fiammetta",
+      coverage: "Water, Ground, and Rock are reliable into Fire.",
+      travel: "Forested Highlands tip — watch fire spread if you're building anything flammable nearby.",
+      gotcha: "Don’t bring a team still mono-Grass from earlier gyms; add a Water or Rock answer.",
+    },
+    Norman: {
+      title: "Walkthrough — Fiammetta to Norman",
+      coverage: "Fighting is the cleanest answer to Normal; Ghost immunities help too.",
+      travel: "Brushland tip — flat open terrain, easy travel but exposed to wild spawns.",
+      gotcha: "Bulky Normal-types can stall. Bring a Fighting-type or status support.",
+    },
+    Alice: {
+      title: "Walkthrough — Norman to Alice",
+      coverage: "Electric, Rock, and Ice punish Flying hard.",
+      travel: "Moonlight Grove tip — a dim biome; bring light sources and food.",
+      gotcha: "Altaria and Skarmory can tank hits. Electric and Rock coverage ends this fast.",
+    },
+    Tell: {
+      title: "Walkthrough — Alice to Tell",
+      coverage: "Dark, Bug, and Ghost pressure Psychic.",
+      travel: "Amethyst Rainforest tip — dense biome, bring shears/an axe and claim a rest stop.",
+      gotcha: "Solrock, Lunatone, and Gardevoir hit hard on the special side. Dark-types ignore his Psychic STAB entirely.",
+    },
+    Adriano: {
+      title: "Walkthrough — Tell to Adriano",
+      coverage: "Electric and Grass answer Water. Adriano closes out the Hoenn gym line.",
+      travel: "Cold Ocean tip — bring a boat or Water-capable mount, and cold-weather food.",
+      gotcha: "Last Hoenn gym before the Elite Four — full heal and restock before the league gauntlet.",
+    },
+    Fosco: {
+      title: "Walkthrough — Adriano to Hoenn Elite Four (Fosco)",
+      coverage: "Fighting, Bug, and Fairy pressure Dark.",
+      travel: "Steppe biome — the Hoenn league grounds sit in open plains, not The End like Kanto/Johto.",
+      gotcha: "Full heal before every Hoenn Elite Four room. Fosco opens the gauntlet.",
+      league: true,
+    },
+    Ester: {
+      title: "Walkthrough — Fosco to Ester",
+      coverage: "Dark and Ghost pressure Ghost back; watch immunities both ways.",
+      travel: "Same Steppe league grounds — restock between rooms.",
+      gotcha: "Status and Ghost-type tricks can stall. Keep a clean answer ready.",
+      league: true,
+    },
+    Frida: {
+      title: "Walkthrough — Ester to Frida",
+      coverage: "Fire, Fighting, Rock, and Steel help into Ice.",
+      travel: "Third Hoenn Elite room — heal fully after Ester.",
+      gotcha: "Ice walls can stall a slow team. Don’t underlevel into this room.",
+      league: true,
+    },
+    Drake: {
+      title: "Walkthrough — Frida to Drake",
+      coverage: "Ice and Fairy punish Dragon hardest.",
+      travel: "Fourth Elite room — last wall before Champion Rocco.",
+      gotcha: "Dragon spam punishes thin teams. Bring Ice coverage and multiple win conditions.",
+      league: true,
+    },
+    Rocco: {
+      title: "Walkthrough — Drake to Champion Rocco",
+      coverage: "Mixed champion team (weather-setters + box legendaries) — pack answers for several types, not one gimmick.",
+      travel: "Top of the Hoenn league grounds. Full restore team + items.",
+      gotcha: "Weather-setters and box legendaries headline his team. After Rocco: Sinnoh unlock on your Trainer Card.",
+      league: true,
+      champion: true,
+    },
+    // Sinnoh
+    Pedro: {
+      title: "Walkthrough — Unlock Sinnoh to Pedro",
+      coverage: "Water, Grass, Fighting, and Ground answer Rock.",
+      travel: "Volcanic Peaks tip — fire-resist gear helps near the vents.",
+      gotcha: "Standard Rock lead. Don’t walk in with only Fire/Flying/Bug.",
+      unlockHtml: `<h3>Unlock Sinnoh first</h3>
+    <ol class="steps">
+      <li>Beat Hoenn Champion <a href="Rocco.html">Rocco</a>.</li>
+      <li>Follow the champion book: Trainer Association → <strong>Sinnoh Trainer Card</strong> (your level cap resets for Sinnoh).</li>
+      <li>Craft the <strong>Sinnoh Cartography Table</strong> — see <a href="Gym_Maps.html">Gym maps</a>.</li>
+    </ol>`,
+    },
+    Gardenia: {
+      title: "Walkthrough — Pedro to Gardenia",
+      coverage: "Fire, Flying, Ice, Bug, and Poison pressure Grass.",
+      travel: "Blooming Valley tip — claim a rest stop near the gym.",
+      gotcha: "Sleep Powder / Stun Spore can stall. Bring cleansers.",
+    },
+    Marzia: {
+      title: "Walkthrough — Gardenia to Marzia",
+      coverage: "Flying, Psychic, and Fairy answer Fighting.",
+      travel: "Lush Desert tip — an odd mixed biome, bring water and shade.",
+      gotcha: "Fighting punishes Normal/Rock/Ice/Steel/Dark. Keep a Flying or Psychic pivot.",
+    },
+    Omar: {
+      title: "Walkthrough — Marzia to Omar",
+      coverage: "Electric and Grass answer Water.",
+      travel: "Beach tip — easy travel, but watch wild Water spawns nearby.",
+      gotcha: "Rain-setters can boost his team’s power. Electric sweepers end this quickly.",
+    },
+    Fannie: {
+      title: "Walkthrough — Omar to Fannie",
+      coverage: "Dark and Ghost pressure Ghost; watch immunities.",
+      travel: "Lavender Valley tip — moody biome, bring light and a full team.",
+      gotcha: "Status and Ghost-type tricks (Destiny Bond, Will-O-Wisp) can flip a fight late.",
+    },
+    Ferruccio: {
+      title: "Walkthrough — Fannie to Ferruccio",
+      coverage: "Fire, Fighting, and Ground crack Steel.",
+      travel: "Volcanic Crater tip — fire-resist gear before you get close.",
+      gotcha: "Skarmory / Steelix / Aggron wall physical attackers. Bring special or Fighting coverage.",
+    },
+    Bianca: {
+      title: "Walkthrough — Ferruccio to Bianca",
+      coverage: "Fire, Fighting, Rock, and Steel help into Ice.",
+      travel: "Glacial Chasm tip — cold-weather food and gear, this hike is long.",
+      gotcha: "Weavile / Mamoswine hit hard on the physical side; don’t walk in underleveled.",
+    },
+    Corrado: {
+      title: "Walkthrough — Bianca to Corrado",
+      coverage: "Ground shuts Electric down completely.",
+      travel: "Shrubland tip — last Sinnoh gym before the Elite Four, restock fully.",
+      gotcha: "Paralysis chip snowballs. A Ground-type sweeper trivializes this fight.",
+    },
+    Aaron: {
+      title: "Walkthrough — Corrado to Sinnoh Elite Four (Aaron)",
+      coverage: "Fire, Flying, and Rock pressure Bug.",
+      travel: "Desert Oasis — the Sinnoh league grounds, not The End like Kanto/Johto.",
+      gotcha: "Full heal before every Sinnoh Elite Four room. Aaron opens the gauntlet.",
+      league: true,
+    },
+    Terrie: {
+      title: "Walkthrough — Aaron to Terrie",
+      coverage: "Water, Grass, and Ice answer Ground.",
+      travel: "Same Desert Oasis league grounds — restock after Aaron.",
+      gotcha: "Ground ignores Electric entirely. Bring a Water or Grass answer instead.",
+      league: true,
+    },
+    Vulcano: {
+      title: "Walkthrough — Terrie to Vulcano",
+      coverage: "Water, Ground, and Rock are reliable into Fire.",
+      travel: "Third Sinnoh Elite room — heal fully after Terrie.",
+      gotcha: "Don’t walk in with a Grass-heavy team; add a Water or Rock pivot.",
+      league: true,
+    },
+    Luciano: {
+      title: "Walkthrough — Vulcano to Luciano",
+      coverage: "Dark, Bug, and Ghost pressure Psychic.",
+      travel: "Fourth Elite room — last wall before Champion Camilla.",
+      gotcha: "Dark-types ignore his Psychic STAB entirely. Keep one on the team.",
+      league: true,
+    },
+    Camilla: {
+      title: "Walkthrough — Luciano to Champion Camilla",
+      coverage: "Mixed champion team — pack answers for several types, not one gimmick.",
+      travel: "Top of the Sinnoh league grounds. Full restore team + items.",
+      gotcha: "The final champion of the current gym line — after Camilla, check Post-game and legendaries for what’s next.",
+      league: true,
+      champion: true,
+    },
   }[g.slug] || {
     title: `Walkthrough — ${esc(g.name)}`,
     coverage: esc(g.tips),
@@ -938,12 +1175,17 @@ function gymGuideBody(g) {
       : "—";
   const lvMax = teamMaxLevel(g) > 0 ? teamMaxLevel(g) : "—";
   const afterWin = extras.champion
-    ? g.region === "johto"
-      ? `Win → Johto Champion. Next region: <a href="Gyms_Hoenn.html">Hoenn</a> (follow Trainer Card / pack unlocks). Details: <a href="Progression.html">Progression</a>.`
-      : `Win → Kanto Champion. Next: Johto via Trainer Association (cap resets for <em>you</em>). Details: <a href="Progression.html">Progression</a> · <a href="Gyms_Johto.html">Johto</a>.`
+    ? g.region === "kanto"
+      ? `Win → Kanto Champion. Next: Johto via Trainer Association (cap resets for <em>you</em>). Details: <a href="Progression.html">Progression</a> · <a href="Gyms_Johto.html">Johto</a>.`
+      : g.region === "johto"
+        ? `Win → Johto Champion. Next region: <a href="Gyms_Hoenn.html">Hoenn</a> (follow Trainer Card / pack unlocks). Details: <a href="Progression.html">Progression</a>.`
+        : g.region === "hoenn"
+          ? `Win → Hoenn Champion. Next region: <a href="Gyms_Sinnoh.html">Sinnoh</a> (follow Trainer Card / pack unlocks). Details: <a href="Progression.html">Progression</a>.`
+          : `Win → Sinnoh Champion — you’ve cleared every region! Check <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a> for what’s next.`
     : `Win → level cap rises → next: ${nextLink}.`;
 
   return `<h2>${extras.title}</h2>
+    ${extras.unlockHtml || ""}
     <h3>Prepare</h3>
     <p>${esc(g.tips)}</p>
     <ul>
@@ -2407,25 +2649,20 @@ registerExpansionPages({
     `,
   });
 
-  // Hoenn hub — placeholder until deep guides match Johto/Kanto
+  // Hoenn gym hub + individual deep guides (same depth as Kanto/Johto)
   {
-    const hoennNamed = trainers.all
-      .filter((t) => t.region === "hoenn" && !String(t.id).includes("groups"))
-      .sort((a, b) => a.name.localeCompare(b.name));
-    const previewRows = hoennNamed
-      .map((t) => {
-        const levels = (t.team || []).map((m) => m.level).filter((x) => x != null);
-        const lv =
-          levels.length > 0
-            ? `${levels[0]}–${levels[levels.length - 1]}`
-            : "—";
-        return `<tr>
-      <td>${esc(t.name)}</td>
-      <td><code>${esc(t.id)}</code></td>
-      <td>${(t.team || []).length}</td>
-      <td>${esc(lv)}</td>
-    </tr>`;
-      })
+    const hoenn = trainers.hoennLeaders || [];
+    const rows = hoenn
+      .map(
+        (g) => `<tr>
+      <td><a href="${g.slug}.html">${esc(g.name)}</a></td>
+      <td>${esc(g.type)}</td>
+      <td>${esc(g.badge)}</td>
+      <td>${esc(g.biome)}</td>
+      <td>${esc(mapItemLabel(g))}</td>
+      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+    </tr>`
+      )
       .join("");
     writePage("Gyms_Hoenn.html", {
       title: "Hoenn gyms",
@@ -2433,47 +2670,44 @@ registerExpansionPages({
         { label: "Main Page", href: "../index.html" },
         { label: "Hoenn gyms", href: "Gyms_Hoenn.html" },
       ],
-      lede: "Hoenn opens after the Johto Champion. Gym maps, opener <strong>Petra</strong>, and the trainer list below.",
+      lede: "Checklist for the Hoenn challenge on CobbleVerse / PokeHaven EU after the Johto Champion. Open a leader page for full teams and prep tips.",
       body: `
     <h2>Unlock</h2>
     <ol class="steps">
       <li>Beat Johto Champion <a href="Johto_Lance.html">Lance</a>.</li>
-      <li>Follow your Trainer Card unlocks into Hoenn.</li>
-      <li>Use the <strong>Hoenn Cartography Table</strong> — <a href="Gym_Maps.html">Gym maps</a>. First leader: <strong>Petra</strong>.</li>
+      <li>Follow the champion book: Trainer Association → <strong>Hoenn Trainer Card</strong>.</li>
+      <li>Craft maps on the <strong>Hoenn Cartography Table</strong> — not the Kanto/Johto tables. See <a href="Gym_Maps.html">Gym maps</a>.</li>
+      <li>Start with <a href="Petra.html">Petra</a> (Stone Badge).</li>
     </ol>
-
-    <h2>Named Hoenn trainers</h2>
-    <p class="muted">Teams: <a href="Trainer_Index.html">Trainer index</a> · <a href="Achievements.html">Achievements</a>.</p>
+    <h2>Gym leaders &amp; league</h2>
     <table class="wikitable">
-      <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
-      <tbody>${previewRows || "<tr><td colspan=4>No Hoenn trainers listed yet.</td></tr>"}</tbody>
+      <thead><tr><th>Trainer</th><th>Type</th><th>Badge / role</th><th>Biome / place</th><th>Map item</th><th>Team lv</th></tr></thead>
+      <tbody>${rows}</tbody>
     </table>
-
-    <p class="see-also"><strong>See also:</strong> <a href="Gyms_Johto.html">Johto gyms</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Progression.html">Progression</a> · <a href="Gyms_Sinnoh.html">Sinnoh</a></p>
+    <div class="callout tip">
+      <div class="label">Elite Four location</div>
+      Unlike Kanto/Johto, the Hoenn Elite Four and Champion Rocco are fought on real Steppe biome league grounds, not in The End.
+    </div>
+    <p>Track badges in Advancements too — <a href="Achievements.html">Achievements</a>. After Hoenn Champion: <a href="Gyms_Sinnoh.html">Sinnoh</a>.</p>
     ${navboxGyms()}
     `,
     });
   }
 
-  // Sinnoh hub — same honesty as Hoenn until deep guides exist
+  // Sinnoh gym hub + individual deep guides (same depth as Kanto/Johto)
   {
-    const sinnohNamed = trainers.all
-      .filter((t) => t.region === "sinnoh" && !String(t.id).includes("groups"))
-      .sort((a, b) => a.name.localeCompare(b.name));
-    const previewRows = sinnohNamed
-      .map((t) => {
-        const levels = (t.team || []).map((m) => m.level).filter((x) => x != null);
-        const lv =
-          levels.length > 0
-            ? `${levels[0]}–${levels[levels.length - 1]}`
-            : "—";
-        return `<tr>
-      <td>${esc(t.name)}</td>
-      <td><code>${esc(t.id)}</code></td>
-      <td>${(t.team || []).length}</td>
-      <td>${esc(lv)}</td>
-    </tr>`;
-      })
+    const sinnoh = trainers.sinnohLeaders || [];
+    const rows = sinnoh
+      .map(
+        (g) => `<tr>
+      <td><a href="${g.slug}.html">${esc(g.name)}</a></td>
+      <td>${esc(g.type)}</td>
+      <td>${esc(g.badge)}</td>
+      <td>${esc(g.biome)}</td>
+      <td>${esc(mapItemLabel(g))}</td>
+      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+    </tr>`
+      )
       .join("");
     writePage("Gyms_Sinnoh.html", {
       title: "Sinnoh gyms",
@@ -2481,23 +2715,25 @@ registerExpansionPages({
         { label: "Main Page", href: "../index.html" },
         { label: "Sinnoh gyms", href: "Gyms_Sinnoh.html" },
       ],
-      lede: "Sinnoh opens after Hoenn Champion Rocco. Gym maps, opener <strong>Pedro</strong>, and the trainer list below.",
+      lede: "Checklist for the Sinnoh challenge on CobbleVerse / PokeHaven EU after Hoenn Champion Rocco. Open a leader page for full teams and prep tips.",
       body: `
     <h2>Unlock</h2>
     <ol class="steps">
-      <li>Beat Hoenn Champion <strong>Rocco</strong> (after the Hoenn league).</li>
-      <li>Follow your Trainer Card unlocks into Sinnoh.</li>
-      <li>Use the <strong>Sinnoh Cartography Table</strong> — <a href="Gym_Maps.html">Gym maps</a>. First leader: <strong>Pedro</strong>.</li>
+      <li>Beat Hoenn Champion <a href="Rocco.html">Rocco</a>.</li>
+      <li>Follow the champion book: Trainer Association → <strong>Sinnoh Trainer Card</strong>.</li>
+      <li>Craft maps on the <strong>Sinnoh Cartography Table</strong> — not the Kanto/Johto/Hoenn tables. See <a href="Gym_Maps.html">Gym maps</a>.</li>
+      <li>Start with <a href="Pedro.html">Pedro</a> (Coal Badge).</li>
     </ol>
-
-    <h2>Named Sinnoh trainers</h2>
-    <p class="muted">Teams: <a href="Trainer_Index.html">Trainer index</a> · <a href="Achievements.html">Achievements</a>.</p>
+    <h2>Gym leaders &amp; league</h2>
     <table class="wikitable">
-      <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
-      <tbody>${previewRows || "<tr><td colspan=4>No Sinnoh trainers listed yet.</td></tr>"}</tbody>
+      <thead><tr><th>Trainer</th><th>Type</th><th>Badge / role</th><th>Biome / place</th><th>Map item</th><th>Team lv</th></tr></thead>
+      <tbody>${rows}</tbody>
     </table>
-
-    <p class="see-also"><strong>See also:</strong> <a href="Gyms_Hoenn.html">Hoenn gyms</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Progression.html">Progression</a> · <a href="Achievements.html">Achievements</a></p>
+    <div class="callout tip">
+      <div class="label">Elite Four location</div>
+      The Sinnoh Elite Four and Champion Camilla are fought on real Desert Oasis league grounds, not in The End.
+    </div>
+    <p>Track badges in Advancements too — <a href="Achievements.html">Achievements</a>. Sinnoh is the last region in the current gym line — see <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a> for what's next.</p>
     ${navboxGyms()}
     `,
     });
@@ -2525,6 +2761,74 @@ registerExpansionPages({
       lede: `${esc(displayName)} — ${esc(g.type)} specialist on PokeHaven EU.`,
       infobox: infoboxHtml(displayName, [
         ["Region", "Johto"],
+        ["Role", g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"],
+        ["Type focus", esc(g.type)],
+        ["Badge / title", esc(g.badge)],
+        ["Location tip", esc(g.biome)],
+        ["Map item", esc(mapItemLabel(g))],
+        ["Approx cap (while next)", `~${approxCapWhileNext(g)}`],
+        ["Team levels", `${minLv}–${maxLv}`],
+        ["Party size", String(g.team.length)],
+        ["Bag items", g.bag.length ? esc(g.bag.join(", ")) : "—"],
+      ]),
+      body: `
+    ${gymGuideBody(g)}
+
+    <h2>Team</h2>
+    ${teamTable(g.team)}
+    ${navboxGyms()}
+    `,
+    });
+  }
+
+  // Individual Hoenn gym pages (same depth as Kanto/Johto)
+  for (const g of trainers.hoennLeaders || []) {
+    const maxLv = teamMaxLevel(g);
+    const minLv = Math.min(...g.team.map((m) => Number(m.level) || 99));
+    writePage(`${g.slug}.html`, {
+      title: g.name,
+      breadcrumbs: [
+        { label: "Main Page", href: "../index.html" },
+        { label: "Hoenn gyms", href: "Gyms_Hoenn.html" },
+        { label: g.name, href: `${g.slug}.html` },
+      ],
+      lede: `${esc(g.name)} — ${esc(g.type)} specialist on PokeHaven EU.`,
+      infobox: infoboxHtml(g.name, [
+        ["Region", "Hoenn"],
+        ["Role", g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"],
+        ["Type focus", esc(g.type)],
+        ["Badge / title", esc(g.badge)],
+        ["Location tip", esc(g.biome)],
+        ["Map item", esc(mapItemLabel(g))],
+        ["Approx cap (while next)", `~${approxCapWhileNext(g)}`],
+        ["Team levels", `${minLv}–${maxLv}`],
+        ["Party size", String(g.team.length)],
+        ["Bag items", g.bag.length ? esc(g.bag.join(", ")) : "—"],
+      ]),
+      body: `
+    ${gymGuideBody(g)}
+
+    <h2>Team</h2>
+    ${teamTable(g.team)}
+    ${navboxGyms()}
+    `,
+    });
+  }
+
+  // Individual Sinnoh gym pages (same depth as Kanto/Johto)
+  for (const g of trainers.sinnohLeaders || []) {
+    const maxLv = teamMaxLevel(g);
+    const minLv = Math.min(...g.team.map((m) => Number(m.level) || 99));
+    writePage(`${g.slug}.html`, {
+      title: g.name,
+      breadcrumbs: [
+        { label: "Main Page", href: "../index.html" },
+        { label: "Sinnoh gyms", href: "Gyms_Sinnoh.html" },
+        { label: g.name, href: `${g.slug}.html` },
+      ],
+      lede: `${esc(g.name)} — ${esc(g.type)} specialist on PokeHaven EU.`,
+      infobox: infoboxHtml(g.name, [
+        ["Region", "Sinnoh"],
         ["Role", g.order <= 8 ? "Gym Leader" : g.order === 13 ? "Champion" : "Elite Four"],
         ["Type focus", esc(g.type)],
         ["Badge / title", esc(g.badge)],
