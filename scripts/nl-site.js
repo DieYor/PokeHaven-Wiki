@@ -90,6 +90,8 @@ function navboxCore() {
       <a href="Trainer_Index.html">Trainer-index</a>
       <a href="Raid_Bosses.html">Raid-bosses</a>
       <a href="Spawn_Lookup.html">Spawn-lookup</a>
+      <a href="Region_Exploration.html">Regio-verkenning</a>
+      <a href="Prestige_Season.html">Prestige-seizoen</a>
     </div></div>
   </div>`;
 }
@@ -103,6 +105,10 @@ export function registerDutchSite({
   advancements,
   searchIndex,
   searchIndexNl,
+  economy,
+  shiny,
+  xpMult,
+  rates,
 }) {
   const nl = (file, opts) => writePage(file, { ...opts, lang: "nl" });
   const written = new Set();
@@ -172,8 +178,8 @@ export function registerDutchSite({
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>Alle 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — diepe gidsen.</p></a>
-    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps en trainerlijst — diepe gidsen volgen.</p></a>
-    <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Maps en trainerlijst — diepe gidsen volgen.</p></a>
+    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Petra → Rocco — diepe gidsen.</p></a>
+    <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Pedro → Camilla — diepe gidsen.</p></a>
     <a class="hub-card" href="pages/Blue.html"><h3>Champion Blue</h3><p>Einde van Kanto — daarna Johto.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
     <a class="hub-card" href="pages/Mega_and_Late_Game.html"><h3>Mega &amp; late-game</h3><p>Gimmicks + checklist na Blue.</p></a>
@@ -325,11 +331,11 @@ export function registerDutchSite({
       <tr><td>Selecteer send-out</td><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Voorkomt verkeerde Pokémon</td></tr>
       <tr><td>Gooi / recall</td><td><kbd>R</kbd></td><td>Geselecteerde Pokémon uitsturen</td></tr>
       <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight — gevecht starten</td></tr>
-      <tr><td>Questboek</td><td><kbd>O</kbd></td><td>FTB Quests — First Steps. Pin een quest en die verschijnt in een klein trackertje rechtsonder in de HUD (bij de minimap/coördinaten) — geen zwevende pijl in de wereld.</td></tr>
+      <tr><td>Questboek</td><td><kbd>O</kbd></td><td><a href="Quests.html">FTB Quests</a> — First Steps plus zijhoofdstukken (Ball Workshop, Fishing Grounds, Trade Hall…). Pin een quest en die verschijnt in een klein trackertje rechtsonder in de HUD (bij de minimap/coördinaten) — geen zwevende pijl in de wereld.</td></tr>
       <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claimen — <a href="Claims.html">Claims</a></td></tr>
       <tr><td>Chunk-map</td><td><kbd>M</kbd></td><td>FTB Chunks-kaart</td></tr>
       <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
-      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>K</kbd>, groep <kbd>B</kbd></td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>K</kbd>, groep heeft geen standaardtoets (<kbd>B</kbd> opent je Backpack)</td></tr>
       <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Van mount afstappen</td></tr>
       <tr><td>Ride</td><td><kbd>Shift</kbd> + rechtermuisklik</td><td>Zie <a href="Riding.html">Rijden</a></td></tr>
       <tr><td>PC</td><td><code>/pc</code></td><td><a href="Healing_and_Storage.html">Opslag</a></td></tr>
@@ -371,18 +377,43 @@ export function registerDutchSite({
   track("Pack_Differences.html", {
     title: "Pack-verschillen",
     breadcrumbs: crumbs({ label: "Pack-verschillen", href: "Pack_Differences.html" }),
-    lede: "Wat CobbleVerse / PokeHaven anders doet dan vanilla Minecraft of “gewone” Cobblemon.",
+    lede: "Waarom losse Minecraft-, Cobblemon- of Lumyverse-pagina's soms niet kloppen op PokeHaven EU — dit doet CobbleVerse 1.7.42 hier echt.",
+    infobox: `<div class="infobox-title">Snelle feiten</div>
+    <table>
+      <tr><th>Pack</th><td>CobbleVerse 1.7.42</td></tr>
+      <tr><th>Server</th><td>PokeHaven EU</td></tr>
+      <tr><th>Shiny</th><td>1 / ${shiny}</td></tr>
+      <tr><th>XP</th><td>×${xpMult}</td></tr>
+      <tr><th>Income</th><td>×${economy.incomeMultiplier}</td></tr>
+      <tr><th>Waystones</th><td>Geen kosten / cooldown</td></tr>
+    </table>`,
     body: `
-  <h2>Belangrijke wijzigingen</h2>
+  <h2>Datapack-/configverschillen</h2>
+  <table class="wikitable">
+    <thead><tr><th>Onderwerp</th><th>Op deze pack</th><th>Waarom het ertoe doet</th></tr></thead>
+    <tbody>
+      <tr><td>Honger</td><td><strong>No Hunger</strong>-datapack</td><td>Farms zijn meer voor emeralds/items dan tegen verhongering</td></tr>
+      <tr><td>Ender Dragon</td><td><strong>Uitgeschakeld</strong></td><td>The End is niet de vanilla boss-checklist</td></tr>
+      <tr><td>Level cap</td><td>RCT-reeksprogressie</td><td>XP “stopt” tot de volgende gym</td></tr>
+      <tr><td>Waystones</td><td>Gratis, geen cooldown</td><td>Bouw vroeg een teleportnetwerk</td></tr>
+      <tr><td>PokéDollars</td><td>×${economy.incomeMultiplier} income</td><td>Craft + emerald-loop telt meer</td></tr>
+      <tr><td>Shiny-rate</td><td>1/${shiny}</td><td>Verwacht geen mainline-shinyodds-mythes</td></tr>
+      <tr><td>Raid-dens</td><td>1/${raids.common.spawnRate} spawn, tier-tabel op de wiki</td><td>Zie <a href="Raids.html">Raids</a></td></tr>
+      <tr><td>Claims</td><td>Alleen FTB Chunks (OPAC verwijderd)</td><td>Meng geen claim-mods</td></tr>
+      <tr><td>Trainer-outfits</td><td>Poke Clothing (craftbaar)</td><td>Zie <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a></td></tr>
+      <tr><td>Pokémon-looks</td><td>Cosplay Pikachu, Furfrou-cuts, sjaals…</td><td>Cosmetic slot / special items — zelfde gids</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Vertrouw niet blindelings op</h2>
   <ul>
-    <li><strong>No Hunger</strong> (pack-setting) — eten is minder kritiek; survival blijft wel gevaarlijk.</li>
-    <li><strong>Geen Ender Dragon-einddoel</strong> als hoofdprogressie — gyms &amp; league sturen het tempo.</li>
-    <li><strong>Level cap</strong> gekoppeld aan gym-progressie — zie <a href="Level_Cap.html">Level cap</a>.</li>
-    <li>Economie/income kan afwijken (o.a. multipliers) — <a href="Economy.html">Economie</a>.</li>
-    <li>Waystones, claims, voice chat en raids horen bij de serverervaring.</li>
+    <li>Generieke Minecraft-hongerfarms als “verplicht anders ga je dood”</li>
+    <li>Dragon-gerichte End-gidsen als je hoofdprogressie</li>
+    <li>Shopprijzen van andere servers</li>
+    <li>De Lumyverse-wiki-UX — gebruik deze PokeHaven-wiki voor hoe <em>wij</em> spelen</li>
   </ul>
-  <h2>Wat hetzelfde blijft</h2>
-  <p>Mining, Nether-portals, dorpen, redstone-basics — zie de <a href="Minecraft_Hub.html">Minecraft-hub</a>.</p>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Minecraft_Hub.html">Minecraft-hub</a> · <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a> · <a href="Progression.html">Progressie</a> · <a href="Economy.html">Economie</a></p>
   ${navboxCore()}
   `,
   });
@@ -415,28 +446,44 @@ export function registerDutchSite({
     "nl",
     "<strong>Spelers kunnen de level cap op PokeHaven EU niet uitzetten.</strong> Versla de <strong>volgende gym</strong> — dezelfde route grinden verhoogt de cap niet."
   )}
+  <h2>Trainer Card</h2>
+  <p>Houd een Trainer Card bij je (starterkit / shop). Check hem voor badge- en reeksvoortgang als XP “kapot” lijkt.</p>
+
   <p class="see-also"><strong>Zie ook:</strong> <a href="Gyms_Kanto.html">Kanto-gyms</a> · <a href="Achievements.html">Achievements</a> · <a href="Postgame_and_Legendaries.html">Post-game</a> · <a href="Brock.html">Brock</a></p>
   ${navboxCore()}
   `,
   });
 
   {
-    const ladderRows = trainers.kantoLeaders
-      .map((g) => {
-        const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
-        return `<tr>
+    const ladderRowsFor = (leaders) =>
+      (leaders || [])
+        .map((g) => {
+          const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
+          return `<tr>
       <td><a href="${g.slug}.html">${esc(g.name)}</a></td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.type)}</td>
       <td>${maxLv}</td>
       <td>~${maxLv + 5}</td>
     </tr>`;
-      })
-      .join("");
+        })
+        .join("");
+    const ladderRows = ladderRowsFor(trainers.kantoLeaders);
+    const johtoLadderRows = ladderRowsFor(trainers.johtoLeaders);
+    const hoennLadderRows = ladderRowsFor(trainers.hoennLeaders);
+    const sinnohLadderRows = ladderRowsFor(trainers.sinnohLeaders);
     track("Level_Cap.html", {
       title: "Level cap",
       breadcrumbs: crumbs({ label: "Level cap", href: "Level_Cap.html" }),
       lede: "Je Pokémon stoppen met levelen tot je de volgende gym verslaat. Op PokeHaven EU blijft dit aan — bewust.",
+      infobox: `<div class="infobox-title">Level cap</div>
+  <table>
+    <tr><th>Start op</th><td>~20 (Kanto-reeks)</td></tr>
+    <tr><th>Gaat omhoog bij</th><td>Volgende gym / league-fight verslaan</td></tr>
+    <tr><th>Berekening</th><td>Sterkste mon van volgend doel + 5</td></tr>
+    <tr><th>Overlevelen</th><td>Geblokkeerd op PokeHaven EU</td></tr>
+    <tr><th>Voortgang checken</th><td>Trainer Card</td></tr>
+  </table>`,
       body: `
   <h2>Waarom</h2>
   <p>Zonder cap overlevelen mensen bij spawn en slaan ze het avontuur over. De cap houdt fights eerlijk.</p>
@@ -450,6 +497,24 @@ export function registerDutchSite({
     <thead><tr><th>Volgend doel</th><th>Badge / rol</th><th>Type</th><th>Team max lv</th><th>Approx cap</th></tr></thead>
     <tbody>${ladderRows}</tbody>
   </table>
+  <h2>Johto-ladder (ongeveer)</h2>
+  <p>Zelfde regel na de Johto Trainer Card. Overzicht: <a href="Gyms_Johto.html">Johto-gyms</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Volgend doel</th><th>Badge / rol</th><th>Type</th><th>Team max lv</th><th>Approx cap</th></tr></thead>
+    <tbody>${johtoLadderRows}</tbody>
+  </table>
+  <h2>Hoenn-ladder (ongeveer)</h2>
+  <p>Zelfde regel na de Hoenn Trainer Card. Overzicht: <a href="Gyms_Hoenn.html">Hoenn-gyms</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Volgend doel</th><th>Badge / rol</th><th>Type</th><th>Team max lv</th><th>Approx cap</th></tr></thead>
+    <tbody>${hoennLadderRows}</tbody>
+  </table>
+  <h2>Sinnoh-ladder (ongeveer)</h2>
+  <p>Zelfde regel na de Sinnoh Trainer Card — de laatste regio in de huidige gymlijn. Overzicht: <a href="Gyms_Sinnoh.html">Sinnoh-gyms</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Volgend doel</th><th>Badge / rol</th><th>Type</th><th>Team max lv</th><th>Approx cap</th></tr></thead>
+    <tbody>${sinnohLadderRows}</tbody>
+  </table>
   <h2>XP lijkt kapot?</h2>
   <ol class="steps">
     <li>Open je <strong>Trainer Card</strong> en zie welke gym volgt.</li>
@@ -457,7 +522,7 @@ export function registerDutchSite({
     <li>Verbeter coverage en heals — niet alleen dezelfde route grinden.</li>
     <li>Versla de leader; daarna plakt XP weer.</li>
   </ol>
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Progression.html">Progressie</a> · <a href="FAQ.html">FAQ</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Progression.html">Progressie</a> · <a href="Gyms_Kanto.html">Kanto-gyms</a> · <a href="Gyms_Johto.html">Johto-gyms</a> · <a href="Gyms_Hoenn.html">Hoenn-gyms</a> · <a href="Gyms_Sinnoh.html">Sinnoh-gyms</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxCore()}
   `,
     });
@@ -466,25 +531,81 @@ export function registerDutchSite({
   track("Economy.html", {
     title: "Economie",
     breadcrumbs: crumbs({ label: "Economie", href: "Economy.html" }),
-    lede: "Shops, bank en hoe je op PokeHaven EU aan geld komt zonder de server leeg te zuigen.",
+    lede: `PokéDollars betalen balls, heals en gemak. Op deze pack verdien je uit gevechten aan <strong>×${economy.incomeMultiplier}</strong> — slim verkopen is dus belangrijk.`,
+    infobox: `<div class="infobox-title">Economie</div>
+    <table>
+      <tr><th>Valuta</th><td>PokéDollars</td></tr>
+      <tr><th>Income-multiplier</th><td>${economy.incomeMultiplier}</td></tr>
+      <tr><th>Uitbetaling wild</th><td>${economy.earnFromWild ? "Ja" : "Nee"}</td></tr>
+      <tr><th>Uitbetaling trainers</th><td>${economy.earnFromNpc ? "Ja" : "Nee"}</td></tr>
+      <tr><th>Shop-secties</th><td>${economy.shop.length}</td></tr>
+      <tr><th>Bank-items</th><td>${economy.bank.length}</td></tr>
+    </table>`,
     body: `
-  <h2>Basisloop</h2>
-  <p>Vroege inkomsten komen vaak uit farming, trading en pack-shops. Income kan lager liggen dan “singleplayer-defaults” — speel daar omheen met farms en slimme trades.</p>
+  <h2>Hoe geld écht werkt</h2>
+  <p>Er zijn geen AFK-baantjes. Je verdient door te spelen: wilde gevechten, trainers/gyms, bounty-boards en items verkopen bij de Bank.</p>
+
   ${figure(
     guideImg("farm-loop.png"),
-    "<strong>Wheat-farm.</strong> Kweek wheat, trade Farmers voor emeralds, verkoop bij de Bank voor PokéDollars.",
+    "<strong>Wheat-farm.</strong> Kweek wheat, trade Farmers voor emeralds, verkoop bij de Bank voor PokéDollars. Combineer met crafting (<a href='Poke_Balls.html'>Poké Balls</a>) zodat je niet shop-afhankelijk bent.",
     "Wheat-farm economiegids"
   )}
+
   <h2>Farm setup voorbeeld</h2>
-  <p>Top-down layout met waterkanalen zodat elk crop nat blijft. Klik de afbeelding om te vergroten.</p>
+  <p>Top-down layout: rijen farmland met waterkanalen zodat elk crop nat blijft. Bouw dit bij je claim en breid later uit.</p>
   ${figure(
     guideImg("farm-setup-example.png"),
-    "<strong>Farm setup voorbeeld.</strong> Wisselende crop-rijen en water — bouw dit bij je claim.",
+    "<strong>Farm setup voorbeeld.</strong> Wisselende crop-rijen en water — klik de afbeelding om te vergroten.",
     "Top-down wheat farm setup",
     { large: true, diagram: true }
   )}
-  <h2>Shop &amp; bank</h2>
-  <p>Prijslijsten staan in de Engelse economie-pagina. Gebruik de vlag om te wisselen, of open <a href="../../pages/Economy.html">Economie (EN, met tabellen)</a> naast deze uitleg.</p>
+
+  <h2>Beste vroege loop</h2>
+  <ol class="steps">
+    <li>Bouw een kleine wheat-farm bij je claim.</li>
+    <li>Ruil een Farmer-villager voor emeralds.</li>
+    <li>Verkoop emeralds bij de Bank (standaard <strong>${economy.bank.find((i) => i.item === "minecraft:emerald")?.price ?? 400}$</strong> per stuk op deze pack).</li>
+    <li>Craft balls waar mogelijk; koop alleen wat je nog niet kunt craften.</li>
+    <li>Doe gym-trainers voor extra inkomen tijdens je progressie.</li>
+  </ol>
+
+  ${critical(
+    "nl",
+    "<strong>Koop geen dure sieraden/TM's in de hoop ze door te verkopen.</strong> Veel shop-items kun je niet terugverkopen bij de Bank. Bewaar Relic Coins liever dan ze voor kleingeld weg te doen."
+  )}
+
+  <h2>Inkomstenbronnen</h2>
+  <table class="wikitable">
+    <thead><tr><th>Bron</th><th>Toelichting</th></tr></thead>
+    <tbody>
+      <tr><td>Wilde gevechten</td><td>Gestaag tijdens verkennen (pack-multiplier toegepast)</td></tr>
+      <tr><td>Trainers / gyms</td><td>Betere uitbetalingen; dubbelt als progressie</td></tr>
+      <tr><td>Bank-verkoop</td><td>Emeralds, potions, vitamines, relic coins…</td></tr>
+      <tr><td>Bounty-boards</td><td>Bounty-boards in dorpen</td></tr>
+      <tr><td>Raids</td><td>Cash-beloningen per tier — zie <a href="Raids.html">Raids</a></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Standaard shopprijzen</h2>
+  ${economy.shop
+    .map((sec) => {
+      const rows = sec.items
+        .map((i) => `<tr><td>${i.label}</td><td><code>${i.item}</code></td><td>${i.price}</td></tr>`)
+        .join("");
+      return `<h3>${sec.section}</h3><table class="wikitable"><thead><tr><th>Item</th><th>ID</th><th>Prijs</th></tr></thead><tbody>${rows}</tbody></table>`;
+    })
+    .join("")}
+
+  <h2>Bank-verkoopprijzen</h2>
+  <table class="wikitable">
+    <thead><tr><th>Item</th><th>ID</th><th>Verkoopprijs</th></tr></thead>
+    <tbody>
+      ${economy.bank
+        .map((i) => `<tr><td>${i.label}</td><td><code>${i.item}</code></td><td>${i.price}</td></tr>`)
+        .join("")}
+    </tbody>
+  </table>
+
   <h2>Tips</h2>
   <ul>
     <li>Investeer vroeg in food/crop-farms — zie <a href="Farming_and_Food.html">Farms &amp; eten</a>.</li>
@@ -560,8 +681,8 @@ export function registerDutchSite({
   <h2>Beloningen &amp; damage-share</h2>
   <p>Loot en payout schalen met hoeveel je helpt. Elke tier heeft een <strong>minimum damage-share</strong> (ongeveer 16–20%) — AFK zitten kan betekenen: geen reward, ook als de groep wint. Het $-bedrag in de tabel is de currency-reward; hogere tiers hebben meer HP (multiplier) en betere IVs.</p>
   <ul>
-    <li><strong>Hidden Ability-kans:</strong> 20% op elke tier</li>
-    <li><strong>Max clears</strong> per den vóór rotate: 3</li>
+    <li><strong>Hidden Ability-kans:</strong> ${pct(raids.tiers[0]?.haRate ?? 0.2)} op elke tier</li>
+    <li><strong>Max clears</strong> per den vóór rotate: ${raids.tiers[0]?.maxClears ?? "—"}</li>
     <li><strong>Gefaalde raids:</strong> opnieuw proberen (${raids.common.retryFailed ? "ja" : "nee"})</li>
     <li><strong>T6–T7 AI:</strong> STRONG — slimmer dan vroege dens</li>
   </ul>
@@ -595,7 +716,7 @@ export function registerDutchSite({
     <li>Raiden i.p.v. gyms terwijl je vastzit op de <a href="Level_Cap.html">level cap</a></li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Raid_Bosses.html">Raid-bosses</a> · <a href="Economy.html">Economie</a> · <a href="Voice_Chat.html">Voice chat</a> · <a href="Travel.html">Reizen</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Healing_and_Storage.html">Genezen &amp; opslag</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Raid_Bosses.html">Raid-bosses</a> · <a href="Economy.html">Economie</a> · <a href="Voice_Chat.html">Voice chat</a> · <a href="Travel.html">Reizen</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Healing_and_Storage.html">Genezen &amp; opslag</a> · <a href="Quests.html">Quests</a> (Raid Circuit)</p>
   ${navboxCore()}
   `,
     };
@@ -605,6 +726,13 @@ export function registerDutchSite({
     title: "Vangen & vechten",
     breadcrumbs: crumbs({ label: "Vangen & vechten", href: "Catching_and_Battling.html" }),
     lede: "De kernlus op PokeHaven: verzwakken, vangen, genezen, doorpakken — met respect voor de level cap.",
+    infobox: `<div class="infobox-title">Gevechtsrates</div>
+  <table>
+    <tr><th>Shiny-rate</th><td>1 / ${shiny}</td></tr>
+    <tr><th>XP-multiplier</th><td>${xpMult}</td></tr>
+    <tr><th>Max Pokémon-level</th><td>100</td></tr>
+    <tr><th>Oneindige ride-stamina</th><td>Ja</td></tr>
+  </table>`,
     body: `
   <div class="callout tip">
     <div class="label">Voor Brock</div>
@@ -623,6 +751,12 @@ export function registerDutchSite({
   <p>Type-advantage wint gyms. Gebruik <a href="Brock.html">Brock</a> / <a href="Misty.html">Misty</a> / <a href="Gyms_Kanto.html">Kanto</a> voor teams. Respecteer de <a href="Level_Cap.html">level cap</a>.</p>
   <h2>Mega / Z / Tera / Dynamax</h2>
   <p>Mega Showdown staat aan. Pack-settings + checklist na Kanto: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>.</p>
+  <h2>Genezen &amp; PC</h2>
+  <ul>
+    <li>Pokémon Centers genezen je hele team.</li>
+    <li><code>/pc</code> opent opslag (ook remote PC via LumyMon waar beschikbaar).</li>
+    <li>Bewaar Revives voor gym-runs.</li>
+  </ul>
   <h2>Na het gevecht</h2>
   <p><a href="Healing_and_Storage.html">Genezen &amp; opslag</a> · <a href="Breeding.html">Broeden</a></p>
   ${navboxCore()}
@@ -750,7 +884,101 @@ export function registerDutchSite({
     <li><strong>Progressie kwijt na update?</strong> First Steps-IDs staan expres vast. Ziet iets anders er raar uit? Discord <code>#tickets</code> met screenshot van het boek.</li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="First_Hours.html">Eerste uren</a> · <a href="Progression.html">Progressie</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Achievements.html">Achievements</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="First_Hours.html">Eerste uren</a> · <a href="Progression.html">Progressie</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Achievements.html">Achievements</a> · <a href="Region_Exploration.html">Regio-verkenning</a> · <a href="Prestige_Season.html">Prestige-seizoen</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Region_Exploration.html", {
+    title: "Regio-verkenning",
+    breadcrumbs: crumbs(
+      { label: "Quests", href: "Quests.html" },
+      { label: "Regio-verkenning", href: "Region_Exploration.html" }
+    ),
+    lede: "Elke league heeft een <strong>Exploration</strong>-chapter. Pins gebruiken een vaste naamgeving zodat BlueMap, waystones en het questboek allemaal matchen.",
+    infobox: `<div class="infobox-title">Atlas</div>
+  <table>
+    <tr><th>Tool</th><td><a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">BlueMap</a></td></tr>
+    <tr><th>Maps</th><td><a href="Gym_Maps.html">Gym-maps</a></td></tr>
+    <tr><th>Reizen</th><td><a href="Travel.html">Waystones</a></td></tr>
+  </table>`,
+    body: `
+  <h2>Pin-naamgeving (exact zo gebruiken)</h2>
+  <p>Activeer een waystone en hernoem hem daarna. Staff en andere spelers moeten deze namen herkennen op BlueMap / gedeelde lijsten.</p>
+  <table class="wikitable">
+    <thead><tr><th>Regio</th><th>Eerste gym-pin</th><th>Hub / kamp</th><th>Landmark-pin</th><th>Tweede travel-pin</th></tr></thead>
+    <tbody>
+      <tr><td>Kanto</td><td><code>Kanto-Misty</code></td><td><code>Kanto-Hub</code></td><td><code>Kanto-Indigo</code></td><td><code>Kanto-Raid</code> of <code>Kanto-Farm</code></td></tr>
+      <tr><td>Johto</td><td><code>Johto-Valerio</code></td><td><code>Johto-Hub</code></td><td><code>Johto-League</code></td><td><code>Johto-Raid</code> of <code>Johto-Farm</code></td></tr>
+      <tr><td>Hoenn</td><td><code>Hoenn-Petra</code></td><td><code>Hoenn-Hub</code></td><td><code>Hoenn-League</code></td><td><code>Hoenn-Raid</code> of <code>Hoenn-Farm</code></td></tr>
+      <tr><td>Sinnoh</td><td><code>Sinnoh-Pedro</code></td><td><code>Sinnoh-Hub</code></td><td><code>Sinnoh-League</code></td><td><code>Sinnoh-Raid</code> of <code>Sinnoh-Farm</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Checklist per regio</h2>
+  <ol class="steps">
+    <li>Open <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">BlueMap</a> en zoek de regio op voordat je gaat dwalen.</li>
+    <li>Craft de <strong>eerste gym-map</strong> op de cartography table van die regio (<a href="Gym_Maps.html">hoe</a>). Open nooit een Empty Map in de wereld zelf.</li>
+    <li>Plaats/activeer <code>{Regio}-{EersteLeader}</code> bij de gym-aanpak.</li>
+    <li>Loop door tot de route naar de eerste leader duidelijk is (Kanto → <a href="Misty.html">Misty</a>, Johto → <a href="Valerio.html">Valerio</a>, Hoenn → <a href="Petra.html">Petra</a>, Sinnoh → <a href="Pedro.html">Pedro</a>).</li>
+    <li>Vang de getypte wilde uit de quest, pin daarna de <strong>landmark</strong> (Indigo / League-aanpak).</li>
+    <li>Voeg een tweede pin toe voor raid dens of een farm-loop.</li>
+  </ol>
+  <div class="callout tip">
+    <div class="label">Coördinaten</div>
+    Afgeronde gym-maps tonen X/Z als je erover hovert. World seeds kunnen die getallen veranderen — vertrouw op de gecrafte map + BlueMap in plaats van oude screenshots.
+  </div>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Quests.html">Quests</a> · <a href="Travel.html">Reizen</a> · <a href="Gyms_Kanto.html">Kanto-gyms</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Prestige_Season.html", {
+    title: "Prestige-seizoen",
+    breadcrumbs: crumbs(
+      { label: "Quests", href: "Quests.html" },
+      { label: "Prestige-seizoen", href: "Prestige_Season.html" }
+    ),
+    lede: "Na Sinnoh Champion is de <strong>Prestige Ladder</strong> de langetermijn-jacht — inclusief <em>Gotta Catch 'Em All</em> (1025 geregistreerd). Seizoenen zijn community-races, geen wipe van je league-badges.",
+    infobox: `<div class="infobox-title">Prestige</div>
+  <table>
+    <tr><th>Unlock</th><td>Sinnoh Champion</td></tr>
+    <tr><th>Kroon</th><td>1025 geregistreerd</td></tr>
+    <tr><th>Capstone</th><td>PokeHaven Prestige Champion</td></tr>
+    <tr><th>Bord</th><td>Discord-aankondigingen</td></tr>
+  </table>`,
+    body: `
+  <h2>Wat telt mee</h2>
+  <ul>
+    <li><strong>Pokédex-registraties</strong> — mijlpalen bij 400 / 500 / 600 / 700 / 800 / 851 / <strong>1025</strong></li>
+    <li><strong>Volumedoelen</strong> — 5 shinies, 50 raid-overwinningen, 50 uitgebroede eieren, 500 vangsten</li>
+    <li><strong>Capstone</strong> — maak de ladder af voor <em>PokeHaven Prestige Champion</em></li>
+  </ul>
+
+  <h2>Seizoen-scorebord</h2>
+  <p>Staff post seizoensdata in Discord. Tijdens een seizoen tracken we (een screenshot van je Prestige Ladder / Pokédex is genoeg):</p>
+  <ol class="steps">
+    <li><strong>Dex-race</strong> — hoogste geregistreerde aantal (en eerste tot 1025)</li>
+    <li><strong>Shiny-race</strong> — eerste tot de Prestige shiny-mijlpaal</li>
+    <li><strong>Raid-race</strong> — eerste tot 50 raid-overwinningen op de ladder</li>
+  </ol>
+  <p>Dien bewijs in via het Discord-kanaal dat staff aankondigt voor dat seizoen. Geen pay-to-win ranks — alleen bragging rights en community shout-outs.</p>
+
+  <h2>Seizoensreset (wat het betekent)</h2>
+  ${critical(
+    "nl",
+    "<strong>We wissen geen gym-badges, First Steps of league-progressie voor een seizoen.</strong> Een “reset” is een nieuw scoringsvenster op Discord — je questboek behoudt wat je verdiend hebt."
+  )}
+  <ul>
+    <li><strong>Zacht seizoen (standaard)</strong> — nieuwe startdatum; scorebord begint op nul; quest-voltooiingen blijven staan.</li>
+    <li><strong>Harde prestige-wipe (zeldzaam)</strong> — alleen met volledige wereld-backup en Discord-melding. Staff zou alleen Prestige Ladder-questprogressie resetten als FTB-tools een veilige per-chapter reset toelaten. Nooit lichtzinnig gedaan.</li>
+  </ul>
+
+  <h2>Staff-scorebord (optioneel)</h2>
+  <p>Als een seizoen in-game scoreboards gebruikt, kan staff dummy-objectieven zoals <code>ph_dex</code> / <code>ph_shiny</code> aanmaken en bijwerken op basis van geverifieerde screenshots. Spelers hebben geen commands nodig voor zachte seizoenen.</p>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Quests.html">Quests</a> · <a href="Postgame_and_Legendaries.html">Post-game</a> · <a href="Achievements.html">Achievements</a></p>
   ${navboxCore()}
   `,
   });
@@ -811,6 +1039,9 @@ export function registerDutchSite({
     <li><strong>Bed + waystone thuis</strong> — snelle respawn en terugkeer.</li>
   </ul>
 
+  <h2>Regio-verkenning-pins</h2>
+  <p>Elke regio's <strong>Exploration</strong>-questchapter verwacht consistente waystone-namen zodat BlueMap en het questboek voor iedereen matchen. Zie <a href="Region_Exploration.html">Regio-verkenning</a> voor de exacte naamgeving per regio.</p>
+
   <h2>Etiquette</h2>
   <ul>
     <li>Breek of grief geen andermans waystone-netwerk.</li>
@@ -825,7 +1056,7 @@ export function registerDutchSite({
     <li>Empty Map in de wereld openen vóór gym-crafting — die map is dan waardeloos voor de cartography-recept.</li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Riding.html">Rijden</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">Eerste uren</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Riding.html">Rijden</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">Eerste uren</a> · <a href="Region_Exploration.html">Regio-verkenning</a></p>
   ${navboxCore()}
   `,
   });
@@ -882,7 +1113,7 @@ export function registerDutchSite({
       <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td><a href="Claims.html">Claims</a></td></tr>
       <tr><td>Chunk-map</td><td><kbd>M</kbd></td><td>FTB Chunks-kaart</td></tr>
       <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
-      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>K</kbd> · groep <kbd>B</kbd> — <a href="Voice_Chat.html">Voice chat</a></td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>K</kbd> · groep heeft geen standaardtoets (stel er zelf een in; <kbd>B</kbd> opent je Backpack) — <a href="Voice_Chat.html">Voice chat</a></td></tr>
       <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Van mount afstappen</td></tr>
       <tr><td>Recipe viewer (REI)</td><td><kbd>E</kbd></td><td>Live crafts — <a href="Essential_Recipes.html">Essentiële recepten</a></td></tr>
       <tr><td>Rijden</td><td><kbd>Shift</kbd> + rechtsklik</td><td><a href="Riding.html">Rijden</a></td></tr>
@@ -921,7 +1152,7 @@ export function registerDutchSite({
   </div>
 
   <h2>Waarom doneren?</h2>
-  <p>Donaties zijn volledig optioneel en houden de server online en up-to-date. Sommige donaties financieren ook community-events — zo kan <strong>€10</strong> een server-brede <strong>Shiny Hour</strong> financieren (wilde shiny-odds verdubbeld van 1/2048 naar 1/1024 voor 60 minuten, voor alle online spelers, niet alleen de donateur).</p>
+  <p>Donaties zijn volledig optioneel en houden de server online en up-to-date. Sommige donaties financieren ook community-events — zo kan <strong>€10</strong> een server-brede <strong>Shiny Hour</strong> financieren (wilde shiny-odds verdubbeld van 1/${shiny} naar 1/${Math.round(shiny / 2)} voor 60 minuten, voor alle online spelers, niet alleen de donateur).</p>
 
   <h2>Hoe het werkt</h2>
   <ol class="steps">
@@ -1034,7 +1265,7 @@ export function registerDutchSite({
   <ol class="steps">
     <li>Join PokeHaven EU en sta mic / voice-chat toe als Windows of het spel daarom vraagt.</li>
     <li>Open <strong>Esc → Options → Controls → Simple Voice Chat</strong> en zet <strong>Push to talk</strong> (fijnst in groepen).</li>
-    <li>Defaults op PokeHaven EU: voice-menu <kbd>V</kbd>, mute <kbd>K</kbd>, groep <kbd>B</kbd>.</li>
+    <li>Defaults op PokeHaven EU: voice-menu <kbd>V</kbd>, mute <kbd>K</kbd>. Groep heeft <strong>geen standaardtoets</strong> — <kbd>B</kbd> is gereserveerd voor je Backpack, kies dus zelf een vrije toets voor groep.</li>
     <li>Kies het juiste input-device als niemand je hoort.</li>
     <li>Test met iemand in de buurt — binnen de hoorafstand moet je elkaar horen.</li>
   </ol>
@@ -1155,7 +1386,7 @@ export function registerDutchSite({
   <p>Ja. Center/huis-chests zijn fair game. Op PokeHaven EU kunnen geleegde loot-chests later refreshen.</p>
 
   <h2>Voice-chat toets?</h2>
-  <p><kbd>V</kbd> opent voice chat, <kbd>K</kbd> mute, <kbd>B</kbd> groep. Zie <a href="Voice_Chat.html">Voice chat</a>.</p>
+  <p><kbd>V</kbd> opent voice chat, <kbd>K</kbd> mute. Groep heeft geen standaardtoets — <kbd>B</kbd> opent je Backpack, kies dus zelf een vrije toets voor groep bij Controls. Zie <a href="Voice_Chat.html">Voice chat</a>.</p>
 
   <h2>Waar is de spelerswiki?</h2>
   <p><strong><a href="https://pokehaven.wiki">pokehaven.wiki</a></strong> — Engels + Nederlands (vlaggen). Ook gepind in Discord <code>#pokehaven-wiki</code>. Start met Aan de slag, Claims, Gym-maps, Brock.</p>
@@ -1178,7 +1409,7 @@ export function registerDutchSite({
   <p>Gebruik een <strong>Cobblemon</strong>-hengel (Poke Rod / Lure Rod / …), niet alleen vanilla. Gids: <a href="Fishing.html">Vissen</a>.</p>
 
   <h2>Hoe werken shiny-odds?</h2>
-  <p>Wild base <strong>1 / 2048</strong>. Broeden: Masuda / crystal. Zie <a href="Shiny.html">Shiny hunting</a> · <a href="Breeding.html">Broeden</a>.</p>
+  <p>Wild base <strong>1 / ${shiny}</strong>. Broeden: Masuda / crystal. Zie <a href="Shiny.html">Shiny hunting</a> · <a href="Breeding.html">Broeden</a>.</p>
 
   <h2>Ik versloeg Blue — moet de server herstarten?</h2>
   <p><strong>Nee.</strong> Volg het champion-boek: Trainer Association → Johto-card. Ontbreken structures? Discord — staff kan 1× herstarten. Checklist: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progressie</a> · <a href="Blue.html">Blue</a>.</p>
@@ -1252,7 +1483,7 @@ export function registerDutchSite({
       <tr><td>Ultra Ball</td><td>Gold ingot</td><td>Zwart + geel</td></tr>
     </tbody>
   </table>
-  <p>Volledige gids: <a href="Poke_Balls.html">Poké Balls</a>. Bomen oogsten:</p>
+  <p>Volledige gids: <a href="Poke_Balls.html">Poké Balls</a> · begeleide craft-keten: <a href="Quests.html">Quests</a> (Ball Workshop). Bomen oogsten:</p>
   ${figure(
     guideImg("apricorns.png"),
     "<strong>Apricorns.</strong> Rechtermuisklik op fruit; plant seeds bij je claim.",
@@ -1353,7 +1584,7 @@ export function registerDutchSite({
     <li>Verlicht het gebied.</li>
     <li>Oogst elke sessie vóór gym-runs.</li>
   </ol>
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Economy.html">Economie</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a> · <a href="Economy.html">Economie</a> · <a href="Quests.html">Quests</a> (Ball Workshop)</p>
   ${navboxCore()}
   `,
   });
@@ -1617,7 +1848,7 @@ export function registerDutchSite({
     <li>Biomes zoeken: <a href="Spawn_Lookup.html">Spawn-lookup</a>.</li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Progression.html">Progressie</a> · <a href="Roadmap.html">30-dagen roadmap</a> · <a href="Level_Cap.html">Level cap</a> · <a href="FAQ.html">FAQ</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Progression.html">Progressie</a> · <a href="Roadmap.html">30-dagen roadmap</a> · <a href="Level_Cap.html">Level cap</a> · <a href="FAQ.html">FAQ</a> · <a href="Prestige_Season.html">Prestige-seizoen</a></p>
   ${navboxCore()}
   `,
     });
@@ -1654,6 +1885,7 @@ export function registerDutchSite({
     <li>Volg daarna de Mew-encounter / revive-flow van het pack — “Catch Mew” tikt af als je Mew hebt.</li>
     <li>Shiny Mew is een aparte optionele advancement.</li>
   </ol>
+  <p class="muted">Een begeleide versie van dit pad staat ook in FTB Quests onder <strong>Fossils and TM Lab</strong> — <a href="Quests.html">Quests</a>.</p>
   <div class="callout tip">
     <div class="label">REI is leidend</div>
     Exacte grids kunnen wijzigen bij pack-updates. Vertrouw altijd de in-game recipe view.
@@ -1697,13 +1929,45 @@ export function registerDutchSite({
   track("Healing_and_Storage.html", {
     title: "Genezen & opslag",
     breadcrumbs: crumbs({ label: "Genezen & opslag", href: "Healing_and_Storage.html" }),
-    lede: "Pokémon Centers, Revives, PC en hoe je niet met een dood team vastzit.",
+    lede: "Houd je team in leven tussen gyms door, en verlies nooit Pokémon omdat je team vol zat.",
     body: `
-  <h2>Genezen</h2>
-  <p>Gebruik centers en heal-items tussen fights. Neem Revives mee naar gyms en raids.</p>
-  <h2>Opslag</h2>
-  <p>PC/boxen voor overflow. Claim je chest-monsters. Zie <a href="Building_and_Storage.html">Bouwen &amp; opslag</a>.</p>
-  ${navboxCore()}
+    ${figure(
+      guideImg("pokecenter.png"),
+      "<strong>Pokémon Center.</strong> Genees hier je hele team (ook flauwgevallen leden). Loot chests in de buurt voor vroege meds als die er staan.",
+      "Pokémon Center interieur"
+    )}
+
+    <h2>Wanneer genezen</h2>
+    <table class="wikitable">
+      <thead><tr><th>Situatie</th><th>Beste oplossing</th><th>Toelichting</th></tr></thead>
+      <tbody>
+        <tr><td>Voor een gymleider</td><td>Pokémon Center</td><td>Loop nooit half dood naar binnen</td></tr>
+        <tr><td>Flauwgevallen onderweg</td><td>Revive / Max Revive</td><td>Neem er 2+ mee in je tas</td></tr>
+        <tr><td>Laag HP, nog wel op</td><td>Potion / Oran Berry</td><td>Berries zijn vroeg gratis</td></tr>
+        <tr><td>Status (poison/burn/para)</td><td>Status-heal items</td><td>Vooral voor Poison/Psychic-gyms</td></tr>
+      </tbody>
+    </table>
+
+    <h2>PC-opslag</h2>
+    <ol class="steps">
+      <li>Typ <code>/pc</code> in de chat, of gebruik een PC-blok.</li>
+      <li>Haal extra's uit je team (max 6 op het veldteam).</li>
+      <li>Houd een “gym-box” met dekkingstypes klaar om te wisselen.</li>
+    </ol>
+    <div class="callout tip">
+      <div class="label">PC-tip</div>
+      <code>/pc</code> werkt onderweg — organiseer je boxen toch zodat je niet eindeloos hoeft te scrollen vlak voor Brock.
+    </div>
+
+    <h2>Backpack &amp; chests</h2>
+    <ul>
+      <li>Gebruik je backpack voor balls, eten en heals onderweg.</li>
+      <li>Bewaar waardevolle spullen in geclaimde chests bij je huis.</li>
+      <li>Dorps-/center-chests mag je op PokeHaven EU leegroven; loot kan later weer aanvullen.</li>
+    </ul>
+
+    <p class="see-also"><strong>Zie ook:</strong> <a href="Claims.html">Claims</a> · <a href="Brock.html">Brock</a> · <a href="Poke_Balls.html">Poké Balls</a></p>
+    ${navboxCore()}
   `,
   });
 
@@ -1762,7 +2026,7 @@ export function registerDutchSite({
     </tbody>
   </table>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Pack_Differences.html">Pack-verschillen</a> · <a href="../../pages/Outfits_and_Cosmetics.html">Volledige EN-gids</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Pack_Differences.html">Pack-verschillen</a></p>
   ${navboxCore()}
   `,
   });
@@ -1814,17 +2078,17 @@ export function registerDutchSite({
     lede: "Shiny-odds op PokeHaven EU / CobbleVerse — wild versus breeding-methodes.",
     infobox: `<div class="infobox-title">Shiny-odds</div>
   <table>
-    <tr><th>Base wild</th><td>1 / 2048</td></tr>
-    <tr><th>Masuda</th><td>×2 (breeding)</td></tr>
-    <tr><th>Crystal</th><td>×2 (breeding)</td></tr>
-    <tr><th>Always</th><td>×8 (breeding)</td></tr>
+    <tr><th>Base wild</th><td>1 / ${shiny}</td></tr>
+    <tr><th>Masuda</th><td>×${rates.breeding?.shinyMethod?.masuda ?? 2} (breeding)</td></tr>
+    <tr><th>Crystal</th><td>×${rates.breeding?.shinyMethod?.crystal ?? 2} (breeding)</td></tr>
+    <tr><th>Always</th><td>×${rates.breeding?.shinyMethod?.always ?? 8} (breeding)</td></tr>
   </table>`,
     body: `
   <h2>Base rate</h2>
-  <p>Wild shiny-rate uit Cobblemon-config: <strong>1 / 2048</strong>. Dat is je default in het wild of tijdens vissen.</p>
+  <p>Wild shiny-rate uit Cobblemon-config: <strong>1 / ${shiny}</strong>. Dat is je default in het wild of tijdens vissen.</p>
 
   <h2>Shiny Hour (donatie-event)</h2>
-  <p>Soms funded de community een <strong>Shiny Hour</strong>: <strong>60 minuten</strong> lang zijn wild shiny-odds <strong>2×</strong> voor <strong>iedereen</strong> online (1/2048 → 1/1024). Server-wide event — geen persoonlijke donor-boost.</p>
+  <p>Soms funded de community een <strong>Shiny Hour</strong>: <strong>60 minuten</strong> lang zijn wild shiny-odds <strong>2×</strong> voor <strong>iedereen</strong> online (1/${shiny} → 1/${Math.round(shiny / 2)}). Server-wide event — geen persoonlijke donor-boost.</p>
   <ul>
     <li>Fund via PayPal (notitie <code>Shiny Hour</code> + Discord-naam) — zie Discord announcements / donations.</li>
     <li>Alleen <strong>nieuwe</strong> wild-/vis-spawns gebruiken de boost.</li>
@@ -1834,11 +2098,11 @@ export function registerDutchSite({
   <h2>Breeding shiny-methodes (CobBreeding)</h2>
   <p>Egg-rolls kunnen method-multipliers gebruiken. Nog steeds zeldzaam — geen “zo klaar”.</p>
   <table class="wikitable">
-    <thead><tr><th>Methode</th><th>Multiplier</th><th>Rough (alleen die multiplier op 1/2048)</th></tr></thead>
+    <thead><tr><th>Methode</th><th>Multiplier</th><th>Rough (alleen die multiplier op 1/${shiny})</th></tr></thead>
     <tbody>
-      <tr><td><strong>Masuda</strong></td><td>×2</td><td>~1 / 1024</td></tr>
-      <tr><td><strong>Crystal</strong></td><td>×2</td><td>~1 / 1024</td></tr>
-      <tr><td><strong>Always</strong></td><td>×8</td><td>~1 / 256</td></tr>
+      <tr><td><strong>Masuda</strong></td><td>×${rates.breeding?.shinyMethod?.masuda ?? 2}</td><td>~1 / ${Math.round(shiny / (rates.breeding?.shinyMethod?.masuda ?? 2))}</td></tr>
+      <tr><td><strong>Crystal</strong></td><td>×${rates.breeding?.shinyMethod?.crystal ?? 2}</td><td>~1 / ${Math.round(shiny / (rates.breeding?.shinyMethod?.crystal ?? 2))}</td></tr>
+      <tr><td><strong>Always</strong></td><td>×${rates.breeding?.shinyMethod?.always ?? 8}</td><td>~1 / ${Math.round(shiny / (rates.breeding?.shinyMethod?.always ?? 8))}</td></tr>
     </tbody>
   </table>
   ${critical(
@@ -1848,8 +2112,8 @@ export function registerDutchSite({
 
   <h2>Praktische loops</h2>
   <ol class="steps">
-    <li><strong>Wild / vissen:</strong> goede biomes + balls-farm. Lange hunts bij 1/2048 — <a href="Fishing.html">Vissen</a> · <a href="Spawn_Lookup.html">Spawn-lookup</a>.</li>
-    <li><strong>Broeden:</strong> geclaimde pasture, Ditto + target, Masuda-style als het kan — ~7–15 min eggs — <a href="Breeding.html">Broeden</a>.</li>
+    <li><strong>Wild / vissen:</strong> goede biomes + balls-farm. Lange hunts bij 1/${shiny} — <a href="Fishing.html">Vissen</a> · <a href="Spawn_Lookup.html">Spawn-lookup</a>.</li>
+    <li><strong>Broeden:</strong> geclaimde pasture, Ditto + target, Masuda-style als het kan — ~${Math.round((rates.breeding?.minBreedingTimeInTicks ?? 8400) / 20 / 60)}–${Math.round((rates.breeding?.maxBreedingTimeInTicks ?? 18000) / 20 / 60)} min eggs — <a href="Breeding.html">Broeden</a>.</li>
     <li><strong>Food-buffs:</strong> CobbleCuisine kan tijdelijke shiny-boosts geven — check tooltips.</li>
     <li><strong>Gyms eerst:</strong> een shiny verhoogt de level cap niet.</li>
   </ol>
@@ -1872,14 +2136,14 @@ export function registerDutchSite({
     lede: "Wat Mega Showdown toelaat op PokeHaven EU, plus een praktische checklist na Kanto — vóór Johto, raids of legendaries.",
     infobox: `<div class="infobox-title">Mega Showdown (pack)</div>
   <table>
-    <tr><th>Mega Evolution</th><td>Aan</td></tr>
-    <tr><th>Z-Moves</th><td>Aan</td></tr>
-    <tr><th>Terastallization</th><td>Aan</td></tr>
-    <tr><th>Dynamax</th><td>Aan (power spots)</td></tr>
-    <tr><th>Multiple Megas</th><td>Toegestaan</td></tr>
-    <tr><th>Dynamax overal?</th><td>Nee</td></tr>
-    <tr><th>Power spot range</th><td>32 blocks</td></tr>
-    <tr><th>Tera shards voor Tera</th><td>50</td></tr>
+    <tr><th>Mega Evolution</th><td>${rates.mega?.mega ? "Aan" : "Uit"}</td></tr>
+    <tr><th>Z-Moves</th><td>${rates.mega?.zMoves ? "Aan" : "Uit"}</td></tr>
+    <tr><th>Terastallization</th><td>${rates.mega?.teralization ? "Aan" : "Uit"}</td></tr>
+    <tr><th>Dynamax</th><td>${rates.mega?.dynamax ? "Aan (power spots)" : "Uit"}</td></tr>
+    <tr><th>Multiple Megas</th><td>${rates.mega?.multipleMegas ? "Toegestaan" : "Eén tegelijk"}</td></tr>
+    <tr><th>Dynamax overal?</th><td>${rates.mega?.dynamaxAnywhere ? "Ja" : "Nee"}</td></tr>
+    <tr><th>Power spot range</th><td>${rates.mega?.powerSpotRange ?? 32} blocks</td></tr>
+    <tr><th>Tera shards voor Tera</th><td>${rates.mega?.teraShardRequired ?? 50}</td></tr>
   </table>`,
     body: `
   <h2>Prioriteit op PokeHaven</h2>
@@ -1910,15 +2174,15 @@ export function registerDutchSite({
 
   <h2>Terastallization</h2>
   <ul>
-    <li>Aan. Pack vraagt <strong>50 Tera Shards</strong> van het juiste type (<code>teraShardRequired</code>).</li>
-    <li>Drop-weights in config: gewone Tera shards <strong>10</strong>, Stellar <strong>1</strong> — farm via mod-bronnen / REI.</li>
-    <li>Cobblemon wild <strong>tera type rate</strong> op dit pack: <strong>20</strong> — Tera’d wilds kunnen spawnen; dat is niet hetzelfde als jouw Tera Orb-progress.</li>
+    <li>Aan. Pack vraagt <strong>${rates.mega?.teraShardRequired ?? 50} Tera Shards</strong> van het juiste type (<code>teraShardRequired</code>).</li>
+    <li>Drop-weights in config: gewone Tera shards <strong>${rates.mega?.teraShardDropRate ?? 10}</strong>, Stellar <strong>${rates.mega?.stellarShardDropRate ?? 1}</strong> — farm via mod-bronnen / REI.</li>
+    <li>Cobblemon wild <strong>tera type rate</strong> op dit pack: <strong>${rates.cobblemon?.teraTypeRate ?? 20}</strong> — Tera’d wilds kunnen spawnen; dat is niet hetzelfde als jouw Tera Orb-progress.</li>
   </ul>
 
   <h2>Dynamax</h2>
   <ul>
-    <li>Aan, maar <strong>niet overal</strong> — je hebt een <strong>power spot</strong> nodig binnen ca. <strong>32 blocks</strong>.</li>
-    <li>Cobblemon max Dynamax level: <strong>10</strong>.</li>
+    <li>Aan, maar <strong>niet overal</strong> — je hebt een <strong>power spot</strong> nodig binnen ca. <strong>${rates.mega?.powerSpotRange ?? 32} blocks</strong>.</li>
+    <li>Cobblemon max Dynamax level: <strong>${rates.cobblemon?.maxDynamaxLevel ?? 10}</strong>.</li>
     <li>Gerelateerd craft: <strong>Star Core</strong> (Wishing Star + gems) — check REI.</li>
   </ul>
 
@@ -2164,14 +2428,14 @@ export function registerDutchSite({
   <ol class="steps">
     <li>Stuur een rideable Pokémon uit met <kbd>R</kbd>.</li>
     <li>Houd <kbd>Shift</kbd> in en rechtsklik → kies <strong>Ride</strong>.</li>
-    <li>Beweeg met WASD + muis. Afstappen met <kbd>R</kbd> of sneak.</li>
+    <li>Beweeg met WASD + muis. Afstappen met <kbd>X</kbd> of sneak (<kbd>R</kbd> is werpen/recall).</li>
   </ol>
   <table class="wikitable">
     <thead><tr><th>Actie</th><th>Standaard</th></tr></thead>
     <tbody>
       <tr><td>Uitsturen / recall</td><td><kbd>R</kbd></td></tr>
       <tr><td>Interact-menu</td><td><kbd>Shift</kbd> + rechtsklik</td></tr>
-      <tr><td>Afstappen</td><td><kbd>R</kbd> of sneak</td></tr>
+      <tr><td>Afstappen</td><td><kbd>X</kbd> of sneak</td></tr>
     </tbody>
   </table>
   <div class="callout tip">
@@ -2226,6 +2490,11 @@ export function registerDutchSite({
     "Top-down wheat farm setup",
     { large: true, diagram: true }
   )}
+  <h2>Pack-notitie: No Hunger-datapack</h2>
+  <p>CobbleVerse draait een <strong>No Hunger</strong>-datapack. Klassieke hongerdruk is dus verminderd/weggehaald vergeleken met vanilla.
+  Je wilt nog steeds farms voor <em>emerald-trades</em>, dierenfok en sommige healing-foods — niet alleen om een hongerbalk te vullen.</p>
+  <p>Details: <a href="Pack_Differences.html">Pack-verschillen</a>.</p>
+
   <h2>Wheat → emeralds → PokéDollars</h2>
   <ol class="steps">
     <li>Breek gras voor seeds; craft een hoe.</li>
@@ -2234,7 +2503,16 @@ export function registerDutchSite({
     <li>Trade een Farmer voor emeralds.</li>
     <li>Verkoop emeralds bij de Bank — zie <a href="Economy.html">Economie</a>.</li>
   </ol>
-  <p>Uitgebreide EN-gids: <a href="../../pages/Farming_and_Food.html">Farming and food (EN)</a>.</p>
+
+  <h2>Andere nuttige farms</h2>
+  <ul>
+    <li><strong>Apricorns</strong> — balls (<a href="Poke_Balls.html">gids</a>)</li>
+    <li><strong>Suikerriet / papier</strong> — Empty Maps voor gym-maps</li>
+    <li><strong>Dieren</strong> — leer, eten, restjes om te ruilen</li>
+    <li><strong>Kelp / seagrass</strong> — Misty-map-items hebben <strong>Shears</strong> nodig voor seagrass</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Villages_and_Trading.html">Dorpen</a> · <a href="Essential_Recipes.html">Essentiële recepten</a></p>
   ${navboxCore()}
   `,
   });
@@ -2385,8 +2663,8 @@ export function registerDutchSite({
     <li>Breek geen job-site blocks van een dorp dat iemand duidelijk gebruikt zonder te vragen.</li>
   </ul>
   <h2>Speler-trades</h2>
-  <p>Geen forced auction house. Trade te goeder trouw, bij voorkeur in claims/public hubs, en drop geen valuables vóór je de deal vertrouwt. Scam = staff + screenshots.</p>
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Farming_and_Food.html">Farms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Economy.html">Economie</a></p>
+  <p>Geen forced auction house. Trade te goeder trouw, bij voorkeur in claims/public hubs, en drop geen valuables vóór je de deal vertrouwt. Scam = staff + screenshots. Quest-hoofdstuk: <strong>Trade Hall</strong> (speler-trades + trade-evoluties) — <a href="Quests.html">Quests</a>.</p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Farming_and_Food.html">Farms</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Economy.html">Economie</a> · <a href="Quests.html">Quests</a></p>
   ${navboxCore()}
   `,
   });
@@ -2487,26 +2765,99 @@ export function registerDutchSite({
   `,
   });
 
-  // Remaining short NL stubs
-  const mcPages = [
-    ["Tools_and_Mining.html", "Tools & mining", "Koper en ijzer vroeg, light je caves, sterf niet dom in lava."],
-    ["Minecraft_Basics.html", "Minecraft-basics", "Korte primer als je nieuw bent in Java survival."],
-  ];
-  for (const [file, title, lede] of mcPages) {
-    track(file, {
-      title,
-      breadcrumbs: crumbs(
-        { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
-        { label: title, href: file }
-      ),
-      lede,
-      body: `
-  <p>${esc(lede)}</p>
-  <p>Uitgebreide Engelse gids: <a href="../../pages/${file}">${esc(title)} (EN)</a>. Terug naar de <a href="Minecraft_Hub.html">Minecraft-hub</a>.</p>
+  track("Tools_and_Mining.html", {
+    title: "Tools & mining",
+    breadcrumbs: crumbs(
+      { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
+      { label: "Tools & mining", href: "Tools_and_Mining.html" }
+    ),
+    lede: "Zonder een normale Minecraft-tool-ladder craft je geen Poké Balls of gear. Dit is de korte, pack-gerichte versie.",
+    body: `
+  <h2>Tool-ladder</h2>
+  <pre>Hout → Steen → IJzer → Diamant → Netherite</pre>
+  <table class="wikitable">
+    <thead><tr><th>Tier</th><th>Waarom je dit nodig hebt op PokeHaven</th></tr></thead>
+    <tbody>
+      <tr><td>Hout</td><td>Eerste pickaxe/axe/sword — enkele minuten</td></tr>
+      <tr><td>Steen</td><td>Minimum om betrouwbaar ijzer + koper te minen</td></tr>
+      <tr><td>IJzer</td><td>Armor, shears, shield, Great Ball-cores, buckets</td></tr>
+      <tr><td>Diamant</td><td>Veilige caves / Nether-voorbereiding</td></tr>
+      <tr><td>Netherite</td><td>Late-game duurzaamheid (optioneel voor gyms)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Ertsen die er vroeg toe doen</h2>
+  <ul>
+    <li><strong>Koper</strong> — Poké Ball-cores (<a href="Poke_Balls.html">Poké Balls</a>)</li>
+    <li><strong>IJzer</strong> — tools, shears, Great Balls, rails/buckets</li>
+    <li><strong>Steenkool</strong> — toortsen + smelten</li>
+    <li><strong>Goud</strong> — Ultra Ball-cores, powered rails, piglin-trades</li>
+    <li><strong>Diamanten</strong> — armor voor zware gyms / de Nether</li>
+  </ul>
+
+  <h2>Veilige mine-loop</h2>
+  <ol class="steps">
+    <li>Craft stenen tools + 20+ toortsen.</li>
+    <li>Branch-mine of volg grotten; plaats toortsen zodat je terug kunt.</li>
+    <li>Neem eten mee, ook al is honger anders — zie <a href="Farming_and_Food.html">Farms &amp; eten</a>.</li>
+    <li>Houd een bed-/waystone-netwerk aan zodat de dood geen 2000-block-wandeling wordt (<a href="Travel.html">Reizen</a>).</li>
+    <li>Claim je erts-dumpchests (<a href="Claims.html">Claims</a>).</li>
+  </ol>
+
+  <div class="callout tip">
+    <div class="label">Gym-reiskit</div>
+    Pickaxe + eten + balls + heals + toortsen. Je breekt onderweg vaker steen en hebt vaker koper nodig dan je denkt.
+  </div>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Nether_Guide.html">Nether</a></p>
   ${navboxCore()}
   `,
-    });
-  }
+  });
+
+  track("Minecraft_Basics.html", {
+    title: "Minecraft-basics",
+    breadcrumbs: crumbs(
+      { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
+      { label: "Minecraft-basics", href: "Minecraft_Basics.html" }
+    ),
+    lede: "Korte cursus voor trainers die nooit vanilla Minecraft speelden — net genoeg om niet vast te lopen bij tools of farms.",
+    body: `
+  <h2>Tool-progressie</h2>
+  <pre>Hout → Steen → IJzer → Diamant → Netherite</pre>
+  <p>Zelfde vormen, betere materialen. Een <strong>stenen pickaxe</strong> is het minimum om betrouwbaar bij koper/ijzer te komen.</p>
+
+  <h2>Wheat → emeralds → PokéDollars</h2>
+  ${figure(
+    guideImg("farm-loop.png"),
+    "<strong>Farm naar cash.</strong> Kweek wheat, ruil een Farmer-villager voor emeralds, verkoop emeralds bij de Bank.",
+    "Wheat-farm en villager-trades"
+  )}
+  <h3>Farm setup voorbeeld</h3>
+  ${figure(
+    guideImg("farm-setup-example.png"),
+    "<strong>Farm setup voorbeeld.</strong> Waterkanalen tussen crop-rijen — klik om te vergroten.",
+    "Top-down wheat farm setup",
+    { large: true, diagram: true }
+  )}
+  <ol class="steps">
+    <li>Breek gras tot je seeds hebt.</li>
+    <li>Craft een hoe; ploeg dirt binnen 4 blocks van water (farmland).</li>
+    <li>Trap niet op crops door erop te springen.</li>
+    <li>Oogst → ruil met een Farmer → verkoop emeralds bij de Bank.</li>
+    <li>Koop balls/heals of craft ze zelf.</li>
+  </ol>
+
+  <h2>Inventaris &amp; recepten</h2>
+  <ul>
+    <li><kbd>E</kbd> opent inventaris + receptenbrowser.</li>
+    <li>Zoek itemnamen in plaats van grids uit je hoofd te leren.</li>
+    <li>Hotbar (onderste 9 slots) = wat je meteen kunt gebruiken.</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Economy.html">Economie</a> · <a href="Poke_Balls.html">Poké Balls</a></p>
+  ${navboxCore()}
+  `,
+  });
 
   track("Recipe_Browser.html", {
     title: "Receptenbrowser",

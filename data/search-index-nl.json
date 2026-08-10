@@ -20,7 +20,7 @@
   {
     "title": "Pack-verschillen",
     "href": "pages/Pack_Differences.html",
-    "blurb": "Wat CobbleVerse / PokeHaven anders doet dan vanilla Minecraft of “gewone” Cobblemon.",
+    "blurb": "Waarom losse Minecraft-, Cobblemon- of Lumyverse-pagina's soms niet kloppen op PokeHaven EU — dit doet CobbleVerse 1.7.42 hier echt.",
     "keywords": ""
   },
   {
@@ -38,7 +38,7 @@
   {
     "title": "Economie",
     "href": "pages/Economy.html",
-    "blurb": "Shops, bank en hoe je op PokeHaven EU aan geld komt zonder de server leeg te zuigen.",
+    "blurb": "PokéDollars betalen balls, heals en gemak. Op deze pack verdien je uit gevechten aan ×0.5 — slim verkopen is dus belangrijk.",
     "keywords": "money pokédollars pokedollars bank emerald shop wheat farm"
   },
   {
@@ -64,6 +64,18 @@
     "href": "pages/Quests.html",
     "blurb": "PokeHaven EU heeft een volledig FTB Quests-boek — First Steps, alle gyms tot Sinnoh, plus craft, broeden, raids, Pokédex en legend-doelen. Open met O.",
     "keywords": "ftb quests quest book o first steps settling gym league breeding raid pokedex legend trail"
+  },
+  {
+    "title": "Regio-verkenning",
+    "href": "pages/Region_Exploration.html",
+    "blurb": "Elke league heeft een Exploration-chapter. Pins gebruiken een vaste naamgeving zodat BlueMap, waystones en het questboek allemaal matchen.",
+    "keywords": "exploration chapter waystone pin naming bluemap hub landmark travel farm raid den"
+  },
+  {
+    "title": "Prestige-seizoen",
+    "href": "pages/Prestige_Season.html",
+    "blurb": "Na Sinnoh Champion is de Prestige Ladder de langetermijn-jacht — inclusief Gotta Catch 'Em All (1025 geregistreerd). Seizoenen zijn community-races, geen wipe v",
+    "keywords": "prestige ladder season leaderboard dex race shiny race raid race reset wipe champion 1025 gotta catch em all"
   },
   {
     "title": "Reizen",
@@ -158,7 +170,7 @@
   {
     "title": "Genezen & opslag",
     "href": "pages/Healing_and_Storage.html",
-    "blurb": "Pokémon Centers, Revives, PC en hoe je niet met een dood team vastzit.",
+    "blurb": "Houd je team in leven tussen gyms door, en verlies nooit Pokémon omdat je team vol zat.",
     "keywords": ""
   },
   {
@@ -242,13 +254,13 @@
   {
     "title": "Tools & mining",
     "href": "pages/Tools_and_Mining.html",
-    "blurb": "Koper en ijzer vroeg, light je caves, sterf niet dom in lava.",
+    "blurb": "Zonder een normale Minecraft-tool-ladder craft je geen Poké Balls of gear. Dit is de korte, pack-gerichte versie.",
     "keywords": ""
   },
   {
     "title": "Minecraft-basics",
     "href": "pages/Minecraft_Basics.html",
-    "blurb": "Korte primer als je nieuw bent in Java survival.",
+    "blurb": "Korte cursus voor trainers die nooit vanilla Minecraft speelden — net genoeg om niet vast te lopen bij tools of farms.",
     "keywords": ""
   },
   {

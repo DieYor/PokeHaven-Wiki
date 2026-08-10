@@ -303,6 +303,8 @@ function navboxSystems() {
       <a href="Trainer_Index.html">Trainer index</a>
       <a href="Raid_Bosses.html">Raid bosses</a>
       <a href="Spawn_Lookup.html">Spawn lookup</a>
+      <a href="Region_Exploration.html">Region exploration</a>
+      <a href="Prestige_Season.html">Prestige season</a>
     </div></div>
   </div>`;
 }
@@ -434,6 +436,10 @@ const SEARCH_KEYWORDS = {
     "donate donation paypal tier supporter patron benefactor cosmetic prefix role shiny hour no pay to win",
   "Discord_Commands.html":
     "discord slash command link donate check tiers add set list bot",
+  "Region_Exploration.html":
+    "exploration chapter waystone pin naming bluemap hub landmark travel farm raid den",
+  "Prestige_Season.html":
+    "prestige ladder season leaderboard dex race shiny race raid race reset wipe champion 1025 gotta catch em all",
 };
 
 function writePage(file, opts = {}) {
@@ -470,172 +476,9 @@ function writePage(file, opts = {}) {
   else index.push(entry);
 }
 
-// ---------- Main page ----------
-writePage("index.html", {
-  title: "PokeHaven EU Wiki",
-  searchIndexTitle: "Main Page",
-  breadcrumbs: [{ label: "Main Page", href: "index.html" }],
-  lede: "The player wiki for <strong>PokeHaven EU</strong> — our CobbleVerse 1.7.42 adventure server. Guides, systems, and lookup tools in one place.",
-  body: `
-  <section class="hero" style="min-height:auto;border:1px solid var(--line);border-radius:12px;margin-bottom:1.5rem;">
-    <img class="hero-img" src="assets/wiki-wallpaper.png" alt="" />
-    <div class="hero-inner" style="padding:2.5rem 1.5rem;">
-      <div class="chips" style="margin-bottom:0.75rem;">
-        <span class="chip"><strong>PokeHaven EU</strong></span>
-        <span class="chip">CobbleVerse 1.7.42</span>
-        <span class="chip">OSRS-style player wiki</span>
-      </div>
-      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);margin:0 0 0.5rem;border:0;padding:0;">Train. Battle. Progress.</h2>
-      <p class="hero-lead">Clear guides for new trainers — gyms, money, raids, claims — written for humans, not wiki jargon.</p>
-    </div>
-  </section>
-
-  <h2>For new players</h2>
-  <div class="hub-grid">
-    <a class="hub-card" href="pages/Getting_Started.html"><h3>Getting started</h3><p>Install the pack and join PokeHaven EU.</p></a>
-    <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Claim, Brock, then the Misty loop.</p></a>
-    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>FTB Quests book — First Steps through Sinnoh.</p></a>
-    <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Gyms, level cap, and unlocking regions.</p></a>
-    <a class="hub-card" href="pages/Brock.html"><h3>Brock guide</h3><p>Your first gym: map legend, team tips, full roster.</p></a>
-  </div>
-
-  <h2>Guides</h2>
-  <div class="hub-grid">
-    <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto gyms</h3><p>All eight leaders + Elite Four overview.</p></a>
-    <a class="hub-card" href="pages/Economy.html"><h3>Economy</h3><p>Shop prices, bank sells, how to earn PokéDollars.</p></a>
-    <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Den tiers, rewards, and rules.</p></a>
-    <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Catching &amp; battling</h3><p>Shiny rate, combat gimmicks, wild aggro.</p></a>
-  </div>
-
-  <h2>Systems</h2>
-  <div class="hub-grid">
-    <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>Protect your base with FTB Chunks.</p></a>
-    <a class="hub-card" href="pages/Quests.html"><h3>Quests</h3><p>Quest book (O) and chapter overview.</p></a>
-    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
-    <a class="hub-card" href="pages/Voice_Chat.html"><h3>Voice chat</h3><p>Distances and groups.</p></a>
-    <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Timers and shiny methods.</p></a>
-    <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods, bait, and water catches.</p></a>
-    <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture jobs — crops, berries, furnaces, and more.</p></a>
-  </div>
-
-  <h2>Databases</h2>
-  <div class="hub-grid">
-    <a class="hub-card" href="pages/Trainer_Index.html"><h3>Trainer index</h3><p>${trainers.all.length} named trainers on this server.</p></a>
-    <a class="hub-card" href="pages/Raid_Bosses.html"><h3>Raid bosses</h3><p>${raids.bosses.length} raid boss entries to browse.</p></a>
-    <a class="hub-card" href="pages/Spawn_Lookup.html"><h3>Spawn lookup</h3><p>Search ${spawns.length} spawn rows by Pokémon or biome.</p></a>
-    <a class="hub-card" href="pages/FAQ.html"><h3>FAQ</h3><p>Level cap, join issues, common mistakes.</p></a>
-    <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Rules &amp; commands</h3><p>Server rules, /pc, keybinds.</p></a>
-  </div>
-
-  <div class="callout tip">
-    <div class="label">Server vs pack</div>
-    <strong>PokeHaven EU</strong> is our multiplayer server.
-    <strong>CobbleVerse 1.7.42</strong> is the modpack you install.
-  </div>
-  `,
-});
-
-// ---------- Getting started ----------
-writePage("Getting_Started.html", {
-  title: "Getting started",
-  breadcrumbs: [
-    { label: "Main Page", href: "../index.html" },
-    { label: "Getting started", href: "Getting_Started.html" },
-  ],
-  lede: "How to install the <strong>PokeHaven EU Client 1.7.42</strong> and join the server.",
-  body: `
-  <h2>Requirements</h2>
-  <ul>
-    <li>Minecraft <strong>Java Edition</strong> (Microsoft account)</li>
-    <li><strong>CurseForge</strong> app</li>
-    <li>Our <strong>PokeHaven EU Client 1.7.42</strong> zip from Discord <code>#how-to-join</code> (CobbleVerse + PokeHaven menus/splash)</li>
-  </ul>
-
-  <h2>Install steps</h2>
-  <ol class="steps">
-    <li>Install CurseForge and sign in.</li>
-    <li>Create Custom Profile → <strong>Import</strong> <code>PokeHaven-EU-Client-1.7.42.zip</code>.</li>
-    <li>Wait for every mod/resource to finish downloading.</li>
-    <li>Launch once to the main menu (you should see <strong>PokeHaven EU</strong> branding), quit, launch again if packs look unfinished.</li>
-    <li>Multiplayer → <strong>Add Server</strong>:<br/>
-      Server Name: <code>PokeHaven EU</code><br/>
-      Server Address: the IP from Discord <code>#how-to-join</code> / announcements.</li>
-  </ol>
-
-  ${critical(
-    "en",
-    "<strong>Can't join?</strong> Almost always a pack version mismatch. Re-import <strong>PokeHaven EU Client 1.7.42</strong> from Discord. Copy the IP from Discord — never from old screenshots."
-  )}
-
-  <h2>Important words</h2>
-  <table class="wikitable">
-    <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
-    <tbody>
-      <tr><td>Level cap</td><td>Your Pokémon stop gaining levels until you beat the next gym leader. Not a bug.</td></tr>
-      <tr><td>Claim</td><td>Mark land as yours so others cannot break or steal.</td></tr>
-      <tr><td>Waystone</td><td>Teleport stone — right-click to activate, then travel between activated stones.</td></tr>
-      <tr><td>Recipe list</td><td>With inventory open (<kbd>E</kbd>), use the side search to look up crafts (REI).</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Next</h2>
-  <ul>
-    <li><a href="First_Hours.html">First hours</a></li>
-    <li><a href="Progression.html">Progression</a></li>
-  </ul>
-  ${navboxSystems().replace(/href="/g, 'href="')}
-  `,
-});
-
-writePage("First_Hours.html", {
-  title: "First hours",
-  breadcrumbs: [
-    { label: "Main Page", href: "../index.html" },
-    { label: "First hours", href: "First_Hours.html" },
-  ],
-  lede: "Do these in order. Skipping steps is how people lose items or get stuck.",
-  body: `
-  <figure class="figure">
-    <img src="../assets/hud.png" alt="Example HUD with party and minimap" />
-    <figcaption><strong>HUD.</strong> Left: party. Top-right: minimap + coordinates. Bottom: hotbar with starter gear.</figcaption>
-  </figure>
-
-  <h2>Checklist</h2>
-  <ol class="steps">
-    <li>Press <kbd>C</kbd> and pick a starter. Grass (Bulbasaur line) is easiest into Brock.</li>
-    <li>Open inventory (<kbd>E</kbd>) and confirm: guide book, Brock map kit (cartography table + key + Empty Map), Poké Balls, berries, Trainer Card.</li>
-    <li>Place a bed and sleep once — that is your respawn.</li>
-    <li>If spawn has a waystone, right-click it to unlock teleport later.</li>
-    <li>Skim the guide book.</li>
-    <li>Spend 15–30 minutes catching nearby Pokémon for a tiny team.</li>
-    <li>Claim land around your bed and chests (<a href="Claims.html">Claims</a>) before you leave valuables out.</li>
-  </ol>
-
-  <h2>Useful keys</h2>
-  <table class="wikitable">
-    <thead><tr><th>Action</th><th>Key</th></tr></thead>
-    <tbody>
-      <tr><td>Open party / starter</td><td><kbd>C</kbd></td></tr>
-      <tr><td>Select which Pokémon to send</td><td><kbd>↑</kbd> <kbd>↓</kbd></td></tr>
-      <tr><td>Send out / recall</td><td><kbd>R</kbd></td></tr>
-      <tr><td>Ride</td><td><kbd>Shift</kbd> + right-click → Ride</td></tr>
-      <tr><td>PC storage</td><td><code>/pc</code> or a PC block</td></tr>
-    </tbody>
-  </table>
-
-  ${critical(
-    "en",
-    "Moving Bulbasaur to slot 1 does nothing if another Pokémon is still <strong>selected</strong>. Arrow-key until the right one is highlighted, then <kbd>R</kbd>."
-  )}
-
-  <h2>After hour one</h2>
-  <ul>
-    <li><strong>Good:</strong> starter + 2–3 catches, food, bed, claim, stone tools, Brock gym map on hotbar.</li>
-    <li><strong>Not yet:</strong> palace building, Nether deep dives, legendary hunts, blowing money on luxury shop junk.</li>
-  </ul>
-  <p class="see-also"><strong>See also:</strong> <a href="Brock.html">Brock</a> · <a href="Gym_Maps.html">Gym maps</a></p>
-  `,
-});
+// index.html, Getting_Started.html, and First_Hours.html are written later
+// (index.html near the bottom of this file; Getting_Started.html and First_Hours.html
+// in deep-pages.js) — those later calls are the ones that actually ship.
 
 const shiny = rates.cobblemon?.shinyRate ?? 2048;
 const xpMult = rates.cobblemon?.experienceMultiplier ?? 2;
@@ -666,6 +509,8 @@ function capLadderRows(leaders) {
 
 const kantoCapLadderRows = capLadderRows(trainers.kantoLeaders);
 const johtoCapLadderRows = capLadderRows(trainers.johtoLeaders);
+const hoennCapLadderRows = capLadderRows(trainers.hoennLeaders);
+const sinnohCapLadderRows = capLadderRows(trainers.sinnohLeaders);
 
 function mapItemLabel(g) {
   if (g.slug === "Brock") return "Brock Map Key";
@@ -1305,6 +1150,20 @@ writePage("Level_Cap.html", {
     <tbody>${johtoCapLadderRows}</tbody>
   </table>
 
+  <h2>Hoenn ladder (approx)</h2>
+  <p>Same rule after the Hoenn Trainer Card. Overview: <a href="Gyms_Hoenn.html">Hoenn gyms</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Next target</th><th>Badge / role</th><th>Type</th><th>Team max lv</th><th>Approx cap</th></tr></thead>
+    <tbody>${hoennCapLadderRows}</tbody>
+  </table>
+
+  <h2>Sinnoh ladder (approx)</h2>
+  <p>Same rule after the Sinnoh Trainer Card — the last region in the current gym line. Overview: <a href="Gyms_Sinnoh.html">Sinnoh gyms</a>.</p>
+  <table class="wikitable">
+    <thead><tr><th>Next target</th><th>Badge / role</th><th>Type</th><th>Team max lv</th><th>Approx cap</th></tr></thead>
+    <tbody>${sinnohCapLadderRows}</tbody>
+  </table>
+
   <h2>XP looks broken?</h2>
   <ol class="steps">
     <li>Open your <strong>Trainer Card</strong> and see which gym is next.</li>
@@ -1313,7 +1172,7 @@ writePage("Level_Cap.html", {
     <li>Beat the leader; the cap rises and XP sticks again.</li>
   </ol>
 
-  <p class="see-also"><strong>See also:</strong> <a href="Progression.html">Progression</a> · <a href="Gyms_Kanto.html">Kanto gyms</a> · <a href="Gyms_Johto.html">Johto gyms</a> · <a href="FAQ.html">FAQ</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="Progression.html">Progression</a> · <a href="Gyms_Kanto.html">Kanto gyms</a> · <a href="Gyms_Johto.html">Johto gyms</a> · <a href="Gyms_Hoenn.html">Hoenn gyms</a> · <a href="Gyms_Sinnoh.html">Sinnoh gyms</a> · <a href="FAQ.html">FAQ</a></p>
   ${navboxGyms()}
   `,
 });
@@ -1480,169 +1339,8 @@ writePage("Gym_Maps.html", {
   `,
 });
 
-// Economy
-{
-  const shopHtml = economy.shop
-    .map((sec) => {
-      const rows = sec.items
-        .map((i) => `<tr><td>${esc(i.label)}</td><td><code>${esc(i.item)}</code></td><td>${i.price}</td></tr>`)
-        .join("");
-      return `<h3>${esc(sec.section)}</h3>
-      <table class="wikitable"><thead><tr><th>Item</th><th>ID</th><th>Price</th></tr></thead><tbody>${rows}</tbody></table>`;
-    })
-    .join("");
-
-  const bankRows = economy.bank
-    .slice(0, 80)
-    .map((i) => `<tr><td>${esc(i.label)}</td><td><code>${esc(i.item)}</code></td><td>${i.price}</td></tr>`)
-    .join("");
-
-  writePage("Economy.html", {
-    title: "Economy",
-    breadcrumbs: [
-      { label: "Main Page", href: "../index.html" },
-      { label: "Economy", href: "Economy.html" },
-    ],
-    lede: "PokéDollars come from battling, selling, and bounties — not AFK jobs. (The mod is CobbleDollars; players just say PokéDollars.)",
-    infobox: infoboxHtml("Economy", [
-      ["Currency", "PokéDollars (CobbleDollars mod)"],
-      ["Income multiplier", String(economy.incomeMultiplier)],
-      ["Wild payouts", economy.earnFromWild ? "Yes" : "No"],
-      ["NPC trainer payouts", economy.earnFromNpc ? "Yes" : "No"],
-      ["Shop sections", String(economy.shop.length)],
-      ["Bank sell entries", String(economy.bank.length)],
-    ]),
-    body: `
-    <h2>How to earn</h2>
-    <table class="wikitable">
-      <thead><tr><th>Source</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td>Wild battles</td><td>Steady income while exploring (×${esc(economy.incomeMultiplier)} on this pack)</td></tr>
-        <tr><td>Trainers / gyms</td><td>Better payouts for stronger fights</td></tr>
-        <tr><td>Bank (sell items)</td><td>Emeralds, potions, vitamins, relic coins…</td></tr>
-        <tr><td>Bountiful boards</td><td>Village bounty boards</td></tr>
-      </tbody>
-    </table>
-
-    <div class="callout tip">
-      <div class="label">Early money loop</div>
-      Farm wheat → trade farmers for emeralds → sell emeralds at the Bank → buy balls/heals.
-      Shopping Centers are usually cheaper than panic-buying on the road.
-    </div>
-
-    <h2>Default shop prices</h2>
-    ${shopHtml || "<p class='muted'>No shop data found.</p>"}
-
-    <h2>Bank sell prices</h2>
-    <table class="wikitable">
-      <thead><tr><th>Item</th><th>ID</th><th>Sell price</th></tr></thead>
-      <tbody>${bankRows || "<tr><td colspan='3'>No bank rows parsed — check bank.json shape.</td></tr>"}</tbody>
-    </table>
-    ${economy.bank.length > 80 ? `<p class="muted">Showing 80 of ${economy.bank.length} entries (full list in <code>data/economy.json</code>).</p>` : ""}
-    ${navboxSystems()}
-    `,
-  });
-}
-
-// Raids
-{
-  const tierRows = raids.tiers
-    .map(
-      (t) => `<tr>
-      <td>T${t.tier}</td>
-      <td>${esc(t.bossLevel ?? "—")}</td>
-      <td>${esc(t.maxPlayers ?? "—")}</td>
-      <td>${esc(t.ivs ?? "—")}</td>
-      <td>${esc(t.currency ?? "—")}</td>
-      <td>${esc(t.hpMultiplier ?? "—")}</td>
-      <td>${esc(t.maxClears ?? "—")}</td>
-    </tr>`
-    )
-    .join("");
-  const weights = raids.common.tierWeights.map((w, i) => `T${i + 1}: ${w}`).join(" · ");
-
-  writePage("Raids.html", {
-    title: "Raids",
-    breadcrumbs: [
-      { label: "Main Page", href: "../index.html" },
-      { label: "Raids", href: "Raids.html" },
-    ],
-    lede: "Raid dens are crystal fights in the overworld. Bring friends, heals, and type coverage — higher tiers hit harder and pay better.",
-    infobox: infoboxHtml("Raid dens", [
-      ["Spawn chance", `1 / ${raids.common.spawnRate} (overworld)`],
-      ["Reset time", `${raids.common.resetTime}s (${raids.common.resetMode})`],
-      ["Cycle mode", esc(raids.common.cycleMode)],
-      ["Rewards", esc(raids.common.rewardDistribution)],
-      ["Retry fails", raids.common.retryFailed ? "Yes" : "No"],
-      ["Shard energy", String(raids.common.requiredEnergy)],
-      ["Tier weights", esc(weights)],
-    ]),
-    body: `
-    <h2>When to raid</h2>
-    <p>Do early dens when you have a stable party and spare balls. Skip high tiers until your level cap and coverage are ready — wipe = wasted time and items.</p>
-
-    <h2>How a den works</h2>
-    <ol class="steps">
-      <li>Find a raid den crystal in the overworld.</li>
-      <li>Start the raid with heals ready (voice chat helps for parties — <a href="Voice_Chat.html">Voice chat</a>).</li>
-      <li>Deal damage — rewards use <strong>${esc(raids.common.rewardDistribution)}</strong> distribution, so contribute.</li>
-      <li>Dens reset after the timer and can cycle boss/tier.</li>
-    </ol>
-
-    <div class="callout tip">
-      <div class="label">Party tip</div>
-      Bring type answers for the boss, not six of the same mon. Check <a href="Raid_Bosses.html">Raid bosses</a> before you commit.
-    </div>
-
-    <h2>Tier table</h2>
-    <table class="wikitable">
-      <thead><tr><th>Tier</th><th>Boss lv</th><th>Max players</th><th>IVs</th><th>$ reward</th><th>HP ×</th><th>Max clears</th></tr></thead>
-      <tbody>${tierRows}</tbody>
-    </table>
-
-    <p>Full boss list: <a href="Raid_Bosses.html">Raid bosses</a>.</p>
-    ${navboxSystems()}
-    `,
-  });
-}
-
-writePage("Catching_and_Battling.html", {
-  title: "Catching and battling",
-  breadcrumbs: [
-    { label: "Main Page", href: "../index.html" },
-    { label: "Catching and battling", href: "Catching_and_Battling.html" },
-  ],
-  lede: "Core combat rules from the CobbleVerse pack config used on PokeHaven EU.",
-  infobox: infoboxHtml("Combat rates", [
-    ["Shiny rate", `1 / ${shiny}`],
-    ["XP multiplier", String(xpMult)],
-    ["Max Pokémon level", String(rates.cobblemon?.maxPokemonLevel ?? 100)],
-    ["Infinite ride stamina", String(rates.cobblemon?.infiniteRideStamina ?? true)],
-  ]),
-  body: `
-  <h2>Catching basics</h2>
-  <ul>
-    <li>Craft balls from apricorns + metal cores (check REI for exact recipes).</li>
-    <li>Weaken wild Pokémon before throwing.</li>
-    <li>Catch-rate UI mods in the pack show helpful odds.</li>
-    <li>Wild shiny rate is <strong>1 / ${shiny}</strong> — methods and breeding: <a href="Shiny.html">Shiny hunting</a>.</li>
-  </ul>
-
-  <h2>Fight or Flight</h2>
-  <p>Wild Pokémon can aggro. Higher-level wilds may attack unprovoked; failed catches can provoke. Aggressive wilds may not be catchable while hostile — back off, heal, re-engage carefully.</p>
-
-  <h2>Mega / Z / Tera / Dynamax</h2>
-  <p>Mega Showdown is enabled. Full pack settings + a late-Kanto / Johto checklist: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>.</p>
-
-  <h2>Healing &amp; PC</h2>
-  <ul>
-    <li>Pokémon Centers heal the whole party.</li>
-    <li><code>/pc</code> opens storage (also remote PC features via LumyMon where enabled).</li>
-    <li>Keep Revives for gym runs.</li>
-  </ul>
-  ${navboxSystems()}
-  `,
-});
+// Economy.html, Raids.html, and Catching_and_Battling.html are written later
+// in deep-pages.js — those later calls are the ones that actually ship.
 
 writePage("Breeding.html", {
   title: "Breeding",
@@ -1776,14 +1474,14 @@ writePage("Mega_and_Late_Game.html", {
   ],
   lede: "What Mega Showdown allows on PokeHaven EU, and a practical checklist after Kanto — before you dive into Johto, raids, or legendaries.",
   infobox: infoboxHtml("Mega Showdown (pack)", [
-    ["Mega Evolution", "On"],
-    ["Z-Moves", "On"],
-    ["Terastallization", "On"],
-    ["Dynamax", "On (power spots)"],
-    ["Multiple Megas", "Allowed"],
-    ["Dynamax anywhere?", "No"],
-    ["Power spot range", "32 blocks"],
-    ["Tera shards to Tera", "50"],
+    ["Mega Evolution", rates.mega?.mega ? "On" : "Off"],
+    ["Z-Moves", rates.mega?.zMoves ? "On" : "Off"],
+    ["Terastallization", rates.mega?.teralization ? "On" : "Off"],
+    ["Dynamax", rates.mega?.dynamax ? "On (power spots)" : "Off"],
+    ["Multiple Megas", rates.mega?.multipleMegas ? "Allowed" : "One at a time"],
+    ["Dynamax anywhere?", rates.mega?.dynamaxAnywhere ? "Yes" : "No"],
+    ["Power spot range", `${rates.mega?.powerSpotRange ?? 32} blocks`],
+    ["Tera shards to Tera", String(rates.mega?.teraShardRequired ?? 50)],
   ]),
   body: `
   <h2>Priority on PokeHaven</h2>
@@ -1814,15 +1512,15 @@ writePage("Mega_and_Late_Game.html", {
 
   <h2>Terastallization</h2>
   <ul>
-    <li>Enabled. Pack requires <strong>50 Tera Shards</strong> of the matching type to Terastallize (config <code>teraShardRequired</code>).</li>
-    <li>Shard drop rates in config: common Tera shards <strong>10</strong>, Stellar shards <strong>1</strong> (relative drop weighting — farm via the mod’s shard sources / REI).</li>
-    <li>Cobblemon also sets a wild <strong>tera type rate</strong> of <strong>20</strong> on this pack — Tera’d wilds can appear; don’t confuse that with your own Tera Orb progress.</li>
+    <li>Enabled. Pack requires <strong>${rates.mega?.teraShardRequired ?? 50} Tera Shards</strong> of the matching type to Terastallize (config <code>teraShardRequired</code>).</li>
+    <li>Shard drop rates in config: common Tera shards <strong>${rates.mega?.teraShardDropRate ?? 10}</strong>, Stellar shards <strong>${rates.mega?.stellarShardDropRate ?? 1}</strong> (relative drop weighting — farm via the mod’s shard sources / REI).</li>
+    <li>Cobblemon also sets a wild <strong>tera type rate</strong> of <strong>${rates.cobblemon?.teraTypeRate ?? 20}</strong> on this pack — Tera’d wilds can appear; don’t confuse that with your own Tera Orb progress.</li>
   </ul>
 
   <h2>Dynamax</h2>
   <ul>
-    <li>Enabled, but <strong>not anywhere</strong> — you need a <strong>power spot</strong> within about <strong>32 blocks</strong>.</li>
-    <li>Cobblemon max Dynamax level on this pack: <strong>10</strong>.</li>
+    <li>Enabled, but <strong>not anywhere</strong> — you need a <strong>power spot</strong> within about <strong>${rates.mega?.powerSpotRange ?? 32} blocks</strong>.</li>
+    <li>Cobblemon max Dynamax level on this pack: <strong>${rates.cobblemon?.maxDynamaxLevel ?? 10}</strong>.</li>
     <li>Scale factor is large in config — watch space and friendly fire in crowded dens.</li>
     <li>Related craft in datapack recipes: <strong>Star Core</strong> (uses a Wishing Star + gems) — check REI for the grid.</li>
   </ul>
@@ -2072,29 +1770,7 @@ writePage("Cobbleworkers.html", {
   `,
 });
 
-writePage("Claims.html", {
-  title: "Claims",
-  breadcrumbs: [
-    { label: "Main Page", href: "../index.html" },
-    { label: "Claims", href: "Claims.html" },
-  ],
-  lede: "Protect chests, farms, and waystones. On PokeHaven EU, use <strong>FTB Chunks</strong>.",
-  body: `
-  <h2>How to claim</h2>
-  <ol class="steps">
-    <li>Press <kbd>U</kbd> for the Claim Manager, or <kbd>M</kbd> for the FTB Chunks map.</li>
-    <li>Claim chunks around your bed, chests, farm, and waystone.</li>
-    <li>Claim a buffer — not only the exact footprint of your house.</li>
-    <li>Playing together? Create an FTB Team so you share access.</li>
-  </ol>
-  ${critical(
-    "en",
-    "<strong>Stick to FTB Chunks only.</strong> The pack also ships another claims mod — do not mix both on the same base."
-  )}
-  <p>Pack configs allow large claim budgets (hundreds of chunks). Still claim only what you use.</p>
-  ${navboxSystems()}
-  `,
-});
+// Claims.html is written later in deep-pages.js — that later call is the one that actually ships.
 
 writePage("Quests.html", {
   title: "Quests",
@@ -2160,12 +1836,108 @@ writePage("Quests.html", {
     <li><strong>Lost progress after update?</strong> First Steps IDs are frozen on purpose. If something else looks wrong, Discord <code>#tickets</code> with a screenshot of the book.</li>
   </ul>
 
-  <p class="see-also"><strong>See also:</strong> <a href="First_Hours.html">First hours</a> · <a href="Progression.html">Progression</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Achievements.html">Achievements</a></p>
+  <p class="see-also"><strong>See also:</strong> <a href="First_Hours.html">First hours</a> · <a href="Progression.html">Progression</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Achievements.html">Achievements</a> · <a href="Region_Exploration.html">Region exploration</a> · <a href="Prestige_Season.html">Prestige season</a></p>
   ${navboxSystems()}
   `,
 });
 
 // Travel.html is written in deep-pages.js (full guide).
+
+writePage("Region_Exploration.html", {
+  title: "Region exploration",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Quests", href: "Quests.html" },
+    { label: "Region exploration", href: "Region_Exploration.html" },
+  ],
+  lede: "Each league has an <strong>Exploration</strong> chapter. Pins use a fixed naming scheme so BlueMap, waystones, and the quest book all match.",
+  infobox: `<div class="infobox-title">Atlas</div>
+  <table>
+    <tr><th>Tool</th><td><a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">BlueMap</a></td></tr>
+    <tr><th>Maps</th><td><a href="Gym_Maps.html">Gym maps</a></td></tr>
+    <tr><th>Travel</th><td><a href="Travel.html">Waystones</a></td></tr>
+  </table>`,
+  body: `
+  <h2>Pin naming (use exactly)</h2>
+  <p>Activate a waystone, then rename it. Staff and other players should recognize these names on BlueMap / shared lists.</p>
+  <table class="wikitable">
+    <thead><tr><th>Region</th><th>First gym pin</th><th>Hub / camp</th><th>Landmark pin</th><th>Second travel pin</th></tr></thead>
+    <tbody>
+      <tr><td>Kanto</td><td><code>Kanto-Misty</code></td><td><code>Kanto-Hub</code></td><td><code>Kanto-Indigo</code></td><td><code>Kanto-Raid</code> or <code>Kanto-Farm</code></td></tr>
+      <tr><td>Johto</td><td><code>Johto-Valerio</code></td><td><code>Johto-Hub</code></td><td><code>Johto-League</code></td><td><code>Johto-Raid</code> or <code>Johto-Farm</code></td></tr>
+      <tr><td>Hoenn</td><td><code>Hoenn-Petra</code></td><td><code>Hoenn-Hub</code></td><td><code>Hoenn-League</code></td><td><code>Hoenn-Raid</code> or <code>Hoenn-Farm</code></td></tr>
+      <tr><td>Sinnoh</td><td><code>Sinnoh-Pedro</code></td><td><code>Sinnoh-Hub</code></td><td><code>Sinnoh-League</code></td><td><code>Sinnoh-Raid</code> or <code>Sinnoh-Farm</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Per-region checklist</h2>
+  <ol class="steps">
+    <li>Open <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">BlueMap</a> and find the region before you wander.</li>
+    <li>Craft the <strong>first gym map</strong> on that region's cartography table (<a href="Gym_Maps.html">how</a>). Never open Empty Maps in the world.</li>
+    <li>Place/activate <code>{Region}-{FirstLeader}</code> at the gym approach.</li>
+    <li>Walk until the first-leader road is obvious (Kanto → <a href="Misty.html">Misty</a>, Johto → <a href="Valerio.html">Valerio</a>, Hoenn → <a href="Petra.html">Petra</a>, Sinnoh → <a href="Pedro.html">Pedro</a>).</li>
+    <li>Catch the typed wild listed in the quest, then pin the <strong>landmark</strong> (Indigo / League approach).</li>
+    <li>Add a second pin for raid dens or a farm loop.</li>
+  </ol>
+  <div class="callout tip">
+    <div class="label">Coordinates</div>
+    Finished gym maps show X/Z when you hover them. World seeds can change those numbers — trust the crafted map + BlueMap over old screenshots.
+  </div>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Quests.html">Quests</a> · <a href="Travel.html">Travel</a> · <a href="Gyms_Kanto.html">Kanto gyms</a></p>
+  ${navboxSystems()}
+  `,
+});
+
+writePage("Prestige_Season.html", {
+  title: "Prestige season",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Quests", href: "Quests.html" },
+    { label: "Prestige season", href: "Prestige_Season.html" },
+  ],
+  lede: "After Sinnoh Champion, the <strong>Prestige Ladder</strong> is the long-term chase — including <em>Gotta Catch 'Em All</em> (1025 registered). Seasons are community races, not a wipe of your league badges.",
+  infobox: `<div class="infobox-title">Prestige</div>
+  <table>
+    <tr><th>Unlock</th><td>Sinnoh Champion</td></tr>
+    <tr><th>Crown</th><td>1025 registered</td></tr>
+    <tr><th>Capstone</th><td>PokeHaven Prestige Champion</td></tr>
+    <tr><th>Board</th><td>Discord announcements</td></tr>
+  </table>`,
+  body: `
+  <h2>What counts</h2>
+  <ul>
+    <li><strong>Pokédex registers</strong> — milestones at 400 / 500 / 600 / 700 / 800 / 851 / <strong>1025</strong></li>
+    <li><strong>Volume goals</strong> — 5 shinies, 50 raid wins, 50 eggs hatched, 500 catches</li>
+    <li><strong>Capstone</strong> — finish the ladder for <em>PokeHaven Prestige Champion</em></li>
+  </ul>
+
+  <h2>Season leaderboard</h2>
+  <p>Staff post season dates in Discord. During a season we track (a screenshot of your Prestige Ladder / Pokédex is enough):</p>
+  <ol class="steps">
+    <li><strong>Dex race</strong> — highest registered count (and first to 1025)</li>
+    <li><strong>Shiny race</strong> — first to the Prestige shiny milestone</li>
+    <li><strong>Raid race</strong> — first to 50 raid wins on the ladder</li>
+  </ol>
+  <p>Submit proof in the Discord channel staff announce for that season. No pay-to-win ranks — bragging rights and community shout-outs only.</p>
+
+  <h2>Season reset (what it means)</h2>
+  ${critical(
+    "en",
+    "<strong>We do not wipe gym badges, First Steps, or league progress for a season.</strong> A “reset” is a new scoring window on Discord — your quest book keeps what you earned."
+  )}
+  <ul>
+    <li><strong>Soft season (default)</strong> — new start date; leaderboard scores from zero; quest completions stay.</li>
+    <li><strong>Hard prestige wipe (rare)</strong> — only with a full world backup and Discord notice. Staff would only reset Prestige Ladder quest progress if FTB tools allow a safe per-chapter reset. Never done casually.</li>
+  </ul>
+
+  <h2>Staff scoreboard (optional)</h2>
+  <p>If a season uses in-game scoreboards, staff may create dummy objectives such as <code>ph_dex</code> / <code>ph_shiny</code> and update them from verified screenshots. Players do not need commands for soft seasons.</p>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Quests.html">Quests</a> · <a href="Postgame_and_Legendaries.html">Post-game</a> · <a href="Achievements.html">Achievements</a></p>
+  ${navboxSystems()}
+  `,
+});
 
 writePage("Rules_and_Commands.html", {
   title: "Rules & commands",
@@ -2222,7 +1994,7 @@ writePage("Rules_and_Commands.html", {
       <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td><a href="Claims.html">Claims</a></td></tr>
       <tr><td>Chunk map</td><td><kbd>M</kbd></td><td>FTB Chunks map</td></tr>
       <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
-      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>K</kbd> · group <kbd>B</kbd> — <a href="Voice_Chat.html">Voice chat</a></td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>K</kbd> · group has no default key (set one yourself; <kbd>B</kbd> opens your Backpack) — <a href="Voice_Chat.html">Voice chat</a></td></tr>
       <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Get off your mount</td></tr>
       <tr><td>Recipe viewer (REI)</td><td><kbd>E</kbd></td><td>Live crafts — <a href="Essential_Recipes.html">Essential recipes</a></td></tr>
       <tr><td>Ride</td><td><kbd>Shift</kbd> + right-click</td><td><a href="Riding.html">Riding</a></td></tr>
@@ -2263,7 +2035,7 @@ writePage("Donations.html", {
   </div>
 
   <h2>Why donate?</h2>
-  <p>Donations are completely optional and help keep the server online and upgraded. Some donations also fund community events — for example, <strong>€10</strong> can fund a server-wide <strong>Shiny Hour</strong> (wild shiny odds doubled from 1/2048 to 1/1024 for 60 minutes, benefiting every player online, not just the donor).</p>
+  <p>Donations are completely optional and help keep the server online and upgraded. Some donations also fund community events — for example, <strong>€10</strong> can fund a server-wide <strong>Shiny Hour</strong> (wild shiny odds doubled from 1/${shiny} to 1/${Math.round(shiny / 2)} for 60 minutes, benefiting every player online, not just the donor).</p>
 
   <h2>How it works</h2>
   <ol class="steps">
@@ -2380,7 +2152,7 @@ writePage("Voice_Chat.html", {
   <ol class="steps">
     <li>Join PokeHaven EU and allow the mic / voice-chat prompt if Windows or the game asks.</li>
     <li>Open <strong>Esc → Options → Controls → Simple Voice Chat</strong> and set <strong>Push to talk</strong> (nicest in groups).</li>
-    <li>PokeHaven EU defaults: voice menu <kbd>V</kbd>, mute <kbd>K</kbd>, group <kbd>B</kbd>.</li>
+    <li>PokeHaven EU defaults: voice menu <kbd>V</kbd>, mute <kbd>K</kbd>. Group has <strong>no default key</strong> — <kbd>B</kbd> is reserved for your Backpack, so bind group to whatever's free for you.</li>
     <li>Pick the correct input device if nobody can hear you.</li>
     <li>Test with a friend nearby — you should hear each other within the hear distance.</li>
   </ol>
@@ -2454,9 +2226,12 @@ writePage("Trainer_Index.html", {
       size: t.team.length,
       levels: t.team.map((m) => m.level).join(", "),
       href: (() => {
-        const hit = [...trainers.kantoLeaders, ...(trainers.johtoLeaders || [])].find(
-          (k) => k.id === t.id
-        );
+        const hit = [
+          ...trainers.kantoLeaders,
+          ...(trainers.johtoLeaders || []),
+          ...(trainers.hoennLeaders || []),
+          ...(trainers.sinnohLeaders || []),
+        ].find((k) => k.id === t.id);
         return hit ? hit.slug + ".html" : null;
       })(),
     }))
@@ -2597,15 +2372,17 @@ registerMinecraftGuides({
   writePage,
   navboxMinecraft,
   navboxSystems,
+  shiny,
+  xpMult,
+  economy,
+  raids,
 });
 
 registerExpansionPages({
   writePage,
   navboxSystems,
   navboxMinecraft,
-  navboxGyms,
   recipesMeta,
-  trainers,
 });
 
 // Johto gym hub + individual deep guides (same depth as Kanto)
@@ -2913,8 +2690,8 @@ writePage("index.html", {
   <div class="hub-grid">
     <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto</h3><p>All 8 leaders + Elite Four.</p></a>
     <a class="hub-card" href="pages/Gyms_Johto.html"><h3>Johto</h3><p>Valerio → Lance — deep guides.</p></a>
-    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Maps, opener Petra, trainer list.</p></a>
-    <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Maps, opener Pedro, trainer list.</p></a>
+    <a class="hub-card" href="pages/Gyms_Hoenn.html"><h3>Hoenn</h3><p>Petra → Rocco — deep guides.</p></a>
+    <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Pedro → Camilla — deep guides.</p></a>
     <a class="hub-card" href="pages/Blue.html"><h3>Champion Blue</h3><p>End of Kanto — then Johto.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
     <a class="hub-card" href="pages/Mega_and_Late_Game.html"><h3>Mega &amp; late-game</h3><p>Gimmicks + after-Blue checklist.</p></a>
@@ -3034,7 +2811,7 @@ writePage("FAQ.html", {
   <p>Yes. Center/house chests are fair game. On PokeHaven EU, emptied loot may refresh later.</p>
 
   <h2>Voice chat key?</h2>
-  <p><kbd>V</kbd> opens voice chat, <kbd>K</kbd> mutes, <kbd>B</kbd> opens groups. See <a href="Voice_Chat.html">Voice chat</a>.</p>
+  <p><kbd>V</kbd> opens voice chat, <kbd>K</kbd> mutes. Group has no default key — <kbd>B</kbd> opens your Backpack instead, so pick a free key for group under Controls. See <a href="Voice_Chat.html">Voice chat</a>.</p>
 
   <h2>Where is the player wiki?</h2>
   <p><strong><a href="https://pokehaven.wiki">pokehaven.wiki</a></strong> — English + Nederlands (flags on the site). Also pinned in Discord <code>#pokehaven-wiki</code>. Start with Getting started, Claims, Gym maps, Brock.</p>
@@ -3057,7 +2834,7 @@ writePage("FAQ.html", {
   <p>Use a <strong>Cobblemon</strong> rod (Poke Rod / Lure Rod / …), not only a vanilla Minecraft rod. Guide: <a href="Fishing.html">Fishing</a>.</p>
 
   <h2>How do shiny odds work?</h2>
-  <p>Wild base rate is <strong>1 / 2048</strong>. Breeding can use Masuda / crystal methods. Full page: <a href="Shiny.html">Shiny hunting</a> · <a href="Breeding.html">Breeding</a>.</p>
+  <p>Wild base rate is <strong>1 / ${shiny}</strong>. Breeding can use Masuda / crystal methods. Full page: <a href="Shiny.html">Shiny hunting</a> · <a href="Breeding.html">Breeding</a>.</p>
 
   <h2>I beat Blue — do I restart the server?</h2>
   <p><strong>No.</strong> On PokeHaven, follow the champion book: Trainer Association → Johto Trainer Card (your cap resets; others unaffected). If Johto structures are missing, ask in Discord — staff may need <em>one</em> restart. Checklist: <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progression</a> · <a href="Blue.html">Blue</a>.</p>
@@ -3082,6 +2859,10 @@ registerDutchSite({
   advancements,
   searchIndex,
   searchIndexNl,
+  economy,
+  shiny,
+  xpMult,
+  rates,
 });
 
 fs.writeFileSync(path.join(DATA, "search-index.json"), JSON.stringify(searchIndex, null, 2));
@@ -3242,7 +3023,7 @@ Search works offline (embedded \`js/search-data-*.js\`).
 For Recipe Browser / Spawn Lookup, serve the folder:
 
 \`\`\`powershell
-cd d:\\COBBLEVERSE\\wiki
+cd d:\\COBBLEVERSE\\PokeHaven-Wiki
 npx --yes serve .
 \`\`\`
 
@@ -3250,7 +3031,7 @@ npx --yes serve .
 Requires extract at \`d:\\COBBLEVERSE\\_pack_analysis\` (with \`_dp_peek\` datapacks).
 
 \`\`\`powershell
-cd d:\\COBBLEVERSE\\wiki
+cd d:\\COBBLEVERSE\\PokeHaven-Wiki
 npm run build
 \`\`\`
 

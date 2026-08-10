@@ -31,7 +31,8 @@ function itemLabel(id) {
   const name = String(id).includes(":") ? String(id).split(":")[1] : String(id);
   return name
     .replace(/_/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .replace(/\bPokemon\b/g, "Pokémon");
 }
 
 function parseEconomy() {

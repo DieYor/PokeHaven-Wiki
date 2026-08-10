@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://pokehaven.wiki/index.html</loc></url>
-  <url><loc>https://pokehaven.wiki/pages/Getting_Started.html</loc></url>
-  <url><loc>https://pokehaven.wiki/pages/First_Hours.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Progression.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Level_Cap.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Gyms_Kanto.html</loc></url>
@@ -20,16 +17,14 @@
   <url><loc>https://pokehaven.wiki/pages/Lance.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Blue.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Gym_Maps.html</loc></url>
-  <url><loc>https://pokehaven.wiki/pages/Economy.html</loc></url>
-  <url><loc>https://pokehaven.wiki/pages/Raids.html</loc></url>
-  <url><loc>https://pokehaven.wiki/pages/Catching_and_Battling.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Breeding.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Shiny.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Mega_and_Late_Game.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Fishing.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Cobbleworkers.html</loc></url>
-  <url><loc>https://pokehaven.wiki/pages/Claims.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Quests.html</loc></url>
+  <url><loc>https://pokehaven.wiki/pages/Region_Exploration.html</loc></url>
+  <url><loc>https://pokehaven.wiki/pages/Prestige_Season.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Rules_and_Commands.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Donations.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Discord_Commands.html</loc></url>
@@ -46,7 +41,13 @@
   <url><loc>https://pokehaven.wiki/pages/Minecraft_Basics.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Roadmap.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Common_Mistakes.html</loc></url>
+  <url><loc>https://pokehaven.wiki/pages/Catching_and_Battling.html</loc></url>
+  <url><loc>https://pokehaven.wiki/pages/Claims.html</loc></url>
+  <url><loc>https://pokehaven.wiki/pages/Economy.html</loc></url>
+  <url><loc>https://pokehaven.wiki/pages/First_Hours.html</loc></url>
+  <url><loc>https://pokehaven.wiki/pages/Raids.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Travel.html</loc></url>
+  <url><loc>https://pokehaven.wiki/pages/Getting_Started.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Minecraft_Hub.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Tools_and_Mining.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Farming_and_Food.html</loc></url>
@@ -100,6 +101,7 @@
   <url><loc>https://pokehaven.wiki/pages/Vulcano.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Luciano.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/Camilla.html</loc></url>
+  <url><loc>https://pokehaven.wiki/index.html</loc></url>
   <url><loc>https://pokehaven.wiki/pages/FAQ.html</loc></url>
   <url><loc>https://pokehaven.wiki/nl/index.html</loc></url>
   <url><loc>https://pokehaven.wiki/nl/pages/Getting_Started.html</loc></url>
@@ -112,6 +114,8 @@
   <url><loc>https://pokehaven.wiki/nl/pages/Catching_and_Battling.html</loc></url>
   <url><loc>https://pokehaven.wiki/nl/pages/Claims.html</loc></url>
   <url><loc>https://pokehaven.wiki/nl/pages/Quests.html</loc></url>
+  <url><loc>https://pokehaven.wiki/nl/pages/Region_Exploration.html</loc></url>
+  <url><loc>https://pokehaven.wiki/nl/pages/Prestige_Season.html</loc></url>
   <url><loc>https://pokehaven.wiki/nl/pages/Travel.html</loc></url>
   <url><loc>https://pokehaven.wiki/nl/pages/Rules_and_Commands.html</loc></url>
   <url><loc>https://pokehaven.wiki/nl/pages/Donations.html</loc></url>

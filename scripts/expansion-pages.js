@@ -5,9 +5,7 @@ export function registerExpansionPages({
   writePage,
   navboxSystems,
   navboxMinecraft,
-  navboxGyms,
   recipesMeta,
-  trainers,
 }) {
   const nsOptions = (recipesMeta.namespaces || [])
     .map((ns) => `<option value="${ns}">${ns} (${recipesMeta.byNamespace[ns]})</option>`)
@@ -124,7 +122,7 @@ export function registerExpansionPages({
         <tr><td>Ultra Ball</td><td>Gold ingot</td><td>Black + yellow mix</td></tr>
       </tbody>
     </table>
-    <p>Full guide: <a href="Poke_Balls.html">Poké Balls</a>. Harvest trees:</p>
+    <p>Full guide: <a href="Poke_Balls.html">Poké Balls</a> · guided crafting chain: <a href="Quests.html">Quests</a> (Ball Workshop). Harvest trees:</p>
     ${figure(
       guideImg("apricorns.png"),
       "<strong>Apricorns.</strong> Right-click fruit; plant seeds at your claim.",
@@ -182,45 +180,6 @@ export function registerExpansionPages({
     ${navboxSystems()}
     `,
   });
-
-  // Region overviews
-  function regionPage(name, file, prefix, blurb, tips) {
-    const list = trainers.all.filter((t) => t.region === prefix);
-    const named = list
-      .filter((t) => !t.id.includes("groups"))
-      .slice(0, 40)
-      .map(
-        (t) =>
-          `<tr><td>${t.name}</td><td><code>${t.id}</code></td><td>${t.team.length}</td><td>${t.team.map((m) => m.level).join(", ")}</td></tr>`
-      )
-      .join("");
-
-    writePage(file, {
-      title: `${name} overview`,
-      breadcrumbs: [
-        { label: "Main Page", href: "../index.html" },
-        { label: `${name} overview`, href: file },
-      ],
-      lede: blurb,
-      body: `
-      <h2>When you unlock it</h2>
-      <p>${tips.unlock}</p>
-
-      <h2>What to prepare</h2>
-      <ul>${tips.prep.map((x) => `<li>${x}</li>`).join("")}</ul>
-
-      <h2>Named trainers (${list.length})</h2>
-      <p class="muted">Sample of ${name} trainers. Full search: <a href="Trainer_Index.html">Trainer index</a>.</p>
-      <table class="wikitable">
-        <thead><tr><th>Name</th><th>ID</th><th>Party</th><th>Levels</th></tr></thead>
-        <tbody>${named || "<tr><td colspan=4>No trainers listed for this region yet.</td></tr>"}</tbody>
-      </table>
-
-      <p class="see-also"><strong>See also:</strong> <a href="Progression.html">Progression</a> · <a href="Gyms_Kanto.html">Kanto gyms</a> · <a href="Trainer_Index.html">Trainer index</a></p>
-      ${navboxGyms()}
-      `,
-    });
-  }
 
   // Gyms_Johto.html is written as a deep hub + leader pages in build.js (same depth as Kanto).
   // Gyms_Hoenn.html + Gyms_Sinnoh.html are written in build.js (still-being-written hubs).

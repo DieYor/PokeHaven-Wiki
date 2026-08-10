@@ -12,7 +12,10 @@ function itemLabel(id) {
   if (!id) return "—";
   const raw = String(id);
   const name = raw.includes(":") ? raw.split(":")[1] : raw;
-  return name.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  return name
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .replace(/\bPokemon\b/g, "Pokémon");
 }
 
 function ingredientId(ing) {

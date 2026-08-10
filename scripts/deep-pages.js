@@ -45,6 +45,8 @@ export function registerDeepPages({
   advancements,
   raids,
 }) {
+  const shopPrice = (id) =>
+    (economy?.shop || []).flatMap((s) => s.items).find((i) => i.item === id)?.price;
   const adv = advancements || { count: 0, groups: {}, cobbleverse: {}, cobblemon: {} };
   const cv = adv.cobbleverse?.groups || adv.groups || {};
   const cm = adv.cobblemon?.groups || {};
@@ -127,7 +129,7 @@ export function registerDeepPages({
       <li>Looking for biomes: <a href="Spawn_Lookup.html">Spawn lookup</a>.</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Progression.html">Progression</a> · <a href="Roadmap.html">30-day roadmap</a> · <a href="Level_Cap.html">Level cap</a> · <a href="FAQ.html">FAQ</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Progression.html">Progression</a> · <a href="Roadmap.html">30-day roadmap</a> · <a href="Level_Cap.html">Level cap</a> · <a href="FAQ.html">FAQ</a> · <a href="Prestige_Season.html">Prestige season</a></p>
     ${navboxGyms()}
     ${navboxSystems()}
     `,
@@ -165,6 +167,7 @@ export function registerDeepPages({
       <li>Follow the pack’s Mew encounter / revive flow from there — the advancement “Catch Mew” completes when you own Mew.</li>
       <li>Shiny Mew is a separate optional advancement.</li>
     </ol>
+    <p class="muted">A guided version of this path also lives in FTB Quests under <strong>Fossils and TM Lab</strong> — <a href="Quests.html">Quests</a>.</p>
     <div class="callout tip">
       <div class="label">REI is truth</div>
       Exact grids can change with pack updates. Always trust the in-game recipe view over screenshots.
@@ -271,7 +274,7 @@ export function registerDeepPages({
     </ol>
 
     <h2>Buying vs crafting</h2>
-    <p>Default shop prices on this pack include Poké Balls around <strong>400</strong>, Great <strong>750</strong>, Ultra <strong>1000</strong>, Luxury <strong>4000</strong> PokéDollars.
+    <p>Default shop prices on this pack include Poké Balls around <strong>${shopPrice("cobblemon:poke_ball") ?? 400}</strong>, Great <strong>${shopPrice("cobblemon:great_ball") ?? 750}</strong>, Ultra <strong>${shopPrice("cobblemon:ultra_ball") ?? 1000}</strong>, Luxury <strong>${shopPrice("cobblemon:luxury_ball") ?? 4000}</strong> PokéDollars.
     Crafting is usually better early; shops are for emergencies. See <a href="Economy.html">Economy</a>.</p>
 
     ${figure(
@@ -291,7 +294,7 @@ export function registerDeepPages({
       </tbody>
     </table>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Recipe_Browser.html">Recipe browser</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Economy.html">Economy</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Recipe_Browser.html">Recipe browser</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Economy.html">Economy</a> · <a href="Quests.html">Quests</a> (Ball Workshop)</p>
     ${navboxSystems()}
     `,
   });
@@ -443,14 +446,14 @@ export function registerDeepPages({
     <ol class="steps">
       <li>Send out a rideable Pokémon with <kbd>R</kbd>.</li>
       <li>Hold <kbd>Shift</kbd> and right-click it → choose <strong>Ride</strong>.</li>
-      <li>Move with WASD + mouse look. Dismount with <kbd>R</kbd> or sneak.</li>
+      <li>Move with WASD + mouse look. Dismount with <kbd>X</kbd> or sneak (<kbd>R</kbd> is throw/recall).</li>
     </ol>
     <table class="wikitable">
       <thead><tr><th>Action</th><th>Default</th></tr></thead>
       <tbody>
         <tr><td>Send out / recall</td><td><kbd>R</kbd></td></tr>
         <tr><td>Open Pokémon interact menu</td><td><kbd>Shift</kbd> + right-click</td></tr>
-        <tr><td>Dismount</td><td><kbd>R</kbd> or sneak</td></tr>
+        <tr><td>Dismount</td><td><kbd>X</kbd> or sneak</td></tr>
       </tbody>
     </table>
     <div class="callout tip">
@@ -772,7 +775,7 @@ export function registerDeepPages({
     <ol class="steps">
       <li>Make a small wheat farm at your claim.</li>
       <li>Trade a Farmer villager for emeralds.</li>
-      <li>Sell emeralds at the Bank (default <strong>400$</strong> each on this pack).</li>
+      <li>Sell emeralds at the Bank (default <strong>${economy.bank.find((i) => i.item === "minecraft:emerald")?.price ?? 400}$</strong> each on this pack).</li>
       <li>Craft balls when possible; buy only what you cannot craft yet.</li>
       <li>Do gym trainers for burst income while progressing.</li>
     </ol>
@@ -789,7 +792,7 @@ export function registerDeepPages({
         <tr><td>Wild battles</td><td>Steady while exploring (pack multiplier applied)</td></tr>
         <tr><td>Trainers / gyms</td><td>Better payouts; doubles as progression</td></tr>
         <tr><td>Bank sells</td><td>Emeralds, potions, vitamins, relic coins…</td></tr>
-        <tr><td>Bountiful boards</td><td>Village bounty boards</td></tr>
+        <tr><td>Bounty boards</td><td>Village bounty boards</td></tr>
         <tr><td>Raids</td><td>Tier cash rewards — see <a href="Raids.html">Raids</a></td></tr>
       </tbody>
     </table>
@@ -857,11 +860,11 @@ export function registerDeepPages({
         <tr><td>Select send-out</td><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Stops “wrong Pokémon” mistakes</td></tr>
         <tr><td>Throw / recall</td><td><kbd>R</kbd></td><td>Send out the selected Pokémon</td></tr>
         <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight — start a fight</td></tr>
-        <tr><td>Quest book</td><td><kbd>O</kbd></td><td>FTB Quests — First Steps. Pin a quest and it shows in a small tracker near the bottom-right HUD (by the minimap/coordinates) — no floating in-world arrow.</td></tr>
+        <tr><td>Quest book</td><td><kbd>O</kbd></td><td><a href="Quests.html">FTB Quests</a> — First Steps plus side chapters (Ball Workshop, Fishing Grounds, Trade Hall…). Pin a quest and it shows in a small tracker near the bottom-right HUD (by the minimap/coordinates) — no floating in-world arrow.</td></tr>
         <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claims — <a href="Claims.html">Claims</a></td></tr>
         <tr><td>Chunk map</td><td><kbd>M</kbd></td><td>FTB Chunks map</td></tr>
         <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
-        <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>K</kbd>, group <kbd>B</kbd></td></tr>
+        <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>K</kbd>, group has no default key (<kbd>B</kbd> opens your Backpack)</td></tr>
         <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Get off your mount</td></tr>
         <tr><td>Ride</td><td><kbd>Shift</kbd> + right-click</td><td>See <a href="Riding.html">Riding</a></td></tr>
         <tr><td>PC</td><td><code>/pc</code></td><td><a href="Healing_and_Storage.html">Storage</a></td></tr>
@@ -968,8 +971,8 @@ export function registerDeepPages({
     <h2>Rewards &amp; damage share</h2>
     <p>Loot and payout scale with how much you help. Each tier has a <strong>minimum damage share</strong> (roughly 16–20%) — sit AFK and you can fail the reward check even if the group wins. Money in the table is the tier’s currency reward; higher tiers also hit harder (HP multiplier) and roll better IVs on the catch / rewards side.</p>
     <ul>
-      <li><strong>Hidden Ability rate:</strong> 20% on every tier</li>
-      <li><strong>Max clears</strong> per den before it rotates: 3</li>
+      <li><strong>Hidden Ability rate:</strong> ${pct(raids.tiers[0]?.haRate ?? 0.2)} on every tier</li>
+      <li><strong>Max clears</strong> per den before it rotates: ${raids.tiers[0]?.maxClears ?? "—"}</li>
       <li><strong>Failed raids:</strong> can be retried (${raids.common.retryFailed ? "yes" : "no"})</li>
       <li><strong>T6–T7 AI:</strong> STRONG — expect smarter play than early dens</li>
     </ul>
@@ -1003,7 +1006,7 @@ export function registerDeepPages({
       <li>Raiding instead of gyms when your progression is stuck on the <a href="Level_Cap.html">level cap</a></li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Raid_Bosses.html">Raid bosses</a> · <a href="Economy.html">Economy</a> · <a href="Voice_Chat.html">Voice chat</a> · <a href="Travel.html">Travel</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Healing_and_Storage.html">Healing &amp; storage</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Raid_Bosses.html">Raid bosses</a> · <a href="Economy.html">Economy</a> · <a href="Voice_Chat.html">Voice chat</a> · <a href="Travel.html">Travel</a> · <a href="Catching_and_Battling.html">Catching &amp; battling</a> · <a href="Healing_and_Storage.html">Healing &amp; storage</a> · <a href="Quests.html">Quests</a> (Raid Circuit)</p>
     ${navboxSystems()}
     `,
     });
@@ -1068,6 +1071,9 @@ export function registerDeepPages({
       <li><strong>Bed + waystone at home</strong> — quick respawn and return.</li>
     </ul>
 
+    <h2>Region exploration pins</h2>
+    <p>Each region's <strong>Exploration</strong> quest chapter expects consistent waystone names so BlueMap and the quest book line up for everyone. See <a href="Region_Exploration.html">Region exploration</a> for the exact naming scheme per region.</p>
+
     <h2>Etiquette</h2>
     <ul>
       <li>Don’t break or grief someone else’s waystone network.</li>
@@ -1082,7 +1088,7 @@ export function registerDeepPages({
       <li>Opening an Empty Map in the world before gym crafting — ruins that map for the cartography recipe.</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Riding.html">Riding</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">First hours</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Riding.html">Riding</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">First hours</a> · <a href="Region_Exploration.html">Region exploration</a></p>
     ${navboxSystems()}
     `,
   });
@@ -1172,67 +1178,6 @@ export function registerDeepPages({
     `,
   });
 
-  // Enrich main page hub with new deep guides
-  writePage("index.html", {
-    title: "PokeHaven EU Wiki",
-    searchIndexTitle: "Main Page",
-    breadcrumbs: [{ label: "Main Page", href: "index.html" }],
-    lede: "The deep player wiki for <strong>PokeHaven EU</strong> — CobbleVerse 1.7.42 guides with walkthroughs, tables, and screenshots.",
-    body: `
-  <section class="hero" style="min-height:auto;border:1px solid var(--line);border-radius:12px;margin-bottom:1.5rem;">
-    <img class="hero-img" src="assets/wiki-wallpaper.png" alt="" />
-    <div class="hero-inner" style="padding:2.5rem 1.5rem;">
-      <div class="chips" style="margin-bottom:0.75rem;">
-        <span class="chip"><strong>PokeHaven EU</strong></span>
-        <span class="chip">CobbleVerse 1.7.42</span>
-        <span class="chip">Deep player guides</span>
-      </div>
-      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,5vw,3.2rem);margin:0 0 0.5rem;border:0;padding:0;">Train. Craft. Progress.</h2>
-      <p class="hero-lead">OSRS-wiki structure, CobbleVerse style — long guides with screenshots, not bare stub pages.</p>
-    </div>
-  </section>
-
-  <h2>Start here</h2>
-  <div class="hub-grid">
-    <a class="hub-card" href="pages/Getting_Started.html"><h3>Getting started</h3><p>Install the pack and join the server.</p></a>
-    <a class="hub-card" href="pages/First_Hours.html"><h3>First hours</h3><p>Claim, Brock, then the Misty loop.</p></a>
-    <a class="hub-card" href="pages/Poke_Balls.html"><h3>Poké Balls</h3><p>Apricorns, crafting screenshots, farm setup.</p></a>
-    <a class="hub-card" href="pages/Brock.html"><h3>Brock guide</h3><p>Map legend, prep, and full team.</p></a>
-  </div>
-
-  <h2>Deep guides</h2>
-  <div class="hub-grid">
-    <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Catching &amp; battling</h3><p>Catch loop, aggro, gimmicks.</p></a>
-    <a class="hub-card" href="pages/Healing_and_Storage.html"><h3>Healing &amp; storage</h3><p>Centers, Revives, PC.</p></a>
-    <a class="hub-card" href="pages/Economy.html"><h3>Economy</h3><p>Farm loop, shop &amp; bank tables.</p></a>
-    <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks walkthrough + screenshot.</p></a>
-    <a class="hub-card" href="pages/Gyms_Kanto.html"><h3>Kanto gyms</h3><p>All leaders + league pages.</p></a>
-    <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens, tiers, damage share.</p></a>
-    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
-    <a class="hub-card" href="pages/Minecraft_Basics.html"><h3>Minecraft basics</h3><p>Tools, farms, inventory for newcomers.</p></a>
-  </div>
-
-  <h2>Planning &amp; help</h2>
-  <div class="hub-grid">
-    <a class="hub-card" href="pages/Roadmap.html"><h3>30-day roadmap</h3><p>Calm Kanto pace.</p></a>
-    <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Common mistakes</h3><p>Fix these once.</p></a>
-    <a class="hub-card" href="pages/FAQ.html"><h3>FAQ</h3><p>Join issues, level cap, maps.</p></a>
-    <a class="hub-card" href="pages/Spawn_Lookup.html"><h3>Spawn lookup</h3><p>Search pack spawn data.</p></a>
-  </div>
-
-  <h2>Databases</h2>
-  <div class="hub-grid">
-    <a class="hub-card" href="pages/Trainer_Index.html"><h3>Trainer index</h3><p>Named trainers on this server.</p></a>
-    <a class="hub-card" href="pages/Raid_Bosses.html"><h3>Raid bosses</h3><p>Boss file index.</p></a>
-    <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture timing notes.</p></a>
-    <a class="hub-card" href="pages/Voice_Chat.html"><h3>Voice chat</h3><p>Distances and groups.</p></a>
-  </div>
-
-  <div class="callout tip">
-    <div class="label">About screenshots</div>
-    Guide images are illustrative CobbleVerse-style references (UI packs/skins can differ slightly).
-    For exact crafts, always use the in-game recipe search (<kbd>E</kbd>).
-  </div>
-  `,
-  });
+  // index.html's final, live version is written later in build.js (after this
+  // function returns) — that later call is the one that actually ships.
 }

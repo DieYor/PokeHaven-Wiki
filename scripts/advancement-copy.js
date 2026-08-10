@@ -159,13 +159,13 @@ export const ADV_COPY = {
     en: { title: "Defeat Norman", how: "Beat Hoenn Gym Leader Norman (Balance Badge)." },
     nl: { title: "Versla Norman", how: "Versla Hoenn Gym Leader Norman (Balance Badge)." },
   },
-  "trainer/hoenn/defeat_tell": {
-    en: { title: "Defeat Tell", how: "Beat Hoenn Gym Leader Tell (Mind Badge)." },
-    nl: { title: "Versla Tell", how: "Versla Hoenn Gym Leader Tell (Mind Badge)." },
-  },
   "trainer/hoenn/defeat_alice": {
     en: { title: "Defeat Alice", how: "Beat Hoenn Gym Leader Alice (Feather Badge)." },
     nl: { title: "Versla Alice", how: "Versla Hoenn Gym Leader Alice (Feather Badge)." },
+  },
+  "trainer/hoenn/defeat_tell": {
+    en: { title: "Defeat Tell", how: "Beat Hoenn Gym Leader Tell (Mind Badge)." },
+    nl: { title: "Versla Tell", how: "Versla Hoenn Gym Leader Tell (Mind Badge)." },
   },
   "trainer/hoenn/defeat_adriano": {
     en: { title: "Defeat Adriano", how: "Beat Hoenn Gym Leader Adriano (Rain Badge)." },

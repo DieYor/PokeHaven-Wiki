@@ -13,7 +13,7 @@ Search works offline (embedded `js/search-data-*.js`).
 For Recipe Browser / Spawn Lookup, serve the folder:
 
 ```powershell
-cd d:\COBBLEVERSE\wiki
+cd d:\COBBLEVERSE\PokeHaven-Wiki
 npx --yes serve .
 ```
 
@@ -21,7 +21,7 @@ npx --yes serve .
 Requires extract at `d:\COBBLEVERSE\_pack_analysis` (with `_dp_peek` datapacks).
 
 ```powershell
-cd d:\COBBLEVERSE\wiki
+cd d:\COBBLEVERSE\PokeHaven-Wiki
 npm run build
 ```
 

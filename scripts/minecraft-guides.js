@@ -1,9 +1,17 @@
 import { figure, guideImg } from "./deep-pages.js";
 import { critical } from "./i18n.js";
 
-export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSystems }) {
+export function registerMinecraftGuides({
+  writePage,
+  navboxMinecraft,
+  navboxSystems,
+  shiny,
+  xpMult,
+  economy,
+  raids,
+}) {
   writePage("Minecraft_Hub.html", {
-    title: "Minecraft survival hub",
+    title: "Minecraft hub",
     hideToc: true,
     isHub: true,
     breadcrumbs: [
@@ -125,7 +133,7 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
       <li>Till dirt within 4 blocks of water.</li>
       <li>Light the farm; do not jump on crops.</li>
       <li>Trade a Farmer villager for emeralds.</li>
-      <li>Sell emeralds at the Bank (~400$ each on this pack). See <a href="Economy.html">Economy</a>.</li>
+      <li>Sell emeralds at the Bank (~${economy.bank.find((i) => i.item === "minecraft:emerald")?.price ?? 400}$ each on this pack). See <a href="Economy.html">Economy</a>.</li>
     </ol>
 
     <h2>Other useful farms</h2>
@@ -307,9 +315,9 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
     </ul>
 
     <h2>Player trading</h2>
-    <p>There is no forced auction house. Trade with players in good faith, prefer meeting in claimed / public hubs, and never drop valuables before you trust the deal. Scam = report to staff with screenshots.</p>
+    <p>There is no forced auction house. Trade with players in good faith, prefer meeting in claimed / public hubs, and never drop valuables before you trust the deal. Scam = report to staff with screenshots. Quest chapter: <strong>Trade Hall</strong> (player trading + trade-evolutions) — <a href="Quests.html">Quests</a>.</p>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Farming_and_Food.html">Farming</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Economy.html">Economy</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Farming_and_Food.html">Farming</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Economy.html">Economy</a> · <a href="Quests.html">Quests</a></p>
     ${navboxMinecraft()}
     `,
   });
@@ -434,9 +442,9 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
     <table>
       <tr><th>Pack</th><td>CobbleVerse 1.7.42</td></tr>
       <tr><th>Server</th><td>PokeHaven EU</td></tr>
-      <tr><th>Shiny</th><td>1 / 2048</td></tr>
-      <tr><th>XP</th><td>×2</td></tr>
-      <tr><th>Income</th><td>×0.5</td></tr>
+      <tr><th>Shiny</th><td>1 / ${shiny}</td></tr>
+      <tr><th>XP</th><td>×${xpMult}</td></tr>
+      <tr><th>Income</th><td>×${economy.incomeMultiplier}</td></tr>
       <tr><th>Waystones</th><td>No cost / cooldown</td></tr>
     </table>`,
     body: `
@@ -448,10 +456,10 @@ export function registerMinecraftGuides({ writePage, navboxMinecraft, navboxSyst
         <tr><td>Ender Dragon</td><td><strong>Disabled</strong></td><td>End is not the vanilla boss checklist</td></tr>
         <tr><td>Level cap</td><td>RCT series progression</td><td>XP “stops” until next gym</td></tr>
         <tr><td>Waystones</td><td>Free, no cooldown</td><td>Build a teleport network early</td></tr>
-        <tr><td>PokéDollars</td><td>×0.5 income</td><td>Craft + emerald loop matters more</td></tr>
-        <tr><td>Shiny rate</td><td>1/2048</td><td>Do not expect gen-series shiny odds myths</td></tr>
-        <tr><td>Raid dens</td><td>1/480 spawn, tier table in wiki</td><td>See <a href="Raids.html">Raids</a></td></tr>
-        <tr><td>Claims</td><td>FTB Chunks recommended</td><td>Do not mix claim mods</td></tr>
+        <tr><td>PokéDollars</td><td>×${economy.incomeMultiplier} income</td><td>Craft + emerald loop matters more</td></tr>
+        <tr><td>Shiny rate</td><td>1/${shiny}</td><td>Do not expect gen-series shiny odds myths</td></tr>
+        <tr><td>Raid dens</td><td>1/${raids.common.spawnRate} spawn, tier table in wiki</td><td>See <a href="Raids.html">Raids</a></td></tr>
+        <tr><td>Claims</td><td>FTB Chunks only (OPAC removed)</td><td>Do not mix claim mods</td></tr>
         <tr><td>Trainer outfits</td><td>Poke Clothing (craftable)</td><td>See <a href="Outfits_and_Cosmetics.html">Outfits and cosmetics</a></td></tr>
         <tr><td>Pokémon looks</td><td>Cosplay Pikachu, Furfrou cuts, scarves…</td><td>Cosmetic slot / special items — same guide</td></tr>
       </tbody>
