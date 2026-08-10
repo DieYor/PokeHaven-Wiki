@@ -402,6 +402,270 @@ const JOHTO_META = {
   },
 };
 
+/**
+ * Hoenn gym / E4 / Champion — RCT hoenn_* ids.
+ *
+ * IMPORTANT — Tell/Alice type+badge+order swap vs. generate-ftb-quests.mjs:
+ * The FTB quest generator (pokehaven-client-branding/scripts/generate-ftb-quests.mjs,
+ * ~line 312-313) hardcodes order 6 = Tell/Flying/Feather Badge and order 7 =
+ * Alice/Psychic/Mind Badge. That contradicts THREE independent real-data sources
+ * that all agree with each other:
+ *   1. hoenn_tell.json's actual team is 100% Psychic-type (Solrock, Lunatone,
+ *      Gallade, Gardevoir, Claydol, Gothitelle); hoenn_alice.json's team is 100%
+ *      Flying-type (Altaria, Tropius, Skarmory, Pelipper, Noctowl).
+ *   2. The real mob-encounter requiredDefeats chain (rctmod/mobs/trainers/single/
+ *      hoenn_{tell,alice}.json) requires hoenn_alice.json to require hoenn_norman,
+ *      and hoenn_tell.json to require hoenn_alice — i.e. the game only lets you
+ *      fight Alice after Norman, and Tell after Alice. Not the other way around.
+ *   3. This repo's own scripts/advancement-copy.js already lists
+ *      "trainer/hoenn/defeat_tell" as Mind Badge and "defeat_alice" as Feather
+ *      Badge — matching (1) and (2), not the quest generator.
+ * We follow (1)+(2)+(3) here (Alice = Flying/Feather Badge/order 6, Tell =
+ * Psychic/Mind Badge/order 7) so the team table on each page actually matches
+ * the type/badge shown in the header. Flagged for server-owner sign-off —
+ * see wiki task final report.
+ */
+const HOENN_META = {
+  hoenn_petra: {
+    slug: "Petra",
+    type: "Rock",
+    badge: "Stone Badge",
+    biome: "Rocky Mountains",
+    specialItem: "Rock Tome",
+    order: 1,
+    tips: "Water, Grass, Fighting, and Ground answer Rock hard. Watch Thunder Punch / Flamethrower coverage on her Geodude.",
+  },
+  hoenn_rudi: {
+    slug: "Rudi",
+    type: "Fighting",
+    badge: "Knuckle Badge",
+    biome: "Yosemite Cliffs",
+    specialItem: "Fighting Glove",
+    order: 2,
+    tips: "Flying, Psychic, and Fairy answer Fighting. This is a vertical map — bring blocks or a Flying mount for the ledges.",
+  },
+  hoenn_walter: {
+    slug: "Walter",
+    type: "Electric",
+    badge: "Dynamo Badge",
+    biome: "Arid Highlands",
+    specialItem: "Electric Connector",
+    order: 3,
+    tips: "Ground shuts Electric down completely; Grass also resists. Dry biome — bring extra water and food for the hike.",
+  },
+  hoenn_fiammetta: {
+    slug: "Fiammetta",
+    type: "Fire",
+    badge: "Heat Badge",
+    biome: "Forested Highlands",
+    specialItem: "Fire Lighter",
+    order: 4,
+    tips: "Water, Ground, and Rock are reliable into Fire. Don't walk in with a team still mono-Grass from earlier gyms.",
+  },
+  hoenn_norman: {
+    slug: "Norman",
+    type: "Normal",
+    badge: "Balance Badge",
+    biome: "Brushland",
+    specialItem: "Normal Tablet",
+    order: 5,
+    tips: "Fighting is the cleanest answer to Normal; Ghost immunities help too. Bulky Normals can stall — bring status or a Fighting pivot.",
+  },
+  hoenn_alice: {
+    slug: "Alice",
+    type: "Flying",
+    badge: "Feather Badge",
+    biome: "Moonlight Grove",
+    specialItem: "Flying Feather",
+    order: 6,
+    tips: "Electric, Rock, and Ice punish Flying hard. Dim biome — bring light sources and food for the trip.",
+  },
+  hoenn_tell: {
+    slug: "Tell",
+    type: "Psychic",
+    badge: "Mind Badge",
+    biome: "Amethyst Rainforest",
+    specialItem: "Psychic Medallion",
+    order: 7,
+    tips: "Dark, Bug, and Ghost pressure Psychic — Dark-types ignore his STAB entirely. Dense biome, claim a rest stop near the gym.",
+  },
+  hoenn_adriano: {
+    slug: "Adriano",
+    type: "Water",
+    badge: "Rain Badge",
+    biome: "Cold Ocean",
+    specialItem: "Water Rod",
+    order: 8,
+    tips: "Electric and Grass answer Water. Last Hoenn gym before the Elite Four — full heal and restock before the league gauntlet.",
+  },
+  hoenn_league_fosco: {
+    slug: "Fosco",
+    type: "Dark",
+    badge: "Elite Four",
+    biome: "Steppe (Hoenn league grounds)",
+    specialItem: "Dark Bass",
+    order: 9,
+    tips: "Fighting, Bug, and Fairy pressure Dark. Full heal before every Hoenn Elite Four room — Fosco opens the gauntlet.",
+  },
+  hoenn_league_ester: {
+    slug: "Ester",
+    type: "Ghost",
+    badge: "Elite Four",
+    biome: "Steppe (Hoenn league grounds)",
+    specialItem: "Ghost Bloom",
+    order: 10,
+    tips: "Dark and Ghost pressure Ghost back — watch immunities both ways. Restock between rooms.",
+  },
+  hoenn_league_frida: {
+    slug: "Frida",
+    type: "Ice",
+    badge: "Elite Four",
+    biome: "Steppe (Hoenn league grounds)",
+    specialItem: "Ice Necklace",
+    order: 11,
+    tips: "Fire, Fighting, Rock, and Steel help into Ice. Third Elite room — heal fully after Ester, don't underlevel.",
+  },
+  hoenn_league_drake: {
+    slug: "Drake",
+    type: "Dragon",
+    badge: "Elite Four",
+    biome: "Steppe (Hoenn league grounds)",
+    specialItem: "Dragon Cap",
+    order: 12,
+    tips: "Ice and Fairy punish Dragon hardest. Fourth Elite room — last wall before Champion Rocco.",
+  },
+  hoenn_champion_rocco: {
+    slug: "Rocco",
+    type: "Mixed",
+    badge: "Champion",
+    biome: "Steppe (Hoenn league grounds)",
+    specialItem: "Steel Hat",
+    order: 13,
+    tips: "Mixed champion team headlined by box legendaries and weather-setters — pack answers for several types, not one gimmick.",
+  },
+};
+
+/** Sinnoh gym / E4 / Champion — RCT sinnoh_* ids. Order/type/badge confirmed against the real requiredDefeats chain (no swaps found). */
+const SINNOH_META = {
+  sinnoh_pedro: {
+    slug: "Pedro",
+    type: "Rock",
+    badge: "Coal Badge",
+    biome: "Volcanic Peaks",
+    specialItem: "Rock Casque",
+    order: 1,
+    tips: "Water, Grass, Fighting, and Ground answer Rock. Fire-resist gear helps near the vents on the way in.",
+  },
+  sinnoh_gardenia: {
+    slug: "Gardenia",
+    type: "Grass",
+    badge: "Forest Badge",
+    biome: "Blooming Valley",
+    specialItem: "Grass Aroma",
+    order: 2,
+    tips: "Fire, Flying, Ice, Bug, and Poison pressure Grass. Sleep Powder / Stun Spore can stall — bring cleansers.",
+  },
+  sinnoh_marzia: {
+    slug: "Marzia",
+    type: "Fighting",
+    badge: "Cobble Badge",
+    biome: "Lush Desert",
+    specialItem: "Fighting Bandage",
+    order: 3,
+    tips: "Flying, Psychic, and Fairy answer Fighting. Mixed biome — bring water and shade for the trip.",
+  },
+  sinnoh_omar: {
+    slug: "Omar",
+    type: "Water",
+    badge: "Fen Badge",
+    biome: "Beach",
+    specialItem: "Water Mask",
+    order: 4,
+    tips: "Electric and Grass answer Water. Rain-setters can boost his team — Electric sweepers end this quickly.",
+  },
+  sinnoh_fannie: {
+    slug: "Fannie",
+    type: "Ghost",
+    badge: "Relic Badge",
+    biome: "Lavender Valley",
+    specialItem: "Ghost Pendant",
+    order: 5,
+    tips: "Dark and Ghost pressure Ghost — watch immunities. Destiny Bond / Will-O-Wisp can flip a fight late.",
+  },
+  sinnoh_ferruccio: {
+    slug: "Ferruccio",
+    type: "Steel",
+    badge: "Mine Badge",
+    biome: "Volcanic Crater",
+    specialItem: "Steel Spade",
+    order: 6,
+    tips: "Fire, Fighting, and Ground crack Steel. Skarmory / Steelix / Aggron wall physical hits — bring special or Fighting coverage.",
+  },
+  sinnoh_bianca: {
+    slug: "Bianca",
+    type: "Ice",
+    badge: "Icicle Badge",
+    biome: "Glacial Chasm",
+    specialItem: "Ice Ribbon",
+    order: 7,
+    tips: "Fire, Fighting, Rock, and Steel help into Ice. Weavile / Mamoswine hit hard physically — don't walk in underleveled.",
+  },
+  sinnoh_corrado: {
+    slug: "Corrado",
+    type: "Electric",
+    badge: "Beacon Badge",
+    biome: "Shrubland",
+    specialItem: "Electric Fuse",
+    order: 8,
+    tips: "Ground shuts Electric down completely. Last Sinnoh gym before the Elite Four — restock fully.",
+  },
+  sinnoh_league_aaron: {
+    slug: "Aaron",
+    type: "Bug",
+    badge: "Elite Four",
+    biome: "Desert Oasis (Sinnoh league grounds)",
+    specialItem: "Bug Net",
+    order: 9,
+    tips: "Fire, Flying, and Rock pressure Bug. Full heal before every Sinnoh Elite Four room — Aaron opens the gauntlet.",
+  },
+  sinnoh_league_terrie: {
+    slug: "Terrie",
+    type: "Ground",
+    badge: "Elite Four",
+    biome: "Desert Oasis (Sinnoh league grounds)",
+    specialItem: "Ground Shawl",
+    order: 10,
+    tips: "Water, Grass, and Ice answer Ground — Electric does nothing here. Restock after Aaron.",
+  },
+  sinnoh_league_vulcano: {
+    slug: "Vulcano",
+    type: "Fire",
+    badge: "Elite Four",
+    biome: "Desert Oasis (Sinnoh league grounds)",
+    specialItem: "Fire Flint",
+    order: 11,
+    tips: "Water, Ground, and Rock are reliable into Fire. Third Elite room — heal fully after Terrie.",
+  },
+  sinnoh_league_luciano: {
+    slug: "Luciano",
+    type: "Psychic",
+    badge: "Elite Four",
+    biome: "Desert Oasis (Sinnoh league grounds)",
+    specialItem: "Psychic Volume",
+    order: 12,
+    tips: "Dark, Bug, and Ghost pressure Psychic — keep a Dark-type on the team. Fourth room, last wall before Camilla.",
+  },
+  sinnoh_champion_camilla: {
+    slug: "Camilla",
+    type: "Mixed",
+    badge: "Champion",
+    biome: "Desert Oasis (Sinnoh league grounds)",
+    specialItem: "Draconic Fin",
+    order: 13,
+    tips: "Mixed champion team — pack answers for several types, not one gimmick. The final champion of the current gym line.",
+  },
+};
+
 function parseTrainerFile(filePath, id) {
   const data = readJson(filePath);
   const name =
@@ -429,7 +693,8 @@ function parseTrainerFile(filePath, id) {
 function parseTrainers() {
   const dir = path.join(RCT, "data", "rctmod", "trainers");
   const all = [];
-  if (!fs.existsSync(dir)) return { kantoLeaders: [], johtoLeaders: [], all: [] };
+  if (!fs.existsSync(dir))
+    return { kantoLeaders: [], johtoLeaders: [], hoennLeaders: [], sinnohLeaders: [], all: [] };
 
   for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
     const id = file.replace(/\.json$/, "");
@@ -464,6 +729,8 @@ function parseTrainers() {
   return {
     kantoLeaders: leadersFromMeta(KANTO_META),
     johtoLeaders: leadersFromMeta(JOHTO_META),
+    hoennLeaders: leadersFromMeta(HOENN_META),
+    sinnohLeaders: leadersFromMeta(SINNOH_META),
     all: all.sort((a, b) => a.name.localeCompare(b.name)),
   };
 }
@@ -831,6 +1098,8 @@ fs.writeFileSync(path.join(OUT, "advancements.json"), JSON.stringify(advancement
 
 console.log(`Parsed economy shop sections=${economy.shop.length} bank=${economy.bank.length}`);
 console.log(`Parsed raid tiers=${raids.tiers.length} bosses=${raids.bosses.length}`);
-console.log(`Parsed trainers=${trainers.all.length} kanto leaders=${trainers.kantoLeaders.length}`);
+console.log(
+  `Parsed trainers=${trainers.all.length} kanto=${trainers.kantoLeaders.length} johto=${trainers.johtoLeaders.length} hoenn=${trainers.hoennLeaders.length} sinnoh=${trainers.sinnohLeaders.length}`
+);
 console.log(`Parsed spawn rows=${spawns.length}`);
 console.log(`Parsed advancements=${advancements.count}`);

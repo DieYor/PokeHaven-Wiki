@@ -2571,6 +2571,2683 @@
       "tips": "Ice and Fairy matter; Lugia as ace changes the endgame. Pack multiple win conditions."
     }
   ],
+  "hoennLeaders": [
+    {
+      "id": "hoenn_petra",
+      "name": "Petra",
+      "team": [
+        {
+          "slot": 1,
+          "species": "geodude",
+          "level": 20,
+          "ability": "sturdy",
+          "nature": "relaxed",
+          "gender": "MALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "rockthrow",
+            "bulldoze",
+            "thunderpunch",
+            "flamethrower"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "onix",
+          "level": 20,
+          "ability": "sturdy",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "smackdown",
+            "earthquake",
+            "irontail",
+            "facade"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "omanyte",
+          "level": 19,
+          "ability": "shellarmor",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "watergun",
+            "icebeam",
+            "ancientpower",
+            "surf"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "nosepass",
+          "level": 21,
+          "ability": "magnetpull",
+          "nature": "quiet",
+          "gender": "FEMALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "powergem",
+            "thunderbolt",
+            "earthpower",
+            "terablast"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x1"
+      ],
+      "rawName": {
+        "literal": "Petra"
+      },
+      "region": "hoenn",
+      "file": "hoenn_petra.json",
+      "slug": "Petra",
+      "type": "Rock",
+      "badge": "Stone Badge",
+      "biome": "Rocky Mountains",
+      "specialItem": "Rock Tome",
+      "order": 1,
+      "tips": "Water, Grass, Fighting, and Ground answer Rock hard. Watch Thunder Punch / Flamethrower coverage on her Geodude."
+    },
+    {
+      "id": "hoenn_rudi",
+      "name": "Rudi",
+      "team": [
+        {
+          "slot": 1,
+          "species": "conkeldurr",
+          "level": 29,
+          "ability": "guts",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "lowsweep",
+            "knockoff",
+            "earthquake",
+            "icepunch"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "hariyama",
+          "level": 28,
+          "ability": "thickfat",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Oran Berry",
+          "moves": [
+            "closecombat",
+            "knockoff",
+            "facade",
+            "bulletpunch"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "heracross",
+          "level": 27,
+          "ability": "moxie",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Heracronite",
+          "moves": [
+            "stoneedge",
+            "brickbreak",
+            "hornattack",
+            "bulldoze"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "machamp",
+          "level": 30,
+          "ability": "guts",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "stoneedge",
+            "brickbreak",
+            "seismictoss",
+            "knockoff"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x1"
+      ],
+      "rawName": {
+        "literal": "Rudi"
+      },
+      "region": "hoenn",
+      "file": "hoenn_rudi.json",
+      "slug": "Rudi",
+      "type": "Fighting",
+      "badge": "Knuckle Badge",
+      "biome": "Yosemite Cliffs",
+      "specialItem": "Fighting Glove",
+      "order": 2,
+      "tips": "Flying, Psychic, and Fairy answer Fighting. This is a vertical map — bring blocks or a Flying mount for the ledges."
+    },
+    {
+      "id": "hoenn_walter",
+      "name": "Walter",
+      "team": [
+        {
+          "slot": 1,
+          "species": "toxtricity",
+          "level": 34,
+          "ability": "technician",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "thunderpunch",
+            "trailblaze",
+            "gyroball",
+            "poisonjab"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "zebstrika",
+          "level": 36,
+          "ability": "sapsipper",
+          "nature": "hardy",
+          "gender": "MALE",
+          "heldItem": "Air Balloon",
+          "moves": [
+            "spark",
+            "trailblaze",
+            "highhorsepower",
+            "smartstrike"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "manectric",
+          "level": 35,
+          "ability": "static",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Manectite",
+          "moves": [
+            "shockwave",
+            "thunderbolt",
+            "flamethrower",
+            "irontail"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "ampharos",
+          "level": 33,
+          "ability": "static",
+          "nature": "quirky",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "icepunch",
+            "thunderbolt",
+            "powergem",
+            "dazzlinggleam"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x2"
+      ],
+      "rawName": {
+        "literal": "Walter"
+      },
+      "region": "hoenn",
+      "file": "hoenn_walter.json",
+      "slug": "Walter",
+      "type": "Electric",
+      "badge": "Dynamo Badge",
+      "biome": "Arid Highlands",
+      "specialItem": "Electric Connector",
+      "order": 3,
+      "tips": "Ground shuts Electric down completely; Grass also resists. Dry biome — bring extra water and food for the hike."
+    },
+    {
+      "id": "hoenn_fiammetta",
+      "name": "Fiammetta",
+      "team": [
+        {
+          "slot": 1,
+          "species": "magcargo",
+          "level": 39,
+          "ability": "flamebody",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Weakness Policy",
+          "moves": [
+            "mudshot",
+            "burningjealousy",
+            "gyroball",
+            "reflect"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "houndoom",
+          "level": 38,
+          "ability": "earlybird",
+          "nature": "brave",
+          "gender": "FEMALE",
+          "heldItem": "Houndoominite",
+          "moves": [
+            "thunderfang",
+            "trailblaze",
+            "flamethrower",
+            "sludgebomb"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "camerupt",
+          "level": 42,
+          "ability": "angerpoint",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "flashcannon",
+            "highhorsepower",
+            "lashout",
+            "temperflare"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "rapidash",
+          "level": 41,
+          "ability": "flashfire",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "smartstrike",
+            "flamethrower",
+            "poisonjab",
+            "protect"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x3"
+      ],
+      "rawName": {
+        "literal": "Fiammetta"
+      },
+      "region": "hoenn",
+      "file": "hoenn_fiammetta.json",
+      "slug": "Fiammetta",
+      "type": "Fire",
+      "badge": "Heat Badge",
+      "biome": "Forested Highlands",
+      "specialItem": "Fire Lighter",
+      "order": 4,
+      "tips": "Water, Ground, and Rock are reliable into Fire. Don't walk in with a team still mono-Grass from earlier gyms."
+    },
+    {
+      "id": "hoenn_norman",
+      "name": "Norman",
+      "team": [
+        {
+          "slot": 1,
+          "species": "spinda",
+          "level": 48,
+          "ability": "contrary",
+          "nature": "bold",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "psychic",
+            "shockwave",
+            "uproar",
+            "shadowball"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "slaking",
+          "level": 49,
+          "ability": "truant",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "zenheadbutt",
+            "bodyslam",
+            "rocktomb",
+            "seedbomb"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "kangaskhan",
+          "level": 50,
+          "ability": "scrappy",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Kangaskhanite",
+          "moves": [
+            "aerialace",
+            "earthquake",
+            "strength",
+            "drainpunch"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "blissey",
+          "level": 48,
+          "ability": "naturalcure",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Shell Bell",
+          "moves": [
+            "disarmingvoice",
+            "lifedew",
+            "covet",
+            "sing"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "linoone",
+          "level": 49,
+          "ability": "quickfeet",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "facade",
+            "shadowclaw",
+            "dig",
+            "protect"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x3"
+      ],
+      "rawName": {
+        "literal": "Norman"
+      },
+      "region": "hoenn",
+      "file": "hoenn_norman.json",
+      "slug": "Norman",
+      "type": "Normal",
+      "badge": "Balance Badge",
+      "biome": "Brushland",
+      "specialItem": "Normal Tablet",
+      "order": 5,
+      "tips": "Fighting is the cleanest answer to Normal; Ghost immunities help too. Bulky Normals can stall — bring status or a Fighting pivot."
+    },
+    {
+      "id": "hoenn_alice",
+      "name": "Alice",
+      "team": [
+        {
+          "slot": 1,
+          "species": "altaria",
+          "level": 52,
+          "ability": "naturalcure",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Altarianite",
+          "moves": [
+            "fly",
+            "playrough",
+            "flamethrower",
+            "icebeam"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "tropius",
+          "level": 53,
+          "ability": "chlorophyll",
+          "nature": "gentle",
+          "gender": "FEMALE",
+          "heldItem": "Miracle Seed",
+          "moves": [
+            "sunnyday",
+            "gigadrain",
+            "stompingtantrum",
+            "zenheadbutt"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "skarmory",
+          "level": 56,
+          "ability": "sturdy",
+          "nature": "hasty",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "ironhead",
+            "darkpulse",
+            "aerialace",
+            "bravebird"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "pelipper",
+          "level": 53,
+          "ability": "raindish",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Scope Lens",
+          "moves": [
+            "raindance",
+            "hydropump",
+            "fly",
+            "seedbomb"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "noctowl",
+          "level": 54,
+          "ability": "tintedlens",
+          "nature": "naughty",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "extrasensory",
+            "shadowball",
+            "hypervoice",
+            "aircutter"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x4"
+      ],
+      "rawName": {
+        "literal": "Alice"
+      },
+      "region": "hoenn",
+      "file": "hoenn_alice.json",
+      "slug": "Alice",
+      "type": "Flying",
+      "badge": "Feather Badge",
+      "biome": "Moonlight Grove",
+      "specialItem": "Flying Feather",
+      "order": 6,
+      "tips": "Electric, Rock, and Ice punish Flying hard. Dim biome — bring light sources and food for the trip."
+    },
+    {
+      "id": "hoenn_tell",
+      "name": "Tell",
+      "team": [
+        {
+          "slot": 1,
+          "species": "solrock",
+          "level": 61,
+          "ability": "levitate",
+          "nature": "modest",
+          "gender": "GENDERLESS",
+          "heldItem": "Scope Lens",
+          "moves": [
+            "gyroball",
+            "shadowball",
+            "psychic",
+            "stoneedge"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "lunatone",
+          "level": 62,
+          "ability": "levitate",
+          "nature": "modest",
+          "gender": "GENDERLESS",
+          "heldItem": "Choice Scarf",
+          "moves": [
+            "moonblast",
+            "icebeam",
+            "bulldoze",
+            "grassknot"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "gallade",
+          "level": 60,
+          "ability": "justified",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "drainingkiss",
+            "sacredsword",
+            "psychocut",
+            "nightshade"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "gardevoir",
+          "level": 62,
+          "ability": "synchronize",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Gardevoirite",
+          "moves": [
+            "lifedew",
+            "mistyterrain",
+            "moonblast",
+            "shadowball"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "claydol",
+          "level": 62,
+          "ability": "levitate",
+          "nature": "mild",
+          "gender": "GENDERLESS",
+          "heldItem": "Choice Scarf",
+          "moves": [
+            "earthpower",
+            "extrasensory",
+            "substitute",
+            "dazzlinggleam"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "gothitelle",
+          "level": 61,
+          "ability": "competitive",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "zenheadbutt",
+            "drainpunch",
+            "darkpulse",
+            "shadowball"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Tell"
+      },
+      "region": "hoenn",
+      "file": "hoenn_tell.json",
+      "slug": "Tell",
+      "type": "Psychic",
+      "badge": "Mind Badge",
+      "biome": "Amethyst Rainforest",
+      "specialItem": "Psychic Medallion",
+      "order": 7,
+      "tips": "Dark, Bug, and Ghost pressure Psychic — Dark-types ignore his STAB entirely. Dense biome, claim a rest stop near the gym."
+    },
+    {
+      "id": "hoenn_adriano",
+      "name": "Adriano",
+      "team": [
+        {
+          "slot": 1,
+          "species": "gyarados",
+          "level": 70,
+          "ability": "intimidate",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Gyaradosite",
+          "moves": [
+            "waterfall",
+            "earthquake",
+            "dragondance",
+            "crunch"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "tentacruel",
+          "level": 70,
+          "ability": "clearbody",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "surf",
+            "sludgebomb",
+            "toxicspikes",
+            "thief"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "milotic",
+          "level": 70,
+          "ability": "marvelscale",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Weakness Policy",
+          "moves": [
+            "surf",
+            "icebeam",
+            "recover",
+            "dragontail"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "swampert",
+          "level": 70,
+          "ability": "damp",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Swampertite",
+          "moves": [
+            "waterfall",
+            "knockoff",
+            "poisonjab",
+            "earthquake"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "ludicolo",
+          "level": 70,
+          "ability": "raindish",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "raindance",
+            "disarmingvoice",
+            "energyball",
+            "surf"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "wailord",
+          "level": 70,
+          "ability": "pressure",
+          "nature": "calm",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "earthquake",
+            "waterspout",
+            "avalanche",
+            "waterpulse"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Adriano"
+      },
+      "region": "hoenn",
+      "file": "hoenn_adriano.json",
+      "slug": "Adriano",
+      "type": "Water",
+      "badge": "Rain Badge",
+      "biome": "Cold Ocean",
+      "specialItem": "Water Rod",
+      "order": 8,
+      "tips": "Electric and Grass answer Water. Last Hoenn gym before the Elite Four — full heal and restock before the league gauntlet."
+    },
+    {
+      "id": "hoenn_league_fosco",
+      "name": "Fosco",
+      "team": [
+        {
+          "slot": 1,
+          "species": "mightyena",
+          "level": 77,
+          "ability": "quickfeet",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Scope Lens",
+          "moves": [
+            "playrough",
+            "firefang",
+            "psychicfangs",
+            "throatchop"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "shiftry",
+          "level": 77,
+          "ability": "chlorophyll",
+          "nature": "quiet",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "extrasensory",
+            "gigadrain",
+            "darkpulse",
+            "airslash"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "zoroark",
+          "level": 77,
+          "ability": "illusion",
+          "nature": "hardy",
+          "gender": "FEMALE",
+          "heldItem": "Choice Scarf",
+          "moves": [
+            "flamethrower",
+            "extrasensory",
+            "sludgebomb",
+            "suckerpunch"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "crawdaunt",
+          "level": 77,
+          "ability": "shellarmor",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Scope Lens",
+          "moves": [
+            "knockoff",
+            "crabhammer",
+            "metalclaw",
+            "sludgewave"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "zangoose",
+          "level": 77,
+          "ability": "immunity",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "zenheadbutt",
+            "lowsweep",
+            "rocktomb",
+            "dig"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "absol",
+          "level": 77,
+          "ability": "superluck",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Absolite",
+          "moves": [
+            "knockoff",
+            "zenheadbutt",
+            "aerialace",
+            "playrough"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Fosco"
+      },
+      "region": "hoenn",
+      "file": "hoenn_league_fosco.json",
+      "slug": "Fosco",
+      "type": "Dark",
+      "badge": "Elite Four",
+      "biome": "Steppe (Hoenn league grounds)",
+      "specialItem": "Dark Bass",
+      "order": 9,
+      "tips": "Fighting, Bug, and Fairy pressure Dark. Full heal before every Hoenn Elite Four room — Fosco opens the gauntlet."
+    },
+    {
+      "id": "hoenn_league_ester",
+      "name": "Ester",
+      "team": [
+        {
+          "slot": 1,
+          "species": "dusknoir",
+          "level": 82,
+          "ability": "pressure",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "phantomforce",
+            "darkpulse",
+            "psychic",
+            "icebeam"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "chandelure",
+          "level": 82,
+          "ability": "flamebody",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "terablast",
+            "psychic",
+            "shadowball",
+            "fireblast"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "banette",
+          "level": 82,
+          "ability": "cursedbody",
+          "nature": "hardy",
+          "gender": "FEMALE",
+          "heldItem": "Banettite",
+          "moves": [
+            "phantomforce",
+            "suckerpunch",
+            "facade",
+            "dazzlinggleam"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "drifblim",
+          "level": 82,
+          "ability": "aftermath",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "airslash",
+            "shadowball",
+            "psychic",
+            "thunderbolt"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "gengar",
+          "level": 82,
+          "ability": "cursedbody",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "dazzlinggleam",
+            "sludgewave",
+            "shadowball",
+            "drainpunch"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "trevenant",
+          "level": 82,
+          "ability": "naturalcure",
+          "nature": "impish",
+          "gender": "MALE",
+          "heldItem": "Choice Specs",
+          "moves": [
+            "woodhammer",
+            "phantomforce",
+            "earthquake",
+            "knockoff"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Ester"
+      },
+      "region": "hoenn",
+      "file": "hoenn_league_ester.json",
+      "slug": "Ester",
+      "type": "Ghost",
+      "badge": "Elite Four",
+      "biome": "Steppe (Hoenn league grounds)",
+      "specialItem": "Ghost Bloom",
+      "order": 10,
+      "tips": "Dark and Ghost pressure Ghost back — watch immunities both ways. Restock between rooms."
+    },
+    {
+      "id": "hoenn_league_frida",
+      "name": "Frida",
+      "team": [
+        {
+          "slot": 1,
+          "species": "glalie",
+          "level": 86,
+          "ability": "icebody",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Glalitite",
+          "moves": [
+            "bulldoze",
+            "waterpulse",
+            "ironhead",
+            "darkpulse"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "froslass",
+          "level": 86,
+          "ability": "cursedbody",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "drainingkiss",
+            "shadowball",
+            "avalanche",
+            "thunderbolt"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "beartic",
+          "level": 86,
+          "ability": "slushrush",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "icefang",
+            "rockslide",
+            "brickbreak",
+            "xscissor"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "abomasnow",
+          "level": 86,
+          "ability": "snowwarning",
+          "nature": "hardy",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "woodhammer",
+            "bodypress",
+            "icespinner",
+            "stompingtantrum"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "aurorus",
+          "level": 86,
+          "ability": "refrigerate",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "round",
+            "ancientpower",
+            "aurorabeam",
+            "bulldoze"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "baxcalibur",
+          "level": 86,
+          "ability": "icebody",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "dragonclaw",
+            "icefang",
+            "aerialace",
+            "ironhead"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Frida"
+      },
+      "region": "hoenn",
+      "file": "hoenn_league_frida.json",
+      "slug": "Frida",
+      "type": "Ice",
+      "badge": "Elite Four",
+      "biome": "Steppe (Hoenn league grounds)",
+      "specialItem": "Ice Necklace",
+      "order": 11,
+      "tips": "Fire, Fighting, Rock, and Steel help into Ice. Third Elite room — heal fully after Ester, don't underlevel."
+    },
+    {
+      "id": "hoenn_league_drake",
+      "name": "Drake",
+      "team": [
+        {
+          "slot": 1,
+          "species": "flygon",
+          "level": 91,
+          "ability": "levitate",
+          "nature": "gentle",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "dragonclaw",
+            "fly",
+            "rockslide",
+            "gigadrain"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "dragalge",
+          "level": 91,
+          "ability": "poisonpoint",
+          "nature": "relaxed",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "sludgebomb",
+            "dragonpulse",
+            "surf",
+            "shadowball"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "goodra",
+          "level": 91,
+          "ability": "hydration",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "raindance",
+            "sludgewave",
+            "dragonclaw",
+            "surf"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "drampa",
+          "level": 91,
+          "ability": "berserk",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "steelwing",
+            "hypervoice",
+            "protect",
+            "bulldoze"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "salamence",
+          "level": 91,
+          "ability": "aerilate",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Salamencite",
+          "moves": [
+            "dragonclaw",
+            "earthquake",
+            "ironhead",
+            "return"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "hydreigon",
+          "level": 91,
+          "ability": "levitate",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "dragonpulse",
+            "flashcannon",
+            "uturn",
+            "rocktomb"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Drake"
+      },
+      "region": "hoenn",
+      "file": "hoenn_league_drake.json",
+      "slug": "Drake",
+      "type": "Dragon",
+      "badge": "Elite Four",
+      "biome": "Steppe (Hoenn league grounds)",
+      "specialItem": "Dragon Cap",
+      "order": 12,
+      "tips": "Ice and Fairy punish Dragon hardest. Fourth Elite room — last wall before Champion Rocco."
+    },
+    {
+      "id": "hoenn_champion_rocco",
+      "name": "Rocco",
+      "team": [
+        {
+          "slot": 1,
+          "species": "kyogre",
+          "level": 100,
+          "ability": "drizzle",
+          "nature": "mild",
+          "gender": "GENDERLESS",
+          "heldItem": "Leftovers",
+          "moves": [
+            "ironhead",
+            "waterfall",
+            "earthquake",
+            "ancientpower"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "groudon",
+          "level": 100,
+          "ability": "drought",
+          "nature": "adamant",
+          "gender": "GENDERLESS",
+          "heldItem": "Air Balloon",
+          "moves": [
+            "firepunch",
+            "thunderpunch",
+            "rocktomb",
+            "zenheadbutt"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "latias",
+          "level": 100,
+          "ability": "levitate",
+          "nature": "adamant",
+          "gender": "GENDERLESS",
+          "heldItem": "Life Orb",
+          "moves": [
+            "alluringvoice",
+            "grassknot",
+            "psyshock",
+            "aurasphere"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "latios",
+          "level": 100,
+          "ability": "levitate",
+          "nature": "adamant",
+          "gender": "GENDERLESS",
+          "heldItem": "Life Orb",
+          "moves": [
+            "energyball",
+            "psychicnoise",
+            "dragonpulse",
+            "fly"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "deoxys",
+          "level": 100,
+          "ability": "pressure",
+          "nature": "calm",
+          "gender": "GENDERLESS",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "drainpunch",
+            "poisonjab",
+            "thunderpunch",
+            "zenheadbutt"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "metagross",
+          "level": 100,
+          "ability": "clearbody",
+          "nature": "timid",
+          "gender": "GENDERLESS",
+          "heldItem": "Metagrossite",
+          "moves": [
+            "ironhead",
+            "earthquake",
+            "bodypress",
+            "shadowclaw"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x6"
+      ],
+      "rawName": {
+        "literal": "Rocco"
+      },
+      "region": "hoenn",
+      "file": "hoenn_champion_rocco.json",
+      "slug": "Rocco",
+      "type": "Mixed",
+      "badge": "Champion",
+      "biome": "Steppe (Hoenn league grounds)",
+      "specialItem": "Steel Hat",
+      "order": 13,
+      "tips": "Mixed champion team headlined by box legendaries and weather-setters — pack answers for several types, not one gimmick."
+    }
+  ],
+  "sinnohLeaders": [
+    {
+      "id": "sinnoh_pedro",
+      "name": "Pedro",
+      "team": [
+        {
+          "slot": 1,
+          "species": "onix",
+          "level": 28,
+          "ability": "sturdy",
+          "nature": "impish",
+          "gender": "MALE",
+          "heldItem": "Rocky Helmet",
+          "moves": [
+            "stealthrock",
+            "rockslide",
+            "protect",
+            "earthquake"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "probopass",
+          "level": 26,
+          "ability": "sandforce",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "powergem",
+            "flashcannon",
+            "bodypress",
+            "discharge"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "relicanth",
+          "level": 27,
+          "ability": "rockhead",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "headsmash",
+            "waterfall",
+            "earthquake",
+            "stoneedge"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "rampardos",
+          "level": 30,
+          "ability": "sheerforce",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "rockslide",
+            "irontail",
+            "zenheadbutt",
+            "headsmash"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x2"
+      ],
+      "rawName": {
+        "literal": "Pedro"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_pedro.json",
+      "slug": "Pedro",
+      "type": "Rock",
+      "badge": "Coal Badge",
+      "biome": "Volcanic Peaks",
+      "specialItem": "Rock Casque",
+      "order": 1,
+      "tips": "Water, Grass, Fighting, and Ground answer Rock. Fire-resist gear helps near the vents on the way in."
+    },
+    {
+      "id": "sinnoh_gardenia",
+      "name": "Gardenia",
+      "team": [
+        {
+          "slot": 1,
+          "species": "sunflora",
+          "level": 33,
+          "ability": "solarpower",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "solarbeam",
+            "weatherball",
+            "sunnyday",
+            "hiddenpower"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "cherrim",
+          "level": 34,
+          "ability": "flowergift",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "dazzlinggleam",
+            "solarbeam",
+            "growth",
+            "sunnyday"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "breloom",
+          "level": 32,
+          "ability": "poisonheal",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Toxic Orb",
+          "moves": [
+            "focuspunch",
+            "leechseed",
+            "substitute",
+            "spore"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "torterra",
+          "level": 36,
+          "ability": "overgrow",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "woodhammer",
+            "earthquake",
+            "synthesis",
+            "leechseed"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "roserade",
+          "level": 35,
+          "ability": "naturalcure",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Power Herb",
+          "moves": [
+            "solarbeam",
+            "sludgebomb",
+            "grassyterrain",
+            "sunnyday"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x2"
+      ],
+      "rawName": {
+        "literal": "Gardenia"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_gardenia.json",
+      "slug": "Gardenia",
+      "type": "Grass",
+      "badge": "Forest Badge",
+      "biome": "Blooming Valley",
+      "specialItem": "Grass Aroma",
+      "order": 2,
+      "tips": "Fire, Flying, Ice, Bug, and Poison pressure Grass. Sleep Powder / Stun Spore can stall — bring cleansers."
+    },
+    {
+      "id": "sinnoh_marzia",
+      "name": "Marzia",
+      "team": [
+        {
+          "slot": 1,
+          "species": "hitmontop",
+          "level": 43,
+          "ability": "intimidate",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Expert Belt",
+          "moves": [
+            "closecombat",
+            "stoneedge",
+            "suckerpunch",
+            "knockoff"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "heracross",
+          "level": 42,
+          "ability": "guts",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Flame Orb",
+          "moves": [
+            "megahorn",
+            "closecombat",
+            "facade",
+            "stoneedge"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "infernape",
+          "level": 41,
+          "ability": "blaze",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "flareblitz",
+            "closecombat",
+            "thunderpunch",
+            "swordsdance"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "medicham",
+          "level": 40,
+          "ability": "purepower",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Choice Band",
+          "moves": [
+            "highjumpkick",
+            "zenheadbutt",
+            "firepunch",
+            "thunderpunch"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "lucario",
+          "level": 43,
+          "ability": "innerfocus",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "aurasphere",
+            "flashcannon",
+            "waterpulse",
+            "vacuumwave"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x3"
+      ],
+      "rawName": {
+        "literal": "Marzia"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_marzia.json",
+      "slug": "Marzia",
+      "type": "Fighting",
+      "badge": "Cobble Badge",
+      "biome": "Lush Desert",
+      "specialItem": "Fighting Bandage",
+      "order": 3,
+      "tips": "Flying, Psychic, and Fairy answer Fighting. Mixed biome — bring water and shade for the trip."
+    },
+    {
+      "id": "sinnoh_omar",
+      "name": "Omar",
+      "team": [
+        {
+          "slot": 1,
+          "species": "politoed",
+          "level": 48,
+          "ability": "drizzle",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Damp Rock",
+          "moves": [
+            "surf",
+            "icebeam",
+            "scald",
+            "perishsong"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "kingdra",
+          "level": 47,
+          "ability": "swiftswim",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Chesto Berry",
+          "moves": [
+            "hydropump",
+            "dragonpulse",
+            "icebeam",
+            "rest"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "ludicolo",
+          "level": 47,
+          "ability": "swiftswim",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Sitrus Berry",
+          "moves": [
+            "energyball",
+            "hydropump",
+            "substitute",
+            "raindance"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "huntail",
+          "level": 46,
+          "ability": "swiftswim",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "crunch",
+            "aquatail",
+            "icefang",
+            "shellsmash"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "gyarados",
+          "level": 49,
+          "ability": "intimidate",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Wacan Berry",
+          "moves": [
+            "waterfall",
+            "stoneedge",
+            "earthquake",
+            "dragondance"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "floatzel",
+          "level": 45,
+          "ability": "swiftswim",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "aquatail",
+            "brickbreak",
+            "crunch",
+            "icefang"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x3"
+      ],
+      "rawName": {
+        "literal": "Omar"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_omar.json",
+      "slug": "Omar",
+      "type": "Water",
+      "badge": "Fen Badge",
+      "biome": "Beach",
+      "specialItem": "Water Mask",
+      "order": 4,
+      "tips": "Electric and Grass answer Water. Rain-setters can boost his team — Electric sweepers end this quickly."
+    },
+    {
+      "id": "sinnoh_fannie",
+      "name": "Fannie",
+      "team": [
+        {
+          "slot": 1,
+          "species": "drifblim",
+          "level": 54,
+          "ability": "flareboost",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Flame Orb",
+          "moves": [
+            "shadowball",
+            "thunderbolt",
+            "psychic",
+            "strengthsap"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "banette",
+          "level": 53,
+          "ability": "cursedbody",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Iron Ball",
+          "moves": [
+            "shadowsneak",
+            "suckerpunch",
+            "snatch",
+            "trick"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "dusknoir",
+          "level": 55,
+          "ability": "pressure",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Sitrus Berry",
+          "moves": [
+            "shadowsneak",
+            "earthquake",
+            "willowisp",
+            "confuseray"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "mismagius",
+          "level": 54,
+          "ability": "levitate",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Expert Belt",
+          "moves": [
+            "shadowball",
+            "energyball",
+            "mysticalfire",
+            "dazzlinggleam"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "froslass",
+          "level": 53,
+          "ability": "cursedbody",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "hex",
+            "frostbreath",
+            "willowisp",
+            "destinybond"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "gengar",
+          "level": 55,
+          "ability": "cursedbody",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "hex",
+            "sludgebomb",
+            "focusblast",
+            "toxic"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x4"
+      ],
+      "rawName": {
+        "literal": "Fannie"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_fannie.json",
+      "slug": "Fannie",
+      "type": "Ghost",
+      "badge": "Relic Badge",
+      "biome": "Lavender Valley",
+      "specialItem": "Ghost Pendant",
+      "order": 5,
+      "tips": "Dark and Ghost pressure Ghost — watch immunities. Destiny Bond / Will-O-Wisp can flip a fight late."
+    },
+    {
+      "id": "sinnoh_ferruccio",
+      "name": "Ferruccio",
+      "team": [
+        {
+          "slot": 1,
+          "species": "skarmory",
+          "level": 57,
+          "ability": "sturdy",
+          "nature": "impish",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "steelwing",
+            "stealthrock",
+            "irondefense",
+            "taunt"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "steelix",
+          "level": 60,
+          "ability": "sheerforce",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "heavyslam",
+            "earthquake",
+            "icefang",
+            "crunch"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "magnezone",
+          "level": 59,
+          "ability": "analytic",
+          "nature": "quiet",
+          "gender": "GENDERLESS",
+          "heldItem": "Air Balloon",
+          "moves": [
+            "thunderbolt",
+            "flashcannon",
+            "lightscreen",
+            "magnetrise"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "empoleon",
+          "level": 59,
+          "ability": "torrent",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Expert Belt",
+          "moves": [
+            "surf",
+            "flashcannon",
+            "icebeam",
+            "roar"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "aggron",
+          "level": 58,
+          "ability": "rockhead",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Choice Scarf",
+          "moves": [
+            "headsmash",
+            "ironhead",
+            "earthquake",
+            "icepunch"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "bastiodon",
+          "level": 60,
+          "ability": "sturdy",
+          "nature": "brave",
+          "gender": "MALE",
+          "heldItem": "Lum Berry",
+          "moves": [
+            "heavyslam",
+            "metalburst",
+            "roar",
+            "stealthrock"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Ferruccio"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_ferruccio.json",
+      "slug": "Ferruccio",
+      "type": "Steel",
+      "badge": "Mine Badge",
+      "biome": "Volcanic Crater",
+      "specialItem": "Steel Spade",
+      "order": 6,
+      "tips": "Fire, Fighting, and Ground crack Steel. Skarmory / Steelix / Aggron wall physical hits — bring special or Fighting coverage."
+    },
+    {
+      "id": "sinnoh_bianca",
+      "name": "Bianca",
+      "team": [
+        {
+          "slot": 1,
+          "species": "abomasnow",
+          "level": 67,
+          "ability": "snowwarning",
+          "nature": "brave",
+          "gender": "FEMALE",
+          "heldItem": "Icy Rock",
+          "moves": [
+            "woodhammer",
+            "icepunch",
+            "leechseed",
+            "auroraveil"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "jynx",
+          "level": 66,
+          "ability": "dryskin",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "blizzard",
+            "focusblast",
+            "psychic",
+            "shadowball"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "mamoswine",
+          "level": 67,
+          "ability": "snowcloak",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Expert Belt",
+          "moves": [
+            "iceshard",
+            "earthquake",
+            "knockoff",
+            "protect"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "froslass",
+          "level": 67,
+          "ability": "snowcloak",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "blizzard",
+            "shadowball",
+            "doubleteam",
+            "auroraveil"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "glaceon",
+          "level": 66,
+          "ability": "icebody",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "blizzard",
+            "freezedry",
+            "babydolleyes",
+            "protect"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "weavile",
+          "level": 67,
+          "ability": "pressure",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "iceshard",
+            "nightslash",
+            "brickbreak",
+            "xscissor"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x5"
+      ],
+      "rawName": {
+        "literal": "Bianca"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_bianca.json",
+      "slug": "Bianca",
+      "type": "Ice",
+      "badge": "Icicle Badge",
+      "biome": "Glacial Chasm",
+      "specialItem": "Ice Ribbon",
+      "order": 7,
+      "tips": "Fire, Fighting, Rock, and Steel help into Ice. Weavile / Mamoswine hit hard physically — don't walk in underleveled."
+    },
+    {
+      "id": "sinnoh_corrado",
+      "name": "Corrado",
+      "team": [
+        {
+          "slot": 1,
+          "species": "pelipper",
+          "level": 75,
+          "ability": "drizzle",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Damp Rock",
+          "moves": [
+            "hydropump",
+            "hurricane",
+            "icebeam",
+            "uturn"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "raichu",
+          "level": 75,
+          "ability": "lightningrod",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Choice Scarf",
+          "moves": [
+            "thunder",
+            "surf",
+            "focusblast",
+            "voltswitch"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "luxray",
+          "level": 75,
+          "ability": "intimidate",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "icefang",
+            "playrough",
+            "voltswitch",
+            "electricterrain"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "lanturn",
+          "level": 75,
+          "ability": "voltabsorb",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Expert Belt",
+          "moves": [
+            "thunder",
+            "surf",
+            "icebeam",
+            "voltswitch"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "jolteon",
+          "level": 75,
+          "ability": "quickfeet",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "thunder",
+            "reflect",
+            "shadowball",
+            "voltswitch"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "electivire",
+          "level": 75,
+          "ability": "motordrive",
+          "nature": "hasty",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "thunder",
+            "flamethrower",
+            "crosschop",
+            "earthquake"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x6"
+      ],
+      "rawName": {
+        "literal": "Corrado"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_corrado.json",
+      "slug": "Corrado",
+      "type": "Electric",
+      "badge": "Beacon Badge",
+      "biome": "Shrubland",
+      "specialItem": "Electric Fuse",
+      "order": 8,
+      "tips": "Ground shuts Electric down completely. Last Sinnoh gym before the Elite Four — restock fully."
+    },
+    {
+      "id": "sinnoh_league_aaron",
+      "name": "Aaron",
+      "team": [
+        {
+          "slot": 1,
+          "species": "dustox",
+          "level": 82,
+          "ability": "shielddust",
+          "nature": "bold",
+          "gender": "FEMALE",
+          "heldItem": "Black Sludge",
+          "moves": [
+            "toxic",
+            "bugbuzz",
+            "moonlight",
+            "lightscreen"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "beautifly",
+          "level": 82,
+          "ability": "swarm",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "bugbuzz",
+            "shadowball",
+            "psychic",
+            "quiverdance"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "vespiquen",
+          "level": 82,
+          "ability": "unnerve",
+          "nature": "adamant",
+          "gender": "FEMALE",
+          "heldItem": "Sitrus Berry",
+          "moves": [
+            "acrobatics",
+            "attackorder",
+            "aerialace",
+            "defendorder"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "heracross",
+          "level": 82,
+          "ability": "guts",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Flame Orb",
+          "moves": [
+            "earthquake",
+            "rockslide",
+            "facade",
+            "brickbreak"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "drapion",
+          "level": 82,
+          "ability": "sniper",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "crosspoison",
+            "nightslash",
+            "earthquake",
+            "swordsdance"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "yanmega",
+          "level": 82,
+          "ability": "tintedlens",
+          "nature": "modest",
+          "gender": "FEMALE",
+          "heldItem": "Choice Specs",
+          "moves": [
+            "bugbuzz",
+            "airslash",
+            "protect",
+            "gigadrain"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x6"
+      ],
+      "rawName": {
+        "literal": "Aaron"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_league_aaron.json",
+      "slug": "Aaron",
+      "type": "Bug",
+      "badge": "Elite Four",
+      "biome": "Desert Oasis (Sinnoh league grounds)",
+      "specialItem": "Bug Net",
+      "order": 9,
+      "tips": "Fire, Flying, and Rock pressure Bug. Full heal before every Sinnoh Elite Four room — Aaron opens the gauntlet."
+    },
+    {
+      "id": "sinnoh_league_terrie",
+      "name": "Terrie",
+      "team": [
+        {
+          "slot": 1,
+          "species": "quagsire",
+          "level": 84,
+          "ability": "waterabsorb",
+          "nature": "impish",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "recover",
+            "toxic",
+            "earthquake",
+            "surf"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "sudowoodo",
+          "level": 84,
+          "ability": "rockhead",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Choice Band",
+          "moves": [
+            "headsmash"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "golem",
+          "level": 84,
+          "ability": "sturdy",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Weakness Policy",
+          "moves": [
+            "rockpolish",
+            "heavyslam",
+            "earthquake",
+            "stoneedge"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "whiscash",
+          "level": 84,
+          "ability": "hydration",
+          "nature": "modest",
+          "gender": "MALE",
+          "heldItem": "Rindo Berry",
+          "moves": [
+            "rest",
+            "icebeam",
+            "earthpower",
+            "hydropump"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "hippowdon",
+          "level": 84,
+          "ability": "sandstream",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Chesto Berry",
+          "moves": [
+            "icefang",
+            "earthquake",
+            "crunch",
+            "rest"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "gastrodon",
+          "level": 84,
+          "ability": "stormdrain",
+          "nature": "calm",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "recover",
+            "earthpower",
+            "scald",
+            "toxic"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x6"
+      ],
+      "rawName": {
+        "literal": "Terrie"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_league_terrie.json",
+      "slug": "Terrie",
+      "type": "Ground",
+      "badge": "Elite Four",
+      "biome": "Desert Oasis (Sinnoh league grounds)",
+      "specialItem": "Ground Shawl",
+      "order": 10,
+      "tips": "Water, Grass, and Ice answer Ground — Electric does nothing here. Restock after Aaron."
+    },
+    {
+      "id": "sinnoh_league_vulcano",
+      "name": "Vulcano",
+      "team": [
+        {
+          "slot": 1,
+          "species": "rapidash",
+          "level": 86,
+          "ability": "flamebody",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Wide Lens",
+          "moves": [
+            "hypnosis",
+            "highhorsepower",
+            "wildcharge",
+            "flareblitz"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "steelix",
+          "level": 86,
+          "ability": "sheerforce",
+          "nature": "adamant",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "ironhead",
+            "dragontail",
+            "earthquake",
+            "crunch"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "drifblim",
+          "level": 86,
+          "ability": "unburden",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Sitrus Berry",
+          "moves": [
+            "substitute",
+            "strengthsap",
+            "batonpass",
+            "willowisp"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "lopunny",
+          "level": 86,
+          "ability": "klutz",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Flame Orb",
+          "moves": [
+            "facade",
+            "highjumpkick",
+            "thunderpunch",
+            "substitute"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "infernape",
+          "level": 86,
+          "ability": "ironfist",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "firepunch",
+            "thunderpunch",
+            "closecombat",
+            "machpunch"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "magmortar",
+          "level": 86,
+          "ability": "flamebody",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "firepunch",
+            "thunderpunch",
+            "closecombat",
+            "machpunch"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x6"
+      ],
+      "rawName": {
+        "literal": "Vulcano"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_league_vulcano.json",
+      "slug": "Vulcano",
+      "type": "Fire",
+      "badge": "Elite Four",
+      "biome": "Desert Oasis (Sinnoh league grounds)",
+      "specialItem": "Fire Flint",
+      "order": 11,
+      "tips": "Water, Ground, and Rock are reliable into Fire. Third Elite room — heal fully after Terrie."
+    },
+    {
+      "id": "sinnoh_league_luciano",
+      "name": "Luciano",
+      "team": [
+        {
+          "slot": 1,
+          "species": "mrmime",
+          "level": 90,
+          "ability": "filter",
+          "nature": "bold",
+          "gender": "MALE",
+          "heldItem": "Light Clay",
+          "moves": [
+            "lightscreen",
+            "reflect",
+            "psychic",
+            "dazzlinggleam"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "girafarig",
+          "level": 90,
+          "ability": "magicbounce",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "psychic",
+            "thunderwave",
+            "batonpass",
+            "nastyplot"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "bronzong",
+          "level": 90,
+          "ability": "levitate",
+          "nature": "brave",
+          "gender": "GENDERLESS",
+          "heldItem": "Muscle Band",
+          "moves": [
+            "gyroball",
+            "earthquake",
+            "payback",
+            "rockslide"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "alakazam",
+          "level": 90,
+          "ability": "magicguard",
+          "nature": "timid",
+          "gender": "MALE",
+          "heldItem": "Life Orb",
+          "moves": [
+            "nastyplot",
+            "psychic",
+            "dazzlinggleam",
+            "shadowball"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "medicham",
+          "level": 90,
+          "ability": "purepower",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Choice Band",
+          "moves": [
+            "highjumpkick",
+            "thunderpunch",
+            "zenheadbutt",
+            "fakeout"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "gallade",
+          "level": 90,
+          "ability": "steadfast",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Sitrus Berry",
+          "moves": [
+            "closecombat",
+            "psychocut",
+            "poisonjab",
+            "shadowsneak"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x6"
+      ],
+      "rawName": {
+        "literal": "Luciano"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_league_luciano.json",
+      "slug": "Luciano",
+      "type": "Psychic",
+      "badge": "Elite Four",
+      "biome": "Desert Oasis (Sinnoh league grounds)",
+      "specialItem": "Psychic Volume",
+      "order": 12,
+      "tips": "Dark, Bug, and Ghost pressure Psychic — keep a Dark-type on the team. Fourth room, last wall before Camilla."
+    },
+    {
+      "id": "sinnoh_champion_camilla",
+      "name": "Camilla",
+      "team": [
+        {
+          "slot": 1,
+          "species": "spiritomb",
+          "level": 100,
+          "ability": "pressure",
+          "nature": "quiet",
+          "gender": "MALE",
+          "heldItem": "Sitrus Berry",
+          "moves": [
+            "shadowball",
+            "darkpulse",
+            "willowisp",
+            "suckerpunch"
+          ]
+        },
+        {
+          "slot": 2,
+          "species": "porygonz",
+          "level": 100,
+          "ability": "adaptability",
+          "nature": "timid",
+          "gender": "GENDERLESS",
+          "heldItem": "Expert Belt",
+          "moves": [
+            "triattack",
+            "shadowball",
+            "icebeam",
+            "thunderbolt"
+          ]
+        },
+        {
+          "slot": 3,
+          "species": "togekiss",
+          "level": 100,
+          "ability": "serenegrace",
+          "nature": "timid",
+          "gender": "FEMALE",
+          "heldItem": "Leftovers",
+          "moves": [
+            "airslash",
+            "dazzlinggleam",
+            "aurasphere",
+            "thunderwave"
+          ]
+        },
+        {
+          "slot": 4,
+          "species": "lucario",
+          "level": 100,
+          "ability": "justified",
+          "nature": "jolly",
+          "gender": "MALE",
+          "heldItem": "Focus Sash",
+          "moves": [
+            "closecombat",
+            "meteormash",
+            "earthquake",
+            "extremespeed"
+          ]
+        },
+        {
+          "slot": 5,
+          "species": "milotic",
+          "level": 100,
+          "ability": "marvelscale",
+          "nature": "bold",
+          "gender": "FEMALE",
+          "heldItem": "Flame Orb",
+          "moves": [
+            "recover",
+            "mirrorcoat",
+            "icebeam",
+            "scald"
+          ]
+        },
+        {
+          "slot": 6,
+          "species": "garchomp",
+          "level": 100,
+          "ability": "roughskin",
+          "nature": "jolly",
+          "gender": "FEMALE",
+          "heldItem": "Yache Berry",
+          "moves": [
+            "dragonclaw",
+            "earthquake",
+            "swordsdance",
+            "poisonjab"
+          ]
+        }
+      ],
+      "bag": [
+        "Full Restore x7"
+      ],
+      "rawName": {
+        "literal": "Camilla"
+      },
+      "region": "sinnoh",
+      "file": "sinnoh_champion_camilla.json",
+      "slug": "Camilla",
+      "type": "Mixed",
+      "badge": "Champion",
+      "biome": "Desert Oasis (Sinnoh league grounds)",
+      "specialItem": "Draconic Fin",
+      "order": 13,
+      "tips": "Mixed champion team — pack answers for several types, not one gimmick. The final champion of the current gym line."
+    }
+  ],
   "all": [
     {
       "id": "sinnoh_league_aaron",
