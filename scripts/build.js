@@ -2106,7 +2106,8 @@ writePage("Quests.html", {
   infobox: `<div class="infobox-title">Quest book</div>
   <table>
     <tr><th>Open</th><td><kbd>O</kbd> (FTB Quests)</td></tr>
-    <tr><th>Chapters</th><td>15</td></tr>
+    <tr><th>Chapters</th><td>36</td></tr>
+    <tr><th>Quests</th><td>296</td></tr>
     <tr><th>Languages</th><td>English + Nederlands in-game</td></tr>
     <tr><th>Progress</th><td>Server-tracked — safe to reconnect</td></tr>
     <tr><th>Related</th><td><a href="Achievements.html">Advancements</a> · <a href="Progression.html">Progression</a></td></tr>
@@ -2130,16 +2131,17 @@ writePage("Quests.html", {
   </div>
 
   <h2>Chapter map</h2>
-  <p>About <strong>25 chapters / 160+ quests</strong>. Side Paths never block gym progress.</p>
+  <p>About <strong>36 chapters / 296 quests</strong>. Side Paths never block gym progress.</p>
   <table class="wikitable">
     <thead><tr><th>Group</th><th>Chapters</th><th>What they cover</th></tr></thead>
     <tbody>
       <tr><td>PokeHaven</td><td>First Steps · Settling In</td><td>Starter, catch, claim, Brock — then waystone / heal basics</td></tr>
-      <tr><td>Side Paths</td><td>Economy · Travel · Village · Fishing · Community</td><td>Money loop, waystones/BlueMap, villages, rods, wiki/Discord/keys</td></tr>
-      <tr><td>Kanto League</td><td>Kanto Gyms · Indigo Plateau · Kanto Region Kit</td><td>Misty → Blue + coverage kit</td></tr>
-      <tr><td>Johto / Hoenn / Sinnoh</td><td>Gyms · League · Region Kit each</td><td>Full regional ladders + prep kits</td></tr>
-      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding · Raids · Pokedex</td><td>Deep ladders (dex to 300, raids to 25, eggs to 25)</td></tr>
-      <tr><td>Endgame</td><td>Legend Trail · Postgame Ascent</td><td>Birds / Mewtwo / Mew, shinies, mega checklist, all-leagues capstone</td></tr>
+      <tr><td>Side Paths</td><td>Economy Loop · Travel Network · Village Loot · Fishing Grounds · Community Desk · Ball Workshop</td><td>Money loop, waystones/BlueMap, villages, Poké Rod / bait / Master Rod, apricorns → ball crafting, wiki/Discord/keys</td></tr>
+      <tr><td>Server Life</td><td>Base Ops · Market Floor · Crew Desk</td><td>Claims/storage, shops/trading, party play and helping newer players</td></tr>
+      <tr><td>Kanto</td><td>Kanto Gyms · Indigo Plateau · Kanto Exploration · Kanto Region Kit</td><td>Brock → Blue, BlueMap/exploration, type coverage kit</td></tr>
+      <tr><td>Johto / Hoenn / Sinnoh</td><td>Gyms · League · Exploration · Region Kit each</td><td>Full regional ladders + exploration + prep kits</td></tr>
+      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding Lab · Raid Circuit · Pokedex Drive · Trade Hall · Fossils and TM Lab</td><td>Crafting/evolution, breeding, raids, Pokédex (with regional milestones), player trading + trade-evolution, fossil revival + TM crafting</td></tr>
+      <tr><td>Endgame</td><td>Legend Trail · Postgame Ascent · Prestige Ladder</td><td>Birds / Mewtwo / Mew, shinies, mega checklist, all-leagues capstone, long-term dex/shiny/raid goals</td></tr>
     </tbody>
   </table>
 
