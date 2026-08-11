@@ -108,6 +108,12 @@
     "keywords": "mic voice chat simple voice talk"
   },
   {
+    "title": "Sneltoetsen",
+    "href": "pages/Keybinds.html",
+    "blurb": "De standaard toetsenindeling van PokeHaven EU voor CobbleVerse 1.7.42 — nagelopen zodat veelgebruikte toetsen elkaar niet in de weg zitten. Nieuwe client-instal",
+    "keywords": "keybinds keys controls hotkeys shortcuts keyboard bindings dismount mute voice map claims construction wand blocks previewer"
+  },
+  {
     "title": "FAQ",
     "href": "pages/FAQ.html",
     "blurb": "Uitgebreide antwoorden op de problemen die elke nieuwe PokeHaven-trainer raakt.",

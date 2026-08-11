@@ -74,6 +74,7 @@ function navboxCore() {
       <a href="Travel.html">Reizen</a>
       <a href="Riding.html">Rijden</a>
       <a href="Voice_Chat.html">Voice chat</a>
+      <a href="Keybinds.html">Sneltoetsen</a>
       <a href="Minecraft_Hub.html">Minecraft-hub</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Hulp</div><div class="navbox-links">
@@ -315,7 +316,7 @@ export function registerDutchSite({
   <ol class="steps">
     <li>Druk <kbd>C</kbd> → kies starter. Gras is het veiligst tegen Brock.</li>
     <li>Plaats een bed en slaap één keer (respawn).</li>
-    <li><strong><a href="Claims.html">Claim nu</a></strong> met <strong>FTB Chunks</strong> — druk <kbd>U</kbd> (Claim Manager) of <kbd>M</kbd> (kaart) — bed, chests, farm, waystone. Unclaimed = publieke loot.</li>
+    <li><strong><a href="Claims.html">Claim nu</a></strong> met <strong>FTB Chunks</strong> — druk <kbd>U</kbd> (Claim Manager) of <kbd>[</kbd> (kaart) — bed, chests, farm, waystone. Unclaimed = publieke loot.</li>
     <li>Activeer eventuele spawn-waystone (rechtermuisklik). Lees kort het guideboek in je hotbar.</li>
     <li>Vang 2–3 Pokémon in de buurt; houd balls en heals op je hotbar.</li>
     <li>Craft de <strong>Brock-map</strong>: plaats <strong>Kanto Cartography Table</strong> → doe <strong>Empty Map + Brock Map Key</strong> erin (open de Empty Map <strong>niet</strong> in de wereld) → volg de map. Fight-gids: <a href="Brock.html">Brock</a>.</li>
@@ -333,10 +334,10 @@ export function registerDutchSite({
       <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight — gevecht starten</td></tr>
       <tr><td>Questboek</td><td><kbd>O</kbd></td><td><a href="Quests.html">FTB Quests</a> — First Steps plus zijhoofdstukken (Ball Workshop, Fishing Grounds, Trade Hall…). Pin een quest en die verschijnt in een klein trackertje rechtsonder in de HUD (bij de minimap/coördinaten) — geen zwevende pijl in de wereld.</td></tr>
       <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claimen — <a href="Claims.html">Claims</a></td></tr>
-      <tr><td>Chunk-map</td><td><kbd>M</kbd></td><td>FTB Chunks-kaart</td></tr>
+      <tr><td>Chunk-map</td><td><kbd>[</kbd></td><td>FTB Chunks-kaart</td></tr>
       <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
-      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>K</kbd>, groep heeft geen standaardtoets (<kbd>B</kbd> opent je Backpack)</td></tr>
-      <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Van mount afstappen</td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>Right Alt</kbd>, groep heeft geen standaardtoets (<kbd>B</kbd> opent je Backpack)</td></tr>
+      <tr><td>Dismount</td><td><kbd>Caps Lock</kbd></td><td>Van mount afstappen</td></tr>
       <tr><td>Ride</td><td><kbd>Shift</kbd> + rechtermuisklik</td><td>Zie <a href="Riding.html">Rijden</a></td></tr>
       <tr><td>PC</td><td><code>/pc</code></td><td><a href="Healing_and_Storage.html">Opslag</a></td></tr>
     </tbody>
@@ -771,7 +772,7 @@ export function registerDutchSite({
   <table>
     <tr><th>Systeem</th><td>Alleen FTB Chunks</td></tr>
     <tr><th>Claim Manager</th><td><kbd>U</kbd></td></tr>
-    <tr><th>Chunk-map</th><td><kbd>M</kbd></td></tr>
+    <tr><th>Chunk-map</th><td><kbd>[</kbd></td></tr>
     <tr><th>Moet erin</th><td>Bed, chests, farm, waystone</td></tr>
     <tr><th>Delen met vrienden</th><td><code>/ftbteams party create</code></td></tr>
     <tr><th>Vermijd</th><td>Andere claim-mods (OPAC is verwijderd)</td></tr>
@@ -790,7 +791,7 @@ export function registerDutchSite({
 
   <h2>Walkthrough in 60 seconden</h2>
   <ol class="steps">
-    <li>Druk <kbd>U</kbd> voor de Claim Manager, of <kbd>M</kbd> voor de FTB Chunks-kaart.</li>
+    <li>Druk <kbd>U</kbd> voor de Claim Manager, of <kbd>[</kbd> voor de FTB Chunks-kaart.</li>
     <li>Claim chunks onder bed, chests, farm en waystone.</li>
     <li>Claim een buffer van 1 chunk rond je build.</li>
     <li>Met vrienden? Maak een <strong>FTB Team</strong> en deel de claim.</li>
@@ -1124,10 +1125,10 @@ export function registerDutchSite({
       <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight</td></tr>
       <tr><td>Questboek</td><td><kbd>O</kbd></td><td>FTB Quests</td></tr>
       <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td><a href="Claims.html">Claims</a></td></tr>
-      <tr><td>Chunk-map</td><td><kbd>M</kbd></td><td>FTB Chunks-kaart</td></tr>
+      <tr><td>Chunk-map</td><td><kbd>[</kbd></td><td>FTB Chunks-kaart</td></tr>
       <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
-      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>K</kbd> · groep heeft geen standaardtoets (stel er zelf een in; <kbd>B</kbd> opent je Backpack) — <a href="Voice_Chat.html">Voice chat</a></td></tr>
-      <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Van mount afstappen</td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>Right Alt</kbd> · groep heeft geen standaardtoets (stel er zelf een in; <kbd>B</kbd> opent je Backpack) — <a href="Voice_Chat.html">Voice chat</a></td></tr>
+      <tr><td>Dismount</td><td><kbd>Caps Lock</kbd></td><td>Van mount afstappen</td></tr>
       <tr><td>Recipe viewer (REI)</td><td><kbd>E</kbd></td><td>Live crafts — <a href="Essential_Recipes.html">Essentiële recepten</a></td></tr>
       <tr><td>Rijden</td><td><kbd>Shift</kbd> + rechtsklik</td><td><a href="Riding.html">Rijden</a></td></tr>
     </tbody>
@@ -1278,7 +1279,7 @@ export function registerDutchSite({
   <ol class="steps">
     <li>Join PokeHaven EU en sta mic / voice-chat toe als Windows of het spel daarom vraagt.</li>
     <li>Open <strong>Esc → Options → Controls → Simple Voice Chat</strong> en zet <strong>Push to talk</strong> (fijnst in groepen).</li>
-    <li>Defaults op PokeHaven EU: voice-menu <kbd>V</kbd>, mute <kbd>K</kbd>. Groep heeft <strong>geen standaardtoets</strong> — <kbd>B</kbd> is gereserveerd voor je Backpack, kies dus zelf een vrije toets voor groep.</li>
+    <li>Defaults op PokeHaven EU: voice-menu <kbd>V</kbd>, mute <kbd>Right Alt</kbd>. Groep heeft <strong>geen standaardtoets</strong> — <kbd>B</kbd> is gereserveerd voor je Backpack, kies dus zelf een vrije toets voor groep.</li>
     <li>Kies het juiste input-device als niemand je hoort.</li>
     <li>Test met iemand in de buurt — binnen de hoorafstand moet je elkaar horen.</li>
   </ol>
@@ -1317,6 +1318,133 @@ export function registerDutchSite({
   </ul>
 
   <p class="see-also"><strong>Zie ook:</strong> <a href="Raids.html">Raids</a> · <a href="Getting_Started.html">Aan de slag</a> · <a href="FAQ.html">FAQ</a></p>
+  ${navboxCore()}
+  `,
+  });
+
+  track("Keybinds.html", {
+    title: "Sneltoetsen",
+    breadcrumbs: crumbs({ label: "Sneltoetsen", href: "Keybinds.html" }),
+    lede: "De standaard toetsenindeling van PokeHaven EU voor CobbleVerse 1.7.42 — nagelopen zodat veelgebruikte toetsen elkaar niet in de weg zitten. Nieuwe client-installaties krijgen deze defaults; wijzig zelf onder <strong>Esc → Options → Controls</strong>.",
+    infobox: `<div class="infobox-title">Controls</div>
+  <table>
+    <tr><th>Pack</th><td>CobbleVerse 1.7.42</td></tr>
+    <tr><th>Geldt voor</th><td>Nieuwe client-installaties</td></tr>
+    <tr><th>Wijzigen in-game</th><td>Esc → Options → Controls</td></tr>
+    <tr><th>Gerelateerd</th><td><a href="Voice_Chat.html">Voice chat</a> · <a href="Claims.html">Claims</a> · <a href="Riding.html">Rijden</a></td></tr>
+  </table>`,
+    body: `
+  <div class="callout tip">
+    <strong>Tip.</strong> Dit zijn de defaults die we meeleveren. Had je het pack al geïnstalleerd vóór een keybind-update, dan bewaart Minecraft je oude <code>options.txt</code> — zet de gewijzigde toetsen zelf om (zie “Recente conflictfixes”), of wis dat bestand en herstart voor een volledige reset.
+  </div>
+
+  <h2>Beweging &amp; camera</h2>
+  <table class="wikitable">
+    <thead><tr><th>Actie</th><th>Toets</th><th>Notities</th></tr></thead>
+    <tbody>
+      <tr><td>Lopen</td><td><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></td><td>Standaard</td></tr>
+      <tr><td>Springen / sneak / sprint</td><td><kbd>Space</kbd> / <kbd>Left Shift</kbd> / <kbd>Left Ctrl</kbd></td><td></td></tr>
+      <tr><td>Perspectief</td><td><kbd>F5</kbd></td><td>Eerste / derde persoon</td></tr>
+      <tr><td>Offhand wisselen</td><td><kbd>F</kbd></td><td></td></tr>
+      <tr><td>Screenshot / fullscreen</td><td><kbd>F2</kbd> / <kbd>F11</kbd></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Inventaris &amp; interactie</h2>
+  <table class="wikitable">
+    <thead><tr><th>Actie</th><th>Toets</th><th>Notities</th></tr></thead>
+    <tbody>
+      <tr><td>Inventaris</td><td><kbd>E</kbd></td><td></td></tr>
+      <tr><td>Hotbar 1–9</td><td><kbd>1</kbd>–<kbd>9</kbd></td><td></td></tr>
+      <tr><td>Droppen / pick block</td><td><kbd>Q</kbd> / <kbd>Middle mouse</kbd></td><td>Middle-click sorteert ook Sophisticated chests/backpacks <em>als die GUI open staat</em></td></tr>
+      <tr><td>Chat / command / spelerslijst</td><td><kbd>T</kbd> / <kbd>/</kbd> / <kbd>Tab</kbd></td><td></td></tr>
+      <tr><td>Advancements</td><td><kbd>L</kbd></td><td></td></tr>
+      <tr><td>Backpack</td><td><kbd>B</kbd></td><td>Sophisticated Backpacks — niet voice-chat groep</td></tr>
+      <tr><td>Accessories</td><td><kbd>H</kbd></td><td>Cosmetics / accessory-slots</td></tr>
+      <tr><td>Tom’s Storage-terminal</td><td><kbd>Y</kbd></td><td>Als je een wireless terminal hebt</td></tr>
+      <tr><td>Trash slot</td><td><kbd>Delete</kbd> / <kbd>\`</kbd></td><td>Vernietigen / trash-helper</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Pokémon &amp; gevechten</h2>
+  <table class="wikitable">
+    <thead><tr><th>Actie</th><th>Toets</th><th>Notities</th></tr></thead>
+    <tbody>
+      <tr><td>Summary / party</td><td><kbd>C</kbd></td><td>Cobblemon-summary</td></tr>
+      <tr><td>Werpen / recall</td><td><kbd>R</kbd></td><td>Party-Pokémon uitzetten of terugroepen</td></tr>
+      <tr><td>Party omhoog / omlaag</td><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Geselecteerde party-slot</td></tr>
+      <tr><td>Gevecht starten (aggro)</td><td><kbd>G</kbd></td><td>Fight or Flight — wilde Pokémon engageren</td></tr>
+      <tr><td>PC (LumyMon)</td><td><kbd>P</kbd></td><td>PC-UI openen als beschikbaar</td></tr>
+      <tr><td>Afstappen</td><td><kbd>Caps Lock</kbd></td><td>Of sneak — van een bereden Pokémon af</td></tr>
+      <tr><td>Riding freelook</td><td><kbd>Left Alt</kbd></td><td>Rondkijken tijdens rijden</td></tr>
+      <tr><td>Raid dens accepteren / weigeren</td><td><kbd>F6</kbd> / <kbd>F7</kbd></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Claims, kaarten &amp; reizen</h2>
+  <table class="wikitable">
+    <thead><tr><th>Actie</th><th>Toets</th><th>Notities</th></tr></thead>
+    <tbody>
+      <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claim-UI</td></tr>
+      <tr><td>FTB Chunks-kaart</td><td><kbd>[</kbd></td><td>Claim-kaart (niet Xaero)</td></tr>
+      <tr><td>Wereldkaart</td><td><kbd>M</kbd></td><td>Xaero’s World Map</td></tr>
+      <tr><td>Minimap vergroten</td><td><kbd>X</kbd></td><td>Xaero vasthouden-om-te-vergroten</td></tr>
+      <tr><td>Waypoints-lijst</td><td><kbd>N</kbd></td><td>Xaero waypoints</td></tr>
+      <tr><td>Minimap zoom in / uit</td><td><kbd>=</kbd> / <kbd>-</kbd></td><td></td></tr>
+      <tr><td>Xaero-instellingen</td><td><kbd>]</kbd></td><td></td></tr>
+      <tr><td>Questboek</td><td><kbd>O</kbd></td><td>FTB Quests</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Voice chat</h2>
+  <table class="wikitable">
+    <thead><tr><th>Actie</th><th>Toets</th><th>Notities</th></tr></thead>
+    <tbody>
+      <tr><td>Voice-menu</td><td><kbd>V</kbd></td><td>Simple Voice Chat</td></tr>
+      <tr><td>Microfoon muten</td><td><kbd>Right Alt</kbd></td><td></td></tr>
+      <tr><td>Speler-iconen verbergen</td><td><kbd>;</kbd></td><td>Mute/deaf-iconen boven hoofden</td></tr>
+      <tr><td>Voice chat uitzetten</td><td><kbd>F10</kbd></td><td>Zelden nodig</td></tr>
+      <tr><td>Voice-groep</td><td><em>niet gebonden</em></td><td><kbd>B</kbd> is de Backpack — bind groep zelf als je ‘m wilt</td></tr>
+    </tbody>
+  </table>
+  <p>Volledige voice-setup: <a href="Voice_Chat.html">Voice chat</a>.</p>
+
+  <h2>Bouwen &amp; QoL</h2>
+  <table class="wikitable">
+    <thead><tr><th>Actie</th><th>Toets</th><th>Notities</th></tr></thead>
+    <tbody>
+      <tr><td>Construction Wand opties / undo</td><td><kbd>Left Ctrl</kbd> (+ sneak waar nodig)</td><td>Geen aparte wand-toets — houd Ctrl vast met de wand; cores via JEI</td></tr>
+      <tr><td>Blok-preview aan/uit</td><td><kbd>,</kbd></td><td>Blocks Previewer — spookbeeld van hoe een blok landt</td></tr>
+      <tr><td>Blok-preview vasthouden</td><td><kbd>.</kbd></td><td>Tijdelijke preview</td></tr>
+      <tr><td>Preview-filter (alles / richting)</td><td><kbd>'</kbd></td><td>Trappen, pistons, observers, enz.</td></tr>
+      <tr><td>Shaders aan/uit</td><td><kbd>K</kbd></td><td>Iris</td></tr>
+      <tr><td>Locatie pingen</td><td><kbd>Mouse 5</kbd></td><td>Ping Wheel (als je muis een zijknop heeft)</td></tr>
+      <tr><td>Muzieknotificaties</td><td><kbd>J</kbd></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Recente conflictfixes</h2>
+  <p>We hebben elke gebonden toets nagelopen tegen een volledige live pack en de “verliezers” verplaatst zodat verse installs elkaar niet in de weg zitten:</p>
+  <table class="wikitable">
+    <thead><tr><th>Botste</th><th>Behouden</th><th>Verplaatst naar</th></tr></thead>
+    <tbody>
+      <tr><td>Mute-mic vs shader-toggle op <kbd>K</kbd></td><td>Shaders <kbd>K</kbd></td><td>Mute → <kbd>Right Alt</kbd></td></tr>
+      <tr><td>FTB Chunks-kaart vs Xaero-kaart op <kbd>M</kbd></td><td>Xaero <kbd>M</kbd></td><td>Chunks-kaart → <kbd>[</kbd></td></tr>
+      <tr><td>VC uitzetten vs waypoints op <kbd>N</kbd></td><td>Waypoints <kbd>N</kbd></td><td>VC uitzetten → <kbd>F10</kbd></td></tr>
+      <tr><td>Accessories vs VC-iconen verbergen op <kbd>H</kbd></td><td>Accessories <kbd>H</kbd></td><td>Iconen verbergen → <kbd>;</kbd></td></tr>
+      <tr><td>Afstappen vs minimap vergroten op <kbd>X</kbd></td><td>Vergroten <kbd>X</kbd></td><td>Afstappen → <kbd>Caps Lock</kbd></td></tr>
+      <tr><td>Blocks Previewer <kbd>G</kbd>/<kbd>H</kbd>/<kbd>J</kbd> vs gevecht / accessories / muziek</td><td>Die originals</td><td>Preview → <kbd>,</kbd> <kbd>.</kbd> <kbd>'</kbd></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Bewust niet gebonden</h2>
+  <ul>
+    <li><strong>Voice-groep</strong> — ongebonden zodat ‘ie nooit <kbd>B</kbd> van de Backpack steelt.</li>
+    <li>Veel FTB Quests-editor-toetsen — staff/edit-tools; laat ze uit tenzij je ze nodig hebt.</li>
+    <li>Extra Xaero- / Zoomify- / Jade-toggles — te vinden onder Controls als je ze wilt.</li>
+  </ul>
+
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Voice_Chat.html">Voice chat</a> · <a href="Claims.html">Claims</a> · <a href="Riding.html">Rijden</a> · <a href="Rules_and_Commands.html">Regels &amp; commands</a> · <a href="Getting_Started.html">Aan de slag</a></p>
   ${navboxCore()}
   `,
   });
@@ -1399,7 +1527,7 @@ export function registerDutchSite({
   <p>Ja. Center/huis-chests zijn fair game. Op PokeHaven EU kunnen geleegde loot-chests later refreshen.</p>
 
   <h2>Voice-chat toets?</h2>
-  <p><kbd>V</kbd> opent voice chat, <kbd>K</kbd> mute. Groep heeft geen standaardtoets — <kbd>B</kbd> opent je Backpack, kies dus zelf een vrije toets voor groep bij Controls. Zie <a href="Voice_Chat.html">Voice chat</a>.</p>
+  <p><kbd>V</kbd> opent voice chat, <kbd>Right Alt</kbd> mute. Groep heeft geen standaardtoets — <kbd>B</kbd> opent je Backpack, kies dus zelf een vrije toets voor groep bij Controls. Zie <a href="Voice_Chat.html">Voice chat</a>.</p>
 
   <h2>Waar is de spelerswiki?</h2>
   <p><strong><a href="https://pokehaven.wiki">pokehaven.wiki</a></strong> — Engels + Nederlands (vlaggen). Ook gepind in Discord <code>#pokehaven-wiki</code>. Start met Aan de slag, Claims, Gym-maps, Brock.</p>
@@ -2441,14 +2569,14 @@ export function registerDutchSite({
   <ol class="steps">
     <li>Stuur een rideable Pokémon uit met <kbd>R</kbd>.</li>
     <li>Houd <kbd>Shift</kbd> in en rechtsklik → kies <strong>Ride</strong>.</li>
-    <li>Beweeg met WASD + muis. Afstappen met <kbd>X</kbd> of sneak (<kbd>R</kbd> is werpen/recall).</li>
+    <li>Beweeg met WASD + muis. Afstappen met <kbd>Caps Lock</kbd> of sneak (<kbd>R</kbd> is werpen/recall).</li>
   </ol>
   <table class="wikitable">
     <thead><tr><th>Actie</th><th>Standaard</th></tr></thead>
     <tbody>
       <tr><td>Uitsturen / recall</td><td><kbd>R</kbd></td></tr>
       <tr><td>Interact-menu</td><td><kbd>Shift</kbd> + rechtsklik</td></tr>
-      <tr><td>Afstappen</td><td><kbd>X</kbd> of sneak</td></tr>
+      <tr><td>Afstappen</td><td><kbd>Caps Lock</kbd> of sneak</td></tr>
     </tbody>
   </table>
   <div class="callout tip">

@@ -287,6 +287,7 @@ function navboxSystems() {
       <a href="Travel.html">Travel</a>
       <a href="Riding.html">Riding</a>
       <a href="Voice_Chat.html">Voice chat</a>
+      <a href="Keybinds.html">Keybinds</a>
       <a href="Minecraft_Hub.html">Minecraft hub</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Help</div><div class="navbox-links">
@@ -440,6 +441,8 @@ const SEARCH_KEYWORDS = {
     "exploration chapter waystone pin naming bluemap hub landmark travel farm raid den",
   "Prestige_Season.html":
     "prestige ladder season leaderboard dex race shiny race raid race reset wipe champion 1025 gotta catch em all",
+  "Keybinds.html":
+    "keybinds keys controls hotkeys shortcuts keyboard bindings dismount mute voice map claims construction wand blocks previewer",
 };
 
 function writePage(file, opts = {}) {
@@ -1992,10 +1995,10 @@ writePage("Rules_and_Commands.html", {
       <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight</td></tr>
       <tr><td>Quest book</td><td><kbd>O</kbd></td><td>FTB Quests</td></tr>
       <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td><a href="Claims.html">Claims</a></td></tr>
-      <tr><td>Chunk map</td><td><kbd>M</kbd></td><td>FTB Chunks map</td></tr>
+      <tr><td>Chunk map</td><td><kbd>[</kbd></td><td>FTB Chunks map</td></tr>
       <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
-      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>K</kbd> · group has no default key (set one yourself; <kbd>B</kbd> opens your Backpack) — <a href="Voice_Chat.html">Voice chat</a></td></tr>
-      <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Get off your mount</td></tr>
+      <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Mute <kbd>Right Alt</kbd> · group has no default key (set one yourself; <kbd>B</kbd> opens your Backpack) — <a href="Voice_Chat.html">Voice chat</a></td></tr>
+      <tr><td>Dismount</td><td><kbd>Caps Lock</kbd></td><td>Get off your mount</td></tr>
       <tr><td>Recipe viewer (REI)</td><td><kbd>E</kbd></td><td>Live crafts — <a href="Essential_Recipes.html">Essential recipes</a></td></tr>
       <tr><td>Ride</td><td><kbd>Shift</kbd> + right-click</td><td><a href="Riding.html">Riding</a></td></tr>
     </tbody>
@@ -2152,7 +2155,7 @@ writePage("Voice_Chat.html", {
   <ol class="steps">
     <li>Join PokeHaven EU and allow the mic / voice-chat prompt if Windows or the game asks.</li>
     <li>Open <strong>Esc → Options → Controls → Simple Voice Chat</strong> and set <strong>Push to talk</strong> (nicest in groups).</li>
-    <li>PokeHaven EU defaults: voice menu <kbd>V</kbd>, mute <kbd>K</kbd>. Group has <strong>no default key</strong> — <kbd>B</kbd> is reserved for your Backpack, so bind group to whatever's free for you.</li>
+    <li>PokeHaven EU defaults: voice menu <kbd>V</kbd>, mute <kbd>Right Alt</kbd>. Group has <strong>no default key</strong> — <kbd>B</kbd> is reserved for your Backpack, so bind group to whatever's free for you.</li>
     <li>Pick the correct input device if nobody can hear you.</li>
     <li>Test with a friend nearby — you should hear each other within the hear distance.</li>
   </ol>
@@ -2191,6 +2194,135 @@ writePage("Voice_Chat.html", {
   </ul>
 
   <p class="see-also"><strong>See also:</strong> <a href="Raids.html">Raids</a> · <a href="Getting_Started.html">Getting started</a> · <a href="FAQ.html">FAQ</a></p>
+  ${navboxSystems()}
+  `,
+});
+
+writePage("Keybinds.html", {
+  title: "Keybinds",
+  breadcrumbs: [
+    { label: "Main Page", href: "../index.html" },
+    { label: "Keybinds", href: "Keybinds.html" },
+  ],
+  lede: "PokeHaven EU’s shipped control layout for CobbleVerse 1.7.42 — audited so common keys don’t fight each other. Fresh client installs get these defaults; change anything you want under <strong>Esc → Options → Controls</strong>.",
+  infobox: infoboxHtml("Controls", [
+    ["Pack", "CobbleVerse 1.7.42"],
+    ["Applies to", "New client installs"],
+    ["Edit in-game", "Esc → Options → Controls"],
+    ["Related", '<a href="Voice_Chat.html">Voice chat</a> · <a href="Claims.html">Claims</a> · <a href="Riding.html">Riding</a>'],
+  ]),
+  body: `
+  <div class="callout tip">
+    <strong>Tip.</strong> These are the defaults we ship. If you already had the pack installed before a keybind update, Minecraft keeps your old <code>options.txt</code> — rebind the few changed keys yourself (see the “Recent conflict fixes” section), or wipe that file and relaunch for a full reset.
+  </div>
+
+  <h2>Movement &amp; camera</h2>
+  <table class="wikitable">
+    <thead><tr><th>Action</th><th>Key</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Move</td><td><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></td><td>Standard</td></tr>
+      <tr><td>Jump / sneak / sprint</td><td><kbd>Space</kbd> / <kbd>Left Shift</kbd> / <kbd>Left Ctrl</kbd></td><td></td></tr>
+      <tr><td>Perspective</td><td><kbd>F5</kbd></td><td>First / third person</td></tr>
+      <tr><td>Swap offhand</td><td><kbd>F</kbd></td><td></td></tr>
+      <tr><td>Screenshot / fullscreen</td><td><kbd>F2</kbd> / <kbd>F11</kbd></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Inventory &amp; interaction</h2>
+  <table class="wikitable">
+    <thead><tr><th>Action</th><th>Key</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Inventory</td><td><kbd>E</kbd></td><td></td></tr>
+      <tr><td>Hotbar 1–9</td><td><kbd>1</kbd>–<kbd>9</kbd></td><td></td></tr>
+      <tr><td>Drop / pick block</td><td><kbd>Q</kbd> / <kbd>Middle mouse</kbd></td><td>Middle-click also sorts Sophisticated chests/backpacks <em>while that GUI is open</em></td></tr>
+      <tr><td>Chat / command / player list</td><td><kbd>T</kbd> / <kbd>/</kbd> / <kbd>Tab</kbd></td><td></td></tr>
+      <tr><td>Advancements</td><td><kbd>L</kbd></td><td></td></tr>
+      <tr><td>Backpack</td><td><kbd>B</kbd></td><td>Sophisticated Backpacks — not voice-chat group</td></tr>
+      <tr><td>Accessories</td><td><kbd>H</kbd></td><td>Cosmetics / accessory slots</td></tr>
+      <tr><td>Tom’s Storage terminal</td><td><kbd>Y</kbd></td><td>If you have a wireless terminal</td></tr>
+      <tr><td>Trash slot</td><td><kbd>Delete</kbd> / <kbd>\`</kbd></td><td>Destroy / open trash helper</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Pokémon &amp; combat</h2>
+  <table class="wikitable">
+    <thead><tr><th>Action</th><th>Key</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Summary / party</td><td><kbd>C</kbd></td><td>Cobblemon summary</td></tr>
+      <tr><td>Throw / recall</td><td><kbd>R</kbd></td><td>Send out or return a party Pokémon</td></tr>
+      <tr><td>Party up / down</td><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Cycle selected party slot</td></tr>
+      <tr><td>Start battle (aggro)</td><td><kbd>G</kbd></td><td>Fight or Flight — engage nearby wilds</td></tr>
+      <tr><td>PC (LumyMon)</td><td><kbd>P</kbd></td><td>Open PC UI when available</td></tr>
+      <tr><td>Dismount</td><td><kbd>Caps Lock</kbd></td><td>Or sneak — get off a ridden Pokémon</td></tr>
+      <tr><td>Riding freelook</td><td><kbd>Left Alt</kbd></td><td>Look around while riding</td></tr>
+      <tr><td>Raid dens accept / deny</td><td><kbd>F6</kbd> / <kbd>F7</kbd></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Claims, maps &amp; travel</h2>
+  <table class="wikitable">
+    <thead><tr><th>Action</th><th>Key</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claim UI</td></tr>
+      <tr><td>FTB Chunks map</td><td><kbd>[</kbd></td><td>Claim map (not Xaero)</td></tr>
+      <tr><td>World map</td><td><kbd>M</kbd></td><td>Xaero’s World Map</td></tr>
+      <tr><td>Enlarge minimap</td><td><kbd>X</kbd></td><td>Xaero hold-to-enlarge</td></tr>
+      <tr><td>Waypoints list</td><td><kbd>N</kbd></td><td>Xaero waypoints</td></tr>
+      <tr><td>Minimap zoom in / out</td><td><kbd>=</kbd> / <kbd>-</kbd></td><td>FTB Chunks / map zoom helpers</td></tr>
+      <tr><td>Xaero settings</td><td><kbd>]</kbd></td><td></td></tr>
+      <tr><td>Quests book</td><td><kbd>O</kbd></td><td>FTB Quests</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Voice chat</h2>
+  <table class="wikitable">
+    <thead><tr><th>Action</th><th>Key</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Voice menu</td><td><kbd>V</kbd></td><td>Simple Voice Chat</td></tr>
+      <tr><td>Mute microphone</td><td><kbd>Right Alt</kbd></td><td></td></tr>
+      <tr><td>Hide player icons</td><td><kbd>;</kbd></td><td>Mute/deaf icons above heads</td></tr>
+      <tr><td>Disable voice chat</td><td><kbd>F10</kbd></td><td>Rarely needed</td></tr>
+      <tr><td>Voice group</td><td><em>unbound</em></td><td><kbd>B</kbd> is the Backpack — bind group yourself if you want it</td></tr>
+    </tbody>
+  </table>
+  <p>Full voice setup: <a href="Voice_Chat.html">Voice chat</a>.</p>
+
+  <h2>Building &amp; QoL</h2>
+  <table class="wikitable">
+    <thead><tr><th>Action</th><th>Key</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Construction Wand options / undo</td><td><kbd>Left Ctrl</kbd> (+ sneak where needed)</td><td>No dedicated wand key — hold Ctrl with the wand equipped; see in-game JEI for cores</td></tr>
+      <tr><td>Block preview toggle</td><td><kbd>,</kbd></td><td>Blocks Previewer — ghost of how a block will place</td></tr>
+      <tr><td>Block preview hold</td><td><kbd>.</kbd></td><td>Hold for temporary preview</td></tr>
+      <tr><td>Preview filter (all / directional)</td><td><kbd>'</kbd></td><td>Stairs, pistons, observers, etc.</td></tr>
+      <tr><td>Toggle shaders</td><td><kbd>K</kbd></td><td>Iris</td></tr>
+      <tr><td>Ping location</td><td><kbd>Mouse 5</kbd></td><td>Ping Wheel (if your mouse has a side button)</td></tr>
+      <tr><td>Music notifications</td><td><kbd>J</kbd></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Recent conflict fixes</h2>
+  <p>We audited every bound key against a full live pack and moved the losers so fresh installs don’t fight themselves:</p>
+  <table class="wikitable">
+    <thead><tr><th>Was fighting</th><th>Kept</th><th>Moved to</th></tr></thead>
+    <tbody>
+      <tr><td>Mute mic vs shader toggle on <kbd>K</kbd></td><td>Shaders <kbd>K</kbd></td><td>Mute → <kbd>Right Alt</kbd></td></tr>
+      <tr><td>FTB Chunks map vs Xaero map on <kbd>M</kbd></td><td>Xaero <kbd>M</kbd></td><td>Chunks map → <kbd>[</kbd></td></tr>
+      <tr><td>Disable VC vs waypoints on <kbd>N</kbd></td><td>Waypoints <kbd>N</kbd></td><td>Disable VC → <kbd>F10</kbd></td></tr>
+      <tr><td>Accessories vs hide VC icons on <kbd>H</kbd></td><td>Accessories <kbd>H</kbd></td><td>Hide icons → <kbd>;</kbd></td></tr>
+      <tr><td>Dismount vs enlarge map on <kbd>X</kbd></td><td>Enlarge map <kbd>X</kbd></td><td>Dismount → <kbd>Caps Lock</kbd></td></tr>
+      <tr><td>Blocks Previewer <kbd>G</kbd>/<kbd>H</kbd>/<kbd>J</kbd> vs battle / accessories / music</td><td>Those originals</td><td>Preview → <kbd>,</kbd> <kbd>.</kbd> <kbd>'</kbd></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Unbound on purpose</h2>
+  <ul>
+    <li><strong>Voice group</strong> — left unbound so it never steals <kbd>B</kbd> from the Backpack.</li>
+    <li>Many FTB Quests editor keys — staff/edit tools; leave them unbound unless you need them.</li>
+    <li>Extra Xaero / Zoomify / Jade toggles — available under Controls if you want them.</li>
+  </ul>
+
+  <p class="see-also"><strong>See also:</strong> <a href="Voice_Chat.html">Voice chat</a> · <a href="Claims.html">Claims</a> · <a href="Riding.html">Riding</a> · <a href="Rules_and_Commands.html">Rules &amp; commands</a> · <a href="Getting_Started.html">Getting started</a></p>
   ${navboxSystems()}
   `,
 });
@@ -2811,7 +2943,7 @@ writePage("FAQ.html", {
   <p>Yes. Center/house chests are fair game. On PokeHaven EU, emptied loot may refresh later.</p>
 
   <h2>Voice chat key?</h2>
-  <p><kbd>V</kbd> opens voice chat, <kbd>K</kbd> mutes. Group has no default key — <kbd>B</kbd> opens your Backpack instead, so pick a free key for group under Controls. See <a href="Voice_Chat.html">Voice chat</a>.</p>
+  <p><kbd>V</kbd> opens voice chat, <kbd>Right Alt</kbd> mutes. Group has no default key — <kbd>B</kbd> opens your Backpack instead, so pick a free key for group under Controls. See <a href="Voice_Chat.html">Voice chat</a>.</p>
 
   <h2>Where is the player wiki?</h2>
   <p><strong><a href="https://pokehaven.wiki">pokehaven.wiki</a></strong> — English + Nederlands (flags on the site). Also pinned in Discord <code>#pokehaven-wiki</code>. Start with Getting started, Claims, Gym maps, Brock.</p>

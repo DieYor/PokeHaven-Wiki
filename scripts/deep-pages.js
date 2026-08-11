@@ -446,14 +446,14 @@ export function registerDeepPages({
     <ol class="steps">
       <li>Send out a rideable Pokémon with <kbd>R</kbd>.</li>
       <li>Hold <kbd>Shift</kbd> and right-click it → choose <strong>Ride</strong>.</li>
-      <li>Move with WASD + mouse look. Dismount with <kbd>X</kbd> or sneak (<kbd>R</kbd> is throw/recall).</li>
+      <li>Move with WASD + mouse look. Dismount with <kbd>Caps Lock</kbd> or sneak (<kbd>R</kbd> is throw/recall).</li>
     </ol>
     <table class="wikitable">
       <thead><tr><th>Action</th><th>Default</th></tr></thead>
       <tbody>
         <tr><td>Send out / recall</td><td><kbd>R</kbd></td></tr>
         <tr><td>Open Pokémon interact menu</td><td><kbd>Shift</kbd> + right-click</td></tr>
-        <tr><td>Dismount</td><td><kbd>X</kbd> or sneak</td></tr>
+        <tr><td>Dismount</td><td><kbd>Caps Lock</kbd> or sneak</td></tr>
       </tbody>
     </table>
     <div class="callout tip">
@@ -682,7 +682,7 @@ export function registerDeepPages({
     <table>
       <tr><th>System</th><td>FTB Chunks only</td></tr>
       <tr><th>Claim Manager</th><td><kbd>U</kbd></td></tr>
-      <tr><th>Chunk map</th><td><kbd>M</kbd></td></tr>
+      <tr><th>Chunk map</th><td><kbd>[</kbd></td></tr>
       <tr><th>Must cover</th><td>Bed, chests, farm, waystone</td></tr>
       <tr><th>Share with friends</th><td><code>/ftbteams party create</code></td></tr>
       <tr><th>Avoid</th><td>Other claim mods (OPAC removed)</td></tr>
@@ -701,7 +701,7 @@ export function registerDeepPages({
 
     <h2>60-second walkthrough</h2>
     <ol class="steps">
-      <li>Press <kbd>U</kbd> for the Claim Manager, or <kbd>M</kbd> for the FTB Chunks map.</li>
+      <li>Press <kbd>U</kbd> for the Claim Manager, or <kbd>[</kbd> for the FTB Chunks map.</li>
       <li>Claim the chunks under your bed, chests, farm, and waystone.</li>
       <li>Claim a 1-chunk buffer around the build.</li>
       <li>Playing with friends? Create an <strong>FTB Team</strong> and share the claim.</li>
@@ -857,7 +857,7 @@ export function registerDeepPages({
     <ol class="steps">
       <li>Press <kbd>C</kbd> → pick a starter. Grass is the safest into Brock.</li>
       <li>Place a bed and sleep once (respawn point).</li>
-      <li><strong><a href="Claims.html">Claim now</a></strong> with <strong>FTB Chunks</strong> — press <kbd>U</kbd> (Claim Manager) or <kbd>M</kbd> (map) — bed, chests, farm, waystone. Unclaimed = public loot.</li>
+      <li><strong><a href="Claims.html">Claim now</a></strong> with <strong>FTB Chunks</strong> — press <kbd>U</kbd> (Claim Manager) or <kbd>[</kbd> (map) — bed, chests, farm, waystone. Unclaimed = public loot.</li>
       <li>Activate any spawn waystone (right-click). Skim the hotbar guidebook.</li>
       <li>Catch 2–3 nearby Pokémon; keep balls and heals on your hotbar.</li>
       <li>Craft the <strong>Brock map</strong>: place <strong>Kanto Cartography Table</strong> → put <strong>Empty Map + Brock Map Key</strong> in it (do <strong>not</strong> open the Empty Map in the world) → follow the map. Full fight guide: <a href="Brock.html">Brock</a>.</li>
@@ -875,10 +875,10 @@ export function registerDeepPages({
         <tr><td>Start battle</td><td><kbd>G</kbd></td><td>Fight or Flight — start a fight</td></tr>
         <tr><td>Quest book</td><td><kbd>O</kbd></td><td><a href="Quests.html">FTB Quests</a> — First Steps plus side chapters (Ball Workshop, Fishing Grounds, Trade Hall…). Pin a quest and it shows in a small tracker near the bottom-right HUD (by the minimap/coordinates) — no floating in-world arrow.</td></tr>
         <tr><td>Claim Manager</td><td><kbd>U</kbd></td><td>FTB Chunks claims — <a href="Claims.html">Claims</a></td></tr>
-        <tr><td>Chunk map</td><td><kbd>M</kbd></td><td>FTB Chunks map</td></tr>
+        <tr><td>Chunk map</td><td><kbd>[</kbd></td><td>FTB Chunks map</td></tr>
         <tr><td>Chat</td><td><kbd>T</kbd></td><td>Text chat</td></tr>
-        <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>K</kbd>, group has no default key (<kbd>B</kbd> opens your Backpack)</td></tr>
-        <tr><td>Dismount</td><td><kbd>X</kbd></td><td>Get off your mount</td></tr>
+        <tr><td>Voice chat</td><td><kbd>V</kbd></td><td>Menu — mute <kbd>Right Alt</kbd>, group has no default key (<kbd>B</kbd> opens your Backpack)</td></tr>
+        <tr><td>Dismount</td><td><kbd>Caps Lock</kbd></td><td>Get off your mount</td></tr>
         <tr><td>Ride</td><td><kbd>Shift</kbd> + right-click</td><td>See <a href="Riding.html">Riding</a></td></tr>
         <tr><td>PC</td><td><code>/pc</code></td><td><a href="Healing_and_Storage.html">Storage</a></td></tr>
       </tbody>
