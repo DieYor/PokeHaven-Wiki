@@ -1,7 +1,18 @@
 {
   "incomeMultiplier": 0.5,
-  "earnFromWild": true,
-  "earnFromNpc": true,
+  "earnFromWild": false,
+  "earnFromNpc": false,
+  "cobblemonEconomy": {
+    "mainCurrency": "cobbledollars",
+    "startingBalance": 1000,
+    "battleVictoryReward": 50,
+    "raidDenVictoryReward": 100,
+    "captureReward": 75,
+    "shinyMultiplier": 5,
+    "radiantMultiplier": 6,
+    "legendaryMultiplier": 10,
+    "paradoxMultiplier": 3
+  },
   "shop": [
     {
       "section": "Cobble Ball",

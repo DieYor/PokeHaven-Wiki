@@ -12,7 +12,8 @@ const POKEHAVEN_DP = path.resolve(ROOT, "..", "zz-PokeHaven-EU");
 const OUT = path.join(ROOT, "data");
 
 function readJson(file) {
-  return JSON.parse(fs.readFileSync(file, "utf8"));
+  const text = fs.readFileSync(file, "utf8").replace(/^\uFEFF/, "");
+  return JSON.parse(text);
 }
 
 function stripJson5(text) {
@@ -23,7 +24,9 @@ function stripJson5(text) {
 }
 
 function readJson5(file) {
-  return JSON.parse(stripJson5(fs.readFileSync(file, "utf8")));
+  return JSON.parse(
+    stripJson5(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, ""))
+  );
 }
 
 function itemLabel(id) {
@@ -89,10 +92,29 @@ function parseEconomy() {
     }
   }
 
+  // Live PokeHaven battle/capture payouts (Cobblemon Economy mod)
+  let cobblemonEconomy = null;
+  const ecoPath = path.join(CONFIG, "cobblemon-economy", "config.json");
+  if (fs.existsSync(ecoPath)) {
+    const eco = readJson(ecoPath);
+    cobblemonEconomy = {
+      mainCurrency: eco.mainCurrency ?? "cobbledollars",
+      startingBalance: eco.startingBalance ?? null,
+      battleVictoryReward: eco.battleVictoryReward ?? null,
+      raidDenVictoryReward: eco.raidDenVictoryReward ?? null,
+      captureReward: eco.captureReward ?? null,
+      shinyMultiplier: eco.shinyMultiplier ?? null,
+      radiantMultiplier: eco.radiantMultiplier ?? null,
+      legendaryMultiplier: eco.legendaryMultiplier ?? null,
+      paradoxMultiplier: eco.paradoxMultiplier ?? null,
+    };
+  }
+
   return {
     incomeMultiplier: common.cobbleDollarsIncomeMultiplier ?? common.incomeMultiplier ?? 0.5,
     earnFromWild: common.earnFromWildPokemon ?? common.earnCobbleDollarsFromWildPokemon ?? true,
     earnFromNpc: common.earnFromNPC ?? common.earnCobbleDollarsFromNPC ?? true,
+    cobblemonEconomy,
     shop: shopSections,
     bank: bankList.sort((a, b) => a.label.localeCompare(b.label)),
   };

@@ -775,27 +775,40 @@ export function registerDeepPages({
       { label: "Economy", href: "Economy.html" },
     ],
     lede: "PokéDollars fund balls, heals, and convenience. Battle and capture payouts come from <strong>Cobblemon Economy</strong>; shops and the Bank use CobbleDollars prices.",
-    infobox: `<div class="infobox-title">Economy</div>
+    infobox: (() => {
+      const ce = economy.cobblemonEconomy || {};
+      return `<div class="infobox-title">Economy</div>
     <table>
       <tr><th>Currency</th><td>PokéDollars (CobbleDollars)</td></tr>
-      <tr><th>Starting balance</th><td>1000</td></tr>
-      <tr><th>Battle reward</th><td>50$</td></tr>
-      <tr><th>Capture reward</th><td>75$ (shiny ×5, legendary ×10…)</td></tr>
-      <tr><th>Raid den reward</th><td>100$</td></tr>
+      <tr><th>Starting balance</th><td>${ce.startingBalance ?? 1000}</td></tr>
+      <tr><th>Battle reward</th><td>${ce.battleVictoryReward ?? 50}$</td></tr>
+      <tr><th>Capture reward</th><td>${ce.captureReward ?? 75}$ (shiny ×${ce.shinyMultiplier ?? 5}, legendary ×${ce.legendaryMultiplier ?? 10}…)</td></tr>
+      <tr><th>Raid den reward</th><td>${ce.raidDenVictoryReward ?? 100}$</td></tr>
       <tr><th>Shop sections</th><td>${economy.shop.length}</td></tr>
       <tr><th>Bank entries</th><td>${economy.bank.length}</td></tr>
-    </table>`,
-    body: `
+    </table>`;
+    })(),
+    body: (() => {
+      const ce = economy.cobblemonEconomy || {};
+      const start = ce.startingBalance ?? 1000;
+      const battle = ce.battleVictoryReward ?? 50;
+      const capture = ce.captureReward ?? 75;
+      const raid = ce.raidDenVictoryReward ?? 100;
+      const shinyM = ce.shinyMultiplier ?? 5;
+      const radM = ce.radiantMultiplier ?? 6;
+      const legM = ce.legendaryMultiplier ?? 10;
+      const parM = ce.paradoxMultiplier ?? 3;
+      return `
     <h2>How money actually works</h2>
     <p>There are no AFK jobs. You earn by playing:</p>
     <ul>
-      <li><strong>Battles</strong> — <strong>50$</strong> per victory (Cobblemon Economy)</li>
-      <li><strong>Captures</strong> — <strong>75$</strong> base; shiny ×5, radiant ×6, legendary ×10, paradox ×3</li>
-      <li><strong>Raid dens</strong> — <strong>100$</strong> plus tier rewards on <a href="Raids.html">Raids</a></li>
+      <li><strong>Battles</strong> — <strong>${battle}$</strong> per victory (Cobblemon Economy)</li>
+      <li><strong>Captures</strong> — <strong>${capture}$</strong> base; shiny ×${shinyM}, radiant ×${radM}, legendary ×${legM}, paradox ×${parM}</li>
+      <li><strong>Raid dens</strong> — <strong>${raid}$</strong> plus tier rewards on <a href="Raids.html">Raids</a></li>
       <li><strong>Bank sells</strong> — emeralds, potions, vitamins, relic coins…</li>
       <li><strong>Bounty boards</strong> — village bounty boards</li>
     </ul>
-    <p>Everyone starts with <strong>1000$</strong>. Shops and Bank prices below are the live CobbleDollars tables.</p>
+    <p>Everyone starts with <strong>${start}$</strong>. Shops and Bank prices below are the live CobbleDollars tables.</p>
 
     ${figure(
       guideImg("farm-loop.png"),
@@ -852,7 +865,8 @@ export function registerDeepPages({
       </tbody>
     </table>
     ${navboxSystems()}
-    `,
+    `;
+    })(),
   });
 
   writePage("First_Hours.html", {

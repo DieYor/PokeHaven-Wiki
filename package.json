@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.js",
-    "parse": "node scripts/parse-pack.js && node scripts/parse-recipes.js"
+    "parse": "node scripts/parse-pack.js && node scripts/parse-recipes.js",
+    "sync-live": "node --env-file=../pokehaven-status-bot/.env scripts/sync-pack-analysis-from-apex.mjs"
   }
 }

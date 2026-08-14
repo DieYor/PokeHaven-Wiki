@@ -541,27 +541,40 @@ export function registerDutchSite({
     title: "Economie",
     breadcrumbs: crumbs({ label: "Economie", href: "Economy.html" }),
     lede: "PokéDollars betalen balls, heals en gemak. Battle- en capture-uitbetalingen komen van <strong>Cobblemon Economy</strong>; shops en Bank gebruiken CobbleDollars-prijzen.",
-    infobox: `<div class="infobox-title">Economie</div>
+    infobox: (() => {
+      const ce = economy.cobblemonEconomy || {};
+      return `<div class="infobox-title">Economie</div>
     <table>
       <tr><th>Valuta</th><td>PokéDollars (CobbleDollars)</td></tr>
-      <tr><th>Startsaldo</th><td>1000</td></tr>
-      <tr><th>Battle-beloning</th><td>50$</td></tr>
-      <tr><th>Capture-beloning</th><td>75$ (shiny ×5, legendary ×10…)</td></tr>
-      <tr><th>Raid den</th><td>100$</td></tr>
+      <tr><th>Startsaldo</th><td>${ce.startingBalance ?? 1000}</td></tr>
+      <tr><th>Battle-beloning</th><td>${ce.battleVictoryReward ?? 50}$</td></tr>
+      <tr><th>Capture-beloning</th><td>${ce.captureReward ?? 75}$ (shiny ×${ce.shinyMultiplier ?? 5}, legendary ×${ce.legendaryMultiplier ?? 10}…)</td></tr>
+      <tr><th>Raid den</th><td>${ce.raidDenVictoryReward ?? 100}$</td></tr>
       <tr><th>Shop-secties</th><td>${economy.shop.length}</td></tr>
       <tr><th>Bank-items</th><td>${economy.bank.length}</td></tr>
-    </table>`,
-    body: `
+    </table>`;
+    })(),
+    body: (() => {
+      const ce = economy.cobblemonEconomy || {};
+      const start = ce.startingBalance ?? 1000;
+      const battle = ce.battleVictoryReward ?? 50;
+      const capture = ce.captureReward ?? 75;
+      const raid = ce.raidDenVictoryReward ?? 100;
+      const shinyM = ce.shinyMultiplier ?? 5;
+      const radM = ce.radiantMultiplier ?? 6;
+      const legM = ce.legendaryMultiplier ?? 10;
+      const parM = ce.paradoxMultiplier ?? 3;
+      return `
   <h2>Hoe geld écht werkt</h2>
   <p>Er zijn geen AFK-baantjes. Je verdient door te spelen:</p>
   <ul>
-    <li><strong>Battles</strong> — <strong>50$</strong> per overwinning (Cobblemon Economy)</li>
-    <li><strong>Captures</strong> — <strong>75$</strong> basis; shiny ×5, radiant ×6, legendary ×10, paradox ×3</li>
-    <li><strong>Raid dens</strong> — <strong>100$</strong> plus tier-beloningen op <a href="Raids.html">Raids</a></li>
+    <li><strong>Battles</strong> — <strong>${battle}$</strong> per overwinning (Cobblemon Economy)</li>
+    <li><strong>Captures</strong> — <strong>${capture}$</strong> basis; shiny ×${shinyM}, radiant ×${radM}, legendary ×${legM}, paradox ×${parM}</li>
+    <li><strong>Raid dens</strong> — <strong>${raid}$</strong> plus tier-beloningen op <a href="Raids.html">Raids</a></li>
     <li><strong>Bank-verkoop</strong> — emeralds, potions, vitamines, relic coins…</li>
     <li><strong>Bounty-boards</strong> — in dorpen</li>
   </ul>
-  <p>Iedereen start met <strong>1000$</strong>. Shop- en Bankprijzen hieronder zijn de live CobbleDollars-tabellen.</p>
+  <p>Iedereen start met <strong>${start}$</strong>. Shop- en Bankprijzen hieronder zijn de live CobbleDollars-tabellen.</p>
 
   ${figure(
     guideImg("farm-loop.png"),
@@ -619,7 +632,8 @@ export function registerDutchSite({
     <li>Claim je farms zodat niemand meepikt.</li>
   </ul>
   ${navboxCore()}
-  `,
+  `;
+    })(),
   });
 
   track("Raids.html", (() => {
