@@ -67,6 +67,45 @@ export const HUSBANDRY = {
     { pokemon: "Vanillite line", item: "Brush", gets: "Snowball" },
     { pokemon: "Toedscool / Toedscruel", item: "Brush", gets: "Brown Mushroom" },
   ],
+  /** Brush → Feather (Cobblemon 1.7.1). Grouped by line where useful. */
+  brushFeathers: [
+    { pokemon: "Pidgey / Pidgeotto / Pidgeot", item: "Brush", gets: "Feather" },
+    { pokemon: "Spearow / Fearow", item: "Brush", gets: "Feather" },
+    { pokemon: "Farfetch'd / Sirfetch'd", item: "Brush", gets: "Feather" },
+    { pokemon: "Doduo / Dodrio", item: "Brush", gets: "Feather" },
+    { pokemon: "Hoothoot / Noctowl", item: "Brush", gets: "Feather" },
+    { pokemon: "Togetic / Togekiss", item: "Brush", gets: "Feather" },
+    { pokemon: "Natu / Xatu", item: "Brush", gets: "Feather" },
+    { pokemon: "Murkrow / Honchkrow", item: "Brush", gets: "Feather" },
+    { pokemon: "Delibird", item: "Brush", gets: "Feather" },
+    { pokemon: "Torchic / Combusken / Blaziken", item: "Brush", gets: "Feather" },
+    { pokemon: "Taillow / Swellow", item: "Brush", gets: "Feather" },
+    { pokemon: "Wingull / Pelipper", item: "Brush", gets: "Feather" },
+    { pokemon: "Piplup / Prinplup / Empoleon", item: "Brush", gets: "Feather" },
+    { pokemon: "Starly / Staravia / Staraptor", item: "Brush", gets: "Feather" },
+    { pokemon: "Chatot", item: "Brush", gets: "Feather" },
+    { pokemon: "Pidove / Tranquill / Unfezant", item: "Brush", gets: "Feather" },
+    { pokemon: "Archen / Archeops", item: "Brush", gets: "Feather" },
+    { pokemon: "Ducklett / Swanna", item: "Brush", gets: "Feather" },
+    { pokemon: "Rufflet / Braviary", item: "Brush", gets: "Feather" },
+    { pokemon: "Vullaby / Mandibuzz", item: "Brush", gets: "Feather" },
+    { pokemon: "Fletchling / Fletchinder / Talonflame", item: "Brush", gets: "Feather" },
+    { pokemon: "Hawlucha", item: "Brush", gets: "Feather" },
+    { pokemon: "Rowlet / Dartrix / Decidueye", item: "Brush", gets: "Feather" },
+    { pokemon: "Pikipek / Trumbeak / Toucannon", item: "Brush", gets: "Feather" },
+    { pokemon: "Oricorio", item: "Brush", gets: "Feather" },
+    { pokemon: "Rookidee / Corvisquire / Corviknight", item: "Brush", gets: "Feather" },
+    { pokemon: "Cramorant", item: "Brush", gets: "Feather" },
+    { pokemon: "Eiscue", item: "Brush", gets: "Feather" },
+    { pokemon: "Quaxly / Quaxwell / Quaquaval", item: "Brush", gets: "Feather" },
+    { pokemon: "Squawkabilly", item: "Brush", gets: "Feather" },
+    { pokemon: "Wattrel / Kilowattrel", item: "Brush", gets: "Feather" },
+    { pokemon: "Bombirdier", item: "Brush", gets: "Feather" },
+    { pokemon: "Flamigo", item: "Brush", gets: "Feather" },
+    { pokemon: "Articuno / Zapdos", item: "Brush", gets: "Feather" },
+    { pokemon: "Cresselia", item: "Brush", gets: "Feather" },
+    { pokemon: "Fezandipiti", item: "Brush", gets: "Feather" },
+  ],
   boneMeal: [
     { pokemon: "Exeggutor", item: "Bone Meal", gets: "Jungle Sapling" },
     { pokemon: "Tangela / Tangrowth", item: "Bone Meal", gets: "Vines" },
@@ -108,6 +147,7 @@ const NL_ITEM = {
   "Blaze Powder": "Blaze powder",
   Snowball: "Sneeuwbal",
   "Brown Mushroom": "Bruine mushroom",
+  Feather: "Veer (feather)",
   "Jungle Sapling": "Jungle-sapling",
   Vines: "Ranken (vines)",
   Dandelion: "Paardenbloem",
@@ -138,8 +178,10 @@ export function husbandryTables(lang) {
   const shearTitle = lang === "nl" ? "Schaar" : "Shears";
   const bucketTitle = lang === "nl" ? "Emmer" : "Bucket";
   const bottleTitle = lang === "nl" ? "Flesje" : "Glass bottle";
+  const featherTitle =
+    lang === "nl" ? "Borstel → veren (feathers)" : "Brush → feathers";
   const brushTitle =
-    lang === "nl" ? "Borstel — nuttige resources" : "Brush — useful resources";
+    lang === "nl" ? "Borstel — andere resources" : "Brush — other resources";
   const boneTitle = lang === "nl" ? "Beendermeel" : "Bone meal";
 
   return `
@@ -149,11 +191,18 @@ export function husbandryTables(lang) {
   ${table(H, rowsHtml(HUSBANDRY.bucket, lang))}
   <h3 id="bottle">${bottleTitle}</h3>
   ${table(H, rowsHtml(HUSBANDRY.bottle, lang))}
-  <h3 id="brush">${brushTitle}</h3>
-  <p class="${lang === "nl" ? "" : ""}">${
+  <h3 id="feathers">${featherTitle}</h3>
+  <p>${
     lang === "nl"
-      ? "Veel bird-lines geven ook <strong>veren</strong> met een borstel — handig, maar hieronder staan de resources die je meestal echt zoekt."
-      : "Many bird lines also give <strong>feathers</strong> with a brush — useful, but the table below focuses on resources players usually farm on purpose."
+      ? "Geen één “veren-Pokémon”: bijna alle <strong>bird-lines</strong> geven veren met een <strong>borstel</strong>. Vroeg het makkelijkst: Pidgey-, Spearow-, Starly- of Fletchling-line."
+      : "There isn’t a single “feather Pokémon”: almost every <strong>bird line</strong> gives feathers with a <strong>brush</strong>. Easiest early: Pidgey, Spearow, Starly, or Fletchling lines."
+  }</p>
+  ${table(H, rowsHtml(HUSBANDRY.brushFeathers, lang))}
+  <h3 id="brush">${brushTitle}</h3>
+  <p>${
+    lang === "nl"
+      ? "Zelfde tool (borstel), andere drops — string, zand, kool, suiker, enz."
+      : "Same tool (brush), different drops — string, sand, coal, sugar, and more."
   }</p>
   ${table(H, rowsHtml(HUSBANDRY.brushUseful, lang))}
   <h3 id="bonemeal">${boneTitle}</h3>
@@ -187,6 +236,7 @@ export function husbandryBodyEn({ navboxSystems, critical }) {
     <thead><tr><th>I need…</th><th>Do this</th></tr></thead>
     <tbody>
       <tr><td><strong>Wool / bed</strong></td><td>Shears on <strong>Mareep</strong>, <strong>Wooloo</strong>, or <strong>Dubwool</strong>. Dye Wooloo/Dubwool for coloured wool.</td></tr>
+      <tr><td><strong>Feathers</strong></td><td>Brush almost any bird line — see <a href="#feathers">feathers table</a>. Early: Pidgey / Spearow / Starly / Fletchling.</td></tr>
       <tr><td><strong>String</strong></td><td>Brush <strong>Cottonee / Whimsicott</strong>, <strong>Eldegoss</strong>, <strong>Tarountula / Spidops</strong>, or <strong>Wyrdeer</strong> (spiders are off).</td></tr>
       <tr><td><strong>Milk</strong></td><td>Empty bucket on <strong>Miltank</strong> (or female Skiddo / Gogoat / Bouffalant).</td></tr>
       <tr><td><strong>Moomoo Milk</strong></td><td>Glass bottle on <strong>Miltank</strong> — clears stat changes in battle; also works in milk recipes.</td></tr>
@@ -201,7 +251,7 @@ export function husbandryBodyEn({ navboxSystems, critical }) {
 
   <h2>Feathers &amp; cosmetics</h2>
   <ul>
-    <li>Most bird Pokémon give <strong>feathers</strong> when brushed (Pidgey line, Starly line, Rookidee line, …).</li>
+    <li>Full list: <a href="#feathers">Brush → feathers</a> above.</li>
     <li><strong>Furfrou:</strong> shears + dye in the cosmetic slot change its form (looks), not a wool farm.</li>
   </ul>
 
@@ -256,6 +306,7 @@ export function husbandryBodyNl({ navboxCore, critical }) {
     <thead><tr><th>Ik zoek…</th><th>Doe dit</th></tr></thead>
     <tbody>
       <tr><td><strong>Wol / bed</strong></td><td>Schaar op <strong>Mareep</strong>, <strong>Wooloo</strong> of <strong>Dubwool</strong>. Dye Wooloo/Dubwool voor gekleurde wol.</td></tr>
+      <tr><td><strong>Veren</strong></td><td>Borstel bijna elke bird-line — zie <a href="#feathers">veren-tabel</a>. Vroeg: Pidgey / Spearow / Starly / Fletchling.</td></tr>
       <tr><td><strong>String</strong></td><td>Borstel <strong>Cottonee / Whimsicott</strong>, <strong>Eldegoss</strong>, <strong>Tarountula / Spidops</strong> of <strong>Wyrdeer</strong> (spinnen staan uit).</td></tr>
       <tr><td><strong>Melk</strong></td><td>Lege emmer op <strong>Miltank</strong> (of ♀ Skiddo / Gogoat / Bouffalant).</td></tr>
       <tr><td><strong>Moomoo Milk</strong></td><td>Glazen flesje op <strong>Miltank</strong> — wist stat-changes in battle; werkt ook in melk-recepten.</td></tr>
@@ -270,7 +321,7 @@ export function husbandryBodyNl({ navboxCore, critical }) {
 
   <h2>Veren &amp; cosmetics</h2>
   <ul>
-    <li>De meeste bird-Pokémon geven <strong>veren</strong> met een borstel (Pidgey-line, Starly-line, Rookidee-line, …).</li>
+    <li>Volledige lijst: <a href="#feathers">Borstel → veren</a> hierboven.</li>
     <li><strong>Furfrou:</strong> schaar + dye in de cosmetic slot verandert de look — geen wol-farm.</li>
   </ul>
 

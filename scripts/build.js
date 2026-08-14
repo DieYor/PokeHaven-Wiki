@@ -379,7 +379,7 @@ const SEARCH_KEYWORDS = {
   "Poke_Balls.html": "pokeball apricorn craft ball great ultra",
   "Breeding.html": "egg pasture breed shiny masuda ditto cobbreeding hatch",
   "Pokemon_Husbandry.html":
-    "wool sheep mareep wooloo miltank milk shear brush honey string husbandry ranch farm moomoo vespiquen",
+    "wool sheep mareep wooloo miltank milk shear brush honey string husbandry ranch farm moomoo vespiquen feather feathers pidgey starly",
   "Shiny.html":
     "shiny hunting masuda crystal charm rate 2048 breed wild cobblecuisine",
   "Mega_and_Late_Game.html":
