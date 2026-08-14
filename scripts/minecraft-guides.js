@@ -30,6 +30,7 @@ export function registerMinecraftGuides({
     <div class="hub-grid">
       <a class="hub-card" href="Tools_and_Mining.html"><h3>Tools &amp; mining</h3><p>Wood to netherite, copper for balls, caves.</p></a>
       <a class="hub-card" href="Farming_and_Food.html"><h3>Farming &amp; food</h3><p>Wheat→emeralds; hunger rules on this pack.</p></a>
+      <a class="hub-card" href="Pokemon_Husbandry.html"><h3>Pokémon husbandry</h3><p>Wool, milk, string from Pokémon — no sheep.</p></a>
       <a class="hub-card" href="Combat_and_Death.html"><h3>Combat &amp; death</h3><p>Armor, dying safely, void tips.</p></a>
       <a class="hub-card" href="Nether_Guide.html"><h3>Nether guide</h3><p>Portals, Crimson Forest, Blaine routes.</p></a>
       <a class="hub-card" href="Villages_and_Trading.html"><h3>Villages &amp; trading</h3><p>Farmers, Map Guides, cartography.</p></a>
@@ -140,11 +141,11 @@ export function registerMinecraftGuides({
     <ul>
       <li><strong>Apricorns</strong> — balls (<a href="Poke_Balls.html">guide</a>)</li>
       <li><strong>Sugar cane / paper</strong> — Empty Maps for gym maps</li>
-      <li><strong>Animals</strong> — leather, food, trading leftovers</li>
+      <li><strong>Pokémon ranch</strong> — wool, milk, string, honey via interactions (<a href="Pokemon_Husbandry.html">Pokémon husbandry</a>). Vanilla sheep/cows/spiders are off.</li>
       <li><strong>Kelp / seagrass</strong> — Misty map items need <strong>Shears</strong> for seagrass</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Villages_and_Trading.html">Villages</a> · <a href="Essential_Recipes.html">Essential recipes</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Pokemon_Husbandry.html">Pokémon husbandry</a> · <a href="Villages_and_Trading.html">Villages</a> · <a href="Essential_Recipes.html">Essential recipes</a></p>
     ${navboxMinecraft()}
     `,
   });

@@ -276,6 +276,7 @@ function navboxSystems() {
       <a href="Quests.html">Quests</a>
       <a href="Healing_and_Storage.html">Healing</a>
       <a href="Breeding.html">Breeding</a>
+      <a href="Pokemon_Husbandry.html">Pokémon husbandry</a>
       <a href="Shiny.html">Shiny hunting</a>
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Fishing</a>
@@ -377,6 +378,8 @@ const SEARCH_KEYWORDS = {
   "Voice_Chat.html": "mic voice chat simple voice talk",
   "Poke_Balls.html": "pokeball apricorn craft ball great ultra",
   "Breeding.html": "egg pasture breed shiny masuda ditto cobbreeding hatch",
+  "Pokemon_Husbandry.html":
+    "wool sheep mareep wooloo miltank milk shear brush honey string husbandry ranch farm moomoo vespiquen",
   "Shiny.html":
     "shiny hunting masuda crystal charm rate 2048 breed wild cobblecuisine",
   "Mega_and_Late_Game.html":
@@ -2844,6 +2847,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture, eggs, Ditto rules.</p></a>
+    <a class="hub-card" href="pages/Pokemon_Husbandry.html"><h3>Pokémon husbandry</h3><p>Wool, milk, honey from Pokémon.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
     <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture jobs — crops, berries, furnaces.</p></a>

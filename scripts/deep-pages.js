@@ -2,6 +2,7 @@
 
 import { DISCORD_INVITE, critical } from "./i18n.js";
 import { advancementTableRows, groupTitle } from "./advancement-copy.js";
+import { husbandryBodyEn } from "./pokemon-husbandry.js";
 
 function altText(html) {
   return String(html || "")
@@ -432,6 +433,23 @@ export function registerDeepPages({
     <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Pack_Differences.html">Pack differences</a> · <a href="Getting_Started.html">Getting started</a></p>
     ${navboxSystems()}
     `,
+  });
+
+  writePage("Pokemon_Husbandry.html", {
+    title: "Pokémon husbandry",
+    breadcrumbs: [
+      { label: "Main Page", href: "../index.html" },
+      { label: "Pokémon husbandry", href: "Pokemon_Husbandry.html" },
+    ],
+    lede: "Shear, milk, brush, and bottle your Pokémon for wool, milk, string, honey, and more — the ranch loop on PokeHaven EU where vanilla animals are off.",
+    infobox: `<div class="infobox-title">Husbandry</div>
+  <table>
+    <tr><th>System</th><td>Cobblemon interactions</td></tr>
+    <tr><th>Tools</th><td>Shears, bucket, bottle, brush, bone meal</td></tr>
+    <tr><th>Wool</th><td>Mareep / Wooloo / Dubwool</td></tr>
+    <tr><th>Vanilla animals</th><td>Disabled on this server</td></tr>
+  </table>`,
+    body: husbandryBodyEn({ navboxSystems, critical }),
   });
 
   writePage("Riding.html", {

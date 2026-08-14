@@ -5,6 +5,7 @@
 import { figure } from "./deep-pages.js";
 import { DISCORD_INVITE, critical } from "./i18n.js";
 import { advancementTableRows, groupTitle } from "./advancement-copy.js";
+import { husbandryBodyNl } from "./pokemon-husbandry.js";
 
 /** Screenshots from nl/pages/*.html → repo assets/guides/ */
 function guideImg(name) {
@@ -63,6 +64,7 @@ function navboxCore() {
       <a href="Quests.html">Quests</a>
       <a href="Healing_and_Storage.html">Genezen</a>
       <a href="Breeding.html">Broeden</a>
+      <a href="Pokemon_Husbandry.html">Pokémon-veehouderij</a>
       <a href="Shiny.html">Shiny hunting</a>
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Vissen</a>
@@ -201,6 +203,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
     <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones, maps en BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture, eieren, Ditto-regels.</p></a>
+    <a class="hub-card" href="pages/Pokemon_Husbandry.html"><h3>Pokémon-veehouderij</h3><p>Wol, melk, honing van Pokémon.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
     <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture-jobs — crops, berries, ovens en meer.</p></a>
@@ -1574,6 +1577,7 @@ export function registerDutchSite({
   <div class="hub-grid">
     <a class="hub-card" href="Tools_and_Mining.html"><h3>Tools &amp; mining</h3><p>Koper, ijzer, caves.</p></a>
     <a class="hub-card" href="Farming_and_Food.html"><h3>Farms &amp; eten</h3><p>Emerald-loop.</p></a>
+    <a class="hub-card" href="Pokemon_Husbandry.html"><h3>Pokémon-veehouderij</h3><p>Wol &amp; melk via Pokémon.</p></a>
     <a class="hub-card" href="Combat_and_Death.html"><h3>Gevecht &amp; dood</h3><p>Blijf leven.</p></a>
     <a class="hub-card" href="Nether_Guide.html"><h3>Nether</h3><p>Portals &amp; routes.</p></a>
     <a class="hub-card" href="Villages_and_Trading.html"><h3>Dorpen</h3><p>Trades &amp; loot.</p></a>
@@ -2172,6 +2176,23 @@ export function registerDutchSite({
   `,
   });
 
+  track("Pokemon_Husbandry.html", {
+    title: "Pokémon-veehouderij",
+    breadcrumbs: crumbs({
+      label: "Pokémon-veehouderij",
+      href: "Pokemon_Husbandry.html",
+    }),
+    lede: "Scheer, melk, borstel en fles Pokémon voor wol, melk, string, honing en meer — de ranch-loop op PokeHaven EU waar vanilla-dieren uit staan.",
+    infobox: `<div class="infobox-title">Veehouderij</div>
+  <table>
+    <tr><th>Systeem</th><td>Cobblemon-interacties</td></tr>
+    <tr><th>Tools</th><td>Schaar, emmer, flesje, borstel, beendermeel</td></tr>
+    <tr><th>Wol</th><td>Mareep / Wooloo / Dubwool</td></tr>
+    <tr><th>Vanilla-dieren</th><td>Uit op deze server</td></tr>
+  </table>`,
+    body: husbandryBodyNl({ navboxCore, critical }),
+  });
+
   track("Breeding.html", {
     title: "Broeden",
     breadcrumbs: crumbs({ label: "Broeden", href: "Breeding.html" }),
@@ -2208,7 +2229,7 @@ export function registerDutchSite({
     "nl",
     "<strong>Claim de pasture.</strong> Unclaimed eieren/parents = free loot."
   )}
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Shiny.html">Shiny hunting</a> · <a href="Claims.html">Claims</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Pokemon_Husbandry.html">Pokémon-veehouderij</a> · <a href="Shiny.html">Shiny hunting</a> · <a href="Claims.html">Claims</a> · <a href="Catching_and_Battling.html">Vangen &amp; vechten</a></p>
   ${navboxCore()}
   `,
   });
@@ -2649,11 +2670,11 @@ export function registerDutchSite({
   <ul>
     <li><strong>Apricorns</strong> — balls (<a href="Poke_Balls.html">gids</a>)</li>
     <li><strong>Suikerriet / papier</strong> — Empty Maps voor gym-maps</li>
-    <li><strong>Dieren</strong> — leer, eten, restjes om te ruilen</li>
+    <li><strong>Pokémon-ranch</strong> — wol, melk, string, honing via interacties (<a href="Pokemon_Husbandry.html">Pokémon-veehouderij</a>). Vanilla schapen/koeien/spinnen staan uit.</li>
     <li><strong>Kelp / seagrass</strong> — Misty-map-items hebben <strong>Shears</strong> nodig voor seagrass</li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Villages_and_Trading.html">Dorpen</a> · <a href="Essential_Recipes.html">Essentiële recepten</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Pokemon_Husbandry.html">Pokémon-veehouderij</a> · <a href="Villages_and_Trading.html">Dorpen</a> · <a href="Essential_Recipes.html">Essentiële recepten</a></p>
   ${navboxCore()}
   `,
   });
