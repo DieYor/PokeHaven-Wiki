@@ -865,8 +865,8 @@ export function registerDutchSite({
     infobox: `<div class="infobox-title">Questboek</div>
   <table>
     <tr><th>Openen</th><td><kbd>O</kbd> (FTB Quests)</td></tr>
-    <tr><th>Chapters</th><td>36</td></tr>
-    <tr><th>Quests</th><td>296</td></tr>
+    <tr><th>Chapters</th><td>37</td></tr>
+    <tr><th>Quests</th><td>272</td></tr>
     <tr><th>Talen</th><td>Engels + Nederlands in-game</td></tr>
     <tr><th>Progressie</th><td>Server-tracked — veilig reconnecten</td></tr>
     <tr><th>Gerelateerd</th><td><a href="Achievements.html">Achievements</a> · <a href="Progression.html">Progressie</a></td></tr>
@@ -890,7 +890,7 @@ export function registerDutchSite({
   </div>
 
   <h2>Chapter-overzicht</h2>
-  <p>Ongeveer <strong>36 chapters / 296 quests</strong>. Side Paths blokkeren nooit de gym-progressie.</p>
+  <p>Ongeveer <strong>37 chapters / 272 quests</strong>. Side Paths blokkeren nooit de gym-progressie.</p>
   <table class="wikitable">
     <thead><tr><th>Groep</th><th>Chapters</th><th>Inhoud</th></tr></thead>
     <tbody>

@@ -1795,8 +1795,8 @@ writePage("Quests.html", {
   infobox: `<div class="infobox-title">Quest book</div>
   <table>
     <tr><th>Open</th><td><kbd>O</kbd> (FTB Quests)</td></tr>
-    <tr><th>Chapters</th><td>36</td></tr>
-    <tr><th>Quests</th><td>296</td></tr>
+    <tr><th>Chapters</th><td>37</td></tr>
+    <tr><th>Quests</th><td>272</td></tr>
     <tr><th>Languages</th><td>English + Nederlands in-game</td></tr>
     <tr><th>Progress</th><td>Server-tracked — safe to reconnect</td></tr>
     <tr><th>Related</th><td><a href="Achievements.html">Advancements</a> · <a href="Progression.html">Progression</a></td></tr>
@@ -1820,7 +1820,7 @@ writePage("Quests.html", {
   </div>
 
   <h2>Chapter map</h2>
-  <p>About <strong>36 chapters / 296 quests</strong>. Side Paths never block gym progress.</p>
+  <p>About <strong>37 chapters / 272 quests</strong>. Side Paths never block gym progress.</p>
   <table class="wikitable">
     <thead><tr><th>Group</th><th>Chapters</th><th>What they cover</th></tr></thead>
     <tbody>
