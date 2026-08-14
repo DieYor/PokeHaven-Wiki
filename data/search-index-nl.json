@@ -21,7 +21,7 @@
     "title": "Pack-verschillen",
     "href": "pages/Pack_Differences.html",
     "blurb": "Waarom losse Minecraft-, Cobblemon- of Lumyverse-pagina's soms niet kloppen op PokeHaven EU — dit doet CobbleVerse 1.7.42 hier echt.",
-    "keywords": ""
+    "keywords": "pack differences no hunger dragon waystone hearthstone mobsbegone sheep claims economy"
   },
   {
     "title": "Progressie",
@@ -38,8 +38,8 @@
   {
     "title": "Economie",
     "href": "pages/Economy.html",
-    "blurb": "PokéDollars betalen balls, heals en gemak. Op deze pack verdien je uit gevechten aan ×0.5 — slim verkopen is dus belangrijk.",
-    "keywords": "money pokédollars pokedollars bank emerald shop wheat farm"
+    "blurb": "PokéDollars betalen balls, heals en gemak. Battle- en capture-uitbetalingen komen van Cobblemon Economy; shops en Bank gebruiken CobbleDollars-prijzen.",
+    "keywords": "money pokédollars pokedollars bank emerald shop wheat farm battle capture reward cobblemon economy"
   },
   {
     "title": "Raids",
@@ -57,7 +57,7 @@
     "title": "Claims",
     "href": "pages/Claims.html",
     "blurb": "Zonder claim is het niet veilig. Bescherm bed, chests, farms en waystones met FTB Chunks op PokeHaven EU — doe dit in je eerste minuten.",
-    "keywords": "claim ftb chunks protect grief chest land party team guild group ftbteams share"
+    "keywords": "claim ftb chunks protect grief chest land party team guild group ftbteams share 500 forceload"
   },
   {
     "title": "Quests",
@@ -80,8 +80,14 @@
   {
     "title": "Reizen",
     "href": "pages/Travel.html",
-    "blurb": "Waystones zijn gratis snelle travel op PokeHaven EU. Combineer ze met gym-maps, Xaero-pins en een mount zodat je nooit dezelfde 2000 blokken opnieuw loopt.",
-    "keywords": "waystone teleport travel fast travel bluemap browser map"
+    "blurb": "Waystones zijn gratis snelle travel op PokeHaven EU. Voeg een Hearthstone toe voor een 15-minuten thuis-warp, plus gym-maps, Xaero-pins en een mount.",
+    "keywords": "waystone teleport travel fast travel bluemap browser map hearthstone home"
+  },
+  {
+    "title": "Hearthstone",
+    "href": "pages/Hearthstone.html",
+    "blurb": "Draagbare thuis-teleport op PokeHaven EU — 10s channel, 15 min cooldown, cobble-craftrecept.",
+    "keywords": "hearthstone home teleport cooldown cobble diamond ender pearl channel warp"
   },
   {
     "title": "Regels & commands",
@@ -117,7 +123,7 @@
     "title": "FAQ",
     "href": "pages/FAQ.html",
     "blurb": "Uitgebreide antwoorden op de problemen die elke nieuwe PokeHaven-trainer raakt.",
-    "keywords": "help problem question join discord tickets donate bluemap misty ftb chunks open parties"
+    "keywords": "help problem question join discord tickets donate bluemap misty ftb chunks open parties hearthstone sheep wool"
   },
   {
     "title": "Minecraft-hub",

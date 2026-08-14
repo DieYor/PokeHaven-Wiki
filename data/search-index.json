@@ -267,13 +267,13 @@
     "title": "Claims",
     "href": "pages/Claims.html",
     "blurb": "If it is not claimed, it is not safe. Protect beds, chests, farms, and waystones with FTB Chunks on PokeHaven EU — do this in your first minutes.",
-    "keywords": "claim ftb chunks protect grief chest land party team guild group ftbteams share"
+    "keywords": "claim ftb chunks protect grief chest land party team guild group ftbteams share 500 forceload"
   },
   {
     "title": "Economy",
     "href": "pages/Economy.html",
-    "blurb": "PokéDollars fund balls, heals, and convenience. On this pack you earn from battles at ×0.5 — so smart selling matters.",
-    "keywords": "money pokédollars pokedollars bank emerald shop wheat farm"
+    "blurb": "PokéDollars fund balls, heals, and convenience. Battle and capture payouts come from Cobblemon Economy; shops and the Bank use CobbleDollars prices.",
+    "keywords": "money pokédollars pokedollars bank emerald shop wheat farm battle capture reward cobblemon economy"
   },
   {
     "title": "First hours",
@@ -290,8 +290,14 @@
   {
     "title": "Travel",
     "href": "pages/Travel.html",
-    "blurb": "Waystones are free fast-travel on PokeHaven EU. Combine them with gym maps, Xaero pins, and a mount so you never re-walk the same 2000 blocks.",
-    "keywords": "waystone teleport travel fast travel bluemap browser map"
+    "blurb": "Waystones are free fast-travel on PokeHaven EU. Add a Hearthstone for a 15-minute home warp, plus gym maps, Xaero pins, and a mount.",
+    "keywords": "waystone teleport travel fast travel bluemap browser map hearthstone home"
+  },
+  {
+    "title": "Hearthstone",
+    "href": "pages/Hearthstone.html",
+    "blurb": "Portable home teleport on PokeHaven EU — 10s channel, 15 min cooldown, cobble craft recipe.",
+    "keywords": "hearthstone home teleport cooldown cobble diamond ender pearl channel warp"
   },
   {
     "title": "Getting started",
@@ -351,7 +357,7 @@
     "title": "Pack differences",
     "href": "pages/Pack_Differences.html",
     "blurb": "Why random Minecraft, Cobblemon, or Lumyverse pages feel wrong on PokeHaven EU — here’s what CobbleVerse 1.7.42 actually does here.",
-    "keywords": ""
+    "keywords": "pack differences no hunger dragon waystone hearthstone mobsbegone sheep claims economy"
   },
   {
     "title": "Recipe browser",
@@ -627,6 +633,6 @@
     "title": "FAQ",
     "href": "pages/FAQ.html",
     "blurb": "Expanded answers for the problems every new PokeHaven trainer hits.",
-    "keywords": "help problem question join discord tickets donate bluemap misty ftb chunks open parties"
+    "keywords": "help problem question join discord tickets donate bluemap misty ftb chunks open parties hearthstone sheep wool"
   }
 ]

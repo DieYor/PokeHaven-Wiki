@@ -6,6 +6,7 @@ import { figure } from "./deep-pages.js";
 import { DISCORD_INVITE, critical } from "./i18n.js";
 import { advancementTableRows, groupTitle } from "./advancement-copy.js";
 import { husbandryBodyNl } from "./pokemon-husbandry.js";
+import { hearthstoneBodyNl } from "./hearthstone.js";
 
 /** Screenshots from nl/pages/*.html → repo assets/guides/ */
 function guideImg(name) {
@@ -74,6 +75,7 @@ function navboxCore() {
     <div class="navbox-row"><div class="navbox-label">Wereld</div><div class="navbox-links">
       <a href="Claims.html">Claims</a>
       <a href="Travel.html">Reizen</a>
+      <a href="Hearthstone.html">Hearthstone</a>
       <a href="Riding.html">Rijden</a>
       <a href="Voice_Chat.html">Voice chat</a>
       <a href="Keybinds.html">Sneltoetsen</a>
@@ -201,7 +203,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Vangen &amp; vechten</h3><p>Combat-primer.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens, tiers, damage-share.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
-    <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones, maps en BlueMap.</p></a>
+    <a class="hub-card" href="pages/Travel.html"><h3>Reizen</h3><p>Waystones, Hearthstone, BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Broeden</h3><p>Pasture, eieren, Ditto-regels.</p></a>
     <a class="hub-card" href="pages/Pokemon_Husbandry.html"><h3>Pokémon-veehouderij</h3><p>Wol, melk, honing van Pokémon.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
@@ -388,8 +390,9 @@ export function registerDutchSite({
       <tr><th>Server</th><td>PokeHaven EU</td></tr>
       <tr><th>Shiny</th><td>1 / ${shiny}</td></tr>
       <tr><th>XP</th><td>×${xpMult}</td></tr>
-      <tr><th>Income</th><td>×${economy.incomeMultiplier}</td></tr>
+      <tr><th>Battle $</th><td>50$ / win</td></tr>
       <tr><th>Waystones</th><td>Geen kosten / cooldown</td></tr>
+      <tr><th>Hearthstone</th><td>15 min cooldown</td></tr>
     </table>`,
     body: `
   <h2>Datapack-/configverschillen</h2>
@@ -400,10 +403,12 @@ export function registerDutchSite({
       <tr><td>Ender Dragon</td><td><strong>Uitgeschakeld</strong></td><td>The End is niet de vanilla boss-checklist</td></tr>
       <tr><td>Level cap</td><td>RCT-reeksprogressie</td><td>XP “stopt” tot de volgende gym</td></tr>
       <tr><td>Waystones</td><td>Gratis, geen cooldown</td><td>Bouw vroeg een teleportnetwerk</td></tr>
-      <tr><td>PokéDollars</td><td>×${economy.incomeMultiplier} income</td><td>Craft + emerald-loop telt meer</td></tr>
+      <tr><td>Hearthstone</td><td>Thuis-item — 10s channel, <strong>15 min</strong> CD; cobble-craft</td><td>Zie <a href="Hearthstone.html">Hearthstone</a></td></tr>
+      <tr><td>Battle / capture $</td><td>50$ battle · 75$ capture (+ shiny/legendary)</td><td>Cobblemon Economy — zie <a href="Economy.html">Economie</a></td></tr>
+      <tr><td>Vanilla dieren</td><td><strong>Meeste geblokkeerd</strong> (MobsBeGone) — geen schapen/koeien/spinnen</td><td>Wol via Mareep/Wooloo — <a href="Pokemon_Husbandry.html">Veehouderij</a></td></tr>
       <tr><td>Shiny-rate</td><td>1/${shiny}</td><td>Verwacht geen mainline-shinyodds-mythes</td></tr>
       <tr><td>Raid-dens</td><td>1/${raids.common.spawnRate} spawn, tier-tabel op de wiki</td><td>Zie <a href="Raids.html">Raids</a></td></tr>
-      <tr><td>Claims</td><td>Alleen FTB Chunks (OPAC verwijderd)</td><td>Meng geen claim-mods</td></tr>
+      <tr><td>Claims</td><td>Alleen FTB Chunks — max <strong>500</strong> claim / <strong>25</strong> force-load</td><td>Meng geen claim-mods</td></tr>
       <tr><td>Trainer-outfits</td><td>Poke Clothing (craftbaar)</td><td>Zie <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a></td></tr>
       <tr><td>Pokémon-looks</td><td>Cosplay Pikachu, Furfrou-cuts, sjaals…</td><td>Cosmetic slot / special items — zelfde gids</td></tr>
     </tbody>
@@ -417,7 +422,7 @@ export function registerDutchSite({
     <li>De Lumyverse-wiki-UX — gebruik deze PokeHaven-wiki voor hoe <em>wij</em> spelen</li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Minecraft_Hub.html">Minecraft-hub</a> · <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a> · <a href="Progression.html">Progressie</a> · <a href="Economy.html">Economie</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Minecraft_Hub.html">Minecraft-hub</a> · <a href="Hearthstone.html">Hearthstone</a> · <a href="Pokemon_Husbandry.html">Pokémon-veehouderij</a> · <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a> · <a href="Progression.html">Progressie</a> · <a href="Economy.html">Economie</a></p>
   ${navboxCore()}
   `,
   });
@@ -535,19 +540,28 @@ export function registerDutchSite({
   track("Economy.html", {
     title: "Economie",
     breadcrumbs: crumbs({ label: "Economie", href: "Economy.html" }),
-    lede: `PokéDollars betalen balls, heals en gemak. Op deze pack verdien je uit gevechten aan <strong>×${economy.incomeMultiplier}</strong> — slim verkopen is dus belangrijk.`,
+    lede: "PokéDollars betalen balls, heals en gemak. Battle- en capture-uitbetalingen komen van <strong>Cobblemon Economy</strong>; shops en Bank gebruiken CobbleDollars-prijzen.",
     infobox: `<div class="infobox-title">Economie</div>
     <table>
-      <tr><th>Valuta</th><td>PokéDollars</td></tr>
-      <tr><th>Income-multiplier</th><td>${economy.incomeMultiplier}</td></tr>
-      <tr><th>Uitbetaling wild</th><td>${economy.earnFromWild ? "Ja" : "Nee"}</td></tr>
-      <tr><th>Uitbetaling trainers</th><td>${economy.earnFromNpc ? "Ja" : "Nee"}</td></tr>
+      <tr><th>Valuta</th><td>PokéDollars (CobbleDollars)</td></tr>
+      <tr><th>Startsaldo</th><td>1000</td></tr>
+      <tr><th>Battle-beloning</th><td>50$</td></tr>
+      <tr><th>Capture-beloning</th><td>75$ (shiny ×5, legendary ×10…)</td></tr>
+      <tr><th>Raid den</th><td>100$</td></tr>
       <tr><th>Shop-secties</th><td>${economy.shop.length}</td></tr>
       <tr><th>Bank-items</th><td>${economy.bank.length}</td></tr>
     </table>`,
     body: `
   <h2>Hoe geld écht werkt</h2>
-  <p>Er zijn geen AFK-baantjes. Je verdient door te spelen: wilde gevechten, trainers/gyms, bounty-boards en items verkopen bij de Bank.</p>
+  <p>Er zijn geen AFK-baantjes. Je verdient door te spelen:</p>
+  <ul>
+    <li><strong>Battles</strong> — <strong>50$</strong> per overwinning (Cobblemon Economy)</li>
+    <li><strong>Captures</strong> — <strong>75$</strong> basis; shiny ×5, radiant ×6, legendary ×10, paradox ×3</li>
+    <li><strong>Raid dens</strong> — <strong>100$</strong> plus tier-beloningen op <a href="Raids.html">Raids</a></li>
+    <li><strong>Bank-verkoop</strong> — emeralds, potions, vitamines, relic coins…</li>
+    <li><strong>Bounty-boards</strong> — in dorpen</li>
+  </ul>
+  <p>Iedereen start met <strong>1000$</strong>. Shop- en Bankprijzen hieronder zijn de live CobbleDollars-tabellen.</p>
 
   ${figure(
     guideImg("farm-loop.png"),
@@ -577,18 +591,6 @@ export function registerDutchSite({
     "nl",
     "<strong>Koop geen dure sieraden/TM's in de hoop ze door te verkopen.</strong> Veel shop-items kun je niet terugverkopen bij de Bank. Bewaar Relic Coins liever dan ze voor kleingeld weg te doen."
   )}
-
-  <h2>Inkomstenbronnen</h2>
-  <table class="wikitable">
-    <thead><tr><th>Bron</th><th>Toelichting</th></tr></thead>
-    <tbody>
-      <tr><td>Wilde gevechten</td><td>Gestaag tijdens verkennen (pack-multiplier toegepast)</td></tr>
-      <tr><td>Trainers / gyms</td><td>Betere uitbetalingen; dubbelt als progressie</td></tr>
-      <tr><td>Bank-verkoop</td><td>Emeralds, potions, vitamines, relic coins…</td></tr>
-      <tr><td>Bounty-boards</td><td>Bounty-boards in dorpen</td></tr>
-      <tr><td>Raids</td><td>Cash-beloningen per tier — zie <a href="Raids.html">Raids</a></td></tr>
-    </tbody>
-  </table>
 
   <h2>Standaard shopprijzen</h2>
   ${economy.shop
@@ -776,6 +778,8 @@ export function registerDutchSite({
     <tr><th>Systeem</th><td>Alleen FTB Chunks</td></tr>
     <tr><th>Claim Manager</th><td><kbd>U</kbd></td></tr>
     <tr><th>Chunk-map</th><td><kbd>[</kbd></td></tr>
+    <tr><th>Max claim-chunks</th><td>500</td></tr>
+    <tr><th>Max force-load</th><td>25</td></tr>
     <tr><th>Moet erin</th><td>Bed, chests, farm, waystone</td></tr>
     <tr><th>Delen met vrienden</th><td><code>/ftbteams party create</code></td></tr>
     <tr><th>Vermijd</th><td>Andere claim-mods (OPAC is verwijderd)</td></tr>
@@ -1003,13 +1007,16 @@ export function registerDutchSite({
   track("Travel.html", {
     title: "Reizen",
     breadcrumbs: crumbs({ label: "Reizen", href: "Travel.html" }),
-    lede: "Waystones zijn gratis snelle travel op PokeHaven EU. Combineer ze met gym-maps, Xaero-pins en een mount zodat je nooit dezelfde 2000 blokken opnieuw loopt.",
+    lede: "Waystones zijn gratis snelle travel op PokeHaven EU. Voeg een <a href=\"Hearthstone.html\">Hearthstone</a> toe voor een 15-minuten thuis-warp, plus gym-maps, Xaero-pins en een mount.",
     body: `
   ${figure(
     "../../assets/waystone.png",
     "<strong>Waystone.</strong> Rechtsklik om te activeren. Shift + rechtsklik om te hernoemen. Bouw een netwerk: Spawn, Home, elke gym-stop.",
     "Waystone teleport-blok"
   )}
+  <h2>Hearthstone (thuis-item)</h2>
+  <p>Craftbare steen die je na <strong>10s</strong> channel naar huis warpt, daarna <strong>15 min</strong> cooldown. Cobble + diamonds + ender pearl op PokeHaven — volledige gids: <a href="Hearthstone.html">Hearthstone</a>.</p>
+
   <h2>Setup op dag één</h2>
   <ol class="steps">
     <li>Activeer de <strong>spawn</strong>-waystone zodra je inlogt.</li>
@@ -1026,7 +1033,8 @@ export function registerDutchSite({
   <table class="wikitable">
     <thead><tr><th>Systeem</th><th>Wat het doet</th><th>Teleporteert?</th></tr></thead>
     <tbody>
-      <tr><td>Waystone</td><td>Wereldblok — jij (en anderen die ‘m activeren) kunnen erheen warpen</td><td>Ja</td></tr>
+      <tr><td>Waystone</td><td>Wereldblok — jij (en anderen die ‘m activeren) kunnen erheen warpen</td><td>Ja (gratis)</td></tr>
+      <tr><td>Hearthstone</td><td>Item gekoppeld aan je thuis</td><td>Ja (15 min CD)</td></tr>
       <tr><td>Xaero-pin</td><td>Persoonlijke map-marker</td><td>Nee</td></tr>
       <tr><td>Gym-map</td><td>Afgewerkte map met coördinaten voor een leader</td><td>Nee — alleen navigatie</td></tr>
     </tbody>
@@ -1051,6 +1059,7 @@ export function registerDutchSite({
 
   <h2>Andere tools</h2>
   <ul>
+    <li><strong><a href="Hearthstone.html">Hearthstone</a></strong> — draagbare thuis-warp (15 min cooldown).</li>
     <li><strong>Nature’s Compass / Explorer’s Compass</strong> — biomes of structures zoeken.</li>
     <li><strong>Xaero’s World Map</strong> — uitzoomen, dens pinnen, caves markeren.</li>
     <li><strong>Bed + waystone thuis</strong> — snelle respawn en terugkeer.</li>
@@ -1073,9 +1082,24 @@ export function registerDutchSite({
     <li>Empty Map in de wereld openen vóór gym-crafting — die map is dan waardeloos voor de cartography-recept.</li>
   </ul>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Riding.html">Rijden</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">Eerste uren</a> · <a href="Region_Exploration.html">Regio-verkenning</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Hearthstone.html">Hearthstone</a> · <a href="Riding.html">Rijden</a> · <a href="Gym_Maps.html">Gym-maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">Eerste uren</a> · <a href="Region_Exploration.html">Regio-verkenning</a></p>
   ${navboxCore()}
   `,
+  });
+
+  track("Hearthstone.html", {
+    title: "Hearthstone",
+    breadcrumbs: crumbs({ label: "Hearthstone", href: "Hearthstone.html" }),
+    lede: "Draagbare thuis-teleport op PokeHaven EU — <strong>10s</strong> channel, <strong>15 min</strong> cooldown, cobble-craftrecept.",
+    infobox: `<div class="infobox-title">Hearthstone</div>
+  <table>
+    <tr><th>Mod</th><td>HearthstoneMod</td></tr>
+    <tr><th>Channel</th><td>10 seconden</td></tr>
+    <tr><th>Cooldown</th><td>15 minuten</td></tr>
+    <tr><th>Craft</th><td>Cobble + diamonds + ender pearl</td></tr>
+    <tr><th>Cross-dimension</th><td>Ja</td></tr>
+  </table>`,
+    body: hearthstoneBodyNl({ navboxCore, criticalFn: critical }),
   });
 
   track("Rules_and_Commands.html", {
@@ -1513,6 +1537,12 @@ export function registerDutchSite({
 
   <h2>Is er een browser-map?</h2>
   <p>Ja — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. Op dit moment toont het alleen <strong>online spelersmarkers</strong> — geen Pokémon- of mob-locaties. Meer travel-tools: <a href="Travel.html">Reizen</a>.</p>
+
+  <h2>Hoe kom ik thuis zonder waystone?</h2>
+  <p>Craft een <strong><a href="Hearthstone.html">Hearthstone</a></strong> (cobble + diamonds + ender pearl). Channel 10s, daarna 15 min cooldown. Waystones blijven gratis en onbeperkt.</p>
+
+  <h2>Waar zijn de schapen?</h2>
+  <p>Vanilla schapen (en de meeste dieren) zijn geblokkeerd. Scheer <strong>Mareep / Wooloo</strong> — <a href="Pokemon_Husbandry.html">Pokémon-veehouderij</a>.</p>
 
   <h2>Kan ik doneren?</h2>
   <p>Ja, optioneel — donaties helpen de server online / te upgraden. Ze zijn <strong>puur cosmetisch</strong>: tiers geven een Discord-rol (Supporter / Patron / Benefactor) en optioneel een in-game chatprefix — <strong>nooit een gameplay-voordeel</strong>. Volledig overzicht: <a href="Donations.html">Donaties</a>. Links staan in Discord <code>#donations</code>.</p>

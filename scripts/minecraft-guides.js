@@ -445,8 +445,9 @@ export function registerMinecraftGuides({
       <tr><th>Server</th><td>PokeHaven EU</td></tr>
       <tr><th>Shiny</th><td>1 / ${shiny}</td></tr>
       <tr><th>XP</th><td>×${xpMult}</td></tr>
-      <tr><th>Income</th><td>×${economy.incomeMultiplier}</td></tr>
+      <tr><th>Battle $</th><td>50$ / win</td></tr>
       <tr><th>Waystones</th><td>No cost / cooldown</td></tr>
+      <tr><th>Hearthstone</th><td>15 min cooldown</td></tr>
     </table>`,
     body: `
     <h2>Datapack / config differences</h2>
@@ -457,10 +458,12 @@ export function registerMinecraftGuides({
         <tr><td>Ender Dragon</td><td><strong>Disabled</strong></td><td>End is not the vanilla boss checklist</td></tr>
         <tr><td>Level cap</td><td>RCT series progression</td><td>XP “stops” until next gym</td></tr>
         <tr><td>Waystones</td><td>Free, no cooldown</td><td>Build a teleport network early</td></tr>
-        <tr><td>PokéDollars</td><td>×${economy.incomeMultiplier} income</td><td>Craft + emerald loop matters more</td></tr>
+        <tr><td>Hearthstone</td><td>Home item — 10s channel, <strong>15 min</strong> CD; cobble craft</td><td>See <a href="Hearthstone.html">Hearthstone</a></td></tr>
+        <tr><td>Battle / capture $</td><td>50$ battle · 75$ capture (+ shiny/legendary mults)</td><td>Cobblemon Economy — see <a href="Economy.html">Economy</a></td></tr>
+        <tr><td>Vanilla animals</td><td><strong>Most blocked</strong> (MobsBeGone) — no sheep/cows/spiders</td><td>Wool via Mareep/Wooloo — <a href="Pokemon_Husbandry.html">Husbandry</a></td></tr>
         <tr><td>Shiny rate</td><td>1/${shiny}</td><td>Do not expect gen-series shiny odds myths</td></tr>
         <tr><td>Raid dens</td><td>1/${raids.common.spawnRate} spawn, tier table in wiki</td><td>See <a href="Raids.html">Raids</a></td></tr>
-        <tr><td>Claims</td><td>FTB Chunks only (OPAC removed)</td><td>Do not mix claim mods</td></tr>
+        <tr><td>Claims</td><td>FTB Chunks only — max <strong>500</strong> claim / <strong>25</strong> force-load</td><td>Do not mix claim mods</td></tr>
         <tr><td>Trainer outfits</td><td>Poke Clothing (craftable)</td><td>See <a href="Outfits_and_Cosmetics.html">Outfits and cosmetics</a></td></tr>
         <tr><td>Pokémon looks</td><td>Cosplay Pikachu, Furfrou cuts, scarves…</td><td>Cosmetic slot / special items — same guide</td></tr>
       </tbody>
@@ -474,7 +477,7 @@ export function registerMinecraftGuides({
       <li>Lumyverse wiki UX — use this PokeHaven wiki for how <em>we</em> play</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Minecraft_Hub.html">Minecraft hub</a> · <a href="Outfits_and_Cosmetics.html">Outfits and cosmetics</a> · <a href="Progression.html">Progression</a> · <a href="Economy.html">Economy</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Minecraft_Hub.html">Minecraft hub</a> · <a href="Hearthstone.html">Hearthstone</a> · <a href="Pokemon_Husbandry.html">Pokémon husbandry</a> · <a href="Outfits_and_Cosmetics.html">Outfits and cosmetics</a> · <a href="Progression.html">Progression</a> · <a href="Economy.html">Economy</a></p>
     ${navboxSystems()}
     ${navboxMinecraft()}
     `,

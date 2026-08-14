@@ -286,6 +286,7 @@ function navboxSystems() {
     <div class="navbox-row"><div class="navbox-label">World</div><div class="navbox-links">
       <a href="Claims.html">Claims</a>
       <a href="Travel.html">Travel</a>
+      <a href="Hearthstone.html">Hearthstone</a>
       <a href="Riding.html">Riding</a>
       <a href="Voice_Chat.html">Voice chat</a>
       <a href="Keybinds.html">Keybinds</a>
@@ -370,11 +371,13 @@ const SEARCH_KEYWORDS = {
   "Outfits_and_Cosmetics.html":
     "outfit clothing clothes cloth costume cosplay pika case furfrou scarf lucario dress fashion poke clothing",
   "Level_Cap.html": "xp experience level cap stuck freeze trainer card overlevel",
-  "Claims.html": "claim ftb chunks protect grief chest land party team guild group ftbteams share",
+  "Claims.html":
+    "claim ftb chunks protect grief chest land party team guild group ftbteams share 500 forceload",
   "Quests.html":
     "ftb quests quest book o first steps settling gym league breeding raid pokedex legend trail",
   "Getting_Started.html": "join install curseforge discord ip pack 1.7.42 ticket empty map cerulean",
-  "Economy.html": "money pokédollars pokedollars bank emerald shop wheat farm",
+  "Economy.html":
+    "money pokédollars pokedollars bank emerald shop wheat farm battle capture reward cobblemon economy",
   "Voice_Chat.html": "mic voice chat simple voice talk",
   "Poke_Balls.html": "pokeball apricorn craft ball great ultra",
   "Breeding.html": "egg pasture breed shiny masuda ditto cobbreeding hatch",
@@ -390,10 +393,14 @@ const SEARCH_KEYWORDS = {
     "cobbleworkers pasture worker pokemon job crop berry apricorn farm automate harvest furnace cauldron",
   "Raids.html": "raid den crystal boss tier damage share hidden ability waystone",
   "FAQ.html":
-    "help problem question join discord tickets donate bluemap misty ftb chunks open parties",
+    "help problem question join discord tickets donate bluemap misty ftb chunks open parties hearthstone sheep wool",
   "Brock.html": "first gym rock boulder badge",
   "Misty.html": "second gym water cascade cerulean star seagrass",
-  "Travel.html": "waystone teleport travel fast travel bluemap browser map",
+  "Travel.html": "waystone teleport travel fast travel bluemap browser map hearthstone home",
+  "Hearthstone.html":
+    "hearthstone home teleport cooldown cobble diamond ender pearl channel warp",
+  "Pack_Differences.html":
+    "pack differences no hunger dragon waystone hearthstone mobsbegone sheep claims economy",
   "Gym_Maps.html":
     "map cartography empty map brock map key misty cerulean star coordinates johto hoenn sinnoh valerio petra pedro",
   "Rules_and_Commands.html":
@@ -2845,7 +2852,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Catching_and_Battling.html"><h3>Catching &amp; battling</h3><p>Combat primer.</p></a>
     <a class="hub-card" href="pages/Raids.html"><h3>Raids</h3><p>Dens and tiers.</p></a>
     <a class="hub-card" href="pages/Claims.html"><h3>Claims</h3><p>FTB Chunks.</p></a>
-    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, maps, and BlueMap.</p></a>
+    <a class="hub-card" href="pages/Travel.html"><h3>Travel</h3><p>Waystones, Hearthstone, BlueMap.</p></a>
     <a class="hub-card" href="pages/Breeding.html"><h3>Breeding</h3><p>Pasture, eggs, Ditto rules.</p></a>
     <a class="hub-card" href="pages/Pokemon_Husbandry.html"><h3>Pokémon husbandry</h3><p>Wool, milk, honey from Pokémon.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
@@ -2930,6 +2937,12 @@ writePage("FAQ.html", {
 
   <h2>Is there a browser map?</h2>
   <p>Yes — <strong>BlueMap</strong>: <a href="http://88.211.214.163:8100" rel="noopener noreferrer" target="_blank">http://88.211.214.163:8100</a>. It currently shows <strong>online player markers only</strong> — it does not show Pokémon or mob locations. More travel tools: <a href="Travel.html">Travel</a>.</p>
+
+  <h2>How do I get home without a waystone?</h2>
+  <p>Craft a <strong><a href="Hearthstone.html">Hearthstone</a></strong> (cobble + diamonds + ender pearl). Channel 10s, then 15 min cooldown. Waystones stay free and unlimited.</p>
+
+  <h2>Where are the sheep?</h2>
+  <p>Vanilla sheep (and most animals) are blocked. Shear <strong>Mareep / Wooloo</strong> instead — <a href="Pokemon_Husbandry.html">Pokémon husbandry</a>.</p>
 
   <h2>Can I donate?</h2>
   <p>Yes, optionally — donations help keep the server online / upgraded. They're <strong>cosmetic only</strong>: tiers grant a Discord role (Supporter / Patron / Benefactor) and an optional in-game chat prefix — <strong>never a gameplay advantage</strong>. Full breakdown: <a href="Donations.html">Donations</a>. Links live in Discord <code>#donations</code>.</p>

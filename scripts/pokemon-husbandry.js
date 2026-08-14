@@ -1,5 +1,5 @@
 /**
- * Cobblemon held-item interactions (resource “ranching”) — Cobblemon 1.7.1 wiki.
+ * Cobblemon held-item interactions (resource “ranching”) — Cobblemon 1.7.x / pack 1.7.42.
  * Used by EN deep-pages + NL site for Pokemon_Husbandry.html
  */
 

@@ -3,6 +3,7 @@
 import { DISCORD_INVITE, critical } from "./i18n.js";
 import { advancementTableRows, groupTitle } from "./advancement-copy.js";
 import { husbandryBodyEn } from "./pokemon-husbandry.js";
+import { hearthstoneBodyEn } from "./hearthstone.js";
 
 function altText(html) {
   return String(html || "")
@@ -701,6 +702,8 @@ export function registerDeepPages({
       <tr><th>System</th><td>FTB Chunks only</td></tr>
       <tr><th>Claim Manager</th><td><kbd>U</kbd></td></tr>
       <tr><th>Chunk map</th><td><kbd>[</kbd></td></tr>
+      <tr><th>Max claim chunks</th><td>500</td></tr>
+      <tr><th>Max force-load</th><td>25</td></tr>
       <tr><th>Must cover</th><td>Bed, chests, farm, waystone</td></tr>
       <tr><th>Share with friends</th><td><code>/ftbteams party create</code></td></tr>
       <tr><th>Avoid</th><td>Other claim mods (OPAC removed)</td></tr>
@@ -771,21 +774,28 @@ export function registerDeepPages({
       { label: "Main Page", href: "../index.html" },
       { label: "Economy", href: "Economy.html" },
     ],
-    lede: "PokéDollars fund balls, heals, and convenience. On this pack you earn from battles at <strong>×" +
-      String(economy.incomeMultiplier) +
-      "</strong> — so smart selling matters.",
+    lede: "PokéDollars fund balls, heals, and convenience. Battle and capture payouts come from <strong>Cobblemon Economy</strong>; shops and the Bank use CobbleDollars prices.",
     infobox: `<div class="infobox-title">Economy</div>
     <table>
-      <tr><th>Currency</th><td>PokéDollars</td></tr>
-      <tr><th>Income multiplier</th><td>${economy.incomeMultiplier}</td></tr>
-      <tr><th>Wild payouts</th><td>${economy.earnFromWild ? "Yes" : "No"}</td></tr>
-      <tr><th>Trainer payouts</th><td>${economy.earnFromNpc ? "Yes" : "No"}</td></tr>
+      <tr><th>Currency</th><td>PokéDollars (CobbleDollars)</td></tr>
+      <tr><th>Starting balance</th><td>1000</td></tr>
+      <tr><th>Battle reward</th><td>50$</td></tr>
+      <tr><th>Capture reward</th><td>75$ (shiny ×5, legendary ×10…)</td></tr>
+      <tr><th>Raid den reward</th><td>100$</td></tr>
       <tr><th>Shop sections</th><td>${economy.shop.length}</td></tr>
       <tr><th>Bank entries</th><td>${economy.bank.length}</td></tr>
     </table>`,
     body: `
     <h2>How money actually works</h2>
-    <p>There are no AFK jobs. You earn by playing: wild fights, trainers/gyms, bounty boards, and selling items at the Bank.</p>
+    <p>There are no AFK jobs. You earn by playing:</p>
+    <ul>
+      <li><strong>Battles</strong> — <strong>50$</strong> per victory (Cobblemon Economy)</li>
+      <li><strong>Captures</strong> — <strong>75$</strong> base; shiny ×5, radiant ×6, legendary ×10, paradox ×3</li>
+      <li><strong>Raid dens</strong> — <strong>100$</strong> plus tier rewards on <a href="Raids.html">Raids</a></li>
+      <li><strong>Bank sells</strong> — emeralds, potions, vitamins, relic coins…</li>
+      <li><strong>Bounty boards</strong> — village bounty boards</li>
+    </ul>
+    <p>Everyone starts with <strong>1000$</strong>. Shops and Bank prices below are the live CobbleDollars tables.</p>
 
     ${figure(
       guideImg("farm-loop.png"),
@@ -815,18 +825,6 @@ export function registerDeepPages({
       "en",
       "<strong>Do not buy expensive jewellery/TMs expecting to resell.</strong> Many shop items do not sell back at the Bank. Prefer saving Relic Coins over dumping them for pocket change."
     )}
-
-    <h2>Income sources</h2>
-    <table class="wikitable">
-      <thead><tr><th>Source</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td>Wild battles</td><td>Steady while exploring (pack multiplier applied)</td></tr>
-        <tr><td>Trainers / gyms</td><td>Better payouts; doubles as progression</td></tr>
-        <tr><td>Bank sells</td><td>Emeralds, potions, vitamins, relic coins…</td></tr>
-        <tr><td>Bounty boards</td><td>Village bounty boards</td></tr>
-        <tr><td>Raids</td><td>Tier cash rewards — see <a href="Raids.html">Raids</a></td></tr>
-      </tbody>
-    </table>
 
     <h2>Default shop prices</h2>
     ${economy.shop
@@ -1049,13 +1047,16 @@ export function registerDeepPages({
       { label: "Main Page", href: "../index.html" },
       { label: "Travel", href: "Travel.html" },
     ],
-    lede: "Waystones are free fast-travel on PokeHaven EU. Combine them with gym maps, Xaero pins, and a mount so you never re-walk the same 2000 blocks.",
+    lede: "Waystones are free fast-travel on PokeHaven EU. Add a <a href=\"Hearthstone.html\">Hearthstone</a> for a 15-minute home warp, plus gym maps, Xaero pins, and a mount.",
     body: `
     ${figure(
       "../assets/waystone.png",
       "<strong>Waystone.</strong> Right-click to activate. Shift + right-click to rename. Build a network: Spawn, Home, each gym stop.",
       "Waystone teleport block"
     )}
+    <h2>Hearthstone (home item)</h2>
+    <p>Craftable stone that channels you home after <strong>10s</strong>, then <strong>15 min</strong> cooldown. Cobble + diamonds + ender pearl on PokeHaven — full guide: <a href="Hearthstone.html">Hearthstone</a>.</p>
+
     <h2>Day-one setup</h2>
     <ol class="steps">
       <li>Activate the <strong>spawn</strong> waystone as soon as you load in.</li>
@@ -1072,7 +1073,8 @@ export function registerDeepPages({
     <table class="wikitable">
       <thead><tr><th>System</th><th>What it does</th><th>Teleports?</th></tr></thead>
       <tbody>
-        <tr><td>Waystone</td><td>World block — you (and others who activate it) can warp there</td><td>Yes</td></tr>
+        <tr><td>Waystone</td><td>World block — you (and others who activate it) can warp there</td><td>Yes (free)</td></tr>
+        <tr><td>Hearthstone</td><td>Item linked to your home</td><td>Yes (15 min CD)</td></tr>
         <tr><td>Xaero pin</td><td>Personal map marker</td><td>No</td></tr>
         <tr><td>Gym map</td><td>Finished map item with coordinates for a leader</td><td>No — navigation only</td></tr>
       </tbody>
@@ -1097,6 +1099,7 @@ export function registerDeepPages({
 
     <h2>Other travel tools</h2>
     <ul>
+      <li><strong><a href="Hearthstone.html">Hearthstone</a></strong> — portable home warp (15 min cooldown).</li>
       <li><strong>Nature’s Compass / Explorer’s Compass</strong> — find biomes or structures when maps aren’t enough.</li>
       <li><strong>Xaero’s World Map</strong> — zoom out, pin dens, mark caves, share coords in chat.</li>
       <li><strong>Bed + waystone at home</strong> — quick respawn and return.</li>
@@ -1119,9 +1122,27 @@ export function registerDeepPages({
       <li>Opening an Empty Map in the world before gym crafting — ruins that map for the cartography recipe.</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Riding.html">Riding</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">First hours</a> · <a href="Region_Exploration.html">Region exploration</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Hearthstone.html">Hearthstone</a> · <a href="Riding.html">Riding</a> · <a href="Gym_Maps.html">Gym maps</a> · <a href="Claims.html">Claims</a> · <a href="First_Hours.html">First hours</a> · <a href="Region_Exploration.html">Region exploration</a></p>
     ${navboxSystems()}
     `,
+  });
+
+  writePage("Hearthstone.html", {
+    title: "Hearthstone",
+    breadcrumbs: [
+      { label: "Main Page", href: "../index.html" },
+      { label: "Hearthstone", href: "Hearthstone.html" },
+    ],
+    lede: "Portable home teleport on PokeHaven EU — <strong>10s</strong> channel, <strong>15 min</strong> cooldown, cobble craft recipe.",
+    infobox: `<div class="infobox-title">Hearthstone</div>
+    <table>
+      <tr><th>Mod</th><td>HearthstoneMod</td></tr>
+      <tr><th>Channel</th><td>10 seconds</td></tr>
+      <tr><th>Cooldown</th><td>15 minutes</td></tr>
+      <tr><th>Craft</th><td>Cobble + diamonds + ender pearl</td></tr>
+      <tr><th>Cross-dimension</th><td>Yes</td></tr>
+    </table>`,
+    body: hearthstoneBodyEn({ navboxSystems }),
   });
 
   writePage("Getting_Started.html", {
