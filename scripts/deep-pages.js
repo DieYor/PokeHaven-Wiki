@@ -442,12 +442,13 @@ export function registerDeepPages({
       { label: "Main Page", href: "../index.html" },
       { label: "Pokémon husbandry", href: "Pokemon_Husbandry.html" },
     ],
-    lede: "Shear, milk, brush, and bottle your Pokémon for wool, milk, string, honey, and more — the ranch loop on PokeHaven EU where vanilla animals are off.",
+    lede: "Shear, milk, brush, and bottle your Pokémon for wool, milk, string, honey, and more — plus leather from defeating livestock Pokémon on PokeHaven EU (vanilla animals are off).",
     infobox: `<div class="infobox-title">Husbandry</div>
   <table>
-    <tr><th>System</th><td>Cobblemon interactions</td></tr>
+    <tr><th>System</th><td>Cobblemon interactions + defeat drops</td></tr>
     <tr><th>Tools</th><td>Shears, bucket, bottle, brush, bone meal</td></tr>
     <tr><th>Wool</th><td>Mareep / Wooloo / Dubwool</td></tr>
+    <tr><th>Leather</th><td>Defeat livestock Pokémon (1–3)</td></tr>
     <tr><th>Vanilla animals</th><td>Disabled on this server</td></tr>
   </table>`,
     body: husbandryBodyEn({ navboxSystems, critical }),

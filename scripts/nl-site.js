@@ -405,7 +405,7 @@ export function registerDutchSite({
       <tr><td>Waystones</td><td>Gratis, geen cooldown</td><td>Bouw vroeg een teleportnetwerk</td></tr>
       <tr><td>Hearthstone</td><td>Thuis-item — 10s channel, <strong>15 min</strong> CD; cobble-craft</td><td>Zie <a href="Hearthstone.html">Hearthstone</a></td></tr>
       <tr><td>Battle / capture $</td><td>50$ battle · 75$ capture (+ shiny/legendary)</td><td>Cobblemon Economy — zie <a href="Economy.html">Economie</a></td></tr>
-      <tr><td>Vanilla dieren</td><td><strong>Meeste geblokkeerd</strong> (MobsBeGone) — geen schapen/koeien/spinnen</td><td>Wol via Mareep/Wooloo — <a href="Pokemon_Husbandry.html">Veehouderij</a></td></tr>
+      <tr><td>Vanilla dieren</td><td><strong>Meeste geblokkeerd</strong> (MobsBeGone) — geen schapen/koeien/spinnen</td><td>Wol via Mareep/Wooloo; <strong>leer</strong> door vee-Pokémon te verslaan (1–3) — <a href="Pokemon_Husbandry.html">Veehouderij</a></td></tr>
       <tr><td>Shiny-rate</td><td>1/${shiny}</td><td>Verwacht geen mainline-shinyodds-mythes</td></tr>
       <tr><td>Raid-dens</td><td>1/${raids.common.spawnRate} spawn, tier-tabel op de wiki</td><td>Zie <a href="Raids.html">Raids</a></td></tr>
       <tr><td>Claims</td><td>Alleen FTB Chunks — max <strong>500</strong> claim / <strong>25</strong> force-load</td><td>Meng geen claim-mods</td></tr>
@@ -2226,12 +2226,13 @@ export function registerDutchSite({
       label: "Pokémon-veehouderij",
       href: "Pokemon_Husbandry.html",
     }),
-    lede: "Scheer, melk, borstel en fles Pokémon voor wol, melk, string, honing en meer — de ranch-loop op PokeHaven EU waar vanilla-dieren uit staan.",
+    lede: "Scheer, melk, borstel en fles Pokémon voor wol, melk, string, honing en meer — plus leer door vee-Pokémon te verslaan op PokeHaven EU (vanilla-dieren staan uit).",
     infobox: `<div class="infobox-title">Veehouderij</div>
   <table>
-    <tr><th>Systeem</th><td>Cobblemon-interacties</td></tr>
+    <tr><th>Systeem</th><td>Cobblemon-interacties + defeat-drops</td></tr>
     <tr><th>Tools</th><td>Schaar, emmer, flesje, borstel, beendermeel</td></tr>
     <tr><th>Wol</th><td>Mareep / Wooloo / Dubwool</td></tr>
+    <tr><th>Leer</th><td>Verslaan van vee-Pokémon (1–3)</td></tr>
     <tr><th>Vanilla-dieren</th><td>Uit op deze server</td></tr>
   </table>`,
     body: husbandryBodyNl({ navboxCore, critical }),

@@ -236,6 +236,7 @@ export function husbandryBodyEn({ navboxSystems, critical }) {
     <thead><tr><th>I need…</th><th>Do this</th></tr></thead>
     <tbody>
       <tr><td><strong>Wool / bed</strong></td><td>Shears on <strong>Mareep</strong>, <strong>Wooloo</strong>, or <strong>Dubwool</strong>. Dye Wooloo/Dubwool for coloured wool.</td></tr>
+      <tr><td><strong>Leather</strong></td><td><strong>Defeat</strong> livestock-style Pokémon (not milking). On PokeHaven they drop <strong>1–3 leather</strong> — e.g. Miltank, Tauros, Bouffalant, Mudbray/Mudsdale, Ponyta/Rapidash, Skiddo/Gogoat, Girafarig/Farigiraf, Stantler/Wyrdeer, Deerling/Sawsbuck, Blitzle/Zebstrika, Numel/Camerupt. Keep one for milk; farm extras / wild for leather. See <a href="#leather">Leather</a>.</td></tr>
       <tr><td><strong>Feathers</strong></td><td>Brush almost any bird line — see <a href="#feathers">feathers table</a>. Early: Pidgey / Spearow / Starly / Fletchling.</td></tr>
       <tr><td><strong>String</strong></td><td>Brush <strong>Cottonee / Whimsicott</strong>, <strong>Eldegoss</strong>, <strong>Tarountula / Spidops</strong>, or <strong>Wyrdeer</strong> (spiders are off).</td></tr>
       <tr><td><strong>Milk</strong></td><td>Empty bucket on <strong>Miltank</strong> (or female Skiddo / Gogoat / Bouffalant).</td></tr>
@@ -244,6 +245,14 @@ export function husbandryBodyEn({ navboxSystems, critical }) {
       <tr><td><strong>Lava / water bucket</strong></td><td>Empty bucket on Slugma/Magcargo/Numel/Camerupt (lava) or Wash Rotom (water).</td></tr>
     </tbody>
   </table>
+
+  <h2 id="leather">Leather</h2>
+  <p>There are <strong>no cows</strong> here. Leather comes from <strong>Pokémon defeat drops</strong>, not from pasture right-clicks.</p>
+  <ul>
+    <li><strong>Your</strong> Miltank / goats stay for <strong>milk</strong> — milking does not give leather.</li>
+    <li><strong>Defeat</strong> wild (or spare) livestock Pokémon: they drop <strong>1–3 leather</strong> on PokeHaven EU.</li>
+    <li>Good early targets: grassland <strong>Miltank</strong> / <strong>Tauros</strong> / <strong>Bouffalant</strong>; also horses, deer lines, Mudbray line, goats, and camels listed above.</li>
+  </ul>
 
   <h2>Full interaction lists</h2>
   <p>Source: Cobblemon 1.7.1 interaction table. Cooldowns apply; some lines are ♀-only for milking.</p>
@@ -272,6 +281,7 @@ export function husbandryBodyEn({ navboxSystems, critical }) {
   <ul>
     <li>Right-clicking while sneaking opens the interact menu — use a normal right-click with the tool held.</li>
     <li>Expecting cow milk / spider string from vanilla mobs — those animals are blacklisted.</li>
+    <li>Expecting leather from milking Miltank — milk is milk; leather is a <strong>defeat drop</strong>.</li>
     <li>Harvesting legendary brush targets (e.g. Articuno feathers) as a “farm” — catchables exist, but ranch commons are faster.</li>
   </ul>
 
@@ -306,6 +316,7 @@ export function husbandryBodyNl({ navboxCore, critical }) {
     <thead><tr><th>Ik zoek…</th><th>Doe dit</th></tr></thead>
     <tbody>
       <tr><td><strong>Wol / bed</strong></td><td>Schaar op <strong>Mareep</strong>, <strong>Wooloo</strong> of <strong>Dubwool</strong>. Dye Wooloo/Dubwool voor gekleurde wol.</td></tr>
+      <tr><td><strong>Leer</strong></td><td><strong>Verslaan</strong> van vee-achtige Pokémon (niet melken). Op PokeHaven droppen ze <strong>1–3 leer</strong> — o.a. Miltank, Tauros, Bouffalant, Mudbray/Mudsdale, Ponyta/Rapidash, Skiddo/Gogoat, Girafarig/Farigiraf, Stantler/Wyrdeer, Deerling/Sawsbuck, Blitzle/Zebstrika, Numel/Camerupt. Hou er één voor melk; farm wild/extras voor leer. Zie <a href="#leather">Leer</a>.</td></tr>
       <tr><td><strong>Veren</strong></td><td>Borstel bijna elke bird-line — zie <a href="#feathers">veren-tabel</a>. Vroeg: Pidgey / Spearow / Starly / Fletchling.</td></tr>
       <tr><td><strong>String</strong></td><td>Borstel <strong>Cottonee / Whimsicott</strong>, <strong>Eldegoss</strong>, <strong>Tarountula / Spidops</strong> of <strong>Wyrdeer</strong> (spinnen staan uit).</td></tr>
       <tr><td><strong>Melk</strong></td><td>Lege emmer op <strong>Miltank</strong> (of ♀ Skiddo / Gogoat / Bouffalant).</td></tr>
@@ -314,6 +325,14 @@ export function husbandryBodyNl({ navboxCore, critical }) {
       <tr><td><strong>Lava- / wateremmer</strong></td><td>Lege emmer op Slugma/Magcargo/Numel/Camerupt (lava) of Wash Rotom (water).</td></tr>
     </tbody>
   </table>
+
+  <h2 id="leather">Leer</h2>
+  <p>Er zijn <strong>geen koeien</strong>. Leer komt van <strong>drops bij verslaan</strong>, niet van rechtsklikken in de pasture.</p>
+  <ul>
+    <li><strong>Jouw</strong> Miltank / geiten blijven voor <strong>melk</strong> — melken geeft geen leer.</li>
+    <li><strong>Verslaan</strong> van wild (of overbodige) vee-Pokémon: op PokeHaven EU droppen ze <strong>1–3 leer</strong>.</li>
+    <li>Vroege targets: grasslands <strong>Miltank</strong> / <strong>Tauros</strong> / <strong>Bouffalant</strong>; ook paarden-, hert-, Mudbray-, geiten- en kameel-lijnen hierboven.</li>
+  </ul>
 
   <h2>Volledige interactie-lijsten</h2>
   <p>Bron: Cobblemon 1.7.1 interactie-tabel. Er geldt een cooldown; melk is soms alleen ♀.</p>
@@ -342,6 +361,7 @@ export function husbandryBodyNl({ navboxCore, critical }) {
   <ul>
     <li>Rechtsklikken terwijl je sneakt opent het interact-menu — gewone rechtsklik met tool in de hand.</li>
     <li>Melk/string van vanilla koeien/spinnen verwachten — die dieren staan op de blacklist.</li>
+    <li>Leer verwachten van melken — melk is melk; leer is een <strong>drop bij verslaan</strong>.</li>
     <li>Legendaries borstelen als “farm” — commons uit de tabellen zijn sneller.</li>
   </ul>
 
