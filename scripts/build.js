@@ -7,6 +7,7 @@ import { registerMinecraftGuides } from "./minecraft-guides.js";
 import { registerExpansionPages } from "./expansion-pages.js";
 import { UI, DISCORD_INVITE, altLangHref, relPrefixFor, critical } from "./i18n.js";
 import { registerDutchSite } from "./nl-site.js";
+import { registerSophisticatedBackpacks } from "./sophisticated-backpacks.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -281,6 +282,7 @@ function navboxSystems() {
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Fishing</a>
       <a href="Cobbleworkers.html">Cobbleworkers</a>
+      <a href="Sophisticated_Backpacks.html">Backpacks &amp; storage</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">World</div><div class="navbox-links">
@@ -323,6 +325,7 @@ function navboxMinecraft() {
       <a href="Nether_Guide.html">Nether</a>
       <a href="Villages_and_Trading.html">Villages</a>
       <a href="Building_and_Storage.html">Building</a>
+      <a href="Sophisticated_Backpacks.html">Backpacks</a>
       <a href="Dimensions_and_World.html">Dimensions</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Recipes</div><div class="navbox-links">
@@ -391,6 +394,8 @@ const SEARCH_KEYWORDS = {
     "fishing rod poke rod lure bait water fish tentacool magikarp spawn lookup",
   "Cobbleworkers.html":
     "cobbleworkers pasture worker pokemon job crop berry apricorn farm automate harvest furnace cauldron",
+  "Sophisticated_Backpacks.html":
+    "backpack sophisticated storage magnet void filter pickup sort leather iron gold diamond netherite upgrade trashslot tom chest barrel",
   "Raids.html": "raid den crystal boss tier damage share hidden ability waystone",
   "FAQ.html":
     "help problem question join discord tickets donate bluemap misty ftb chunks open parties hearthstone sheep wool",
@@ -2247,7 +2252,7 @@ writePage("Keybinds.html", {
       <tr><td>Drop / pick block</td><td><kbd>Q</kbd> / <kbd>Middle mouse</kbd></td><td>Middle-click also sorts Sophisticated chests/backpacks <em>while that GUI is open</em></td></tr>
       <tr><td>Chat / command / player list</td><td><kbd>T</kbd> / <kbd>/</kbd> / <kbd>Tab</kbd></td><td></td></tr>
       <tr><td>Advancements</td><td><kbd>L</kbd></td><td></td></tr>
-      <tr><td>Backpack</td><td><kbd>B</kbd></td><td>Sophisticated Backpacks — not voice-chat group</td></tr>
+      <tr><td>Backpack</td><td><kbd>B</kbd></td><td><a href="Sophisticated_Backpacks.html">Sophisticated Backpacks</a> — not voice-chat group</td></tr>
       <tr><td>Accessories</td><td><kbd>H</kbd></td><td>Cosmetics / accessory slots</td></tr>
       <tr><td>Tom’s Storage terminal</td><td><kbd>Y</kbd></td><td>If you have a wireless terminal</td></tr>
       <tr><td>Trash slot</td><td><kbd>Delete</kbd> / <kbd>\`</kbd></td><td>Destroy / open trash helper</td></tr>
@@ -2518,6 +2523,12 @@ registerMinecraftGuides({
   xpMult,
   economy,
   raids,
+});
+
+registerSophisticatedBackpacks({
+  writePage,
+  navboxSystems,
+  navboxMinecraft,
 });
 
 registerExpansionPages({
@@ -2858,6 +2869,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
     <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture jobs — crops, berries, furnaces.</p></a>
+    <a class="hub-card" href="pages/Sophisticated_Backpacks.html"><h3>Backpacks &amp; storage</h3><p>Sophisticated — B to open, Iron+ buffs.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainer clothes &amp; Pokémon looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Common mistakes</h3><p>Fix these once.</p></a>
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Rules &amp; commands</h3><p>Server rules, /pc, keybinds.</p></a>

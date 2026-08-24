@@ -345,12 +345,12 @@ export function registerDeepPages({
 
     <h2>Backpack &amp; chests</h2>
     <ul>
-      <li>Use your backpack for balls, food, and heals on the road.</li>
+      <li>Use your backpack for balls, food, and heals on the road — tiers, upgrades, and keys: <a href="Sophisticated_Backpacks.html">Sophisticated Backpacks</a>.</li>
       <li>Store valuables in claimed chests at home.</li>
       <li>Village / center chests are fair game to loot on PokeHaven EU; loot may refresh later.</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Claims.html">Claims</a> · <a href="Brock.html">Brock</a> · <a href="Poke_Balls.html">Poké Balls</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Claims.html">Claims</a> · <a href="Brock.html">Brock</a> · <a href="Poke_Balls.html">Poké Balls</a> · <a href="Sophisticated_Backpacks.html">Backpacks</a></p>
     ${navboxSystems()}
     `,
   });

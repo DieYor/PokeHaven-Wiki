@@ -35,6 +35,7 @@ export function registerMinecraftGuides({
       <a class="hub-card" href="Nether_Guide.html"><h3>Nether guide</h3><p>Portals, Crimson Forest, Blaine routes.</p></a>
       <a class="hub-card" href="Villages_and_Trading.html"><h3>Villages &amp; trading</h3><p>Farmers, Map Guides, cartography.</p></a>
       <a class="hub-card" href="Building_and_Storage.html"><h3>Building &amp; storage</h3><p>Chests, backpacks, bases.</p></a>
+      <a class="hub-card" href="Sophisticated_Backpacks.html"><h3>Backpacks &amp; storage</h3><p>Soph — B to open, Iron+ buffs.</p></a>
       <a class="hub-card" href="Dimensions_and_World.html"><h3>Dimensions &amp; world</h3><p>Overworld / Nether / End, Terralith.</p></a>
       <a class="hub-card" href="Essential_Recipes.html"><h3>Essential recipes</h3><p>Balls, maps, tools — curated crafts.</p></a>
     </div>
@@ -359,7 +360,7 @@ export function registerMinecraftGuides({
     <h2>Storage tips</h2>
     <ul>
       <li>Label chests early: Balls / Heals / Ores / Maps / Food / Misc.</li>
-      <li>Road kit stays in the backpack: balls, food, pickaxe, map, potions.</li>
+      <li>Road kit stays in the backpack: balls, food, pickaxe, map, potions — full guide: <a href="Sophisticated_Backpacks.html">Sophisticated Backpacks</a>.</li>
       <li>PC boxes for coverage teams — <code>/pc</code> — <a href="Healing_and_Storage.html">Healing &amp; storage</a>.</li>
       <li>Sophisticated Storage / Tom’s Storage are in the pack for later sorting — learn them after Brock / Misty, not instead of badges.</li>
     </ul>
@@ -379,7 +380,7 @@ export function registerMinecraftGuides({
       <li>Every item in one mega-chest forever.</li>
     </ul>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Claims.html">Claims</a> · <a href="Travel.html">Travel</a> · <a href="First_Hours.html">First hours</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Claims.html">Claims</a> · <a href="Travel.html">Travel</a> · <a href="Sophisticated_Backpacks.html">Backpacks</a> · <a href="First_Hours.html">First hours</a></p>
     ${navboxMinecraft()}
     `,
   });

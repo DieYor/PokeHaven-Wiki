@@ -7,6 +7,10 @@ import { DISCORD_INVITE, critical } from "./i18n.js";
 import { advancementTableRows, groupTitle } from "./advancement-copy.js";
 import { husbandryBodyNl } from "./pokemon-husbandry.js";
 import { hearthstoneBodyNl } from "./hearthstone.js";
+import {
+  SOPH_BACKPACKS_INFOBOX_NL,
+  sophisticatedBackpacksBodyNl,
+} from "./sophisticated-backpacks.js";
 
 /** Screenshots from nl/pages/*.html → repo assets/guides/ */
 function guideImg(name) {
@@ -70,6 +74,7 @@ function navboxCore() {
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Vissen</a>
       <a href="Cobbleworkers.html">Cobbleworkers</a>
+      <a href="Sophisticated_Backpacks.html">Backpacks &amp; opslag</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
     </div></div>
     <div class="navbox-row"><div class="navbox-label">Wereld</div><div class="navbox-links">
@@ -209,6 +214,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
     <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture-jobs — crops, berries, ovens en meer.</p></a>
+    <a class="hub-card" href="pages/Sophisticated_Backpacks.html"><h3>Backpacks &amp; opslag</h3><p>Sophisticated — B openen, Iron+ buffs.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainerkleding &amp; Pokémon-looks.</p></a>
     <a class="hub-card" href="pages/Common_Mistakes.html"><h3>Veelgemaakte fouten</h3><p>Één keer maken.</p></a>
     <a class="hub-card" href="pages/Rules_and_Commands.html"><h3>Regels &amp; commands</h3><p>Serverregels, /pc, toetsen.</p></a>
@@ -1400,7 +1406,7 @@ export function registerDutchSite({
       <tr><td>Droppen / pick block</td><td><kbd>Q</kbd> / <kbd>Middle mouse</kbd></td><td>Middle-click sorteert ook Sophisticated chests/backpacks <em>als die GUI open staat</em></td></tr>
       <tr><td>Chat / command / spelerslijst</td><td><kbd>T</kbd> / <kbd>/</kbd> / <kbd>Tab</kbd></td><td></td></tr>
       <tr><td>Advancements</td><td><kbd>L</kbd></td><td></td></tr>
-      <tr><td>Backpack</td><td><kbd>B</kbd></td><td>Sophisticated Backpacks — niet voice-chat groep</td></tr>
+      <tr><td>Backpack</td><td><kbd>B</kbd></td><td><a href="Sophisticated_Backpacks.html">Sophisticated Backpacks</a> — niet voice-chat groep</td></tr>
       <tr><td>Accessories</td><td><kbd>H</kbd></td><td>Cosmetics / accessory-slots</td></tr>
       <tr><td>Tom’s Storage-terminal</td><td><kbd>Y</kbd></td><td>Als je een wireless terminal hebt</td></tr>
       <tr><td>Trash slot</td><td><kbd>Delete</kbd> / <kbd>\`</kbd></td><td>Vernietigen / trash-helper</td></tr>
@@ -1626,6 +1632,7 @@ export function registerDutchSite({
     <a class="hub-card" href="Nether_Guide.html"><h3>Nether</h3><p>Portals &amp; routes.</p></a>
     <a class="hub-card" href="Villages_and_Trading.html"><h3>Dorpen</h3><p>Trades &amp; loot.</p></a>
     <a class="hub-card" href="Building_and_Storage.html"><h3>Bouwen</h3><p>Opslag &amp; bases.</p></a>
+    <a class="hub-card" href="Sophisticated_Backpacks.html"><h3>Backpacks</h3><p>Soph — B, upgrades.</p></a>
     <a class="hub-card" href="Dimensions_and_World.html"><h3>Dimensies</h3><p>Wereldstructuur.</p></a>
     <a class="hub-card" href="Pack_Differences.html"><h3>Pack-verschillen</h3><p>Wat anders is.</p></a>
   </div>
@@ -2150,12 +2157,12 @@ export function registerDutchSite({
 
     <h2>Backpack &amp; chests</h2>
     <ul>
-      <li>Gebruik je backpack voor balls, eten en heals onderweg.</li>
+      <li>Gebruik je backpack voor balls, eten en heals onderweg — tiers, upgrades en toetsen: <a href="Sophisticated_Backpacks.html">Sophisticated Backpacks</a>.</li>
       <li>Bewaar waardevolle spullen in geclaimde chests bij je huis.</li>
       <li>Dorps-/center-chests mag je op PokeHaven EU leegroven; loot kan later weer aanvullen.</li>
     </ul>
 
-    <p class="see-also"><strong>Zie ook:</strong> <a href="Claims.html">Claims</a> · <a href="Brock.html">Brock</a> · <a href="Poke_Balls.html">Poké Balls</a></p>
+    <p class="see-also"><strong>Zie ook:</strong> <a href="Claims.html">Claims</a> · <a href="Brock.html">Brock</a> · <a href="Poke_Balls.html">Poké Balls</a> · <a href="Sophisticated_Backpacks.html">Backpacks</a></p>
     ${navboxCore()}
   `,
   });
@@ -2626,6 +2633,17 @@ export function registerDutchSite({
   `,
   });
 
+  track("Sophisticated_Backpacks.html", {
+    title: "Sophisticated Backpacks",
+    breadcrumbs: crumbs(
+      { label: "Minecraft-hub", href: "Minecraft_Hub.html" },
+      { label: "Sophisticated Backpacks", href: "Sophisticated_Backpacks.html" }
+    ),
+    lede: "Draagbare backpacks en upgradebare chests op PokeHaven EU — open met <kbd>B</kbd>, sorteer met middelklik, Iron+ tiers zijn gebuffed.",
+    infobox: SOPH_BACKPACKS_INFOBOX_NL,
+    body: sophisticatedBackpacksBodyNl({ navboxCore }),
+  });
+
   track("Riding.html", {
     title: "Rijden & vliegen",
     breadcrumbs: crumbs({ label: "Rijden & vliegen", href: "Riding.html" }),
@@ -2908,7 +2926,7 @@ export function registerDutchSite({
   <h2>Opslag-tips</h2>
   <ul>
     <li>Label vroeg: Balls / Heals / Ores / Maps / Food / Misc.</li>
-    <li>Road-kit in de backpack: balls, eten, pickaxe, map, potions.</li>
+    <li>Road-kit in de backpack: balls, eten, pickaxe, map, potions — volledige gids: <a href="Sophisticated_Backpacks.html">Sophisticated Backpacks</a>.</li>
     <li>PC-boxes voor coverage — <code>/pc</code> — <a href="Healing_and_Storage.html">Genezen &amp; opslag</a>.</li>
     <li>Sophisticated Storage / Tom’s Storage later — ná Brock/Misty, niet in plaats van badges.</li>
   </ul>
@@ -2924,7 +2942,7 @@ export function registerDutchSite({
     <li>Waystone buiten de claim.</li>
     <li>Alles in één mega-chest voor altijd.</li>
   </ul>
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Claims.html">Claims</a> · <a href="Travel.html">Reizen</a> · <a href="First_Hours.html">Eerste uren</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Claims.html">Claims</a> · <a href="Travel.html">Reizen</a> · <a href="Sophisticated_Backpacks.html">Backpacks</a> · <a href="First_Hours.html">Eerste uren</a></p>
   ${navboxCore()}
   `,
   });

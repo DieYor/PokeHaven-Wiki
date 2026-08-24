@@ -276,12 +276,6 @@
     "keywords": "money pokédollars pokedollars bank emerald shop wheat farm battle capture reward cobblemon economy"
   },
   {
-    "title": "Haven Cases",
-    "href": "pages/Haven_Cases.html",
-    "blurb": "Daily Haven Cases: free case per day, buy extras with PokéDollars, CS-style spin, and published drop odds.",
-    "keywords": "haven case cases loot spin odds daily claim buy havencase master ball epic legendary"
-  },
-  {
     "title": "First hours",
     "href": "pages/First_Hours.html",
     "blurb": "Opening guide: claim, first catches, Brock — then the next loop to Misty so you know what to do after badge one.",
@@ -364,6 +358,12 @@
     "href": "pages/Pack_Differences.html",
     "blurb": "Why random Minecraft, Cobblemon, or Lumyverse pages feel wrong on PokeHaven EU — here’s what CobbleVerse 1.7.42 actually does here.",
     "keywords": "pack differences no hunger dragon waystone hearthstone mobsbegone sheep claims economy"
+  },
+  {
+    "title": "Sophisticated Backpacks",
+    "href": "pages/Sophisticated_Backpacks.html",
+    "blurb": "Wearable backpacks and upgradeable chests on PokeHaven EU — open with B, sort with middle-click, and use pack-buffed Iron+ tiers.",
+    "keywords": "backpack sophisticated storage magnet void filter pickup sort leather iron gold diamond netherite upgrade trashslot tom chest barrel"
   },
   {
     "title": "Recipe browser",
