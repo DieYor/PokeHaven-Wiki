@@ -16,6 +16,10 @@ import {
   GYM_MAPS_REFERENCE_INFOBOX_NL,
   gymMapsPlayerRegions,
 } from "./gym-maps-reference.js";
+import {
+  fossilsBodyNl,
+  FOSSILS_INFOBOX_NL,
+} from "./fossils-hunting.js";
 
 /** Screenshots from nl/pages/*.html → repo assets/guides/ */
 function guideImg(name) {
@@ -78,6 +82,7 @@ function navboxCore() {
       <a href="Shiny.html">Shiny hunting</a>
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Vissen</a>
+      <a href="Fossils_and_Resurrection.html">Fossil hunting</a>
       <a href="Cobbleworkers.html">Cobbleworkers</a>
       <a href="Sophisticated_Backpacks.html">Backpacks &amp; opslag</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
@@ -97,6 +102,7 @@ function navboxCore() {
       <a href="Roadmap.html">30-dagen roadmap</a>
       <a href="Achievements.html">Achievements</a>
       <a href="Postgame_and_Legendaries.html">Post-game</a>
+      <a href="Fossils_and_Resurrection.html">Fossils</a>
       <a href="Common_Mistakes.html">Veelgemaakte fouten</a>
       <a href="Donations.html">Donaties</a>
       <a href="Discord_Commands.html">Discord-commands</a>
@@ -198,6 +204,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Pedro → Camilla — diepe gidsen.</p></a>
     <a class="hub-card" href="pages/Blue.html"><h3>Champion Blue</h3><p>Einde van Kanto — daarna Johto.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
+    <a class="hub-card" href="pages/Fossils_and_Resurrection.html"><h3>Fossil hunting</h3><p>Machines, tabellen, Galar, DNA.</p></a>
     <a class="hub-card" href="pages/Mega_and_Late_Game.html"><h3>Mega &amp; late-game</h3><p>Gimmicks + checklist na Blue.</p></a>
   </div>
 
@@ -219,6 +226,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Pokemon_Husbandry.html"><h3>Pokémon-veehouderij</h3><p>Wol, melk, honing van Pokémon.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Vissen</h3><p>Cobblemon-hengels en water-catches.</p></a>
+    <a class="hub-card" href="pages/Fossils_and_Resurrection.html"><h3>Fossil hunting</h3><p>Analyzer, tank, alle fossil-tabellen.</p></a>
     <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture-jobs — crops, berries, ovens en meer.</p></a>
     <a class="hub-card" href="pages/Sophisticated_Backpacks.html"><h3>Backpacks &amp; opslag</h3><p>Sophisticated — B openen, Iron+ buffs.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainerkleding &amp; Pokémon-looks.</p></a>
@@ -450,7 +458,7 @@ export function registerDutchSite({
 → Elite Four + Champion → Volgende regio
 → Post-game fossils / legendaries (optioneel)</pre>
   <h2>Achievements &amp; post-game</h2>
-  <p>CobbleVerse trackt pack-<a href="Achievements.html">achievements</a> (Advancements-scherm, vaak <kbd>L</kbd>). Na Blue: <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a> voor Mew, birds en Mewtwo.</p>
+  <p>CobbleVerse trackt pack-<a href="Achievements.html">achievements</a> (Advancements-scherm, vaak <kbd>L</kbd>). Na Blue: <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a> voor Mew, birds en Mewtwo — en <a href="Fossils_and_Resurrection.html">Fossil hunting</a> voor alle revive-tabellen.</p>
   <h2>Regio’s</h2>
   <table class="wikitable">
     <thead><tr><th>Regio</th><th>Wanneer</th><th>Focus</th></tr></thead>
@@ -911,7 +919,7 @@ export function registerDutchSite({
       <tr><td>Server Life</td><td>Base Ops · Market Floor · Crew Desk</td><td>Claims/opslag, shops/handel, samenspelen en nieuwe spelers helpen</td></tr>
       <tr><td>Kanto</td><td>Kanto Gyms · Indigo Plateau · Kanto Exploration · Kanto Region Kit</td><td>Brock → Blue, BlueMap/verkenning, coverage-kit</td></tr>
       <tr><td>Johto / Hoenn / Sinnoh</td><td>Gyms · League · Exploration · Region Kit per regio</td><td>Volledige ladders + verkenning + prep-kits</td></tr>
-      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding Lab · Raid Circuit · Pokedex Drive · Trade Hall · Fossils and TM Lab</td><td>Crafting/evolutie, broeden, raids, Pokédex (met regionale milestones), spelershandel + trade-evoluties, fossielen + TM-crafting</td></tr>
+      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding Lab · Raid Circuit · Pokedex Drive · Trade Hall · Fossils and TM Lab</td><td>Crafting/evolutie, broeden, raids, Pokédex (met regionale milestones), spelershandel + trade-evoluties, fossielen + TM-crafting — diepe gids: <a href="Fossils_and_Resurrection.html">Fossil hunting</a></td></tr>
       <tr><td>Endgame</td><td>Legend Trail · Postgame Ascent · Prestige Ladder</td><td>Birds / Mewtwo / Mew, shinies, mega-checklist, all-leagues capstone, langetermijn dex/shiny/raid-doelen</td></tr>
     </tbody>
   </table>
@@ -1907,6 +1915,17 @@ export function registerDutchSite({
     body: gymMapsReferenceBodyNl(navboxCore()),
   });
 
+  track("Fossils_and_Resurrection.html", {
+    title: "Fossil hunting & resurrectie",
+    breadcrumbs: crumbs({
+      label: "Fossil hunting & resurrectie",
+      href: "Fossils_and_Resurrection.html",
+    }),
+    lede: "Vind fossils, bouw de Cobblemon-machines, revive elke standaard- en Galar-vorm, en pak Origin Fossil / Ancient DNA met Giovanni’s 2× DNA op PokeHaven.",
+    infobox: FOSSILS_INFOBOX_NL,
+    body: fossilsBodyNl(navboxCore()),
+  });
+
   track("Common_Mistakes.html", {
     title: "Veelgemaakte fouten",
     breadcrumbs: crumbs({ label: "Veelgemaakte fouten", href: "Common_Mistakes.html" }),
@@ -2085,7 +2104,7 @@ export function registerDutchSite({
     <li>Volg daarna de Mew-encounter / revive-flow van het pack — “Catch Mew” tikt af als je Mew hebt.</li>
     <li>Shiny Mew is een aparte optionele advancement.</li>
   </ol>
-  <p class="muted">Een begeleide versie van dit pad staat ook in FTB Quests onder <strong>Fossils and TM Lab</strong> — <a href="Quests.html">Quests</a>.</p>
+  <p class="muted">Een begeleide versie van dit pad staat ook in FTB Quests onder <strong>Fossils and TM Lab</strong> — <a href="Quests.html">Quests</a>. Volledige fossil-tabellen: <a href="Fossils_and_Resurrection.html">Fossil hunting &amp; resurrectie</a>.</p>
   <div class="callout tip">
     <div class="label">REI is leidend</div>
     Exacte grids kunnen wijzigen bij pack-updates. Vertrouw altijd de in-game recipe view.
@@ -2116,6 +2135,7 @@ export function registerDutchSite({
   <table class="wikitable">
     <thead><tr><th>Wil je…</th><th>Ga naar</th></tr></thead>
     <tbody>
+      <tr><td>Fossil-machines &amp; tabellen</td><td><a href="Fossils_and_Resurrection.html">Fossil hunting &amp; resurrectie</a></td></tr>
       <tr><td>Volledige toast-lijst</td><td><a href="Achievements.html">Achievements</a></td></tr>
       <tr><td>Gym-teams &amp; maps</td><td><a href="Gyms_Kanto.html">Kanto-gyms</a> · <a href="Gym_Maps.html">Gym-maps</a></td></tr>
       <tr><td>Waar een species spawnt</td><td><a href="Spawn_Lookup.html">Spawn-lookup</a></td></tr>
@@ -2124,7 +2144,7 @@ export function registerDutchSite({
     </tbody>
   </table>
 
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Achievements.html">Achievements</a> · <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progressie</a> · <a href="Blue.html">Blue</a> · <a href="Giovanni.html">Giovanni</a></p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Fossils_and_Resurrection.html">Fossil hunting</a> · <a href="Achievements.html">Achievements</a> · <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progressie</a> · <a href="Blue.html">Blue</a> · <a href="Giovanni.html">Giovanni</a></p>
   ${navboxCore()}
   `,
     });

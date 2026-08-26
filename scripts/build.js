@@ -261,6 +261,7 @@ function navboxGyms() {
       <a href="Gym_Maps.html">Gym maps</a>
       <a href="Achievements.html">Achievements</a>
       <a href="Postgame_and_Legendaries.html">Post-game</a>
+      <a href="Fossils_and_Resurrection.html">Fossils</a>
       <a href="Essential_Recipes.html">Essential recipes</a>
     </div></div>
   </div>`;
@@ -282,6 +283,7 @@ function navboxSystems() {
       <a href="Shiny.html">Shiny hunting</a>
       <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a>
       <a href="Fishing.html">Fishing</a>
+      <a href="Fossils_and_Resurrection.html">Fossil hunting</a>
       <a href="Cobbleworkers.html">Cobbleworkers</a>
       <a href="Sophisticated_Backpacks.html">Backpacks &amp; storage</a>
       <a href="Outfits_and_Cosmetics.html">Outfits &amp; cosmetics</a>
@@ -411,6 +413,8 @@ const SEARCH_KEYWORDS = {
     "map cartography empty map brock map key misty cerulean star coordinates johto hoenn sinnoh valerio petra pedro",
   "Gym_Maps_Reference.html":
     "gym map reference catalog structure id lumymon onyx cerulean cartography staff grant all leaders brock misty valerio petra pedro",
+  "Fossils_and_Resurrection.html":
+    "fossil fossils hunting resurrection restoration tank analyzer monitor omanyte kabuto aerodactyl galar dracozolt arctozolt dracovish arctovish origin fossil ancient dna mew mewtwo genesect type null giovanni archaeology",
   "Rules_and_Commands.html":
     "rules commands /pc claim grief cheat discord voice chat respect staff",
   "Farming_and_Food.html": "wheat farm food hunger emerald farmer",
@@ -1106,7 +1110,7 @@ writePage("Progression.html", {
 → Post-game fossils / legendaries (optional)</pre>
 
   <h2>Achievements &amp; post-game</h2>
-  <p>CobbleVerse also tracks pack <a href="Achievements.html">achievements</a> (Advancements screen, often <kbd>L</kbd>). After Blue, see <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a> for Mew, birds, and Mewtwo.</p>
+  <p>CobbleVerse also tracks pack <a href="Achievements.html">achievements</a> (Advancements screen, often <kbd>L</kbd>). After Blue, see <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a> for Mew, birds, and Mewtwo — and <a href="Fossils_and_Resurrection.html">Fossil hunting</a> for every revive table.</p>
 
   <h2>Regions</h2>
   <table class="wikitable">
@@ -1823,7 +1827,7 @@ writePage("Quests.html", {
       <tr><td>Server Life</td><td>Base Ops · Market Floor · Crew Desk</td><td>Claims/storage, shops/trading, party play and helping newer players</td></tr>
       <tr><td>Kanto</td><td>Kanto Gyms · Indigo Plateau · Kanto Exploration · Kanto Region Kit</td><td>Brock → Blue, BlueMap/exploration, type coverage kit</td></tr>
       <tr><td>Johto / Hoenn / Sinnoh</td><td>Gyms · League · Exploration · Region Kit each</td><td>Full regional ladders + exploration + prep kits</td></tr>
-      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding Lab · Raid Circuit · Pokedex Drive · Trade Hall · Fossils and TM Lab</td><td>Crafting/evolution, breeding, raids, Pokédex (with regional milestones), player trading + trade-evolution, fossil revival + TM crafting</td></tr>
+      <tr><td>Trainer Systems</td><td>Trainer Craft · Breeding Lab · Raid Circuit · Pokedex Drive · Trade Hall · Fossils and TM Lab</td><td>Crafting/evolution, breeding, raids, Pokédex (with regional milestones), player trading + trade-evolution, fossil revival + TM crafting — deep guide: <a href="Fossils_and_Resurrection.html">Fossil hunting</a></td></tr>
       <tr><td>Endgame</td><td>Legend Trail · Postgame Ascent · Prestige Ladder</td><td>Birds / Mewtwo / Mew, shinies, mega checklist, all-leagues capstone, long-term dex/shiny/raid goals</td></tr>
     </tbody>
   </table>
@@ -2837,6 +2841,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Gyms_Sinnoh.html"><h3>Sinnoh</h3><p>Pedro → Camilla — deep guides.</p></a>
     <a class="hub-card" href="pages/Blue.html"><h3>Champion Blue</h3><p>End of Kanto — then Johto.</p></a>
     <a class="hub-card" href="pages/Postgame_and_Legendaries.html"><h3>Post-game</h3><p>Mew, birds, Mewtwo.</p></a>
+    <a class="hub-card" href="pages/Fossils_and_Resurrection.html"><h3>Fossil hunting</h3><p>Machines, tables, Galar combos, DNA.</p></a>
     <a class="hub-card" href="pages/Mega_and_Late_Game.html"><h3>Mega &amp; late-game</h3><p>Gimmicks + after-Blue checklist.</p></a>
   </div>
 
@@ -2858,6 +2863,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Pokemon_Husbandry.html"><h3>Pokémon husbandry</h3><p>Wool, milk, honey from Pokémon.</p></a>
     <a class="hub-card" href="pages/Shiny.html"><h3>Shiny hunting</h3><p>Rates, Masuda, crystals.</p></a>
     <a class="hub-card" href="pages/Fishing.html"><h3>Fishing</h3><p>Cobblemon rods &amp; water catches.</p></a>
+    <a class="hub-card" href="pages/Fossils_and_Resurrection.html"><h3>Fossil hunting</h3><p>Analyzer, tank, every fossil table.</p></a>
     <a class="hub-card" href="pages/Cobbleworkers.html"><h3>Cobbleworkers</h3><p>Pasture jobs — crops, berries, furnaces.</p></a>
     <a class="hub-card" href="pages/Sophisticated_Backpacks.html"><h3>Backpacks &amp; storage</h3><p>Sophisticated — B to open, Iron+ buffs.</p></a>
     <a class="hub-card" href="pages/Outfits_and_Cosmetics.html"><h3>Outfits &amp; cosmetics</h3><p>Trainer clothes &amp; Pokémon looks.</p></a>

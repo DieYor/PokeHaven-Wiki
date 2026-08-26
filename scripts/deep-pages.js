@@ -8,6 +8,10 @@ import {
   gymMapsReferenceBodyEn,
   GYM_MAPS_REFERENCE_INFOBOX_EN,
 } from "./gym-maps-reference.js";
+import {
+  fossilsBodyEn,
+  FOSSILS_INFOBOX_EN,
+} from "./fossils-hunting.js";
 
 function altText(html) {
   return String(html || "")
@@ -174,7 +178,7 @@ export function registerDeepPages({
       <li>Follow the pack’s Mew encounter / revive flow from there — the advancement “Catch Mew” completes when you own Mew.</li>
       <li>Shiny Mew is a separate optional advancement.</li>
     </ol>
-    <p class="muted">A guided version of this path also lives in FTB Quests under <strong>Fossils and TM Lab</strong> — <a href="Quests.html">Quests</a>.</p>
+    <p class="muted">A guided version of this path also lives in FTB Quests under <strong>Fossils and TM Lab</strong> — <a href="Quests.html">Quests</a>. Full fossil tables: <a href="Fossils_and_Resurrection.html">Fossil hunting &amp; resurrection</a>.</p>
     <div class="callout tip">
       <div class="label">REI is truth</div>
       Exact grids can change with pack updates. Always trust the in-game recipe view over screenshots.
@@ -205,6 +209,7 @@ export function registerDeepPages({
     <table class="wikitable">
       <thead><tr><th>Want…</th><th>Go to</th></tr></thead>
       <tbody>
+        <tr><td>Fossil machines &amp; tables</td><td><a href="Fossils_and_Resurrection.html">Fossil hunting &amp; resurrection</a></td></tr>
         <tr><td>Full toast list</td><td><a href="Achievements.html">Achievements</a></td></tr>
         <tr><td>Gym teams &amp; maps</td><td><a href="Gyms_Kanto.html">Kanto gyms</a> · <a href="Gym_Maps.html">Gym maps</a></td></tr>
         <tr><td>Where a species spawns</td><td><a href="Spawn_Lookup.html">Spawn lookup</a></td></tr>
@@ -213,7 +218,7 @@ export function registerDeepPages({
       </tbody>
     </table>
 
-    <p class="see-also"><strong>See also:</strong> <a href="Achievements.html">Achievements</a> · <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progression</a> · <a href="Blue.html">Blue</a> · <a href="Giovanni.html">Giovanni</a></p>
+    <p class="see-also"><strong>See also:</strong> <a href="Fossils_and_Resurrection.html">Fossil hunting</a> · <a href="Achievements.html">Achievements</a> · <a href="Mega_and_Late_Game.html">Mega &amp; late-game</a> · <a href="Progression.html">Progression</a> · <a href="Blue.html">Blue</a> · <a href="Giovanni.html">Giovanni</a></p>
     ${navboxGyms()}
     ${navboxSystems()}
     `,
@@ -1264,6 +1269,17 @@ export function registerDeepPages({
     lede: "Every gym and league map on PokeHaven EU: special items, structure IDs, region tables, how LumyMon builds maps, and staff grant notes.",
     infobox: GYM_MAPS_REFERENCE_INFOBOX_EN,
     body: gymMapsReferenceBodyEn(navboxGyms()),
+  });
+
+  writePage("Fossils_and_Resurrection.html", {
+    title: "Fossil hunting & resurrection",
+    breadcrumbs: [
+      { label: "Main Page", href: "../index.html" },
+      { label: "Fossil hunting & resurrection", href: "Fossils_and_Resurrection.html" },
+    ],
+    lede: "Find fossils, build the Cobblemon machines, revive every standard and Galar form, then tackle Origin Fossil / Ancient DNA with PokeHaven’s Giovanni DNA bonus.",
+    infobox: FOSSILS_INFOBOX_EN,
+    body: fossilsBodyEn(`${navboxSystems()}${navboxGyms()}`),
   });
 
   // index.html's final, live version is written later in build.js (after this
