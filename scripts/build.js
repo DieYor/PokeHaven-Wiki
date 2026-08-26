@@ -8,6 +8,7 @@ import { registerExpansionPages } from "./expansion-pages.js";
 import { UI, DISCORD_INVITE, altLangHref, relPrefixFor, critical } from "./i18n.js";
 import { registerDutchSite } from "./nl-site.js";
 import { registerSophisticatedBackpacks } from "./sophisticated-backpacks.js";
+import { gymMapsPlayerRegions } from "./gym-maps-reference.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -1305,24 +1306,9 @@ writePage("Gym_Maps.html", {
     <li>Combine Empty Map + Cerulean Star in the <strong>Kanto Cartography Table</strong>.</li>
     <li>Hover for coordinates, then travel. Full fight guide: <a href="Misty.html">Misty</a>.</li>
   </ol>
-  <p>Next after Misty: <a href="Lt._Surge.html">Lt. Surge</a>.</p>
+  <p>Next after Misty: <a href="Lt._Surge.html">Lt. Surge</a> — same craft loop for every later leader (special item + Empty Map on the matching region table).</p>
 
-  <h2>Later regions (Johto / Hoenn / Sinnoh)</h2>
-  <p>After each league, craft that region’s cartography table (REI: <em>Johto</em> / <em>Hoenn</em> / <em>Sinnoh</em> + <em>cartography</em>). <strong>Region openers</strong> (first gym of that region):</p>
-  <table class="wikitable">
-    <thead><tr><th>Region</th><th>When</th><th>First gym</th><th>Table</th></tr></thead>
-    <tbody>
-      <tr><td>Johto</td><td>After Blue + Johto Trainer Card</td><td><strong>Valerio</strong></td><td>Johto Cartography Table</td></tr>
-      <tr><td>Hoenn</td><td>After Lance + Hoenn card</td><td><strong>Petra</strong></td><td>Hoenn Cartography Table</td></tr>
-      <tr><td>Sinnoh</td><td>After Rocco + Sinnoh card</td><td><strong>Pedro</strong></td><td>Sinnoh Cartography Table</td></tr>
-    </tbody>
-  </table>
-  <ol class="steps">
-    <li>Swap your Trainer Card at the Trainer Association for the new region (resets <em>your</em> level cap — others unaffected).</li>
-    <li>Check the Trainer Card for a spawn tip, <em>or</em> craft the map (below).</li>
-    <li>If structures are missing after the first champion of a region, ask Discord — staff may need one server restart.</li>
-  </ol>
-  <p>Region overviews: <a href="Gyms_Johto.html">Johto</a> · <a href="Gyms_Hoenn.html">Hoenn</a> · <a href="Gyms_Sinnoh.html">Sinnoh</a>.</p>
+  ${gymMapsPlayerRegions("en")}
 
   <h2>Method 1 — Map Guide villager</h2>
   <ol class="steps">
@@ -1354,7 +1340,7 @@ writePage("Gym_Maps.html", {
     <div class="label">Map looks empty?</div>
     Walk the indicated direction anyway. If nothing shows up after a long hike, move a few thousand blocks and try again.
   </div>
-  <p><strong>Full list:</strong> every leader’s special item + structure ID — <a href="Gym_Maps_Reference.html">Gym map reference</a>.</p>
+  <p>Structure IDs, LumyMon tech, and staff grants: <a href="Gym_Maps_Reference.html">Gym map reference</a>.</p>
   <p class="see-also"><strong>See also:</strong> <a href="Gym_Maps_Reference.html">Gym map reference</a> · <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Villages_and_Trading.html">Villages &amp; trading</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Progression.html">Progression</a></p>
   ${navboxGyms()}
   `,

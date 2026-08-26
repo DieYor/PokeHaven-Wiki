@@ -90,6 +90,87 @@ ${rows}
   </table>`;
 }
 
+/** Wiki page href for a catalog leader label. */
+function leaderPageHref(leaderLabel) {
+  const special = {
+    "Lt. Surge": "Lt._Surge.html",
+    "Blue (league)": "Blue.html",
+    "Lance (league)": "Johto_Lance.html",
+    "Rocco (league)": "Rocco.html",
+    "Camilla (league)": "Camilla.html",
+  };
+  if (special[leaderLabel]) return special[leaderLabel];
+  const base = leaderLabel.replace(/ \(league\)$/, "");
+  return `${base.replace(/\s+/g, "_")}.html`;
+}
+
+const PLAYER_UNLOCK = {
+  en: {
+    Kanto: "Always available (starter world). Use the <strong>Kanto Cartography Table</strong>.",
+    Johto:
+      "After <a href=\"Blue.html\">Champion Blue</a> → Trainer Association → <strong>Johto Trainer Card</strong>. Craft the <strong>Johto Cartography Table</strong> (REI). If gyms are missing after your first unlock, staff may need <strong>1 server restart</strong>.",
+    Hoenn:
+      "After <a href=\"Johto_Lance.html\">Lance</a> → <strong>Hoenn Trainer Card</strong>. Craft the <strong>Hoenn Cartography Table</strong>. First unlock may need <strong>1 server restart</strong>.",
+    Sinnoh:
+      "After <a href=\"Rocco.html\">Rocco</a> → <strong>Sinnoh Trainer Card</strong>. Craft the <strong>Sinnoh Cartography Table</strong>. First unlock may need <strong>1 server restart</strong>.",
+  },
+  nl: {
+    Kanto: "Altijd beschikbaar (starterwereld). Gebruik de <strong>Kanto Cartography Table</strong>.",
+    Johto:
+      "Na <a href=\"Blue.html\">Champion Blue</a> → Trainer Association → <strong>Johto Trainer Card</strong>. Craft de <strong>Johto Cartography Table</strong> (REI). Ontbreken gyms na je eerste unlock? Staff kan <strong>1× herstarten</strong>.",
+    Hoenn:
+      "Na <a href=\"Johto_Lance.html\">Lance</a> → <strong>Hoenn Trainer Card</strong>. Craft de <strong>Hoenn Cartography Table</strong>. Eerste unlock kan <strong>1× herstart</strong> nodig hebben.",
+    Sinnoh:
+      "Na <a href=\"Rocco.html\">Rocco</a> → <strong>Sinnoh Trainer Card</strong>. Craft de <strong>Sinnoh Cartography Table</strong>. Eerste unlock kan <strong>1× herstart</strong> nodig hebben.",
+  },
+};
+
+const REGION_HUB = {
+  Kanto: "Gyms_Kanto.html",
+  Johto: "Gyms_Johto.html",
+  Hoenn: "Gyms_Hoenn.html",
+  Sinnoh: "Gyms_Sinnoh.html",
+};
+
+/**
+ * Player-facing per-region map lists for Gym_Maps.html (EN/NL).
+ * Leader + special item (+ note for Nether). Structure IDs live on Gym_Maps_Reference.
+ */
+export function gymMapsPlayerRegions(lang) {
+  const nl = lang === "nl";
+  const hLeader = "Leader";
+  const hItem = nl ? "Special item (REI)" : "Special item (REI)";
+  const hNote = nl ? "Notitie" : "Note";
+  const overview = nl ? "Regio-overzicht" : "Region overview";
+  const dimNote = (dim) =>
+    dim === "nether"
+      ? nl
+        ? "Zoekt in de <strong>Nether</strong>"
+        : "Searches the <strong>Nether</strong>"
+      : "—";
+
+  return ["Kanto", "Johto", "Hoenn", "Sinnoh"]
+    .map((region) => {
+      const meta = CATALOG[region];
+      const rows = meta.rows
+        .map(([leader, , item, , dim]) => {
+          const href = leaderPageHref(leader);
+          return `<tr><td><a href="${href}"><strong>${leader}</strong></a></td><td>${item}</td><td>${dimNote(dim)}</td></tr>`;
+        })
+        .join("\n");
+      return `<h2>${region}</h2>
+  <p>${PLAYER_UNLOCK[lang][region]}</p>
+  <p>${overview}: <a href="${REGION_HUB[region]}">${region}</a> · ${nl ? "Tafel" : "Table"}: <strong>${meta.table}</strong></p>
+  <table class="wikitable">
+    <thead><tr><th>${hLeader}</th><th>${hItem}</th><th>${hNote}</th></tr></thead>
+    <tbody>
+${rows}
+    </tbody>
+  </table>`;
+    })
+    .join("\n\n");
+}
+
 export function gymMapsReferenceBodyEn(navbox) {
   return `
   <h2>What a gym map is</h2>

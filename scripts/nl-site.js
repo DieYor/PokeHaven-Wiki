@@ -14,6 +14,7 @@ import {
 import {
   gymMapsReferenceBodyNl,
   GYM_MAPS_REFERENCE_INFOBOX_NL,
+  gymMapsPlayerRegions,
 } from "./gym-maps-reference.js";
 
 /** Screenshots from nl/pages/*.html → repo assets/guides/ */
@@ -1855,24 +1856,9 @@ export function registerDutchSite({
     <li>Combineer Empty Map + Cerulean Star in de <strong>Kanto Cartography Table</strong>.</li>
     <li>Hover voor coördinaten, daarna reizen. Fight-gids: <a href="Misty.html">Misty</a>.</li>
   </ol>
-  <p>Volgende na Misty: <a href="Lt._Surge.html">Lt. Surge</a>.</p>
+  <p>Volgende na Misty: <a href="Lt._Surge.html">Lt. Surge</a> — dezelfde craft-loop voor elke latere leader (special item + Empty Map op de juiste regio-tafel).</p>
 
-  <h2>Latere regio’s (Johto / Hoenn / Sinnoh)</h2>
-  <p>Na elke league craft je de cartography-tafel van die regio (REI: <em>Johto</em> / <em>Hoenn</em> / <em>Sinnoh</em> + <em>cartography</em>). <strong>Regio-openers</strong> (eerste gym van die regio):</p>
-  <table class="wikitable">
-    <thead><tr><th>Regio</th><th>Wanneer</th><th>Eerste gym</th><th>Tafel</th></tr></thead>
-    <tbody>
-      <tr><td>Johto</td><td>Na Blue + Johto Trainer Card</td><td><strong>Valerio</strong></td><td>Johto Cartography Table</td></tr>
-      <tr><td>Hoenn</td><td>Na Lance + Hoenn-card</td><td><strong>Petra</strong></td><td>Hoenn Cartography Table</td></tr>
-      <tr><td>Sinnoh</td><td>Na Rocco + Sinnoh-card</td><td><strong>Pedro</strong></td><td>Sinnoh Cartography Table</td></tr>
-    </tbody>
-  </table>
-  <ol class="steps">
-    <li>Ruil je Trainer Card bij de Trainer Association voor de nieuwe regio (reset <em>jouw</em> level cap — anderen niet).</li>
-    <li>Check de Trainer Card voor een spawn-tip, <em>of</em> craft de map (hieronder).</li>
-    <li>Ontbreken structures na de eerste champion van een regio? Discord — staff kan 1× server herstarten.</li>
-  </ol>
-  <p>Regio-overzichten: <a href="Gyms_Johto.html">Johto</a> · <a href="Gyms_Hoenn.html">Hoenn</a> · <a href="Gyms_Sinnoh.html">Sinnoh</a>.</p>
+  ${gymMapsPlayerRegions("nl")}
 
   <h2>Methode 1 — Map Guide-villager</h2>
   <ol class="steps">
@@ -1904,7 +1890,7 @@ export function registerDutchSite({
     <div class="label">Map lijkt leeg?</div>
     Loop toch de aangegeven richting. Na een lange hike nog niks? Verplaats een paar duizend blocks en probeer opnieuw.
   </div>
-  <p><strong>Volledige lijst:</strong> elk special item + structure-ID — <a href="Gym_Maps_Reference.html">Gym-map referentie</a>.</p>
+  <p>Structure-IDs, LumyMon-tech en staff-grants: <a href="Gym_Maps_Reference.html">Gym-map referentie</a>.</p>
   <p class="see-also"><strong>Zie ook:</strong> <a href="Gym_Maps_Reference.html">Gym-map referentie</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Villages_and_Trading.html">Dorpen</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Progression.html">Progressie</a></p>
   ${navboxCore()}
   `,
