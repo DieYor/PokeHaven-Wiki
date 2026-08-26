@@ -11,6 +11,10 @@ import {
   SOPH_BACKPACKS_INFOBOX_NL,
   sophisticatedBackpacksBodyNl,
 } from "./sophisticated-backpacks.js";
+import {
+  gymMapsReferenceBodyNl,
+  GYM_MAPS_REFERENCE_INFOBOX_NL,
+} from "./gym-maps-reference.js";
 
 /** Screenshots from nl/pages/*.html → repo assets/guides/ */
 function guideImg(name) {
@@ -181,6 +185,7 @@ export function registerDutchSite({
     <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Waarom XP stopt — en de ladder.</p></a>
     <a class="hub-card" href="pages/Progression.html"><h3>Progressie</h3><p>Regio’s &amp; gym-loop.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym-maps</h3><p>Cartography &amp; coördinaten.</p></a>
+    <a class="hub-card" href="pages/Gym_Maps_Reference.html"><h3>Gym-map referentie</h3><p>Alle leaders, items, structure-IDs.</p></a>
     <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement-checklist.</p></a>
   </div>
 
@@ -1899,9 +1904,21 @@ export function registerDutchSite({
     <div class="label">Map lijkt leeg?</div>
     Loop toch de aangegeven richting. Na een lange hike nog niks? Verplaats een paar duizend blocks en probeer opnieuw.
   </div>
-  <p class="see-also"><strong>Zie ook:</strong> <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Villages_and_Trading.html">Dorpen</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Progression.html">Progressie</a></p>
+  <p><strong>Volledige lijst:</strong> elk special item + structure-ID — <a href="Gym_Maps_Reference.html">Gym-map referentie</a>.</p>
+  <p class="see-also"><strong>Zie ook:</strong> <a href="Gym_Maps_Reference.html">Gym-map referentie</a> · <a href="Essential_Recipes.html">Essentiële recepten</a> · <a href="Villages_and_Trading.html">Dorpen</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Progression.html">Progressie</a></p>
   ${navboxCore()}
   `,
+  });
+
+  track("Gym_Maps_Reference.html", {
+    title: "Gym-map referentie",
+    breadcrumbs: crumbs(
+      { label: "Gym-maps", href: "Gym_Maps.html" },
+      { label: "Referentie", href: "Gym_Maps_Reference.html" }
+    ),
+    lede: "Alle gym- en league-maps op PokeHaven EU: special items, structure-IDs, regio-tafels, hoe LumyMon maps bouwt, en staff-grants.",
+    infobox: GYM_MAPS_REFERENCE_INFOBOX_NL,
+    body: gymMapsReferenceBodyNl(navboxCore()),
   });
 
   track("Common_Mistakes.html", {
@@ -2061,6 +2078,7 @@ export function registerDutchSite({
     <tr><th>Wanneer</th><td>Late Kanto / na Champion Blue</td></tr>
     <tr><th>Mew-pad</th><td>Origin Fossil → Mew vangen</td></tr>
     <tr><th>Mewtwo-pad</th><td>Ancient DNA → Mewtwo reviven</td></tr>
+    <tr><th>PokeHaven DNA</th><td>Giovanni 1e + rematch (2e) = 2× DNA</td></tr>
     <tr><th>Birds</th><td>Articuno, Zapdos, Moltres</td></tr>
     <tr><th>Lookup</th><td>REI (<kbd>E</kbd>) + <a href="Spawn_Lookup.html">Spawn-lookup</a></td></tr>
   </table>`,
@@ -2095,6 +2113,10 @@ export function registerDutchSite({
     <li>Gebruik de revive / cloning-flow voor <strong>Mewtwo</strong>.</li>
     <li>Shiny Mewtwo-revive is optioneel.</li>
   </ol>
+  <div class="callout tip">
+    <div class="label">PokeHaven — Mew én Mewtwo</div>
+    <p>Giovanni’s <strong>eerste</strong> win geeft één Ancient DNA. Zijn <strong>eerste rematch</strong> (2e win) geeft een <strong>tweede</strong> DNA, zodat je Origin Fossil voor Mew <em>én</em> Mewtwo kunt maken zonder te ruilen.</p>
+  </div>
 
   <h2>Legendary birds</h2>
   <p>Articuno, Zapdos en Moltres hebben elk catch-advancements (plus optionele shinies). Deze wiki geeft geen vaste overworld-coördinaten.</p>

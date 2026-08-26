@@ -4,6 +4,10 @@ import { DISCORD_INVITE, critical } from "./i18n.js";
 import { advancementTableRows, groupTitle } from "./advancement-copy.js";
 import { husbandryBodyEn } from "./pokemon-husbandry.js";
 import { hearthstoneBodyEn } from "./hearthstone.js";
+import {
+  gymMapsReferenceBodyEn,
+  GYM_MAPS_REFERENCE_INFOBOX_EN,
+} from "./gym-maps-reference.js";
 
 function altText(html) {
   return String(html || "")
@@ -147,8 +151,9 @@ export function registerDeepPages({
     infobox: `<div class="infobox-title">Post-game</div>
     <table>
       <tr><th>When</th><td>Late Kanto / after Champion Blue</td></tr>
-      <tr><th>Mew path</th><td>Origin Fossil → catch Mew</td></tr>
-      <tr><th>Mewtwo path</th><td>Ancient DNA → revive Mewtwo</td></tr>
+    <tr><th>Mew path</th><td>Origin Fossil → catch Mew</td></tr>
+    <tr><th>Mewtwo path</th><td>Ancient DNA → revive Mewtwo</td></tr>
+    <tr><th>PokeHaven DNA</th><td>Giovanni 1st + rematch (2nd) = 2× DNA</td></tr>
       <tr><th>Birds</th><td>Articuno, Zapdos, Moltres</td></tr>
       <tr><th>Lookup</th><td>REI (<kbd>E</kbd>) + <a href="Spawn_Lookup.html">Spawn lookup</a></td></tr>
     </table>`,
@@ -183,6 +188,10 @@ export function registerDeepPages({
       <li>Use the revive / cloning flow to bring back <strong>Mewtwo</strong>.</li>
       <li>Shiny Mewtwo revive is optional.</li>
     </ol>
+    <div class="callout tip">
+      <div class="label">PokeHaven — both Mew and Mewtwo</div>
+      <p>Giovanni’s <strong>first</strong> win drops one Ancient DNA. His <strong>first rematch</strong> (2nd win) drops a <strong>second</strong> DNA, so you can craft Origin Fossil for Mew <em>and</em> revive Mewtwo without trading.</p>
+    </div>
 
     <h2>Legendary birds</h2>
     <p>Articuno, Zapdos, and Moltres each have catch advancements (plus optional shinies). The pack does not give fixed overworld coordinates on this wiki.</p>
@@ -1243,6 +1252,18 @@ export function registerDeepPages({
     </ol>
     ${navboxSystems()}
     `,
+  });
+
+  writePage("Gym_Maps_Reference.html", {
+    title: "Gym map reference",
+    breadcrumbs: [
+      { label: "Main Page", href: "../index.html" },
+      { label: "Gym maps", href: "Gym_Maps.html" },
+      { label: "Full reference", href: "Gym_Maps_Reference.html" },
+    ],
+    lede: "Every gym and league map on PokeHaven EU: special items, structure IDs, region tables, how LumyMon builds maps, and staff grant notes.",
+    infobox: GYM_MAPS_REFERENCE_INFOBOX_EN,
+    body: gymMapsReferenceBodyEn(navboxGyms()),
   });
 
   // index.html's final, live version is written later in build.js (after this

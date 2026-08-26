@@ -408,6 +408,8 @@ const SEARCH_KEYWORDS = {
     "pack differences no hunger dragon waystone hearthstone mobsbegone sheep claims economy",
   "Gym_Maps.html":
     "map cartography empty map brock map key misty cerulean star coordinates johto hoenn sinnoh valerio petra pedro",
+  "Gym_Maps_Reference.html":
+    "gym map reference catalog structure id lumymon onyx cerulean cartography staff grant all leaders brock misty valerio petra pedro",
   "Rules_and_Commands.html":
     "rules commands /pc claim grief cheat discord voice chat respect staff",
   "Farming_and_Food.html": "wheat farm food hunger emerald farmer",
@@ -1352,7 +1354,8 @@ writePage("Gym_Maps.html", {
     <div class="label">Map looks empty?</div>
     Walk the indicated direction anyway. If nothing shows up after a long hike, move a few thousand blocks and try again.
   </div>
-  <p class="see-also"><strong>See also:</strong> <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Villages_and_Trading.html">Villages &amp; trading</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Progression.html">Progression</a></p>
+  <p><strong>Full list:</strong> every leader’s special item + structure ID — <a href="Gym_Maps_Reference.html">Gym map reference</a>.</p>
+  <p class="see-also"><strong>See also:</strong> <a href="Gym_Maps_Reference.html">Gym map reference</a> · <a href="Essential_Recipes.html">Essential recipes</a> · <a href="Villages_and_Trading.html">Villages &amp; trading</a> · <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Progression.html">Progression</a></p>
   ${navboxGyms()}
   `,
 });
@@ -2836,6 +2839,7 @@ writePage("index.html", {
     <a class="hub-card" href="pages/Level_Cap.html"><h3>Level cap</h3><p>Why XP freezes — and the ladder.</p></a>
     <a class="hub-card" href="pages/Progression.html"><h3>Progression</h3><p>Regions &amp; the gym loop.</p></a>
     <a class="hub-card" href="pages/Gym_Maps.html"><h3>Gym maps</h3><p>Cartography &amp; coordinates.</p></a>
+    <a class="hub-card" href="pages/Gym_Maps_Reference.html"><h3>Gym map reference</h3><p>All leaders, items, structure IDs.</p></a>
     <a class="hub-card" href="pages/Achievements.html"><h3>Achievements</h3><p>Pack advancement checklist.</p></a>
   </div>
 
