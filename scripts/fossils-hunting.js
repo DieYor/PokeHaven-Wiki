@@ -183,7 +183,7 @@ ${galarRows()}
   <table class="wikitable">
     <thead><tr><th>Inputs</th><th>Result</th><th>How you get it</th></tr></thead>
     <tbody>
-      <tr><td><code>lumymon:ancient_dna</code> + <code>lumymon:cloning_catalyst</code></td><td><strong>Mewtwo</strong></td><td>Giovanni DNA + craft catalyst (REI)</td></tr>
+      <tr><td><code>lumymon:ancient_dna</code> + <code>lumymon:cloning_catalyst</code></td><td><strong>Mewtwo</strong></td><td>Ancient DNA (Giovanni / Mew shrine) + craft catalyst (REI)</td></tr>
       <tr><td><code>lumymon:ancient_dna</code> + <code>lumymon:cloning_catalyst_shiny</code></td><td><strong>Shiny Mewtwo</strong></td><td>Same DNA path, shiny catalyst</td></tr>
       <tr><td><code>cobblemon:dome_fossil</code> + <code>dubious_disc</code> + <code>nether_star</code></td><td><strong>Genesect</strong></td><td>Pack fossil recipe override</td></tr>
       <tr><td><code>lumymon:fossilized_helmet</code></td><td><strong>Type: Null</strong></td><td>Team Rocket scientist first clear</td></tr>
@@ -192,7 +192,7 @@ ${galarRows()}
   </table>
   ${critical(
     "en",
-    "<strong>PokeHaven:</strong> Giovanni drops Ancient DNA on <em>1st win</em> and again on <em>1st rematch (2nd win)</em>, so you can do Origin Fossil (Mew) and Mewtwo without trading. Details: <a href=\"Postgame_and_Legendaries.html\">Post-game and legendaries</a>."
+    "<strong>Ancient DNA:</strong> drops on Giovanni’s <em>1st win</em> and can appear in Mew shrine chests. Use it for Mewtwo cloning; Origin Fossil (after Blue) is the Mew route. Details: <a href=\"Postgame_and_Legendaries.html\">Post-game and legendaries</a>."
   )}
 
   <h2>Quests — Fossils and TM Lab</h2>
@@ -336,7 +336,7 @@ ${galarRows()}
   <table class="wikitable">
     <thead><tr><th>Inputs</th><th>Resultaat</th><th>Hoe</th></tr></thead>
     <tbody>
-      <tr><td><code>lumymon:ancient_dna</code> + <code>lumymon:cloning_catalyst</code></td><td><strong>Mewtwo</strong></td><td>Giovanni-DNA + catalyst (REI)</td></tr>
+      <tr><td><code>lumymon:ancient_dna</code> + <code>lumymon:cloning_catalyst</code></td><td><strong>Mewtwo</strong></td><td>Ancient DNA (Giovanni / Mew-shrine) + catalyst (REI)</td></tr>
       <tr><td><code>lumymon:ancient_dna</code> + <code>lumymon:cloning_catalyst_shiny</code></td><td><strong>Shiny Mewtwo</strong></td><td>Zelfde DNA, shiny catalyst</td></tr>
       <tr><td><code>dome_fossil</code> + <code>dubious_disc</code> + <code>nether_star</code></td><td><strong>Genesect</strong></td><td>Pack-override</td></tr>
       <tr><td><code>lumymon:fossilized_helmet</code></td><td><strong>Type: Null</strong></td><td>Rocket scientist first clear</td></tr>
@@ -345,7 +345,7 @@ ${galarRows()}
   </table>
   ${critical(
     "nl",
-    "<strong>PokeHaven:</strong> Giovanni geeft Ancient DNA bij <em>1e win</em> én bij <em>1e rematch (2e win)</em>, zodat Origin Fossil (Mew) én Mewtwo zonder trade kunnen. Details: <a href=\"Postgame_and_Legendaries.html\">Post-game</a>."
+    "<strong>Ancient DNA:</strong> bij Giovanni’s <em>1e win</em> en soms in Mew-shrine-chests. Gebruik het voor Mewtwo-clonen; Origin Fossil (na Blue) is de Mew-route. Details: <a href=\"Postgame_and_Legendaries.html\">Post-game</a>."
   )}
 
   <h2>Quests — Fossils and TM Lab</h2>

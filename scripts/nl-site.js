@@ -1921,7 +1921,7 @@ export function registerDutchSite({
       label: "Fossil hunting & resurrectie",
       href: "Fossils_and_Resurrection.html",
     }),
-    lede: "Vind fossils, bouw de Cobblemon-machines, revive elke standaard- en Galar-vorm, en pak Origin Fossil / Ancient DNA met Giovanni’s 2× DNA op PokeHaven.",
+    lede: "Vind fossils, bouw de Cobblemon-machines, revive elke standaard- en Galar-vorm, en pak Origin Fossil en Ancient DNA.",
     infobox: FOSSILS_INFOBOX_NL,
     body: fossilsBodyNl(navboxCore()),
   });
@@ -2083,7 +2083,7 @@ export function registerDutchSite({
     <tr><th>Wanneer</th><td>Late Kanto / na Champion Blue</td></tr>
     <tr><th>Mew-pad</th><td>Origin Fossil → Mew vangen</td></tr>
     <tr><th>Mewtwo-pad</th><td>Ancient DNA → Mewtwo reviven</td></tr>
-    <tr><th>PokeHaven DNA</th><td>Giovanni 1e + rematch (2e) = 2× DNA</td></tr>
+    <tr><th>Ancient DNA</th><td>Giovanni 1e win · Mew-shrine-chests</td></tr>
     <tr><th>Birds</th><td>Articuno, Zapdos, Moltres</td></tr>
     <tr><th>Lookup</th><td>REI (<kbd>E</kbd>) + <a href="Spawn_Lookup.html">Spawn-lookup</a></td></tr>
   </table>`,
@@ -2119,8 +2119,8 @@ export function registerDutchSite({
     <li>Shiny Mewtwo-revive is optioneel.</li>
   </ol>
   <div class="callout tip">
-    <div class="label">PokeHaven — Mew én Mewtwo</div>
-    <p>Giovanni’s <strong>eerste</strong> win geeft één Ancient DNA. Zijn <strong>eerste rematch</strong> (2e win) geeft een <strong>tweede</strong> DNA, zodat je Origin Fossil voor Mew <em>én</em> Mewtwo kunt maken zonder te ruilen.</p>
+    <div class="label">Ancient DNA-bronnen</div>
+    <p>Giovanni’s <strong>eerste</strong> win geeft Ancient DNA. Mew-shrine-chests kunnen ook Ancient DNA bevatten. Gebruik DNA + cloning catalyst voor <strong>Mewtwo</strong>; de <strong>Mew</strong>-route loopt via Origin Fossil na Blue (zie hierboven).</p>
   </div>
 
   <h2>Legendary birds</h2>
