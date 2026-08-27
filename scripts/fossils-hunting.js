@@ -192,7 +192,7 @@ ${galarRows()}
   </table>
   ${critical(
     "en",
-    "<strong>Ancient DNA:</strong> drops on Giovanni’s <em>1st win</em> and can appear in Mew shrine chests. Use it for Mewtwo cloning; Origin Fossil (after Blue) is the Mew route. Details: <a href=\"Postgame_and_Legendaries.html\">Post-game and legendaries</a>."
+    "<strong>Ancient DNA:</strong> Giovanni’s <em>1st win</em> and Mew shrine chests. Origin Fossil craft (Mew) <em>uses</em> DNA; Mewtwo cloning needs DNA too — two DNA for both. Details: <a href=\"Postgame_and_Legendaries.html\">Post-game and legendaries</a>."
   )}
 
   <h2>Quests — Fossils and TM Lab</h2>
@@ -345,7 +345,7 @@ ${galarRows()}
   </table>
   ${critical(
     "nl",
-    "<strong>Ancient DNA:</strong> bij Giovanni’s <em>1e win</em> en soms in Mew-shrine-chests. Gebruik het voor Mewtwo-clonen; Origin Fossil (na Blue) is de Mew-route. Details: <a href=\"Postgame_and_Legendaries.html\">Post-game</a>."
+    "<strong>Ancient DNA:</strong> Giovanni’s <em>1e win</em> en Mew-shrine-chests. Origin Fossil (Mew) <em>verbruikt</em> DNA; Mewtwo-clonen ook — twee DNA voor beide. Details: <a href=\"Postgame_and_Legendaries.html\">Post-game</a>."
   )}
 
   <h2>Quests — Fossils and TM Lab</h2>

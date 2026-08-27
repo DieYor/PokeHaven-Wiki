@@ -194,7 +194,7 @@ export function registerDeepPages({
     </ol>
     <div class="callout tip">
       <div class="label">Ancient DNA sources</div>
-      <p>Giovanni’s <strong>first</strong> win drops Ancient DNA. Mew shrine chests can also contain Ancient DNA. Use DNA with a cloning catalyst for <strong>Mewtwo</strong>; the <strong>Mew</strong> route uses Origin Fossil after Blue (see above).</p>
+      <p>Giovanni’s <strong>first</strong> win drops one Ancient DNA. Mew shrine chests can also contain Ancient DNA. Crafting <strong>Origin Fossil</strong> (Mew) <em>consumes</em> Ancient DNA (see REI: DNA + fossils + Ancient Origin Ball). <strong>Mewtwo</strong> also needs Ancient DNA + cloning catalyst — so both routes need two DNA total.</p>
     </div>
 
     <h2>Legendary birds</h2>
