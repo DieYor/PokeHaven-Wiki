@@ -2097,12 +2097,13 @@ writePage("Discord_Commands.html", {
     { label: "Main Page", href: "../index.html" },
     { label: "Discord commands", href: "Discord_Commands.html" },
   ],
-  lede: "Every player-facing slash command the PokeHaven EU Discord bot offers — account linking and donation status. (Looking for in-game commands like <code>/pc</code>? See <a href=\"Rules_and_Commands.html\">Rules &amp; commands</a>.)",
+  lede: "Every player-facing slash command the PokeHaven EU Discord bot offers — account linking, Discord flair roles, and donation status. (Looking for in-game commands like <code>/pc</code>? See <a href=\"Rules_and_Commands.html\">Rules &amp; commands</a>.)",
   infobox: infoboxHtml("Discord bot commands", [
     ["Where", "Any channel in the PokeHaven EU Discord"],
     ["Account link", "<code>/link</code>"],
+    ["Flair roles", "<code>/prefixroles sync</code>"],
     ["Donation status", "<code>/donate check</code>, <code>/donate tiers</code>"],
-    ["Staff only", "<code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code>"],
+    ["Staff only", "<code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code>, <code>/prefixroles sync user:</code>"],
   ]),
   body: `
   <div class="callout tip">
@@ -2114,9 +2115,19 @@ writePage("Discord_Commands.html", {
   <table class="wikitable">
     <thead><tr><th>Command</th><th>What it does</th></tr></thead>
     <tbody>
-      <tr><td><code>/link minecraft:YourExactName</code></td><td>Links your Discord account to your Minecraft username (case-sensitive, 3–16 characters). Do this first — it's how the bot knows who to credit for donations and chat prefixes.</td></tr>
+      <tr><td><code>/link minecraft:YourExactName</code></td><td>Links your Discord account to your Minecraft username (case-sensitive, 3–16 characters). Do this first — it's how the bot knows who to credit for donations, chat prefixes, and <strong>Discord flair roles</strong>.</td></tr>
     </tbody>
   </table>
+
+  <h2>Discord flair roles</h2>
+  <p>Earned in-game tags, suffixes, and faction picks can show as cosmetic Discord roles on your profile. Link first, then sync:</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>/prefixroles sync</code></td><td>Instant refresh of your Discord roles from LuckPerms (auto-sync also runs every ~2 min after you <code>/link</code>).</td></tr>
+    </tbody>
+  </table>
+  <p>Link once with <code>/link</code> — new in-game unlocks appear on Discord automatically within a few minutes.</p>
 
   <h2>Donations</h2>
   <p>Full context on tiers and how donating works: <a href="Donations.html">Donations</a>.</p>

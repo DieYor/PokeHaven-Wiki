@@ -9,3 +9,7 @@ _external/
 
 .gitmsg.txt
 .git-commit-msg.txt
+
+# Accidental mod/peek dumps
+fabric.mod.json
+data/lumymon/

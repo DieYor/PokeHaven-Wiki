@@ -1275,13 +1275,14 @@ export function registerDutchSite({
   track("Discord_Commands.html", {
     title: "Discord-commands",
     breadcrumbs: crumbs({ label: "Discord-commands", href: "Discord_Commands.html" }),
-    lede: "Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken en donatiestatus. (Op zoek naar in-game commands zoals <code>/pc</code>? Zie <a href=\"Rules_and_Commands.html\">Regels &amp; commands</a>.)",
+    lede: "Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken, Discord-flairrollen en donatiestatus. (Op zoek naar in-game commands zoals <code>/pc</code>? Zie <a href=\"Rules_and_Commands.html\">Regels &amp; commands</a>.)",
     infobox: `<div class="infobox-title">Discord-bot commands</div>
   <table>
     <tr><th>Waar</th><td>Elk kanaal in de PokeHaven EU Discord</td></tr>
     <tr><th>Account linken</th><td><code>/link</code></td></tr>
+    <tr><th>Flairrollen</th><td><code>/prefixroles sync</code></td></tr>
     <tr><th>Donatiestatus</th><td><code>/donate check</code>, <code>/donate tiers</code></td></tr>
-    <tr><th>Alleen staff</th><td><code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code></td></tr>
+    <tr><th>Alleen staff</th><td><code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code>, <code>/prefixroles sync user:</code></td></tr>
   </table>`,
     body: `
   <div class="callout tip">
@@ -1293,9 +1294,19 @@ export function registerDutchSite({
   <table class="wikitable">
     <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
     <tbody>
-      <tr><td><code>/link minecraft:JouwExacteNaam</code></td><td>Linkt je Discord-account aan je Minecraft-username (hoofdlettergevoelig, 3–16 tekens). Doe dit eerst — zo weet de bot wie te crediteren voor donaties en chatprefixes.</td></tr>
+      <tr><td><code>/link minecraft:JouwExacteNaam</code></td><td>Linkt je Discord-account aan je Minecraft-username (hoofdlettergevoelig, 3–16 tekens). Doe dit eerst — zo weet de bot wie te crediteren voor donaties, chatprefixes en <strong>Discord-flairrollen</strong>.</td></tr>
     </tbody>
   </table>
+
+  <h2>Discord-flairrollen</h2>
+  <p>Verdiende in-game tags, suffixes en faction-keuzes kunnen als cosmetische Discord-rollen op je profiel verschijnen. Link eerst, sync daarna:</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/prefixroles sync</code></td><td>Directe refresh van je Discord-rollen vanuit LuckPerms (auto-sync draait ook elke ~2 min na <code>/link</code>).</td></tr>
+    </tbody>
+  </table>
+  <p>Link eenmalig met <code>/link</code> — nieuwe in-game unlocks verschijnen binnen enkele minuten automatisch op Discord.</p>
 
   <h2>Donaties</h2>
   <p>Volledige uitleg over tiers en hoe doneren werkt: <a href="Donations.html">Donaties</a>.</p>
