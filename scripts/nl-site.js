@@ -1231,7 +1231,7 @@ export function registerDutchSite({
 
   <h2>Hoe het werkt</h2>
   <ol class="steps">
-    <li><strong>Link eerst je account</strong> zodat de bot je Minecraft-naam kent voor de in-game prefix: <code>/link minecraft:JouwExacteNaam</code> in Discord.</li>
+    <li><strong>Link eerst je account</strong> — in-game <code>/discord link</code>, daarna Discord <code>/link code:######</code> (geverifieerd; zie <code>#link-your-minecraft</code>).</li>
     <li><strong>Doneer via PayPal.</strong> De actuele donatielink staat gepind in Discord <code>#donations</code> — niet hier gepubliceerd, zodat hij nooit verouderd raakt.</li>
     <li><strong>Zet je Discord-naam in de PayPal-notitie</strong> (voeg <code>Shiny Hour</code> toe als je dat financiert).</li>
     <li><strong>Staff logt de betaling</strong> met <code>/donate add</code>. De bot werkt je lifetime-totaal bij, geeft je Discord-rol, en synct (waar geconfigureerd) je in-game chatprefix.</li>
@@ -1255,7 +1255,8 @@ export function registerDutchSite({
     <tbody>
       <tr><td><code>/donate check</code></td><td>Toont je eigen lifetime-donatietotaal, huidige tier en gelinkte Minecraft-naam</td></tr>
       <tr><td><code>/donate tiers</code></td><td>Lijst van de cosmetische donatietiers hierboven</td></tr>
-      <tr><td><code>/link minecraft:JouwNaam</code></td><td>Linkt je Discord-account aan je Minecraft-username (doe dit eerst)</td></tr>
+      <tr><td><code>/discord link</code> (in-game)</td><td>6-cijferige verificatiecode (5 min)</td></tr>
+      <tr><td><code>/link code:######</code> (Discord)</td><td>Verifieer en link je Minecraft-account (doe dit vóór doneren)</td></tr>
     </tbody>
   </table>
 
@@ -1279,7 +1280,7 @@ export function registerDutchSite({
     infobox: `<div class="infobox-title">Discord-bot commands</div>
   <table>
     <tr><th>Waar</th><td>Elk kanaal in de PokeHaven EU Discord</td></tr>
-    <tr><th>Account linken</th><td><code>/link</code></td></tr>
+    <tr><th>Account linken</th><td><code>/discord link</code> → <code>/link code:</code></td></tr>
     <tr><th>Flairrollen</th><td><code>/prefixroles sync</code></td></tr>
     <tr><th>Donatiestatus</th><td><code>/donate check</code>, <code>/donate tiers</code></td></tr>
     <tr><th>Alleen staff</th><td><code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code>, <code>/prefixroles sync user:</code></td></tr>
@@ -1291,10 +1292,15 @@ export function registerDutchSite({
   </div>
 
   <h2>Account linken</h2>
+  <ol class="steps">
+    <li>In-game op de server: <code>/discord link</code> — kopieer de <strong>6-cijferige code</strong> (5 min geldig).</li>
+    <li>In Discord: <code>/link code:123456</code> — de bot verifieert via de server. Je kunt geen account van iemand anders linken.</li>
+  </ol>
   <table class="wikitable">
     <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
     <tbody>
-      <tr><td><code>/link minecraft:JouwExacteNaam</code></td><td>Linkt je Discord-account aan je Minecraft-username (hoofdlettergevoelig, 3–16 tekens). Doe dit eerst — zo weet de bot wie te crediteren voor donaties, chatprefixes en <strong>Discord-flairrollen</strong>.</td></tr>
+      <tr><td><code>/discord link</code></td><td>Alleen in-game — genereert je verificatiecode</td></tr>
+      <tr><td><code>/link code:######</code></td><td>Discord — verifieert de code en linkt accounts voor donaties, chatprefixes en <strong>Discord-flairrollen</strong></td></tr>
     </tbody>
   </table>
 
@@ -1306,7 +1312,7 @@ export function registerDutchSite({
       <tr><td><code>/prefixroles sync</code></td><td>Directe refresh van je Discord-rollen vanuit LuckPerms (auto-sync draait ook elke ~2 min na <code>/link</code>).</td></tr>
     </tbody>
   </table>
-  <p>Link eenmalig met <code>/link</code> — nieuwe in-game unlocks verschijnen binnen enkele minuten automatisch op Discord.</p>
+  <p>Verifieer eenmalig met <code>/discord link</code> + <code>/link code:</code> — nieuwe in-game unlocks verschijnen binnen enkele minuten automatisch op Discord.</p>
 
   <h2>Donaties</h2>
   <p>Volledige uitleg over tiers en hoe doneren werkt: <a href="Donations.html">Donaties</a>.</p>

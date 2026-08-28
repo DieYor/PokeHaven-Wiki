@@ -2050,7 +2050,7 @@ writePage("Donations.html", {
 
   <h2>How it works</h2>
   <ol class="steps">
-    <li><strong>Link your account first</strong> so the bot knows your Minecraft name for the in-game prefix: run <code>/link minecraft:YourExactName</code> in Discord.</li>
+    <li><strong>Link your account first</strong> — in-game <code>/discord link</code>, then Discord <code>/link code:######</code> (verified; see <code>#link-your-minecraft</code>).</li>
     <li><strong>Donate with PayPal.</strong> The current donate link is posted (and pinned) in Discord <code>#donations</code> — it is not published here so it never goes stale.</li>
     <li><strong>Put your Discord name in the PayPal note</strong> (add <code>Shiny Hour</code> too if that's what you're funding).</li>
     <li><strong>Staff logs the payment</strong> with <code>/donate add</code>. The bot updates your lifetime total, assigns your Discord role, and (where configured) syncs your in-game chat prefix.</li>
@@ -2074,7 +2074,8 @@ writePage("Donations.html", {
     <tbody>
       <tr><td><code>/donate check</code></td><td>Shows your own lifetime donation total, current tier, and linked Minecraft name</td></tr>
       <tr><td><code>/donate tiers</code></td><td>Lists the cosmetic donation tiers shown above</td></tr>
-      <tr><td><code>/link minecraft:YourName</code></td><td>Links your Discord account to your Minecraft username (do this first)</td></tr>
+      <tr><td><code>/discord link</code> (in-game)</td><td>Get a 6-digit verification code (5 min)</td></tr>
+      <tr><td><code>/link code:######</code> (Discord)</td><td>Verify and link your Minecraft account (do this before donating)</td></tr>
     </tbody>
   </table>
 
@@ -2100,7 +2101,7 @@ writePage("Discord_Commands.html", {
   lede: "Every player-facing slash command the PokeHaven EU Discord bot offers — account linking, Discord flair roles, and donation status. (Looking for in-game commands like <code>/pc</code>? See <a href=\"Rules_and_Commands.html\">Rules &amp; commands</a>.)",
   infobox: infoboxHtml("Discord bot commands", [
     ["Where", "Any channel in the PokeHaven EU Discord"],
-    ["Account link", "<code>/link</code>"],
+    ["Account link", "<code>/discord link</code> → <code>/link code:</code>"],
     ["Flair roles", "<code>/prefixroles sync</code>"],
     ["Donation status", "<code>/donate check</code>, <code>/donate tiers</code>"],
     ["Staff only", "<code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code>, <code>/prefixroles sync user:</code>"],
@@ -2112,10 +2113,15 @@ writePage("Discord_Commands.html", {
   </div>
 
   <h2>Account linking</h2>
+  <ol class="steps">
+    <li>In-game on the server: <code>/discord link</code> — copy the <strong>6-digit code</strong> (valid 5 minutes).</li>
+    <li>In Discord: <code>/link code:123456</code> — the bot verifies with the server. You cannot link someone else's account.</li>
+  </ol>
   <table class="wikitable">
     <thead><tr><th>Command</th><th>What it does</th></tr></thead>
     <tbody>
-      <tr><td><code>/link minecraft:YourExactName</code></td><td>Links your Discord account to your Minecraft username (case-sensitive, 3–16 characters). Do this first — it's how the bot knows who to credit for donations, chat prefixes, and <strong>Discord flair roles</strong>.</td></tr>
+      <tr><td><code>/discord link</code></td><td>In-game only — generates your verification code</td></tr>
+      <tr><td><code>/link code:######</code></td><td>Discord — verifies the code and links accounts for donations, chat prefixes, and <strong>Discord flair roles</strong></td></tr>
     </tbody>
   </table>
 
@@ -2127,7 +2133,7 @@ writePage("Discord_Commands.html", {
       <tr><td><code>/prefixroles sync</code></td><td>Instant refresh of your Discord roles from LuckPerms (auto-sync also runs every ~2 min after you <code>/link</code>).</td></tr>
     </tbody>
   </table>
-  <p>Link once with <code>/link</code> — new in-game unlocks appear on Discord automatically within a few minutes.</p>
+  <p>Verify once with <code>/discord link</code> + <code>/link code:</code> — new in-game unlocks appear on Discord automatically within a few minutes.</p>
 
   <h2>Donations</h2>
   <p>Full context on tiers and how donating works: <a href="Donations.html">Donations</a>.</p>

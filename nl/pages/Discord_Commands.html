@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Discord-commands — PokeHaven EU Wiki</title>
-  <meta name="description" content="Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken en donatiestatus. (Op zoek naar in-game commands zoals /pc? Zie Regels &amp; commands.)" />
+  <meta name="description" content="Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken, Discord-flairrollen en donatiestatus. (Op zoek naar in-game commands zoals /pc? Zie Regels &amp; commands.)" />
   <link rel="canonical" href="https://pokehaven.wiki/nl/pages/Discord_Commands.html" />
   <link rel="alternate" hreflang="en" href="https://pokehaven.wiki/pages/Discord_Commands.html" />
   <link rel="alternate" hreflang="nl" href="https://pokehaven.wiki/nl/pages/Discord_Commands.html" />
   <link rel="alternate" hreflang="x-default" href="https://pokehaven.wiki/pages/Discord_Commands.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Discord-commands — PokeHaven EU Wiki" />
-  <meta property="og:description" content="Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken en donatiestatus. (Op zoek naar in-game commands zoals /pc? Zie Regels &amp; commands.)" />
+  <meta property="og:description" content="Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken, Discord-flairrollen en donatiestatus. (Op zoek naar in-game commands zoals /pc? Zie Regels &amp; commands.)" />
   <meta property="og:url" content="https://pokehaven.wiki/nl/pages/Discord_Commands.html" />
   <meta property="og:image" content="https://pokehaven.wiki/assets/wiki-wallpaper.png" />
   <meta property="og:locale" content="nl_NL" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Discord-commands — PokeHaven EU Wiki" />
-  <meta name="twitter:description" content="Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken en donatiestatus. (Op zoek naar in-game commands zoals /pc? Zie Regels &amp; commands.)" />
+  <meta name="twitter:description" content="Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken, Discord-flairrollen en donatiestatus. (Op zoek naar in-game commands zoals /pc? Zie Regels &amp; commands.)" />
   <meta name="twitter:image" content="https://pokehaven.wiki/assets/wiki-wallpaper.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,7 +58,7 @@
     <div class="article-layout ">
       <article class="article" data-page-title="Discord-commands" >
         <h1 class="article-title">Discord-commands</h1>
-        <p class="article-lede">Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken en donatiestatus. (Op zoek naar in-game commands zoals <code>/pc</code>? Zie <a href="Rules_and_Commands.html">Regels &amp; commands</a>.)</p>
+        <p class="article-lede">Alle speler-slash-commands van de PokeHaven EU Discord-bot — account linken, Discord-flairrollen en donatiestatus. (Op zoek naar in-game commands zoals <code>/pc</code>? Zie <a href="Rules_and_Commands.html">Regels &amp; commands</a>.)</p>
         <div class="toc-box" id="toc"><h2>Inhoud</h2><ol></ol></div>
         
   <div class="callout tip">
@@ -67,12 +67,27 @@
   </div>
 
   <h2>Account linken</h2>
+  <ol class="steps">
+    <li>In-game op de server: <code>/discord link</code> — kopieer de <strong>6-cijferige code</strong> (5 min geldig).</li>
+    <li>In Discord: <code>/link code:123456</code> — de bot verifieert via de server. Je kunt geen account van iemand anders linken.</li>
+  </ol>
   <table class="wikitable">
     <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
     <tbody>
-      <tr><td><code>/link minecraft:JouwExacteNaam</code></td><td>Linkt je Discord-account aan je Minecraft-username (hoofdlettergevoelig, 3–16 tekens). Doe dit eerst — zo weet de bot wie te crediteren voor donaties en chatprefixes.</td></tr>
+      <tr><td><code>/discord link</code></td><td>Alleen in-game — genereert je verificatiecode</td></tr>
+      <tr><td><code>/link code:######</code></td><td>Discord — verifieert de code en linkt accounts voor donaties, chatprefixes en <strong>Discord-flairrollen</strong></td></tr>
     </tbody>
   </table>
+
+  <h2>Discord-flairrollen</h2>
+  <p>Verdiende in-game tags, suffixes en faction-keuzes kunnen als cosmetische Discord-rollen op je profiel verschijnen. Link eerst, sync daarna:</p>
+  <table class="wikitable">
+    <thead><tr><th>Command</th><th>Wat het doet</th></tr></thead>
+    <tbody>
+      <tr><td><code>/prefixroles sync</code></td><td>Directe refresh van je Discord-rollen vanuit LuckPerms (auto-sync draait ook elke ~2 min na <code>/link</code>).</td></tr>
+    </tbody>
+  </table>
+  <p>Verifieer eenmalig met <code>/discord link</code> + <code>/link code:</code> — nieuwe in-game unlocks verschijnen binnen enkele minuten automatisch op Discord.</p>
 
   <h2>Donaties</h2>
   <p>Volledige uitleg over tiers en hoe doneren werkt: <a href="Donations.html">Donaties</a>.</p>
@@ -150,9 +165,10 @@
       <aside class="infobox"><div class="infobox-title">Discord-bot commands</div>
   <table>
     <tr><th>Waar</th><td>Elk kanaal in de PokeHaven EU Discord</td></tr>
-    <tr><th>Account linken</th><td><code>/link</code></td></tr>
+    <tr><th>Account linken</th><td><code>/discord link</code> → <code>/link code:</code></td></tr>
+    <tr><th>Flairrollen</th><td><code>/prefixroles sync</code></td></tr>
     <tr><th>Donatiestatus</th><td><code>/donate check</code>, <code>/donate tiers</code></td></tr>
-    <tr><th>Alleen staff</th><td><code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code></td></tr>
+    <tr><th>Alleen staff</th><td><code>/donate add</code>, <code>/donate set</code>, <code>/donate link</code>, <code>/donate list</code>, <code>/prefixroles sync user:</code></td></tr>
   </table></aside>
     </div>
   </main>
