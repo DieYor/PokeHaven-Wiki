@@ -15,6 +15,10 @@ import {
   gymMapsReferenceBodyNl,
   GYM_MAPS_REFERENCE_INFOBOX_NL,
   gymMapsPlayerRegions,
+  isEliteFour,
+  mapItemTableLabel,
+  mapCraftSectionHtml,
+  teamLvRange,
 } from "./gym-maps-reference.js";
 import {
   fossilsBodyNl,
@@ -32,6 +36,14 @@ function esc(s) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+}
+
+function nlMapInfoboxRows(g) {
+  let html = `<tr><th>Map-item</th><td>${esc(mapItemTableLabel(g))}</td></tr>`;
+  if (isEliteFour(g) && g.specialItem) {
+    html += `<tr><th>Signature-item</th><td>${esc(g.specialItem)}</td></tr>`;
+  }
+  return html;
 }
 
 function itemNice(s) {
@@ -3192,8 +3204,8 @@ export function registerDutchSite({
       <td>${esc(g.type)}</td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.biome)}</td>
-      <td>${esc(g.specialItem)}</td>
-      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+      <td>${esc(mapItemTableLabel(g))}</td>
+      <td>${teamLvRange(g)}</td>
     </tr>`;
       })
       .join("");
@@ -3214,6 +3226,10 @@ export function registerDutchSite({
     <thead><tr><th>Trainer</th><th>Type</th><th>Badge / rol</th><th>Biome / plek</th><th>Map-item</th><th>Team lv</th></tr></thead>
     <tbody>${rows}</tbody>
   </table>
+  <div class="callout tip">
+    <div class="label">League-map</div>
+    Elite Four-rooms delen <strong>Master Cape</strong> → Johto League-tower in The End. Ze hebben geen eigen cartography-key.
+  </div>
   <div class="callout tip">
     <div class="label">Naambotsingen</div>
     Johto Elite Four heeft ook Koga / Bruno / Lance. Pagina’s: <a href="Johto_Koga.html">Johto Koga</a>, <a href="Johto_Bruno.html">Johto Bruno</a>, <a href="Johto_Lance.html">Johto Lance</a> — los van Kanto.
@@ -3313,7 +3329,6 @@ export function registerDutchSite({
 
     for (const g of johto) {
       const file = `${g.slug}.html`;
-      const mapItem = g.specialItem;
       const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
       const minLv = Math.min(...(g.team || []).map((m) => Number(m.level) || 99), 99);
       const sorted = [...johto].sort((a, b) => a.order - b.order);
@@ -3375,7 +3390,7 @@ export function registerDutchSite({
     <tr><th>Type</th><td>${esc(g.type)}</td></tr>
     <tr><th>Badge</th><td>${esc(g.badge)}</td></tr>
     <tr><th>Locatie-tip</th><td>${esc(g.biome)}</td></tr>
-    <tr><th>Map-item</th><td>${esc(mapItem)}</td></tr>
+    ${nlMapInfoboxRows(g)}
     <tr><th>Approx cap</th><td>~${maxLv + 5}</td></tr>
     <tr><th>Team levels</th><td>${minLv}–${maxLv}</td></tr>
     <tr><th>Party</th><td>${(g.team || []).length}</td></tr>
@@ -3392,22 +3407,14 @@ export function registerDutchSite({
     <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
     <li>${ex.travel}</li>
   </ul>
-  <h3>Craft de map</h3>
-  ${figure(
-    guideImg("cartography-maps.png"),
-    "<strong>Johto Cartography Table.</strong> Empty Map + special item → afgewerkte map met coördinaten.",
-    "Cartography / map-crafting"
-  )}
-  <ol class="steps">
-    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(mapItem)}</strong>.</li>
-    <li>Craft een verse <strong>Empty Map</strong>.</li>
-    <li>Combineer Empty Map + ${esc(mapItem)} in de <strong>Johto Cartography Table</strong>.</li>
-    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
-  </ol>
-  ${critical(
-    "nl",
-    "<strong>Open de Empty Map niet eerst in de wereld</strong> — en gebruik de Johto-tafel, niet de Kanto-tafel."
-  )}
+  ${mapCraftSectionHtml(g, {
+    lang: "nl",
+    esc,
+    figure,
+    guideImg,
+    critical,
+    cartTable: "Johto Cartography Table",
+  })}
   <h3>Fight-tips</h3>
   <p>${ex.gotcha}</p>
   <ol class="steps">
@@ -3439,8 +3446,8 @@ export function registerDutchSite({
       <td>${esc(g.type)}</td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.biome)}</td>
-      <td>${esc(g.specialItem)}</td>
-      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+      <td>${esc(mapItemTableLabel(g))}</td>
+      <td>${teamLvRange(g)}</td>
     </tr>`
       )
       .join("");
@@ -3465,6 +3472,7 @@ export function registerDutchSite({
   <div class="callout tip">
     <div class="label">Elite Four-locatie</div>
     Anders dan Kanto/Johto vecht je de Hoenn Elite Four en Champion Rocco op een echte Steppe-biome, niet in The End.
+    Elite Four-rooms delen <strong>Steel Hat</strong> → Hoenn-league — geen eigen map-keys.
   </div>
   <p>Achievements: <a href="Achievements.html">Achievements</a>. Na Hoenn Champion: <a href="Gyms_Sinnoh.html">Sinnoh</a>.</p>
   ${navboxCore()}
@@ -3561,7 +3569,6 @@ export function registerDutchSite({
 
     for (const g of hoenn) {
       const file = `${g.slug}.html`;
-      const mapItem = g.specialItem;
       const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
       const minLv = Math.min(...(g.team || []).map((m) => Number(m.level) || 99), 99);
       const sorted = [...hoenn].sort((a, b) => a.order - b.order);
@@ -3607,7 +3614,7 @@ export function registerDutchSite({
     <tr><th>Type</th><td>${esc(g.type)}</td></tr>
     <tr><th>Badge</th><td>${esc(g.badge)}</td></tr>
     <tr><th>Locatie-tip</th><td>${esc(g.biome)}</td></tr>
-    <tr><th>Map-item</th><td>${esc(mapItem)}</td></tr>
+    ${nlMapInfoboxRows(g)}
     <tr><th>Approx cap</th><td>~${maxLv + 5}</td></tr>
     <tr><th>Team levels</th><td>${minLv}–${maxLv}</td></tr>
     <tr><th>Party</th><td>${(g.team || []).length}</td></tr>
@@ -3624,22 +3631,14 @@ export function registerDutchSite({
     <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
     <li>${ex.travel}</li>
   </ul>
-  <h3>Craft de map</h3>
-  ${figure(
-    guideImg("cartography-maps.png"),
-    "<strong>Hoenn Cartography Table.</strong> Empty Map + special item → afgewerkte map met coördinaten.",
-    "Cartography / map-crafting"
-  )}
-  <ol class="steps">
-    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(mapItem)}</strong>.</li>
-    <li>Craft een verse <strong>Empty Map</strong>.</li>
-    <li>Combineer Empty Map + ${esc(mapItem)} in de <strong>Hoenn Cartography Table</strong>.</li>
-    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
-  </ol>
-  ${critical(
-    "nl",
-    "<strong>Open de Empty Map niet eerst in de wereld</strong> — en gebruik de Hoenn-tafel, niet een andere regio-tafel."
-  )}
+  ${mapCraftSectionHtml(g, {
+    lang: "nl",
+    esc,
+    figure,
+    guideImg,
+    critical,
+    cartTable: "Hoenn Cartography Table",
+  })}
   <h3>Fight-tips</h3>
   <p>${ex.gotcha}</p>
   <ol class="steps">
@@ -3671,8 +3670,8 @@ export function registerDutchSite({
       <td>${esc(g.type)}</td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.biome)}</td>
-      <td>${esc(g.specialItem)}</td>
-      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+      <td>${esc(mapItemTableLabel(g))}</td>
+      <td>${teamLvRange(g)}</td>
     </tr>`
       )
       .join("");
@@ -3697,6 +3696,7 @@ export function registerDutchSite({
   <div class="callout tip">
     <div class="label">Elite Four-locatie</div>
     De Sinnoh Elite Four en Champion Camilla vecht je op een echte Desert Oasis, niet in The End.
+    Elite Four-rooms delen <strong>Draconic Fin</strong> → Sinnoh-league — geen eigen map-keys.
   </div>
   <p>Achievements: <a href="Achievements.html">Achievements</a>. Sinnoh is de laatste regio in de huidige gymlijn — zie <a href="Postgame_and_Legendaries.html">Post-game en legendaries</a> voor wat volgt.</p>
   ${navboxCore()}
@@ -3793,7 +3793,6 @@ export function registerDutchSite({
 
     for (const g of sinnoh) {
       const file = `${g.slug}.html`;
-      const mapItem = g.specialItem;
       const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
       const minLv = Math.min(...(g.team || []).map((m) => Number(m.level) || 99), 99);
       const sorted = [...sinnoh].sort((a, b) => a.order - b.order);
@@ -3839,7 +3838,7 @@ export function registerDutchSite({
     <tr><th>Type</th><td>${esc(g.type)}</td></tr>
     <tr><th>Badge</th><td>${esc(g.badge)}</td></tr>
     <tr><th>Locatie-tip</th><td>${esc(g.biome)}</td></tr>
-    <tr><th>Map-item</th><td>${esc(mapItem)}</td></tr>
+    ${nlMapInfoboxRows(g)}
     <tr><th>Approx cap</th><td>~${maxLv + 5}</td></tr>
     <tr><th>Team levels</th><td>${minLv}–${maxLv}</td></tr>
     <tr><th>Party</th><td>${(g.team || []).length}</td></tr>
@@ -3856,22 +3855,14 @@ export function registerDutchSite({
     <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
     <li>${ex.travel}</li>
   </ul>
-  <h3>Craft de map</h3>
-  ${figure(
-    guideImg("cartography-maps.png"),
-    "<strong>Sinnoh Cartography Table.</strong> Empty Map + special item → afgewerkte map met coördinaten.",
-    "Cartography / map-crafting"
-  )}
-  <ol class="steps">
-    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(mapItem)}</strong>.</li>
-    <li>Craft een verse <strong>Empty Map</strong>.</li>
-    <li>Combineer Empty Map + ${esc(mapItem)} in de <strong>Sinnoh Cartography Table</strong>.</li>
-    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
-  </ol>
-  ${critical(
-    "nl",
-    "<strong>Open de Empty Map niet eerst in de wereld</strong> — en gebruik de Sinnoh-tafel, niet een andere regio-tafel."
-  )}
+  ${mapCraftSectionHtml(g, {
+    lang: "nl",
+    esc,
+    figure,
+    guideImg,
+    critical,
+    cartTable: "Sinnoh Cartography Table",
+  })}
   <h3>Fight-tips</h3>
   <p>${ex.gotcha}</p>
   <ol class="steps">
@@ -4109,7 +4100,6 @@ export function registerDutchSite({
   for (const g of trainers.kantoLeaders) {
     if (g.slug === "Brock" || g.slug === "Misty") continue;
     const file = `${g.slug}.html`;
-    const mapItem = g.specialItem;
     const maxLv = Math.max(...(g.team || []).map((m) => Number(m.level) || 0), 0);
     const minLv = Math.min(...(g.team || []).map((m) => Number(m.level) || 99), 99);
     const sorted = [...trainers.kantoLeaders].sort((a, b) => a.order - b.order);
@@ -4144,7 +4134,7 @@ export function registerDutchSite({
     <tr><th>Type</th><td>${esc(g.type)}</td></tr>
     <tr><th>Badge</th><td>${esc(g.badge)}</td></tr>
     <tr><th>Locatie-tip</th><td>${esc(g.biome)}</td></tr>
-    <tr><th>Map-item</th><td>${esc(mapItem)}</td></tr>
+    ${nlMapInfoboxRows(g)}
     <tr><th>Approx cap</th><td>~${maxLv + 5}</td></tr>
     <tr><th>Team levels</th><td>${minLv}–${maxLv}</td></tr>
     <tr><th>Party</th><td>${(g.team || []).length}</td></tr>
@@ -4160,22 +4150,14 @@ export function registerDutchSite({
     <li>Heals, status-cures, spare balls, geclaimde basis / waystone</li>
     <li>${ex.travel}</li>
   </ul>
-  <h3>Craft de map</h3>
-  ${figure(
-    guideImg("cartography-maps.png"),
-    "<strong>Cartography-tafel.</strong> Empty Map + special item → afgewerkte map met coördinaten.",
-    "Cartography / map-crafting"
-  )}
-  <ol class="steps">
-    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(mapItem)}</strong>.</li>
-    <li>Craft een verse <strong>Empty Map</strong>.</li>
-    <li>Combineer Empty Map + ${esc(mapItem)} in de <strong>Kanto Cartography Table</strong> (of Map Guide-villager).</li>
-    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
-  </ol>
-  ${critical(
-    "nl",
-    "<strong>Open de Empty Map niet eerst in de wereld</strong> — dan is hij onbruikbaar voor gym-crafts."
-  )}
+  ${mapCraftSectionHtml(g, {
+    lang: "nl",
+    esc,
+    figure,
+    guideImg,
+    critical,
+    cartTable: "Kanto Cartography Table",
+  })}
   <h3>Fight-tips</h3>
   <p>${ex.gotcha}</p>
   <ol class="steps">

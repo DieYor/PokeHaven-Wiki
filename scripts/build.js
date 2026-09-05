@@ -8,7 +8,14 @@ import { registerExpansionPages } from "./expansion-pages.js";
 import { UI, DISCORD_INVITE, altLangHref, relPrefixFor, critical } from "./i18n.js";
 import { registerDutchSite } from "./nl-site.js";
 import { registerSophisticatedBackpacks } from "./sophisticated-backpacks.js";
-import { gymMapsPlayerRegions } from "./gym-maps-reference.js";
+import {
+  gymMapsPlayerRegions,
+  isEliteFour,
+  mapItemLabel,
+  mapItemTableLabel,
+  mapCraftSectionHtml,
+  teamLvRange,
+} from "./gym-maps-reference.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -537,11 +544,6 @@ const johtoCapLadderRows = capLadderRows(trainers.johtoLeaders);
 const hoennCapLadderRows = capLadderRows(trainers.hoennLeaders);
 const sinnohCapLadderRows = capLadderRows(trainers.sinnohLeaders);
 
-function mapItemLabel(g) {
-  if (g.slug === "Brock") return "Brock Map Key";
-  return g.specialItem;
-}
-
 function cartographyTableFor(g) {
   if (g.region === "johto") return "Johto Cartography Table";
   if (g.region === "hoenn") return "Hoenn Cartography Table";
@@ -562,8 +564,15 @@ function nextLeaderAfter(g) {
   return idx >= 0 && idx < sorted.length - 1 ? sorted[idx + 1] : null;
 }
 
+function mapInfoboxRows(g) {
+  const rows = [["Map item", esc(mapItemTableLabel(g))]];
+  if (isEliteFour(g) && g.specialItem) {
+    rows.push(["Signature item", esc(g.specialItem)]);
+  }
+  return rows;
+}
+
 function gymGuideBody(g) {
-  const mapItem = mapItemLabel(g);
   const cartTable = cartographyTableFor(g);
   const next = nextLeaderAfter(g);
   const nextLink = next
@@ -1065,22 +1074,14 @@ function gymGuideBody(g) {
       <li>Heals, status cures, spare balls, claimed base / waystone to retreat to</li>
       <li>${extras.travel}</li>
     </ul>
-    <h3>Craft the map</h3>
-    ${figure(
-      guideImg("cartography-maps.png"),
-      `<strong>${esc(cartTable)}.</strong> Empty Map + special item → finished map with coordinates.`,
-      "Cartography / map crafting"
-    )}
-    <ol class="steps">
-      <li>Search <strong>${esc(g.name)}</strong> in REI and craft <strong>${esc(mapItem)}</strong>.</li>
-      <li>Craft a fresh <strong>Empty Map</strong>.</li>
-      <li>Combine Empty Map + ${esc(mapItem)} in the <strong>${esc(cartTable)}</strong> (or trade a Map Guide villager).</li>
-      <li>Hover the finished map for coordinates. Details: <a href="Gym_Maps.html">Gym maps</a>.</li>
-    </ol>
-    ${critical(
-      "en",
-      "<strong>Do not open the Empty Map in the world first</strong> — that ruins it for gym crafting. Use the correct region cartography table."
-    )}
+    ${mapCraftSectionHtml(g, {
+      lang: "en",
+      esc,
+      figure,
+      guideImg,
+      critical,
+      cartTable,
+    })}
     <h3>Fight tips</h3>
     <p>${extras.gotcha}</p>
     <ol class="steps">
@@ -1211,8 +1212,8 @@ writePage("Level_Cap.html", {
       <td>${esc(g.type)}</td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.biome)}</td>
-      <td>${esc(mapItemLabel(g))}</td>
-      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+      <td>${esc(mapItemTableLabel(g))}</td>
+      <td>${teamLvRange(g)}</td>
     </tr>`
     )
     .join("");
@@ -1231,7 +1232,8 @@ writePage("Level_Cap.html", {
     </table>
     <div class="callout tip">
       <div class="label">Maps</div>
-      Craft every gym map with a special item + Empty Map on the Kanto Cartography Table (starter kit has Brock’s key).
+      Gym maps: LumyMon key + Empty Map on the Kanto Cartography Table (starter kit has Brock’s key).
+      Elite Four rooms share <strong>Rival Sling</strong> → Kanto League tower — they have no unique map.
       Deep guides: <a href="Brock.html">Brock</a> · <a href="Misty.html">Misty</a> · <a href="Gym_Maps.html">Gym maps</a>.
     </div>
     <p>Track badges in the Advancements screen too — full list: <a href="Achievements.html">Achievements</a>. After the league: <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a>.</p>
@@ -1257,7 +1259,7 @@ for (const g of trainers.kantoLeaders) {
       ["Type focus", esc(g.type)],
       ["Badge / title", esc(g.badge)],
       ["Location tip", esc(g.biome)],
-      ["Map item", esc(mapItemLabel(g))],
+      ...mapInfoboxRows(g),
       ["Approx cap (while next)", `~${approxCapWhileNext(g)}`],
       ["Team levels", `${minLv}–${maxLv}`],
       ["Party size", String(g.team.length)],
@@ -2558,8 +2560,8 @@ registerExpansionPages({
       <td>${esc(g.type)}</td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.biome)}</td>
-      <td>${esc(mapItemLabel(g))}</td>
-      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+      <td>${esc(mapItemTableLabel(g))}</td>
+      <td>${teamLvRange(g)}</td>
     </tr>`
     )
     .join("");
@@ -2583,6 +2585,10 @@ registerExpansionPages({
       <tbody>${rows}</tbody>
     </table>
     <div class="callout tip">
+      <div class="label">League map</div>
+      Elite Four rooms share <strong>Master Cape</strong> → Johto League tower in The End. They have no unique cartography keys.
+    </div>
+    <div class="callout tip">
       <div class="label">Name collisions</div>
       Johto’s Elite Four includes trainers also named Koga / Bruno / Lance. Their pages are <a href="Johto_Koga.html">Johto Koga</a>, <a href="Johto_Bruno.html">Johto Bruno</a>, and <a href="Johto_Lance.html">Johto Lance</a> — separate from the Kanto pages.
     </div>
@@ -2601,8 +2607,8 @@ registerExpansionPages({
       <td>${esc(g.type)}</td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.biome)}</td>
-      <td>${esc(mapItemLabel(g))}</td>
-      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+      <td>${esc(mapItemTableLabel(g))}</td>
+      <td>${teamLvRange(g)}</td>
     </tr>`
       )
       .join("");
@@ -2629,6 +2635,7 @@ registerExpansionPages({
     <div class="callout tip">
       <div class="label">Elite Four location</div>
       Unlike Kanto/Johto, the Hoenn Elite Four and Champion Rocco are fought on real Steppe biome league grounds, not in The End.
+      Elite Four rooms share <strong>Steel Hat</strong> → Hoenn league — they have no unique cartography keys.
     </div>
     <p>Track badges in Advancements too — <a href="Achievements.html">Achievements</a>. After Hoenn Champion: <a href="Gyms_Sinnoh.html">Sinnoh</a>.</p>
     ${navboxGyms()}
@@ -2646,8 +2653,8 @@ registerExpansionPages({
       <td>${esc(g.type)}</td>
       <td>${esc(g.badge)}</td>
       <td>${esc(g.biome)}</td>
-      <td>${esc(mapItemLabel(g))}</td>
-      <td>${g.team?.[0]?.level ?? "—"}–${g.team?.[g.team.length - 1]?.level ?? "—"}</td>
+      <td>${esc(mapItemTableLabel(g))}</td>
+      <td>${teamLvRange(g)}</td>
     </tr>`
       )
       .join("");
@@ -2674,6 +2681,7 @@ registerExpansionPages({
     <div class="callout tip">
       <div class="label">Elite Four location</div>
       The Sinnoh Elite Four and Champion Camilla are fought on real Desert Oasis league grounds, not in The End.
+      Elite Four rooms share <strong>Draconic Fin</strong> → Sinnoh league — they have no unique cartography keys.
     </div>
     <p>Track badges in Advancements too — <a href="Achievements.html">Achievements</a>. Sinnoh is the last region in the current gym line — see <a href="Postgame_and_Legendaries.html">Post-game and legendaries</a> for what's next.</p>
     ${navboxGyms()}
@@ -2707,7 +2715,7 @@ registerExpansionPages({
         ["Type focus", esc(g.type)],
         ["Badge / title", esc(g.badge)],
         ["Location tip", esc(g.biome)],
-        ["Map item", esc(mapItemLabel(g))],
+        ...mapInfoboxRows(g),
         ["Approx cap (while next)", `~${approxCapWhileNext(g)}`],
         ["Team levels", `${minLv}–${maxLv}`],
         ["Party size", String(g.team.length)],
@@ -2741,7 +2749,7 @@ registerExpansionPages({
         ["Type focus", esc(g.type)],
         ["Badge / title", esc(g.badge)],
         ["Location tip", esc(g.biome)],
-        ["Map item", esc(mapItemLabel(g))],
+        ...mapInfoboxRows(g),
         ["Approx cap (while next)", `~${approxCapWhileNext(g)}`],
         ["Team levels", `${minLv}–${maxLv}`],
         ["Party size", String(g.team.length)],
@@ -2775,7 +2783,7 @@ registerExpansionPages({
         ["Type focus", esc(g.type)],
         ["Badge / title", esc(g.badge)],
         ["Location tip", esc(g.biome)],
-        ["Map item", esc(mapItemLabel(g))],
+        ...mapInfoboxRows(g),
         ["Approx cap (while next)", `~${approxCapWhileNext(g)}`],
         ["Team levels", `${minLv}–${maxLv}`],
         ["Party size", String(g.team.length)],

@@ -262,6 +262,7 @@ const KANTO_META = {
     type: "Ice",
     badge: "Elite Four",
     biome: "Elite Four Tower (The End)",
+    // RCT signature / spawner — not a cartography key (league map = Rival Sling)
     specialItem: "Never-Melt Ice",
     order: 9,
     tips: "Fire, Fighting, Rock, and Steel help. Full heal between rooms.",
@@ -383,6 +384,7 @@ const JOHTO_META = {
     type: "Psychic",
     badge: "Elite Four",
     biome: "Elite Four Tower (The End)",
+    // RCT signature / spawner — not a cartography key (league map = Master Cape)
     specialItem: "Power Lens",
     order: 9,
     tips: "Dark, Bug, and Ghost pressure Psychic. Full heal before every Johto Elite room.",
@@ -526,6 +528,7 @@ const HOENN_META = {
     type: "Dark",
     badge: "Elite Four",
     biome: "Steppe (Hoenn league grounds)",
+    // RCT signature / spawner — not a cartography key (league map = Steel Hat)
     specialItem: "Dark Bass",
     order: 9,
     tips: "Fighting, Bug, and Fairy pressure Dark. Full heal before every Hoenn Elite Four room — Fosco opens the gauntlet.",
@@ -647,6 +650,7 @@ const SINNOH_META = {
     type: "Bug",
     badge: "Elite Four",
     biome: "Desert Oasis (Sinnoh league grounds)",
+    // RCT signature / spawner — not a cartography key (league map = Draconic Fin)
     specialItem: "Bug Net",
     order: 9,
     tips: "Fire, Flying, and Rock pressure Bug. Full heal before every Sinnoh Elite Four room — Aaron opens the gauntlet.",

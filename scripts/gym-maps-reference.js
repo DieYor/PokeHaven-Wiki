@@ -29,7 +29,7 @@ const CATALOG = {
       ["Furio", "cobbleverse:furio", "Heavy Dumbbell", "lumymon:heavy_dumbbell", "overworld"],
       ["Jasmine", "cobbleverse:jasmine", "Secret Medicine", "lumymon:secret_medicine", "overworld"],
       ["Alfredo", "cobbleverse:alfredo", "Winter Staff", "lumymon:winter_staff", "overworld"],
-      ["Sandra", "cobbleverse:sandra", "Pearl Choker", "lumymon:pearl_choker", "overworld"],
+      ["Sandra", "cobbleverse:sandra", "Pearl Choker", "lumymon:pearl_choker", "nether"],
       ["Lance (league)", "cobbleverse:johto_league", "Master Cape", "lumymon:master_cape", "overworld"],
     ],
   },
@@ -310,6 +310,105 @@ export const GYM_MAPS_REFERENCE_INFOBOX_EN = `<div class="infobox-title">Gym map
     <tr><th>How-to</th><td><a href="Gym_Maps.html">Gym maps</a></td></tr>
     <tr><th>Staff</th><td>Admin → Maps</td></tr>
   </table>`;
+
+/** RCT / LumyVerse spawn item — not a cartography key for Elite Four rooms. */
+export function isEliteFour(g) {
+  return g?.badge === "Elite Four";
+}
+
+export function leagueCartographyItem(region) {
+  switch (region) {
+    case "kanto":
+      return "Rival Sling";
+    case "johto":
+      return "Master Cape";
+    case "hoenn":
+      return "Steel Hat";
+    case "sinnoh":
+      return "Draconic Fin";
+    default:
+      return "";
+  }
+}
+
+/** Item you put with an Empty Map on the region cartography table. */
+export function mapItemLabel(g) {
+  if (!g) return "—";
+  if (g.slug === "Brock") return "Brock Map Key";
+  if (isEliteFour(g)) return leagueCartographyItem(g.region);
+  return g.specialItem || "—";
+}
+
+/** Overview tables: E4 share one tower map, they do not have unique keys. */
+export function mapItemTableLabel(g) {
+  if (isEliteFour(g)) {
+    const item = leagueCartographyItem(g.region);
+    return `${item} (league tower)`;
+  }
+  return mapItemLabel(g);
+}
+
+export function teamLvRange(g) {
+  const lv = (g?.team || []).map((m) => Number(m.level) || 0).filter((n) => n > 0);
+  if (!lv.length) return "—";
+  return `${Math.min(...lv)}–${Math.max(...lv)}`;
+}
+
+export function mapCraftSectionHtml(g, { lang, esc, figure, guideImg, critical, cartTable }) {
+  const nl = lang === "nl";
+  const item = mapItemLabel(g);
+  const table = cartTable || "Cartography Table";
+  const img = figure(
+    guideImg("cartography-maps.png"),
+    nl
+      ? `<strong>${esc(table)}.</strong> Empty Map + cartography-item → afgewerkte map met coördinaten.`
+      : `<strong>${esc(table)}.</strong> Empty Map + cartography item → finished map with coordinates.`,
+    "Cartography / map crafting"
+  );
+  const warn = critical(
+    nl ? "nl" : "en",
+    nl
+      ? "<strong>Open de Empty Map niet eerst in de wereld</strong> — gebruik de juiste regio-cartography-tafel."
+      : "<strong>Do not open the Empty Map in the world first</strong> — that ruins it for gym crafting. Use the correct region cartography table."
+  );
+
+  if (isEliteFour(g)) {
+    const spawn = g.specialItem || "—";
+    if (nl) {
+      return `<h3>Craft de map</h3>
+  ${img}
+  <p>Elite Four-members hebben <strong>geen eigen gym-map</strong>. Craft <strong>${esc(item)}</strong> (REI) + verse Empty Map op de <strong>${esc(table)}</strong> — die map wijst naar de <em>league-tower</em>, daarna loop je de kamers af.</p>
+  <p class="muted"><strong>${esc(spawn)}</strong> is het RCT-signature-item (trainer-spawner), geen cartography-key.</p>
+  ${warn}`;
+    }
+    return `<h3>Craft the map</h3>
+    ${img}
+    <p>Elite Four members do <strong>not</strong> have their own gym map. Craft <strong>${esc(item)}</strong> (REI) + a fresh Empty Map on the <strong>${esc(table)}</strong> — that map finds the <em>league tower</em>; then walk the rooms.</p>
+    <p class="muted"><strong>${esc(spawn)}</strong> is the RCT signature / spawner item, not a cartography key.</p>
+    ${warn}`;
+  }
+
+  if (nl) {
+    return `<h3>Craft de map</h3>
+  ${img}
+  <ol class="steps">
+    <li>Zoek <strong>${esc(g.name)}</strong> in REI en craft <strong>${esc(item)}</strong>.</li>
+    <li>Craft een verse <strong>Empty Map</strong>.</li>
+    <li>Combineer Empty Map + ${esc(item)} in de <strong>${esc(table)}</strong> (of Map Guide-villager).</li>
+    <li>Hover voor coördinaten. Details: <a href="Gym_Maps.html">Gym-maps</a>.</li>
+  </ol>
+  ${warn}`;
+  }
+  return `<h3>Craft the map</h3>
+    ${img}
+    <ol class="steps">
+      <li>Search <strong>${esc(g.name)}</strong> in REI and craft <strong>${esc(item)}</strong>.</li>
+      <li>Craft a fresh <strong>Empty Map</strong>.</li>
+      <li>Combine Empty Map + ${esc(item)} in the <strong>${esc(table)}</strong> (or trade a Map Guide villager).</li>
+      <li>Hover the finished map for coordinates. Details: <a href="Gym_Maps.html">Gym maps</a>.</li>
+    </ol>
+    ${warn}`;
+}
 
 export const GYM_MAPS_REFERENCE_INFOBOX_NL = `<div class="infobox-title">Gym-map referentie</div>
   <table>
